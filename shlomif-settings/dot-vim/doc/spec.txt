@@ -1,0 +1,95 @@
+*spec.txt*  For Vim version 6.3.  Last change: 2005 Jul 09
+
+Guillaume Rousse <guillomovitch@zarb.org
+
+This is a filetype plugin to help editing rpm spec files.
+
+1. Features		|spec-features|
+2. Customization	|spec-customization|
+3. Macros		|spec-macros|
+4. History		|spec-history|
+
+=============================================================================
+1. Features						*spec-features*
+
+* Changelog
+Those mappings allows to quickly insert changelog items. They try to guess
+correct values for packager, version and release from the corresponding tag
+values, either defined in the spec file or in your ~/.rpmmacros.
+
+<LocalLeader>ch <Plug>AddChangelogEntry
+	Insert a new changelog entry
+
+<LocalLeader>CH <Plug>AddChangelogItem
+	Insert a new changelog item
+
+* Navigation
+Using matchit plugin, this feature allows to quickly jump from different
+sections of the spec file using %.
+
+* Compilation
+This feature allows to launch rpm build directly, using either
+:make command or =.
+
+=============================================================================
+2. Customization					*spec-customization*
+
+* Remapping
+You can easily change the default maps. The following line shows you how you
+could do this in your .vimrc file, mapping the new changelog entry insertion
+to the <F5> key:
+
+	au FileType spec map <buffer> <F5> <Plug>AddChangelogEntry
+
+Note: the plugin will respect your desire to change the default mapping
+      and won't set it.
+
+* Entry format						*spec_chglog_format*
+You can easily customize how your spec file entries will look like, by setting some variables defining different parts of the entry.
+
+spec_chglog_date is used for the first part of the entry, and defaults to "%a
+%b %d %Y". See strftime() function man page for format details.
+
+spec_chglog_packager is used for the middle part of the entry, and defaults to
+the result of rpm --eval %packager.
+
+spec_chglog_revision is used for the last part of the entry, and if set to
+true, will result in automatic release information insertion.
+
+* Insertion position					*spec_chglog_prepend*
+New changelog items are usually inserted after the existing ones.  If you set
+the |spec_chglog_prepend| variable, it will insert new items before the
+existing ones.
+
+	let spec_chglog_prepend = 1
+
+=============================================================================
+3. Macros						*spec-macros*
+
+rpm macros are resolved differently, depending of their syntax:
+- %foo-style macros are resolved externaly, by calling rpm itself. Everything
+  following the macro is treated as argument, so %foo bar is actually resolved
+  as "%foo bar".
+
+- %{foo}-style macros are resolved internaly, by searching in the spec file,
+  and externaly by calling rpm if no definition is found. Only the macro itself
+  is resolved, so %{foo} bar is resolved as "%{foo}" "bar".
+
+=============================================================================
+4. History						*spec-history*
+
+0.1 2001-09-29
+ - first version
+
+0.2 2004-01-10
+ - removed line width limit
+ - support for %name style macros
+ - quote patten when calling grep (Luca Berra <bluca@comedia.it>)
+ - navigation through sections (Max Ischenko)
+ - doc file
+
+0.3 2005-07-09
+ - support epoch in revision informations
+ - use rpm to evaluate external macros
+ - add customization options (Gustavo Niemeyer <niemeyer@conectiva.com>)
+ - large code  cleanup
