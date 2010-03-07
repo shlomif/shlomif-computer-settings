@@ -38,7 +38,7 @@ function up()
     local pm="$1"
     shift
 
-    urpmi "$(rpmize_perlmod "$pm")"
+    urpmi --auto "$(rpmize_perlmod "$pm")"
 }
 
 function c()
