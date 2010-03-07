@@ -9,4 +9,4 @@
     ci = commit
 
 [core]
-    excludesfile = /home/shlomi/conf/git/excludes
+    excludesfile = ~/conf/git/excludes
