@@ -139,7 +139,9 @@ au BufNewFile,BufRead ~/Download/unpack/kernel/* so ~/conf/Vim/kernel.vim
 au BufNewFile,BufRead ~/progs/C/kernel/word-search/* so ~/conf/Vim/kernel.vim
 
 " Work-related directives - may be somewhat confidential.
-au BufNewFile,BufRead ~/progs/Work/* so ~/conf/Work/Vim/work.vim
+if filereadable("~/conf/Work/Vim/work.vim")
+    au BufNewFile,BufRead ~/progs/Work/* so ~/conf/Work/Vim/work.vim
+endif
 
 " Personal details for perl-support
 let g:Perl_AuthorName      = 'Shlomi Fish'
