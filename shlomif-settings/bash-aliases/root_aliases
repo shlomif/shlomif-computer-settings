@@ -18,14 +18,45 @@ wu()
     while ! u ; do true ; done
 }
 
-function up()
-{ 
-    urpmi "perl($1)" ; 
+function normalize_perlmod()
+{
+    local pm="$1"
+    shift
+
+    echo "$pm" | perl -p -e 's/perl-//; s/-/::/g;'
 }
 
-function c() { cpan2dist --verbose --format=CPANPLUS::Dist::Mdv --install --timeout 0 "$1" ; }
+function rpmize_perlmod()
+{
+    local pm="$1"
+    shift
+    echo "perl($(normalize_perlmod "$pm"))"
+}
 
-function qp() { urpmq --whatprovides "perl($1)" ; }
+function up()
+{ 
+    local pm="$1"
+    shift
+
+    urpmi "$(rpmize_perlmod "$pm")"
+}
+
+function c()
+{ 
+    local pm="$1"
+    shift
+
+    cpan2dist --verbose --format=CPANPLUS::Dist::Mdv \
+        --install --timeout 0 "$(normalize_perlmod "$pm")" ; 
+}
+
+function qp()
+{ 
+    local pm="$1"
+    shift
+
+    urpmq --whatprovides "$(rpmize_perlmod "$pm")" ; 
+}
 
 function cp_to_shlomi()
 {
