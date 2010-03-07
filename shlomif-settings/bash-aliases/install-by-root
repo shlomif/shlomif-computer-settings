@@ -1,5 +1,5 @@
 #!/bin/bash
 cp -f "$(dirname "$0")"/root_aliases ~/.shlomif_root_aliases
-if grep -q -E '^source ~/\.shlomif_root_aliases' ~/.aliases;
+if grep -q -E '^source ~/\.shlomif_root_aliases' ~/.aliases; then
     echo $'\nsource ~/.shlomif_root_aliases' >> ~/.aliases
 fi
