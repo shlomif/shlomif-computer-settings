@@ -1,0 +1,12 @@
+[user]
+	name = Shlomi Fish
+	email = shlomif@iglu.org.il
+
+[alias]
+    di = diff
+    st = status
+    dh = diff HEAD
+    ci = commit
+
+[core]
+    excludesfile = /home/shlomi/conf/git/excludes
