@@ -23,7 +23,7 @@ function normalize_perlmod()
     local pm="$1"
     shift
 
-    echo "$pm" | perl -p -e 's/perl-//; s/-/::/g;'
+    echo "$pm" | perl -p -e 's/perl-//; s{[-/]}{::}g; s{\.pm(\n?)\z}{$1}'
 }
 
 function rpmize_perlmod()
