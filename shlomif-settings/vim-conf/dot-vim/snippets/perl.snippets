@@ -115,6 +115,7 @@ snippet meth
 
 		return;
 	}
+
 # Method with return
 snippet methr
 	sub ${1:function_name}
@@ -123,3 +124,13 @@ snippet methr
 
 		return ${2:ret};
 	}
+
+# Method with params
+snippet methp
+	sub ${1:function_name}
+	{
+		my ($self,${2:param}) = @_;
+
+		return;
+	}
+
