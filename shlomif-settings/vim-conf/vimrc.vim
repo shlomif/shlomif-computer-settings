@@ -51,6 +51,9 @@ set expandtab
 
 set backupdir=.,~/tmp,~/
 
+function File_Is_Readable(fn)
+    return filereadable(fnamemodify(a:fn, ":p"))
+endfunction
 
 " Set Incremental Search (I-Search)
 set incsearch
@@ -139,7 +142,7 @@ au BufNewFile,BufRead ~/Download/unpack/kernel/* so ~/conf/Vim/kernel.vim
 au BufNewFile,BufRead ~/progs/C/kernel/word-search/* so ~/conf/Vim/kernel.vim
 
 " Work-related directives - may be somewhat confidential.
-if filereadable("~/conf/Work/Vim/work.vim")
+if File_Is_Readable("~/conf/Work/Vim/work.vim")
     au BufNewFile,BufRead ~/progs/Work/* so ~/conf/Work/Vim/work.vim
 endif
 
@@ -241,7 +244,7 @@ if has('multi_byte') | digraphs .. 8230 | endif
 au FileType sass setlocal shiftwidth=4
 
 " Local customisations
-if filereadable("~/.local.vimrc.vim")
+if File_Is_Readable("~/.local.vimrc.vim")
     so ~/.local.vimrc.vim
 endif
 
