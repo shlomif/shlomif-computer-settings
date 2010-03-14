@@ -239,3 +239,9 @@ au BufNewFile,BufRead ~/progs/perl/www/web-automation/perl-5-wiki/trunk/combust/
 if has('multi_byte') | digraphs .. 8230 | endif
 
 au FileType sass setlocal shiftwidth=4
+
+" Local customisations
+if filereadable("~/.local.vimrc.vim")
+    so ~/.local.vimrc.vim
+endif
+
