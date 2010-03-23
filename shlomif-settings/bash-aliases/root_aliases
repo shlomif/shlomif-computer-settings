@@ -5,7 +5,7 @@ alias screen='screen -e "^^6"'
 
 u()
 {
-    ( cd $HOME ; urpmi --auto --auto-select --keep --resume )
+    ( cd $HOME ; urpmi --auto --auto-select --keep --resume --noclean )
 }
 
 uu()
