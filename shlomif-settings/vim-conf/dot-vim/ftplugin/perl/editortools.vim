@@ -1,10 +1,16 @@
-" App::EditorTools::Vim generated script
-" Version: 0.04
+" App::EditorTools::Command::InstallVim generated script
+" Version: 0.07
 
-map ,pp :call EditorToolsMenu()<cr>
-map ,pL :call RenameVariable()<cr>
-map ,pP :call RenamePackageFromPath()<cr>
-map ,pI :call IntroduceTemporaryVariable()<cr>
+" Only do this when not done yet for this buffer
+if exists("b:did_ftplugin")
+    finish
+endif
+let b:did_ftplugin = 1
+
+map <buffer> ,pp :call EditorToolsMenu()<cr>
+map <buffer> ,pL :call RenameVariable()<cr>
+map <buffer> ,pP :call RenamePackageFromPath()<cr>
+map <buffer> ,pI :call IntroduceTemporaryVariable()<cr>
 
 function! EditorToolsMenu()
     let list = [ "RenameVariable", "RenamePackageFromPath", "IntroduceTemporaryVariable" ]
@@ -31,7 +37,7 @@ function! RenameVariable()
     let col  = col('.')
     let filename = expand('%')
 
-    let command = "editortools-vim renamevariable -c " . col . " -l " . line  . " -r " . newvar 
+    let command = "editortools renamevariable -c " . col . " -l " . line  . " -r " . newvar 
 
     call Exec_command_and_replace_buffer( command )
 endfunction
@@ -41,8 +47,7 @@ function! RenamePackageFromPath()
     let col  = col('.')
     let filename = expand('%')
 
-    let command = "editortools-vim renamepackagefrompath -f " . filename 
-
+    let command = "editortools renamepackagefrompath -f " . filename 
     call Exec_command_and_replace_buffer( command )
 endfunction
 
@@ -54,7 +59,7 @@ function! IntroduceTemporaryVariable() range
     let end_str = end_pos[1] . "," . end_pos[2]
 
     let varname = input("Name for temporary variable? ")
-    let cmd = "editortools-vim introducetemporaryvariable -s " . start_str . " -e " . end_str
+    let cmd = "editortools introducetemporaryvariable -s " . start_str . " -e " . end_str
     if varname != ""
         let cmd .= " -v " . varname
     endif
@@ -94,3 +99,4 @@ function! PickFromList( name, list, ... )
 
     return a:list[choice]
 endfunction
+
