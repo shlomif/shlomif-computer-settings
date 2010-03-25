@@ -65,3 +65,14 @@ function cp_to_shlomi()
     cp -f /root/rpmbuild/SRPMS/*.src.rpm "$dest" ; 
     chown shlomi.shlomi "$dest"/*.src.rpm
 }
+
+e()
+{
+    urpme "$@"
+}
+
+# urpme orphans.
+eo()
+{
+    e --auto-orphans
+}
