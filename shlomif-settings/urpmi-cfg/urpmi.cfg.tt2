@@ -1,0 +1,284 @@
+{
+}
+
+plf-bigsearcher-plf-free ftp://ftp.free.fr/pub/Distributions_Linux/plf/mandriva/cooker/free/binary/[% arch %] {
+  key-ids: caba22ae
+  update
+}
+
+plf-bigsearcher-plf-nonfree ftp://ftp.free.fr/pub/Distributions_Linux/plf/mandriva/cooker/non-free/binary/[% arch %] {
+  key-ids: caba22ae
+  update
+}
+
+Main  {
+  ignore
+  key-ids: 26752624
+  mirrorlist: http://api.mandriva.com/mirrors/basic.cooker.[% arch %].list
+  with-dir: media/main/release
+}
+
+Main\ Updates  {
+  ignore
+  key-ids: 22458a98
+  mirrorlist: http://api.mandriva.com/mirrors/basic.cooker.[% arch %].list
+  update
+  with-dir: media/main/updates
+}
+
+Main\ Testing  {
+  ignore
+  key-ids: 26752624
+  mirrorlist: http://api.mandriva.com/mirrors/basic.cooker.[% arch %].list
+  with-dir: media/main/testing
+}
+
+Main\ Backports  {
+  ignore
+  key-ids: 26752624
+  mirrorlist: http://api.mandriva.com/mirrors/basic.cooker.[% arch %].list
+  with-dir: media/main/backports
+}
+
+Main\ debug  {
+  ignore
+  mirrorlist: http://api.mandriva.com/mirrors/basic.cooker.[% arch %].list
+  with-dir: media/debug_main/release
+}
+
+Main\ Updates\ debug  {
+  ignore
+  mirrorlist: http://api.mandriva.com/mirrors/basic.cooker.[% arch %].list
+  with-dir: media/debug_main/updates
+}
+
+Main\ Testing\ debug  {
+  ignore
+  key-ids: 26752624
+  mirrorlist: http://api.mandriva.com/mirrors/basic.cooker.[% arch %].list
+  with-dir: media/debug_main/testing
+}
+
+Main\ Backports\ debug  {
+  ignore
+  mirrorlist: http://api.mandriva.com/mirrors/basic.cooker.[% arch %].list
+  with-dir: media/debug_main/backports
+}
+
+Contrib  {
+  ignore
+  key-ids: 26752624
+  mirrorlist: http://api.mandriva.com/mirrors/basic.cooker.[% arch %].list
+  with-dir: media/contrib/release
+}
+
+Contrib\ Updates  {
+  ignore
+  key-ids: 26752624
+  mirrorlist: http://api.mandriva.com/mirrors/basic.cooker.[% arch %].list
+  update
+  with-dir: media/contrib/updates
+}
+
+Contrib\ Testing  {
+  ignore
+  key-ids: 26752624
+  mirrorlist: http://api.mandriva.com/mirrors/basic.cooker.[% arch %].list
+  with-dir: media/contrib/testing
+}
+
+Contrib\ Backports  {
+  ignore
+  key-ids: 26752624
+  mirrorlist: http://api.mandriva.com/mirrors/basic.cooker.[% arch %].list
+  with-dir: media/contrib/backports
+}
+
+Contrib\ debug  {
+  ignore
+  mirrorlist: http://api.mandriva.com/mirrors/basic.cooker.[% arch %].list
+  with-dir: media/debug_contrib/release
+}
+
+Contrib\ Updates\ debug  {
+  ignore
+  mirrorlist: http://api.mandriva.com/mirrors/basic.cooker.[% arch %].list
+  with-dir: media/debug_contrib/updates
+}
+
+Contrib\ Testing\ debug  {
+  ignore
+  key-ids: 26752624
+  mirrorlist: http://api.mandriva.com/mirrors/basic.cooker.[% arch %].list
+  with-dir: media/debug_contrib/testing
+}
+
+Contrib\ Backports\ debug  {
+  ignore
+  mirrorlist: http://api.mandriva.com/mirrors/basic.cooker.[% arch %].list
+  with-dir: media/debug_contrib/backports
+}
+
+Non-free  {
+  ignore
+  key-ids: 26752624
+  mirrorlist: http://api.mandriva.com/mirrors/basic.cooker.[% arch %].list
+  with-dir: media/non-free/release
+}
+
+Non-free\ Updates  {
+  ignore
+  key-ids: 22458a98
+  mirrorlist: http://api.mandriva.com/mirrors/basic.cooker.[% arch %].list
+  update
+  with-dir: media/non-free/updates
+}
+
+Non-free\ Testing  {
+  ignore
+  key-ids: 26752624
+  mirrorlist: http://api.mandriva.com/mirrors/basic.cooker.[% arch %].list
+  with-dir: media/non-free/testing
+}
+
+Non-free\ Backports  {
+  ignore
+  key-ids: 26752624
+  mirrorlist: http://api.mandriva.com/mirrors/basic.cooker.[% arch %].list
+  with-dir: media/non-free/backports
+}
+
+debug_non-free_release  {
+  ignore
+  mirrorlist: http://api.mandriva.com/mirrors/basic.cooker.[% arch %].list
+  with-dir: media/debug_non-free/release
+}
+
+debug_non-free_updates  {
+  ignore
+  mirrorlist: http://api.mandriva.com/mirrors/basic.cooker.[% arch %].list
+  with-dir: media/debug_non-free/updates
+}
+
+debug_non-free_testing  {
+  ignore
+  key-ids: 26752624
+  mirrorlist: http://api.mandriva.com/mirrors/basic.cooker.[% arch %].list
+  with-dir: media/debug_non-free/testing
+}
+
+debug_non-free_backports  {
+  ignore
+  mirrorlist: http://api.mandriva.com/mirrors/basic.cooker.[% arch %].list
+  with-dir: media/debug_non-free/backports
+}
+
+Main3 [% mdv_mirror %]/devel/cooker/[% arch %]/media/main/release {
+  key-ids: 26752624
+}
+
+Main\ Updates3 [% mdv_mirror %]/devel/cooker/[% arch %]/media/main/updates {
+  key-ids: 22458a98
+  update
+}
+
+Main\ Testing2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/main/testing {
+  key-ids: 26752624
+}
+
+Main\ Backports2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/main/backports {
+  ignore
+  key-ids: 26752624
+}
+
+Main\ debug2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_main/release {
+  key-ids: 26752624
+}
+
+Main\ Updates\ debug2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_main/updates {
+  ignore
+}
+
+Main\ Testing\ debug2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_main/testing {
+  key-ids: 26752624
+}
+
+Main\ Backports\ debug2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_main/backports {
+  ignore
+}
+
+Contrib2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/contrib/release {
+  key-ids: 26752624
+}
+
+Contrib\ Updates3 [% mdv_mirror %]/devel/cooker/[% arch %]/media/contrib/updates {
+  key-ids: 26752624
+  update
+}
+
+Contrib\ Testing2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/contrib/testing {
+  key-ids: 26752624
+}
+
+Contrib\ Backports2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/contrib/backports {
+  ignore
+  key-ids: 26752624
+}
+
+Contrib\ debug2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_contrib/release {
+  key-ids: 26752624
+}
+
+Contrib\ Updates\ debug2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_contrib/updates {
+  ignore
+}
+
+Contrib\ Testing\ debug2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_contrib/testing {
+  key-ids: 26752624
+}
+
+Contrib\ Backports\ debug2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_contrib/backports {
+  ignore
+}
+
+Non-free3 [% mdv_mirror %]/devel/cooker/[% arch %]/media/non-free/release {
+  key-ids: 26752624
+}
+
+Non-free\ Updates3 [% mdv_mirror %]/devel/cooker/[% arch %]/media/non-free/updates {
+  key-ids: 22458a98
+  update
+}
+
+Non-free\ Testing2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/non-free/testing {
+  key-ids: 26752624
+}
+
+Non-free\ Backports2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/non-free/backports {
+  ignore
+  key-ids: 26752624
+}
+
+debug_non-free_release2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_non-free/release {
+  key-ids: 26752624
+}
+
+debug_non-free_updates2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_non-free/updates {
+  ignore
+}
+
+debug_non-free_testing2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_non-free/testing {
+  key-ids: 26752624
+}
+
+debug_non-free_backports2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_non-free/backports {
+  ignore
+}
+
+plf-debug ftp://ftp.free.fr/pub/Distributions_Linux/plf/mandriva/cooker/free/debug/[% arch %] {
+  key-ids: caba22ae
+}
+
+plf-nonfree-debug ftp://ftp.free.fr/pub/Distributions_Linux/plf/mandriva/cooker/non-free/debug/[% arch %] {
+  key-ids: caba22ae
+}
