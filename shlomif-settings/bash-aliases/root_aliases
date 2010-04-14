@@ -3,9 +3,23 @@
 # For GNU screen to use a different key-binding
 alias screen='screen -e "^^6"'
 
+_sys()
+{
+    echo "$@"
+    "$@"
+}
+
 u()
 {
-    ( cd $HOME ; urpmi --auto --auto-select --keep --resume --noclean )
+    local common_args
+    common_args="--auto --keep --resume --noclean --downloader wget --wget-options -c"
+    ( cd $HOME ;
+    if test "$#" -eq 0 ; then
+        _sys urpmi $common_args --auto-select;
+    else
+        _sys urpmi $common_args "$@" ;
+    fi
+    )
 }
 
 uu()
