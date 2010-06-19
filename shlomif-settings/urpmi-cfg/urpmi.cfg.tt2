@@ -182,9 +182,12 @@ Main\ Updates3 [% mdv_mirror %]/devel/cooker/[% arch %]/media/main/updates {
   update
 }
 
+[% IF (with_testing) %]
 Main\ Testing2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/main/testing {
   key-ids: 26752624
 }
+
+[% END %]
 
 Main\ Backports2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/main/backports {
   ignore
@@ -199,9 +202,11 @@ Main\ Updates\ debug2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_main/
   ignore
 }
 
+[% IF (with_testing) %]
 Main\ Testing\ debug2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_main/testing {
   key-ids: 26752624
 }
+[% END %]
 
 Main\ Backports\ debug2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_main/backports {
   ignore
@@ -216,9 +221,11 @@ Contrib\ Updates3 [% mdv_mirror %]/devel/cooker/[% arch %]/media/contrib/updates
   update
 }
 
+[% IF (with_testing) %]
 Contrib\ Testing2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/contrib/testing {
   key-ids: 26752624
 }
+[% END %]
 
 Contrib\ Backports2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/contrib/backports {
   ignore
@@ -233,9 +240,11 @@ Contrib\ Updates\ debug2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_co
   ignore
 }
 
+[% IF (with_testing) %]
 Contrib\ Testing\ debug2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_contrib/testing {
   key-ids: 26752624
 }
+[% END %]
 
 Contrib\ Backports\ debug2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_contrib/backports {
   ignore
@@ -250,9 +259,11 @@ Non-free\ Updates3 [% mdv_mirror %]/devel/cooker/[% arch %]/media/non-free/updat
   update
 }
 
+[% IF (with_testing) %]
 Non-free\ Testing2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/non-free/testing {
   key-ids: 26752624
 }
+[% END %]
 
 Non-free\ Backports2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/non-free/backports {
   ignore
@@ -267,9 +278,11 @@ debug_non-free_updates2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_non
   ignore
 }
 
+[% IF (with_testing) %]
 debug_non-free_testing2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_non-free/testing {
   key-ids: 26752624
 }
+[% END %]
 
 debug_non-free_backports2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_non-free/backports {
   ignore
