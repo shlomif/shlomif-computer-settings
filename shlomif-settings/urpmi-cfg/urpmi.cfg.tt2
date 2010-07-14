@@ -1,12 +1,24 @@
+[% SET mdv_base_dir = mdv_mirror %]
+[% IF ver %]
+[% SET mdv_base_dir = mdv_base_dir _ "/official/" _ ver %]
+[% SET plf_ver = ver %]
+[% SET plf_release = "release/" %]
+[% ELSE %]
+[% SET mdv_base_dir = mdv_base_dir _ "/devel/cooker/" _ arch %]
+[% SET plf_ver = "cooker" %]
+[% SET plf_release = "" %]
+[% END %]
+[% SET mdv_base_dir = mdv_base_dir _ "/" _ arch %]
+
 {
 }
 
-plf-bigsearcher-plf-free ftp://ftp.free.fr/pub/Distributions_Linux/plf/mandriva/cooker/free/binary/[% arch %] {
+plf-bigsearcher-plf-free ftp://ftp.free.fr/pub/Distributions_Linux/plf/mandriva/[% plf_ver %]/free/[%plf_release %]binary/[% arch %] {
   key-ids: caba22ae
   update
 }
 
-plf-bigsearcher-plf-nonfree ftp://ftp.free.fr/pub/Distributions_Linux/plf/mandriva/cooker/non-free/binary/[% arch %] {
+plf-bigsearcher-plf-nonfree ftp://ftp.free.fr/pub/Distributions_Linux/plf/mandriva/[% plf_ver %]/non-free/[%plf_release %]binary/[% arch %] {
   key-ids: caba22ae
   update
 }
@@ -173,125 +185,125 @@ debug_non-free_backports  {
   with-dir: media/debug_non-free/backports
 }
 
-Main3 [% mdv_mirror %]/devel/cooker/[% arch %]/media/main/release {
+Main3 [% mdv_base_dir %]/media/main/release {
   key-ids: 26752624
 }
 
-Main\ Updates3 [% mdv_mirror %]/devel/cooker/[% arch %]/media/main/updates {
+Main\ Updates3 [% mdv_base_dir %]/media/main/updates {
   key-ids: 22458a98
   update
 }
 
 [% IF (with_testing) %]
-Main\ Testing2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/main/testing {
+Main\ Testing2 [% mdv_base_dir %]/media/main/testing {
   key-ids: 26752624
 }
 
 [% END %]
 
-Main\ Backports2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/main/backports {
+Main\ Backports2 [% mdv_base_dir %]/media/main/backports {
   ignore
   key-ids: 26752624
 }
 
-Main\ debug2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_main/release {
+Main\ debug2 [% mdv_base_dir %]/media/debug_main/release {
   key-ids: 26752624
 }
 
-Main\ Updates\ debug2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_main/updates {
+Main\ Updates\ debug2 [% mdv_base_dir %]/media/debug_main/updates {
   ignore
 }
 
 [% IF (with_testing) %]
-Main\ Testing\ debug2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_main/testing {
+Main\ Testing\ debug2 [% mdv_base_dir %]/media/debug_main/testing {
   key-ids: 26752624
 }
 [% END %]
 
-Main\ Backports\ debug2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_main/backports {
+Main\ Backports\ debug2 [% mdv_base_dir %]/media/debug_main/backports {
   ignore
 }
 
-Contrib2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/contrib/release {
+Contrib2 [% mdv_base_dir %]/media/contrib/release {
   key-ids: 26752624
 }
 
-Contrib\ Updates3 [% mdv_mirror %]/devel/cooker/[% arch %]/media/contrib/updates {
+Contrib\ Updates3 [% mdv_base_dir %]/media/contrib/updates {
   key-ids: 26752624
   update
 }
 
 [% IF (with_testing) %]
-Contrib\ Testing2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/contrib/testing {
+Contrib\ Testing2 [% mdv_base_dir %]/media/contrib/testing {
   key-ids: 26752624
 }
 [% END %]
 
-Contrib\ Backports2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/contrib/backports {
+Contrib\ Backports2 [% mdv_base_dir %]/media/contrib/backports {
   ignore
   key-ids: 26752624
 }
 
-Contrib\ debug2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_contrib/release {
+Contrib\ debug2 [% mdv_base_dir %]/media/debug_contrib/release {
   key-ids: 26752624
 }
 
-Contrib\ Updates\ debug2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_contrib/updates {
+Contrib\ Updates\ debug2 [% mdv_base_dir %]/media/debug_contrib/updates {
   ignore
 }
 
 [% IF (with_testing) %]
-Contrib\ Testing\ debug2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_contrib/testing {
+Contrib\ Testing\ debug2 [% mdv_base_dir %]/media/debug_contrib/testing {
   key-ids: 26752624
 }
 [% END %]
 
-Contrib\ Backports\ debug2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_contrib/backports {
+Contrib\ Backports\ debug2 [% mdv_base_dir %]/media/debug_contrib/backports {
   ignore
 }
 
-Non-free3 [% mdv_mirror %]/devel/cooker/[% arch %]/media/non-free/release {
+Non-free3 [% mdv_base_dir %]/media/non-free/release {
   key-ids: 26752624
 }
 
-Non-free\ Updates3 [% mdv_mirror %]/devel/cooker/[% arch %]/media/non-free/updates {
+Non-free\ Updates3 [% mdv_base_dir %]/media/non-free/updates {
   key-ids: 22458a98
   update
 }
 
 [% IF (with_testing) %]
-Non-free\ Testing2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/non-free/testing {
+Non-free\ Testing2 [% mdv_base_dir %]/media/non-free/testing {
   key-ids: 26752624
 }
 [% END %]
 
-Non-free\ Backports2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/non-free/backports {
+Non-free\ Backports2 [% mdv_base_dir %]/media/non-free/backports {
   ignore
   key-ids: 26752624
 }
 
-debug_non-free_release2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_non-free/release {
+debug_non-free_release2 [% mdv_base_dir %]/media/debug_non-free/release {
   key-ids: 26752624
 }
 
-debug_non-free_updates2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_non-free/updates {
+debug_non-free_updates2 [% mdv_base_dir %]/media/debug_non-free/updates {
   ignore
 }
 
 [% IF (with_testing) %]
-debug_non-free_testing2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_non-free/testing {
+debug_non-free_testing2 [% mdv_base_dir %]/media/debug_non-free/testing {
   key-ids: 26752624
 }
 [% END %]
 
-debug_non-free_backports2 [% mdv_mirror %]/devel/cooker/[% arch %]/media/debug_non-free/backports {
+debug_non-free_backports2 [% mdv_base_dir %]/media/debug_non-free/backports {
   ignore
 }
 
-plf-debug ftp://ftp.free.fr/pub/Distributions_Linux/plf/mandriva/cooker/free/debug/[% arch %] {
+plf-debug ftp://ftp.free.fr/pub/Distributions_Linux/plf/mandriva/[% plf_ver %]/free/[%plf_release %]debug/[% arch %] {
   key-ids: caba22ae
 }
 
-plf-nonfree-debug ftp://ftp.free.fr/pub/Distributions_Linux/plf/mandriva/cooker/non-free/debug/[% arch %] {
+plf-nonfree-debug ftp://ftp.free.fr/pub/Distributions_Linux/plf/mandriva/[% plf_ver %]/non-free/[%plf_release %]debug/[% arch %] {
   key-ids: caba22ae
 }
