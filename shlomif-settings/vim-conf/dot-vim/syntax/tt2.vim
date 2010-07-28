@@ -1,25 +1,13 @@
-" Vim syntax file
-" Language: TT2 ( Perl Module Template-Toolkit 2.x )
-" References:   Template-Toolkit 2 
-"                   http://search.cpan.org/~abw/Template-Toolkit/
-"                   http://template-toolkit.org/
-"                   C:\> perldoc Template
-"                   C:\> perldoc Template::Manual::Directives
-" Last Change:  26 Nov 2003
-" Filenames:    *.tt2
-" Maintainar:   Moriki, Atsushi <four@olive.freemail.ne.jp>
-" Version:      0.1.1
-" Summary:      Syntax Highlight for Template-Toolkit 2.x
-" Description:  Syntax Highlight for Template-Toolkit 2.x
-"       Contain Perl code in PERL/RAWPERL directive. (runtime sytax/perl.vim)
-"       No fold.
-"       HTML syntax for including TT2 syntax. ( tt2html.vim / unfinished )
-"       Can define START_TAG/END_TAG for your style.
+" Language:     TT2 (Perl Template Toolkit)
+" Maintainer:   Andy Lester <andy@petdance.com>
+" Author:       Moriki, Atsushi <4woods+vim@gmail.com>
+" URL:          http://github.com/petdance/vim-perl
+" Last Change:  2010-07-21
 "
 " Instration:
 "   put tt2.vim and tt2html.vim in to your syntax diretory.
 "
-"   add below in filetype.vim.
+"   add below in your filetype.vim.
 "       au BufNewFile,BufRead *.tt2 setf tt2
 "           or
 "       au BufNewFile,BufRead *.tt2
@@ -38,6 +26,21 @@
 "       :let b:tt2_syn_tags = '<? ?>'
 "       "TT2 and HTML"
 "       :let b:tt2_syn_tags = '\[% %] <!-- -->'
+"
+" Changes:
+"           0.1.3
+"               Changed fileformat from 'dos' to 'unix'
+"               Deleted 'echo' that print obstructive message
+"           0.1.2
+"               Added block comment syntax
+"               e.g. [%# COMMENT
+"                        COMMENT TOO %]
+"                    [%# IT'S SAFE %]  HERE IS OUTSIDE OF TT2 DIRECTIVE
+"                    [% # WRONG!! %]   HERE STILL BE COMMENT
+"           0.1.1
+"               Release
+"           0.1.0
+"               Internal
 "
 " License: follow Vim :help uganda
 "
@@ -78,6 +81,12 @@ if exists("b:tt2_syn_tags")
                     \ 'end=+[-]\=\(' . s:ed . '\)+ '.
                     \ 'contains=@tt2_statement_cluster keepend extend'
 
+        exec 'syn region  tt2_commentblock_region '.
+                    \ 'matchgroup=tt2_tag '.
+                    \ 'start=+\(' . s:st .'\)[-]\=\(#\)\@=+ '.
+                    \ 'end=+[-]\=\(' . s:ed . '\)+ '.
+                    \ 'keepend extend'
+
         "Include Perl syntax when 'PERL' 'RAWPERL' block
         if exists("b:tt2_syn_inc_perl")
             syn include @Perl $VIMRUNTIME/syntax/perl.vim
@@ -86,7 +95,7 @@ if exists("b:tt2_syn_tags")
                         \ 'end=+' . s:st . '[-]\=\s*END+me=s-1 contains=@Perl keepend'
         endif
 
-        " echo 'TAGS ' . s:st . ' ' . s:ed
+        "echo 'TAGS ' . s:st . ' ' . s:ed
         unlet s:st
         unlet s:ed
     endwhile
@@ -97,7 +106,13 @@ else
                 \ matchgroup=tt2_tag
                 \ start=+\(\[%\)[-]\=+
                 \ end=+[-]\=%\]+
-                \ contains=@tt2_statement_cluster keepend
+                \ contains=@tt2_statement_cluster keepend extend
+
+    syn region  tt2_commentblock_region
+                \ matchgroup=tt2_tag
+                \ start=+\(\[%\)[-]\=#+
+                \ end=+[-]\=%\]+
+                \ keepend extend
 
     "Include Perl syntax when 'PERL' 'RAWPERL' block
     if exists("b:tt2_syn_inc_perl")
@@ -115,7 +130,7 @@ syn keyword tt2_directive contained
             \ LAST NEXT BREAK STOP BLOCK
             \ IF IN UNLESS ELSIF FOR FOREACH WHILE SWITCH CASE
             \ USE PLUGIN MACRO META
-            \ TRY FINAL RETURN LAST 
+            \ TRY FINAL RETURN LAST
             \ CLEAR TO STEP AND OR NOT MOD DIV
             \ ELSE PERL RAWPERL END
 syn match   tt2_directive +|+ contained
@@ -160,11 +175,12 @@ syn match   tt2_blockname_joint "+"                    contained                
 
 syn cluster tt2_statement_cluster contains=tt2_directive,tt2_variable,tt2_operator,tt2_string_q,tt2_string_qq,tt2_deref,tt2_comment,tt2_func,tt2_bracket_b,tt2_bracket_r,tt2_number
 
-"Sincronizing
+" Synchronizing
 syn sync minlines=50
 
 hi def link tt2_tag         Type
 hi def link tt2_tag_region  Type
+hi def link tt2_commentblock_region Comment
 hi def link tt2_directive   Statement
 hi def link tt2_variable    Identifier
 hi def link tt2_ivariable   Identifier
