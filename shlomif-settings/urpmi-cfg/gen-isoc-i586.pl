@@ -12,7 +12,7 @@ $template->process(
     {
         arch => "i586",
         mdv_mirror => "ftp://mirror.isoc.org.il/mandriva",
-        with_testing => 0,
+        with_testing => 1,
     },
     "$ENV{HOME}/urpmi.cfg",
 );
