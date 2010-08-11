@@ -1,0 +1,3 @@
+&parse_options("HistFile=$ENV{HOME}/.perldb-history HistSize=5000");
+# For Catalyst-based apps.
+$DB::deep = 500;
