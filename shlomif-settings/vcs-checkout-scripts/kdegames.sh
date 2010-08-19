@@ -1,2 +1,2 @@
 #!/bin/bash
-svn co 'svn://anonsvn.kde.org/home/kde/trunk/KDE/kdegames'
+svn co 'svn+ssh://svn.kde.org/home/kde/trunk/KDE/kdegames'
