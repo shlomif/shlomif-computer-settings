@@ -243,8 +243,11 @@ if has('multi_byte') | digraphs .. 8230 | endif
 
 au FileType sass setlocal shiftwidth=4
 
+au BufNewFile ~/conf/svn/*.sh r ~/conf/svn/sample.sh | 1d
+
 " Local customisations
 if File_Is_Readable("~/.local.vimrc.vim")
     so ~/.local.vimrc.vim
 endif
+
 
