@@ -72,12 +72,12 @@ function qp()
     urpmq --whatprovides "$(rpmize_perlmod "$pm")" ; 
 }
 
-function cp_to_shlomi()
+function cp_to_shlomif()
 {
     local dest
-    dest=~shlomi/progs/Rpms/SRPMS/
+    dest=~shlomif/progs/Rpms/SRPMS/
     cp -f /root/rpmbuild/SRPMS/*.src.rpm "$dest" ; 
-    chown shlomi.shlomi "$dest"/*.src.rpm
+    chown shlomif.shlomif "$dest"/*.src.rpm
 }
 
 e()
