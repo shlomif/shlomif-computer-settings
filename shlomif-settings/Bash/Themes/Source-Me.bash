@@ -1,5 +1,5 @@
 __themes_dir="$(dirname $BASH_SOURCE[-1])"
-__private_themes_dir="$__themes_dir/../private-themes"
+__private_themes_dir="$HOME/conf/Bash/private-themes"
 
 function load_common
 {
