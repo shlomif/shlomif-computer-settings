@@ -1,11 +1,20 @@
 load_common mymake
 load_common completion
 load_common prompt
-# load_common gen_patch
+
 base="$HOME/progs/perl/cpan/XML/Grammar/Fortune"
 trunk="$base/trunk"
 module="$trunk/XML-Grammar-Fortune/module"
 this="$module"
+
+setup()
+{
+    (
+        mkdir -p "$base"
+        cd "$base"
+        svn co 'https://svn.berlios.de/svnroot/repos/web-cpan/XML-Grammar-Fortune/trunk'
+    )
+}
 
 __dist_name()
 {
