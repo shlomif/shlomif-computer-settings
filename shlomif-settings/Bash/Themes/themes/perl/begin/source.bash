@@ -1,5 +1,6 @@
 load_common mymake
 load_common prompt
+load_common no_implicit_make
 
 base="$HOME/Docs/programming/Perl/web-sites/perl-begin"
 trunk="$base/trunk"
