@@ -102,5 +102,5 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u:\$(prompt)\\$ "
+PS1="\\u@\\h[xml-fortune]:\$(prompt)\\$ "
 
