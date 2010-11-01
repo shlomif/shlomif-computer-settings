@@ -56,5 +56,6 @@ fastdiff()
         "file://$HOME/Backup/svn-dumps/projectlocker/svnsync-repos/shlomif/homepage/trunk"
 }
 
-PS1="\\u[homepage]:\$(prompt)\\$ "
+export PATH="$HOME/apps/quadpres/bin:$PATH"
 
+PS1="\\u[homepage]:\$(prompt)\\$ "
