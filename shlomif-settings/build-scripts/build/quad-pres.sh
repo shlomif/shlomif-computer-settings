@@ -1,2 +1,2 @@
 #!/bin/bash
-./configure --prefix="$HOME/apps/test/quadpres/"
+./configure --prefix="$HOME/apps/quadpres/"
