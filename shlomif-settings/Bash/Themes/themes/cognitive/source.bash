@@ -31,6 +31,11 @@ share_with_smb()
     cp "$1" /home/smb/read_only_share/shlomif/
 }
 
+ang()
+{
+    kate "$base"/Tony/for-anger.txt &
+}
+
 PS1="\\u[cognitive]:\$(prompt)\\$ "
 
 cd "$this"
