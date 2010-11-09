@@ -10,9 +10,6 @@
 [% END %]
 [% SET mdv_base_dir = mdv_base_dir _ "/" _ arch %]
 
-{
-}
-
 plf-bigsearcher-plf-free ftp://ftp.free.fr/pub/Distributions_Linux/plf/mandriva/[% plf_ver %]/free/[%plf_release %]binary/[% arch %] {
   key-ids: caba22ae
   update
@@ -24,7 +21,7 @@ plf-bigsearcher-plf-nonfree ftp://ftp.free.fr/pub/Distributions_Linux/plf/mandri
 }
 
 Main3 [% mdv_base_dir %]/media/main/release {
-  key-ids: 26752624
+  key-ids: 70771ff3
 }
 
 Main\ Updates3 [% mdv_base_dir %]/media/main/updates {
@@ -49,7 +46,7 @@ Main\ debug2 [% mdv_base_dir %]/media/debug_main/release {
 }
 
 Main\ Updates\ debug2 [% mdv_base_dir %]/media/debug_main/updates {
-  ignore
+  key-ids: 22458a98
 }
 
 [% IF (with_testing) %]
@@ -59,11 +56,12 @@ Main\ Testing\ debug2 [% mdv_base_dir %]/media/debug_main/testing {
 [% END %]
 
 Main\ Backports\ debug2 [% mdv_base_dir %]/media/debug_main/backports {
+  key-ids: 26752624
   ignore
 }
 
 Contrib2 [% mdv_base_dir %]/media/contrib/release {
-  key-ids: 26752624
+  key-ids: 78d019f5
 }
 
 Contrib\ Updates3 [% mdv_base_dir %]/media/contrib/updates {
@@ -83,11 +81,11 @@ Contrib\ Backports2 [% mdv_base_dir %]/media/contrib/backports {
 }
 
 Contrib\ debug2 [% mdv_base_dir %]/media/debug_contrib/release {
-  key-ids: 26752624
+  key-ids: 78d019f5
 }
 
 Contrib\ Updates\ debug2 [% mdv_base_dir %]/media/debug_contrib/updates {
-  ignore
+  key-ids: 26752624
 }
 
 [% IF (with_testing) %]
@@ -97,15 +95,15 @@ Contrib\ Testing\ debug2 [% mdv_base_dir %]/media/debug_contrib/testing {
 [% END %]
 
 Contrib\ Backports\ debug2 [% mdv_base_dir %]/media/debug_contrib/backports {
-  ignore
-}
-
-Non-free3 [% mdv_base_dir %]/media/non-free/release {
   key-ids: 26752624
 }
 
+Non-free3 [% mdv_base_dir %]/media/non-free/release {
+  key-ids: 70771ff3
+}
+
 Non-free\ Updates3 [% mdv_base_dir %]/media/non-free/updates {
-  key-ids: 22458a98
+  key-ids: 26752624
   update
 }
 
@@ -121,11 +119,11 @@ Non-free\ Backports2 [% mdv_base_dir %]/media/non-free/backports {
 }
 
 debug_non-free_release2 [% mdv_base_dir %]/media/debug_non-free/release {
-  key-ids: 26752624
+  key-ids: 70771ff3
 }
 
 debug_non-free_updates2 [% mdv_base_dir %]/media/debug_non-free/updates {
-  ignore
+  key-ids: 22458a98
 }
 
 [% IF (with_testing) %]
@@ -135,7 +133,7 @@ debug_non-free_testing2 [% mdv_base_dir %]/media/debug_non-free/testing {
 [% END %]
 
 debug_non-free_backports2 [% mdv_base_dir %]/media/debug_non-free/backports {
-  ignore
+  key-ids: 26752624
 }
 
 plf-debug ftp://ftp.free.fr/pub/Distributions_Linux/plf/mandriva/[% plf_ver %]/free/[%plf_release %]debug/[% arch %] {
