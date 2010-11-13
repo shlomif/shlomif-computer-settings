@@ -18,5 +18,10 @@ prompt()
         "~=$HOME"
 }
 
+up()
+{
+    (cd "$trunk" && make upload upload_hexten)
+}
+
 PS1="\\u[perl-begin]:\$(prompt)\\$ "
 
