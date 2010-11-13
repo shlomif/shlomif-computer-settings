@@ -5,13 +5,21 @@ load_common completion
 base="$HOME/progs/perl/www/Nav-Menu/"
 trunk="$base/trunk"
 this="$trunk/module"
-rw_repos_url="svn+ssh://svn.berlios.de/svnroot/repos/web-cpan/nav-menu"
-read_repos_url="svn://svn.berlios.de/web-cpan/nav-menu"
+rw_repos_url="https://svn.berlios.de/svnroot/repos/web-cpan/nav-menu"
+read_repos_url="http://svn.berlios.de/web-cpan/nav-menu"
 test_dir="$trunk/tests/integration/sites-gen"
 
 # Make sure that gvim's filename completion ignores filenames that it should
 # not edit.
 
+setup()
+{
+    (
+        mkdir -p "$base"
+        cd "$base"
+        svn co "$rw_repos_url/trunk"
+    )
+}
 __dist_name()
 {
     (cd "$this" &&
