@@ -1,6 +1,5 @@
 #!/bin/sh
 
-. $HOME/conf/build/subversion-base.sh
+. "$HOME"/conf/build/subversion-base.sh
 
-./configure --prefix=/usr/local/apps/subversion $args
-
+./configure --prefix=/opt/apache2-shlomif $args
