@@ -39,7 +39,8 @@ endif
 
 " Add Microsoft Windows-like behaviour
 " Old habits die hard.
-source $VIMRUNTIME/mswin.vim
+"  - cancelled so old habits will die
+" source $VIMRUNTIME/mswin.vim
 
 " Make sure that indentation is 4 whitespace
 set shiftwidth=4
@@ -96,7 +97,7 @@ autocmd BufNewFile,BufRead ~/progs/freecell/*/t/*.py call Dot_t_file_type()
 
 autocmd BufNewFile,BufRead ~/Download/unpack/graphics/*.pdb set filetype=perl
 
-set guifont=DejaVu\ Sans\ Mono\ 11
+set guifont=DejaVu\ Sans\ Mono\ 10
 
 " Cancelling so the Hebrew keyboard won't be so bad.
 " so ~/conf/Vim/hebrew.vim
