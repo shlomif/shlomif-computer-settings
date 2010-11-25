@@ -47,6 +47,14 @@ function rpmize_perlmod()
     echo "perl($(normalize_perlmod "$pm"))"
 }
 
+function debianize_perlmod()
+{
+    local pm="$1"
+    shift
+
+    echo "lib$(normalize_perlmod "$pm" | perl -pe 's/::/-/')-perl"
+}
+
 function up()
 { 
     local pm="$1"
@@ -78,6 +86,14 @@ function cp_to_shlomif()
     dest=~shlomif/progs/Rpms/SRPMS/
     cp -f /root/rpmbuild/SRPMS/*.src.rpm "$dest" ; 
     chown shlomif.shlomif "$dest"/*.src.rpm
+}
+
+function pap()
+{
+    local pm="$1"
+    shift
+
+    apt-get install "$(debianize_perlmod "$pm")" ;
 }
 
 e()
