@@ -1,5 +1,6 @@
 load_common mymake
 load_common completion
+load_common prompt
 
 cpan_base="$HOME/progs/perl/cpan"
 repos="$cpan_base/hg"
@@ -88,4 +89,14 @@ dt()
 }
 
 cd $this
+
+prompt()
+{
+    __prompt_cmd \
+        "\$trunk=$trunk" \
+        "\$cpan_base=$cpan_base" \
+        "~=$HOME"
+}
+
+PS1="\\u[Module-Format]:\$(prompt)\\$ "
 
