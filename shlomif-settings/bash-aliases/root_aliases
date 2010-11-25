@@ -52,7 +52,7 @@ function debianize_perlmod()
     local pm="$1"
     shift
 
-    echo "lib$(normalize_perlmod "$pm" | perl -pe 's/::/-/')-perl"
+    echo "lib$(normalize_perlmod "$pm" | perl -pe 's/::/-/g;$_=lc($_)')-perl"
 }
 
 function up()

@@ -42,7 +42,7 @@ Main\ Backports2 [% mdv_base_dir %]/media/main/backports {
 }
 
 Main\ debug2 [% mdv_base_dir %]/media/debug_main/release {
-  key-ids: 26752624
+  key-ids: 70771ff3
 }
 
 Main\ Updates\ debug2 [% mdv_base_dir %]/media/debug_main/updates {
