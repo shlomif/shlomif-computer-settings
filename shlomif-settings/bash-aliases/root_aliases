@@ -32,29 +32,6 @@ wu()
     while ! u ; do true ; done
 }
 
-function normalize_perlmod()
-{
-    local pm="$1"
-    shift
-
-    echo "$pm" | perl -p -e 's/perl-//; s{[-/]}{::}g; s{\.pm(\n?)\z}{$1}'
-}
-
-function rpmize_perlmod()
-{
-    local pm="$1"
-    shift
-    echo "perl($(normalize_perlmod "$pm"))"
-}
-
-function debianize_perlmod()
-{
-    local pm="$1"
-    shift
-
-    echo "lib$(normalize_perlmod "$pm" | perl -pe 's/::/-/g;$_=lc($_)')-perl"
-}
-
 up()
 {
     urpmi --auto $(perlmf as_rpm_colon "$@")
@@ -62,11 +39,8 @@ up()
 
 function c()
 { 
-    local pm="$1"
-    shift
-
     cpan2dist --verbose --format=CPANPLUS::Dist::Mdv \
-        --install --timeout 0 "$(normalize_perlmod "$pm")" ; 
+        --install --timeout 0 $(perlmf as_colon "$@")
 }
 
 function qp()
@@ -74,7 +48,7 @@ function qp()
     local pm="$1"
     shift
 
-    urpmq --whatprovides "$(rpmize_perlmod "$pm")" ; 
+    urpmq --whatprovides "$(perlmf as_rpm_colon "$pm")" ; 
 }
 
 function cp_to_shlomif()
@@ -87,10 +61,7 @@ function cp_to_shlomif()
 
 function pap()
 {
-    local pm="$1"
-    shift
-
-    apt-get install "$(debianize_perlmod "$pm")" ;
+    apt-get install $(perlmf as_deb "$@");
 }
 
 e()
