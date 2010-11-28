@@ -55,12 +55,9 @@ function debianize_perlmod()
     echo "lib$(normalize_perlmod "$pm" | perl -pe 's/::/-/g;$_=lc($_)')-perl"
 }
 
-function up()
-{ 
-    local pm="$1"
-    shift
-
-    urpmi --auto "$(rpmize_perlmod "$pm")"
+up()
+{
+    urpmi --auto $(perlmf as_rpm_colon "$@")
 }
 
 function c()
