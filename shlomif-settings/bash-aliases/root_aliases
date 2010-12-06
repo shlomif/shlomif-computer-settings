@@ -40,7 +40,7 @@ up()
 function c()
 { 
     cpan2dist --verbose --format=CPANPLUS::Dist::Mdv \
-        --install --timeout 0 $(perlmf as_colon "$@")
+        --defaults --install --timeout 0 $(perlmf as_colon "$@")
 }
 
 function qp()
