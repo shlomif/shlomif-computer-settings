@@ -21,6 +21,12 @@ uq()
     _sys urpmq -i "$pm"
 }
 
+toxz()
+{
+    gunzip ~/*.tar.gz
+    xz -9 --extreme ~/*.tar
+}
+
 prompt()
 {
     __prompt_cmd \
