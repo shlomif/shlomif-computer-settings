@@ -251,4 +251,9 @@ if File_Is_Readable("~/.local.vimrc.vim")
     so ~/.local.vimrc.vim
 endif
 
+function! CopyAll()
+    normal ggVG"+y
+endfunction
+
+command CopyAll call CopyAll()
 
