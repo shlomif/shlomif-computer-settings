@@ -1,0 +1,1 @@
+vim_faq-13.vba: call delete('/home/shlomif/.vim/plugin/faq_plugin.vim')|call delete('/home/shlomif/.vim/doc/vim_faq.txt')
