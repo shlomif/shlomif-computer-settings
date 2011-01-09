@@ -1,11 +1,20 @@
 load_common mymake
 load_common completion
 load_common prompt
+
 # load_common gen_patch
 base="$HOME/progs/perl/cpan/App/Catable"
 trunk="$base/catable"
 module="$trunk/App-Catable"
 this="$module"
+
+setup()
+{
+    mkdir -p "$base"
+    cd "$base"
+    git clone 'git@github.com:shlomif/catable.git'
+    cd "$this"
+}
 
 # export PERL5LIB="$inst_modules_dir/lib/perl5/site_perl/$__perl_version/:$inst_modules_dir/lib/perl5/$__perl_version"
 
