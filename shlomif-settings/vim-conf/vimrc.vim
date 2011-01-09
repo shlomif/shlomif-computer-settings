@@ -181,7 +181,7 @@ au BufNewFile,BufRead ~/Docs/Diary/* so ~/conf/Vim/diary.vim
 
 " For VILisp - http://www.vim.org/scripts/script.php?script_id=221
 
-autocmd BufRead *.lsp,*.lisp so ~/Download/unpack/file/editors/vim/VIlisp-2.3/VIlisp.vim
+" autocmd BufRead *.lsp,*.lisp so ~/Download/unpack/file/editors/vim/VIlisp-2.3/VIlisp.vim
 
 let g:Perl_Shlomif_Settings_Loaded = 0
 
