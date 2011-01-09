@@ -34,7 +34,13 @@ prompt()
         "~=$HOME"
 }
 
+__sa()
+{
+    ssh-add
+}
 
 PS1="\\u[rpms]:\$(prompt)\\$ "
 
+__sa
 cd "$this"
+
