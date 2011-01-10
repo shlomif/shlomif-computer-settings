@@ -34,6 +34,11 @@ prompt()
         "~=$HOME"
 }
 
+pco()
+{
+    mdvsys co `perlmf rpm_dash "$1"`
+}
+
 __sa()
 {
     ssh-add
