@@ -1,2 +1,2 @@
 #!/bin/bash
-./configure --prefix="$HOME/apps/vlc"
+./configure --prefix="$HOME/apps/vlc" --enable-debug
