@@ -5,8 +5,8 @@ load_common prompt
 
 base="$HOME/progs/Work/insurgent"
 git_base="$base/git"
-git_dir="$git_base/socialmap"
-auth="$git_dir/dev/mojo-user-auth"
+git_dir="$git_base/www.insurgentsoftware.com"
+auth="$git_dir"
 this="$auth"
 
 __dist_name()
