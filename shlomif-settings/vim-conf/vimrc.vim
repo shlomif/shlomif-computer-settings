@@ -257,3 +257,4 @@ endfunction
 
 command CopyAll call CopyAll()
 
+source ~/.vim/colors/nuvola_shlomif.vim
