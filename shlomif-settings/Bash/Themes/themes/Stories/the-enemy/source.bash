@@ -29,5 +29,14 @@ prompt()
         "~=$HOME"
 }
 
+up()
+{
+    (
+        cd "$trunk"
+        make upload
+        HOMEPAGE_SSH_PATH="${__HOMEPAGE_REMOTE_PATH}" make upload
+    )
+}
+
 PS1="\\u[The-Enemy]:\$(prompt)\\$ "
 
