@@ -8,6 +8,8 @@ trunk="$repos"
 this="$trunk"
 rw_repos_url="ssh://hg@bitbucket.org/shlomif/the-enemy"
 
+export THE_ENEMY_DEST="the-enemy-glareenxet"
+
 # Make sure that gvim's filename completion ignores filenames that it should
 # not edit.
 
