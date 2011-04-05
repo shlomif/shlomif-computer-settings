@@ -258,4 +258,5 @@ endfunction
 
 command CopyAll call CopyAll()
 
-source ~/.vim/colors/nuvola_shlomif.vim
+" Remmed out because nuvola is a confusing color-scheme.
+" source ~/.vim/colors/nuvola_shlomif.vim
