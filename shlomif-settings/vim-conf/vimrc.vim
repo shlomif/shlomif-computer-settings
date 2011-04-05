@@ -128,6 +128,7 @@ vnoremenu ToolBar.Print		:echo "hello"<CR>
 " directories which just confuses the GIMP.
 
 autocmd BufNewFile,BufRead ~/.gimp-*.scm set nobackup
+autocmd BufNewFile,BufRead ~/.gimp-*.py set nobackup
 
 " This is to import the range-search commands.
 " so ~/conf/Vim/range-search.vim
@@ -150,7 +151,7 @@ endif
 " Personal details for perl-support
 let g:Perl_AuthorName      = 'Shlomi Fish'
 let g:Perl_AuthorRef       = 'SHLOMIF'
-let g:Perl_Email           = 'shlomif@iglu.org.il'
+let g:Perl_Email           = 'shlomif@shlomifish.org'
 let g:Perl_Company         = 'None'
 let g:Perl_BraceOnNewLine  = "yes"
 
