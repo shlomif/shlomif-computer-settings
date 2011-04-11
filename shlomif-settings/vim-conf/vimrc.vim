@@ -258,5 +258,13 @@ endfunction
 
 command CopyAll call CopyAll()
 
+function! StyledQuotes(start_line, end_line)
+    let cmd = a:start_line . ',' . a:end_line . 's/"\([^"]\+\)"/“\1”/'
+    exe cmd
+endfunction
+
+command -range StyledQuotes call StyledQuotes(<line1>,<line2>)
+
 " Remmed out because nuvola is a confusing color-scheme.
 " source ~/.vim/colors/nuvola_shlomif.vim
+
