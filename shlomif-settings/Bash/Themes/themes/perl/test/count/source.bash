@@ -3,6 +3,9 @@ load_common completion
 load_common prompt
 # load_common gen_patch
 
+repos="https://svn.berlios.de/svnroot/repos/web-cpan/Test-Count/"
+repos_trunk="${repos}trunk/"
+
 base="$HOME/progs/perl/cpan/Test/Count"
 trunk="$base/trunk"
 modules_dir="$trunk/modules"
@@ -109,6 +112,14 @@ prompt()
         "\$trunk=$trunk" \
         "\$base=$base" \
         "~=$HOME"
+}
+
+setup()
+{
+    mkdir -p "$base"
+    cd "$base"
+    svn co "$repos_trunk"
+    cd "$this"
 }
 
 PS1="\\u:\$(prompt)\\$ "
