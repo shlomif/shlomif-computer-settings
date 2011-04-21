@@ -247,6 +247,13 @@ au FileType sass setlocal shiftwidth=4
 
 au BufNewFile ~/conf/svn/*.sh r ~/conf/svn/sample.sh | 1d
 
+function! SetXslt()
+    let g:xml_tag_syntax_prefixes='xsl\|xhtml\|db5\|db\|docbook\|xml\|xlink'
+endfunction
+
+au BufNewFile,BufRead ~/*.xsl call SetXslt()
+au BufNewFile,BufRead ~/*.xslt call SetXslt()
+
 " Local customisations
 if File_Is_Readable("~/.local.vimrc.vim")
     so ~/.local.vimrc.vim
@@ -267,4 +274,5 @@ command -range StyledQuotes call StyledQuotes(<line1>,<line2>)
 
 " Remmed out because nuvola is a confusing color-scheme.
 " source ~/.vim/colors/nuvola_shlomif.vim
+
 
