@@ -88,10 +88,11 @@ __install_all_to_temp()
 prompt()
 {
     __prompt_cmd \
+        "\$fict=$fict" \
         "\$trunk=$trunk" \
         "\$base=$base" \
         "~=$HOME"
 }
 
-PS1="\\u:\$(prompt)\\$ "
+PS1="\\u[xml-fiction]:\$(prompt)\\$ "
 
