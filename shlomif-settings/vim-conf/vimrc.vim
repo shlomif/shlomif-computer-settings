@@ -235,7 +235,16 @@ let g:surround_indent = 1
 
 autocmd BufRead ~/progs/freecell/trunk/fc-solve/source/* map <F4> :!echo '<C-R><C-W>' >> ~/progs/freecell/trunk/fc-solve/source/scripts/ids-whitelist.txt<CR>
 
-au BufNewFile,BufRead ~/progs/freecell/trunk/*.txt setfiletype asciidoc
+au BufNewFile,BufRead ~/progs/freecell/trunk/*/AUTHORS.txt setfiletype asciidoc
+au BufNewFile,BufRead ~/progs/freecell/trunk/*/COPYING.txt setfiletype asciidoc
+au BufNewFile,BufRead ~/progs/freecell/trunk/*/DONE.txt setfiletype asciidoc
+au BufNewFile,BufRead ~/progs/freecell/trunk/*/HACKING.txt setfiletype asciidoc
+au BufNewFile,BufRead ~/progs/freecell/trunk/*/INSTALL.txt setfiletype asciidoc
+au BufNewFile,BufRead ~/progs/freecell/trunk/*/NEWS.txt setfiletype asciidoc
+au BufNewFile,BufRead ~/progs/freecell/trunk/*/README.txt setfiletype asciidoc
+au BufNewFile,BufRead ~/progs/freecell/trunk/*/README.win32.txt setfiletype asciidoc
+au BufNewFile,BufRead ~/progs/freecell/trunk/*/TODO.txt setfiletype asciidoc
+au BufNewFile,BufRead ~/progs/freecell/trunk/*/USAGE.txt setfiletype asciidoc
 au BufNewFile,BufRead ~/Docs/programming/Spark/*.txt setfiletype asciidoc
 au BufNewFile,BufRead *.asciidoc.txt setfiletype asciidoc
 au BufNewFile,BufRead ~/progs/perl/www/web-automation/perl-5-wiki/trunk/combust/*.txt setfiletype asciidoc
