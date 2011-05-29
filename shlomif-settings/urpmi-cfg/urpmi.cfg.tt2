@@ -10,6 +10,125 @@
 [% END %]
 [% SET mdv_base_dir = mdv_base_dir _ "/" _ arch %]
 
+{
+}
+
+Main [% mdv_base_dir %]/media/main/release {
+  key-ids: 70771ff3
+}
+
+Main\ Updates [% mdv_base_dir %]/media/main/updates {
+  key-ids: 22458a98
+  update
+}
+
+[% IF (with_testing) %]
+Main\ Testing [% mdv_base_dir %]/media/main/testing {
+  key-ids: 26752624
+}
+
+[% END %]
+
+Main\ Backports [% mdv_base_dir %]/media/main/backports {
+  ignore
+  key-ids: 26752624
+}
+
+Main\ debug [% mdv_base_dir %]/media/debug_main/release {
+  key-ids: 70771ff3
+}
+
+Main\ Updates\ debug [% mdv_base_dir %]/media/debug_main/updates {
+  key-ids: 22458a98
+}
+
+[% IF (with_testing) %]
+Main\ Testing\ debug [% mdv_base_dir %]/media/debug_main/testing {
+  key-ids: 26752624
+}
+[% END %]
+
+Main\ Backports\ debug [% mdv_base_dir %]/media/debug_main/backports {
+  key-ids: 26752624
+  ignore
+}
+
+Contrib [% mdv_base_dir %]/media/contrib/release {
+  key-ids: 78d019f5
+}
+
+Contrib\ Updates [% mdv_base_dir %]/media/contrib/updates {
+  key-ids: 26752624
+  update
+}
+
+[% IF (with_testing) %]
+Contrib\ Testing [% mdv_base_dir %]/media/contrib/testing {
+  key-ids: 26752624
+}
+[% END %]
+
+Contrib\ Backports [% mdv_base_dir %]/media/contrib/backports {
+  ignore
+  key-ids: 26752624
+}
+
+Contrib\ debug [% mdv_base_dir %]/media/debug_contrib/release {
+  key-ids: 78d019f5
+}
+
+Contrib\ Updates\ debug [% mdv_base_dir %]/media/debug_contrib/updates {
+  key-ids: 26752624
+}
+
+[% IF (with_testing) %]
+Contrib\ Testing\ debug [% mdv_base_dir %]/media/debug_contrib/testing {
+  key-ids: 26752624
+}
+[% END %]
+
+Contrib\ Backports\ debug [% mdv_base_dir %]/media/debug_contrib/backports {
+  key-ids: 26752624
+}
+
+Non-free [% mdv_base_dir %]/media/non-free/release {
+  key-ids: 70771ff3
+}
+
+Non-free\ Updates [% mdv_base_dir %]/media/non-free/updates {
+  key-ids: 26752624
+  update
+}
+
+[% IF (with_testing) %]
+Non-free\ Testing [% mdv_base_dir %]/media/non-free/testing {
+  key-ids: 26752624
+}
+[% END %]
+
+Non-free\ Backports [% mdv_base_dir %]/media/non-free/backports {
+  ignore
+  key-ids: 26752624
+}
+
+debug_non-free_release [% mdv_base_dir %]/media/debug_non-free/release {
+  key-ids: 70771ff3
+}
+
+debug_non-free_updates [% mdv_base_dir %]/media/debug_non-free/updates {
+  key-ids: 22458a98
+}
+
+[% IF (with_testing) %]
+debug_non-free_testing [% mdv_base_dir %]/media/debug_non-free/testing {
+  key-ids: 26752624
+}
+[% END %]
+
+debug_non-free_backports [% mdv_base_dir %]/media/debug_non-free/backports {
+  key-ids: 26752624
+}
+
 plf-bigsearcher-plf-free ftp://ftp.free.fr/pub/Distributions_Linux/plf/mandriva/[% plf_ver %]/free/[%plf_release %]binary/[% arch %] {
   key-ids: caba22ae
   update
@@ -18,122 +137,6 @@ plf-bigsearcher-plf-free ftp://ftp.free.fr/pub/Distributions_Linux/plf/mandriva/
 plf-bigsearcher-plf-nonfree ftp://ftp.free.fr/pub/Distributions_Linux/plf/mandriva/[% plf_ver %]/non-free/[%plf_release %]binary/[% arch %] {
   key-ids: caba22ae
   update
-}
-
-Main3 [% mdv_base_dir %]/media/main/release {
-  key-ids: 70771ff3
-}
-
-Main\ Updates3 [% mdv_base_dir %]/media/main/updates {
-  key-ids: 22458a98
-  update
-}
-
-[% IF (with_testing) %]
-Main\ Testing2 [% mdv_base_dir %]/media/main/testing {
-  key-ids: 26752624
-}
-
-[% END %]
-
-Main\ Backports2 [% mdv_base_dir %]/media/main/backports {
-  ignore
-  key-ids: 26752624
-}
-
-Main\ debug2 [% mdv_base_dir %]/media/debug_main/release {
-  key-ids: 70771ff3
-}
-
-Main\ Updates\ debug2 [% mdv_base_dir %]/media/debug_main/updates {
-  key-ids: 22458a98
-}
-
-[% IF (with_testing) %]
-Main\ Testing\ debug2 [% mdv_base_dir %]/media/debug_main/testing {
-  key-ids: 26752624
-}
-[% END %]
-
-Main\ Backports\ debug2 [% mdv_base_dir %]/media/debug_main/backports {
-  key-ids: 26752624
-  ignore
-}
-
-Contrib2 [% mdv_base_dir %]/media/contrib/release {
-  key-ids: 78d019f5
-}
-
-Contrib\ Updates3 [% mdv_base_dir %]/media/contrib/updates {
-  key-ids: 26752624
-  update
-}
-
-[% IF (with_testing) %]
-Contrib\ Testing2 [% mdv_base_dir %]/media/contrib/testing {
-  key-ids: 26752624
-}
-[% END %]
-
-Contrib\ Backports2 [% mdv_base_dir %]/media/contrib/backports {
-  ignore
-  key-ids: 26752624
-}
-
-Contrib\ debug2 [% mdv_base_dir %]/media/debug_contrib/release {
-  key-ids: 78d019f5
-}
-
-Contrib\ Updates\ debug2 [% mdv_base_dir %]/media/debug_contrib/updates {
-  key-ids: 26752624
-}
-
-[% IF (with_testing) %]
-Contrib\ Testing\ debug2 [% mdv_base_dir %]/media/debug_contrib/testing {
-  key-ids: 26752624
-}
-[% END %]
-
-Contrib\ Backports\ debug2 [% mdv_base_dir %]/media/debug_contrib/backports {
-  key-ids: 26752624
-}
-
-Non-free3 [% mdv_base_dir %]/media/non-free/release {
-  key-ids: 70771ff3
-}
-
-Non-free\ Updates3 [% mdv_base_dir %]/media/non-free/updates {
-  key-ids: 26752624
-  update
-}
-
-[% IF (with_testing) %]
-Non-free\ Testing2 [% mdv_base_dir %]/media/non-free/testing {
-  key-ids: 26752624
-}
-[% END %]
-
-Non-free\ Backports2 [% mdv_base_dir %]/media/non-free/backports {
-  ignore
-  key-ids: 26752624
-}
-
-debug_non-free_release2 [% mdv_base_dir %]/media/debug_non-free/release {
-  key-ids: 70771ff3
-}
-
-debug_non-free_updates2 [% mdv_base_dir %]/media/debug_non-free/updates {
-  key-ids: 22458a98
-}
-
-[% IF (with_testing) %]
-debug_non-free_testing2 [% mdv_base_dir %]/media/debug_non-free/testing {
-  key-ids: 26752624
-}
-[% END %]
-
-debug_non-free_backports2 [% mdv_base_dir %]/media/debug_non-free/backports {
-  key-ids: 26752624
 }
 
 plf-debug ftp://ftp.free.fr/pub/Distributions_Linux/plf/mandriva/[% plf_ver %]/free/[%plf_release %]debug/[% arch %] {
