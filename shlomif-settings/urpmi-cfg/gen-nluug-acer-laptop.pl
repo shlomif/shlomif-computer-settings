@@ -11,7 +11,7 @@ $template->process(
     "urpmi.cfg.tt2", 
     {
         arch => "x86_64",
-        mdv_mirror => "ftp://ftp.nluug.nl/pub/os/Linux/distr/Mandrivalinux",
+        mdv_mirror => "http://ftp.nluug.nl/pub/os/Linux/distr/Mandrivalinux",
     },
     "$ENV{HOME}/urpmi.cfg",
 );

@@ -4,7 +4,7 @@
 [% SET plf_ver = ver %]
 [% SET plf_release = "release/" %]
 [% ELSE %]
-[% SET mdv_base_dir = mdv_base_dir _ "/devel/cooker/" _ arch %]
+[% SET mdv_base_dir = mdv_base_dir _ "/devel/cooker" %]
 [% SET plf_ver = "cooker" %]
 [% SET plf_release = "" %]
 [% END %]
