@@ -1,10 +1,21 @@
 load_common mymake
 load_common completion
 load_common prompt
-# load_common gen_patch
-base="$HOME/progs/perl/cpan/Games/Solitaire"
-trunk="$base/Solitaire"
+
+base="$HOME/progs/perl/cpan/Games/Impatience"
+trunk="$base/git"
 this="$trunk"
+
+rw_repos_url="git@github.com:shlomif/Games-Impatience.git"
+
+setup()
+{
+    (
+        mkdir -p "$base"
+        cd "$base"
+        git clone "$rw_repos_url" git
+    )
+}
 
 __dist_name()
 {
