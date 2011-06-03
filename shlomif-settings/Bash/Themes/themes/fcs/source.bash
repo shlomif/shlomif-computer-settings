@@ -15,6 +15,7 @@ verify="$trunk/Games-Solitaire-Verify/Games-Solitaire-Verify"
 bench="$t_fcs/benchmarks"
 test_dir="$branches/trunk/testing/source"
 dd_branch="$branches/depth-dependent-moves-order/source"
+parallel="$t_fcs/scripts/parallel-solve-and-verify-for-bakers-game"
 
 this="$c_src"
 # this="$dd_branch"
@@ -30,6 +31,7 @@ prompt()
 {
     __prompt_cmd \
         "\$verify=$verify" \
+        "\$parallel=$parallel" \
         "\$presets=$presets" \
         "\$atomic_presets=$atomic_presets" \
         "\$trunk=$trunk" \
