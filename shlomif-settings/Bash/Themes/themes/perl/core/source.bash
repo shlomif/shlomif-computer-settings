@@ -1,5 +1,5 @@
-p5_base="$HOME/Download/unpack/perl/perl5"
-this="$p5_base/bleadperl/bleadperl-for-work"
+p5_base="$HOME/Download/unpack/perl/p5"
+this="$p5_base/git/perl"
 
 cd "$this"
 
