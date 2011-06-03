@@ -250,7 +250,11 @@ au BufNewFile,BufRead *.asciidoc.txt setfiletype asciidoc
 au BufNewFile,BufRead ~/progs/perl/www/web-automation/perl-5-wiki/trunk/combust/*.txt setfiletype asciidoc
 
 " So C-k.. will generate an ellipsis.
-if has('multi_byte') | digraphs .. 8230 | endif
+if has('multi_byte') 
+    digraphs .. 8230 
+    digraphs ,, 8222
+    digraphs `` 8220
+endif
 
 au FileType sass setlocal shiftwidth=4
 
