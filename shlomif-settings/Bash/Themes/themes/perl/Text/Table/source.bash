@@ -5,8 +5,8 @@ load_common prompt
 cpan_base="$HOME/progs/perl/cpan"
 base="$cpan_base/Text/Table"
 repos="$base/git"
-base="$repos/Text-Table"
-trunk="$base"
+module="$repos/Text-Table"
+trunk="$module"
 this="$trunk"
 rw_repos_url="git@github.com:shlomif/Text-Table.git"
 
