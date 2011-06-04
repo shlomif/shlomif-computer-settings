@@ -170,7 +170,22 @@ au BufNewFile,BufRead ~/Docs/homepage/homepage/trunk/lib/docbook/xml/*.xml call 
 
 au BufNewFile,BufRead ~/Docs/homepage/homepage/trunk/t2/art/recommendations/music/shlomi-fish-music-recommendations.xml so ~/conf/Vim/amazon-asin.vim
 
-au BufNewFile,BufRead ~/Docs/homepage/homepage/trunk/* set path=~/Docs/homepage/homepage/trunk/lib,~/Docs/homepage/homepage/trunk
+function Homepage_Customisation()
+    set path=~/Docs/homepage/homepage/trunk/lib,~/Docs/homepage/homepage/trunk
+    " so ~/conf/Vim/homepage.vim
+
+    " see http://vim.1045645.n5.nabble.com/How-do-one-open-files-for-editing-from-a-function-td1153531.html for why.
+    if !exists("*Homepage_Grep") 
+        function Homepage_Grep()
+            !bash bin/t2_find_ascii_quotes.bash
+            e results.txt | cbuf | cope
+        endfunction
+    endif
+
+    command! HGrep call Homepage_Grep()
+endfunction
+
+au BufNewFile,BufRead ~/Docs/homepage/homepage/trunk/* call Homepage_Customisation()
 
 " Remming out because let @f causes too many problems with special escapes
 
@@ -249,11 +264,15 @@ au BufNewFile,BufRead ~/Docs/programming/Spark/*.txt setfiletype asciidoc
 au BufNewFile,BufRead *.asciidoc.txt setfiletype asciidoc
 au BufNewFile,BufRead ~/progs/perl/www/web-automation/perl-5-wiki/trunk/combust/*.txt setfiletype asciidoc
 
-" So C-k.. will generate an ellipsis.
 if has('multi_byte') 
+    " So C-k.. will generate an ellipsis.
     digraphs .. 8230 
+    " So C-k,, will generate a Hebrew opening double-quotes
     digraphs ,, 8222
+    " So C-k`` will generate a Hebrew closing double-quotes
     digraphs `` 8220
+    " So C-kab (abbreviation) will generate a Hebrew abbreviation sign
+    digraphs ab 1524
 endif
 
 au FileType sass setlocal shiftwidth=4
