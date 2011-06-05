@@ -177,7 +177,7 @@ function Homepage_Customisation()
     " see http://vim.1045645.n5.nabble.com/How-do-one-open-files-for-editing-from-a-function-td1153531.html for why.
     if !exists("*Homepage_Grep_Results")
         function Homepage_Grep_Results()
-            e results.txt | cbuf | cope
+            e ascii_quotes_results.txt | cbuf | cope
         endfunction
     endif
     if !exists("*Homepage_Grep") 
