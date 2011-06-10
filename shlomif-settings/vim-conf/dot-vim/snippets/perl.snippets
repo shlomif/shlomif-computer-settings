@@ -135,3 +135,15 @@ snippet methp
 	}
 snippet ltb
 	 local $Test::Builder::Level = $Test::Builder::Level + 1;
+snippet xsor
+	sub ${1:field}
+	{
+		my $self = shift;
+
+		if (@_)
+		{
+			$self->{${1}} = shift;
+		}
+
+		return $self->{${1}};
+	}
