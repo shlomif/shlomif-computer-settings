@@ -142,8 +142,9 @@ snippet xsor
 
 		if (@_)
 		{
-			$self->{${1}} = shift;
+			$self->{$1} = shift;
 		}
 
-		return $self->{${1}};
+		return $self->{$1};
 	}
+
