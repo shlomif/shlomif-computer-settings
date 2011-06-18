@@ -313,4 +313,7 @@ command -range StyledQuotes call StyledQuotes(<line1>,<line2>)
 " Remmed out because nuvola is a confusing color-scheme.
 " source ~/.vim/colors/nuvola_shlomif.vim
 
+set runtimepath+=~/.vim/ultisnips_rep
+let g:UltiSnipsSnippetDirectories=["UltiSnips","ExtraUltiSnips"]
 
+command -nargs=+ BufOut redir => bufout | silent <args> | redir END | new | call append(0, substitute(strtrans(bufout), '\^@', "\r", 'g'))
