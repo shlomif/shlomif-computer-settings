@@ -4,9 +4,19 @@ load_common prompt
 # load_common gen_patch
 
 base="$HOME/progs/perl/cpan/XML/LibXML"
-trunk="$base/hg/perl-xml-libxml"
+hg_base="$base/hg"
+trunk="$hg_base/perl-xml-libxml"
 this="$trunk"
 remote_repo='ssh://hg@bitbucket.org/shlomif/perl-xml-libxml'
+
+setup()
+{
+    (
+        mkdir -p "$hg_base"
+        cd "$hg_base"
+        hg clone "$remote_repo"
+    )
+}
 
 __dist_name()
 {
