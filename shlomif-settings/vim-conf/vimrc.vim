@@ -314,7 +314,9 @@ command -range StyledQuotes call StyledQuotes(<line1>,<line2>)
 " source ~/.vim/colors/nuvola_shlomif.vim
 
 set runtimepath+=~/.vim/ultisnips_rep
-let g:UltiSnipsSnippetDirectories = ["UltiSnips","ExtraUltiSnips"]
-let g:UltiSnipsJumpBackwardTrigger = "<F6>"
+let g:UltiSnipsSnippetDirectories = ["ExtraUltiSnips"]
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 command -nargs=+ BufOut redir => bufout | silent <args> | redir END | new | call append(0, substitute(strtrans(bufout), '\^@', "\r", 'g'))
