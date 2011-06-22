@@ -9,10 +9,10 @@ snippet .
 endsnippet
 # Function
 snippet sub
-	sub ${1:function_name}
-	{
-		${2:#body ...}
-	}
+sub ${1:function_name}
+{
+    ${2:#body ...}
+}
 endsnippet
 # Conditional
 snippet if
@@ -104,53 +104,53 @@ snippet xfore
 endsnippet
 # Package
 snippet cl
-	package ${1:ClassName};
-	
-	use base qw(${2:ParentClass});
-	
-	sub new
-	{
-		my $class = shift;
+package ${1:ClassName};
 
-		my $self = bless {}, $class;
+use base qw(${2:ParentClass});
 
-		$self->_init(@_);
+sub new
+{
+    my $class = shift;
 
-		return $self;
-	}
-	
-	1;${3}
+    my $self = bless {}, $class;
+
+    $self->_init(@_);
+
+    return $self;
+}
+
+1;${3}
 endsnippet
 # Method
 snippet meth
-	sub ${1:function_name}
-	{
-		my $self = shift;
+sub ${1:function_name}
+{
+    my $self = shift;
 
-		${2:#body ...}
+    ${2:#body ...}
 
-		return;
-	}
+    return;
+}
 
 endsnippet
 # Method with return
 snippet methr
-	sub ${1:function_name}
-	{
-		my $self = shift;
+sub ${1:function_name}
+{
+    my $self = shift;
 
-		return ${2:ret};
-	}
+    return ${2:ret};
+}
 
 endsnippet
 # Method with params
 snippet methp
-	sub ${1:function_name}
-	{
-		my ($self,${2:param}) = @_;
+sub ${1:function_name}
+{
+    my ($self,${2:param}) = @_;
 
-		return;
-	}
+    return;
+}
 
 endsnippet
 
@@ -159,17 +159,17 @@ snippet ltb
 endsnippet
 
 snippet xsor
-	sub ${1:field}
-	{
-		my $self = shift;
+sub ${1:field}
+{
+    my $self = shift;
 
-		if (@_)
-		{
-			$self->{$1} = shift;
-		}
+    if (@_)
+    {
+        $self->{$1} = shift;
+    }
 
-		return $self->{$1};
-	}
+    return $self->{$1};
+}
 endsnippet
 
 snippet strict
