@@ -46,6 +46,12 @@ __sa()
 
 PS1="\\u[rpms]:\$(prompt)\\$ "
 
-__sa
-cd "$this"
+alias imp='mdvsys import'
+alias sub='mdvsys submit'
+alias co='mdvsys co'
+alias ci='mdvsys ci'
+alias b='mdvsys build -v -v'
 
+__sa
+
+cd "$this"
