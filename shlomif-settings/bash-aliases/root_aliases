@@ -37,9 +37,20 @@ up()
     urpmi --auto $(perlmf as_rpm_colon "$@")
 }
 
+function _cpan_d_format()
+{
+    (
+    if test -e /etc/mageia-release ; then
+        echo "CPANPLUS::Dist::Mageia"
+    else
+        echo "CPANPLUS::Dist::Mdv"
+    fi
+    )
+}
+
 function c()
 { 
-    cpan2dist --verbose --format=CPANPLUS::Dist::Mdv \
+    cpan2dist --verbose --format="$(_cpan_d_format)" \
         --defaults --install --timeout 0 $(perlmf as_colon "$@")
 }
 
