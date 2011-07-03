@@ -323,6 +323,11 @@ command -nargs=+ BufOut redir => bufout | silent <args> | redir END | new | call
 
 function! Perl_FileType_Settings()
     noremap <buffer>  <silent> <LocalLeader>rs         :call Perl_SyntaxCheck()<CR>:redraw!<CR>:call Perl_SyntaxCheckMsg()<CR>
+    " ---------- Add ':' to the keyword characters -----------
+    "            Tokens like 'File::Find' are recognized as
+    "            one keyword
+    "
+    setlocal iskeyword+=:
 endfunction
 
 autocmd FileType perl call Perl_FileType_Settings()
