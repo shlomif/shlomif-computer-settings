@@ -321,4 +321,8 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 command -nargs=+ BufOut redir => bufout | silent <args> | redir END | new | call append(0, substitute(strtrans(bufout), '\^@', "\r", 'g'))
 
-autocmd FileType perl noremap <buffer>  <silent> <LocalLeader>rs         :call Perl_SyntaxCheck()<CR>:redraw!<CR>:call Perl_SyntaxCheckMsg()<CR>
+function! Perl_FileType_Settings()
+    noremap <buffer>  <silent> <LocalLeader>rs         :call Perl_SyntaxCheck()<CR>:redraw!<CR>:call Perl_SyntaxCheckMsg()<CR>
+endfunction
+
+autocmd FileType perl call Perl_FileType_Settings()
