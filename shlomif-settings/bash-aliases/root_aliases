@@ -85,3 +85,5 @@ eo()
 {
     e --auto-orphans
 }
+
+alias q='urpmq --fuzzy -a'
