@@ -5,7 +5,8 @@ load_common sys
 
 base="$HOME/progs/Rpms"
 s="$base/SRPMS"
-this="$s"
+mag_base="$HOME/Download/unpack/Mandriva/Mageia"
+this="$mag_base"
 
 k()
 {
@@ -30,6 +31,7 @@ toxz()
 prompt()
 {
     __prompt_cmd \
+        "\$mageia=$mag_base" \
         "\$base=$base" \
         "~=$HOME"
 }
@@ -46,11 +48,12 @@ __sa()
 
 PS1="\\u[rpms]:\$(prompt)\\$ "
 
-alias imp='mdvsys import'
-alias sub='mdvsys submit'
-alias co='mdvsys co'
-alias ci='mdvsys ci'
-alias b='mdvsys build -v -v'
+alias imp='mgarepo import'
+alias sub='mgarepo submit'
+alias co='mgarepo co'
+alias ci='mgarepo ci'
+# alias b='mgarepo build -v -v'
+alias b='bm -l -b'
 
 __sa
 
