@@ -27,3 +27,4 @@ rpmbuild()
         `which rpmbuild` "$@"
     )
 }
+alias xz9='xz -9 --extreme'
