@@ -28,3 +28,8 @@ rpmbuild()
     )
 }
 alias xz9='xz -9 --extreme'
+cp_mods()
+{
+    touch "$@"
+    cp -i "$@" /home/music/Music/mp3s/Mods/
+}
