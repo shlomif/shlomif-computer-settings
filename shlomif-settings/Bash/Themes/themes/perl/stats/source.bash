@@ -4,6 +4,7 @@ load_common prompt
 # load_common gen_patch
 
 base="$HOME/progs/perl/cpan/Statistics"
+hg_base="$base"
 trunk="$base/trunk"
 stats_dir="$trunk/Statistics-Descriptive"
 this="$stats_dir"
@@ -11,8 +12,18 @@ build_scripts_dir="$trunk/build/test-and-install-all-modules"
 
 inst_modules_dir="$HOME/apps/perl/modules"
 modules_makefile="${build_scripts_dir}/Modules.mak"
+remote_repo='ssh://hg@bitbucket.org/shlomif/perl-statistics-descriptive'
 
 PATH="$inst_modules_dir/bin/:$PATH"
+
+setup()
+{
+    (
+        mkdir -p "$hg_base"
+        cd "$hg_base"
+        hg clone "$remote_repo" trunk
+    )
+}
 
 # Make sure that gvim's filename completion ignores filenames that it should
 # not edit.
