@@ -41,4 +41,4 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u:\$(prompt)\\$ "
+PS1="\\u[abc-path]:\$(prompt)\\$ "
