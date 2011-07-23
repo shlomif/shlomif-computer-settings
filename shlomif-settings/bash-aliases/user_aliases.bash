@@ -33,3 +33,8 @@ cp_mods()
     touch "$@"
     cp -i "$@" /home/music/Music/mp3s/Mods/
 }
+mv_flv()
+{
+    touch "$@"
+    mv -i "$@" /home/music/Music/mp3s/
+}
