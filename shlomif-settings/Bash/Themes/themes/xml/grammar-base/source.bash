@@ -1,11 +1,15 @@
 load_common mymake
 load_common completion
 load_common prompt
-# load_common gen_patch
+load_common hg
+
 base="$HOME/progs/perl/cpan/XML/Grammar/Base"
+hg_base="$base"
 trunk="$base/trunk"
 grammar_base="$trunk/XML-GrammarBase"
 this="$grammar_base"
+
+remote_repo='ssh://hg@bitbucket.org/shlomif/perl-xml-grammarbase'
 
 __dist_name()
 {
