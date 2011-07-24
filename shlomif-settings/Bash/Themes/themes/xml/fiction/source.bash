@@ -1,12 +1,17 @@
 load_common mymake
 load_common completion
 load_common prompt
+load_common hg
+
 # load_common gen_patch
 base="$HOME/progs/perl/cpan/XML/Grammar/Fiction"
+hg_base="$base"
 trunk="$base/trunk"
 modules_dir="$trunk/perl/modules"
 fict="$modules_dir/XML-Grammar-Fiction"
 this="$fict"
+
+remote_repo='ssh://hg@bitbucket.org/shlomif/fiction-xml'
 
 __dist_name()
 {
@@ -46,7 +51,7 @@ __myctags()
     ( cd "$trunk"/build/build-tags && bash build-ctags.sh )
 }
 
-cd $this
+cd "$this"
 
 __install_to_temp()
 {
