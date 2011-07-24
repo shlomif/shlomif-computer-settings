@@ -2,8 +2,10 @@ load_common mymake
 load_common completion
 load_common prompt
 # load_common gen_patch
+load_common hg
 
 base="$HOME/progs/perl/cpan/Test/Test-Harness"
+hg_base="$base"
 trunk="$base/trunk"
 modules_dir="$trunk/modules"
 test_run="$modules_dir/Test-Run"
@@ -19,6 +21,7 @@ build_scripts_dir="$trunk/build/test-and-install-all-modules"
 inst_modules_dir="$HOME/apps/perl/modules"
 modules_makefile="${build_scripts_dir}/Modules.mak"
 
+remote_repo='ssh://hg@bitbucket.org/shlomif/perl-test-run'
 PATH="$inst_modules_dir/bin/:$PATH"
 # export PERL5LIB="$inst_modules_dir/lib/perl5/site_perl/$__perl_version/:$inst_modules_dir/lib/perl5/$__perl_version"
 
