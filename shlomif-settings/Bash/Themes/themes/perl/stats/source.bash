@@ -1,6 +1,7 @@
 load_common mymake
 load_common completion
 load_common prompt
+load_common hg
 # load_common gen_patch
 
 base="$HOME/progs/perl/cpan/Statistics"
@@ -15,15 +16,6 @@ modules_makefile="${build_scripts_dir}/Modules.mak"
 remote_repo='ssh://hg@bitbucket.org/shlomif/perl-statistics-descriptive'
 
 PATH="$inst_modules_dir/bin/:$PATH"
-
-setup()
-{
-    (
-        mkdir -p "$hg_base"
-        cd "$hg_base"
-        hg clone "$remote_repo" trunk
-    )
-}
 
 # Make sure that gvim's filename completion ignores filenames that it should
 # not edit.

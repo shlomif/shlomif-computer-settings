@@ -1,6 +1,7 @@
 load_common mymake
 load_common completion
 load_common prompt
+load_common hg
 # load_common gen_patch
 
 base="$HOME/progs/perl/cpan/XML/LibXML"
@@ -8,15 +9,6 @@ hg_base="$base/hg"
 trunk="$hg_base/perl-xml-libxml"
 this="$trunk"
 remote_repo='ssh://hg@bitbucket.org/shlomif/perl-xml-libxml'
-
-setup()
-{
-    (
-        mkdir -p "$hg_base"
-        cd "$hg_base"
-        hg clone "$remote_repo"
-    )
-}
 
 __dist_name()
 {
