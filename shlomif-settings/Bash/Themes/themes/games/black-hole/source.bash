@@ -3,6 +3,7 @@ load_common completion
 load_common prompt
 
 base="$HOME/progs/games/black-hole-solitaire"
+hg_base="$base"
 trunk="$base/trunk"
 proj="$trunk/black-hole-solitaire"
 module="$proj/Games-Solitaire-BlackHole-Solver"
@@ -11,7 +12,18 @@ c_build="$c_src/build"
 
 this="$c_src"
 
+remote_repo='ssh://hg@bitbucket.org/shlomif/black-hole-solitaire'
+
 cd "$this"
+
+setup()
+{
+    (
+        mkdir -p "$hg_base"
+        cd "$hg_base"
+        hg clone "$remote_repo" "$trunk"
+    )
+}
 
 t()
 {
