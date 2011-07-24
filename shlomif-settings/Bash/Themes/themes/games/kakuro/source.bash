@@ -3,16 +3,19 @@ load_common completion
 load_common prompt
 
 kakuro="$HOME/progs/games/kakuro"
+hg_base="$kakuro"
 trunk="$kakuro/trunk"
 solver="$trunk/solver/ruby"
 this="$solver"
+remote_repo='ssh://hg@bitbucket.org/shlomif/kakuro-cross-sums'
 
 setup()
 {
-    mkdir -p "$kakuro"
-    cd "$kakuro"
-    svn co 'https://svn.berlios.de/svnroot/repos/fc-solve/kakuro-cross-sums/trunk'
-    cd $this
+    (
+        mkdir -p "$hg_base"
+        cd "$hg_base"
+        hg clone "$remote_repo" "$trunk"
+    )
 }
 
 cd "$this"
