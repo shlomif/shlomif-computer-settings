@@ -1,26 +1,16 @@
 load_common mymake
 load_common completion
 load_common prompt
+load_common hg
 
 base="$HOME/Docs/Humour/The-Enemy"
-repos="$base/hg/The-Enemy"
-trunk="$repos"
-this="$trunk"
+hg_base="$base"
+trunk="$base/hg"
+repos="$trunk/The-Enemy"
+this="$repos"
 rw_repos_url="ssh://hg@bitbucket.org/shlomif/the-enemy"
 
 export THE_ENEMY_DEST="the-enemy-glareenxet"
-
-# Make sure that gvim's filename completion ignores filenames that it should
-# not edit.
-
-setup()
-{
-    (
-        mkdir -p "$base"
-        cd "$base"
-        hg clone "$rw_repos_url" hg
-    )
-}
 
 cd $this
 

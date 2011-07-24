@@ -1,25 +1,19 @@
 load_common mymake
 load_common completion
 load_common prompt
+load_common hg
 
 cpan_base="$HOME/progs/perl/cpan"
+hg_base="$cpan_base"
 repos="$cpan_base/hg"
+trunk="$repos"
 base="$repos/Module-Format/Module-Format"
-trunk="$base"
-this="$trunk"
+this="$base"
 rw_repos_url="ssh://hg@bitbucket.org/shlomif/web-cpan"
+remote_repo="$rw_repos_url"
 
 # Make sure that gvim's filename completion ignores filenames that it should
 # not edit.
-
-setup()
-{
-    (
-        mkdir -p "$cpan_base"
-        cd "$cpan_base"
-        hg clone "$rw_repos_url" hg
-    )
-}
 
 __dist_name()
 {

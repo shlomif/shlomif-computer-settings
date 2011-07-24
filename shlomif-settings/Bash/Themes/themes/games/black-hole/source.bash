@@ -1,6 +1,7 @@
 load_common mymake
 load_common completion
 load_common prompt
+load_common hg
 
 base="$HOME/progs/games/black-hole-solitaire"
 hg_base="$base"
@@ -15,15 +16,6 @@ this="$c_src"
 remote_repo='ssh://hg@bitbucket.org/shlomif/black-hole-solitaire'
 
 cd "$this"
-
-setup()
-{
-    (
-        mkdir -p "$hg_base"
-        cd "$hg_base"
-        hg clone "$remote_repo" "$trunk"
-    )
-}
 
 t()
 {

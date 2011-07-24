@@ -1,6 +1,7 @@
 load_common mymake
 load_common completion
 load_common prompt
+load_common hg
 
 # repos="https://svn.berlios.de/svnroot/repos/fc-solve/abc-path/"
 # repos_trunk="${repos}trunk/"
@@ -17,15 +18,6 @@ this="$module"
 remote_repo='ssh://hg@bitbucket.org/shlomif/abc-path'
 
 cd "$this"
-
-setup()
-{
-    (
-        mkdir -p "$hg_base"
-        cd "$hg_base"
-        hg clone "$remote_repo" "$trunk"
-    )
-}
 
 t()
 {
