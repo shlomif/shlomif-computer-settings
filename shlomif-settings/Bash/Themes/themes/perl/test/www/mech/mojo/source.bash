@@ -1,27 +1,21 @@
 load_common mymake
 load_common completion
 load_common prompt
+load_common hg
 # load_common gen_patch
 
 base="$HOME/progs/perl/cpan/Test/WWW/Mechanize"
+hg_base="$base"
 trunk="$base/trunk"
 module="$trunk/Test-WWW-Mechanize-Mojo"
 this="$module"
+remote_repo='ssh://hg@bitbucket.org/shlomif/perl-test-www-mechanize-mojo'
 
 PATH="$inst_modules_dir/bin/:$PATH"
 # export PERL5LIB="$inst_modules_dir/lib/perl5/site_perl/$__perl_version/:$inst_modules_dir/lib/perl5/$__perl_version"
 
 # Make sure that gvim's filename completion ignores filenames that it should
 # not edit.
-
-setup()
-{
-    (
-        mkdir -p "$base"
-        cd "$base"
-        bash ~/conf/svn/perl-Test-WWW-Mechanize-Mojo.sh
-    )
-}
 
 __dist_name()
 {

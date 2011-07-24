@@ -1,12 +1,13 @@
 load_common mymake
 load_common completion
 load_common prompt
+load_common hg
 # load_common gen_patch
 
-repos="https://svn.berlios.de/svnroot/repos/web-cpan/Test-Count/"
-repos_trunk="${repos}trunk/"
+remote_repo='ssh://hg@bitbucket.org/shlomif/perl-test-count'
 
 base="$HOME/progs/perl/cpan/Test/Count"
+hg_base="$base"
 trunk="$base/trunk"
 modules_dir="$trunk/modules"
 test_count="$modules_dir/Test-Count"
@@ -112,14 +113,6 @@ prompt()
         "\$trunk=$trunk" \
         "\$base=$base" \
         "~=$HOME"
-}
-
-setup()
-{
-    mkdir -p "$base"
-    cd "$base"
-    svn co "$repos_trunk"
-    cd "$this"
 }
 
 PS1="\\u:\$(prompt)\\$ "
