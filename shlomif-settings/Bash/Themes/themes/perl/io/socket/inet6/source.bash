@@ -1,12 +1,15 @@
 load_common mymake
 load_common completion
 load_common prompt
+load_common hg
 
 base="$HOME/progs/perl/cpan/IO-Socket-INET6"
+hg_base="$base"
 trunk="$base/trunk"
 module="$trunk/modules/IO-Socket-INET6"
 this="$module"
 
+remote_repo='ssh://hg@bitbucket.org/shlomif/perl-io-socket-inet6'
 # Make sure that gvim's filename completion ignores filenames that it should
 # not edit.
 
