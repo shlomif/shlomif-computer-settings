@@ -1,13 +1,16 @@
 load_common mymake
 load_common completion
 load_common prompt
+load_common hg
 # load_common gen_patch
 
 base="$HOME/progs/perl/cpan/XML/SemanticDiff"
+hg_base="$base"
 trunk="$base/trunk"
 module="$trunk/perl/modules/XML-SemanaticDiff"
 this="$module"
 
+remote_repo='ssh://hg@bitbucket.org/shlomif/perl-xml-semanticdiff'
 # This is so "make dist" won't complain when the file already exists.
 export GZIP="-f"
 

@@ -1,11 +1,17 @@
 load_common mymake
 load_common read_hist
 load_common completion
+load_common hg
 
-this="$HOME/progs/quadpres/trunk/installer"
-site="$HOME/progs/quadpres/trunk/site"
+base="$HOME/progs/quadpres"
+hg_base="$base"
+trunk="$base/trunk"
+this="$trunk/installer"
+site="$trunk/site"
 
-cd $this
+remote_repo='ssh://hg@bitbucket.org/shlomif/quad-pres'
+
+cd "$this"
 
 read_hist "$theme"
 
