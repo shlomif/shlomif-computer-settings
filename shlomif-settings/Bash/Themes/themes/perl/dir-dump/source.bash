@@ -1,11 +1,13 @@
 load_common mymake
 load_common completion
 load_common prompt
+load_common hg
 
 base="$HOME/progs/perl/cpan/File/Dir-Dumper"
+hg_base="$base"
 trunk="$base/trunk"
 module="$trunk/File-Dir-Dumper"
-
+remote_repo='ssh://hg@bitbucket.org/shlomif/perl-file-dir-dumper'
 this="$module"
 
 cd "$this"
