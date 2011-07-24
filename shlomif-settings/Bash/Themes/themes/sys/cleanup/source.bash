@@ -5,11 +5,11 @@ an()
 
 regen()
 {
-    cd ~
+    cd "$HOME"
     du -s . > du-new.txt 
 }
 
-cd $HOME
+cd "$HOME"
 
 PS1="\\u[cleanup]:\\w\$ "
 
