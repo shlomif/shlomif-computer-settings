@@ -1,22 +1,19 @@
 load_common mymake
+load_common completion
+load_common prompt
+load_common hg
 # load_common gen_patch
 
 base="$HOME/progs/perl/cpan/XML/CompareML"
+hg_base="$base"
 trunk="$base/trunk"
 this="$trunk"
 rw_repos_url="svn+ssh://svn.berlios.de/svnroot/repos/web-cpan/xml-compareml"
 read_repos_url="svn://svn.berlios.de/web-cpan/xml-compareml"
 
+remote_repo='ssh://hg@bitbucket.org/shlomif/xml-compareml'
 # Make sure that gvim's filename completion ignores filenames that it should
 # not edit.
-
-__gvim_completion()
-{ 
-    local cur
-    cur="${COMP_WORDS[COMP_CWORD]}"
-    COMPREPLY=( $(compgen -f -X '*~' -- "$cur" |
-        grep -v '/\.' | grep -v '^\.') )
-}
 
 make()
 {
@@ -55,5 +52,15 @@ __test_distribution()
     )
 }
 
-cd $this
+cd "$this"
+
+prompt()
+{
+    __prompt_cmd \
+        "\$trunk=$trunk" \
+        "\$base=$base" \
+        "~=$HOME"
+}
+
+PS1="\\u[xml-compareml]:\$(prompt)\\$ "
 
