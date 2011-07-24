@@ -1,9 +1,11 @@
 load_common mymake
 load_common completion
 load_common prompt
+load_common hg
 
 base="$HOME/progs/wml/wml-itself"
 core="$base/core"
+hg_base="$core"
 trunk="$core/conversion-to-cmake"
 src="$trunk/src"
 # this="$trunk/wml_backend/p2_mp4h"
@@ -11,7 +13,8 @@ src="$trunk/src"
 # this="$trunk/src/wml_backend"
 this="$src"
 
-cd $this
+remote_repo='ssh://hg@bitbucket.org/shlomif/website-meta-language'
+cd "$this"
 
 prompt()
 {

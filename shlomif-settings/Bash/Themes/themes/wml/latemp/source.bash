@@ -1,15 +1,19 @@
 load_common mymake
 load_common prompt
+load_common hg
 # load_common gen_patch
 
 base="$HOME/progs/wml/Latemp"
-trunk="$base/latemp/trunk"
+hg_base="$base/latemp"
+trunk="$hg_base/trunk"
 this="$trunk/installer"
 site="$trunk/site/wml"
 rw_repos_url="svn+ssh://svn.berlios.de/svnroot/repos/web-cpan/latemp"
 read_repos_url="svn://svn.berlios.de/web-cpan/latemp"
 # test_dir="$trunk/tests/integration/sites-gen"
 modules="$trunk/Perl/modules"
+
+remote_repo='ssh://hg@bitbucket.org/shlomif/latemp'
 
 # Make sure that gvim's filename completion ignores filenames that it should
 # not edit.
