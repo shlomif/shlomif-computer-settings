@@ -5,5 +5,5 @@ setup()
         cd "$hg_base"
         hg clone "$remote_repo" "$trunk"
     )
-    cd $this
+    cd "$this"
 }
