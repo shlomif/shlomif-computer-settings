@@ -2,6 +2,7 @@ load_common mymake
 load_common completion
 load_common prompt
 load_common sys
+load_common ssh_add
 
 base="$HOME/progs/Rpms"
 s="$base/SRPMS"
@@ -41,11 +42,6 @@ pco()
     mdvsys co `perlmf rpm_dash "$1"`
 }
 
-__sa()
-{
-    ssh-add
-}
-
 PS1="\\u[rpms]:\$(prompt)\\$ "
 
 alias imp='mgarepo import'
@@ -54,7 +50,5 @@ alias co='mgarepo co'
 alias ci='mgarepo ci'
 # alias b='mgarepo build -v -v'
 alias b='bm -l -b'
-
-__sa
 
 cd "$this"

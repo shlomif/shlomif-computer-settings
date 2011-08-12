@@ -2,6 +2,7 @@ load_common mymake
 load_common completion
 load_common prompt
 load_common sys
+load_common ssh_add
 
 base="$HOME/progs/Rpms"
 s="$base/SRPMS"
@@ -39,11 +40,6 @@ pco()
     mdvsys co `perlmf rpm_dash "$1"`
 }
 
-__sa()
-{
-    ssh-add
-}
-
 PS1="\\u[rpms]:\$(prompt)\\$ "
 
 alias imp='mdvsys import'
@@ -51,7 +47,5 @@ alias sub='mdvsys submit'
 alias co='mdvsys co'
 alias ci='mdvsys ci'
 alias b='mdvsys build -v -v'
-
-__sa
 
 cd "$this"
