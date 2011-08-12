@@ -14,6 +14,15 @@ this="$module"
 
 cd "$this"
 
+setup()
+{
+    (
+        mkdir -p "$base"
+        cd "$base"
+        hg clone 'ssh://hg@bitbucket.org/shlomif/nurikabe' trunk
+    )
+}
+
 t()
 {
     cd "$this" && ./Build runtest
@@ -28,5 +37,5 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u:\$(prompt)\\$ "
+PS1="\\u[nurikabe]:\$(prompt)\\$ "
 
