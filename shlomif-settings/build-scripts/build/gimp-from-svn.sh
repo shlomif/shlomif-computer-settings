@@ -4,6 +4,6 @@
 # CFLAGS="-g" LDFLAGS="-L/usr/local/apps/gtk-2.4.x/lib" \
 export PKG_CONFIG_PATH="$HOME/apps/graphics/gegl/lib/pkgconfig:$PKG_CONFIG_PATH"
 CFLAGS="-g" \
-    ./configure --prefix=/usr/local/apps/gimp-svn --enable-maintainer-mode
+    ./configure --prefix="$HOME"/apps/gimp-devel --enable-maintainer-mode
 
 # --enable-gtk-doc \
