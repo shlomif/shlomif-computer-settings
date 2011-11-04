@@ -10,6 +10,10 @@ trunk="$hg_base/perl-xml-libxml"
 this="$trunk"
 remote_repo='ssh://hg@bitbucket.org/shlomif/perl-xml-libxml'
 
+xslt_base="$HOME/progs/perl/cpan/XML/LibXSLT"
+xslt_hg_base="$HOME/progs/perl/cpan/XML/LibXSLT/hg"
+xslt_trunk="$HOME/progs/perl/cpan/XML/LibXSLT/hg/perl-xml-libxslt"
+
 __dist_name()
 {
     (__check_for_distro &&
@@ -92,8 +96,16 @@ prompt()
     __prompt_cmd \
         "\$trunk=$trunk" \
         "\$base=$base" \
+        "\$xslt_trunk=$xslt_trunk" \
+        "\$xslt_base=$xslt_base" \
         "~=$HOME"
 }
 
 PS1="\\u[XML-LibXML]:\$(prompt)\\$ "
 
+# Short for convert for the Test.pm-to-Test-More conversion
+conv()
+{
+    local fn="$1"
+    ( perl "$trunk"/scripts/Test.pm-to-Test-More.pl --inplace "$fn" )
+}
