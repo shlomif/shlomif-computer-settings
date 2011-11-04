@@ -64,10 +64,17 @@ function qp()
 
 function cp_to_shlomif()
 {
-    local dest
+    local dest src
     dest=~shlomif/progs/Rpms/SRPMS/
-    cp -f /root/rpmbuild/SRPMS/*.src.rpm "$dest" ; 
-    chown shlomif.shlomif "$dest"/*.src.rpm
+    src=/root/rpmbuild/SRPMS
+
+    for filename in $(cd "$src" && ls *.src.rpm) ; do
+        dest_fn="$dest/$filename"
+        if ! test -e "$dest_fn" ; then
+            cp -f "$src/$filename" "$dest/"
+            chown shlomif.shlomif "$dest_fn"
+        fi
+    done
 }
 
 function pap()
