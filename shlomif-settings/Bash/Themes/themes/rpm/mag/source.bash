@@ -6,7 +6,7 @@ load_common ssh_add
 
 base="$HOME/progs/Rpms"
 s="$base/SRPMS"
-mag_base="$HOME/Download/unpack/Mandriva/Mageia"
+mag_base="$HOME/Download/unpack/Mageia"
 this="$mag_base"
 
 k()
