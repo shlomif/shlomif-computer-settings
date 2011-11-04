@@ -80,6 +80,8 @@ function Dot_t_file_type()
     let fn = expand("<afile>")
     if (match(fn, "\\.arc\\.t$") >= 0)
         set filetype=arc
+    elseif (match(fn, "\\.c\\(\\.t\\)\\?$") >= 0)
+        set filetype=c
     elseif (match(fn, "\\.py\\(\\.t\\)\\?$") >= 0)
         set filetype=python
     else
@@ -94,6 +96,7 @@ endfunction
 autocmd! filetypedetect BufNewFile,BufRead *.t
 autocmd BufNewFile,BufRead *.t call Dot_t_file_type() 
 autocmd BufNewFile,BufRead ~/progs/freecell/*/t/*.py call Dot_t_file_type() 
+autocmd BufNewFile,BufRead ~/progs/freecell/*/t/*.c call Dot_t_file_type() 
 
 autocmd BufNewFile,BufRead ~/Download/unpack/graphics/*.pdb set filetype=perl
 
@@ -331,3 +334,5 @@ function! Perl_FileType_Settings()
 endfunction
 
 autocmd FileType perl call Perl_FileType_Settings()
+
+autocmd BufRead,BufNewFile *.clay set filetype=clay
