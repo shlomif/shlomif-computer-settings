@@ -51,4 +51,5 @@ alias ci='mgarepo ci'
 # alias b='mgarepo build -v -v'
 alias b='bm -l -b'
 
+disable_local_lib
 cd "$this"
