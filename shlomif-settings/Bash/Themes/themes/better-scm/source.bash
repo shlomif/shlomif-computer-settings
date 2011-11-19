@@ -1,8 +1,17 @@
 load_common mymake
 
-this="$HOME/Docs/programming/SCM/better-scm/site"
-trunk="$this/trunk"
+base="$HOME/Docs/programming/SCM/better-scm/site"
+trunk="$base/trunk"
 comparison="$trunk/src/comparison"
+
+setup()
+{
+    (
+        mkdir -p "$base"
+        cd "$base"
+        hg clone 'ssh://hg@bitbucket.org/shlomif/better-scm' "$trunk"
+    )
+}
 
 cd $trunk
 
