@@ -1,6 +1,6 @@
 [user]
 	name = Shlomi Fish
-	email = shlomif@iglu.org.il
+	email = shlomif@shlomifish.org
 
 [alias]
     ci = commit
