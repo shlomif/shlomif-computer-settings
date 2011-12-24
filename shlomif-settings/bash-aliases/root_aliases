@@ -99,3 +99,4 @@ eo()
 }
 
 alias q='urpmq --fuzzy -a'
+alias qv='q --sources'
