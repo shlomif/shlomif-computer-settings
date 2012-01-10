@@ -1,6 +1,7 @@
 " Vim syntax file
-" Language:	VCS commit file
-" Maintainer:	Bob Hiestand (bob.hiestand@gmail.com)
+" Language:	SVN annotate output
+" Maintainer:	Bob Hiestand <bob.hiestand@gmail.com>
+" Remark:	Used by the vcscommand plugin.
 " License:
 " Copyright (c) Bob Hiestand
 "
@@ -26,6 +27,14 @@ if exists("b:current_syntax")
 	finish
 endif
 
-syntax region vcsComment start="^VCS: " end="$"
-highlight link vcsComment Comment
-let b:current_syntax = "vcscommit"
+syn match svnName /\S\+/ contained
+syn match svnVer /^\s*\zs\d\+/ contained nextgroup=svnName skipwhite
+syn match svnHead /^\s*\d\+\s\+\S\+/ contains=svnVer,svnName
+
+if !exists("did_svnannotate_syntax_inits")
+	let did_svnannotate_syntax_inits = 1
+	hi link svnName Type
+	hi link svnVer Statement
+endif
+
+let b:current_syntax="svnAnnotate"
