@@ -8,6 +8,7 @@
     dh = diff HEAD
     di = diff
     st = status
+    cp = cherry-pick
 
 [core]
     excludesfile = ~/conf/git/excludes
