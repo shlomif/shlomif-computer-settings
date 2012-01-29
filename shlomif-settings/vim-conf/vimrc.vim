@@ -74,6 +74,10 @@ runtime! synmenu.vim
 " Make the To-HTML conversion use CSS styles
 let html_use_css = 1
 
+" This is so the indent inside the arguments/parameters of function calls will 
+" be indented 4 spaces to the right instead of 8.
+set cinoptions+='(0,W4'
+
 autocmd BufNewFile,BufRead ~/progs/svn/*.[ch] so ~/conf/Vim/svn-dev.vim
 
 function Dot_t_file_type()
