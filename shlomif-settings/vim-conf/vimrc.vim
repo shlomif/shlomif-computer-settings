@@ -340,3 +340,5 @@ endfunction
 autocmd FileType perl call Perl_FileType_Settings()
 
 autocmd BufRead,BufNewFile *.clay set filetype=clay
+
+set tabpagemax=200
