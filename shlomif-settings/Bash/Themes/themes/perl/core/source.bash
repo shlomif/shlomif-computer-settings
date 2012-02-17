@@ -1,3 +1,4 @@
+load_common git_term
 p5_base="$HOME/Download/unpack/perl/p5"
 this="$p5_base/git/perl"
 
