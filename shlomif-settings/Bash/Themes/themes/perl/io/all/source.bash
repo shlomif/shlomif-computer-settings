@@ -10,6 +10,16 @@ this="$module"
 git_remote_shlomif='git@github.com:shlomif/io-all-pm.git'
 git_remote_ingy='git@github.com:ingydotnet/io-all-pm.git'
 
+# Workaround for https://rt.cpan.org/Ticket/Display.html?id=75086
+extra_path="$base/util"
+export PERL5LIB="$extra_path:$PERL5LIB"
+(
+    src="/usr/lib/perl5/vendor_perl/5.14.2/Module/Manifest/Skip.pm"
+    dest="$extra_path/Module/Manifest/Skip.pm"
+    mkdir -p "$(dirname "$dest")"
+    cp -f "$src" "$dest"
+)
+
 # Make sure that gvim's filename completion ignores filenames that it should
 # not edit.
 
