@@ -100,3 +100,8 @@ eo()
 
 alias q='urpmq --fuzzy -a'
 alias qv='q --sources'
+
+clear_rpm_cache()
+{
+    rm -f /var/cache/urpmi/{partial,rpms}/* 
+}
