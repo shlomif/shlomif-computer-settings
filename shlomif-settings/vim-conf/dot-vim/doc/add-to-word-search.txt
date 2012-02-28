@@ -1,0 +1,56 @@
+*add-to-word-search.txt*  Plugin to append more words to searches.
+
+==============================================================================
+Author:  Shlomi Fish < http://www.shlomifish.org/ >
+License: MIT/X11 ( http://www.opensource.org/licenses/mit-license.php )
+
+==============================================================================
+
+Motivation for this plugin:
+---------------------------
+
+When searching through code one often needs to add more related
+terms to the search. For example, if I found a call to a function inside
+a different one, or when a type is typedef'ed to something else (in C).
+This module aims to allow you to convenietly add search terms to the search
+so you can find all the occurences of all of them.
+To use: put this in ~/.vim/plugin/ , which can be typed by installing the
+Ruby rake package and typing "rake install".
+
+Then you can type <Leader>** to add a search term to the search (mnemonic -
+* is the namespace and '*' searches forward for a keyword) and <Leader>## to
+add a search term to the search and search backwards (mnemonic -
+## like the vim # command).
+
+<Leader>** 
+
+    Add the pattern matched by "*" to the search and searches forward in the
+    current search pattern.
+
+<Leader>##
+
+    Add the pattern matched by "#" to the search and searches backward in
+    the current search pattern.
+
+=================================================
+
+The code for this plugin can be found on GitHub:
+
+https://github.com/shlomif/add-to-word-search.vim
+
+Forks, issue reports, and pull requests would be welcome.
+
+Some of the stuff I'd like to add to this plugin:
+
+1. Add commands corresponding to other * and #-like commands:
+
+g*
+g#
+
+2. Add some colon commands to add more keywords to the search.
+
+Enjoy!
+
+Regards,
+
+-- Shlomi Fish
