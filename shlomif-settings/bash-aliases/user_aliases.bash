@@ -38,3 +38,4 @@ mv_flv()
     touch "$@"
     mv -i "$@" /home/music/Music/mp3s/
 }
+alias ifconfig='/sbin/ifconfig'
