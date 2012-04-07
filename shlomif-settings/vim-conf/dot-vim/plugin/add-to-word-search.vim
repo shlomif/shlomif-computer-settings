@@ -36,7 +36,17 @@ endfunction
 function! Add_keyword_search_generic(search_cmd, return_cmd)
     let existing_pat = @/
     let save_cursor = getpos('.')
+    " Might generate an error when :set nowrapscan is on because it reached
+    " the end of the document. So we're always setting the option to 
+    " 'wrapscan'.
+    let orig_nowrapscan = &l:wrapscan
+    if !orig_nowrapscan
+        setlocal wrapscan
+    endif
     execute a:search_cmd
+    if !orig_nowrapscan
+        setlocal nowrapscan
+    endif
     let new_pat = @/
     let @/ = existing_pat
     call Append_pat_to_search(new_pat)
@@ -59,11 +69,10 @@ map <Leader>** :execute Star_add()<CR>
 map <Leader>*# :execute Octothorpe_add()<CR>
 map <Leader>## :execute Octothorpe_add()<CR>
 
-
-" command -range -nargs=1 Rs call Range_Search(<f-args>,<line1>,<line2>)
-" command -range -nargs=1 RS call Range_Search(<f-args>,<line1>,<line2>)
-
 " Changelog:
 "
 " 0.2.0:
 "   first release.
+"
+" 0.2.1:
+"   handling nowrapscan gracefully.
