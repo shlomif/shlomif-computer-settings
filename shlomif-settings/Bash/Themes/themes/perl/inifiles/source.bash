@@ -3,7 +3,8 @@ load_common completion
 load_common prompt
 
 base="$HOME/progs/perl/cpan/Config/IniFiles"
-trunk="$base/trunk"
+hg_base="$base/hg"
+trunk="$hg_base/config-inifiles"
 module="$trunk/config-inifiles"
 
 this="$module"
@@ -12,9 +13,10 @@ cd "$this"
 
 setup()
 {
-    mkdir -p "$base"
-    cd "$base"
-    svn co 'https://config-inifiles.svn.sourceforge.net/svnroot/config-inifiles/trunk/'
+    mkdir -p "$hg_base"
+    cd "$hg_base"
+    hg clone 'ssh://hg@bitbucket.org/shlomif/perl-config-inifiles'
+    # svn co 'https://config-inifiles.svn.sourceforge.net/svnroot/config-inifiles/trunk/'
     cd "$trunk"
 }
 
