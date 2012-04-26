@@ -28,5 +28,11 @@ function Perl_New_Module()
     normal G
 endfunction
 
+function Perl_New_Test_Program()
+    call Perl_New_Script()
+    normal G
+    read ~/conf/Vim/texts/test-skeleton.pl
+endfunction
+
 map <F2> :call Perl_Switch_Syntax()<CR>
 
