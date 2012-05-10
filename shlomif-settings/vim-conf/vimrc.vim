@@ -63,6 +63,9 @@ set incsearch
 " See: http://www.vim.org/tips/tip.php?tip_id=94
 set tags=tags;/
 
+set runtimepath+=~/.vim/vim-addon-manager/
+call vam#ActivateAddons(['UltiSnips', 'Command-T'], {'auto_install': 0})
+
 " Create a new menu item to Convert to Website Meta Language
 an 50.740 &Syntax.Convert\ to\ &WML       :so $VIMRUNTIME/syntax/2html.vim<CR>:%!wml_safe.pl<CR>
 
@@ -321,7 +324,6 @@ command -range StyledQuotes call StyledQuotes(<line1>,<line2>)
 " Remmed out because nuvola is a confusing color-scheme.
 " source ~/.vim/colors/nuvola_shlomif.vim
 
-set runtimepath+=~/.vim/ultisnips_rep
 let g:UltiSnipsSnippetDirectories = ["ExtraUltiSnips"]
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
