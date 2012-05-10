@@ -64,7 +64,7 @@ set incsearch
 set tags=tags;/
 
 set runtimepath+=~/.vim/vim-addon-manager/
-call vam#ActivateAddons(['UltiSnips', 'Command-T', 'The_NERD_tree'], {'auto_install': 0})
+call vam#ActivateAddons(['ack', 'UltiSnips', 'Command-T', 'range-search', 'The_NERD_tree'], {'auto_install': 0})
 
 " Create a new menu item to Convert to Website Meta Language
 an 50.740 &Syntax.Convert\ to\ &WML       :so $VIMRUNTIME/syntax/2html.vim<CR>:%!wml_safe.pl<CR>
@@ -139,10 +139,6 @@ vnoremenu ToolBar.Print		:echo "hello"<CR>
 
 autocmd BufNewFile,BufRead ~/.gimp-*.scm set nobackup
 autocmd BufNewFile,BufRead ~/.gimp-*.py set nobackup
-
-" This is to import the range-search commands.
-" so ~/conf/Vim/range-search.vim
-" so ~/conf/Vim/ack.vim
 
 autocmd BufNewFile,BufRead */SConstruct set filetype=python
 
