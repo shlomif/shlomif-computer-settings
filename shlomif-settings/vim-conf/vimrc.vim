@@ -64,7 +64,7 @@ set incsearch
 set tags=tags;/
 
 set runtimepath+=~/.vim/vim-addon-manager/
-call vam#ActivateAddons(['ack', 'Add_to_Word_Search', 'Command-T', 'perl-support', 'range-search', 'surround', 'The_NERD_tree', 'UltiSnips', 'vcscommand', ], {'auto_install': 0})
+call vam#ActivateAddons(['ack', 'Add_to_Word_Search', 'c%213', 'Command-T', 'perl-support', 'range-search', 'surround', 'The_NERD_tree', 'UltiSnips', 'vcscommand', ], {'auto_install': 0})
 
 " Create a new menu item to Convert to Website Meta Language
 an 50.740 &Syntax.Convert\ to\ &WML       :so $VIMRUNTIME/syntax/2html.vim<CR>:%!wml_safe.pl<CR>
