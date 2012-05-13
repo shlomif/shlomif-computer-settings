@@ -8,6 +8,8 @@ mikmod="$HOME/progs/mikmod"
 hg_base="$mikmod/hg"
 trunk="$hg_base/mikmod"
 libmikmod="$trunk/libmikmod"
+site_repo="$mikmod/mikmod-website"
+site="$site_repo/mikmod-website"
 
 remote_repo='ssh://shlomif@mikmod.hg.sourceforge.net/hgroot/mikmod/mikmod'
 this="$libmikmod"
@@ -21,8 +23,8 @@ cd $this
 prompt()
 {
     __prompt_cmd \
+        "\$site=$site" \
         "\$trunk=$trunk" \
-        "\$fcs=$fcs" \
         "~=$HOME"
 }
 
