@@ -4,7 +4,7 @@ load_common prompt
 
 fcs="$HOME/progs/freecell"
 branches="$fcs/branches"
-trunk="$fcs/hg/fc-solve"
+trunk="$fcs/git/fc-solve"
 t_fcs="$trunk/fc-solve"
 c_src="$t_fcs/source"
 site="$t_fcs/site/wml"
