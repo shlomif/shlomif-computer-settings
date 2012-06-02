@@ -29,6 +29,16 @@ toxz()
     xz -9 --extreme ~/*.tar
 }
 
+u_buildreq()
+{
+    _sys sudo urpmi --buildrequires "$(pwd)"/SPECS/*.spec
+}
+
+u_rpms()
+{
+    _sys sudo urpmi "$(pwd)"/RPMS/*/*.rpm
+}
+
 prompt()
 {
     __prompt_cmd \
