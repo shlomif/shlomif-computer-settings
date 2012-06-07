@@ -52,6 +52,33 @@ pco()
     mdvsys co `perlmf rpm_dash "$1"`
 }
 
+e()
+{
+    gvim SPECS/*.spec
+}
+
+li()
+{
+    rm -fr SRPMS
+    bm -s
+    _sys rpmlint SRPMS/*.src.rpm
+}
+
+coo()
+{
+    local pkg="$1"
+    shift
+
+    co "$pkg" && cd "$pkg"
+}
+
+log()
+{
+    local cmd='svn log -v . > svn.log'
+    echo "$cmd"
+    eval "$cmd"
+}
+
 PS1="\\u[rpms]:\$(prompt)\\$ "
 
 alias imp='mgarepo import'
