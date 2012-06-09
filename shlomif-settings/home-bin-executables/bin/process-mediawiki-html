@@ -1,0 +1,95 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use open ':encoding(utf8)';
+use HTML::TreeBuilder::XPath;
+use Scalar::Util (qw(blessed));
+
+my $tree = HTML::TreeBuilder::XPath->new;
+
+my $filename = shift;
+
+open (my $fh, '<:encoding(UTF-8)', $filename)
+    || die "Cannot open '$filename' - $!";
+
+$tree->parse_file($fh);
+
+{
+    my @nodes = $tree->findnodes( '/html/body//div[@class="editsection"]' );
+
+    foreach my $n (@nodes)
+    {
+        $n->detach();
+        $n->delete();
+    }
+}
+
+{
+    my @nodes = map { $tree->findnodes( '/html/body//h' . $_ ) } (2 .. 4);
+
+    foreach my $h2 (@nodes)
+    {
+        my $a_tag = $h2->left();
+        if (blessed($a_tag) && $a_tag->tag() eq "a" && $a_tag->attr('name'))
+        {
+            my $id = $a_tag->attr('name');
+            $h2->attr('id', $id);
+            $a_tag->detach();
+            $a_tag->delete();
+        }
+    }
+}
+
+my (@divs_to_delete) = 
+(
+    $tree->findnodes('/html/body//div[@class="printfooter"]'),
+    $tree->findnodes('/html/body//div[@id="catlinks"]'),
+    $tree->findnodes('/html/body//div[@class="visualClear"]'),
+    $tree->findnodes('/html/body//div[@id="column-one"]'),
+    $tree->findnodes('/html/body//div[@id="footer"]'),
+    $tree->findnodes('/html/head//style'),
+    $tree->findnodes('//script'),
+);
+
+foreach my $div (@divs_to_delete)
+{
+    $div->detach();
+    $div->delete();
+}
+
+binmode STDOUT, ':encoding(utf-8)';
+print {*STDOUT} $tree->as_XML();
+
+__END__
+
+=head1 COPYRIGHT & LICENSE
+
+Copyright 2012 by Shlomi Fish
+
+This program is distributed under the MIT (X11) License:
+L<http://www.opensource.org/licenses/mit-license.php>
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+=cut
