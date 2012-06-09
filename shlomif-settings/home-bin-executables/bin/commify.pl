@@ -26,7 +26,7 @@ sub multi_commify
 
 STDOUT->autoflush(1);
 
-while (my $l = <STDIN>)
+while (my $l = <ARGV>)
 {
     print multi_commify($l);
 }
