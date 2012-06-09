@@ -1,0 +1,107 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use Getopt::Long;
+use List::Util qw(min);
+use XML::Feed;
+
+
+my @feed_urls;
+my $output_file;
+my $output_format = "RSS";
+my $num_items = 40;
+my $subj_filter;
+my $subj_filter_out;
+my $feed_link;
+
+GetOptions(
+    'url|u=s@' => \@feed_urls,
+    'o=s' => \$output_file,
+    'output-format=s' => \$output_format,
+    'num-items=i' => \$num_items,
+    'subject-filter=s' => \$subj_filter,
+    'subject-filter-out=s' => \$subj_filter_out,
+    'feed-link=s' => \$feed_link,
+);
+
+if (!defined($feed_link))
+{
+    die "The feed's link was not specified!";
+}
+
+if (defined($subj_filter))
+{
+    $subj_filter = qr/$subj_filter/;
+}
+
+if (defined($subj_filter_out))
+{
+    $subj_filter_out = qr/$subj_filter_out/;
+}
+
+my $feed = XML::Feed->new($output_format) or
+    die XML::Feed->errstr;
+
+sub myconvert
+{
+    my $feed = shift;
+    if (
+        (($output_format eq "RSS") && ($feed->format() eq "Atom")) ||
+        (($output_format eq "Atom") && ($feed->format() ne "Atom"))
+       )
+    {
+        return $feed->convert($output_format);
+    }
+    else
+    {
+        return $feed;
+    }
+}
+
+foreach my $url (@feed_urls)
+{
+    my $url_feed = XML::Feed->parse(URI->new($url))
+        or die "For feed '$url' " . XML::Feed->errstr;
+    $feed->splice(myconvert($url_feed));
+}
+
+
+my $feed_with_less_items = XML::Feed->new($output_format) or
+    die XML::Feed->errstr;;
+
+my @entries = $feed->entries();
+
+@entries = 
+(grep
+    {
+        (defined($subj_filter) ? ($_->title() =~ /$subj_filter/) : 1)
+            &&
+        (defined($subj_filter_out) ? ($_->title() !~ /$subj_filter_out/) : 1)
+    }
+    @entries
+);
+                   
+@entries = (reverse(sort { $a->issued() <=> $b->issued() } @entries));
+
+foreach my $e (@entries[0 .. min($num_items-1, $#entries)])
+{
+    $feed_with_less_items->add_entry($e);
+}
+
+$feed_with_less_items->link($feed_link);
+
+my $out;
+if ($output_file)
+{
+    open $out, ">", $output_file;
+}
+else
+{
+    open $out, ">&STDOUT";
+}
+binmode $out, ":utf8";
+print {$out} $feed_with_less_items->as_xml();
+close($out);
+
