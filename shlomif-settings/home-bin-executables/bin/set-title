@@ -1,0 +1,6 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+print "\033]0;" . join(' ', @ARGV)  . "\007";
