@@ -52,6 +52,13 @@ pco()
     mdvsys co `perlmf rpm_dash "$1"`
 }
 
+alias imp='mgarepo import'
+alias sub='mgarepo submit'
+alias co='mgarepo co'
+alias ci='mgarepo ci'
+# alias b='mgarepo build -v -v'
+alias b='bm -l -b'
+
 e()
 {
     gvim SPECS/*.spec
@@ -63,6 +70,9 @@ li()
     bm -s
     _sys rpmlint SRPMS/*.src.rpm
 }
+
+alias lin='li'
+alias lint='li'
 
 coo()
 {
@@ -81,12 +91,6 @@ log()
 
 PS1="\\u[rpms]:\$(prompt)\\$ "
 
-alias imp='mgarepo import'
-alias sub='mgarepo submit'
-alias co='mgarepo co'
-alias ci='mgarepo ci'
-# alias b='mgarepo build -v -v'
-alias b='bm -l -b'
 
 disable_local_lib
 cd "$this"
