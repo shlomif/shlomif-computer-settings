@@ -1,2 +1,3 @@
 #!/bin/bash
-./config --prefix="$HOME/apps/openssl" --openssldir="$HOME/apps/openssl/openssl" shared
+ossl_pref="$HOME/apps/openssl"
+./config --prefix="$ossl_pref" --openssldir="$ossl_pref/openssl" shared
