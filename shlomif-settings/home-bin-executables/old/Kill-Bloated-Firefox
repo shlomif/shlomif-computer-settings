@@ -1,0 +1,42 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+# For SIGTERM
+use POSIX;
+
+use Proc::ProcessTable;
+
+# 640 MB should be enough for everybody.
+my $LIMIT = 640 * 1024 * 1024;
+
+sub memusage
+{
+    my @results;
+
+    my $pid = shift;
+
+    my $proc = Proc::ProcessTable->new;
+    my %fields = map { $_ => 1 } $proc->fields;
+    return undef unless exists $fields{'pid'};
+    foreach (@{$proc->table}) {
+        if ($_->pid eq $pid) {
+            return $_->size();
+            # push (@results, $_->pctmem) if exists $fields{'pctmem'};
+        };
+    };
+    return -1;
+}
+
+while (1)
+{
+    foreach my $pid (`pgrep mozilla-firefox`)
+    {
+        if (memusage($pid) > $LIMIT)
+        {
+            kill (SIGTERM(), $pid);
+        }
+    }
+    sleep(20);
+}
