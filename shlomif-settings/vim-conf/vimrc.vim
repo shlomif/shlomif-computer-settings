@@ -345,3 +345,12 @@ autocmd FileType perl call Perl_FileType_Settings()
 autocmd BufRead,BufNewFile *.clay set filetype=clay
 
 set tabpagemax=200
+
+" Unobtrusive highlighting of trailing space.
+"
+" Taken from http://blog.kamil.dworakowski.name/2009/09/unobtrusive-highlighting-of-trailing.html
+highlight ExtraWhitespace ctermbg=red guibg=red
+au ColorScheme * highlight ExtraWhitespace guibg=red
+au BufEnter * match ExtraWhitespace /\s\+$/
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhiteSpace /\s\+$/
