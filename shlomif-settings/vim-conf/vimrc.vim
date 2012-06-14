@@ -77,7 +77,7 @@ runtime! synmenu.vim
 " Make the To-HTML conversion use CSS styles
 let html_use_css = 1
 
-" This is so the indent inside the arguments/parameters of function calls will 
+" This is so the indent inside the arguments/parameters of function calls will
 " be indented 4 spaces to the right instead of 8.
 set cinoptions+='(0,W4'
 
@@ -101,9 +101,9 @@ endfunction
 
 " Clear the autocmd's from filetype.vim because it confuses t/*.t
 autocmd! filetypedetect BufNewFile,BufRead *.t
-autocmd BufNewFile,BufRead *.t call Dot_t_file_type() 
-autocmd BufNewFile,BufRead ~/progs/freecell/*/t/*.py call Dot_t_file_type() 
-autocmd BufNewFile,BufRead ~/progs/freecell/*/t/*.c call Dot_t_file_type() 
+autocmd BufNewFile,BufRead *.t call Dot_t_file_type()
+autocmd BufNewFile,BufRead ~/progs/freecell/*/t/*.py call Dot_t_file_type()
+autocmd BufNewFile,BufRead ~/progs/freecell/*/t/*.c call Dot_t_file_type()
 
 autocmd BufNewFile,BufRead ~/Download/unpack/graphics/*.pdb set filetype=perl
 
@@ -190,7 +190,7 @@ function Homepage_Customisation()
             e ascii_quotes_results.txt | cbuf | cope
         endfunction
     endif
-    if !exists("*Homepage_Grep") 
+    if !exists("*Homepage_Grep")
         function Homepage_Grep()
             !bash bin/t2_find_ascii_quotes.bash
             call Homepage_Grep_Results()
@@ -230,7 +230,7 @@ autocmd BufNewFile,BufRead ~/progs/prolog/*.pl set filetype=prolog
 
 autocmd BufNewFile,BufRead *.arc set filetype=arc
 
-" mapping to be able to move to the left and the right windows 
+" mapping to be able to move to the left and the right windows
 " without needing to leave the Ctrl key.
 map <C-W><C-Right> <C-W><Right>
 map <C-W><C-Left> <C-W><Left>
@@ -281,9 +281,9 @@ au BufNewFile,BufRead ~/Docs/programming/Spark/*.txt setfiletype asciidoc
 au BufNewFile,BufRead *.asciidoc.txt setfiletype asciidoc
 au BufNewFile,BufRead ~/progs/perl/www/web-automation/perl-5-wiki/trunk/combust/*.txt setfiletype asciidoc
 
-if has('multi_byte') 
+if has('multi_byte')
     " So C-k.. will generate an ellipsis.
-    digraphs .. 8230 
+    digraphs .. 8230
     " So C-k,, will generate a Hebrew opening double-quotes
     digraphs ,, 8222
     " So C-k`` will generate a Hebrew closing double-quotes
