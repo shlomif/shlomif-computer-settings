@@ -1,0 +1,1 @@
+games-solitaire-verify.sh

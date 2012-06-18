@@ -1,0 +1,8 @@
+#!/bin/bash
+
+conf_dir="$(cd "$(dirname "$0")" && pwd)"
+
+target="$HOME/.Xkbmap" 
+if ! test -e "$target" ; then
+    ln -s "$conf_dir"/dot-Xkbmap "$target"
+fi

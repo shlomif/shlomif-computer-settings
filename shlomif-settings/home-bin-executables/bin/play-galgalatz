@@ -1,0 +1,4 @@
+#!/bin/bash
+# This script is used to play the Israeli Galgalatz Radio Channel from the
+# Internet.
+vlc http://radio.glz.co.il:8000/galgalatz
