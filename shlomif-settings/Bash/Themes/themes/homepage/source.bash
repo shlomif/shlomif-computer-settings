@@ -2,8 +2,10 @@ load_common mymake
 load_common completion
 load_common no_implicit_make
 load_common prompt
+load_common hg
 
 base="$HOME/Docs/homepage"
+hg_base="$base"
 trunk="$base/homepage/trunk"
 section_menus="$trunk/lib/Shlomif/Homepage/SectionMenu/Sects/"
 this="$trunk"
@@ -11,6 +13,7 @@ fortunes="$trunk/t2/humour/fortunes/"
 blog="$HOME/Docs/homepage/blog"
 logs="$HOME/Download/homesite-logs"
 p4n="$trunk/lib/presentations/qp/perl-for-newbies"
+remote_repo='ssh://hg@bitbucket.org/shlomif/shlomi-fish-homepage'
 
 cd $this
 
