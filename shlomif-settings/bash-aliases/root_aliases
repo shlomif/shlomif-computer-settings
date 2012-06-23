@@ -105,3 +105,5 @@ clear_rpm_cache()
 {
     rm -f /var/cache/urpmi/{partial,rpms}/*
 }
+
+export EDITOR="vim" VISUAL="vim"
