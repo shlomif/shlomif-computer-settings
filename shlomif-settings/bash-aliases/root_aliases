@@ -54,17 +54,17 @@ function _cpan_d_format()
 }
 
 function c()
-{ 
+{
     cpan2dist --verbose --format="$(_cpan_d_format)" \
         --defaults --install --timeout 0 $(perlmf as_colon "$@")
 }
 
 function qp()
-{ 
+{
     local pm="$1"
     shift
 
-    urpmq --whatprovides "$(perlmf as_rpm_colon "$pm")" ; 
+    urpmq --whatprovides "$(perlmf as_rpm_colon "$pm")" ;
 }
 
 function cp_to_shlomif()
@@ -103,5 +103,5 @@ alias qv='q --sources'
 
 clear_rpm_cache()
 {
-    rm -f /var/cache/urpmi/{partial,rpms}/* 
+    rm -f /var/cache/urpmi/{partial,rpms}/*
 }
