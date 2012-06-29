@@ -1,7 +1,6 @@
 load_common mymake
 load_common completion
 load_common prompt
-load_common hg
 
 base="$HOME/progs/perl/cpan/File/Find-Object"
 ffo_trunk="$base/trunk"
@@ -10,13 +9,26 @@ bench="$base/benchmark"
 berlios_base="$base/from-berlios"
 hg_base="$berlios_base"
 berlios_trunk="$berlios_base/trunk"
-trunk="$berlios_trunk"
+ffor_trunk="$berlios_trunk"
 rule_trunk="$berlios_trunk/File-Find-Object-Rule"
 libfilefind="$berlios_trunk/libfilefind/c_glib_based"
-remote_repo='ssh://hg@bitbucket.org/shlomif/perl-file-find-object-rule'
+rule_remote_repo='ssh://hg@bitbucket.org/shlomif/perl-file-find-object-rule'
+ffo_remote_repo='ssh://hg@bitbucket.org/shlomif/perl-file-find-object'
 
 this="$module"
 
+setup()
+{
+    (
+        mkdir -p "$hg_base"
+        cd "$hg_base"
+        hg clone "$rule_remote_repo" "$ffor_trunk"
+        mkdir -p "$base"
+        cd "$base"
+        hg clone "$ffo_remote_repo" "$ffo_trunk"
+    )
+    cd "$this"
+}
 cd "$this"
 
 t()
