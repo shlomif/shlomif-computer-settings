@@ -58,6 +58,7 @@ alias co='mgarepo co'
 alias ci='mgarepo ci'
 # alias b='mgarepo build -v -v'
 alias b='bm -l -b'
+alias sd='mgarepo sync -d'
 
 e()
 {
