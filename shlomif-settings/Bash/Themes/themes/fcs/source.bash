@@ -4,7 +4,8 @@ load_common prompt
 
 fcs="$HOME/progs/freecell"
 branches="$fcs/branches"
-trunk="$fcs/git/fc-solve"
+_base_trunk="$fcs/git"
+trunk="$_base_trunk/fc-solve"
 t_fcs="$trunk/fc-solve"
 c_src="$t_fcs/source"
 site="$t_fcs/site/wml"
@@ -19,6 +20,18 @@ parallel="$t_fcs/scripts/parallel-solve-and-verify-for-bakers-game"
 
 this="$c_src"
 # this="$dd_branch"
+
+setup()
+{
+    (
+        mkdir -p "$_base_trunk"
+        cd "$_base_trunk"
+        git clone 'ssh://git@bitbucket.org/shlomif/fc-solve.git' "$trunk"
+        cd "$trunk"
+        git remote add github 'git@github.com:shlomif/fc-solve.git'
+    )
+    cd "$this"
+}
 
 export LIBAVL2_SOURCE_DIR="$HOME/Download/unpack/prog/c/avl-2.0.3/"
 
