@@ -3,6 +3,7 @@ load_common completion
 load_common prompt
 
 fcs="$HOME/progs/freecell"
+base="$fcs"
 branches="$fcs/branches"
 _base_trunk="$fcs/git"
 trunk="$_base_trunk/fc-solve"
