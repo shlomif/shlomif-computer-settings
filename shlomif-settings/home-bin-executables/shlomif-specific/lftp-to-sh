@@ -1,0 +1,2 @@
+#!/bin/bash
+lftp sftp://sh/home/shlomif

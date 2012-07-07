@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo nice -n-20 ionice -c1 -n0 sudo -u "$USER" "$@"

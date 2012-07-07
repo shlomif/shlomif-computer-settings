@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use IO::All;
+use FindBin;
+
+my @cmd = ("$FindBin::Bin/finish-cue", "");
+while (1)
+{
+    io->socket("localhost:6222")->accept;
+    system(@cmd);
+}

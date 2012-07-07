@@ -1,0 +1,4 @@
+gvim perl5/Shlomif/Quad/Pres/CmdLine.pm
+cd $this && ./prepare_package.sh
+./configure --prefix=$HOME/apps/test/quadpres
+

@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+my $text = join("", <>);
+my @paras = split(/\n\n/, $text);
+foreach (@paras)
+{
+    s!^[\s\n]*<p>!!s;
+    s{</p>[\s\n]*$}{}s;
+    s!\n! !g;
+}
+print join("\n\n", @paras) . "\n";
+

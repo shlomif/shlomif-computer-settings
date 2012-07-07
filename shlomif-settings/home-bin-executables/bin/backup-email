@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd "$HOME"
+tar -cavf Mail-backup-saved-dir.tar.xz --files-from=<(find Mail/saved -type f -not -name '.*' -print0 | xargs -0 ls -rt)
