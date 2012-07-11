@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for I in *.png ; do
+    NEW="==neW--$I"
+    pngcrush "$@" "$I" "$NEW"
+    mv -f "$NEW" "$I"
+done

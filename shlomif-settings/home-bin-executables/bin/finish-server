@@ -1,0 +1,3 @@
+#!/bin/bash
+cd "$HOME"/progs/perl/alert/http-based/hg/App-Notifier-Service &&
+    perl ./bin/app.pl --port=6300

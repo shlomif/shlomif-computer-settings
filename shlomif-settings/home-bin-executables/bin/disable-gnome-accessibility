@@ -1,0 +1,10 @@
+#!/bin/bash
+# Enabling the GNOME Accessibility / Assistive Technology causes gvim to
+# emit some warnings. This script disables it.
+#
+# Based on:
+#
+# http://library.gnome.org/users/gnome-access-guide/2.32/sysadmin-34.html.en
+#
+
+gconftool-2 --set "/desktop/gnome/interface/accessibility" --type boolean "False"

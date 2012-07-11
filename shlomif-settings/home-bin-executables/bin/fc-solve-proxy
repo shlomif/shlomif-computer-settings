@@ -1,0 +1,3 @@
+#!/bin/bash
+~/apps/test/fcs/bin/fc-solve -s -i -p -t -sam "$@" > "$HOME/fcs.log"
+cat "$HOME/fcs.log" | perl -ne 'print if /^(?:-=-=|I could not)/..1'

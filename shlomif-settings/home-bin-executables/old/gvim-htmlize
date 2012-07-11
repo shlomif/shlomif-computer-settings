@@ -1,0 +1,2 @@
+#!/bin/bash
+gvim -f +"syn on" +"so \$VIMRUNTIME/syntax/2html.vim" +"wq" +"q" "$1"
