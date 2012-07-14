@@ -25,14 +25,14 @@ __promote()
 
 __edit()
 {
-    (cd "$this" && 
-        gvim -p To_Do.txt Done.txt Projects.txt "$today_todo"
+    (cd "$this" &&
+        gvim -p To_Do.txt Done.txt Projects.txt
     )
 }
 
 e()
 {
-    __promote ;
+    # __promote ;
     __edit ;
 }
 
