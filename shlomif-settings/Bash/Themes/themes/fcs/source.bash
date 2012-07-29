@@ -1,6 +1,7 @@
 load_common mymake
 load_common completion
 load_common prompt
+load_common no_implicit_make
 
 fcs="$HOME/progs/freecell"
 base="$fcs"
