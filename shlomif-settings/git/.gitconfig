@@ -9,6 +9,7 @@
     di = diff
     st = status
     cp = cherry-pick
+    au = add -u
 
 [core]
     excludesfile = ~/conf/git/excludes
