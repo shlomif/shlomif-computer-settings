@@ -39,3 +39,4 @@ mv_flv()
     mv -i "$@" /home/music/Music/mp3s/
 }
 alias ifconfig='/sbin/ifconfig'
+alias caddy="ruby $HOME/progs/perl/Quizzes/Golf/golf.shinh.org/caddy-tool-for-golfers/caddy/caddy.rb"
