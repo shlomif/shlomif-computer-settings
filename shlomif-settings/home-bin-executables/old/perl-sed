@@ -1,0 +1,68 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use IO::All;
+
+my $sep_re = '[=-]+[\]>]?';
+
+my %transformations = ();
+
+my @arguments = @ARGV;
+my %excludes;
+while (defined(my $arg = shift(@arguments)))
+{
+    if ($arg eq "--exclude")
+    {
+        my $param = shift(@arguments);
+        $excludes{$param} = 1;
+    }
+    elsif ($arg =~ /^(?:\w+$sep_re)+\w+$/)
+    {
+        my @words = (split /$sep_re/, $arg);
+        $transformations{$words[-2]} = $words[-1];
+    }
+    else
+    {
+        die "Incorrect Argument \"$arg\"!";
+    }
+}
+
+sub dump_transforms
+{
+    print +(map { "$_ ==> " . $transformations{$_} . "\n" } keys(%transformations));
+}
+
+sub trans
+{
+    my $identifier = shift;
+    if (exists($transformations{$identifier}))
+    {
+        return $transformations{$identifier};
+    }
+    else
+    {
+        return $identifier;
+    }
+}
+
+# &dump_transforms();
+
+my @filenames = io->dir(".")->all;
+
+FILE_LOOP: foreach my $filename (grep { /\.[ch]\z/ } @filenames)
+{
+    if (exists($excludes{$filename}))
+    {
+        next FILE_LOOP;
+    }
+    my $text = io->file($filename)->slurp;
+    my $new_text = $text;
+    $new_text =~ s/\b(\w+)\b/&trans($1)/ge;
+    if ($new_text ne $text)
+    {
+        io->file($filename)->print($new_text);
+    }
+}
+

@@ -1,0 +1,15 @@
+[user]
+	name = Shlomi Fish
+	email = shlomif@shlomifish.org
+
+[alias]
+    ci = commit
+    co = checkout
+    dh = diff HEAD
+    di = diff
+    st = status
+    cp = cherry-pick
+    au = add -u
+
+[core]
+    excludesfile = ~/conf/git/excludes
