@@ -21,10 +21,3 @@ e()
         gvim -p hitori-solver.rb t/parse-board.rb gui/gui.pl
     )
 }
-
-setup()
-{
-    mkdir -p "$base"
-    cd "$base"
-    svn co "$repos_trunk"
-}
