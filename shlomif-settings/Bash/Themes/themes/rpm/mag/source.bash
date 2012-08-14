@@ -90,6 +90,14 @@ log()
     eval "$cmd"
 }
 
+myq()
+{
+    local p="$1"
+    shift
+    urpmq --sources "$p"
+    svn st "$p"/
+}
+
 PS1="\\u[rpms]:\$(prompt)\\$ "
 
 
