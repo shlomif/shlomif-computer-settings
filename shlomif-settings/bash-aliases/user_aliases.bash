@@ -1,4 +1,4 @@
-alias q='urpmq --fuzzy -a'
+source "$HOME/.common_aliases.bash"
 alias myrsync='rsync -a --progress -v --inplace'
 
 dc()
