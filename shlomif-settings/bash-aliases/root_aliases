@@ -1,72 +1,6 @@
 #!/bin/bash
 
-# For GNU screen to use a different key-binding
-alias screen='screen -e "^^6"'
-
-_sys()
-{
-    echo "$@"
-    "$@"
-}
-
-u()
-{
-    local common_args
-    common_args="--auto --keep --resume --noclean"
-    if test -n "$PROZ" ; then
-        common_args+=" --downloader prozilla --prozilla-options '-k=${PROZ_N:-15} -r'"
-    else
-        common_args+=" --downloader wget --wget-options -c"
-    fi
-    ( cd $HOME ;
-    if test "$#" -eq 0 ; then
-        eval "_sys urpmi $common_args --auto-select";
-    else
-        eval "_sys urpmi $common_args $@";
-    fi
-    )
-}
-
-uu()
-{
-    (cd $HOME ; urpmi.update -a)
-}
-
-wu()
-{
-    while ! u ; do true ; done
-}
-
-up()
-{
-    urpmi --auto $(perlmf as_rpm_colon "$@")
-}
-
-function _cpan_d_format()
-{
-    (
-    if test -e /etc/mageia-release ; then
-        echo "CPANPLUS::Dist::Mageia"
-    else
-        echo "CPANPLUS::Dist::Mdv"
-    fi
-    )
-}
-
-function c()
-{
-    cpan2dist --verbose --format="$(_cpan_d_format)" \
-        --defaults --install --timeout 0 $(perlmf as_colon "$@")
-}
-
-function qp()
-{
-    local pm="$1"
-    shift
-
-    urpmq --whatprovides "$(perlmf as_rpm_colon "$pm")" ;
-}
-
+source "$HOME/.common_aliases.bash"
 function cp_to_shlomif()
 {
     local dest src
@@ -81,25 +15,6 @@ function cp_to_shlomif()
         fi
     done
 }
-
-function pap()
-{
-    apt-get install $(perlmf as_deb "$@");
-}
-
-e()
-{
-    urpme "$@"
-}
-
-# urpme orphans.
-eo()
-{
-    e --auto-orphans
-}
-
-alias q='urpmq --fuzzy -a'
-alias qv='q --sources'
 
 clear_rpm_cache()
 {
