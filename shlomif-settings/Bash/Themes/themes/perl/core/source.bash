@@ -1,4 +1,7 @@
-load_common git_term
+# Commenting-out because I am getting:
+# -bash: __git_ps1: command not found
+# load_common git_term
+
 p5_base="$HOME/Download/unpack/perl/p5"
 this="$p5_base/git/perl"
 
