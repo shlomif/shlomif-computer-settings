@@ -1,6 +1,7 @@
 # Commenting-out because I am getting:
 # -bash: __git_ps1: command not found
 # load_common git_term
+load_common sys
 
 p5_base="$HOME/Download/unpack/perl/p5"
 this="$p5_base/git/perl"
@@ -34,3 +35,15 @@ mkpatchorig() {
     done
 }
 
+# Short for test.
+t()
+{
+    _sys make -j12 test_harness TEST_JOBS=4
+    _sys finish-client
+}
+
+# Short for test debugger.
+td()
+{
+    _sys make -j12 test_harness TEST_FILES='../lib/perl5db.t'
+}
