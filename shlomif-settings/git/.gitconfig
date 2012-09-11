@@ -1,6 +1,6 @@
 [user]
-	name = Shlomi Fish
-	email = shlomif@shlomifish.org
+    name = Shlomi Fish
+    email = shlomif@shlomifish.org
 
 [alias]
     ci = commit
