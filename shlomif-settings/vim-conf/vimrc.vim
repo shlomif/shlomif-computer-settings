@@ -357,3 +357,5 @@ au InsertLeave * match ExtraWhiteSpace /\s\+$/
 
 command CancelExtWS highlight clear ExtraWhiteSpace
 
+map <F6> <ESC>:Ack -ai <C-R><C-W> t2 lib<CR>
+

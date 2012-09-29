@@ -1,0 +1,2 @@
+#!/bin/bash
+mplayer -shuffle "$@" *.{mp3,flv,ogg,mp4,avi,wmv,mpg,MP3,m4a,wma,webm}
