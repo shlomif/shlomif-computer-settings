@@ -1,2 +1,2 @@
 #!/bin/bash
-notifier notify "$@"
+notifier notify --to="${NOTIFIER_TO:-default}" "$@"
