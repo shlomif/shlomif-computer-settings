@@ -1,0 +1,5 @@
+vimrc.vim is my .vimrc file. It can be symlinked to ~/.vimrc .
+
+conf-Vim is my ~/conf/Vim directory. I also symlink it there.
+
+-- Shlomi Fish , http://www.shlomifish.org/ , shlomif@iglu.org.il .

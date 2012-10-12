@@ -1,0 +1,2 @@
+#!/bin/sh
+ls | sed s/\'/\'\\\\\'\'/g | gvim -

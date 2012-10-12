@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+import mailbox
+import os.path
+import re
+import sys
+
+#try:
+if (1):
+    appname = os.path.basename(sys.argv[0])
+    source = sys.argv[1]
+    dest = sys.argv[2]
+
+    (sfmt, dfmt) = re.match(r'^(.+)2(.+)', appname).groups()
+    sbox = mailbox.__dict__[sfmt](source, None)
+    dbox = mailbox.__dict__[dfmt](dest)
+
+    for key in sbox.iterkeys():
+        dbox.add(sbox.get_message(key))
+
+# except IndexError:
+#     sys.exit('Usage: %s source destination' % appname)
+# except (AttributeError, KeyError):
+#     sys.exit('ERROR: invalid mailbox type')
+# except mailbox.Error, err:
+#     sys.exit('ERROR: %s' % err)

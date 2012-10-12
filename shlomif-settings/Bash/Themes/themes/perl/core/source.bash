@@ -1,0 +1,49 @@
+# Commenting-out because I am getting:
+# -bash: __git_ps1: command not found
+# load_common git_term
+load_common sys
+
+p5_base="$HOME/Download/unpack/perl/p5"
+this="$p5_base/git/perl"
+
+cd "$this"
+
+function edit {
+    if [ ! -e "$1.orig" ] ; then
+        cp "$1" "$1.orig"
+    fi
+    gvim -f "$1"
+}
+
+function unedit {
+if [ -L "$1".orig ]; then
+    rm "$1"
+    mv "$1".orig "$1"
+fi
+}
+
+mkpatchorig() {
+    local diffopts
+    for f in `find . -name '*.orig' | sed s,^\./,,`
+    do
+        case `echo $f | sed 's,.orig$,,;s,.*\.,,'` in
+            c)   diffopts=-p ;;
+            pod) diffopts='-F^=' ;;
+            *)   diffopts= ;;
+        esac
+        diff -du $diffopts $f `echo $f | sed 's,.orig$,,'`
+    done
+}
+
+# Short for test.
+t()
+{
+    _sys make -j12 test_harness TEST_JOBS=4
+    _sys finish-client
+}
+
+# Short for test debugger.
+td()
+{
+    _sys make -j12 test_harness TEST_FILES='../lib/perl5db.t'
+}

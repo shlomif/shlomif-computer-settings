@@ -1,0 +1,12 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+binmode STDIN, ":utf8";
+binmode STDOUT, ":utf8";
+
+my $text = join("", <STDIN>);
+$text =~ s{&#([0-9A-Fa-f]{1,4});}{chr($1)}ge;
+print $text;
+
