@@ -34,5 +34,5 @@ _Theme()
     Theme "$@"
 }
 __complete_with_themes "_Theme"
-export HARNESS_PLUGINS="ColorSummary ColorFileVerdicts AlternateInterpreters"
+export HARNESS_PLUGINS="ColorSummary ColorFileVerdicts AlternateInterpreters BreakOnFailure"
 export HARNESS_ALT_INTRP_FILE="$HOME/conf/Test-Run/alternate-interpreters.yml"
