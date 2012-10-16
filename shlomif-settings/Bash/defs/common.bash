@@ -38,3 +38,8 @@ export HARNESS_PLUGINS="ColorSummary ColorFileVerdicts AlternateInterpreters Bre
 export HARNESS_ALT_INTRP_FILE="$HOME/conf/Test-Run/alternate-interpreters.yml"
 export PERL_MM_USE_DEFAULT=1
 export PERL_AUTOINSTALL="--skipdeps --alldeps"
+# This is for X-over-ssh apps to know how to set their fonts.
+if test -z "$ORIGIN_HOSTNAME" ; then
+    export ORIGIN_HOSTNAME="$HOSTNAME"
+fi
+
