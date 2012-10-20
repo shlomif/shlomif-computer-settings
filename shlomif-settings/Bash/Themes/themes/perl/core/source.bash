@@ -35,6 +35,27 @@ mkpatchorig() {
     done
 }
 
+_build_generic()
+{
+    script="$1"
+    shift
+
+    _sys bash ~/conf/build/perl/"$script" && _sys make -j4
+    _sys finish-client
+}
+
+# Short for build.
+b()
+{
+    _build_generic "perl-bleadperl.sh"
+}
+
+# Short for build-with-threads-support
+bt()
+{
+    _build_generic "perl-bleadperl-usethreads.sh"
+}
+
 # Short for test.
 t()
 {
