@@ -13,3 +13,5 @@
 
 [core]
     excludesfile = ~/conf/git/excludes
+[push]
+    default = matching
