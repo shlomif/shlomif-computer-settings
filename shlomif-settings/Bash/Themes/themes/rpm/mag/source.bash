@@ -49,7 +49,7 @@ prompt()
 
 pco()
 {
-    mdvsys co `perlmf rpm_dash "$1"`
+    coo `perlmf rpm_dash "$1"`
 }
 
 alias imp='mgarepo import'
