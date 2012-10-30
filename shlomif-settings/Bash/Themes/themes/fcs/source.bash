@@ -59,5 +59,14 @@ t()
     (cd "$c_src" && perl run-tests.pl)
 }
 
+make()
+{
+    if [ "$*" = "pgo" ]; then
+        `which make` VERBOSE=1 "$@"
+    else
+        `which make` "$@"
+    fi
+}
+
 PS1="\\u[fcs]:\$(prompt)\\$ "
 
