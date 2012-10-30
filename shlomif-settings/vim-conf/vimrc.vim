@@ -79,7 +79,7 @@ let html_use_css = 1
 
 " This is so the indent inside the arguments/parameters of function calls will
 " be indented 4 spaces to the right instead of 8.
-set cinoptions+='(0,W4'
+set cinoptions+='(4,W4,b1,=0,m1'
 
 autocmd BufNewFile,BufRead ~/progs/svn/*.[ch] so ~/conf/Vim/svn-dev.vim
 
