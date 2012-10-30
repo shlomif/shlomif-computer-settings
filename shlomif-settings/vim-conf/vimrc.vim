@@ -359,3 +359,4 @@ command CancelExtWS highlight clear ExtraWhiteSpace
 
 map <F6> <ESC>:Ack -ai <C-R><C-W> t2 lib<CR>
 
+set t_Co=256
