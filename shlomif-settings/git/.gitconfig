@@ -14,4 +14,4 @@
 [core]
     excludesfile = ~/conf/git/excludes
 [push]
-    default = matching
+    default = simple
