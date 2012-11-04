@@ -18,7 +18,6 @@ STDOUT->autoflush(1);
     while ((my $t = time()) < $end)
     {
         my $new_to_print = POSIX::floor($end - $t);
-        # print "$new_to_print\n";
         if (!defined($last_printed) or $new_to_print != $last_printed)
         {
             $last_printed = $new_to_print;
@@ -27,3 +26,4 @@ STDOUT->autoflush(1);
         sleep(0.1);
     }
 }
+print "\n";
