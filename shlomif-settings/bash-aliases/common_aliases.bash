@@ -17,12 +17,13 @@ u()
     fi
     cmd="_sys sudo urpmi"
     ( cd $HOME ;
-    if test "$#" -eq 0 ; then
-        eval "$cmd $common_args --auto-select";
-    else
         eval "$cmd $common_args $@";
-    fi
     )
+}
+
+uas()
+{
+    u --auto-select "$@"
 }
 
 uu()
