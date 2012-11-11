@@ -36,6 +36,8 @@ _Theme()
 __complete_with_themes "_Theme"
 export HARNESS_PLUGINS="ColorSummary ColorFileVerdicts AlternateInterpreters BreakOnFailure"
 export HARNESS_ALT_INTRP_FILE="$HOME/conf/Test-Run/alternate-interpreters.yml"
+# For the perl5 test suite (see t/harness)
+export HARNESS_OPTIONS=c
 export PERL_MM_USE_DEFAULT=1
 export PERL_AUTOINSTALL="--skipdeps --alldeps"
 # This is for X-over-ssh apps to know how to set their fonts.
