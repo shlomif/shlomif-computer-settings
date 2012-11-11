@@ -31,7 +31,7 @@ toxz()
 
 u_buildreq()
 {
-    _sys sudo urpmi --buildrequires "$(pwd)"/SPECS/*.spec
+    _sys u --buildrequires "$(pwd)"/SPECS/*.spec
 }
 
 u_rpms()
