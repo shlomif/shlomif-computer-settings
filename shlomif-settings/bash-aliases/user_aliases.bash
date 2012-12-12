@@ -61,3 +61,19 @@ cache()
     fi
     cat "$fn"
 }
+
+inst_modules_dir="$HOME/apps/perl/modules"
+
+_update_PERL5LIB()
+{
+    for I in $inst_modules_dir/{lib/{perl5/,}site_perl,lib/perl5}/{5.16.2,5.16.1,5.16.0} ; do
+        if [ -z "$PERL5LIB" ] ; then
+            # Do nothing
+            true
+        else
+            PERL5LIB="$PERL5LIB:"
+        fi
+        PERL5LIB="$PERL5LIB$I"
+    done
+    export PERL5LIB
+}
