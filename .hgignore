@@ -24,4 +24,5 @@ shlomif-settings/vim-conf/dot-vim/vim-addon-manager
 shlomif-settings/vim-conf/dot-vim/vim-addon-mw-utils
 shlomif-settings/vim-conf/dot-vim/vim-addon-sbt
 shlomif-settings/vim-conf/dot-vim/vim-addon-scala
+shlomif-settings/vim-conf/dot-vim/vim-racket
 shlomif-settings/vim-conf/dot-vim/xml
