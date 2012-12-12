@@ -45,3 +45,5 @@ if test -z "$ORIGIN_HOSTNAME" ; then
     export ORIGIN_HOSTNAME="$HOSTNAME"
 fi
 
+# See http://bugs.mageia.org/show_bug.cgi?id=237
+shopt -s direxpand
