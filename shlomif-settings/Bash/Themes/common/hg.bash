@@ -7,3 +7,13 @@ setup()
     )
     cd "$this"
 }
+
+__hg_ps1()
+{
+    hg prompt "{ on {branch}}{ at {bookmark}}{status}" 2> /dev/null
+}
+
+__hg_prompt_branch()
+{
+    hg prompt "{branch}" 2> /dev/null
+}

@@ -61,4 +61,4 @@ fastdiff()
 
 export PATH="$HOME/apps/quadpres/bin:$PATH"
 
-PS1="\\u[homepage]:\$(prompt)\\$ "
+PS1="\\u[homepage@\$(__hg_prompt_branch)]:\$(prompt)\\$ "
