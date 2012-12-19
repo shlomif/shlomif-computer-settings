@@ -36,6 +36,7 @@ setup()
 }
 
 export LIBAVL2_SOURCE_DIR="$HOME/Download/unpack/prog/c/avl-2.0.3/"
+export FCS_USE_TEST_RUN=1
 
 # This causes problems with the threaded solver.
 unset MALLOC_CHECK_
