@@ -155,7 +155,7 @@ au BufNewFile,BufRead ~/progs/C/kernel/word-search/* so ~/conf/Vim/kernel.vim
 
 " Work-related directives - may be somewhat confidential.
 if File_Is_Readable("~/conf/Work/Vim/work.vim")
-    au BufNewFile,BufRead ~/progs/Work/* so ~/conf/Work/Vim/work.vim
+    so ~/conf/Work/Vim/work.vim
 endif
 
 " Personal details for perl-support
