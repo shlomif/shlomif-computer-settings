@@ -64,7 +64,7 @@ set incsearch
 set tags=tags;/
 
 set runtimepath+=~/.vim/vim-addon-manager/
-call vam#ActivateAddons(['ack', 'Add_to_Word_Search', 'c%213', 'closetag', 'Command-T', 'FuzzyFinder', 'matchit.zip', 'parrot', 'range-search', 'spec%98', 'surround', 'textobj-user', 'textobj-rubyblock', 'The_NERD_tree', 'UltiSnips', 'unite', 'vcscommand', 'VimClojure', 'vim-addon-scala', 'vim-racket', 'TT2_syntax', 'xml'], {'auto_install': 0})
+call vam#ActivateAddons(['ack', 'Add_to_Word_Search', 'c%213', 'closetag', 'Command-T', 'FuzzyFinder', 'matchit.zip', 'parrot', 'range-search', 'repeat', 'spec%98', 'surround', 'textobj-user', 'textobj-rubyblock', 'The_NERD_tree', 'UltiSnips', 'unite', 'vcscommand', 'VimClojure', 'vim-addon-scala', 'vim-racket', 'TT2_syntax', 'xml'], {'auto_install': 0})
 
 " Create a new menu item to Convert to Website Meta Language
 an 50.740 &Syntax.Convert\ to\ &WML       :so $VIMRUNTIME/syntax/2html.vim<CR>:%!wml_safe.pl<CR>
@@ -373,3 +373,5 @@ function Shlomif_XML_file_type()
 endfunction
 
 autocmd FileType xml call Shlomif_XML_file_type()
+
+autocmd BufRead,BufNewFile ~/Docs/programming/Vim/vim-begin/*.html set indentexpr=
