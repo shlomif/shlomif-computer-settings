@@ -59,6 +59,11 @@ fastdiff()
         "file://$HOME/Backup/svn-dumps/projectlocker/svnsync-repos/shlomif/homepage/trunk"
 }
 
+up()
+{
+    (cd "$trunk" && make upload_var upload_local upload_beta)
+}
+
 export PATH="$HOME/apps/quadpres/bin:$PATH"
 
 PS1="\\u[homepage@\$(__hg_prompt_branch)]:\$(prompt)\\$ "
