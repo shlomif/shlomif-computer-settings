@@ -1,6 +1,7 @@
 syntax: glob
 
 shlomif-settings/Bash/Themes/list-of-themes.txt
+shlomif-settings/perl/Dist-Zilla/dot-dzil/config.ini
 shlomif-settings/vim-conf/dot-vim/.netrwhist
 shlomif-settings/vim-conf/dot-vim/Add_to_Word_Search
 shlomif-settings/vim-conf/dot-vim/closetag
