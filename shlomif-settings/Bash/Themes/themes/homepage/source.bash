@@ -15,6 +15,13 @@ logs="$HOME/Download/homesite-logs"
 p4n="$trunk/lib/presentations/qp/perl-for-newbies"
 remote_repo='ssh://hg@bitbucket.org/shlomif/shlomi-fish-homepage'
 
+sel="$trunk/lib/screenplay-xml/from-vcs/Selina-Mandrake/selina-mandrake/screenplay/"
+pope="$trunk/lib/fiction-xml/from-vcs/The-Pope-Died-on-Sunday/Pope/text/"
+humanity="$trunk/lib/screenplay-xml/from-vcs/Humanity-the-Movie/humanity/screenplay/"
+we="$trunk/lib/screenplay-xml/from-vcs/Star-Trek--We-the-Living-Dead/star-trek--we-the-living-dead/screenplay/"
+wtld="$we"
+hhfg="$trunk/lib/fiction-xml/from-vcs/Human-Hacking-Field-Guide/HHFG/text/"
+
 cd $this
 
 Edit_Styles()
