@@ -4,9 +4,9 @@ load_common completion
 load_common no_implicit_make
 
 base="$HOME/Docs/programming/Vim/vim-begin"
-repo="$base/hg"
+repo="$base/git/vim-begin"
 trunk="$repo"
-src="$trunk/vim-begin/jekyll-prototype"
+src="$trunk/vim-begin/tt2-source"
 this="$src"
 
 cd $this
@@ -28,7 +28,3 @@ up()
 
 PS1="\\u[vim-begin]:\$(prompt)\\$ "
 
-j()
-{
-    (cd "$src" && jekyll)
-}
