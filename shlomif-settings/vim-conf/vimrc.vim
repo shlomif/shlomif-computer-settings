@@ -376,3 +376,6 @@ endfunction
 autocmd FileType xml call Shlomif_XML_file_type()
 
 autocmd BufRead,BufNewFile ~/Docs/programming/Vim/vim-begin/*.html set indentexpr=
+
+autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/lib/pages/t2/philosophy/putting-all-cards-on-the-table.xhtml setlocal indentexpr=
+
