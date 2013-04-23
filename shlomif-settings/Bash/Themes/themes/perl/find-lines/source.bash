@@ -11,7 +11,7 @@ berlios_trunk="$berlios_base"
 trunk="$berlios_trunk"
 fl_trunk="$berlios_trunk/File-FindLines/module"
 module="$fl_trunk"
-remote_repo='ssh://hg@bitbucket.org/shlomif/perl-file-find-object-rule'
+remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="perl-file-find-object-rule")"
 
 this="$module"
 

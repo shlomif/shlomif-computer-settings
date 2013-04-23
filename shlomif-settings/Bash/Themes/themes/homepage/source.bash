@@ -13,7 +13,7 @@ fortunes="$trunk/t2/humour/fortunes/"
 blog="$HOME/Docs/homepage/blog"
 logs="$HOME/Download/homesite-logs"
 p4n="$trunk/lib/presentations/qp/perl-for-newbies"
-remote_repo='ssh://hg@bitbucket.org/shlomif/shlomi-fish-homepage'
+remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="shlomi-fish-homepage")"
 
 sel="$trunk/lib/screenplay-xml/from-vcs/Selina-Mandrake/selina-mandrake/screenplay/"
 pope="$trunk/lib/fiction-xml/from-vcs/The-Pope-Died-on-Sunday/Pope/text/"

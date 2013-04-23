@@ -15,7 +15,7 @@ module="$trunk/abc-path/$mod/"
 # c_src="$trunk/nurikabe-solver"
 this="$module"
 
-remote_repo='ssh://hg@bitbucket.org/shlomif/abc-path'
+remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="abc-path")"
 
 cd "$this"
 

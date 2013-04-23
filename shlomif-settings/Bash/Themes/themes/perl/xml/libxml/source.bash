@@ -8,7 +8,7 @@ base="$HOME/progs/perl/cpan/XML/LibXML"
 hg_base="$base/hg"
 trunk="$hg_base/perl-xml-libxml"
 this="$trunk"
-remote_repo='ssh://hg@bitbucket.org/shlomif/perl-xml-libxml'
+remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="perl-xml-libxml")"
 
 xslt_base="$HOME/progs/perl/cpan/XML/LibXSLT"
 xslt_hg_base="$HOME/progs/perl/cpan/XML/LibXSLT/hg"

@@ -11,7 +11,7 @@ this="$trunk"
 rw_repos_url="svn+ssh://svn.berlios.de/svnroot/repos/web-cpan/xml-compareml"
 read_repos_url="svn://svn.berlios.de/web-cpan/xml-compareml"
 
-remote_repo='ssh://hg@bitbucket.org/shlomif/xml-compareml'
+remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="xml-compareml")"
 # Make sure that gvim's filename completion ignores filenames that it should
 # not edit.
 

@@ -7,7 +7,7 @@ base="$HOME/progs/perl/cpan/File/Dir-Dumper"
 hg_base="$base"
 trunk="$base/trunk"
 module="$trunk/File-Dir-Dumper"
-remote_repo='ssh://hg@bitbucket.org/shlomif/perl-file-dir-dumper'
+remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="perl-file-dir-dumper")"
 this="$module"
 
 cd "$this"

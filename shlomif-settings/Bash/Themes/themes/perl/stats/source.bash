@@ -13,7 +13,7 @@ build_scripts_dir="$trunk/build/test-and-install-all-modules"
 
 inst_modules_dir="$HOME/apps/perl/modules"
 modules_makefile="${build_scripts_dir}/Modules.mak"
-remote_repo='ssh://hg@bitbucket.org/shlomif/perl-statistics-descriptive'
+remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="perl-statistics-descriptive")"
 
 PATH="$inst_modules_dir/bin/:$PATH"
 

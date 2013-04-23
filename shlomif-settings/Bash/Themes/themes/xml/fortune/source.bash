@@ -9,7 +9,7 @@ trunk="$base/trunk"
 module="$trunk/XML-Grammar-Fortune/module"
 this="$module"
 
-remote_repo='ssh://hg@bitbucket.org/shlomif/fortune-xml'
+remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="fortune-xml")"
 
 __dist_name()
 {

@@ -4,7 +4,7 @@ load_common prompt
 
 base="$HOME/progs/perl/cpan/Config/IniFiles"
 hg_base="$base/hg"
-trunk="$hg_base/config-inifiles"
+trunk="$hg_base/perl-config-inifiles"
 module="$trunk/config-inifiles"
 
 this="$module"
