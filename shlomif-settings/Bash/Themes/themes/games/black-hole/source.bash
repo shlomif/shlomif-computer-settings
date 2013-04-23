@@ -13,7 +13,7 @@ c_build="$c_src/build"
 
 this="$c_src"
 
-remote_repo='ssh://hg@bitbucket.org/shlomif/black-hole-solitaire'
+remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="black-hole-solitaire")"
 
 cd "$this"
 

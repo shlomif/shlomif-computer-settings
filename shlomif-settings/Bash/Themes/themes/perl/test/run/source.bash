@@ -21,7 +21,7 @@ build_scripts_dir="$trunk/build/test-and-install-all-modules"
 inst_modules_dir="$HOME/apps/perl/modules"
 modules_makefile="${build_scripts_dir}/Modules.mak"
 
-remote_repo='ssh://hg@bitbucket.org/shlomif/perl-test-run'
+remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="perl-test-run")"
 PATH="$inst_modules_dir/bin/:$PATH"
 # export PERL5LIB="$inst_modules_dir/lib/perl5/site_perl/$__perl_version/:$inst_modules_dir/lib/perl5/$__perl_version"
 

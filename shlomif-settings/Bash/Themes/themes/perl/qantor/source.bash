@@ -8,7 +8,7 @@ base="$HOME/progs/perl/cpan/Text/Qantor"
 hg_base="$base"
 trunk="$base/trunk"
 this="$trunk/Text-Qantor"
-remote_repo='ssh://hg@bitbucket.org/shlomif/qantor'
+remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="qantor")"
 rw_repos_url="https://svn.berlios.de/svnroot/repos/web-cpan/Text-Qantor"
 read_repos_url="http://svn.berlios.de/svnroot/repos/web-cpan/Text-Qantor"
 

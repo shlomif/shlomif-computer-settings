@@ -13,7 +13,7 @@ src="$trunk/src"
 # this="$trunk/src/wml_backend"
 this="$src"
 
-remote_repo='ssh://hg@bitbucket.org/shlomif/website-meta-language'
+remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="website-meta-language")"
 cd "$this"
 
 prompt()
