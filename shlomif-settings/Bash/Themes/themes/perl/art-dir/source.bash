@@ -8,14 +8,6 @@ trunk="$base/hg"
 module="$trunk/Web-Directory-for-Artwork"
 this="$module"
 
-setup()
-{
-    mkdir -p "$base"
-    cd "$base"
-    git clone 'git@github.com:shlomif/catable.git'
-    cd "$this"
-}
-
 # export PERL5LIB="$inst_modules_dir/lib/perl5/site_perl/$__perl_version/:$inst_modules_dir/lib/perl5/$__perl_version"
 
 # Make sure that gvim's filename completion ignores filenames that it should

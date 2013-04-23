@@ -12,7 +12,7 @@ setup()
 {
     mkdir -p "$base"
     cd "$base"
-    git clone 'git@github.com:shlomif/catable.git'
+    git clone "$($__themes_dir/common/github-git-remote-repo.pl --user="shlomif" --repo="catable")"
     cd "$this"
 }
 
