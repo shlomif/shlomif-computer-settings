@@ -8,7 +8,7 @@ repos="$base/git"
 module="$repos/Text-Table"
 trunk="$module"
 this="$trunk"
-rw_repos_url="git@github.com:shlomif/Text-Table.git"
+rw_repos_url="$($__themes_dir/common/github-git-remote-repo.pl --user="shlomif" --repo="Text-Table")"
 
 # Make sure that gvim's filename completion ignores filenames that it should
 # not edit.

@@ -7,7 +7,7 @@ trunk="$base/io-all-pm"
 module="$trunk"
 this="$module"
 
-git_remote_shlomif='git@github.com:shlomif/io-all-pm.git'
+git_remote_shlomif="$($__themes_dir/common/github-git-remote-repo.pl --user="shlomif" --repo="io-all-pm")"
 git_remote_ingy='git@github.com:ingydotnet/io-all-pm.git'
 
 # Workaround for https://rt.cpan.org/Ticket/Display.html?id=75086

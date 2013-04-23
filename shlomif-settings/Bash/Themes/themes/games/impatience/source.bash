@@ -6,7 +6,7 @@ base="$HOME/progs/perl/cpan/Games/Impatience"
 trunk="$base/git"
 this="$trunk"
 
-rw_repos_url="git@github.com:shlomif/Games-Impatience.git"
+rw_repos_url="$($__themes_dir/common/github-git-remote-repo.pl --user="shlomif" --repo="Games-Impatience")"
 
 setup()
 {
