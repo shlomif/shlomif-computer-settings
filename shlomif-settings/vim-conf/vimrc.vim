@@ -381,3 +381,6 @@ autocmd BufRead,BufNewFile ~/Docs/programming/Vim/vim-begin/*.html set indentexp
 
 autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/lib/pages/t2/philosophy/putting-all-cards-on-the-table.xhtml setlocal indentexpr=
 
+" For the Command-T plugin , because dest/t2-homepage in $homepage
+" has more than 30K files.
+let g:CommandTMaxFiles = 200000
