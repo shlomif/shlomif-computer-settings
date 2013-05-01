@@ -1,0 +1,53 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use URI::Find;
+
+use List::Util qw(first);
+
+my $new_mirror_specifier = shift(@ARGV);
+
+my @mirrors =
+(
+    'http://mageia.webconquest.com/',
+    'http://ftp.belnet.be/mageia/',
+    'http://mirrors.kernel.org/mageia/',
+);
+
+my $new_mirror;
+
+if ($new_mirror_specifier =~ m{\A(?:http|ftp)://})
+{
+    $new_mirror = $new_mirror_specifier;
+}
+else
+{
+    my $re = qr/$new_mirror_specifier/;
+    if (!defined($new_mirror = first { /$re/ } @mirrors))
+    {
+        die "Could not find a mirror that matches the pattern /$re/.";
+    }
+}
+
+my $string_mirror_re = join('|', map { quotemeta($_) } @mirrors);
+
+my $mirror_re = qr/$string_mirror_re/;
+
+my $finder = URI::Find->new(sub {
+    my ($uri, $orig_uri) = @_;
+
+    $orig_uri =~ s{\A(?:$mirror_re)}{$new_mirror}ms;
+
+    return $orig_uri;
+});
+
+while (my $l = <ARGV>)
+{
+    chomp($l);
+
+    $finder->find(\$l);
+
+    print "$l\n";
+}
