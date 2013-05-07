@@ -90,6 +90,15 @@ __install_all_to_temp()
     )
 }
 
+_dzil_inst()
+{
+    (
+        cd "$fict" && \
+            dzil test --release && \
+            dzil install --install-command='bash ~/conf/build/perl/install-to-apps-perl-modules.sh'
+    )
+}
+
 prompt()
 {
     __prompt_cmd \
