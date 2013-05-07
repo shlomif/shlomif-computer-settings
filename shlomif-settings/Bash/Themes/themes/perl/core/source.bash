@@ -68,3 +68,30 @@ td()
 {
     _sys make -j12 test_harness TEST_FILES='../lib/perl5db.t'
 }
+
+emcc_script_dir="$HOME/Download/unpack/perl/p5/emcc-build/perl-emcc-build"
+emcc_script="$emcc_script_dir/BUILD_PERL_WITH_EMCC.bash"
+
+emcc_conf()
+{
+    (
+        cd "$this"
+        _sys git clean -dxf
+        _sys bash "$emcc_script"
+        _sys finish-client
+    )
+}
+
+e()
+{
+    (
+        gvim "$emcc_script"
+    )
+}
+
+b()
+{
+    emcc_conf
+}
+
+export PATH="$emcc_script_dir:$PATH"
