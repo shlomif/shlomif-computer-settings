@@ -66,7 +66,8 @@ inst_modules_dir="$HOME/apps/perl/modules"
 
 _update_PERL5LIB()
 {
-    for I in $inst_modules_dir/{lib/{perl5/,}site_perl,lib/perl5}/{5.16.3,5.16.2,5.16.1,5.16.0} ; do
+    # for I in $inst_modules_dir/{lib/{perl5/,}site_perl,lib/perl5}/{5.16.3} ; do
+    for I in $inst_modules_dir/{lib/{perl5/,}site_perl,lib/perl5}/5.16.3 ; do
         if [ -z "$PERL5LIB" ] ; then
             # Do nothing
             true
