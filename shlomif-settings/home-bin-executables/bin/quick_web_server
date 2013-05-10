@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+
+# Taken from:
+# http://blogs.perl.org/users/joel_berger/2013/01/a-quick-static-file-webserver.html
+
+use strict;
+use warnings;
+
+use Mojolicious::Lite;
+
+use Cwd;
+app->static->paths->[0] = getcwd;
+
+any '/' => sub {
+  shift->render_static('index.html');
+};
+
+app->start;
