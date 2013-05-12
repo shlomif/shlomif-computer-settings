@@ -9,9 +9,9 @@ trunk="$base/trunk"
 proj="$trunk/black-hole-solitaire"
 module="$proj/Games-Solitaire-BlackHole-Solver"
 c_src="$proj/c-solver"
-c_build="$c_src/build"
-a_src="$proj/all-in-a-row-c-solver"
-a_build="$a_src/B"
+c_build="$c_src/B"
+a_src="$c_src"
+a_build="$c_build"
 
 this="$c_src"
 
@@ -34,7 +34,6 @@ prompt()
     __prompt_cmd \
         "\$module=$module" \
         "\$c_src=$c_src" \
-        "\$a_src=$a_src" \
         "\$trunk=$trunk" \
         "\$base=$base" \
         "~=$HOME"
