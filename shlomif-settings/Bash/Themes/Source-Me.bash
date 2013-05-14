@@ -38,12 +38,24 @@ function Theme
     source "$filename"
 }
 
+__theme_completion_commands=''
+
+function __reload_themes_completion
+{
+    for cmd in $__theme_completion_commands ; do
+        complete -W "$(cat ${__themes_dir}/list-of-themes.txt)" "$cmd"
+    done
+}
+
 function __complete_with_themes
 {
     cmd="$1"
     shift
 
-    complete -W "$(cat ${__themes_dir}/list-of-themes.txt)" "$cmd"
+    # Uniqify them.
+    __theme_completion_commands="$(echo "$__theme_completion_commands $cmd" |perl -0777 -pe 's/\s+/\n/g' | sort | uniq)"
+
+    __reload_themes_completion
 }
 
 __complete_with_themes "Theme"
