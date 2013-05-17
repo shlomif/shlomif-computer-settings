@@ -8,7 +8,7 @@ export EDITOR=vim VISUAL=vim  PAGER="less -isrr" SVN_EDITOR="gvim -f"
 export GIT_EDITOR="$SVN_EDITOR" HGEDITOR="$SVN_EDITOR"
 umask 022
 if test -e /etc/debian_version ; then
-    export CPATH="$HOME/apps/libtap/include:$CPATH"
+    export CPATH="$(perl -e 'print join(":", grep { ! $encountered{$_}++ } grep { length($_) > 0 } map { split /:/, $_ } $ENV{CPATH}, "$ENV{HOME}/apps/libtap/include");')"
     export CMAKE_PREFIX_PATH="$HOME/apps/libtap:$CMAKE_PREFIX_PATH"
 fi
 mikmod()
