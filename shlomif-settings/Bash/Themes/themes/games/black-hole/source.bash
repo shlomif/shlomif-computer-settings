@@ -17,6 +17,8 @@ this="$c_src"
 
 remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="black-hole-solitaire")"
 
+export FCS_USE_TEST_RUN=1
+
 cd "$this"
 
 t()
