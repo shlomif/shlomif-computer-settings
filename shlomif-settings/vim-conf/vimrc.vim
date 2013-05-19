@@ -67,7 +67,7 @@ set runtimepath+=~/.vim/vim-addon-manager/
 set nomore
 let g:vim_addon_manager = {}
 let g:vim_addon_manager.auto_install = 1
-let g:vim_addon_manager.shell_commands_run_method = 1
+let g:vim_addon_manager.shell_commands_run_method = 'system'
 call vam#ActivateAddons(['ack', 'Add_to_Word_Search', 'hg:https://shlomif@bitbucket.org/shlomif/vim-screenplay-text', 'c%213', 'closetag', 'Command-T', 'ctrlp', 'FuzzyFinder', 'matchit.zip', 'parrot', 'github:vim-perl/vim-perl', 'github:aaronbieber/quicktask', 'range-search', 'repeat', 'spec%98', 'surround', 'textobj-user', 'textobj-rubyblock', 'The_NERD_tree', 'UltiSnips', 'unite', 'vcscommand', 'VimClojure', 'vim-addon-scala', 'github:wlangstroth/vim-racket', 'xml', 'github:mattn/zencoding-vim'], {'auto_install': 1, 'shell_commands_run_method': "system",})
 set more
 
