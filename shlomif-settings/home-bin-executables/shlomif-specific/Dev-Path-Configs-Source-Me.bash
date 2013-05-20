@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export PATH="$HOME/apps/multimedia/mikmod/bin:$HOME/apps/multimedia/libmikmod/bin:$HOME/apps/spidermonkey-js/bin:$HOME/Download/unpack/xml/ebookmaker:$HOME/apps/vim/bin:$HOME/apps/llvm/bin/:$HOME/Download/unpack/prog/llvm-to-js/emscripten:$HOME/Download/unpack/prog/ninja/ninja:$PATH"
+
+export LD_LIBRARY_PATH="$HOME/apps/multimedia/libmikmod/lib"
