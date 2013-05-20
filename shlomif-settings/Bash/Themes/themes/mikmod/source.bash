@@ -10,6 +10,7 @@ trunk="$hg_base/mikmod"
 libmikmod="$trunk/libmikmod"
 site_repo="$mikmod/mikmod-website"
 site="$site_repo/mikmod-website"
+testing="$mikmod/testing/mikmod-test-suite/mikmod-test-suite"
 
 remote_repo='ssh://shlomif@mikmod.hg.sourceforge.net/hgroot/mikmod/mikmod'
 this="$libmikmod"
@@ -23,6 +24,7 @@ cd $this
 prompt()
 {
     __prompt_cmd \
+        "\$testing=$testing" \
         "\$site=$site" \
         "\$trunk=$trunk" \
         "~=$HOME"
