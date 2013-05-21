@@ -6,29 +6,34 @@
 use strict;
 use warnings;
 
+use List::Util qw(first);
+
 use DateTime::Format::Strptime;
 
-my $strp = DateTime::Format::Strptime->new(
-    pattern   => '%a %d %b %T %Y',
+my @strp_s = (map {
+    DateTime::Format::Strptime->new(
+    pattern   => $_,
     locale    => 'en_US',
     time_zone => 'Asia/Jerusalem',
+    )
+    }
+    (
+        '%b %d, %Y',
+        '%Y-%m-%d',
+        '%a %b %d %T %Y',
+        '%a %d %b %T %Y',
+    )
 );
 
-my $strp_us = DateTime::Format::Strptime->new(
-    pattern   => '%a %b %d %T %Y',
-    locale    => 'en_US',
-    time_zone => 'Asia/Jerusalem',
-);
-
-while (my $l = <ARGV>)
+while (my $l = <STDIN>)
 {
     chomp($l);
-    if (my ($v, $space, $date_str) = $l =~ m{\A(v?[\d\.]+)(\s+)(\S.*)\z}ms)
+    if (my ($v, $space, $date_str) = $l =~ m{\A(v?[\d\.]+)(\s+)(?:-\s*)?(\S.*)\z}ms)
     {
         $date_str =~ s/\s+\b(?:IDT|IST)\b\s+/ /;
-        if (defined (my $d = $strp->parse_datetime($date_str) // $strp_us->parse_datetime($date_str)))
+        if (defined (my $d = first {defined($_) } map { $_->parse_datetime($date_str) } @strp_s))
         {
-            print $v, $space, $d->strftime("%Y-%m-%d"), "\n";
+            printf ("%-8s%s\n", $v, $d->strftime("%Y-%m-%d"));
         }
         else
         {
