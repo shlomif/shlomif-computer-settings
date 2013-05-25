@@ -3,10 +3,23 @@ load_common completion
 load_common prompt
 
 base="$HOME/progs/perl/mazes"
-trunk="$base/From-Svn/trunk"
+hg_base="$base/hg"
+trunk="$hg_base/lm-solve-source"
 this="$trunk"
 
 PATH="$inst_modules_dir/bin/:$PATH"
+
+setup()
+{
+    (
+        if ! test -d "$this" ; then
+            mkdir -p "$hg_base"
+            cd "$hg_base"
+            hg clone 'ssh://hg@bitbucket.org/shlomif/lm-solve-source'
+        fi
+        cd "$this"
+    )
+}
 
 # Make sure that gvim's filename completion ignores filenames that it should
 # not edit.
@@ -55,13 +68,13 @@ __install_to_temp()
 
 
 #    (
-#        if [ -e Makefile.PL ] ; then 
+#        if [ -e Makefile.PL ] ; then
 #            perl Makefile.PL PREFIX="$inst_modules_dir"
 #            make
 #            make test
 #            make install
 #        elif [ -e Build.PL ] ; then
-#            perl Build.PL 
+#            perl Build.PL
 #            ./Build
 #            ./Build test
 #            ./Build install prefix="$inst_modules_dir"
