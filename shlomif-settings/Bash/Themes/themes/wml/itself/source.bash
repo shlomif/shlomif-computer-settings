@@ -6,7 +6,7 @@ load_common hg
 base="$HOME/progs/wml/wml-itself"
 core="$base/core"
 hg_base="$core"
-trunk="$core/conversion-to-cmake"
+trunk="$core/trunk"
 src="$trunk/src"
 # this="$trunk/wml_backend/p2_mp4h"
 # this="$trunk/wml_backend/p3_eperl"
