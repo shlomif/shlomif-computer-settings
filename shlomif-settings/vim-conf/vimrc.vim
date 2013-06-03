@@ -387,3 +387,5 @@ autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/lib/pages/t2/philosoph
 " For the Command-T plugin , because dest/t2-homepage in $homepage
 " has more than 30K files.
 let g:CommandTMaxFiles = 200000
+
+autocmd BufRead,BufNewFile ~/progs/perl/Quizzes/Golf/* setlocal noeol binary
