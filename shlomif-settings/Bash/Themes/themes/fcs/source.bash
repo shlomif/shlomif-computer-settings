@@ -24,6 +24,9 @@ parallel="$t_fcs/scripts/parallel-solve-and-verify-for-bakers-game"
 ai_path="$cpan/AI-Pathfinding-OptimizeMultiple"
 ai_path_sys_tests="$cpan/temp-AI-Pathfinding-OptimizeMultiple-system-tests"
 
+# patsolve
+hg_pats="$fcs/extern/patsolve-shlomif"
+pats="$hg_pats/patsolve"
 
 this="$c_src"
 # this="$dd_branch"
@@ -51,6 +54,7 @@ cd $this
 prompt()
 {
     __prompt_cmd \
+        "\$pats=$pats" \
         "\$verify=$verify" \
         "\$parallel=$parallel" \
         "\$presets=$presets" \
