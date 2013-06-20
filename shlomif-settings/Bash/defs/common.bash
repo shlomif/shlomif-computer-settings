@@ -26,8 +26,7 @@ _mikmodify()
 }
 export NOPASTE_SERVICES="Debian Gist Pastie PastebinCom"
 # For TAP::Harness / Test::Harness.
-export HARNESS_SUMMARY_COL_SUC="bold blue" HARNESS_SUMMARY_COL_FAIL="bold red"
-export HARNESS_SUMMARY_COLOR_FAIL="$HARNESS_SUMMARY_COL_FAIL" HARNESS_SUMMARY_COLOR_SUCCESS="$HARNESS_SUMMARY_COL_SUC"
+export HARNESS_SUMMARY_COLOR_FAIL="bold red" HARNESS_SUMMARY_COLOR_SUCCESS="bold blue"
 unset LESSOPEN
 # To fix the Thunar/Theme ambiguity.
 _Theme()
