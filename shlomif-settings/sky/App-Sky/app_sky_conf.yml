@@ -12,7 +12,7 @@ sites:
         dest_upload_url_prefix: 'http://www.shlomifish.org/'
         sections:
             code:
-                basename_re: '\.(?:pl|pm|c|py|js|rb|rs)\z'
+                basename_re: '\.(?:bash|pl|pm|c|py|js|rb|rs)\z'
                 target_dir: 'Files/files/code/'
             images:
                 basename_re: '\.(?:png|jpg|jpeg|gif)\z'
@@ -24,5 +24,5 @@ sites:
                 basename_re: '\.(?:txt)\z'
                 target_dir: 'Files/files/text/'
             video:
-                basename_re: '\.(?:webm|flv|avi|mpeg|mpg|mp4|ogv)\z'
+                basename_re: '\.(?:webm|flv|avi|mpeg|mpg|mp4|ogv|srt)\z'
                 target_dir: 'Files/files/video/'
