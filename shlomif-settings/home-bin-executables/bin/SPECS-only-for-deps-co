@@ -1,0 +1,8 @@
+#!/bin/bash
+pkg="$1"
+shift
+
+basedir="$HOME/Download/unpack/Mageia/SPECS-only-for-deps"
+dir="$basedir/$pkg"
+mkdir -p "$dir"
+svn co svn+ssh://svn.mageia.org/svn/packages/cauldron/"$pkg"/current/SPECS "$dir/SPECS"
