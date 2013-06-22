@@ -39,6 +39,11 @@ u_rpms()
     _sys sudo urpmi "$(pwd)"/RPMS/*/*.rpm
 }
 
+force_u_rpms()
+{
+    _sys sudo rpm -Uvh --force "$(pwd)"/RPMS/*/*.rpm
+}
+
 prompt()
 {
     __prompt_cmd \
