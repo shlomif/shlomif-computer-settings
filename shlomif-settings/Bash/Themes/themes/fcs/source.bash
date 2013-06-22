@@ -66,7 +66,13 @@ prompt()
 
 t()
 {
-    (cd "$c_src" && perl run-tests.pl)
+    (export HARNESS_BREAK=1; cd "$c_src/B" && make && make test ; finish-client)
+}
+
+# parallel-tests
+pt()
+{
+    ( unset FCS_USE_TEST_RUN; t; )
 }
 
 make()
