@@ -66,7 +66,7 @@ prompt()
 
 t()
 {
-    (export HARNESS_BREAK=1; cd "$c_src/B" && make && make test ; finish-client)
+    (export HARNESS_BREAK=1; cd "$c_src/B" && make -j4 && make -j4 test ; finish-client)
 }
 
 # parallel-tests
