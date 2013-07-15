@@ -20,6 +20,7 @@ bench="$t_fcs/benchmarks"
 test_dir="$branches/trunk/testing/source"
 dd_branch="$branches/depth-dependent-moves-order/source"
 parallel="$t_fcs/scripts/parallel-solve-and-verify-for-bakers-game"
+arcs="$base/Arcs/fc-solve.shlomifish.org-downloads/fc-solve-site-assets"
 
 ai_path="$cpan/AI-Pathfinding-OptimizeMultiple"
 ai_path_sys_tests="$cpan/temp-AI-Pathfinding-OptimizeMultiple-system-tests"
@@ -96,6 +97,8 @@ _dzil_inst()
 PS1="\\u[fcs]:\$(prompt)\\$ "
 
 # Clean up the environment for the valgrind tests to succeed.
+# Commented out because now it makes things worse in t/t/build-process.t
+# file.
 # unset WD BROWSER CANBERRA_DRIVER CMAKE_MODULE_PATH DESKTOP_SESSION EDITOR G_FILENAME_ENCODING G_SLICE HARNESS_SUMMARY_COL_FAIL HARNESS_SUMMARY_COL_SUC HGEDITOR H HOMEPAGE_SSH_PATH LADSPA_PATH LAN LANGUAGE LC_ADDRESS LC_COLLATE LC_CTYPE LC_IDENTIFICATION LC_MESSAGES LC_MESSAGES LC_MESSAGES LC_NAME LC_NUMERIC LC_PAPER LC_SOURCES LC_TELEPHONE LC_TIME LESSCHARSET MAIL MANPATH MALLOC_PERTURB_ META_CLASS MGA_MENU_STYLE MYVIMRC NLSPATH NOPASTE_SERVICES PERL_AUTOINSTALL PERL_MM_USE_DEFAULT PILOTPORT PYTHONDONTWRITEBYTECODE PYTHONSTARTUP QT4DOCDIR QTDIR QTINC QTLIB QT_XFT SAL_USE_VCLPLUGIN SCREENDIR SVN_EDITOR SYSTEMD_PAGER VIM VIMRUNTIME WD XDG_CURRENT_DESKTOP XDG_MENU_PREFIX _LXSESSION_PID
 
 # export LC_ALL=en_US.UTF-8
