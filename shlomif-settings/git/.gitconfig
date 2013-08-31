@@ -19,3 +19,5 @@
 	insteadOf = kde:
 [url "git@git.kde.org:"]
 	pushInsteadOf = kde:
+[color]
+	ui = false
