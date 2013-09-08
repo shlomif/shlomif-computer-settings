@@ -1,0 +1,14 @@
+#!/bin/bash
+
+bn="App-Sky"
+conf_dir="$(cd "$(dirname "$0")" && pwd)"
+dest="$HOME/.config/Perl"
+
+if ! test -d "$dest" ; then
+    mkdir -p "$dest"
+fi
+
+dfull="$dest/$bn"
+if ! test -e "$dfull" ; then
+    ln -sf "$conf_dir/$bn" "$dfull"
+fi

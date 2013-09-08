@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use feature qw/say/;
+
+use DateTime::Format::Duration;
+
+my $seconds = shift(@ARGV);
+
+my $d = DateTime::Format::Duration->new(
+    normalise => 1,
+    pattern => '%Y years, %m months, %e days, '.
+    '%H hours, %M minutes, %S seconds'
+);
+
+say $d->format_duration( DateTime::Duration->new( seconds => $seconds) );

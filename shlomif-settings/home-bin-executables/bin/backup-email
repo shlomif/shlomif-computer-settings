@@ -1,0 +1,19 @@
+#!/bin/bash
+
+cd "$HOME"
+
+pack()
+{
+    arc="$1"
+    shift
+
+    dir="$1"
+    shift
+
+    test -z "$SKIP" || ! (echo "$dir" | grep -P "$SKIP") && \
+        tar -cavf "$arc" --files-from=<(find "$dir" -type f -not -name '.*' -print0 | xargs -0 ls -rt)
+}
+
+pack "Mail-backup-saved-dir.tar.xz" "Mail/saved"
+pack "Mail-backup-sent-dir.tar.xz" "Mail/sent"
+pack "Mail-backup-sent-mail-dir.tar.xz" "Mail/sent-mail"

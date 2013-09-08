@@ -1,0 +1,85 @@
+#!/bin/bash
+
+function kde_alpha()
+{
+    (
+    kde_alpha_base="$HOME/apps/kde-3.4-alpha1"
+    export QTDIR="$kde_alpha_base"
+    export KDEDIR="$kde_alpha_base"
+    export PATH="$kde_alpha_base/bin:$PATH"
+    rm -fr $HOME/.qt
+    startkde
+    rm -fr $HOME/.qt
+    cp -a Backup/dot-qt-safe $HOME/.qt
+    )
+}
+
+# export KDE_UTF8_FILENAMES=1
+
+# set-mouse-speed.sh
+
+# DEFAULT_DESK="icewm-stable"
+# DEFAULT_DESK="kde3"
+DEFAULT_DESK="kde4"
+# DEFAULT_DESK="kde4-trunk"
+# DEFAULT_DESK="e"
+# DEFAULT_DESK="xfce"
+# DEFAULT_DESK="sawfish"
+# DEFAULT_DESK="wmaker"
+# DEFAULT_DESK="gnome"
+
+
+WHICH_DESK="${WD:-${DEFAULT_DESK}}"
+
+if [ "$WHICH_DESK" = "kde4" ] ; then
+    # export LIBGL_ALWAYS_INDIRECT=1
+    exec startkde
+elif [ "$WHICH_DESK" = "kde4-trunk" ] ; then
+    # export LIBGL_ALWAYS_INDIRECT=1
+    export KDEDIR="/opt/kde4-trunk"
+    export KDEHOME="$HOME/.kde4"
+    PATH="$KDEDIR/bin:$PATH"
+    exec startkde
+elif [ "$WHICH_DESK" = "icewm" ] ; then
+    export PATH="$HOME/apps/icewm-testing/bin:$PATH"
+    # korganizer &
+    icewm-session
+elif [ "$WHICH_DESK" = "icewm-stable" ] ; then
+    starticewm
+elif [ "$WHICH_DESK" = "icewm-trace" ] ; then
+    strace -f -o "$HOME/icewm.strace" starticewm
+elif [ "$WHICH_DESK" = "awe" ] ; then
+    exec awesome
+elif [ "$WHICH_DESK" = "razor" ] ; then
+    exec startrazor
+elif [ "$WHICH_DESK" = "compiz" ] ; then
+    fusion-icon &
+elif [ "$WHICH_DESK" = "gnome" ] ; then
+    exec startgnome
+elif [ "$WHICH_DESK" = "gnome-trace" ] ; then
+    strace -f -o "$HOME/gnome.strace" startgnome
+elif [ "$WHICH_DESK" = "jwm" ] ; then
+    exec jwm
+elif [ "$WHICH_DESK" = "e" ] ; then
+    exec enlightenment_start
+elif [ "$WHICH_DESK" = "fvwm" ] ; then
+    # exec fvwm-themes-start -e fvwm2
+    fvwm2
+elif [ "$WHICH_DESK" = "kdedebug" ] ; then
+    export LD_LIBRARY_PATH="/home/shlomi/Download/unpack/gui/KDE/color-revert/kdelibs-3.5.4/kio/.libs:$LD_LIBRARY_PATH"
+    exec startkde
+elif [ "$WHICH_DESK" = "lxde" ] ; then
+    exec startlxde
+elif [ "$WHICH_DESK" = "fluxbox" ] ; then
+    exec startfluxbox
+elif [ "$WHICH_DESK" = "xfce-trace" ] ; then
+    strace -f -o "$HOME"/xfce4.strace startxfce4
+elif [ "$WHICH_DESK" = "xfce" ] ; then
+    exec startxfce4
+elif [ "$WHICH_DESK" = "sawfish" ] ; then
+    exec startsawfish
+elif [ "$WHICH_DESK" = "wmaker" ] ; then
+    exec startwindowmaker
+elif [ "$WHICH_DESK" = "kde3" ] ; then
+    exec /opt/kde3/bin/startkde
+fi

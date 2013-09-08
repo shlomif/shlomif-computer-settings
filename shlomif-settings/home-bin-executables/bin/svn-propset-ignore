@@ -1,0 +1,2 @@
+#!/bin/bash
+svn propset svn:ignore "$(svn st | perl -ne 'print if s/^\? *//' | sort)" .
