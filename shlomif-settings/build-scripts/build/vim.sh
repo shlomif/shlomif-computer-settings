@@ -4,4 +4,4 @@ set -x
     --enable-fail-if-missing \
     --with-features=huge \
     --enable-perlinterp --enable-pythoninterp --enable-rubyinterp \
-    --enable-tclinterp --enable-luainterp \
+    --enable-tclinterp \

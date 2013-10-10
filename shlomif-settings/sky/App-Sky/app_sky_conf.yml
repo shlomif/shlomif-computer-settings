@@ -12,7 +12,7 @@ sites:
         dest_upload_url_prefix: 'http://www.shlomifish.org/'
         sections:
             archives:
-                basename_re: '\.(?:7z|tar\.bz2|tar\.gz|tar\.xz|zip)\z'
+                basename_re: '\.(?:7z|tar\.bz2|tar\.gz|tar\.xz|zip|exe)\z'
                 target_dir: 'Files/files/arcs/'
             code:
                 basename_re: '\.(?:bash|pl|pm|c|py|js|rb|rs)\z'
