@@ -3,12 +3,12 @@
 username = Shlomi Fish <shlomif@shlomifish.org>
 ignore.other = ~/conf/trunk/shlomif-settings/hg/hgignore2
 [extensions]
-mbox = /home/shlomif/Download/unpack/file/vcs/hgmbox/hgmbox/mbox.py
+# mbox = /home/shlomif/Download/unpack/file/vcs/hgmbox/hgmbox/mbox.py
 rebase=
 bookmarks =
 hgext.bookmarks =
 hgext.mq =
-hgsubversion = /home/shlomif/Download/unpack/file/vcs/hgsubversion/hgsubversion
+# hgsubversion = /home/shlomif/Download/unpack/file/vcs/hgsubversion/hgsubversion
 progress =
 purge=
 prompt = /home/shlomif/conf/Bash/hg-prompt/hg-prompt/prompt.py
