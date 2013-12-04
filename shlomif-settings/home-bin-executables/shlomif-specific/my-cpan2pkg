@@ -1,0 +1,2 @@
+#!/bin/bash
+perl -I"$HOME"/apps/cpan2pkg `which cpan2pkg` "$@"

@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+my $l = <>;
+if ($l =~ m{http://www\.amazon\.com/.*\/dp/(\w+)/})
+{
+    my $asin = $1;
+    print "http://www.amazon.com/exec/obidos/ASIN/$asin/ref=nosim/shlomifishhom-20/\n"
+}
+else
+{
+    die "Unknown URL";
+}
+

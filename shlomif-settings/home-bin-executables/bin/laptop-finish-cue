@@ -1,0 +1,18 @@
+#!/bin/bash
+
+song="/home/shlomif/Download/Video/Jessie J - Domino-UJtB55MaoD0.webm"
+
+if ! test -e "$song" ; then
+    song="/mnt/smb/music/Music/mp3s/Jessie J - Domino-UJtB55MaoD0.webm"
+fi
+
+param="$1"
+shift
+if test "$param" = "--song"; then
+    arg="$1"
+    shift
+    song="$arg"
+fi
+
+xmessage "Your task has been finished! Go check it out." &
+mplayer "$song"

@@ -1,0 +1,29 @@
+function switch_cvs
+{
+    which="$1"
+    if [ "$which" == "fcs" ] ; then
+        export CVS_RSH=ssh
+        export CVSROOT=":pserver:shlomif@cvs.fc-solve.berlios.de:/cvsroot/fc-solve";
+    elif [ "$which" == "localhost" ] ; then
+        unset CVS_RSH
+        export CVSROOT=":pserver:shlomi@localhost:/var/cvsroot"
+    elif [ "$which" == "ip-noise" ] ; then
+        export CVS_RSH=ssh
+        export CVSROOT=":pserver:shlomif@cvs.ip-noise.berlios.de:/cvsroot/ip-noise"
+    elif [ "$which" == "sct" ] ; then
+        export CVS_RSH=ssh
+        export CVSROOT=":ext:shlomif@cvs.syscalltrack.sourceforge.net:/cvsroot/syscalltrack"
+    elif [ "$which" == "seminars" ] ; then
+        export CVS_RSH=ssh
+        export CVSROOT=":pserver:shlomif@cvs.semiman.berlios.de:/cvsroot/semiman"
+    elif [ "$which" == "humanity" ] ; then
+        export CVS_RSH=ssh
+        export CVSROOT=":pserver:shlomif@cvs.humanity.berlios.de:/cvsroot/humanity"
+    elif [ "$which" == "haifux" ] ; then
+        export CVS_RSH=ssh
+        export CVSROOT=":pserver:shlomif@cvs.haifux.berlios.de:/cvsroot/haifux"
+    else
+        echo "Unknown CVS profile \"$which\""'!'
+    fi
+}
+

@@ -1,0 +1,112 @@
+load_common mymake
+load_common completion
+load_common prompt
+
+base="$HOME/progs/perl/cpan/IO/All"
+trunk="$base/io-all-pm"
+module="$trunk"
+this="$module"
+
+git_remote_shlomif="$($__themes_dir/common/github-git-remote-repo.pl --user="shlomif" --repo="io-all-pm")"
+git_remote_ingy='git@github.com:ingydotnet/io-all-pm.git'
+
+# Workaround for https://rt.cpan.org/Ticket/Display.html?id=75086
+extra_path="$base/util"
+export PERL5LIB="$extra_path:$PERL5LIB"
+(
+    src="/usr/lib/perl5/vendor_perl/5.14.2/Module/Manifest/Skip.pm"
+    dest="$extra_path/Module/Manifest/Skip.pm"
+    mkdir -p "$(dirname "$dest")"
+    cp -f "$src" "$dest"
+)
+
+# Make sure that gvim's filename completion ignores filenames that it should
+# not edit.
+
+__dist_name()
+{
+    (__check_for_distro &&
+        cat META.yml | grep "^name:" | sed 's/^name: *//'
+    )
+}
+
+__version()
+{
+    (__check_for_distro &&
+        cat META.yml | grep "^version:" | sed 's/^version: *//'
+    )
+}
+
+__check_for_distro()
+{
+    if [ -e "META.yml" ] ; then
+        return 0
+    else
+        echo "Not a distro dir" 1>&2
+        return 1
+    fi
+}
+
+__test_distribution()
+{
+    __check_for_distro &&
+    (
+        make disttest
+        rm -fr "$(__dist_name)-$(__version)"
+    )
+}
+
+__myctags()
+{
+    ( cd "$trunk"/build/build-tags && bash build-ctags.sh )
+}
+
+cd $this
+
+__install_to_temp()
+{
+    (
+        make -f "$modules_makefile" "$(pwd)"
+    )
+}
+
+
+__prepare_install_all_to_temp_makefile()
+{
+    (cd "$build_scripts_dir" && perl create-makefile.pl)
+}
+
+__install_all_to_temp()
+{
+    target="$1"
+    shift
+    make_params=""
+    if [ "$target" == "runtest" ] ; then
+        make_params="$make_params TEST_TARGET=runtest"
+    fi
+    (
+        make -f "$modules_makefile" all $make_params
+    )
+}
+
+prompt()
+{
+    __prompt_cmd \
+        "\$trunk=$trunk" \
+        "\$base=$base" \
+        "~=$HOME"
+}
+
+setup()
+{
+    (
+        mkdir -p "$base"
+        cd "$base"
+        git clone "$git_remote_shlomif"
+        cd "$trunk"
+        git remote add ingy "$git_remote_ingy"
+    )
+}
+
+PS1="\\u[IO-All]:\$(prompt)\\$ "
+
