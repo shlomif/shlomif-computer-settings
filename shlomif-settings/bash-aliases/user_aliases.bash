@@ -1,18 +1,13 @@
 source "$HOME/.common_aliases.bash"
-alias myrsync='rsync -a --progress -v --inplace'
-
+inst_modules_dir="$HOME/apps/perl/modules"
 dc()
 {
     echo "It's cd - not dc dammit!" 1>&2
 }
-
 disable_local_lib()
 {
     unset MODULEBUILDRC PERL_MM_OPT
 }
-alias screen='screen -e "^^6"'
-alias rem_up='HOMEPAGE_SSH_PATH="$__HOMEPAGE_REMOTE_PATH" make upload'
-alias perlbug='perlbug -r shlomif@iglu.org.il -c shlomif@iglu.org.il -e "gvim -f"'
 mdvsys()
 {
     (
@@ -27,7 +22,6 @@ rpmbuild()
         `which rpmbuild` "$@"
     )
 }
-alias xz9='xz -9 --extreme'
 cp_mods()
 {
     touch "$@"
@@ -38,9 +32,6 @@ mv_flv()
     touch "$@"
     mv -i "$@" /home/music/Music/mp3s/
 }
-alias ifconfig='/sbin/ifconfig'
-alias caddy="ruby $HOME/progs/perl/Quizzes/Golf/golf.shinh.org/caddy-tool-for-golfers/caddy/caddy.rb"
-
 # What this function does is cache the result of a command in a file, and
 # use the file to output the results in case it exists.
 # Format is: cache "$basename_to_cache_in" $cmd $arg1 $arg2 $arg3...
@@ -61,10 +52,12 @@ cache()
     fi
     cat "$fn"
 }
-
-inst_modules_dir="$HOME/apps/perl/modules"
-
 _update_PERL5LIB()
 {
     . ~/conf/trunk/shlomif-settings/bash-aliases/PERL5LIB_gen.sh
 }
+alias myrsync='rsync -a --progress -v --inplace' screen='screen -e "^^6"' \
+  rem_up='HOMEPAGE_SSH_PATH="$__HOMEPAGE_REMOTE_PATH" make upload' \
+  perlbug='perlbug -r shlomif@shlomifish.org -c shlomif@shlomifish.org -e "gvim -f"' \
+  xz9='xz -9 --extreme' ifconfig='/sbin/ifconfig' \
+  caddy="ruby $HOME/progs/perl/Quizzes/Golf/golf.shinh.org/caddy-tool-for-golfers/caddy/caddy.rb"
