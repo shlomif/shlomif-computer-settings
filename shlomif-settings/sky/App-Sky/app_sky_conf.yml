@@ -24,7 +24,7 @@ sites:
                 basename_re: '\.(?:mp3|ogg|wav|aac|m4a)\z'
                 target_dir: 'Files/files/music/mp3-ogg/'
             text:
-                basename_re: '\.(?:txt)\z'
+                basename_re: '\.(?:txt|docx)(?:\.xz)?\z'
                 target_dir: 'Files/files/text/'
             video:
                 basename_re: '\.(?:webm|flv|avi|mpeg|mpg|mp4|ogv|srt)\z'
