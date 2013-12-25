@@ -15,7 +15,7 @@ sites:
                 basename_re: '\.(?:7z|tar\.bz2|tar\.gz|tar\.xz|zip|exe)\z'
                 target_dir: 'Files/files/arcs/'
             code:
-                basename_re: '\.(?:bash|pl|pm|c|py|js|rb|rs)\z'
+                basename_re: '\.(?:bash|pl|pm|c|py|js|rb|rs|json|patch|diff)\z'
                 target_dir: 'Files/files/code/'
             images:
                 basename_re: '\.(?:png|jpg|jpeg|gif)\z'
