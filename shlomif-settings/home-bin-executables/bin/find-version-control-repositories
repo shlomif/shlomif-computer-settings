@@ -1,0 +1,22 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use File::Find::Object;
+use List::MoreUtils qw(any);
+
+my $ff = File::Find::Object->new({}, ".");
+
+while (my $r = $ff->next())
+{
+    if ($r =~ m#\A(\./)?(?:Mail|\.purple)\z#)
+    {
+        $ff->prune();
+    }
+    elsif (any { -d "$r/$_" } qw(.svn .git CVS .bzr .hg))
+    {
+        print "$r\n";
+        $ff->prune();
+    }
+}
