@@ -10,7 +10,7 @@ my $ff = File::Find::Object->new({}, ".");
 
 while (my $r = $ff->next())
 {
-    if ($r =~ m#\A(\./)?(?:Mail|\.purple)\z#)
+    if ($r =~ m#\A(\./)?(?:apps/perl/brew|Backup/(?:web-hosting-backup/hostgator)|Download/Arcs/Perl/minicpan/authors|Mail|\.purple)\z#)
     {
         $ff->prune();
     }
@@ -19,4 +19,14 @@ while (my $r = $ff->next())
         print "$r\n";
         $ff->prune();
     }
+
+=begin foo
+    else
+    {
+        print STDERR "Traversing <<$r>>\n";
+    }
+=end foo
+
+=cut
+
 }
