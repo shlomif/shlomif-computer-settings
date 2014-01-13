@@ -1,10 +1,23 @@
 #!/bin/bash
-unset PERL_MM_OPT
-unset MODULEBUILDRC
+
+b_pl="Build.PL"
 prefix="$HOME/apps/perl/modules"
-# args="--prefix=$prefix --install_path extradata=$prefix/extradata"
-args="--prefix=$prefix"
-perl Build.PL $args && \
-    ./Build build $args && \
-    ./Build test $args && \
-    ./Build install $args
+
+if -e "$b_pl" ; then
+    (
+        unset PERL_MM_OPT
+        unset MODULEBUILDRC
+        args="--prefix=$prefix"
+        perl "$b_pl" $args && \
+            ./Build build $args && \
+            ./Build test $args && \
+            ./Build install $args
+    )
+else
+    (
+        perl Makefile.PL PREFIX="$prefix" INSTALLSITEBIN="\$(SITEPREFIX)/bin" INSTALLSITESCRIPT="\$(SITEPREFIX)/bin" && \
+        make && \
+        make test && \
+        make install
+    )
+fi
