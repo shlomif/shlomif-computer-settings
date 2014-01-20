@@ -1,4 +1,4 @@
-alias rm='rm -i' mv='mv -i' cp='cp -i'ls=' ls --color=auto'
+alias rm='rm -i' mv='mv -i' cp='cp -i' ls=' ls --color=auto'
 export HISTSIZE=25000 FREECELL_SOLVER_QUIET=1 \
     EDITOR=vim VISUAL=vim  PAGER="less -isrr" SVN_EDITOR="gvim -f" \
     GIT_EDITOR="$SVN_EDITOR" HGEDITOR="$SVN_EDITOR" \
