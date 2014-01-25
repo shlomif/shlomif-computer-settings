@@ -24,3 +24,5 @@ if test -z "$ORIGIN_HOSTNAME" ; then
 fi
 # See http://bugs.mageia.org/show_bug.cgi?id=237
 shopt -s direxpand
+unalias d
+d() { ls -A | xargs \du -s -- | sort -n ;}
