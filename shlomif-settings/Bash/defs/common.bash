@@ -25,4 +25,4 @@ fi
 # See http://bugs.mageia.org/show_bug.cgi?id=237
 shopt -s direxpand
 unalias d
-d() { ls -A | xargs \du -s -- | sort -n ;}
+d() { ls -A | xargs -d '\n' \du -s -- | sort -n ;}
