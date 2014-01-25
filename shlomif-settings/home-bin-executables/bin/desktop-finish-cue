@@ -1,26 +1,4 @@
 #!/bin/bash
 
-song="/home/music/Music/dosd-mp3s/Theme - Eurovision.mp2"
-
-param="$1"
-shift
-
-msg="Your task has been finished! Go check it out."
-while test -n "$param" ; do
-    if test "$param" = "--song"; then
-        arg="$1"
-        shift
-        song="$arg"
-    elif test "$param" = "--message"; then
-        arg="$1"
-        shift
-        if test -n "$arg" ; then
-            msg="$arg"
-        fi
-    fi
-    param="$1"
-    shift
-done
-
-xmessage "$msg" &
-mplayer "$song"
+export DEFAULT_SONG="/home/music/Music/dosd-mp3s/Theme - Eurovision.mp2"
+exec $(perl -e 'use File::Spec; print File::Spec->rel2abs(q#'"$(dirname "$0")"'#);')/generic-finish-cue "$@"
