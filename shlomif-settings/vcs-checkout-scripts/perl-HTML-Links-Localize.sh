@@ -1,2 +1,2 @@
 #!/bin/bash
-svn co 'https://svn.berlios.de/svnroot/repos/web-cpan/HTML-Links-Localize/trunk'
+hg clone 'ssh://hg@bitbucket.org/shlomif/perl-html-links-localize'
