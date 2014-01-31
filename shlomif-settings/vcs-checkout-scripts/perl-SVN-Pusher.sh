@@ -1,2 +1,3 @@
 #!/bin/sh
-svn cohttps://svn.berlios.de/svnroot/repos/web-cpan/SVN-Pusher/trunk
+# svn co https://svn.berlios.de/svnroot/repos/web-cpan/SVN-Pusher/trunk
+hg clone 'ssh://hg@bitbucket.org/shlomif/perl-svn-pusher'
