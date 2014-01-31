@@ -7,7 +7,7 @@ fi
 
 sort_manifest()
 {
-    cat MANIFEST | sort | uniq > MANIFEST.new
+    cat MANIFEST | (LC_ALL=C sort) | uniq > MANIFEST.new
     mv -f MANIFEST.new MANIFEST
 }
 
@@ -22,6 +22,13 @@ if svn info > /dev/null 2>&1 ; then
     sort_manifest
 elif svk info > /dev/null 2>&1 ; then
     svk diff -X -s |
+        grep '^A' |
+        sed 's!^A[ +]*!!' |
+        perl -nle 'print if -f' \
+        >> MANIFEST
+    sort_manifest
+elif hg st . > /dev/null 2>&1 ; then
+    hg st . |
         grep '^A' |
         sed 's!^A[ +]*!!' |
         perl -nle 'print if -f' \
