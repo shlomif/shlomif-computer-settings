@@ -7,23 +7,23 @@ fi
 
 sort_manifest()
 {
-    cat MANIFEST | sort | uniq > MANIFEST.new 
+    cat MANIFEST | sort | uniq > MANIFEST.new
     mv -f MANIFEST.new MANIFEST
 }
 
 # TODO :
-# Lots of exactly duplicate code here - refactor. 
+# Lots of exactly duplicate code here - refactor.
 if svn info > /dev/null 2>&1 ; then
     svn st |
-        grep '^A' | 
-        sed 's!^A[ +]*!!' | 
+        grep '^A' |
+        sed 's!^A[ +]*!!' |
         perl -nle 'print if -f' \
-        >> MANIFEST 
+        >> MANIFEST
     sort_manifest
 elif svk info > /dev/null 2>&1 ; then
-    svk diff -X -s | 
-        grep '^A' | 
-        sed 's!^A[ +]*!!' | 
+    svk diff -X -s |
+        grep '^A' |
+        sed 's!^A[ +]*!!' |
         perl -nle 'print if -f' \
         >> MANIFEST
     sort_manifest
