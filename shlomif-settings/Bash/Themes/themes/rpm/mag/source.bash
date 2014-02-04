@@ -110,8 +110,14 @@ mu()
 
 pp()
 {
+    local pkg="$1"
+    shift
     cd "$mag_base"
-    pco "$@"
+    local perl_pkg="$(perlmf rpm_dash "$pkg")"
+    if ! test -e "$perl_pkg" ; then
+        co "$perl_pkg"
+    fi
+    _sys cd "$perl_pkg"
 }
 
 PS1="\\u[rpms]:\$(prompt)\\$ "
