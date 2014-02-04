@@ -389,3 +389,7 @@ autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/lib/pages/t2/philosoph
 let g:CommandTMaxFiles = 200000
 
 autocmd BufRead,BufNewFile ~/progs/perl/Quizzes/Golf/* setlocal noeol binary
+
+" Copy the current WORD (delimited by whitespace) into
+" both the * and + clipboards.
+map <Leader>cc viW""ygv"+ygv"*y
