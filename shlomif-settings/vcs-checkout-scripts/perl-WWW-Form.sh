@@ -1,2 +1,2 @@
 #!/bin/bash
-svn co https://svn.berlios.de/svnroot/repos/web-cpan/www-form/trunk
+hg clone 'ssh://hg@bitbucket.org/shlomif/perl-www-form'
