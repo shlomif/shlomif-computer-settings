@@ -103,6 +103,17 @@ myq()
     svn st "$p"/
 }
 
+mu()
+{
+    magpie update
+}
+
+pp()
+{
+    cd "$mag_base"
+    pco "$@"
+}
+
 PS1="\\u[rpms]:\$(prompt)\\$ "
 
 
