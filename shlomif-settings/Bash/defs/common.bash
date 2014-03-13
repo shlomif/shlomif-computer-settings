@@ -2,7 +2,7 @@ alias rm='rm -i' mv='mv -i' cp='cp -i' ls=' ls --color=auto'
 export HISTSIZE=25000 FREECELL_SOLVER_QUIET=1 \
     EDITOR=vim VISUAL=vim  PAGER="less -isrr" SVN_EDITOR="gvim -f" \
     GIT_EDITOR="$SVN_EDITOR" HGEDITOR="$SVN_EDITOR" \
-    NOPASTE_SERVICES="Debian Gist Pastie PastebinCom" \
+    NOPASTE_SERVICES="Pastie Gist Debian PastebinCom" \
     HARNESS_SUMMARY_COLOR_FAIL="bold red" HARNESS_SUMMARY_COLOR_SUCCESS="bold blue" \
     HARNESS_PLUGINS="ColorSummary ColorFileVerdicts AlternateInterpreters BreakOnFailure" \
     HARNESS_ALT_INTRP_FILE="$HOME/conf/Test-Run/alternate-interpreters.yml" \
