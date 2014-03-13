@@ -223,6 +223,10 @@ au BufNewFile,BufRead ~/Docs/Diary/* so ~/conf/Vim/diary.vim
 
 let g:Perl_Shlomif_Settings_Loaded = 0
 
+" Prevent perl from highlighting POD inside which is annoying for
+" commented-out blocks and stuff like that. See /syntax/perl.vim
+let perl_include_pod = 0
+
 function Perl_Load_File()
     if g:Perl_Shlomif_Settings_Loaded == 0
         let g:Perl_Shlomif_Settings_Loaded = 1
