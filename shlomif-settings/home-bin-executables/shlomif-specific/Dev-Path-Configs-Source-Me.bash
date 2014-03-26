@@ -4,3 +4,7 @@ export PATH="$HOME/apps/gnome-subtitles/bin:$HOME/apps/multimedia/mikmod/bin:$HO
 
 export LD_LIBRARY_PATH="$HOME/apps/multimedia/libmikmod/lib"
 export PKG_CONFIG_PATH="$HOME/apps/file/libgringotts/lib/pkgconfig"
+
+# The compilation of emscripten-fastcomp is broken and should be set.
+# export clang_dir=/home/shlomif/Download/unpack/prog/llvm-to-js/fastcomp/emscripten-fastcomp/build/Release/bin
+# export CC="$clang_dir/clang" CXX="$clang_dir/clang++"
