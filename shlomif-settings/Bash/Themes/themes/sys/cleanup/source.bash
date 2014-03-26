@@ -6,7 +6,7 @@ an()
 regen()
 {
     cd "$HOME"
-    du -s . > du-new.txt
+    \du . > du-new.txt
 }
 
 cd "$HOME"
