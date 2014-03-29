@@ -3,7 +3,7 @@
 b_pl="Build.PL"
 prefix="$HOME/apps/perl/modules"
 
-if -e "$b_pl" ; then
+if test -e "$b_pl" ; then
     (
         unset PERL_MM_OPT
         unset MODULEBUILDRC
