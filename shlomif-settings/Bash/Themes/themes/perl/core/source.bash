@@ -41,7 +41,7 @@ _build_generic()
     shift
 
     _sys bash ~/conf/build/perl/"$script" && _sys make -j4
-    _sys finish-client
+    _sys finish-client --msg "perl/core build finished"
 }
 
 # Short for build.
@@ -60,7 +60,7 @@ bt()
 t()
 {
     _sys make -j12 test_harness TEST_JOBS=4
-    _sys finish-client
+    _sys finish-client --msg "perl/core test finished"
 }
 
 # Short for test debugger.
@@ -78,7 +78,7 @@ emcc_conf()
         cd "$this"
         _sys git clean -dxf
         _sys bash "$emcc_script"
-        _sys finish-client
+        _sys finish-client --msg "perl/core emcc_conf finished"
     )
 }
 
@@ -93,5 +93,7 @@ e_b()
 {
     emcc_conf
 }
+
+PS1="\\u[perl/core]:\\w\\$ "
 
 export PATH="$emcc_script_dir:$PATH"
