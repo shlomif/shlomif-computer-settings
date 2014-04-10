@@ -65,6 +65,8 @@ elif [ "$WHICH_DESK" = "e" ] ; then
 elif [ "$WHICH_DESK" = "fvwm" ] ; then
     # exec fvwm-themes-start -e fvwm2
     fvwm2
+elif [ "$WHICH_DESK" = "i3" ] ; then
+    i3
 elif [ "$WHICH_DESK" = "kdedebug" ] ; then
     export LD_LIBRARY_PATH="/home/shlomi/Download/unpack/gui/KDE/color-revert/kdelibs-3.5.4/kio/.libs:$LD_LIBRARY_PATH"
     exec startkde
