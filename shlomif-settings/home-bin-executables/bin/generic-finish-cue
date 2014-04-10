@@ -22,5 +22,7 @@ while test -n "$param" ; do
     shift
 done
 
-xmessage "$msg" &
+(
+    kdialog --msgbox "$msg" || xmessage "$msg"
+) &
 mplayer "$song"
