@@ -195,6 +195,22 @@ sub _slurp
 
 endsnippet
 
+snippet _write_file
+sub _write_utf8_file
+{
+    my ($out_path, $contents) = @_;
+
+    open my $out_fh, '>:encoding(utf8)', $out_path
+        or die "Cannot open '$out_path' for writing - $!";
+
+    print {$out_fh} $contents;
+
+    close($out_fh);
+
+    return;
+}
+endsnippet
+
 snippet ok
 # TEST
 ok($1, "$2");
