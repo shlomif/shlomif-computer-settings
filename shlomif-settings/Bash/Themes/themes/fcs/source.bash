@@ -67,7 +67,13 @@ prompt()
 
 t()
 {
-    (export HARNESS_BREAK=1; cd "$t_fcs/B" && make -j4 && make -j4 test ; n --msg "Freecell Solver Test Finished")
+    (
+        export HARNESS_BREAK=1
+        cd "$t_fcs/B" && \
+            make -j4 && \
+            ctest -V
+        n --msg "Freecell Solver Test Finished"
+    )
 }
 
 # parallel-tests
