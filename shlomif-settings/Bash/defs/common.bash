@@ -1,12 +1,14 @@
 alias rm='rm -i' mv='mv -i' cp='cp -i' ls=' ls --color=auto'
+export SVN_EDITOR='gvim -f'
 export HISTSIZE=25000 FREECELL_SOLVER_QUIET=1 \
-    EDITOR=vim VISUAL=vim  PAGER="less -isrr" SVN_EDITOR="gvim -f" \
+    EDITOR=vim VISUAL=vim  PAGER="less -isrr" \
     GIT_EDITOR="$SVN_EDITOR" HGEDITOR="$SVN_EDITOR" \
     NOPASTE_SERVICES="Pastie Gist Debian PastebinCom" \
     HARNESS_SUMMARY_COLOR_FAIL="bold red" HARNESS_SUMMARY_COLOR_SUCCESS="bold blue" \
     HARNESS_PLUGINS="ColorSummary ColorFileVerdicts AlternateInterpreters BreakOnFailure" \
     HARNESS_ALT_INTRP_FILE="$HOME/conf/Test-Run/alternate-interpreters.yml" \
-    HARNESS_OPTIONS=c PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL="--skipdeps --alldeps"
+    HARNESS_OPTIONS=c PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL="--skipdeps --alldeps" \
+    CPAN2PKG_NO_CPANP_X=1
 unset LESSOPEN
 umask 022
 if test -e /etc/debian_version ; then
