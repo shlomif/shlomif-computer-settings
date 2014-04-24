@@ -9,6 +9,8 @@ s="$base/SRPMS"
 mag_base="$HOME/Download/unpack/Mageia"
 this="$mag_base"
 
+mag_username="$(whoami)"
+
 k()
 {
     _sys scp "$@" kenobi:
@@ -118,6 +120,14 @@ pp()
         co "$perl_pkg"
     fi
     _sys cd "$perl_pkg"
+}
+
+# Set me as the maintainer of a package
+Set()
+{
+    for pkg in "$@" ; do
+        mgarepo maintdb set "$pkg" "$mag_username"
+    done
 }
 
 PS1="\\u[rpms]:\$(prompt)\\$ "
