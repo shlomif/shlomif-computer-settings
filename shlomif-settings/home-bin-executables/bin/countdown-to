@@ -1,0 +1,13 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use IPC::System::Simple qw( capturex systemx );
+
+my ($date_spec) = @ARGV;
+
+my $future_stamp = capturex ('date', '-d', $date_spec, '+%s');
+chomp($future_stamp);
+
+systemx ("countdown", ($future_stamp-time()));
