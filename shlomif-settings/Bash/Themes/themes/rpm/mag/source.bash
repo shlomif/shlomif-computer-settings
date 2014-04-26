@@ -99,7 +99,7 @@ log()
 
 myq()
 {
-    local p="$1"
+    local p="$(echo -n "$1" | perl -pE 's#/+##')"
     shift
     urpmq --sources "$p"
     svn st "$p"/
