@@ -59,5 +59,4 @@ _update_PERL5LIB()
 alias myrsync='rsync -a --progress -v --inplace' screen='screen -e "^^6"' \
   rem_up='HOMEPAGE_SSH_PATH="$__HOMEPAGE_REMOTE_PATH" make upload' \
   perlbug='perlbug -r shlomif@shlomifish.org -c shlomif@shlomifish.org -e "gvim -f"' \
-  xz9='xz -9 --extreme' ifconfig='/sbin/ifconfig' \
-  caddy="ruby $HOME/progs/perl/Quizzes/Golf/golf.shinh.org/caddy-tool-for-golfers/caddy/caddy.rb"
+  xz9='xz -9 --extreme' ifconfig='/sbin/ifconfig'
