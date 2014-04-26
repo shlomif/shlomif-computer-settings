@@ -1,8 +1,8 @@
 load_common completion
 load_common prompt
 
-base="$HOME/progs/perl/www/israel/perl-il"
-site="$base/svn/site"
+base="$HOME/progs/perl/forums/Israel.PM/perl.org.il"
+site="$base/site"
 bin="$site/new_site_bin"
 sources="$site/new_site_sources"
 
