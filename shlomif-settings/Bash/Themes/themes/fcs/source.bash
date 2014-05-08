@@ -71,7 +71,7 @@ t()
         export HARNESS_BREAK=1
         cd "$t_fcs/B" && \
             make -j4 && \
-            ctest -V
+            perl "$c_src"/run-tests.pl
         n --msg "Freecell Solver Test Finished"
     )
 }
