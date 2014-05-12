@@ -39,5 +39,5 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u[cfg-ini]:\$(prompt)\\$ "
+proj_name='cfg-ini'
 

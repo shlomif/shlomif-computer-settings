@@ -31,5 +31,5 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u[app-sky]:\$(prompt)\\$ "
+proj_name='app-sky'
 

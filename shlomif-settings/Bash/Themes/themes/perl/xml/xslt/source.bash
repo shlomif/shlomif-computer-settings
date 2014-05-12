@@ -99,4 +99,4 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u[XML-LibXSLT]:\$(prompt)\\$ "
+proj_name='XML-LibXSLT'

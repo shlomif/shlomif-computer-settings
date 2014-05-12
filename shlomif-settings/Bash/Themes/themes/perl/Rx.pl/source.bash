@@ -30,5 +30,5 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u[Rx.pl]:\$(prompt)\\$ "
+proj_name='Rx.pl'
 

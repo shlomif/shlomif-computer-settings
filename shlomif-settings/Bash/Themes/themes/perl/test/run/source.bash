@@ -120,5 +120,5 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u:\$(prompt)\\$ "
+proj_name='Test-Run'
 

@@ -62,5 +62,5 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u[xml-compareml]:\$(prompt)\\$ "
+proj_name='xml-compareml'
 

@@ -94,6 +94,6 @@ e_b()
     emcc_conf
 }
 
-PS1="\\u[perl/core]:\\w\\$ "
+proj_name='perl/core'
 
 export PATH="$emcc_script_dir:$PATH"

@@ -30,5 +30,5 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u:\$(prompt)\\$ "
+proj_name='dir-dump'
 

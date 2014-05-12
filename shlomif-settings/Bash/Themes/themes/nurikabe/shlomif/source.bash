@@ -37,5 +37,5 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u[nurikabe]:\$(prompt)\\$ "
+proj_name='nurikabe'
 

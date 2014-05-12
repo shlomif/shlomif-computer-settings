@@ -1,3 +1,5 @@
+load_common prompt
+
 an()
 {
     cat ~/du.txt | ~/bin/analyse-du.pl "$@"
@@ -11,5 +13,11 @@ regen()
 
 cd "$HOME"
 
-PS1="\\u[cleanup]:\\w\$ "
+prompt()
+{
+    __prompt_cmd \
+        "~=$HOME"
+}
+
+proj_name='cleanup'
 

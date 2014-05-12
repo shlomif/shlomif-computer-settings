@@ -81,5 +81,5 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u[inet6]:\$(prompt)\\$ "
+proj_name='inet6'
 

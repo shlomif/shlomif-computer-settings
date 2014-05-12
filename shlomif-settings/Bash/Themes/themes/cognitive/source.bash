@@ -36,7 +36,7 @@ ang()
     kate "$base"/Tony/for-anger.txt &
 }
 
-PS1="\\u[cognitive]:\$(prompt)\\$ "
+proj_name='cognitive'
 
 cd "$this"
 

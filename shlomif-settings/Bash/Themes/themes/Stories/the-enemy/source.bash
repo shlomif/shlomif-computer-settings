@@ -30,5 +30,5 @@ up()
     )
 }
 
-PS1="\\u[The-Enemy]:\$(prompt)\\$ "
+proj_name='The-Enemy'
 

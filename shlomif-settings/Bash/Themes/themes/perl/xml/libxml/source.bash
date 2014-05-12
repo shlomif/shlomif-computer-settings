@@ -101,7 +101,7 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u[XML-LibXML]:\$(prompt)\\$ "
+proj_name='XML-LibXML'
 
 # Short for convert for the Test.pm-to-Test-More conversion
 conv()

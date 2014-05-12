@@ -98,5 +98,5 @@ setup()
     )
 }
 
-PS1="\\u[IO-All]:\$(prompt)\\$ "
+proj_name='IO-All'
 

@@ -21,7 +21,7 @@ gen_site()
     (cd "$bin" && perl update_site.pl --outdir dest)
 }
 
-PS1="\\u[perl-il-site]:\$(prompt)\\$ "
+proj_name='perl-il-site'
 
 cd $this
 

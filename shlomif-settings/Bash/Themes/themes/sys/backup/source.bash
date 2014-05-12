@@ -1,3 +1,5 @@
+load_common prompt
+
 an()
 {
     cat ~/Backup/rsync.net/unpack/home/shlomif/du.txt | ~/bin/analyse-du.pl "$@"
@@ -14,5 +16,11 @@ regen()
 
 cd "$HOME"
 
-PS1="\\u[backup]:\\w\$ "
+prompt()
+{
+    __prompt_cmd \
+        "~=$HOME"
+}
+
+proj_name='backup'
 

@@ -14,4 +14,4 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u[golf]:\$(prompt)\\$ "
+proj_name='golf'

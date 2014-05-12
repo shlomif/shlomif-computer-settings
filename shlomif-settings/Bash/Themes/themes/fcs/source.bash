@@ -100,7 +100,7 @@ _dzil_inst()
     )
 }
 
-PS1="\\u[fcs]:\$(prompt)\\$ "
+proj_name='fcs'
 
 # Clean up the environment for the valgrind tests to succeed.
 # Commented out because now it makes things worse in t/t/build-process.t

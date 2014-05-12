@@ -29,5 +29,5 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u@\\h[kakuro]:\$(prompt)\\$ "
+proj_name='kakuro'
 

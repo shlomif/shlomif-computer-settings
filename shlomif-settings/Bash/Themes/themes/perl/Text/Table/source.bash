@@ -99,5 +99,5 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u[Text-Table]:\$(prompt)\\$ "
+proj_name='Text-Table'
 
