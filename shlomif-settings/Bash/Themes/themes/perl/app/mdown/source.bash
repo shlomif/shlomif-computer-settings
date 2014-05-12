@@ -30,5 +30,5 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u[App-ManDown]:\$(prompt)\\$ "
+PS1="\\u[App-ManDown@\$(__hg_prompt_branch)]:\$(prompt)\\$ "
 
