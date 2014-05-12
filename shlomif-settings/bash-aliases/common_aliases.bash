@@ -36,7 +36,7 @@ up()
     sudo urpmi --auto $(perlmf as_rpm_colon "$@")
 }
 
-function _cpan_d_format()
+_cpan_d_format()
 {
     (
     if test -e /etc/mageia-release ; then
@@ -47,13 +47,13 @@ function _cpan_d_format()
     )
 }
 
-function c()
+c()
 {
     sudo cpan2dist --verbose --format="$(_cpan_d_format)" \
         --defaults --install --timeout 0 $(perlmf as_colon "$@")
 }
 
-function qp()
+qp()
 {
     local pm="$1"
     shift
@@ -61,7 +61,7 @@ function qp()
     urpmq --whatprovides "$(perlmf as_rpm_colon "$pm")" ;
 }
 
-function pap()
+pap()
 {
     sudo apt-get install $(perlmf as_deb "$@");
 }
