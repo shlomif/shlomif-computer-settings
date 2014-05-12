@@ -80,3 +80,7 @@ eo()
 alias q='urpmq --fuzzy -a'
 alias qv='q --sources'
 
+complete -F _urpmi u
+complete -F _urpme e
+complete -F _urpmq q
+complete -F _urpmq qv
