@@ -1,13 +1,13 @@
 load_common mymake
 load_common completion
 load_common prompt
-# load_common gen_patch
 
 base="$HOME/progs/Work/insurgent"
 git_base="$base/git"
 git_dir="$git_base/www.insurgentsoftware.com"
 auth="$git_dir"
 this="$auth"
+proj_name="Insurgent"
 
 __dist_name()
 {
@@ -142,5 +142,4 @@ add()
     )
 }
 
-PS1="\\u:\$(prompt)\\$ "
 

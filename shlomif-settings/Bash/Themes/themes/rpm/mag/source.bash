@@ -8,6 +8,7 @@ base="$HOME/progs/Rpms"
 s="$base/SRPMS"
 mag_base="$HOME/Download/unpack/Mageia"
 this="$mag_base"
+proj_name='rpms'
 
 mag_username="$(whoami)"
 
@@ -130,7 +131,6 @@ Set()
     done
 }
 
-PS1="\\u[rpms]:\$(prompt)\\$ "
 
 
 disable_local_lib

@@ -82,5 +82,5 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u[qantor]:\$(prompt)\\$ "
+proj_name='qantor'
 

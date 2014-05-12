@@ -102,5 +102,5 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u[impatience]:\$(prompt)\\$ "
+proj_name='impatience'
 

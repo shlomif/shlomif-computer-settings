@@ -1,6 +1,5 @@
 load_common mymake
 load_common completion
-load_common prompt
 load_common hg
 
 # load_common gen_patch
@@ -30,5 +29,5 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u[App-ManDown@\$(__hg_prompt_branch)]:\$(prompt)\\$ "
+proj_name='App-ManDown'
 

@@ -38,11 +38,11 @@ e()
 {
     (cd "$this" ;
         gvim -p CMakeLists.txt ../p2_mp4h/CMakeLists.txt \
-        Makefile.in configure.in 
+        Makefile.in configure.in
     )
 }
 
-PS1="\\u[wml]:\$(prompt)\\$ "
+proj_name='wml'
 
 PATH="$HOME/apps/test/wml/bin/:$PATH"
 

@@ -47,7 +47,7 @@ prompt()
     __prompt_cmd "\$modules=$modules" "\$trunk=$trunk" "\$base=$base" "~=$HOME"
 }
 
-PS1="\\u:\$(prompt)\\$ "
+proj_name='latemp'
 
 cd $this
 

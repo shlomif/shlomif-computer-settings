@@ -33,4 +33,4 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u[abc-path]:\$(prompt)\\$ "
+proj_name='abc-path'

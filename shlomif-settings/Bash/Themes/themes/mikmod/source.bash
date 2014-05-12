@@ -11,6 +11,7 @@ libmikmod="$trunk/libmikmod"
 site_repo="$mikmod/mikmod-website"
 site="$site_repo/mikmod-website"
 testing="$mikmod/testing/mikmod-test-suite/mikmod-test-suite"
+proj_name="mikmod"
 
 remote_repo='ssh://shlomif@mikmod.hg.sourceforge.net/hgroot/mikmod/mikmod'
 this="$libmikmod"
@@ -29,6 +30,3 @@ prompt()
         "\$trunk=$trunk" \
         "~=$HOME"
 }
-
-PS1="\\u[mikmod]:\$(prompt)\\$ "
-

@@ -41,5 +41,5 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u[black-hole]:\$(prompt)\\$ "
+proj_name='black-hole'
 

@@ -97,5 +97,5 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u@\\h[xml-fortune]:\$(prompt)\\$ "
+proj_name='xml-fortune'
 

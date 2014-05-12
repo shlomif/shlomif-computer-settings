@@ -26,5 +26,5 @@ up()
     (cd "$src" && make upload)
 }
 
-PS1="\\u[vim-begin]:\$(prompt)\\$ "
+proj_name='vim-begin'
 

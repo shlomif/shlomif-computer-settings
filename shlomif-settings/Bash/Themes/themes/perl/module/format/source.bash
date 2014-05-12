@@ -92,5 +92,5 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u[Module-Format]:\$(prompt)\\$ "
+proj_name='Module-Format'
 

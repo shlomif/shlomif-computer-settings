@@ -1,7 +1,6 @@
 load_common mymake
 load_common completion
 load_common no_implicit_make
-load_common prompt
 load_common hg
 
 base="$HOME/Docs/homepage"
@@ -75,4 +74,4 @@ up()
 
 export PATH="$HOME/apps/quadpres/bin:$PATH"
 
-PS1="\\u[homepage@\$(__hg_prompt_branch)]:\$(prompt)\\$ "
+proj_name='homepage'

@@ -26,5 +26,5 @@ up()
     (cd "$src" && make upload)
 }
 
-PS1="\\u[www.linux.org.il]:\$(prompt)\\$ "
+proj_name='www.linux.org.il'
 

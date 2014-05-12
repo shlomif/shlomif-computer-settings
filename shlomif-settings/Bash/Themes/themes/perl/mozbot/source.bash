@@ -114,7 +114,7 @@ Pu()
     )
 }
 
-PS1="\\u[mozbot]:\$(prompt)\\$ "
+proj_name='mozbot'
 
 cd "$trunk"
 

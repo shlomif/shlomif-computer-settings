@@ -1,3 +1,5 @@
+load_common prompt
+
 setup()
 {
     (
@@ -16,4 +18,10 @@ __hg_ps1()
 __hg_prompt_branch()
 {
     hg prompt "{branch}" 2> /dev/null
+}
+
+__prompt_branch()
+{
+    echo -n '@'
+    __hg_prompt_branch
 }

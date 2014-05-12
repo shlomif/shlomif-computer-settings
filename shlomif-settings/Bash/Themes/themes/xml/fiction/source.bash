@@ -108,5 +108,5 @@ prompt()
         "~=$HOME"
 }
 
-PS1="\\u[xml-fiction]:\$(prompt)\\$ "
+proj_name='xml-fiction'
 
