@@ -78,6 +78,8 @@ elif [ "$WHICH_DESK" = "xfce-trace" ] ; then
     strace -f -o "$HOME"/xfce4.strace startxfce4
 elif [ "$WHICH_DESK" = "xfce" ] ; then
     exec startxfce4
+elif [ "$WHICH_DESK" = "cin" ] ; then
+    exec cinnamon
 elif [ "$WHICH_DESK" = "sawfish" ] ; then
     exec startsawfish
 elif [ "$WHICH_DESK" = "wmaker" ] ; then
