@@ -27,5 +27,5 @@ sites:
                 basename_re: '\.(?:tsv|txt|docx|html|xhtml)(?:\.xz)?\z'
                 target_dir: 'Files/files/text/'
             video:
-                basename_re: '\.(?:webm|flv|avi|mpeg|mpg|mp4|ogv|srt)\z'
+                basename_re: '\.(?:webm|flv|avi|mpeg|mpg|mp4|ogv|srt|mkv)\z'
                 target_dir: 'Files/files/video/'
