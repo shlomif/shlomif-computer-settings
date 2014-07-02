@@ -22,6 +22,7 @@ wtld="$we"
 hhfg="$trunk/lib/fiction-xml/from-vcs/Human-Hacking-Field-Guide/HHFG/text/"
 summer="$trunk/lib/screenplay-xml/from-vcs/Summerschool-at-the-NSA/summerschool-at-the-nsa/screenplay/"
 earth="$trunk/lib/fiction-xml/from-vcs/The-Earth-Angel/The-Earth-Angel/text/"
+buf="$trunk/lib/screenplay-xml/from-vcs/Buffy--a-Few-Good-Slayers/buffy--a-few-good-slayers/screenplay/"
 
 cd $this
 
@@ -72,6 +73,6 @@ up()
     (cd "$trunk" && make upload_var upload_local upload_beta)
 }
 
-export PATH="$HOME/apps/quadpres/bin:$PATH"
+export PATH="$HOME/apps/quadpres/bin:$HOME/Download/unpack/xml/ebookmaker:$PATH"
 
 proj_name='homepage'
