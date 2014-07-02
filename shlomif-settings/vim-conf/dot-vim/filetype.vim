@@ -1,4 +1,4 @@
-function Set_to_Asciidoc()
+function! Set_to_Asciidoc()
     setfiletype asciidoc
 endfunction
 
