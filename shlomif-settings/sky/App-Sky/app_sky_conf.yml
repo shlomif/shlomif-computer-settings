@@ -18,7 +18,7 @@ sites:
                 basename_re: '\.(?:bash|hs|pl|pm|c|py|js|rb|rs|json|patch|diff)\z'
                 target_dir: 'Files/files/code/'
             images:
-                basename_re: '\.(?:png|jpg|jpeg|gif)\z'
+                basename_re: '\.(?:png|jpg|jpeg|gif|svg)\z'
                 target_dir: 'Files/files/images/'
             music:
                 basename_re: '\.(?:mp3|ogg|wav|aac|m4a)\z'
