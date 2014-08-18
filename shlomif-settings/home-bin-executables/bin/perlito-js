@@ -1,0 +1,3 @@
+#!/bin/bash
+base="/home/shlomif/Download/unpack/perl/Perlito/Perlito"
+exec node "$base/perlito5.js" -I"$base/src5/lib" "$@"

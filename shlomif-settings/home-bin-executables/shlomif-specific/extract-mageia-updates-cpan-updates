@@ -1,0 +1,36 @@
+#!/usr/bin/ruby
+
+# Script to extract the CPAN only updates and put them each on one stdout
+# line from pages like http://check.mageia.org/cauldron/shlomif/updates.html
+#
+# See:
+#
+# http://check.mageia.org/cauldron/
+#
+# Usage: /path/to/exe [/path/to/filename] or /path/to/exe [URL]
+#
+# Copyright by Shlomi Fish, 2014 under the MIT/X11 License:
+#
+# http://en.wikipedia.org/wiki/MIT_License
+#
+
+require 'rubygems'
+require 'nokogiri'
+require 'open-uri'
+
+url = ARGV.shift
+
+page = Nokogiri::HTML(open(url))
+page.css('tr').each do |tr|
+    cells = tr.css('td')
+    if cells.length > 0 then
+        first = cells[0]
+        last_cell = cells[-1]
+        last_a = last_cell.css('a')[0].content
+        if true ; then
+            if (last_a =~ /cpan/) then
+                puts first.content
+            end
+        end
+    end
+end

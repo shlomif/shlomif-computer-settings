@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Copy standard input or a string to the KDE clipboard.
+if [[ $# -eq 0 ]]; then
+    input="$(cat)"
+else
+    input="$*"
+fi
+
+if which klipper | grep -q kde3 ; then
+    dcop klipper klipper setClipboardContents "$input"
+else
+    dbus-send --type=method_call --dest=org.kde.klipper \
+        /klipper org.kde.klipper.klipper.setClipboardContents \
+        string:"$input"
+fi

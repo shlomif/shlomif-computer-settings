@@ -1,0 +1,11 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+my $id = int(rand(457_835));
+
+my $url = sprintf("https://bugzilla.mozilla.org/show_bug.cgi?id=%d", $id);
+
+print "$url\n";
+

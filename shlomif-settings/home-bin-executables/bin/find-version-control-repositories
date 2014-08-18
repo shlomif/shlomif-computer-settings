@@ -1,0 +1,26 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use File::Find::Object;
+use List::MoreUtils qw(any);
+
+my $ff = File::Find::Object->new({}, ".");
+
+while (my $r = $ff->next())
+{
+    if ($r =~ m#\A(\./)?(?:apps/perl/brew|Backup/(?:web-hosting-backup/hostgator)|Download/Arcs/Perl/minicpan/authors|Mail|\.purple|\.ccache|\.cpan|\.cpanplus)\z#)
+    {
+        $ff->prune();
+    }
+    elsif (any { -d "$r/$_" } qw(.svn .git CVS .bzr .hg))
+    {
+        print "$r\n";
+        $ff->prune();
+    }
+    elsif ($ENV{V})
+    {
+        print STDERR "Traversing <<$r>>\n";
+    }
+}

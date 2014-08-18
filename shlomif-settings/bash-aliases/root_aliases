@@ -1,0 +1,24 @@
+#!/bin/bash
+
+source "$HOME/.common_aliases.bash"
+function cp_to_shlomif()
+{
+    local dest src
+    dest=~shlomif/progs/Rpms/SRPMS/
+    src=/root/rpmbuild/SRPMS
+
+    for filename in $(cd "$src" && ls *.src.rpm) ; do
+        dest_fn="$dest/$filename"
+        if ! test -e "$dest_fn" ; then
+            cp -f "$src/$filename" "$dest/"
+            chown shlomif.shlomif "$dest_fn"
+        fi
+    done
+}
+
+clear_rpm_cache()
+{
+    rm -f /var/cache/urpmi/{partial,rpms}/*
+}
+
+export EDITOR="vim" VISUAL="vim"
