@@ -2,7 +2,8 @@ load_common prompt
 
 an()
 {
-    cat ~/Backup/rsync.net/unpack/home/shlomif/du.txt | ~/bin/analyse-du.pl "$@"
+    export ANALYZE_DU_INPUT_FN=$HOME/Backup/rsync.net/unpack/home/shlomif/du.txt
+    analyze-du "$@"
 }
 
 regen()
