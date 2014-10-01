@@ -230,3 +230,15 @@ use List::MoreUtils qw();
 STDOUT->autoflush(1);
 
 endsnippet
+
+# Some boilerplate for File handling
+snippet files
+
+use File::Spec;
+use File::Basename (qw( basename dirname ));
+use File::Temp (qw/ tempfile tempdir /);
+use File::Path (qw/ rmtree mkpath /);
+
+use IO::All qw / io /;
+
+endsnippet
