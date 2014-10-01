@@ -42,3 +42,11 @@ svn_tag()
     svn copy -m "Tagging the Latest Devel Version of Quad-Pres" "$qp_base/trunk" "$tag_url"
 }
 
+prompt()
+{
+    __prompt_cmd \
+        "\$trunk=$trunk" \
+        "\$base=$base" \
+        "~=$HOME"
+}
+
