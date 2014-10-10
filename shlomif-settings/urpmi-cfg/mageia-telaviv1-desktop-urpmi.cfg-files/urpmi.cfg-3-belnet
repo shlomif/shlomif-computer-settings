@@ -1,0 +1,174 @@
+{
+}
+
+Core\ Release http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/core/release {
+  key-ids: 80420f66
+}
+
+Core\ Release\ Debug http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/debug/core/release {
+  key-ids: 80420f66
+}
+
+Core\ Updates http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/core/updates {
+  key-ids: 80420f66
+  update
+}
+
+Core\ Updates\ Debug http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/debug/core/updates {
+  key-ids: 80420f66
+}
+
+Core\ Updates\ Testing http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/core/updates_testing {
+  key-ids: 80420f66
+}
+
+Core\ Updates\ Testing\ Debug http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/debug/core/updates_testing {
+  key-ids: 80420f66
+}
+
+Core\ Backports http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/core/backports {
+  ignore
+  key-ids: 80420f66
+}
+
+Core\ Backports\ Debug http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/debug/core/backports {
+  ignore
+}
+
+Core\ Backports\ Testing http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/core/backports_testing {
+  ignore
+  key-ids: 80420f66
+}
+
+Core\ Backports\ Testing\ Debug http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/debug/core/backports_testing {
+  ignore
+}
+
+Nonfree\ Release http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/nonfree/release {
+  key-ids: 80420f66
+}
+
+Nonfree\ Release\ Debug http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/debug/nonfree/release {
+  key-ids: 80420f66
+}
+
+Nonfree\ Updates http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/nonfree/updates {
+  key-ids: 80420f66
+  update
+}
+
+Nonfree\ Updates\ Debug http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/debug/nonfree/updates {
+  key-ids: 80420f66
+}
+
+Nonfree\ Updates\ Testing http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/nonfree/updates_testing {
+  ignore
+}
+
+Nonfree\ Updates\ Testing\ Debug http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/debug/nonfree/updates_testing {
+  ignore
+}
+
+Nonfree\ Backports http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/nonfree/backports {
+  ignore
+  key-ids: 80420f66
+}
+
+Nonfree\ Backports\ Debug http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/debug/nonfree/backports {
+  ignore
+}
+
+Nonfree\ Backports\ Testing http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/nonfree/backports_testing {
+  ignore
+  key-ids: 80420f66
+}
+
+Nonfree\ Backports\ Testing\ Debug http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/debug/nonfree/backports_testing {
+  ignore
+}
+
+Tainted\ Release http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/tainted/release {
+  key-ids: 80420f66
+}
+
+Tainted\ Release\ Debug http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/debug/tainted/release {
+  key-ids: 80420f66
+}
+
+Tainted\ Updates http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/tainted/updates {
+  key-ids: 80420f66
+  update
+}
+
+Tainted\ Updates\ Debug http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/debug/tainted/updates {
+  key-ids: 80420f66
+}
+
+Tainted\ Updates\ Testing http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/tainted/updates_testing {
+  ignore
+}
+
+Tainted\ Updates\ Testing\ Debug http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/debug/tainted/updates_testing {
+  ignore
+}
+
+Tainted\ Backports http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/tainted/backports {
+  ignore
+  key-ids: 80420f66
+}
+
+Tainted\ Backports\ Debug http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/debug/tainted/backports {
+  ignore
+}
+
+Tainted\ Backports\ Testing http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/tainted/backports_testing {
+  ignore
+  key-ids: 80420f66
+}
+
+Tainted\ Backports\ Testing\ Debug http://ftp.belnet.be/mirror/mageia/distrib/cauldron/x86_64/media/debug/tainted/backports_testing {
+  ignore
+}
+
+Core\ 32bit\ Release http://ftp.belnet.be/mirror/mageia/distrib/cauldron/i586/media/core/release {
+  key-ids: 80420f66
+}
+
+Core\ 32bit\ Release\ Debug http://ftp.belnet.be/mirror/mageia/distrib/cauldron/i586/media/debug/core/release {
+  ignore
+}
+
+Core\ 32bit\ Updates http://ftp.belnet.be/mirror/mageia/distrib/cauldron/i586/media/core/updates {
+  key-ids: 80420f66
+  update
+}
+
+Core\ 32bit\ Updates\ Debug http://ftp.belnet.be/mirror/mageia/distrib/cauldron/i586/media/debug/core/updates {
+  ignore
+}
+
+Core\ 32bit\ Updates\ Testing http://ftp.belnet.be/mirror/mageia/distrib/cauldron/i586/media/core/updates_testing {
+  ignore
+}
+
+Core\ 32bit\ Updates\ Testing\ Debug http://ftp.belnet.be/mirror/mageia/distrib/cauldron/i586/media/debug/core/updates_testing {
+  ignore
+}
+
+Core\ 32bit\ Backports http://ftp.belnet.be/mirror/mageia/distrib/cauldron/i586/media/core/backports {
+  ignore
+  key-ids: 80420f66
+}
+
+Core\ 32bit\ Backports\ Debug http://ftp.belnet.be/mirror/mageia/distrib/cauldron/i586/media/debug/core/backports {
+  ignore
+}
+
+Core\ 32bit\ Backports\ Testing http://ftp.belnet.be/mirror/mageia/distrib/cauldron/i586/media/core/backports_testing {
+  ignore
+  key-ids: 80420f66
+}
+
+Core\ 32bit\ Backports\ Testing\ Debug http://ftp.belnet.be/mirror/mageia/distrib/cauldron/i586/media/debug/core/backports_testing {
+  ignore
+}
