@@ -1,18 +1,27 @@
 load_common mymake
-# load_common gen_patch
 
-base="$HOME/Download/unpack/file/gringotts"
-trunk="$base/Svn/trunk"
-this="$trunk"
-rw_repos_url="svn+ssh://svn.berlios.de/svnroot/repos/web-cpan/nav-menu"
-read_repos_url="svn://svn.berlios.de/web-cpan/nav-menu"
-test_dir="$trunk/tests/integration/sites-gen"
+base="$HOME/progs/C/gringotts"
+_base_trunk="$base"
+trunk="$base/gringotts"
+c_src="$trunk/c-src"
+build_dir="$trunk/B"
+this="$build_dir"
+
+setup()
+{
+    (
+        mkdir -p "$_base_trunk"
+        cd "$_base_trunk"
+        git clone 'git@github.com:shlomif/gringotts.git' "$trunk"
+    )
+    cd "$this"
+}
 
 # Make sure that gvim's filename completion ignores filenames that it should
 # not edit.
 
 __gvim_completion()
-{ 
+{
     local cur
     cur="${COMP_WORDS[COMP_CWORD]}"
     COMPREPLY=( $(compgen -f -X '*~' -- "$cur" |
