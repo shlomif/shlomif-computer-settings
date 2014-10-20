@@ -11,7 +11,8 @@ src="$trunk/src"
 # this="$trunk/wml_backend/p2_mp4h"
 # this="$trunk/wml_backend/p3_eperl"
 # this="$trunk/src/wml_backend"
-this="$src"
+b="$trunk/B"
+this="$b"
 
 remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="website-meta-language")"
 cd "$this"
@@ -39,6 +40,15 @@ e()
     (cd "$this" ;
         gvim -p CMakeLists.txt ../p2_mp4h/CMakeLists.txt \
         Makefile.in configure.in
+    )
+}
+
+t()
+{
+    (
+        cd "$b"
+        rm -fr tests/
+        perl ../src/wml_test/run_test.pl
     )
 }
 
