@@ -34,6 +34,8 @@ WHICH_DESK="${WD:-${DEFAULT_DESK}}"
 if [ "$WHICH_DESK" = "kde4" ] ; then
     # export LIBGL_ALWAYS_INDIRECT=1
     exec startkde
+elif [ "$WHICH_DESK" = "kde5" ] ; then
+    exec dbus-launch --exit-with-session startkde
 elif [ "$WHICH_DESK" = "kde4-trunk" ] ; then
     # export LIBGL_ALWAYS_INDIRECT=1
     export KDEDIR="/opt/kde4-trunk"
