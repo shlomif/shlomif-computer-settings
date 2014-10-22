@@ -78,6 +78,11 @@ up()
     (cd "$trunk" && make upload_var upload_local upload_beta)
 }
 
+b()
+{
+    (cd "$trunk" && make -j16 && make test ; n --msg "make")
+}
+
 export PATH="$HOME/apps/quadpres/bin:$HOME/Download/unpack/xml/ebookmaker:$PATH"
 
 proj_name='homepage'
