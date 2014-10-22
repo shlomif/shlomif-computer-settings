@@ -70,5 +70,13 @@ __run_build_tests()
     )
 }
 
+prompt()
+{
+    __prompt_cmd \
+        "\$trunk=$trunk" \
+        "\$base=$base" \
+        "~=$HOME"
+}
+
 cd $this
 
