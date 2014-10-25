@@ -3,6 +3,8 @@ load_common completion
 load_common prompt
 load_common no_implicit_make
 
+. ~/conf/trunk/shlomif-settings/home-bin-executables/shlomif-specific/Dev-Path-Configs-Source-Me.bash
+
 ink="$HOME/Download/unpack/graphics/inkscape"
 base="$ink"
 _base_trunk="$ink/inkscape"
@@ -47,7 +49,8 @@ b()
 {
     (
         cd "$build" && \
-            ninja -j4
+            ninja -j4 \
+            ; n --msg "Inkscape build finished"
     )
 }
 
