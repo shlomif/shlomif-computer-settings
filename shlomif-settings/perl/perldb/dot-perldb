@@ -1,3 +1,4 @@
 &parse_options("HistFile=$ENV{HOME}/conf/perl/perldb-history HistSize=5000");
+# &parse_options("HistFile=$ENV{HOME}/conf/perl/perldb-history HistSize=5000 maxTraceLen=1000000000 RemotePort=localhost:5000");
 # For Catalyst-based apps.
 $DB::deep = 500;
