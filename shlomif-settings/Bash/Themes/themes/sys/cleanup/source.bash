@@ -1,14 +1,18 @@
 load_common prompt
 
+export ANALYZE_DU_INPUT_FN="$HOME"/du.txt
+
 an()
 {
-    cat ~/du.txt | ~/bin/analyse-du.pl "$@"
+    analyze-du "$@"
 }
 
 regen()
 {
-    cd "$HOME"
-    \du . > du-new.txt
+    (
+        cd "$HOME"
+        \du . > du-new.txt
+    )
 }
 
 cd "$HOME"
