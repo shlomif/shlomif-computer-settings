@@ -1,0 +1,3 @@
+#!/bin/bash
+d="$HOME/progs/perl/cpan/App/maniac-downloader/App-ManiacDownloader"
+perl -I"$d/lib" "$d/bin/mdown" "$@"
