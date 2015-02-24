@@ -2,6 +2,6 @@
 dir="$(pwd)"
 mkdir -p ~/conf
 cd ~/conf
-ln -s "$dir/gdb" gdb
+ln -s "$dir" gdb
 cd ~
-ln -s "$dit/dot-gdbinit.gdb" .gdbinit
+ln -s "$dir/dot-gdbinit.gdb" .gdbinit
