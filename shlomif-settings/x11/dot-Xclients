@@ -14,6 +14,13 @@ function kde_alpha()
     )
 }
 
+# For disabling single_click_activate in Qt 5.
+# Including VLC.
+qt5_plat()
+{
+    export QT_QPA_PLATFORMTHEME=lxqt
+}
+
 # export KDE_UTF8_FILENAMES=1
 
 # set-mouse-speed.sh
@@ -33,6 +40,7 @@ WHICH_DESK="${WD:-${DEFAULT_DESK}}"
 
 if [ "$WHICH_DESK" = "kde4" ] ; then
     # export LIBGL_ALWAYS_INDIRECT=1
+    qt5_plat
     exec startkde
 elif [ "$WHICH_DESK" = "kde5" ] ; then
     exec dbus-launch --exit-with-session startkde
@@ -61,6 +69,7 @@ elif [ "$WHICH_DESK" = "gnome" ] ; then
 elif [ "$WHICH_DESK" = "gnome-trace" ] ; then
     strace -f -o "$HOME/gnome.strace" startgnome
 elif [ "$WHICH_DESK" = "jwm" ] ; then
+    qt5_plat
     exec jwm
 elif [ "$WHICH_DESK" = "e" ] ; then
     exec enlightenment_start
@@ -74,11 +83,14 @@ elif [ "$WHICH_DESK" = "kdedebug" ] ; then
     exec startkde
 elif [ "$WHICH_DESK" = "lxde" ] ; then
     exec startlxde
+elif [ "$WHICH_DESK" = "lxqt" ] ; then
+    exec startlxqt
 elif [ "$WHICH_DESK" = "fluxbox" ] ; then
     exec startfluxbox
 elif [ "$WHICH_DESK" = "xfce-trace" ] ; then
     strace -f -o "$HOME"/xfce4.strace startxfce4
 elif [ "$WHICH_DESK" = "xfce" ] ; then
+    qt5_plat
     exec startxfce4
 elif [ "$WHICH_DESK" = "cin" ] ; then
     exec cinnamon
