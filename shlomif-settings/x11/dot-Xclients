@@ -40,7 +40,7 @@ WHICH_DESK="${WD:-${DEFAULT_DESK}}"
 
 if [ "$WHICH_DESK" = "kde4" ] ; then
     # export LIBGL_ALWAYS_INDIRECT=1
-    qt5_plat
+    # qt5_plat
     exec startkde
 elif [ "$WHICH_DESK" = "kde5" ] ; then
     exec dbus-launch --exit-with-session startkde
