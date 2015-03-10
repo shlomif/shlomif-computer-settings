@@ -12,8 +12,9 @@ regen()
         cd ~/Docs/Svn/progs/backup/make-based
         make -f backup.mak rsync_net_home_dir
     )
-    ( cd ~/Backup/rsync.net/ && . UNPACK-me.bash )
+    cd ~/Backup/rsync.net/ && . UNPACK-me.bash
 }
+
 
 cd "$HOME"
 
