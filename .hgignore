@@ -17,8 +17,8 @@ shlomif-settings/vim-conf/dot-vim/closetag
 shlomif-settings/vim-conf/dot-vim/ctrlp
 shlomif-settings/vim-conf/dot-vim/github-aaronbieber-quicktask
 shlomif-settings/vim-conf/dot-vim/github-ironcamel-vim-script-runner
-shlomif-settings/vim-conf/dot-vim/github-mattn-zencoding-vim
-shlomif-settings/vim-conf/dot-vim/github-uggedal-go-vim
+shlomif-settings/vim-conf/dot-vim/github-mattn-emmet-vim
+shlomif-settings/vim-conf/dot-vim/github-fatih-vim-go
 shlomif-settings/vim-conf/dot-vim/github-vim-perl-vim-perl
 shlomif-settings/vim-conf/dot-vim/github-wlangstroth-vim-racket
 shlomif-settings/vim-conf/dot-vim/github-wting-rust.vim
