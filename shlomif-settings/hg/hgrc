@@ -12,7 +12,6 @@ hgsubversion = /home/shlomif/Download/unpack/file/vcs/hgsubversion/hgsubversion
 progress =
 purge=
 prompt = /home/shlomif/conf/Bash/hg-prompt/hg-prompt/prompt.py
-non_rec_status = /home/shlomif/progs/python/mercurial/extensions/non_rec_status/non_rec_status.py
 # hgsubversion =
 hggit =
 %include ~/.hgrc_auth
