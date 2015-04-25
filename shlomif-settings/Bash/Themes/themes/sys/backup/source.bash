@@ -6,6 +6,9 @@ an()
     analyze-du "$@"
 }
 
+b="$HOME/Backup/rsync.net"
+a="$HOME/Backup/rsync.net/unpack/home/shlomif"
+
 regen()
 {
     (
@@ -22,6 +25,16 @@ prompt()
 {
     __prompt_cmd \
         "~=$HOME"
+}
+
+a()
+{
+    cd "$a"
+}
+
+b()
+{
+    cd "$b"
 }
 
 proj_name='backup'
