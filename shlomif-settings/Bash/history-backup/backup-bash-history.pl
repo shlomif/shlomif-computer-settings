@@ -27,7 +27,7 @@ if (system("git" , "add", "bash-history/bash_history"))
 
 if (`git status -s .` =~ /\S/)
 {
-    if (system("git", "commit", "-q", "-m", "Commiting the bash_history as of $date\nContaining $num_lines lines."))
+    if (system("git", "commit", "-q", "-m", "Commiting the bash_history as of $date\n\nContaining $num_lines lines."))
     {
         die "git commit command failed.";
     }
