@@ -1,5 +1,6 @@
 load_common completion
 load_common hg
+load_common prompt
 
 base="$HOME/progs/perl/www/Web-Cpan-Site/"
 hg_base="$base"
@@ -9,5 +10,14 @@ site="$trunk/wml"
 remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="web-cpan-site")"
 
 this="$site"
+
+prompt()
+{
+    __prompt_cmd \
+        "\$trunk=$trunk" \
+        "\$base=$base" \
+        "~=$HOME"
+}
+
 cd "$this"
 
