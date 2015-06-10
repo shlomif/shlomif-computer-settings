@@ -1,9 +1,16 @@
 %_topdir               /home/shlomif/progs/Rpms
+# optionally unrem one of those, to use it instead of /tmp
+# make sure it exists
+#%_tmppath             /home/shlomi/tmp
+#%_tmp_path            /home/shlomi/Rpms/tmp
 
 # you may also wish to set those:
 %packager              Shlomi Fish <shlomif@shlomifish.org>
 %_signature            gpg
 %_gpg_path             ~/.gnupg
+# this is a bit mandrake-specific...
 %_gpg_name             Shlomi Fish
+#%distribution          Linux-Mandrake
+#%vendor                MandrakeSoft
 # See https://qa.mandriva.com/show_bug.cgi?id=61851
 %__tar_wildcards        --wildcards
