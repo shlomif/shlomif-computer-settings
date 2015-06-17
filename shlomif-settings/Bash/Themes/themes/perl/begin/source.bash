@@ -20,7 +20,7 @@ prompt()
 
 up()
 {
-    (cd "$trunk" && make upload upload_hexten)
+    (cd "$trunk" && make -j4 upload upload_hexten)
 }
 
 proj_name='perl-begin'
