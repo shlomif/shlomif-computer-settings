@@ -75,7 +75,7 @@ fastdiff()
 
 up()
 {
-    (cd "$trunk" && make upload_var upload_local upload_beta)
+    (cd "$trunk" && make -j4 upload_var upload_local upload_beta)
 }
 
 b()
