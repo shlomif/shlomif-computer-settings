@@ -68,7 +68,7 @@ __install_to_temp()
 #            make test
 #            make install
 #        elif [ -e Build.PL ] ; then
-#            perl Build.PL 
+#            perl Build.PL
 #            ./Build
 #            ./Build test
 #            ./Build install prefix="$inst_modules_dir"
