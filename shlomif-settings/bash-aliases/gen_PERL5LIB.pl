@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 my @d;
-foreach my $ver (qw( 5.20.1 5.20.0 5.18.2 5.18.1 ))
+foreach my $ver (qw( 5.22.0 5.20.1 5.20.0 5.18.2 5.18.1 ))
 {
     foreach my $dir (qw(lib/perl5/site_perl lib/site_perl lib/perl5))
     {
