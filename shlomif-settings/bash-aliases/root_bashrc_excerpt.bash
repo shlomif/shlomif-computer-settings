@@ -1,5 +1,5 @@
 _reread_aliases()
 {
-   . "$HOME/.aliases" 
+   . "$HOME/.aliases"
 }
 _reread_aliases
