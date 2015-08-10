@@ -22,4 +22,3 @@ cmake -DCMAKE_INSTALL_PREFIX="$k4d" \
     # -DKDE4_KDECONFIG_EXECUTABLE="$k4bd/kde4-config" \
     # -DKDE4_DATA_DIR="$k4sd" \
     # -DCMAKE_MODULE_PATH="$k4sd/apps/cmake/modules/" \
-    

@@ -4,6 +4,6 @@
     --enable-svg \
     --enable-debug --disable-optimize \
     --enable-static
-    
+
 
     # --enable-extensions=default,editor/cascades
