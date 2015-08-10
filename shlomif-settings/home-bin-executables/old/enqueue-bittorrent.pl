@@ -21,7 +21,7 @@ if (!defined($filename))
     $url =~ m{([^/]+)$};
     $filename = $1;
 
-    $full_path = $ENV{'HOME'}."/Download/Video/Torrents/".$filename; 
+    $full_path = $ENV{'HOME'}."/Download/Video/Torrents/".$filename;
     unlink($full_path);
     system("wget", "-O", $full_path, $url);
 }

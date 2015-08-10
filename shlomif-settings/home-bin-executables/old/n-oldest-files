@@ -22,7 +22,7 @@ sub cmp
     my $self = shift;
     my $other = shift;
 
-    return 
+    return
     (
         ( -($self->{mtime} <=> $other->{mtime}) )
         ||

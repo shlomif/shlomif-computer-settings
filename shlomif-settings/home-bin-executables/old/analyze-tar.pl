@@ -5,7 +5,7 @@ use warnings;
 
 use DBI;
 
-my $dbh = 
+my $dbh =
     DBI->connect("dbi:Pg:dbname=homedirsize", "", "", {AutoCommit => 1});
 
 $dbh->do("CREATE TABLE entries (id integer, parent integer, name text, mysize integer, totalsize integer)");

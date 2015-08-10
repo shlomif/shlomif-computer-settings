@@ -42,7 +42,7 @@ $tree->parse_file($fh);
     }
 }
 
-my (@divs_to_delete) = 
+my (@divs_to_delete) =
 (
     $tree->findnodes('/html/body//div[@class="printfooter"]'),
     $tree->findnodes('/html/body//div[@id="catlinks"]'),

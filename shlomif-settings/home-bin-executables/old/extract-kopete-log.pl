@@ -24,8 +24,8 @@ while (my $e = $msg_rs->shift())
 {
     my $sayer = $e->getAttribute("nick");
     my $body = $e->textContent();
-    
-    print qq(<saying who="$nicks_map{$sayer}">), 
+
+    print qq(<saying who="$nicks_map{$sayer}">),
         CGI::escapeHTML($body), qq{</saying>\n}
         ;
 }

@@ -73,7 +73,7 @@ my $feed_with_less_items = XML::Feed->new($output_format) or
 
 my @entries = $feed->entries();
 
-@entries = 
+@entries =
 (grep
     {
         (defined($subj_filter) ? ($_->title() =~ /$subj_filter/) : 1)
@@ -82,7 +82,7 @@ my @entries = $feed->entries();
     }
     @entries
 );
-                   
+
 @entries = (reverse(sort { $a->issued() <=> $b->issued() } @entries));
 
 foreach my $e (@entries[0 .. min($num_items-1, $#entries)])
