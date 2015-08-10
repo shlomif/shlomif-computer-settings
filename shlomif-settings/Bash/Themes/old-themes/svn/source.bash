@@ -16,7 +16,7 @@ Edit_fs()
     gvim "$this/subversion/libsvn_fs/tree.c"
 }
 
-current_patch_base="peg-revision-tng" 
+current_patch_base="peg-revision-tng"
 
 cat_patch()
 {

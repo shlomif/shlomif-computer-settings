@@ -14,9 +14,9 @@ __get_latest_patch_related_file_rev()
     local file_ext
     file_ext="$1"
     shift
-    (cd $patches_dir ; 
-        ls "$file_prefix"*."$file_ext" | 
-            sed 's/^'"$file_prefix"'-rev\([0-9]\+\).'"$file_ext"'/\1/' | 
+    (cd $patches_dir ;
+        ls "$file_prefix"*."$file_ext" |
+            sed 's/^'"$file_prefix"'-rev\([0-9]\+\).'"$file_ext"'/\1/' |
             sort -n |
             tail -1
     )
@@ -46,7 +46,7 @@ __get_patch_path()
 save_patch()
 {
     local last_rev last_path new_path new_rev
-    last_rev="$(__get_latest_patch_rev)" ; 
+    last_rev="$(__get_latest_patch_rev)" ;
     let new_rev=last_rev+1 ;
     last_path="$(__get_patch_path $last_rev)"
     new_path="$(__get_patch_path $new_rev)"
