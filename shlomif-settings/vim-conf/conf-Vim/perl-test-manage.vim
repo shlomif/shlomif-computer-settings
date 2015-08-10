@@ -8,15 +8,15 @@
 "
 " at the beginning of the test file. Then you need to make sure, every test
 " has a corresponding '# TEST' comment. If you run several tests in a loop,
-" you can append asterisks plus number to the comment. So for example the 
+" you can append asterisks plus number to the comment. So for example the
 " comment:
 "
 "     # TEST*3*5
 "
 " will add 15 tests to the test number.
 "
-" There's more to that - one can define variables and use them in the 
-" arithmetic expressions. For more information see: 
+" There's more to that - one can define variables and use them in the
+" arithmetic expressions. For more information see:
 "
 " http://search.cpan.org/dist/Test-Count/
 "
@@ -33,7 +33,7 @@
 " Homepage: http://www.shlomifish.org/
 " Date: 02 December 2004
 " License: MIT X11
-" 
+"
 
 " function! Perl_Tests_Count()
 "     execute "%!perl -MTest::Count::Filter::ByFileType::App -e \"run()\" -- --ft=".&filetype
