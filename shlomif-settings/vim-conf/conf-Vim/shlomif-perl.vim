@@ -1,4 +1,4 @@
-" Things Shlomi Fish ( http://www.shlomifish.org/ ) wants in his Perl Vim 
+" Things Shlomi Fish ( http://www.shlomifish.org/ ) wants in his Perl Vim
 " configuration.
 "
 

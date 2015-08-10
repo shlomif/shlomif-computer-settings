@@ -9,10 +9,10 @@ function! Kakuro_Cell_Coords()
     let start_line += 1
 
     let y = pos[1] - start_line
-    
+
     " Find the x coordinate.
     let x = count(split(getline(".")[0:pos[2]], '\zs'), "[")-1
-    
+
     return [y,x]
 endfunction
 
