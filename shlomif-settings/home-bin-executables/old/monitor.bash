@@ -5,7 +5,7 @@ while true ; do
     echo "date s=$(date +%s)"
     echo "ps auxwwwwwwwwww="
     echo "<<<"
-    ps auxwwwwwwwwwwwwwwwwwwwwwwwwwww 
+    ps auxwwwwwwwwwwwwwwwwwwwwwwwwwww
     echo ">>>"
     echo "df="
     echo "<<<"

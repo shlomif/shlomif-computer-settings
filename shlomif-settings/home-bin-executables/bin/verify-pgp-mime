@@ -22,11 +22,11 @@ sub read_file
 my $filename = shift(@ARGV);
 
 my $text = read_file($filename);
-my $pgp = 
+my $pgp =
     PGP::Mail->new(
         $text,
         +{}
     );
-print $pgp->status(), "\n";    
+print $pgp->status(), "\n";
 print $pgp->keyid(), "\n";
 

@@ -51,9 +51,9 @@ while (defined(get_line()))
                 }
                 if (exists($emails{$uid}))
                 {
-                    if (!defined ($email)) 
-                    { 
-                        die "Error email not defined for UID $uid\n"; 
+                    if (!defined ($email))
+                    {
+                        die "Error email not defined for UID $uid\n";
                     }
                     elsif (defined($emails{$uid}))
                     {

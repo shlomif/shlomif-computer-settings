@@ -6,6 +6,6 @@ while true ; do
 		service network restart
 		# /etc/init.d/networkmanager restart
 		sleep 10
-	fi 
+	fi
 	sleep 5
 done

@@ -28,5 +28,5 @@ while (my $l = <>)
         system("chgrp", $group, $path);
         next LINES;
     }
-    
+
 }

@@ -14,7 +14,7 @@ while(<>)
     if (m{^[^<\*]*(<[^>]+>|\*)\t(.*)$})
     {
         my ($nick, $msg) = ($1, $2);
-        push @messages, 
+        push @messages,
             {'type' => "say", 'nick' => $nick, 'msg' => $msg};
         $longest_nick_len =
             max($longest_nick_len, length($nick));
@@ -22,7 +22,7 @@ while(<>)
     elsif (m{^[^\-]* ---\t(\S+) is now known as (\S+)})
     {
         my ($old_nick, $new_nick) = ($1, $2);
-        push @messages, 
+        push @messages,
             {'type' => "change_nick", 'old' => $old_nick, 'new' => $new_nick};
         $longest_nick_len =
             max($longest_nick_len, length($old_nick), length($new_nick));
@@ -32,7 +32,7 @@ while(<>)
        push @messages, {'type' => "raw", 'msg' => $_};
     }
 }
-my $formatter = 
+my $formatter =
     Text::Format->new(
         {
             columns => 72-1-2-$longest_nick_len,
@@ -40,16 +40,16 @@ my $formatter =
             leftMargin => 0,
         }
     );
-    
+
 for my $m (@messages)
 {
     if ($m->{'type'} eq "say")
     {
         my @lines = ($formatter->format([$m->{'msg'}]));
-        print " " . sprintf("%${longest_nick_len}s", $m->{'nick'}) . 
+        print " " . sprintf("%${longest_nick_len}s", $m->{'nick'}) .
             "  " . $lines[0];
-        print map { (" " x (1+2+$longest_nick_len)) . $_ } 
-            @lines[1..$#lines];        
+        print map { (" " x (1+2+$longest_nick_len)) . $_ }
+            @lines[1..$#lines];
     }
     elsif ($m->{'type'} eq "raw")
     {
