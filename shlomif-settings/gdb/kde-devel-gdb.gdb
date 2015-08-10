@@ -12,7 +12,7 @@
 set print static-members off
 
 # Show the real classname of object instances - e.g. (Kded *) 0x8073440 instead of (class QObject *) 0x8073440
-# Turned it off again, because it breaks too often: 
+# Turned it off again, because it breaks too often:
 # (gdb) p this->_autoFree
 # Cannot access memory at address 0x0
 # Without it: $5 = 0 '\0'
@@ -84,7 +84,7 @@ define printqstring_utf8
    printf "\n"
 end
 document printqstring_utf8
-  Prints the contents of a QString encoded in utf8. 
+  Prints the contents of a QString encoded in utf8.
   Nice if you run your debug session in a utf8 enabled terminal.
 end
 
@@ -108,7 +108,7 @@ define printq4string_utf8
    printf "\n"
 end
 document printq4string_utf8
-  Prints the contents of a QString encoded in utf8. 
+  Prints the contents of a QString encoded in utf8.
   Nice if you run your debug session in a utf8 enabled terminal.
 end
 

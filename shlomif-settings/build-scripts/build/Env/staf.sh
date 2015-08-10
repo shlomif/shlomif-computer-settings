@@ -1,8 +1,8 @@
 #!/bin/bash
-# One needs staf to build the main things, connprov* to be able to 
+# One needs staf to build the main things, connprov* to be able to
 # run STAFProc on the local machine and perl because I needed it.
 export OS_NAME=linux BUILD_TYPE=debug PROJECTS="staf connprov* perl"
-export JAVA_LIBS="/usr/java/jdk1.5.0_09/" JAVA_VERSION="1.5" 
+export JAVA_LIBS="/usr/java/jdk1.5.0_09/" JAVA_VERSION="1.5"
 export JAVA_V12_ROOT="/usr/java/jdk1.5.0_09/" JAVA_V12_LIBDIRS="/usr/java/jdk1.5.0_09/libs/"
 export PERL_BUILD_V58=1
 export PERL_BUILD_V56=0

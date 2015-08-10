@@ -6,5 +6,5 @@
  extern void myexit(int rc);
 -extern struct option options[];
  extern int main(int argc, char **argv, char **env);
- 
+
  /* eperl_perl5.c */

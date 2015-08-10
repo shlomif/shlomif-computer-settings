@@ -4,8 +4,8 @@ CFLAGS="-g" CXXFLAGS="-g" ./configure \
 
 hello()
 {
-find . -name Makefile | 
+find . -name Makefile |
     xargs perl -pli -e \
-    '$_="kde_widgetdir = \${libdir}/kde3/plugins/designer" 
+    '$_="kde_widgetdir = \${libdir}/kde3/plugins/designer"
         if /^kde_widgetdir = /'
 }

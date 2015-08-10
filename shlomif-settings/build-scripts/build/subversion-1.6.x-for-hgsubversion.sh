@@ -7,9 +7,9 @@
 # make
 # make install
 # Download and unpack subversion-1.6.17.tar.bz2
-# patch -p1 < ~/subversion-1.6.0-deplibs.patch 
+# patch -p1 < ~/subversion-1.6.0-deplibs.patch
 # ./autogen.sh
-# Run ./configure --prefix="/opt/svn-1.6.x" --without-apache-libexecdir 
+# Run ./configure --prefix="/opt/svn-1.6.x" --without-apache-libexecdir
 # make
 # make swig-py
 # make install
