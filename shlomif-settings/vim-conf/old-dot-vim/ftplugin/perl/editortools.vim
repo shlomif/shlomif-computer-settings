@@ -37,7 +37,7 @@ function! RenameVariable()
     let col  = col('.')
     let filename = expand('%')
 
-    let command = "editortools renamevariable -c " . col . " -l " . line  . " -r " . newvar 
+    let command = "editortools renamevariable -c " . col . " -l " . line  . " -r " . newvar
 
     call Exec_command_and_replace_buffer( command )
 endfunction
@@ -47,7 +47,7 @@ function! RenamePackageFromPath()
     let col  = col('.')
     let filename = expand('%')
 
-    let command = "editortools renamepackagefrompath -f " . filename 
+    let command = "editortools renamepackagefrompath -f " . filename
     call Exec_command_and_replace_buffer( command )
 endfunction
 
