@@ -19,7 +19,7 @@ remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif"
 # not edit.
 
 __gvim_completion()
-{ 
+{
     local cur
     cur="${COMP_WORDS[COMP_CWORD]}"
     COMPREPLY=( $(compgen -f -X '*~' -- "$cur" |

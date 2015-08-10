@@ -11,7 +11,7 @@ target1-step1: target1-step2
 target1-step2: target1-step3
 	(cd /home/shlomi/progs/perl/cpan/Test/Test-Harness/trunk/modules/Test-Shlomif-Harness && make)
 
-target1-step3: 
+target1-step3:
 	(cd /home/shlomi/progs/perl/cpan/Test/Test-Harness/trunk/modules/Test-Shlomif-Harness && perl Makefile.PL PREFIX="/home/shlomi/apps/perl/modules")
 
 /home/shlomi/progs/perl/cpan/Test/Test-Harness/trunk/modules/Test-Run-CmdLine: target2-step0
@@ -25,7 +25,7 @@ target2-step1: target2-step2
 target2-step2: target2-step3
 	(cd /home/shlomi/progs/perl/cpan/Test/Test-Harness/trunk/modules/Test-Run-CmdLine && make)
 
-target2-step3: 
+target2-step3:
 	(cd /home/shlomi/progs/perl/cpan/Test/Test-Harness/trunk/modules/Test-Run-CmdLine && perl Makefile.PL PREFIX="/home/shlomi/apps/perl/modules")
 
 /home/shlomi/progs/perl/cpan/Test/Test-Harness/trunk/modules/plugins/backend/Test-Run-Plugin-ColorSummary: target3-step0
@@ -39,7 +39,7 @@ target3-step1: target3-step2
 target3-step2: target3-step3
 	(cd /home/shlomi/progs/perl/cpan/Test/Test-Harness/trunk/modules/plugins/backend/Test-Run-Plugin-ColorSummary && ./Build)
 
-target3-step3: 
+target3-step3:
 	(cd /home/shlomi/progs/perl/cpan/Test/Test-Harness/trunk/modules/plugins/backend/Test-Run-Plugin-ColorSummary && perl Build.PL)
 
 /home/shlomi/progs/perl/cpan/Test/Test-Harness/trunk/modules/plugins/cmdline/Test-Run-CmdLine-Plugin-ColorSummary: target4-step0
@@ -53,6 +53,6 @@ target4-step1: target4-step2
 target4-step2: target4-step3
 	(cd /home/shlomi/progs/perl/cpan/Test/Test-Harness/trunk/modules/plugins/cmdline/Test-Run-CmdLine-Plugin-ColorSummary && ./Build)
 
-target4-step3: 
+target4-step3:
 	(cd /home/shlomi/progs/perl/cpan/Test/Test-Harness/trunk/modules/plugins/cmdline/Test-Run-CmdLine-Plugin-ColorSummary && perl Build.PL)
 

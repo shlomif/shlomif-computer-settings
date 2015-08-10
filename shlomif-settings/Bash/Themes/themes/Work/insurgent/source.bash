@@ -58,13 +58,13 @@ __install_to_temp()
 
 
 #    (
-#        if [ -e Makefile.PL ] ; then 
+#        if [ -e Makefile.PL ] ; then
 #            perl Makefile.PL PREFIX="$inst_modules_dir"
 #            make
 #            make test
 #            make install
 #        elif [ -e Build.PL ] ; then
-#            perl Build.PL 
+#            perl Build.PL
 #            ./Build
 #            ./Build test
 #            ./Build install prefix="$inst_modules_dir"

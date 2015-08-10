@@ -1,5 +1,5 @@
 #!/bin/bash
-seq 1 32000 | 
+seq 1 32000 |
 (
     while read DEAL ; do
         echo "$DEAL"

@@ -62,7 +62,7 @@ __install_to_temp()
 
 
 #    (
-#        if [ -e Makefile.PL ] ; then 
+#        if [ -e Makefile.PL ] ; then
 #            perl Makefile.PL PREFIX="$inst_modules_dir"
 #            make
 #            make test

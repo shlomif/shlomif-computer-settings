@@ -11,7 +11,7 @@ __UPLOAD_PATCHES_PATH="${HOMEPAGE_SSH_PATH}/gimp/gimpressionist/"
 
 cat_patch()
 {
-    (cd $this ; 
+    (cd $this ;
     bash gen-gimpressionist-fn-on-duality-patch.sh
     )
 }

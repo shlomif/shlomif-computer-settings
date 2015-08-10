@@ -13,7 +13,7 @@ this="$trunk"
 # not edit.
 
 __gvim_completion()
-{ 
+{
     local cur
     cur="${COMP_WORDS[COMP_CWORD]}"
     COMPREPLY=( $(compgen -f -X '*~' -- "$cur" |

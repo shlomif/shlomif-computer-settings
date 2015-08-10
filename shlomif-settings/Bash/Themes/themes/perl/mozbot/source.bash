@@ -47,7 +47,7 @@ __test_distribution()
 
 __myctags()
 {
-    ( 
+    (
         cd "$trunk" && \
         ctags -f tags --recurse --totals \
             --exclude='**/.hg/**' \

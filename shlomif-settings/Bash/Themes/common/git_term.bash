@@ -19,7 +19,7 @@
 _update_prompt () {
   ## Save $? early, we'll need it later
   local exit="$?"
-  
+
   ## define some colors
   local red="31";
   local green="32";
@@ -42,7 +42,7 @@ _update_prompt () {
 
   ## Initial prompt
   _prompt="[$e_white\h$e_normal:$e_cyan\w$e_normal]";
-  
+
   ## Color based on exit code
   local bul="\342\200\242" # bullet character
   case "$exit" in
