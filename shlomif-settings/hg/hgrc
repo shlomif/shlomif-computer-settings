@@ -11,7 +11,7 @@ hgext.mq =
 hgsubversion = /home/shlomif/Download/unpack/file/vcs/hgsubversion/hgsubversion
 progress =
 purge=
-prompt = /home/shlomif/conf/Bash/hg-prompt/hg-prompt/prompt.py
+prompt = /home/shlomif/Download/unpack/conf/hg-prompt/hg-prompt/prompt.py
 # hgsubversion =
 hggit =
 %include ~/.hgrc_auth
