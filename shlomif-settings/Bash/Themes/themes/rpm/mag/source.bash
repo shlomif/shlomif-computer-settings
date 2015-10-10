@@ -98,6 +98,8 @@ log()
     eval "$cmd"
 }
 
+alias L='log'
+
 myq()
 {
     local p="$(echo -n "$1" | perl -pE 's#/+##')"
