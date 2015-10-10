@@ -4,4 +4,5 @@
                 --with-system-expat \
                 --with-system-ffi \
                 --enable-shared \
-                --with-valgrind
+                --with-valgrind \
+
