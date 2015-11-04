@@ -8,7 +8,7 @@ export HISTSIZE=25000 FREECELL_SOLVER_QUIET=1 \
     HARNESS_PLUGINS="ColorSummary ColorFileVerdicts AlternateInterpreters BreakOnFailure" \
     HARNESS_ALT_INTRP_FILE="$HOME/conf/Test-Run/alternate-interpreters.yml" \
     HARNESS_OPTIONS=c PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL="--skipdeps --alldeps" \
-    CPAN2PKG_NO_CPANP_X=1
+    CPAN2PKG_DONT_CPANP_X=1
 unset LESSOPEN
 umask 022
 if test -e /etc/debian_version ; then
