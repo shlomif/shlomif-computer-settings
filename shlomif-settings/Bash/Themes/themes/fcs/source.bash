@@ -66,6 +66,15 @@ prompt()
         "~=$HOME"
 }
 
+find_ids()
+{
+    (
+        set -x
+        cd "$c_src"
+        ruby scripts/find-ids.rb *.[ch] patsolve-shlomif/patsolve/{pat.{c,h},patmain.c,tree.{c,h},patsolve.c,pats__play.h,param.h,print_card.h,print_layout.h,read_layout.h} > ids.txt
+    )
+}
+
 t()
 {
     (
