@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Outputs the resolution / size / dimension of the screen in pixels.
+
+xdpyinfo  | grep dimensions

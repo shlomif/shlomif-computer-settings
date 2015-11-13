@@ -1,0 +1,24 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use File::Basename;
+
+while (my $l = <>)
+{
+    chomp($l);
+    $l =~ s/^\?\s+// or die "Unknown line '$_'";
+    my $dir = dirname($l);
+    my $file = basename($l);
+
+    my $base = $file;
+    #$base =~ s{\.html-for-quad-pres\z}{.html} or
+    #    die "Unknown file in line '$l'";
+
+    my $ignore = `svn propget svn:ignore $dir`;
+    $ignore =~ s{\Q$base\E}{$file}
+        or $ignore =~ s{\n?\z}{$file\n}ms;
+
+    system("svn", "propset", "svn:ignore", $ignore, $dir);
+}

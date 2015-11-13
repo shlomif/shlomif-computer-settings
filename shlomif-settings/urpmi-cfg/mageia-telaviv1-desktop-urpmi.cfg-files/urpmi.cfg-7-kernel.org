@@ -1,0 +1,173 @@
+{
+}
+
+Core\ Release http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/core/release {
+  key-ids: 80420f66
+}
+
+Core\ Release\ Debug http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/debug/core/release {
+  key-ids: 80420f66
+}
+
+Core\ Updates http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/core/updates {
+  key-ids: 80420f66
+  update
+}
+
+Core\ Updates\ Debug http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/debug/core/updates {
+}
+
+Core\ Updates\ Testing http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/core/updates_testing {
+  key-ids: 80420f66
+}
+
+Core\ Updates\ Testing\ Debug http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/debug/core/updates_testing {
+  key-ids: 80420f66
+}
+
+Core\ Backports http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/core/backports {
+  ignore
+  key-ids: 80420f66
+}
+
+Core\ Backports\ Debug http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/debug/core/backports {
+  ignore
+}
+
+Core\ Backports\ Testing http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/core/backports_testing {
+  ignore
+  key-ids: 80420f66
+}
+
+Core\ Backports\ Testing\ Debug http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/debug/core/backports_testing {
+  ignore
+}
+
+Nonfree\ Release http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/nonfree/release {
+  key-ids: 80420f66
+}
+
+Nonfree\ Release\ Debug http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/debug/nonfree/release {
+  key-ids: 80420f66
+}
+
+Nonfree\ Updates http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/nonfree/updates {
+  key-ids: 80420f66
+  update
+}
+
+Nonfree\ Updates\ Debug http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/debug/nonfree/updates {
+  key-ids: 80420f66
+}
+
+Nonfree\ Updates\ Testing http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/nonfree/updates_testing {
+  key-ids: 80420f66
+}
+
+Nonfree\ Updates\ Testing\ Debug http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/debug/nonfree/updates_testing {
+  key-ids: 80420f66
+}
+
+Nonfree\ Backports http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/nonfree/backports {
+  ignore
+  key-ids: 80420f66
+}
+
+Nonfree\ Backports\ Debug http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/debug/nonfree/backports {
+  ignore
+}
+
+Nonfree\ Backports\ Testing http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/nonfree/backports_testing {
+  ignore
+  key-ids: 80420f66
+}
+
+Nonfree\ Backports\ Testing\ Debug http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/debug/nonfree/backports_testing {
+  ignore
+}
+
+Tainted\ Release http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/tainted/release {
+  key-ids: 80420f66
+}
+
+Tainted\ Release\ Debug http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/debug/tainted/release {
+  key-ids: 80420f66
+}
+
+Tainted\ Updates http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/tainted/updates {
+  key-ids: 80420f66
+  update
+}
+
+Tainted\ Updates\ Debug http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/debug/tainted/updates {
+}
+
+Tainted\ Updates\ Testing http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/tainted/updates_testing {
+  key-ids: 80420f66
+}
+
+Tainted\ Updates\ Testing\ Debug http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/debug/tainted/updates_testing {
+  key-ids: 80420f66
+}
+
+Tainted\ Backports http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/tainted/backports {
+  ignore
+  key-ids: 80420f66
+}
+
+Tainted\ Backports\ Debug http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/debug/tainted/backports {
+  ignore
+  key-ids: 80420f66
+}
+
+Tainted\ Backports\ Testing http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/tainted/backports_testing {
+  ignore
+  key-ids: 80420f66
+}
+
+Tainted\ Backports\ Testing\ Debug http://mirrors.kernel.org/mageia/distrib/cauldron/x86_64/media/debug/tainted/backports_testing {
+  ignore
+}
+
+Core\ 32bit\ Release http://mirrors.kernel.org/mageia/distrib/cauldron/i586/media/core/release {
+  key-ids: 80420f66
+}
+
+Core\ 32bit\ Release\ Debug http://mirrors.kernel.org/mageia/distrib/cauldron/i586/media/debug/core/release {
+  key-ids: 80420f66
+}
+
+Core\ 32bit\ Updates http://mirrors.kernel.org/mageia/distrib/cauldron/i586/media/core/updates {
+  key-ids: 80420f66
+  update
+}
+
+Core\ 32bit\ Updates\ Debug http://mirrors.kernel.org/mageia/distrib/cauldron/i586/media/debug/core/updates {
+  key-ids: 80420f66
+}
+
+Core\ 32bit\ Updates\ Testing http://mirrors.kernel.org/mageia/distrib/cauldron/i586/media/core/updates_testing {
+  key-ids: 80420f66
+}
+
+Core\ 32bit\ Updates\ Testing\ Debug http://mirrors.kernel.org/mageia/distrib/cauldron/i586/media/debug/core/updates_testing {
+  key-ids: 80420f66
+}
+
+Core\ 32bit\ Backports http://mirrors.kernel.org/mageia/distrib/cauldron/i586/media/core/backports {
+  ignore
+  key-ids: 80420f66
+}
+
+Core\ 32bit\ Backports\ Debug http://mirrors.kernel.org/mageia/distrib/cauldron/i586/media/debug/core/backports {
+  ignore
+}
+
+Core\ 32bit\ Backports\ Testing http://mirrors.kernel.org/mageia/distrib/cauldron/i586/media/core/backports_testing {
+  ignore
+  key-ids: 80420f66
+}
+
+Core\ 32bit\ Backports\ Testing\ Debug http://mirrors.kernel.org/mageia/distrib/cauldron/i586/media/debug/core/backports_testing {
+  ignore
+}

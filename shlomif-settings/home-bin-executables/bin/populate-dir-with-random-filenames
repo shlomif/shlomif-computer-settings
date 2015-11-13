@@ -1,0 +1,20 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use String::Random;
+
+srand(24);
+
+my $foo = String::Random->new();
+foreach my $i (1 .. 6000)
+{
+    if ($i % 100 == 0)
+    {
+        print "Reached $i\n";
+    }
+    open my $fh, '>', $foo->randregex('\w{8}');
+    print {$fh} $foo->randpattern('.' x 100);
+    close($fh);
+}

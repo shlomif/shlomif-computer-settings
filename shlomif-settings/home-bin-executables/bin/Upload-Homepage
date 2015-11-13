@@ -1,0 +1,2 @@
+#!/bin/bash
+rsync -a -v --progress --inplace "${__HOMEPAGE_LOCAL_PATH}"/* "${__HOMEPAGE_REMOTE_PATH}"/

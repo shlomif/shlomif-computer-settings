@@ -1,0 +1,4 @@
+#!/bin/bash
+# This script is used to play the Israeli Galgalatz Radio Channel from the
+# Internet.
+mplayer 'http://test.live.net.il/glgltz-a-zixief.m3u8'

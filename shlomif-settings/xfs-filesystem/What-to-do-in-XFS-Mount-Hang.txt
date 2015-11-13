@@ -1,0 +1,29 @@
+Date: Thu, 15 Dec 2005 12:30:23 -0600
+From: Eric Sandeen <sandeen@sgi.com>
+To: Shlomi Fish <shlomif@iglu.org.il>
+Subject: Re: XFS Mount Hangs the Partition (on latest kernel + many old 2.6.x
+ ones)
+
+Shlomi Fish wrote:
+> Replying to myself, I'd like to ask for a response to my previous message,
+> especially the order in which the operations Mr. Scott mentioned need to be
+> performed.
+
+>>>- get sysrq-t information for all hung processes, esp. mount;
+>>>- send xfs_info output for the filesystem in question;
+>>>- dump the log (xfs_logprint -C) and send it to us.
+
+
+xfs_logprint -C /dev/foo against the unmounted device.
+
+sysrq-t when it's hung, after you try to mount
+
+xfs_info /mnt/point when it's mounted.
+
+Well, you can't mount, because recovery hangs, so,
+
+mount -o ro,norecovery /dev/foo /mnt/point; xfs_info /mnt/point
+
+-Eric
+
+
