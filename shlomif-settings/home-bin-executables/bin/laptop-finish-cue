@@ -3,7 +3,7 @@
 song="/home/shlomif/Download/Video/Jessie J - Domino-UJtB55MaoD0.webm"
 
 if ! test -e "$song" ; then
-    song="/mnt/smb/music/Music/mp3s/Jessie J - Domino-UJtB55MaoD0.webm"
+    song="/mnt/music/Music/mp3s/Jessie J - Domino-UJtB55MaoD0.webm"
 fi
 export DEFAULT_SONG="${song}"
 exec $(perl -e 'use File::Spec; print File::Spec->rel2abs(q#'"$(dirname "$0")"'#);')/generic-finish-cue "$@"
