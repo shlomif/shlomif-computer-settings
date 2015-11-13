@@ -4,9 +4,23 @@
 load_common sys
 
 p5_base="$HOME/Download/unpack/perl/p5"
-this="$p5_base/git/perl"
+_base_trunk="$p5_base/git"
+trunk="$_base_trunk/perl"
+this="$trunk"
 
 cd "$this"
+
+setup()
+{
+    (
+        mkdir -p "$_base_trunk"
+        cd "$_base_trunk"
+        git clone 'git://perl5.git.perl.org/perl.git'  "$trunk"
+        cd "$trunk"
+        git remote add github 'git@github.com:shlomif/perl.git'
+    )
+    cd "$this"
+}
 
 _build_generic()
 {
