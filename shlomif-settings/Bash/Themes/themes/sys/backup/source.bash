@@ -6,8 +6,8 @@ an()
     analyze-du "$@"
 }
 
-b="$HOME/Backup/rsync.net"
-a="$HOME/Backup/rsync.net/unpack/home/shlomif"
+a="$HOME/Backup/rsync.net"
+b="$HOME/Backup/rsync.net/unpack/home/shlomif"
 
 regen()
 {
@@ -15,7 +15,7 @@ regen()
         cd ~/Docs/Svn/progs/backup/make-based
         make -f backup.mak rsync_net_home_dir
     )
-    cd ~/Backup/rsync.net/ && . UNPACK-me.bash
+    cd ~/Backup/rsync.net/ && bash UNPACK-me.bash
 }
 
 
