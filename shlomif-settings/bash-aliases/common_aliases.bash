@@ -1,5 +1,3 @@
-alias screen='screen -e "^^6"'
-
 _sys()
 {
     echo "$@"
