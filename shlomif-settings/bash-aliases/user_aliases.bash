@@ -8,13 +8,6 @@ disable_local_lib()
 {
     unset MODULEBUILDRC PERL_MM_OPT
 }
-mdvsys()
-{
-    (
-        disable_local_lib
-        `which mdvsys` "$@"
-    )
-}
 rpmbuild()
 {
     (
@@ -56,7 +49,6 @@ _update_PERL5LIB()
 {
     . ~/conf/trunk/shlomif-settings/bash-aliases/PERL5LIB_gen.sh
 }
-alias myrsync='rsync -a --progress -v --inplace' screen='screen -e "^^6"' \
+alias myrsync='rsync -a --progress -v --inplace' \
   rem_up='HOMEPAGE_SSH_PATH="$__HOMEPAGE_REMOTE_PATH" make upload' \
-  perlbug='perlbug -r shlomif@shlomifish.org -c shlomif@shlomifish.org -e "gvim -f"' \
   xz9='xz -9 --extreme' ifconfig='/sbin/ifconfig'
