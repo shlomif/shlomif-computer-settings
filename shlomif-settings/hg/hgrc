@@ -18,3 +18,5 @@ hggit =
 [mbox]
 [alias]
 ls = status -mardcn
+[experimental]
+clonebundles = true
