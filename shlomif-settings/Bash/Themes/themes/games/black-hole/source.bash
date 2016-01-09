@@ -12,6 +12,8 @@ c_src="$proj/c-solver"
 c_build="$c_src/B"
 a_src="$c_src"
 a_build="$c_build"
+b="$c_build"
+c="$c_src"
 
 this="$c_src"
 
