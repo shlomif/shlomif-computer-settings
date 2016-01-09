@@ -29,5 +29,9 @@ foreach my $f (@files)
         {
             print "$f [$exist_d]\n";
         }
+        else
+        {
+            print "$f EXISTS!\n";
+        }
     }
 }
