@@ -29,7 +29,7 @@ ai_path="$cpan/AI-Pathfinding-OptimizeMultiple"
 ai_path_sys_tests="$cpan/temp-AI-Pathfinding-OptimizeMultiple-system-tests"
 
 # patsolve
-hg_pats="$fcs/extern/patsolve-shlomif"
+hg_pats="$c_src/patsolve-shlomif"
 pats="$hg_pats/patsolve"
 
 this="$c_src"
