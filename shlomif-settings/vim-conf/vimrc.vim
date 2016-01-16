@@ -387,3 +387,6 @@ autocmd BufRead,BufNewFile ~/progs/perl/Quizzes/Golf/* setlocal noeol binary
 map <Leader>cc viW""ygv"+ygv"*y
 
 set wildignore+=*.o,*.obj,.git,.svn,.hg,.bzr,*~
+
+" RPM spec - convert Url to metacpan.org
+autocmd BufRead,BufNewFile *.spec command MC %!perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/rpmspec-convert-to-metacpan.pl
