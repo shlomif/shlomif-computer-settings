@@ -4,7 +4,7 @@ load_common completion
 load_common no_implicit_make
 load_common git
 
-rw_repos_url="$($__themes_dir/common/github-git-remote-repo.pl --user="shlomif" --repo="project-euler")"
+remote_repo="$($__themes_dir/common/github-git-remote-repo.pl --user="shlomif" --repo="project-euler")"
 
 base="$HOME/progs/riddles/project-euler/"
 git_base="$base"
