@@ -13,6 +13,7 @@ if ! test -e "$htdocs_cat" ; then
     echo "Cannot install '$htdocs_cat'" 1>&2
 fi
 
+if false ; then
 (
     db_xsl_ns_dir="$HOME/Download/unpack/file/docbook"
     db_xsl_ns_base="docbook-xsl-ns-snapshot"
@@ -40,3 +41,4 @@ fi
         )
     fi
 )
+fi
