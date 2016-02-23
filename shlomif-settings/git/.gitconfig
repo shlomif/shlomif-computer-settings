@@ -20,4 +20,8 @@
 [url "git@git.kde.org:"]
 	pushInsteadOf = kde:
 [color]
-	ui = false
+    ui = false
+[github]
+    user = shlomif
+[include]
+    path = ~/.gitconfig-private
