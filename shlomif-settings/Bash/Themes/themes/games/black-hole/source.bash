@@ -1,7 +1,7 @@
 load_common mymake
 load_common completion
 load_common prompt
-load_common hg
+load_common git
 
 base="$HOME/progs/games/black-hole-solitaire"
 hg_base="$base"
@@ -17,7 +17,7 @@ c="$c_src"
 
 this="$c_src"
 
-remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="black-hole-solitaire")"
+remote_repo="$($__themes_dir/common/github-git-remote-repo.pl --user="shlomif" --repo="black-hole-solitaire")"
 
 export FCS_USE_TEST_RUN=1
 
