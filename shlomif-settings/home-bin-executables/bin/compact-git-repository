@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Taken from https://gist.github.com/kgaughan/3772976 . Thanks!
+
+git fsck --unreachable
+git reflog expire --expire=0 --all
+git repack -a -d -l
+git prune
+git gc --aggressive
