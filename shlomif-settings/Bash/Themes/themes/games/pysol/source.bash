@@ -43,5 +43,12 @@ dups()
     done
 }
 
+mydiff()
+{
+    fn="$1"
+    shift
+    diff -u "$this/pysollib/tk/$fn"  "$this/pysollib/tile/$fn"
+}
+
 proj_name='PySolFC'
 
