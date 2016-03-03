@@ -1,0 +1,7 @@
+---
+- cmd: unity
+  pattern: \.exe\z
+  type: regex
+- cmd: sbcl --script
+  pattern: \.lisp\z
+  type: regex
