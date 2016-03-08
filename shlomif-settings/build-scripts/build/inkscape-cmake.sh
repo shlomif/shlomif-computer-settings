@@ -3,6 +3,12 @@ build_type=''
 if test "$DEBUG" = 1 ; then
     build_type='-DCMAKE_BUILD_TYPE=Debug'
 fi
-flags='-DWITH_GTK3_EXPERIMENTAL=ON'
+# flags='-DWITH_GTK3_EXPERIMENTAL=ON'
+flags=''
 
-cmake -G Ninja $build_type -DCMAKE_INSTALL_PREFIX="$HOME/apps/graphics/inkscape-trunk" -DENABLE_LCMS=ON -DCMAKE_CXX_FLAGS="-fpermissive" -DENABLE_POPPLER=ON -DENABLE_POPPLER_CAIRO=ON $flags ../inkscape/
+ninja='-G Ninja'
+if test "$NO_NINJA" = 1 ; then
+    ninja=''
+fi
+
+cmake $ninja $build_type -DCMAKE_INSTALL_PREFIX="$HOME/apps/graphics/inkscape-trunk" -DENABLE_LCMS=ON -DCMAKE_CXX_FLAGS="-fpermissive" -DENABLE_POPPLER=ON -DENABLE_POPPLER_CAIRO=ON $flags ../inkscape/
