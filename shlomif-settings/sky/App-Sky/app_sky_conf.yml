@@ -16,7 +16,7 @@ sites:
                 basename_re: '\.(?:7z|tar|tar\.bz2|tar\.gz|tar\.xz|zip|exe|rpm)\z'
                 target_dir: 'Files/files/arcs/'
             code:
-                basename_re: '\.(?:bash|cpp|hs|pl|pm|c|py|js|rb|rs|json|patch|diff)\z'
+                basename_re: '\.(?:bash|cpp|hs|p6|pl|pm|c|py|js|rb|rs|json|patch|diff)\z'
                 target_dir: 'Files/files/code/'
             dirs:
                 basename_re: '\.(MYDIR)\z'
@@ -28,7 +28,7 @@ sites:
                 basename_re: '\.(?:mod|mp3|ogg|s3m|xm|wav|aac|m4a)\z'
                 target_dir: 'Files/files/music/mp3-ogg/'
             text:
-                basename_re: '\.(?:pdf|tsv|txt|odt|docx|html|xhtml)(?:\.xz)?\z'
+                basename_re: '\.(?:epub|pdf|tsv|txt|odt|docx|html|xhtml)(?:\.xz)?\z'
                 target_dir: 'Files/files/text/'
             video:
                 basename_re: '\.(?:webm|flv|avi|mpeg|mpg|mp4|ogv|srt|mkv)\z'
