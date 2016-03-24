@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Disables the touchpad/trackpad if it's a synpatic touchpad (which is the
+# case for my Acer Aspire laptop).
+#
+# Based on http://kde-apps.org/content/show.php/Disable+-+Enable+Touchpad?content=50914
+# which is a link found in a web-search.
+#
+# Written by Shlomi Fish, 2016 - under the X11 licence.
+synclient TouchpadOff=1
