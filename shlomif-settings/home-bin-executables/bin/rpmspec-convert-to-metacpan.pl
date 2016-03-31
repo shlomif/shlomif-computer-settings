@@ -6,7 +6,7 @@ use warnings;
 while (<>)
 {
     chomp;
-    if (/\AUrl\s*:/)
+    if (/\AUrl\s*:/i)
     {
         s#http://search.cpan.org/dist/#http://metacpan.org/release/#;
     }
