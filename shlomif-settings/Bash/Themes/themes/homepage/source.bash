@@ -1,7 +1,7 @@
 load_common mymake
 load_common completion
 load_common no_implicit_make
-load_common hg
+load_common git
 
 base="$HOME/Docs/homepage"
 hg_base="$base"
@@ -12,7 +12,7 @@ fortunes="$trunk/t2/humour/fortunes/"
 blog="$HOME/Docs/homepage/blog"
 logs="$HOME/Download/homesite-logs"
 p4n="$trunk/lib/presentations/qp/perl-for-newbies"
-remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="shlomi-fish-homepage")"
+remote_repo="$($__themes_dir/common/github-git-remote-repo.pl --user="shlomif" --repo="shlomi-fish-homepage")"
 
 export SCREENPLAY_COMMON_INC_DIR="$trunk/lib/screenplay-xml/from-vcs/screenplays-common"
 sel="$trunk/lib/screenplay-xml/from-vcs/Selina-Mandrake/selina-mandrake/screenplay/"
@@ -83,6 +83,6 @@ b()
     (cd "$trunk" && make -j16 && make test ; n --msg "make")
 }
 
-export PATH="$HOME/apps/quadpres/bin:$HOME/Download/unpack/xml/ebookmaker:$PATH"
+export PATH="$HOME/apps/quadpres/bin:$HOME/Download/unpack/xml/ebookmaker:$PATH:/usr/sbin"
 
 proj_name='homepage'
