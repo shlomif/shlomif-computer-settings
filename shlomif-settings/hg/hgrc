@@ -13,7 +13,7 @@ progress =
 purge=
 prompt = /home/shlomif/Download/unpack/conf/hg-prompt/hg-prompt/prompt.py
 # hgsubversion =
-hggit =
+# hggit =
 %include ~/.hgrc_auth
 [mbox]
 [alias]
