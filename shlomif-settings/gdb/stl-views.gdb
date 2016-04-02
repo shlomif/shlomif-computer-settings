@@ -4,11 +4,11 @@
 #                                        #
 ##########################################
 #
-#   The new GDB commands:                                                         
-# 	    are entirely non instrumental                                             
+#   The new GDB commands:
+# 	    are entirely non instrumental
 # 	    do not depend on any "inline"(s) - e.g. size(), [], etc
 #       are extremely tolerant to debugger settings
-#                                                                                 
+#
 #   This file should be "included" in .gdbinit as following:
 #   source stl-views.gdb or just paste it into your .gdbinit file
 #
@@ -105,7 +105,7 @@ document pvector
 	pvector v - Prints vector content, size, capacity and T typedef
 	pvector v 0 - Prints element[idx] from vector
 	pvector v 1 2 - Prints elements in range [idx1..idx2] from vector
-end 
+end
 
 
 
@@ -540,7 +540,7 @@ document pstring
 	Syntax: pstring <string>
 	Example:
 	pstring s - Prints content, size/length, capacity and ref-count of string s
-end 
+end
 
 
 
@@ -564,7 +564,7 @@ document pwstring
 	Syntax: pwstring <wstring>
 	Example:
 	pwstring s - Prints content, size/length, capacity and ref-count of wstring s
-end 
+end
 
 
 
