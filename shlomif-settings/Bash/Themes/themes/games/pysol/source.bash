@@ -13,12 +13,15 @@ this="$trunk"
 remote_repo="$($__themes_dir/common/github-git-remote-repo.pl --user="shlomif" --repo="PySolFC")"
 
 export FCS_USE_TEST_RUN=1
+export PATH="$HOME/apps/fcs-for-pysol/bin:$PATH"
+export HARNESS_OPTIONS='j9:c'
 
 cd "$this"
 
 t()
 {
     cd "$this" && make test
+    n --msg "PySolFC test suite finished"
 }
 
 prompt()
