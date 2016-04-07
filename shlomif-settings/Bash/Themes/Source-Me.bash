@@ -1,4 +1,3 @@
-__themes_dir="$(dirname $BASH_SOURCE[-1])"
 __private_themes_dir="$HOME/conf/Bash/private-themes"
 
 function load_common
@@ -43,7 +42,9 @@ __theme_completion_commands=''
 function __reload_themes_completion
 {
     for cmd in $__theme_completion_commands ; do
-        complete -W "$(cat ${__themes_dir}/list-of-themes.txt)" "$cmd"
+        if test "$SHELL" = "/bin/bash" ; then
+            complete -W "$(cat ${__themes_dir}/list-of-themes.txt)" "$cmd"
+        fi
     done
 }
 
