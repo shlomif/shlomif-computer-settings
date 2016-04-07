@@ -1,0 +1,28 @@
+#!/bin/bash
+
+conf_dir="$(cd "$(dirname "$0")" && pwd)"
+
+setup_file()
+{
+    local home_file="$1"
+    shift
+
+    local conf_file="$1"
+    shift
+
+    target="$HOME/$home_file"
+    if ! test -e "$target" ; then
+        ln -s "$conf_dir"/"$conf_file" "$target"
+    fi
+}
+
+dot_file()
+{
+    local basename="$1"
+    shift
+
+    setup_file ".$basename" "dot-$basename"
+}
+
+dot_file "Xkbmap"
+dot_file "Xclients"

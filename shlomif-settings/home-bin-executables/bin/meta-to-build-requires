@@ -1,0 +1,4 @@
+#!/bin/bash
+# Process part of the CPAN package’s META.yml file, and generate RPM
+# .spec BuildRequires: lines.
+perl -lane '($p,$v)=/^ *([\w:]*?): ([\d\.]+)$/ or die "Cannot match."; print "BuildRequires: perl($p)" . (($v == 0) ? "" : " >= $v");'

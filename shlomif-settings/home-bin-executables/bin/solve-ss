@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+# Solve PySolFC Simple Simon deals using fc-solve.
+# For more information about Simple Simon, see:
+#
+# http://en.wikipedia.org/wiki/Simple_Simon_%28solitaire%29
+
+make_pysol_freecell_board.py -F "$1" simple_simon | fc-solve -g simple_simon -l tlm

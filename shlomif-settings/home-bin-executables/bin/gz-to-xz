@@ -1,0 +1,8 @@
+#!/bin/bash
+find "$@" -type f -name '*.gz' -print |
+(while read GZ ; do
+    BASE="${GZ%%.gz}"
+    echo "Doing $BASE"
+    gunzip "$GZ"
+    xz "$BASE"
+done)

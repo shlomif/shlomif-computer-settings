@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use HTML::WikiConverter;
+use IO::All;
+
+my $filename = shift;
+
+my $text = io->file($filename)->slurp();
+my $wc = HTML::WikiConverter->new( dialect => 'Markdown', link_style => 'inline', );
+print $wc->html2wiki( $text );
+

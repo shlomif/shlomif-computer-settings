@@ -1,0 +1,2 @@
+#!/bin/bash
+LD_LIBRARY_PATH="/home/shlomif/apps/multimedia/libmikmod/lib" /home/shlomif/apps/multimedia/mikmod/bin/mikmod "$@"
