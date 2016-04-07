@@ -7,5 +7,6 @@ __gvim_completion()
         )
 }
 
-complete -o filenames -F __gvim_completion gvim
-
+if test "$SHELL" = "/bin/bash" ; then
+    complete -o filenames -F __gvim_completion gvim
+fi

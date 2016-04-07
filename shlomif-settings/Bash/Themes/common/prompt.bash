@@ -10,4 +10,10 @@ __prompt_branch()
 {
     echo -n ''
 }
-PS1="\\u[\$(__prompt_proj_name)\$(__prompt_branch)]:\$(prompt)\\$ "
+local prompt_common="[\$(__prompt_proj_name)\$(__prompt_branch)]:\$(prompt)\\$ "
+if test "$SHELL" = "/bin/bash" ; then
+    PS1="\\u${prompt_common}"
+elif test "$SHELL" = "/bin/zsh" ; then
+    setopt PROMPT_SUBST
+    PS1="%n${prompt_common}"
+fi
