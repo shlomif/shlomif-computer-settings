@@ -39,11 +39,18 @@ function Theme
 
 __theme_completion_commands=''
 
+__list_themes()
+{
+    cat ${__themes_dir}/list-of-themes.txt | perl -0777 -lap -e 's/[\s\n]+/ /g'
+}
+
 function __reload_themes_completion
 {
     for cmd in $__theme_completion_commands ; do
         if test "$SHELL" = "/bin/bash" ; then
-            complete -W "$(cat ${__themes_dir}/list-of-themes.txt)" "$cmd"
+            complete -W "$(__list_themes)" "$cmd"
+        elif test "$SHELL" = "/bin/zsh" ; then
+            compdef "_values description $(__list_themes)" "$cmd"
         fi
     done
 }
