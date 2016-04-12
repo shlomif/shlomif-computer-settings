@@ -1,0 +1,18 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use autodie;
+
+use CPANPLUS::Backend;
+
+my $AUTHOR_ID = shift(@ARGV);
+my $cb = CPANPLUS::Backend->new;
+my $author = $cb->author_tree($AUTHOR_ID);
+
+my @mods = sort { $a cmp $b } map { $_->name } $author->modules;
+
+foreach my $m (@mods)
+{
+    print "$m\n";
+}
