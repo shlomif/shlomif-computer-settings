@@ -110,7 +110,7 @@ myq()
 
 mu()
 {
-    magpie update
+    magpie update --nosleep
 }
 
 pp()
@@ -133,7 +133,10 @@ Set()
     done
 }
 
-
+m()
+{
+    pco "$1" && mu
+}
 
 disable_local_lib
 cd "$this"
