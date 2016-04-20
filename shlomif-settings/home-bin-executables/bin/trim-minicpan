@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Script to trim a minicpan directory by not keeping old releases.
+#
+# Copyright by Shlomi Fish, 2016.
+#
+# Licensed under the MIT/X11 licence.
+
+# Configuration:
+localdir="$HOME/Download/Arcs/Perl/minicpan"
+newlocal="$HOME/Download/Arcs/Perl/__New-minicpan"
+oldlocal="$HOME/Download/Arcs/Perl/__Old-minicpan"
+port=2908
+
+mkdir -p "$newlocal"
+/usr/sbin/thttpd -p "$port" -d "$localdir"
+minicpan -r "http://localhost:${port}/" -l "$newlocal"
+mv "$localdir" "$oldlocal"
+pkill thttpd
+mv "$newlocal" "$localdir"
