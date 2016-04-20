@@ -5,9 +5,11 @@ load_common sys
 load_common ssh_add
 
 base="$HOME/progs/Rpms"
+b="$base"
 s="$base/SRPMS"
 mag_base="$HOME/Download/unpack/Mageia"
 this="$mag_base"
+t="$this"
 proj_name='rpms'
 
 mag_username="$(whoami)"
@@ -34,7 +36,7 @@ toxz()
 
 u_buildreq()
 {
-    _sys u --buildrequires "$(pwd)"/SPECS/*.spec
+    _sys u --no-recommends --buildrequires "$(pwd)"/SPECS/*.spec
 }
 
 u_rpms()

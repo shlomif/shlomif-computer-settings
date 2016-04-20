@@ -1,3 +1,4 @@
+load_common completion
 load_common mymake
 
 base="$HOME/progs/C/gringotts"
@@ -16,19 +17,6 @@ setup()
     )
     cd "$this"
 }
-
-# Make sure that gvim's filename completion ignores filenames that it should
-# not edit.
-
-__gvim_completion()
-{
-    local cur
-    cur="${COMP_WORDS[COMP_CWORD]}"
-    COMPREPLY=( $(compgen -f -X '*~' -- "$cur" |
-        grep -v '/\.' | grep -v '^\.') )
-}
-
-complete -o filenames -F __gvim_completion gvim
 
 cd $this
 
