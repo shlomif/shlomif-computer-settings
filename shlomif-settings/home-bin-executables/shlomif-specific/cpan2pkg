@@ -1,0 +1,2 @@
+#!/bin/bash
+cd ~/Download/unpack/perl/cpan/app-cpan2pkg/ && perl -Ilib bin/cpan2pkg "$@"
