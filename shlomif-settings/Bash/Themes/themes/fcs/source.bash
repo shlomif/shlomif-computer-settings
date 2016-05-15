@@ -49,7 +49,7 @@ setup()
 
 export LIBAVL2_SOURCE_DIR="$HOME/Download/unpack/prog/c/avl-2.0.3/"
 export FCS_USE_TEST_RUN=1
-export FCS_PGO_THEME="-l as"
+export FCS_PGO_THEME="-l ct"
 
 # This causes problems with the threaded solver.
 unset MALLOC_CHECK_
@@ -74,7 +74,7 @@ find_ids()
     (
         set -x
         cd "$c_src"
-        ruby scripts/find-ids.rb *.[ch] patsolve-shlomif/patsolve/{pat.{c,h},patmain.c,tree.{c,h},patsolve.c,pats__play.h,param.h,print_card.h,print_layout.h,read_layout.h} > ids.txt
+        ruby ../scripts/find-ids.rb *.[ch] patsolve-shlomif/patsolve/*.[ch] > ids.txt
     )
 }
 
