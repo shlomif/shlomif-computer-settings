@@ -66,7 +66,6 @@ alias imp='mgarepo import'
 alias sub='mgarepo submit'
 alias co='mgarepo co'
 alias ci='mgarepo ci'
-# alias b='mgarepo build -v -v'
 alias b='bm -l -b'
 alias sd='mgarepo sync -d'
 
@@ -91,6 +90,11 @@ coo()
     shift
 
     co "$pkg" && cd "$pkg"
+    # A global variable for convenience
+    p="$pkg"
+    # A global variable with the directory, so one can do "cd $d" or "rm -fr $d"
+    # etc.
+    d="$(pwd)"
 }
 
 log()
