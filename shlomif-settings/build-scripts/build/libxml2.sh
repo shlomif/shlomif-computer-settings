@@ -1,2 +1,3 @@
 #!/bin/bash
-./configure --prefix=$HOME/apps/xml/libxml2
+d="$HOME/apps/xml/libxml2"
+./configure --prefix="$d" --with-python-install-dir="$d"
