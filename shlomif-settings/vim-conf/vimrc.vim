@@ -398,3 +398,6 @@ endif
 
 let no_flake8_maps = 1
 autocmd FileType python map <buffer> <F5> :call Flake8()<CR>
+
+autocmd BufRead,BufNewFile /home/shlomif/progs/freecell/git/*/ids-whitelist.txt map <F2> o<C-R>"<ESC> | map <F4> :%!LC_ALL=C sort<CR>
+
