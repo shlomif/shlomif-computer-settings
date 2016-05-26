@@ -17,4 +17,4 @@ while true ; do
     echo ">>>"
     sleep 600
 done
-) > /var/tmp/shlomif-fc-solve-monitor.txt
+) | timestamper >> /var/tmp/shlomif-fc-solve-monitor.txt
