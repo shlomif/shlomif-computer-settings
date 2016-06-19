@@ -72,9 +72,10 @@ prompt()
 find_ids()
 {
     (
-        set -x
         cd "$c_src"
-        ruby ../scripts/find-ids.rb *.[ch] patsolve-shlomif/patsolve/*.[ch] > ids.txt
+        local cmd='ruby ../scripts/find-ids.rb *.[ch] patsolve-shlomif/patsolve/*.[ch] > ids.txt'
+        echo "$cmd"
+        eval "$cmd"
     )
 }
 
