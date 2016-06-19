@@ -1,14 +1,15 @@
 load_common mymake
 load_common completion
 load_common prompt
-load_common hg
+load_common git
 # load_common gen_patch
 
 base="$HOME/progs/perl/cpan/XML/LibXML"
-hg_base="$base/hg"
-trunk="$hg_base/perl-xml-libxml"
+git_base="$base/git"
+trunk="$git_base/perl-XML-LibXML"
 this="$trunk"
-remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="perl-xml-libxml")"
+remote_repo="$($__themes_dir/common/github-git-remote-repo.pl --user="shlomif" --repo="perl-XML-LibXML")"
+
 
 xslt_base="$HOME/progs/perl/cpan/XML/LibXSLT"
 xslt_hg_base="$HOME/progs/perl/cpan/XML/LibXSLT/hg"
