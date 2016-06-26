@@ -1,0 +1,12 @@
+# this line is a comment
+--style=allman      # this is a line-end comment
+# long options can be written without the preceding '--'
+indent-switches     # cannot do this on the command line
+--indent=spaces=4
+# short options must have the preceding '-'
+-p
+# short options can be concatenated together
+--min-conditional-indent=1
+--max-instatement-indent=40
+-c
+--pad-header
