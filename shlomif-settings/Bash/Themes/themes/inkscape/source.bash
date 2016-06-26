@@ -12,6 +12,8 @@ trunk="$_base_trunk"
 c_src="$_base_trunk"
 this="$c_src"
 build="$base/B"
+b="$build"
+c="$c_src"
 
 setup()
 {
