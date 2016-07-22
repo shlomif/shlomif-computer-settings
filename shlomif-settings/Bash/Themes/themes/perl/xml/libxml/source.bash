@@ -15,6 +15,8 @@ xslt_base="$HOME/progs/perl/cpan/XML/LibXSLT"
 xslt_hg_base="$HOME/progs/perl/cpan/XML/LibXSLT/hg"
 xslt_trunk="$HOME/progs/perl/cpan/XML/LibXSLT/hg/perl-xml-libxslt"
 
+export RELEASE_TESTING=1 AUTHOR_TESTING=1
+
 __dist_name()
 {
     (__check_for_distro &&
