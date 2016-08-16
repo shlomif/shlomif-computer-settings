@@ -114,6 +114,18 @@ _dzil_inst()
     )
 }
 
+_Makefile_gnu__make()
+{
+    make -f "$c_src"/Makefile.gnu COMPILER=gcc SRC_DIR="$c_src" -j4 "$@"
+}
+
+# Short for make
+M()
+{
+    _Makefile_gnu__make clean
+    _Makefile_gnu__make all
+}
+
 proj_name='fcs'
 
 # Clean up the environment for the valgrind tests to succeed.
