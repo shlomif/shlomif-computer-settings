@@ -8,7 +8,7 @@ trunk="$base"
 app_dir="$trunk/App-ManiacDownloader"
 this="$app_dir"
 
-remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="maniac-downloader")"
+remote_repo="$(_shlomif_bitbucket "maniac-downloader")"
 
 cd "$this"
 

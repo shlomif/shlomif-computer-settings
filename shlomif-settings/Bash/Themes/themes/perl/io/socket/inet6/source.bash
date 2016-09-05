@@ -9,7 +9,7 @@ trunk="$base/trunk"
 module="$trunk/modules/IO-Socket-INET6"
 this="$module"
 
-remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="perl-io-socket-inet6")"
+remote_repo="$(_shlomif_bitbucket "perl-io-socket-inet6")"
 # Make sure that gvim's filename completion ignores filenames that it should
 # not edit.
 

@@ -11,7 +11,7 @@ rw_repos_url="https://svn.berlios.de/svnroot/repos/web-cpan/nav-menu"
 read_repos_url="http://svn.berlios.de/web-cpan/nav-menu"
 test_dir="$trunk/tests/integration/sites-gen"
 
-remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="perl-html-widgets-navmenu")"
+remote_repo="$(_shlomif_bitbucket "perl-html-widgets-navmenu")"
 
 __dist_name()
 {

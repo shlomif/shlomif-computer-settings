@@ -8,7 +8,7 @@ hg_base="$kakuro"
 trunk="$kakuro/trunk"
 solver="$trunk/solver/ruby"
 this="$solver"
-remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="kakuro-cross-sums")"
+remote_repo="$(_shlomif_bitbucket "kakuro-cross-sums")"
 
 cd "$this"
 

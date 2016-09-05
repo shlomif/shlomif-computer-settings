@@ -13,7 +13,7 @@ read_repos_url="svn://svn.berlios.de/web-cpan/latemp"
 # test_dir="$trunk/tests/integration/sites-gen"
 modules="$trunk/Perl/modules"
 
-remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="latemp")"
+remote_repo="$(_shlomif_bitbucket "latemp")"
 
 # Make sure that gvim's filename completion ignores filenames that it should
 # not edit.
