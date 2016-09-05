@@ -14,7 +14,7 @@ src="$trunk/src"
 b="$trunk/B"
 this="$b"
 
-remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="website-meta-language")"
+remote_repo="$(_shlomif_bitbucket "website-meta-language")"
 cd "$this"
 
 prompt()

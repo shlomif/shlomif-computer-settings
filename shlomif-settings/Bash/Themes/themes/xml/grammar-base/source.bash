@@ -9,7 +9,7 @@ trunk="$base/trunk"
 grammar_base="$trunk/XML-GrammarBase"
 this="$grammar_base"
 
-remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="perl-xml-grammarbase")"
+remote_repo="$(_shlomif_bitbucket "perl-xml-grammarbase")"
 
 __dist_name()
 {

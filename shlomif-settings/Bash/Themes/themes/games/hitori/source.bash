@@ -8,7 +8,7 @@ trunk="$base/trunk"
 solver="$trunk/hitori-solver-in-ruby"
 this="$solver"
 
-remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="hitori")"
+remote_repo="$(_shlomif_bitbucket "hitori")"
 repos="https://svn.berlios.de/svnroot/repos/fc-solve/hitori/"
 repos_trunk="${repos}trunk/"
 

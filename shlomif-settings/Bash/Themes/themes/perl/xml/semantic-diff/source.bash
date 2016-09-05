@@ -10,7 +10,7 @@ trunk="$base/trunk"
 module="$trunk/perl/modules/XML-SemanaticDiff"
 this="$module"
 
-remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="perl-xml-semanticdiff")"
+remote_repo="$(_shlomif_bitbucket "perl-xml-semanticdiff")"
 # This is so "make dist" won't complain when the file already exists.
 export GZIP="-f"
 

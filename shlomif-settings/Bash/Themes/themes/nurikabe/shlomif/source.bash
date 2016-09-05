@@ -8,7 +8,7 @@ hg_base="$base"
 trunk="$base/trunk"
 c_src="$trunk/nurikabe-solver"
 module="$c_src/Games-Nurikabe-Solver"
-remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="nurikabe")"
+remote_repo="$(_shlomif_bitbucket "nurikabe")"
 
 this="$module"
 

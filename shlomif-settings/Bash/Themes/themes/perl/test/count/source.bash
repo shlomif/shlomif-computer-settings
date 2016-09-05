@@ -4,7 +4,7 @@ load_common prompt
 load_common hg
 # load_common gen_patch
 
-remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="perl-test-count")"
+remote_repo="$(_shlomif_bitbucket "perl-test-count")"
 
 base="$HOME/progs/perl/cpan/Test/Count"
 hg_base="$base"

@@ -12,7 +12,7 @@ hg_base="$xslt_hg_base"
 trunk="$xslt_trunk"
 this="$trunk"
 
-remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="perl-xml-libxslt")"
+remote_repo="$(_shlomif_bitbucket "perl-xml-libxslt")"
 
 __dist_name()
 {

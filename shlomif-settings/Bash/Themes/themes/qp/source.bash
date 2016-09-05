@@ -9,7 +9,7 @@ trunk="$base/trunk"
 this="$trunk/installer"
 site="$trunk/site"
 
-remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="quad-pres")"
+remote_repo="$(_shlomif_bitbucket "quad-pres")"
 
 cd "$this"
 

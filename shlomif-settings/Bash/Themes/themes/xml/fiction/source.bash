@@ -11,7 +11,7 @@ modules_dir="$trunk/perl/modules"
 fict="$modules_dir/XML-Grammar-Fiction"
 this="$fict"
 
-remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="fiction-xml")"
+remote_repo="$(_shlomif_bitbucket "fiction-xml")"
 
 __dist_name()
 {

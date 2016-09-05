@@ -9,7 +9,7 @@ hg_base="$base"
 trunk="$base/trunk"
 module="$trunk/Test-WWW-Mechanize-Mojo"
 this="$module"
-remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="perl-test-www-mechanize-mojo")"
+remote_repo="$(_shlomif_bitbucket "perl-test-www-mechanize-mojo")"
 
 PATH="$inst_modules_dir/bin/:$PATH"
 # export PERL5LIB="$inst_modules_dir/lib/perl5/site_perl/$__perl_version/:$inst_modules_dir/lib/perl5/$__perl_version"

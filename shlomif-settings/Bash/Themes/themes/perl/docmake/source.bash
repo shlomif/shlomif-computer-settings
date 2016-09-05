@@ -10,7 +10,7 @@ trunk="$base/trunk"
 module="$trunk/modules/App-XML-DocBook-Docmake"
 this="$module"
 test_dir="$HOME/Docs/Svn/Docs/programming/The-Perfect-IT-Workplace/docbook"
-remote_repo="$($__themes_dir/common/bitbucket-hg-remote-repo.pl --user="shlomif" --repo="docmake")"
+remote_repo="$(_shlomif_bitbucket "docmake")"
 # Make sure that gvim's filename completion ignores filenames that it should
 # not edit.
 
