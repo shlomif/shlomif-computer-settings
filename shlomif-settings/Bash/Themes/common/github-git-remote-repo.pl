@@ -13,7 +13,7 @@ my $gh_repo;
 GetOptions(
     'user=s' => \$gh_user,
     'repo=s' => \$gh_repo,
-);
+) or die "GetOptions failed! $!";
 
 if (!defined ($gh_user))
 {
