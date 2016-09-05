@@ -8,7 +8,7 @@ git_base="$bp"
 trunk="$bp/garden"
 solver="$trunk/ruby"
 this="$solver"
-remote_repo="$($__themes_dir/common/github-git-remote-repo.pl --user="shlomif" --repo="binary-puzzle-garden")"
+remote_repo="$(_shlomif_github "binary-puzzle-garden")"
 
 cd "$this"
 

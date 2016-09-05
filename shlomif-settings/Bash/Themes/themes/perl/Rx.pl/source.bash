@@ -9,7 +9,7 @@ trunk="$base/Rx.pl"
 app_dir="$trunk"
 this="$app_dir"
 
-rw_repos_url="$($__themes_dir/common/github-git-remote-repo.pl --user="shlomif" --repo="Rx.pl")"
+rw_repos_url="$(_shlomif_github "Rx.pl")"
 
 cd "$this"
 
