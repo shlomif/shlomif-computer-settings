@@ -8,7 +8,7 @@ hg_base="$base"
 trunk="$base/hg"
 repos="$trunk/The-Enemy"
 this="$repos"
-rw_repos_url="ssh://hg@bitbucket.org/shlomif/the-enemy"
+remote_repo="$(_shlomif_bitbucket "the-enemy")"
 
 export THE_ENEMY_DEST="the-enemy-glareenxet"
 
