@@ -17,7 +17,7 @@ c="$c_src"
 
 this="$c_src"
 
-remote_repo="$($__themes_dir/common/github-git-remote-repo.pl --user="shlomif" --repo="black-hole-solitaire")"
+remote_repo="$(_shlomif_github "black-hole-solitaire")"
 
 export FCS_USE_TEST_RUN=1
 

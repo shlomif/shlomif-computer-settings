@@ -8,7 +8,7 @@ base="$HOME/progs/perl/cpan/XML/LibXML"
 git_base="$base/git"
 trunk="$git_base/perl-XML-LibXML"
 this="$trunk"
-remote_repo="$($__themes_dir/common/github-git-remote-repo.pl --user="shlomif" --repo="perl-XML-LibXML")"
+remote_repo="$(_shlomif_github "perl-XML-LibXML")"
 
 
 xslt_base="$HOME/progs/perl/cpan/XML/LibXSLT"

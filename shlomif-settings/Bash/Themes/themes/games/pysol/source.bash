@@ -10,7 +10,7 @@ a="$proj"
 
 this="$trunk"
 
-remote_repo="$($__themes_dir/common/github-git-remote-repo.pl --user="shlomif" --repo="PySolFC")"
+remote_repo="$(_shlomif_github "PySolFC")"
 
 export FCS_USE_TEST_RUN=1
 export PATH="$HOME/apps/fcs-for-pysol/bin:$PATH"
