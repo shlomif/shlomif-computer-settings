@@ -1,21 +1,14 @@
 load_common mymake
 load_common completion
 load_common prompt
+load_common git
 
 base="$HOME/progs/perl/cpan/Games/Impatience"
+git_base="$git_base"
 trunk="$base/git"
 this="$trunk"
 
-rw_repos_url="$($__themes_dir/common/github-git-remote-repo.pl --user="shlomif" --repo="Games-Impatience")"
-
-setup()
-{
-    (
-        mkdir -p "$base"
-        cd "$base"
-        git clone "$rw_repos_url" git
-    )
-}
+remote_repo="$(_shlomif_github "Games-Impatience")"
 
 __dist_name()
 {
