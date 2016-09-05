@@ -1,26 +1,15 @@
 load_common mymake
 load_common completion
 load_common prompt
+load_common git
 
 cpan_base="$HOME/progs/perl/cpan"
 base="$cpan_base/Text/Table"
-repos="$base/git"
-module="$repos/Text-Table"
-trunk="$module"
-this="$trunk"
-rw_repos_url="$($__themes_dir/common/github-git-remote-repo.pl --user="shlomif" --repo="Text-Table")"
-
-# Make sure that gvim's filename completion ignores filenames that it should
-# not edit.
-
-setup()
-{
-    (
-        mkdir -p "$base"
-        cd "$base"
-        git clone "$rw_repos_url" git
-    )
-}
+git_base="$base"
+trunk="$base/git"
+module="$trunk/Text-Table"
+this="$module"
+remote_repo="$(_shlomif_github "Text-Table")"
 
 __dist_name()
 {
@@ -74,7 +63,7 @@ __rerun_coverage()
 __run_build_tests()
 {
     (
-        cd "$trunk/tests/build/EU-MM/" ;
+        cd "$module/tests/build/EU-MM/" ;
         ./test.sh ;
     )
 }
@@ -94,7 +83,7 @@ cd $this
 prompt()
 {
     __prompt_cmd \
-        "\$trunk=$trunk" \
+        "\$module=$module" \
         "\$base=$base" \
         "~=$HOME"
 }

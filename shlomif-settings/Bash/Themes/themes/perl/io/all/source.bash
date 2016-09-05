@@ -1,13 +1,14 @@
 load_common mymake
 load_common completion
 load_common prompt
+load_common github
 
 base="$HOME/progs/perl/cpan/IO/All"
 trunk="$base/io-all-pm"
 module="$trunk"
 this="$module"
 
-git_remote_shlomif="$($__themes_dir/common/github-git-remote-repo.pl --user="shlomif" --repo="io-all-pm")"
+git_remote_shlomif="$(_shlomif_github "io-all-pm")"
 git_remote_ingy='git@github.com:ingydotnet/io-all-pm.git'
 
 # Make sure that gvim's filename completion ignores filenames that it should
