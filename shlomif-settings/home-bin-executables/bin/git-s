@@ -1,0 +1,4 @@
+#!/bin/bash
+remote="$1"
+shift
+git pull --ff-only "$remote" master && git fetch "$remote" && git fetch "$remote" --tags
