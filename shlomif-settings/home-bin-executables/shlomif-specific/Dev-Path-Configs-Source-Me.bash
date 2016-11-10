@@ -3,7 +3,9 @@
 # _emsdk_path="$HOME/Download/unpack/prog/llvm-to-js/emsdk_portable"
 _emsdk_path="$HOME/Download/unpack/prog/llvm-to-js/emsdk"
 
-export PATH="${_emsdk_path}:${_emsdk_path}/clang/fastcomp/build_master_64/bin:${_emsdk_path}/emscripten/tag-1.34.1:$HOME/apps/gnome-subtitles/bin:$HOME/apps/multimedia/mikmod/bin:$HOME/apps/multimedia/libmikmod/bin:$HOME/apps/spidermonkey-js/bin:$HOME/Download/unpack/xml/ebookmaker:$HOME/apps/vim/bin:$HOME/Download/unpack/prog/ninja/ninja:$HOME/apps/fcs-for-pysol/bin/:$PATH"
+. "${_emsdk_path}/emsdk_env.sh"
+
+export PATH="${_emsdk_path}:${_emsdk_path}/bin:${_emsdk_path}/clang/fastcomp/build_master_64/bin:${_emsdk_path}/emscripten/tag-1.34.1:$HOME/apps/gnome-subtitles/bin:$HOME/apps/multimedia/mikmod/bin:$HOME/apps/multimedia/libmikmod/bin:$HOME/apps/spidermonkey-js/bin:$HOME/Download/unpack/xml/ebookmaker:$HOME/apps/vim/bin:$HOME/Download/unpack/prog/ninja/ninja:$HOME/apps/fcs-for-pysol/bin/:$PATH"
 
 export LD_LIBRARY_PATH="$HOME/apps/xml/libxml2/lib/"
 export PKG_CONFIG_PATH="$HOME/apps/file/libgringotts/lib/pkgconfig"
