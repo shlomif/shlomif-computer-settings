@@ -22,8 +22,7 @@ __gvim_completion()
 {
     local cur
     cur="${COMP_WORDS[COMP_CWORD]}"
-    COMPREPLY=( $(compgen -f -X '*~' -- "$cur" |
-        grep -vP '/\.[a-zA-Z_]' | grep -vP '^\.[a-zA-Z_]') )
+    COMPREPLY=( $(compgen -f -X '*~' -- "$cur") )
 }
 
 complete -o filenames -F __gvim_completion gvim
