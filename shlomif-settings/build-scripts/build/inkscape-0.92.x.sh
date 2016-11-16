@@ -11,4 +11,4 @@ if test "$NO_NINJA" = 1 ; then
     ninja=''
 fi
 
-cmake $ninja $build_type -DCMAKE_INSTALL_PREFIX="$HOME/apps/graphics/inkscape-0.92" -DENABLE_LCMS=ON -DCMAKE_CXX_FLAGS="-fpermissive" -DENABLE_POPPLER=ON -DENABLE_POPPLER_CAIRO=ON -DWITH_DBUS=ON $flags "$@"
+cmake $ninja $build_type -DCMAKE_INSTALL_PREFIX="$HOME/apps/graphics/inkscape-0.92" -DENABLE_LCMS=ON -DCMAKE_CXX_FLAGS="-fpermissive" -DENABLE_POPPLER=ON -DENABLE_POPPLER_CAIRO=ON -DWITH_DBUS=ON -DWITH_MESH=ON $flags "$@"
