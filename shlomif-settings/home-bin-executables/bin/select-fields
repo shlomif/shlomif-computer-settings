@@ -1,10 +1,10 @@
 #!/usr/bin/perl
 
-# Written by Shlomi Fish - http://www.shlomifish.org/ - 2008
-# Licensed under the MIT/X11 License.
+# Written by Shlomi Fish - http://www.shlomifish.org/ - 2016
+# Licensed under the MIT/Expat License.
 #
 # Example:
-# perl color-patterns.pl --pat hello=red --pat '(?i:maxim)'=blue
+# cat my.tsv | select-fields -f Time -f Iterations -f Delta
 
 use strict;
 use warnings;
