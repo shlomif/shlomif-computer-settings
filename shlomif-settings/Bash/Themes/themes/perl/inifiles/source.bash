@@ -1,24 +1,17 @@
 load_common mymake
 load_common completion
 load_common prompt
+load_common git
 
 base="$HOME/progs/perl/cpan/Config/IniFiles"
-hg_base="$base/hg"
-trunk="$hg_base/perl-config-inifiles"
+git_base="$base"
+trunk="$base/git"
 module="$trunk/config-inifiles"
+remote_repo="$(_shlomif_github "perl-Config-IniFiles")"
 
 this="$module"
 
 cd "$this"
-
-setup()
-{
-    mkdir -p "$hg_base"
-    cd "$hg_base"
-    hg clone 'ssh://hg@bitbucket.org/shlomif/perl-config-inifiles'
-    # svn co 'https://config-inifiles.svn.sourceforge.net/svnroot/config-inifiles/trunk/'
-    cd "$trunk"
-}
 
 t()
 {
