@@ -50,6 +50,8 @@ y()
         yarn test "$@"
     elif test "$cmd" = 'rt'; then
         yarn run test-all "$@"
+    elif test "$cmd" = 'f'; then
+        yarn run firefox -- --location 'http://localhost/shlomif/fc-solve-temp/'
     else
         yarn "$cmd" "$@"
     fi
