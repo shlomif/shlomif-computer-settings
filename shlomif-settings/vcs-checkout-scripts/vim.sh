@@ -1,2 +1,2 @@
 #!/bin/bash
-hg clone https://vim.googlecode.com/hg/ vim-hg
+git clone https://github.com/vim/vim.git vim-git
