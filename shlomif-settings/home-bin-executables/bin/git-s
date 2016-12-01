@@ -1,4 +1,6 @@
 #!/bin/bash
 remote="$1"
 shift
-git pull --ff-only "$remote" master && git fetch "$remote" && git fetch "$remote" --tags
+branch="${1:-master}"
+shift
+git pull --ff-only "$remote" "$branch" && git fetch "$remote" && git fetch "$remote" --tags
