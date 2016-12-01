@@ -25,7 +25,11 @@ cd "$this"
 
 t()
 {
-    cd "$this" && ./Build runtest
+    (
+    cd "$trunk"
+    rm -fr black-hole-solitaire/B/
+    perl black-hole-solitaire/CI-testing/continuous-integration-testing.pl
+    )
 }
 
 e()
