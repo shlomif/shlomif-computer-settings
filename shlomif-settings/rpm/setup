@@ -1,0 +1,6 @@
+#!/bin/bash
+fn='.rpmmacros'
+dest="$HOME/$fn"
+if ! test -e "$dest" ; then
+    ln -s "$(pwd)/$fn" "$dest"
+fi
