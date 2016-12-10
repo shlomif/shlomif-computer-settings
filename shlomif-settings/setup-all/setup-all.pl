@@ -68,5 +68,6 @@ sub run_setup
 
 run_setup('Bash');
 run_setup('build-scripts');
+run_setup('clang-format');
 run_setup('git');
 run_setup('vim-conf');
