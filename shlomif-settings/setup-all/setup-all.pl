@@ -39,7 +39,7 @@ my $HOME = $ENV{HOME};
 my $CONF = "$HOME/conf";
 my $trunk = "$CONF/trunk";
 
-mkpath();
+mkpath($CONF);
 
 cwd_cmd(
     {
