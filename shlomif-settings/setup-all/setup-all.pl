@@ -61,6 +61,12 @@ sub sub_c
     );
 }
 
-sub_c('build-scripts', ['./setup']);
-sub_c('git', ['./setup']);
-sub_c('vim-conf', ['./setup']);
+sub run_setup
+{
+    return sub_c(shift, ['./setup']);
+}
+
+run_setup('Bash');
+run_setup('build-scripts');
+run_setup('git');
+run_setup('vim-conf');
