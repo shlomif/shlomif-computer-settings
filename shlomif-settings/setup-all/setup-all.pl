@@ -44,7 +44,8 @@ mkpath($CONF);
 cwd_cmd(
     {
         dir => $CONF,
-        cmd => ["git", "clone", 'git@github.com:shlomif/shlomif-computer-settings.git', $trunk],
+        # cmd => ["git", "clone", 'git@github.com:shlomif/shlomif-computer-settings.git', $trunk],
+        cmd => ["git", "clone", 'https://github.com/shlomif/shlomif-computer-settings.git'],
     }
 );
 
