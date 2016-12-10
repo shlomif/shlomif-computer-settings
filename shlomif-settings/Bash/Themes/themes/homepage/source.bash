@@ -1,7 +1,8 @@
-load_common mymake
 load_common completion
-load_common no_implicit_make
 load_common git
+load_common mymake
+load_common no_implicit_make
+load_common prompt
 
 base="$HOME/Docs/homepage"
 hg_base="$base"
