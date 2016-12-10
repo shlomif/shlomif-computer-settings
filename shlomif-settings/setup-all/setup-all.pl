@@ -72,4 +72,6 @@ run_setup('clang-format');
 run_setup('gdb');
 run_setup('git');
 run_setup('rpm');
+run_setup('sky');
+run_setup('tmux');
 run_setup('vim-conf');
