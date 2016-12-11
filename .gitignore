@@ -1,5 +1,3 @@
-syntax: glob
-
 shlomif-settings/Bash/Themes/list-of-themes.txt
 shlomif-settings/bash-aliases/PERL5LIB_gen.sh
 shlomif-settings/gdb/gdb_history
@@ -7,6 +5,8 @@ shlomif-settings/perl/Dist-Zilla/dot-dzil/config.ini
 shlomif-settings/vim-conf/dot-vim/.netrwhist
 shlomif-settings/vim-conf/dot-vim/Add_to_Word_Search
 shlomif-settings/vim-conf/dot-vim/Command-T
+shlomif-settings/vim-conf/dot-vim/FuzzyFinder
+shlomif-settings/vim-conf/dot-vim/L9
 shlomif-settings/vim-conf/dot-vim/TT2_syntax
 shlomif-settings/vim-conf/dot-vim/The_NERD_tree
 shlomif-settings/vim-conf/dot-vim/UltiSnips
@@ -27,6 +27,7 @@ shlomif-settings/vim-conf/dot-vim/github-nvie-vim-flake8
 shlomif-settings/vim-conf/dot-vim/github-vim-perl-vim-perl
 shlomif-settings/vim-conf/dot-vim/github-wlangstroth-vim-racket
 shlomif-settings/vim-conf/dot-vim/github-wting-rust.vim
+shlomif-settings/vim-conf/dot-vim/hg-https-shlomif@bitbucket.org-shlomif-vim-screenplay-text
 shlomif-settings/vim-conf/dot-vim/matchit.zip
 shlomif-settings/vim-conf/dot-vim/parrot
 shlomif-settings/vim-conf/dot-vim/range-search
