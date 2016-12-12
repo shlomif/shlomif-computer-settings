@@ -71,6 +71,7 @@ run_setup('build-scripts');
 run_setup('clang-format');
 run_setup('gdb');
 run_setup('git');
+run_setup('hg');
 run_setup('rpm');
 run_setup('perl/Dist-Zilla');
 run_setup('perl/perldb');
