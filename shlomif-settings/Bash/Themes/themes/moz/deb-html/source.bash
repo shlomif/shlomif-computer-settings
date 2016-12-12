@@ -46,6 +46,8 @@ y()
     shift
     if test "$cmd" = 'i' ; then
         yarn install "$@"
+    elif test "$cmd" = 's'; then
+        yarn start "$@"
     elif test "$cmd" = 't'; then
         yarn test "$@"
     elif test "$cmd" = 'rt'; then
