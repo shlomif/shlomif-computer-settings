@@ -75,6 +75,7 @@ run_setup('hg');
 run_setup('rpm');
 run_setup('perl/Dist-Zilla');
 run_setup('perl/perldb');
+run_setup('perl/perltidy');
 run_setup('sky');
 run_setup('tmux');
 run_setup('vim-conf');
