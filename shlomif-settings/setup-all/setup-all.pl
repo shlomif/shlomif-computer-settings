@@ -78,4 +78,5 @@ run_setup('perl/perltidy');
 run_setup('rpm');
 run_setup('sky');
 run_setup('tmux');
+run_setup('vcs-checkout-scripts');
 run_setup('vim-conf');
