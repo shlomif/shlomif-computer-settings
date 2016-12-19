@@ -27,7 +27,8 @@ qt5_plat()
 
 # DEFAULT_DESK="icewm-stable"
 # DEFAULT_DESK="kde3"
-DEFAULT_DESK="kde4"
+# DEFAULT_DESK="kde4"
+DEFAULT_DESK="kde5"
 # DEFAULT_DESK="kde4-trunk"
 # DEFAULT_DESK="e"
 # DEFAULT_DESK="xfce"
