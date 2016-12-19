@@ -312,6 +312,12 @@ endfunction
 
 command CopyAll call CopyAll()
 
+function! CopyLine()
+    .y +
+endfunction
+
+command CopyLine call CopyLine()
+
 function! StyledQuotes(start_line, end_line)
     let cmd = a:start_line . ',' . a:end_line . 's/"\([^"]\+\)"/“\1”/'
     exe cmd
