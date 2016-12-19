@@ -80,3 +80,4 @@ run_setup('sky');
 run_setup('tmux');
 run_setup('vcs-checkout-scripts');
 run_setup('vim-conf');
+run_setup('x11');
