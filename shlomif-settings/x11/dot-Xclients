@@ -94,8 +94,7 @@ elif [ "$WHICH_DESK" = "xfce" ] ; then
     # qt5_plat
     exec startxfce4
 elif [ "$WHICH_DESK" = "cin" ] ; then
-    # cinnamon-session 2>&1 | tee cinnamon-log-generated-by-dot-Xclients.log.txt
-    startcinnamon 2>&1 | tee cinnamon-log-generated-by-dot-Xclients.log.txt
+    exec cinnamon-session
 elif [ "$WHICH_DESK" = "sawfish" ] ; then
     exec startsawfish
 elif [ "$WHICH_DESK" = "wmaker" ] ; then
