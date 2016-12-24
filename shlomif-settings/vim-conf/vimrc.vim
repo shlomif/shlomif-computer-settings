@@ -1,12 +1,4 @@
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	1999 Jul 25
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"             for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
+" Based on 'An example for a vimrc file.' by Bram Moolenaar
 
 filetype plugin indent on
 set nocompatible	" Use Vim defaults (much better!)
@@ -70,7 +62,7 @@ let g:vim_addon_manager.auto_install = 1
 let g:vim_addon_manager.shell_commands_run_method = 'system'
 " Removed: unite
 " Removed: c%213
-call vam#ActivateAddons(['ack', 'Add_to_Word_Search', 'github:alessandroyorba/alduin', 'hg:https://shlomif@bitbucket.org/shlomif/vim-screenplay-text', 'closetag', 'Command-T', 'ctrlp', 'github:mattn/emmet-vim', 'FuzzyFinder', 'matchit.zip', 'parrot', 'github:nvie/vim-flake8', 'github:vim-perl/vim-perl', 'github:dleonard0/pony-vim-syntax', 'github:aaronbieber/quicktask', 'range-search', 'repeat', 'spec%98', 'surround', 'textobj-user', 'textobj-rubyblock', 'The_NERD_tree', 'UltiSnips', 'vcscommand', 'VimClojure', 'vim-addon-scala', 'github:fatih/vim-go', 'github:wlangstroth/vim-racket', 'github:honza/vim-snippets', 'github:wting/rust.vim', 'github:leafgarland/typescript-vim', 'github:ironcamel/vim-script-runner', 'xml'], {'auto_install': 1, 'shell_commands_run_method': "system",})
+call vam#ActivateAddons(['ack', 'Add_to_Word_Search', 'github:alessandroyorba/alduin', 'hg:https://shlomif@bitbucket.org/shlomif/vim-screenplay-text', 'closetag', 'Command-T', 'ctrlp', 'github:mattn/emmet-vim', 'FuzzyFinder', 'github:junegunn/fzf', 'github:junegunn/fzf.vim', 'matchit.zip', 'parrot', 'github:nvie/vim-flake8', 'github:vim-perl/vim-perl', 'github:dleonard0/pony-vim-syntax', 'github:aaronbieber/quicktask', 'range-search', 'repeat', 'spec%98', 'surround', 'textobj-user', 'textobj-rubyblock', 'The_NERD_tree', 'UltiSnips', 'vcscommand', 'VimClojure', 'vim-addon-scala', 'github:fatih/vim-go', 'github:wlangstroth/vim-racket', 'github:honza/vim-snippets', 'github:wting/rust.vim', 'github:leafgarland/typescript-vim', 'github:ironcamel/vim-script-runner', 'xml'], {'auto_install': 1, 'shell_commands_run_method': "system",})
 set more
 
 " Create a new menu item to Convert to Website Meta Language
