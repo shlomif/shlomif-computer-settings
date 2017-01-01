@@ -2,6 +2,10 @@
 # -bash: __git_ps1: command not found
 # load_common git_term
 load_common sys
+load_common trim_pathes
+
+# Too long $PATH is causing a lib/perlbug.t test failure
+trim_pathes
 
 p5_base="$HOME/Download/unpack/perl/p5"
 _base_trunk="$p5_base/git"

@@ -3,6 +3,10 @@ load_common completion
 load_common prompt
 load_common sys
 load_common ssh_add
+load_common trim_pathes
+
+# Too long $PATH is causing a lib/perlbug.t test failure
+trim_pathes
 
 base="$HOME/progs/Rpms"
 b="$base"
