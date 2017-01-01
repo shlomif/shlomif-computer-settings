@@ -62,7 +62,8 @@ let g:vim_addon_manager.auto_install = 1
 let g:vim_addon_manager.shell_commands_run_method = 'system'
 " Removed: unite
 " Removed: c%213
-call vam#ActivateAddons(['ack', 'Add_to_Word_Search', 'github:alessandroyorba/alduin', 'hg:https://shlomif@bitbucket.org/shlomif/vim-screenplay-text', 'closetag', 'Command-T', 'ctrlp', 'github:mattn/emmet-vim', 'FuzzyFinder', 'github:junegunn/fzf', 'github:junegunn/fzf.vim', 'matchit.zip', 'parrot', 'github:nvie/vim-flake8', 'github:vim-perl/vim-perl', 'github:dleonard0/pony-vim-syntax', 'github:aaronbieber/quicktask', 'range-search', 'repeat', 'spec%98', 'surround', 'textobj-user', 'textobj-rubyblock', 'The_NERD_tree', 'UltiSnips', 'vcscommand', 'VimClojure', 'vim-addon-scala', 'github:fatih/vim-go', 'github:wlangstroth/vim-racket', 'github:honza/vim-snippets', 'github:wting/rust.vim', 'github:leafgarland/typescript-vim', 'github:ironcamel/vim-script-runner', 'xml'], {'auto_install': 1, 'shell_commands_run_method': "system",})
+" https://github.com/thinca/vim-quickrun
+call vam#ActivateAddons(['ack', 'Add_to_Word_Search', 'github:alessandroyorba/alduin', 'hg:https://shlomif@bitbucket.org/shlomif/vim-screenplay-text', 'closetag', 'Command-T', 'ctrlp', 'github:mattn/emmet-vim', 'FuzzyFinder', 'github:junegunn/fzf', 'github:junegunn/fzf.vim', 'matchit.zip', 'parrot', 'github:nvie/vim-flake8', 'github:vim-perl/vim-perl', 'github:dleonard0/pony-vim-syntax', 'github:aaronbieber/quicktask', 'range-search', 'repeat', 'spec%98', 'surround', 'textobj-user', 'textobj-rubyblock', 'The_NERD_tree', 'UltiSnips', 'vcscommand', 'VimClojure', 'vim-addon-scala', 'github:fatih/vim-go', 'github:wlangstroth/vim-racket', 'github:honza/vim-snippets', 'github:wting/rust.vim', 'github:leafgarland/typescript-vim', 'github:ironcamel/vim-script-runner', 'github:thinca/vim-quickrun', 'xml'], {'auto_install': 1, 'shell_commands_run_method': "system",})
 set more
 
 " Create a new menu item to Convert to Website Meta Language
@@ -400,3 +401,32 @@ autocmd FileType python map <buffer> <F5> :call Flake8()<CR>
 autocmd BufRead,BufNewFile /home/shlomif/progs/freecell/git/*/ids-whitelist.txt map <F2> o<C-R>"<ESC> | map <F4> :%!LC_ALL=C sort<CR>
 
 set scrolloff=0
+
+" Taken from
+" https://github.com/oblitum/dotfiles/blob/archlinux/.vimrc#L415-L439
+" - thanks!
+" QuickRun Setup {{{
+let g:quickrun_config = {
+    \   '_': {
+    \     'outputter/buffer/close_on_empty': 1
+    \   },
+    \   'haskell' : {
+    \     'command': 'stack',
+    \     'cmdopt': 'runghc --verbosity silent'
+    \   },
+    \   'c' : {
+    \     'command': 'clang',
+    \     'cmdopt': '-g -O0 -Wall -Wextra -std=gnu11 -lpthread'
+    \   },
+    \   'cpp' : {
+    \     'command': 'clang++',
+    \     'cmdopt': '-g -O0 -Wall -Wextra -pedantic -std=c++1z -stdlib=libc++ -lc++abi -lpthread'
+    \   },
+    \   'swift' : {
+    \     'command': 'swiftc',
+    \     'exec': ['%c %o %s -o %s:p:r', '%s:p:r %a'],
+    \     'tempfile': '%{tempname()}.swift',
+    \     'hook/sweep/files': ['%S:p:r'],
+    \   }
+    \ }
+" }}}

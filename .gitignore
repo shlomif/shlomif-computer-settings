@@ -21,9 +21,12 @@ shlomif-settings/vim-conf/dot-vim/github-dleonard0-pony-vim-syntax
 shlomif-settings/vim-conf/dot-vim/github-fatih-vim-go
 shlomif-settings/vim-conf/dot-vim/github-honza-vim-snippets
 shlomif-settings/vim-conf/dot-vim/github-ironcamel-vim-script-runner
+shlomif-settings/vim-conf/dot-vim/github-junegunn-fzf.vim/
+shlomif-settings/vim-conf/dot-vim/github-junegunn-fzf/
 shlomif-settings/vim-conf/dot-vim/github-leafgarland-typescript-vim
 shlomif-settings/vim-conf/dot-vim/github-mattn-emmet-vim
 shlomif-settings/vim-conf/dot-vim/github-nvie-vim-flake8
+shlomif-settings/vim-conf/dot-vim/github-thinca-vim-quickrun/
 shlomif-settings/vim-conf/dot-vim/github-vim-perl-vim-perl
 shlomif-settings/vim-conf/dot-vim/github-wlangstroth-vim-racket
 shlomif-settings/vim-conf/dot-vim/github-wting-rust.vim
@@ -34,6 +37,8 @@ shlomif-settings/vim-conf/dot-vim/range-search
 shlomif-settings/vim-conf/dot-vim/repeat
 shlomif-settings/vim-conf/dot-vim/spec%98
 shlomif-settings/vim-conf/dot-vim/surround
+shlomif-settings/vim-conf/dot-vim/tags
+shlomif-settings/vim-conf/dot-vim/tags-ja
 shlomif-settings/vim-conf/dot-vim/textobj-rubyblock
 shlomif-settings/vim-conf/dot-vim/textobj-user
 shlomif-settings/vim-conf/dot-vim/tlib
