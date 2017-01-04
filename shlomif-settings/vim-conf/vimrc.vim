@@ -270,7 +270,7 @@ let perl_no_extended_vars=1
 
 let g:surround_indent = 1
 
-autocmd BufRead ~/progs/freecell/trunk/fc-solve/source/* map <F4> :!echo '<C-R><C-W>' >> ~/progs/freecell/trunk/fc-solve/source/scripts/ids-whitelist.txt<CR>
+" autocmd BufRead ~/progs/freecell/trunk/fc-solve/source/* map <F4> :!echo '<C-R><C-W>' >> ~/progs/freecell/trunk/fc-solve/source/scripts/ids-whitelist.txt<CR>
 
 if has('multi_byte')
     " So C-k.. will generate an ellipsis.
@@ -398,7 +398,7 @@ endif
 let no_flake8_maps = 1
 autocmd FileType python map <buffer> <F5> :call Flake8()<CR>
 
-autocmd BufRead,BufNewFile /home/shlomif/progs/freecell/git/*/ids-whitelist.txt map <F2> o<C-R>"<ESC> | map <F4> :%!LC_ALL=C sort<CR>
+autocmd BufRead,BufNewFile */ids-whitelist.txt map <F2> o<C-R>"<ESC> | map <F4> :%!LC_ALL=C sort<CR>
 
 set scrolloff=0
 
