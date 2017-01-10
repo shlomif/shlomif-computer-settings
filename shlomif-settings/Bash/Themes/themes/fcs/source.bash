@@ -15,6 +15,7 @@ c_src="$t_fcs/source"
 c="$c_src"
 b="$t_fcs/B"
 o="$t_fcs/scripts/TEST_OPTIMIZATIONS"
+i="$trunk/../ids-whitelist/"
 site="$t_fcs/site/wml"
 blog="$t_fcs/site/blog"
 presets="$t_fcs/presets/soft-threads/meta-moves/auto-gen"
@@ -114,6 +115,21 @@ M()
 {
     _Makefile_gnu__make clean
     _Makefile_gnu__make all
+}
+
+i()
+{
+    cd "$i"
+}
+
+# Short for format.
+fmt()
+{
+    (
+        cd "$t_fcs/B" && \
+            make -j4 && \
+            perl "$c_src"/run-tests.pl --glob='{clang-format,perltidy}*.t'
+    )
 }
 
 proj_name='fcs'
