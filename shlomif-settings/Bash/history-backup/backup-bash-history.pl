@@ -29,6 +29,10 @@ my @files =
         from => "$H/.mrconfig",
         to => "mrconfig",
     },
+    {
+        from => "$H/.viminfo",
+        to => "viminfo",
+    },
 );
 
 foreach my $f (@files)
