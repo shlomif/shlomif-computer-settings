@@ -75,6 +75,16 @@ pt()
     ( unset FCS_USE_TEST_RUN; t; )
 }
 
+f()
+{
+    (
+        cd "$trunk"
+        ruby /home/shlomif/progs/freecell/git/fc-solve/fc-solve/scripts/find-ids.rb $( ack --sort -f --cpp --cc ) > ids.txt
+    )
+}
+
+alias g='gvim ids.txt +cbuf +cope +"sp scripts/ids-whitelist.txt" +"sp scripts/ids-whitelist.txt"'
+
 proj_name='ink'
 
 # Clean up the environment for the valgrind tests to succeed.
