@@ -19,11 +19,11 @@ autoconf_git_build()
         mkdir -p "$(dirname "$git_co")"
         git clone "$url" "$git_co"
     fi
-    ( cd "$git_co" && NOCONFIGURE=1 ./autogen.sh && ./configure --prefix="$prefix" && make && make check && make install ) || { echo failed ; exit -1 ; }
+    ( cd "$git_co" && git s origin && NOCONFIGURE=1 ./autogen.sh && ./configure --prefix="$prefix" && make && make check && make install ) || { echo failed ; exit -1 ; }
 }
 
 autoconf_git_build "/home/shlomif/Download/unpack/graphics/gimp/babl/git/babl" git://git.gnome.org/babl "$babl_p"
-autoconf_git_build "/home/shlomif/Download/unpack/graphics/gimp/gegl/git/gegl" git://git.gnome.org/babl "$gegl_p"
+autoconf_git_build "/home/shlomif/Download/unpack/graphics/gimp/gegl/git/gegl" git://git.gnome.org/gegl "$gegl_p"
 autoconf_git_build "/home/shlomif/Download/unpack/graphics/gimp/libmypaint/git/libmypaint" https://github.com/mypaint/libmypaint.git "$mypaint_p"
 
 # CFLAGS="-g"  ./configure --prefix="$HOME"/apps/gimp-devel --enable-maintainer-mode
