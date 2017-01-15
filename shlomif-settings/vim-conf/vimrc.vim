@@ -1,5 +1,4 @@
 " Based on 'An example for a vimrc file.' by Bram Moolenaar
-
 filetype plugin indent on
 set nocompatible	" Use Vim defaults (much better!)
 set bs=2		" allow backspacing over everything in insert mode
@@ -43,6 +42,9 @@ set tabstop=4
 set expandtab
 
 set backupdir=.,~/tmp,~/
+
+" avoid handling 0.007 / etc. version numbers as octal
+set nrformats=bin,hex
 
 function File_Is_Readable(fn)
     return filereadable(fnamemodify(a:fn, ":p"))
