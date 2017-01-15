@@ -40,7 +40,7 @@ this="$c_src"
 
 export LIBAVL2_SOURCE_DIR="$HOME/Download/unpack/prog/c/avl-2.0.3/"
 export FCS_USE_TEST_RUN=1
-export FCS_PGO_THEME="-l ct" FCS_TEST_CLANG_FORMAT=1
+export FCS_PGO_THEME="-l obf" FCS_TEST_CLANG_FORMAT=1
 
 # This causes problems with the threaded solver.
 unset MALLOC_CHECK_
