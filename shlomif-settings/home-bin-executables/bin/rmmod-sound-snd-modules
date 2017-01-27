@@ -1,0 +1,3 @@
+#!/bin/bash
+# Run repeatedly until there are no warnings.
+rmmod $(lsmod | grep snd | perl -lanE 'say $F[0]')
