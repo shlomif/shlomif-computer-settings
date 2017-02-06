@@ -1,25 +1,18 @@
 load_common mymake
 load_common completion
 load_common prompt
-load_common hg
+load_common git
 # load_common gen_patch
 
 base="$HOME/progs/perl/cpan/XML/SemanticDiff"
-hg_base="$base"
+git_base="$base"
 trunk="$base/trunk"
 module="$trunk/perl/modules/XML-SemanaticDiff"
 this="$module"
 
-remote_repo="$(_shlomif_bitbucket "perl-xml-semanticdiff")"
-# This is so "make dist" won't complain when the file already exists.
-export GZIP="-f"
+remote_repo="$(_shlomif_github "perl-XML-SemanticDiff")"
 
 cd "$this"
-
-diff_remote_to_local()
-{
-    svk diff //mirror/XML-RSS/trunk //local/XML-RSS/local-trunk
-}
 
 __test_coverage()
 {
