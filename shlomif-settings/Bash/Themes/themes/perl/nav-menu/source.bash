@@ -1,17 +1,17 @@
 load_common mymake
 load_common completion
 # load_common gen_patch
-load_common hg
+load_common git
 
 base="$HOME/progs/perl/www/Nav-Menu"
-hg_base="$base"
+git_base="$base"
 trunk="$base/trunk"
 this="$trunk/module"
 rw_repos_url="https://svn.berlios.de/svnroot/repos/web-cpan/nav-menu"
 read_repos_url="http://svn.berlios.de/web-cpan/nav-menu"
 test_dir="$trunk/tests/integration/sites-gen"
 
-remote_repo="$(_shlomif_bitbucket "perl-html-widgets-navmenu")"
+remote_repo="$(_shlomif_github "perl-HTML-Widgets-NavMenu")"
 
 __dist_name()
 {
