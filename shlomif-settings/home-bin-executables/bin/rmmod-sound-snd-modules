@@ -1,3 +1,12 @@
 #!/bin/bash
+# Script to unload the sound modules on Linux for making sound available
+# again.
+#
 # Run repeatedly until there are no warnings.
+#
+# After that I write "modprobe snd_hda_intel" as root, but you may need
+# a different device.
+#
+# Copyright 2017 by Shlomi Fish and licensed under the MIT/Expat licence.
+# Share and enjoy!
 rmmod $(lsmod | grep snd | perl -lanE 'say $F[0]')
