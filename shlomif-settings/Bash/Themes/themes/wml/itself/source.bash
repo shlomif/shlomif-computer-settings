@@ -1,11 +1,11 @@
 load_common mymake
 load_common completion
 load_common prompt
-load_common hg
+load_common git
 
 base="$HOME/progs/wml/wml-itself"
 core="$base/core"
-hg_base="$core"
+git_base="$core"
 trunk="$core/trunk"
 src="$trunk/src"
 # this="$trunk/wml_backend/p2_mp4h"
@@ -14,7 +14,7 @@ src="$trunk/src"
 b="$trunk/B"
 this="$b"
 
-remote_repo="$(_shlomif_bitbucket "website-meta-language")"
+remote_repo="$(_thewml_github "website-meta-language")"
 cd "$this"
 
 prompt()
