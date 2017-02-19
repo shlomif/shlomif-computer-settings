@@ -25,7 +25,6 @@ qt5_plat()
 
 # set-mouse-speed.sh
 
-# DEFAULT_DESK="icewm-stable"
 # DEFAULT_DESK="kde3"
 # DEFAULT_DESK="kde4"
 DEFAULT_DESK="kde5"
@@ -52,10 +51,6 @@ elif [ "$WHICH_DESK" = "kde4-trunk" ] ; then
     PATH="$KDEDIR/bin:$PATH"
     exec startkde
 elif [ "$WHICH_DESK" = "icewm" ] ; then
-    export PATH="$HOME/apps/icewm-testing/bin:$PATH"
-    # korganizer &
-    icewm-session
-elif [ "$WHICH_DESK" = "icewm-stable" ] ; then
     starticewm
 elif [ "$WHICH_DESK" = "icewm-trace" ] ; then
     strace -f -o "$HOME/icewm.strace" starticewm
