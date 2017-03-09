@@ -1,25 +1,14 @@
 load_common mymake
 load_common completion
 load_common prompt
+load_common git
 
 base="$HOME/progs/perl/mazes"
-hg_base="$base/hg"
-trunk="$hg_base/lm-solve-source"
+git_base="$base/git"
+trunk="$git_base/lm-solve-source"
 this="$trunk"
 
 PATH="$inst_modules_dir/bin/:$PATH"
-
-setup()
-{
-    (
-        if ! test -d "$this" ; then
-            mkdir -p "$hg_base"
-            cd "$hg_base"
-            hg clone 'ssh://hg@bitbucket.org/shlomif/lm-solve-source'
-        fi
-        cd "$this"
-    )
-}
 
 # Make sure that gvim's filename completion ignores filenames that it should
 # not edit.
