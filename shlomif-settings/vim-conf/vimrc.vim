@@ -66,7 +66,7 @@ let g:vim_addon_manager.shell_commands_run_method = 'system'
 " Removed: c%213
 " Removed: 'github:bogado/file-line',
 " https://github.com/thinca/vim-quickrun
-call vam#ActivateAddons(['ack', 'Add_to_Word_Search', 'github:godlygeek/csapprox', 'github:alessandroyorba/alduin', 'hg:https://shlomif@bitbucket.org/shlomif/vim-screenplay-text', 'closetag', 'Command-T', 'ctrlp', 'github:mattn/emmet-vim', 'FuzzyFinder',  'github:junegunn/fzf', 'github:junegunn/fzf.vim', 'matchit.zip', 'parrot', 'github:nvie/vim-flake8', 'github:vim-perl/vim-perl', 'github:dleonard0/pony-vim-syntax', 'github:aaronbieber/quicktask', 'range-search', 'repeat', 'spec%98', 'surround', 'textobj-user', 'textobj-rubyblock', 'The_NERD_tree', 'UltiSnips', 'vcscommand', 'VimClojure', 'vim-addon-scala', 'github:fatih/vim-go', 'github:wlangstroth/vim-racket', 'github:honza/vim-snippets', 'github:wting/rust.vim', 'github:leafgarland/typescript-vim', 'github:pboettch/vim-cmake-syntax', 'github:ironcamel/vim-script-runner', 'github:thinca/vim-quickrun', 'xml'], {'auto_install': 1, 'shell_commands_run_method': "system",})
+call vam#ActivateAddons(['a', 'ack', 'Add_to_Word_Search', 'github:godlygeek/csapprox', 'github:alessandroyorba/alduin', 'hg:https://shlomif@bitbucket.org/shlomif/vim-screenplay-text', 'closetag', 'Command-T', 'ctrlp', 'github:mattn/emmet-vim', 'FuzzyFinder',  'github:junegunn/fzf', 'github:junegunn/fzf.vim', 'matchit.zip', 'parrot', 'github:nvie/vim-flake8', 'github:vim-perl/vim-perl', 'github:dleonard0/pony-vim-syntax', 'github:aaronbieber/quicktask', 'range-search', 'repeat', 'spec%98', 'surround', 'textobj-user', 'textobj-rubyblock', 'The_NERD_tree', 'UltiSnips', 'vcscommand', 'VimClojure', 'vim-addon-scala', 'github:fatih/vim-go', 'github:wlangstroth/vim-racket', 'github:honza/vim-snippets', 'github:wting/rust.vim', 'github:leafgarland/typescript-vim', 'github:pboettch/vim-cmake-syntax', 'github:ironcamel/vim-script-runner', 'github:thinca/vim-quickrun', 'xml'], {'auto_install': 1, 'shell_commands_run_method': "system",})
 set more
 
 " Create a new menu item to Convert to Website Meta Language
@@ -306,20 +306,20 @@ function! CopyAll()
     normal ggVG"+y
 endfunction
 
-command CopyAll call CopyAll()
+command! CopyAll call CopyAll()
 
 function! CopyLine()
     .y +
 endfunction
 
-command CopyLine call CopyLine()
+command! CopyLine call CopyLine()
 
 function! StyledQuotes(start_line, end_line)
     let cmd = a:start_line . ',' . a:end_line . 's/"\([^"]\+\)"/“\1”/'
     exe cmd
 endfunction
 
-command -range StyledQuotes call StyledQuotes(<line1>,<line2>)
+command! -range StyledQuotes call StyledQuotes(<line1>,<line2>)
 
 " Remmed out because nuvola is a confusing color-scheme.
 " source ~/.vim/colors/nuvola_shlomif.vim
@@ -329,7 +329,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-command -nargs=+ BufOut redir => bufout | silent <args> | redir END | new | call append(0, substitute(strtrans(bufout), '\^@', "\r", 'g'))
+command! -nargs=+ BufOut redir => bufout | silent <args> | redir END | new | call append(0, substitute(strtrans(bufout), '\^@', "\r", 'g'))
 
 function! Perl_FileType_Settings()
     noremap <buffer>  <silent> <LocalLeader>rs         :call Perl_SyntaxCheck()<CR>:redraw!<CR>:call Perl_SyntaxCheckMsg()<CR>
@@ -355,7 +355,7 @@ au BufEnter * match ExtraWhitespace /\s\+$/
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhiteSpace /\s\+$/
 
-command CancelExtWS highlight clear ExtraWhiteSpace
+command! CancelExtWS highlight clear ExtraWhiteSpace
 
 map <F6> <ESC>:Ack -ai <C-R><C-W> t2 lib<CR>
 
@@ -391,7 +391,7 @@ map <Leader>cc viW""ygv"+ygv"*y
 set wildignore+=*.o,*.obj,.git,.svn,.hg,.bzr,*~
 
 " RPM spec - convert Url to metacpan.org
-autocmd BufRead,BufNewFile *.spec command MC %!perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/rpmspec-convert-to-metacpan.pl
+autocmd BufRead,BufNewFile *.spec command! MC %!perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/rpmspec-convert-to-metacpan.pl
 
 " For setting ack.vim's to ag if available - see ~/.vim/ack/README.md
 if executable('ag')
@@ -433,3 +433,11 @@ let g:quickrun_config = {
     \   }
     \ }
 " }}}
+
+function! Shlomif_Open_Source()
+    let fn = expand('%:p')
+    let new_fn = substitute(fn, "^/home/shlomif/Docs/homepage/homepage/trunk/dest/", "/home/shlomif/Docs/homepage/homepage/trunk/", "") . '.wml'
+    exe "sp " . new_fn
+endfunction
+
+autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/dest/t2/*.html command! S call Shlomif_Open_Source()
