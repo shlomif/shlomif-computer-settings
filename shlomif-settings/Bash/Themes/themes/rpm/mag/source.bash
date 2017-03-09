@@ -148,5 +148,10 @@ m()
     pco "$1" && mu
 }
 
+bn()
+{
+    basename "$(pwd)"
+}
+
 disable_local_lib
 cd "$this"
