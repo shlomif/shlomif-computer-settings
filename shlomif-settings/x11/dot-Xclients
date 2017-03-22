@@ -81,6 +81,8 @@ elif [ "$WHICH_DESK" = "lxde" ] ; then
     exec startlxde
 elif [ "$WHICH_DESK" = "lxqt" ] ; then
     exec startlxqt
+elif [ "$WHICH_DESK" = "mate" ] ; then
+    exec startmate
 elif [ "$WHICH_DESK" = "fluxbox" ] ; then
     exec startfluxbox
 elif [ "$WHICH_DESK" = "xfce-trace" ] ; then
