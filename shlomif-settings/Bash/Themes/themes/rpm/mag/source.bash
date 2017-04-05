@@ -135,7 +135,7 @@ pp()
     _sys cd "$perl_pkg"
 }
 
-# Set me as the maintainer of a package
+# Set me as the maintainer of some packages
 Set()
 {
     for pkg in "$@" ; do
