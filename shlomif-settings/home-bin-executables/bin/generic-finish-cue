@@ -25,4 +25,4 @@ done
 (
     kdialog --msgbox "$msg" || xmessage "$msg"
 ) &
-mpv "$song"
+mpv --volume=30 "$song"
