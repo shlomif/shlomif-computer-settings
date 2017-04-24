@@ -89,6 +89,17 @@ b()
     (cd "$trunk" && make -j16 && make test ; n --msg "make")
 }
 
+# edit facts
+efact()
+{
+    (
+        cd "$trunk"
+        gvim -o lib/factoids/shlomif-factoids-lists.xml \
+            t2/humour/fortunes/shlomif-factoids.xml \
+            ~/Docs/Personal/email/signature/shlomif-sig-quotes.txt
+    )
+}
+
 export PATH="$HOME/apps/quadpres/bin:$HOME/Download/unpack/xml/ebookmaker:$PATH:/usr/sbin"
 
 proj_name='homepage'
