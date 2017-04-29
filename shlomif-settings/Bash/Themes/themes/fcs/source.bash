@@ -128,7 +128,7 @@ fmt()
     (
         cd "$t_fcs/B" && \
             make -j4 && \
-            perl "$c_src"/run-tests.pl --glob='{clang-format,perltidy}*.t'
+            perl "$c_src"/run-tests.pl --glob='{clang-format,perltidy,style-trailing-space}*.t'
     )
 }
 
