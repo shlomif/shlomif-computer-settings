@@ -32,8 +32,9 @@ ai_path="$cpan/AI-Pathfinding-OptimizeMultiple"
 ai_path_sys_tests="$cpan/temp-AI-Pathfinding-OptimizeMultiple-system-tests"
 
 # patsolve
-hg_pats="$c_src/patsolve-shlomif"
-pats="$hg_pats/patsolve"
+git_pats="$c_src/patsolve-shlomif"
+pats="$git_pats/patsolve"
+pats_b="$git_pats/b"
 
 this="$c_src"
 # this="$dd_branch"
@@ -51,6 +52,7 @@ prompt()
 {
     __prompt_cmd \
         "\$pats=$pats" \
+        "\$git_pats=$git_pats" \
         "\$verify=$verify" \
         "\$parallel=$parallel" \
         "\$presets=$presets" \
@@ -120,6 +122,11 @@ M()
 i()
 {
     cd "$i"
+}
+
+pb()
+{
+    cd "$pats_b"
 }
 
 # Short for format.
