@@ -14,14 +14,15 @@ loop()
     done
 }
 
-f()
-{
-    ARGS="--worker-step 16 $FCS_PGO_THEME" bash "${SRC_DIR:-.}"/scripts/time-threads-num.bash "$num_cpus" "$num_cpus"
-}
-loop
+step=16
+flags=''
 
 f()
 {
-    ARGS="--worker-step 25 $FCS_PGO_THEME" bash "${SRC_DIR:-.}"/scripts/time-threads-num.bash -p "$num_cpus" "$num_cpus"
+    ARGS="--worker-step $step $FCS_PGO_THEME" bash "${SRC_DIR:-.}"/scripts/time-threads-num.bash $flags "$num_cpus" "$num_cpus"
 }
+loop
+
+step=25
+flags='-p'
 loop
