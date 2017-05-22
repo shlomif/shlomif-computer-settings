@@ -119,6 +119,16 @@ M()
     _Makefile_gnu__make all
 }
 
+c()
+{
+    cd "$c"
+}
+
+cb()
+{
+    cd "$b"
+}
+
 i()
 {
     cd "$i"
