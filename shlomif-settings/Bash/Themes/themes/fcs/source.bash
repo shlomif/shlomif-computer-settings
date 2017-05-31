@@ -149,6 +149,20 @@ fmt()
     )
 }
 
+bpat()
+{
+    (
+    mkdir -p "$pats_b"
+    pb
+    cmake "$pats" && make -j4 && make check && rm -fr "$pats_b"
+    )
+}
+
+bp()
+{
+    bpat
+}
+
 proj_name='fcs'
 
 # Clean up the environment for the valgrind tests to succeed.
