@@ -1,6 +1,20 @@
 #!/bin/bash
 remote="$1"
 shift
+if test "$remote" = 'o'
+then
+    remote='origin'
+elif test "$remote" = 'u'
+then
+    remote='upstream'
+elif test "$remote" = 'gh'
+then
+    remote='github'
+elif test "$remote" = 'b'
+then
+    remote='bitbucket'
+fi
+
 branch="${1:-master}"
 shift
 git pull --ff-only "$remote" "$branch" && git fetch "$remote" && git fetch "$remote" --tags
