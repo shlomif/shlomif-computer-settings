@@ -1,0 +1,8 @@
+#!/bin/bash
+# dest="/media/My Passport/Shlomif/Backups/Music-Backup/"
+# dest="/media/shlomif/My Passport/Shlomif/Backups/Music-Backup/"
+dest="${DEST:-/run/media/shlomif/My Passport/Shlomif/Backups/Music-Backup/}"
+rsync -rLvt --progress --inplace /home/music/Music/dosd-mp3s/ "$dest"/dosd
+rsync -rLvt --progress --inplace /home/music/Music/mp3s/ "$dest"/home-music-Music-mp3s/
+rsync -rLvt --progress --inplace --delete-after /home/shlomif/Download/Video/ "$dest"/home-shlomif-Download-Video/
+# rsync -rlvt --progress /home/music/Music/flvs /mnt/external/shlomi/Music-Backup/home-shlomi-flvs
