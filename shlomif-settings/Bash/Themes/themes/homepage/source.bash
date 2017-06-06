@@ -89,6 +89,8 @@ b()
     (cd "$trunk" && make -j16 && make test ; n --msg "make")
 }
 
+alias t='b'
+
 # edit facts
 efact()
 {
