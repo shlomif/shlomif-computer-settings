@@ -134,6 +134,11 @@ i()
     cd "$i"
 }
 
+cdp()
+{
+    cd "$pats"
+}
+
 pb()
 {
     cd "$pats_b"
@@ -154,13 +159,23 @@ bpat()
     (
     mkdir -p "$pats_b"
     pb
-    cmake "$pats" && make -j4 && make check && rm -fr "$pats_b"
+    cmake "$pats" && make -j4 && make check && rm -fr "$pats_b" && rm -f "$pats/cmake"/*.cmake
     )
 }
 
 bp()
 {
     bpat
+}
+
+ti1()
+{
+    perl "$c_src"/scripts/time-fcs.pl DUMPS-*/*
+}
+
+ti()
+{
+     ti1 | tac | cat -n | perl -lapE 's/:/\t/g; ' | less
 }
 
 proj_name='fcs'
