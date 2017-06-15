@@ -66,7 +66,41 @@ let g:vim_addon_manager.shell_commands_run_method = 'system'
 " Removed: c%213
 " Removed: 'github:bogado/file-line',
 " https://github.com/thinca/vim-quickrun
-call vam#ActivateAddons(['a', 'ack', 'Add_to_Word_Search', 'github:godlygeek/csapprox', 'github:alessandroyorba/alduin', 'hg:https://shlomif@bitbucket.org/shlomif/vim-screenplay-text', 'closetag', 'Command-T', 'ctrlp', 'github:mattn/emmet-vim', 'github:junegunn/fzf', 'github:junegunn/fzf.vim', 'matchit.zip', 'github:nvie/vim-flake8', 'github:vim-perl/vim-perl', 'github:aaronbieber/quicktask', 'range-search', 'repeat', 'spec%98', 'surround', 'textobj-user', 'textobj-rubyblock', 'The_NERD_tree', 'UltiSnips', 'vcscommand', 'VimClojure', 'github:honza/vim-snippets', 'github:leafgarland/typescript-vim', 'github:pboettch/vim-cmake-syntax', 'github:ironcamel/vim-script-runner', 'github:thinca/vim-quickrun', 'xml'], {'auto_install': 1, 'shell_commands_run_method': "system",})
+call vam#ActivateAddons([
+    \ 'Add_to_Word_Search',
+    \ 'Command-T',
+    \ 'The_NERD_tree',
+    \ 'UltiSnips',
+    \ 'VimClojure',
+    \ 'a',
+    \ 'ack',
+    \ 'closetag',
+    \ 'ctrlp',
+    \ 'github:aaronbieber/quicktask',
+    \ 'github:alessandroyorba/alduin',
+    \ 'github:godlygeek/csapprox',
+    \ 'github:honza/vim-snippets',
+    \ 'github:ironcamel/vim-script-runner',
+    \ 'github:junegunn/fzf',
+    \ 'github:junegunn/fzf.vim',
+    \ 'github:leafgarland/typescript-vim',
+    \ 'github:mattn/emmet-vim',
+    \ 'github:nvie/vim-flake8',
+    \ 'github:pboettch/vim-cmake-syntax',
+    \ 'github:thinca/vim-quickrun',
+    \ 'github:vim-perl/vim-perl',
+    \ 'hg:https://shlomif@bitbucket.org/shlomif/vim-screenplay-text',
+    \ 'matchit.zip',
+    \ 'range-search',
+    \ 'repeat',
+    \ 'spec%98',
+    \ 'surround',
+    \ 'textobj-rubyblock',
+    \ 'textobj-user',
+    \ 'vcscommand',
+    \ 'xml',
+    \ ],
+    \ {'auto_install': 1, 'shell_commands_run_method': "system",})
 set more
 
 " Create a new menu item to Convert to Website Meta Language
