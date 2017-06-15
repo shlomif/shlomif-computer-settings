@@ -103,9 +103,6 @@ call vam#ActivateAddons([
     \ {'auto_install': 1, 'shell_commands_run_method': "system",})
 set more
 
-" Create a new menu item to Convert to Website Meta Language
-an 50.740 &Syntax.Convert\ to\ &WML       :so $VIMRUNTIME/syntax/2html.vim<CR>:%!wml_safe.pl<CR>
-
 " Expand the syntax menu automatically
 let do_syntax_sel_menu = 1
 runtime! synmenu.vim
@@ -117,8 +114,6 @@ let html_use_css = 1
 " This is so the indent inside the arguments/parameters of function calls will
 " be indented 4 spaces to the right instead of 8.
 set cinoptions+='(4,W4,b1,=0,m1'
-
-autocmd BufNewFile,BufRead ~/progs/svn/*.[ch] so ~/conf/Vim/svn-dev.vim
 
 function Dot_t_file_type()
     let fn = expand("<afile>")
@@ -153,17 +148,8 @@ set guifont=DejaVu\ Sans\ Mono\ 10
 map <F9> :set invrl<CR>
 imap <F9> <ESC>:set invrl<CR>a
 
-" To make sure Python file editing is tabbed according to 2 spaces
-" in the subversion Python files.
-autocmd BufNewFile,BufRead ~/progs/svn/*.py retab 2 | set shiftwidth=2
-
 " To make sure gimp code can be styled correctly.
-autocmd BufNewFile,BufRead ~/Download/unpack/graphics/Gimp/gimp-cvs/*.[ch] so ~/conf/Vim/gimp-dev.vim
-autocmd BufNewFile,BufRead ~/Download/unpack/graphics/Gimp/plug-ins/gimp-ace/*.[ch] so ~/conf/Vim/gimp-dev.vim
-" To make sure tabs in GIMP's change logs are really tabs as seems to be
-" the general convention
-
-autocmd BufNewFile,BufRead ~/Download/unpack/graphics/Gimp/gimp-cvs/*/ChangeLog set noexpandtab
+autocmd BufNewFile,BufRead ~/Download/unpack/graphics/gimp/*.[ch] so ~/conf/Vim/gimp-dev.vim
 
 " Make the Sure the Print Icon in the toolbar does not do anything.
 " By default it prints the page without a prompt, which is annoying, because
@@ -176,10 +162,6 @@ vnoremenu ToolBar.Print		:echo "hello"<CR>
 
 autocmd BufNewFile,BufRead ~/.gimp-*.scm set nobackup
 autocmd BufNewFile,BufRead ~/.gimp-*.py set nobackup
-
-" This is to import the range-search commands.
-" so ~/conf/Vim/range-search.vim
-" so ~/conf/Vim/ack.vim
 
 autocmd BufNewFile,BufRead */SConstruct set filetype=python
 
@@ -203,17 +185,6 @@ let g:Perl_Company         = 'None'
 let g:Perl_BraceOnNewLine  = "yes"
 
 au BufNewFile,BufRead *.p6 setlocal filetype=perl6
-au BufNewFile,BufRead *.io setlocal filetype=io
-
-function Docbook_Scripts()
-    so ~/conf/Vim/docbook/linuxjournal/mfuncs.vim
-    so ~/conf/Vim/docbook/linuxjournal/maps.vim
-    so ~/conf/Vim/docbook/linuxjournal/tagtmps.vim
-    so ~/conf/Vim/docbook/linuxjournal/tfuncs.vim
-endfunction
-
-au BufNewFile,BufRead ~/Docs/Svn/Docs/*.xml call Docbook_Scripts()
-au BufNewFile,BufRead ~/Docs/homepage/homepage/trunk/lib/docbook/xml/*.xml call Docbook_Scripts()
 
 au BufNewFile,BufRead ~/Docs/homepage/homepage/trunk/t2/art/recommendations/music/shlomi-fish-music-recommendations.xml so ~/conf/Vim/amazon-asin.vim
 
@@ -248,10 +219,6 @@ au BufNewFile,BufRead ~/Docs/homepage/homepage/trunk/t2/humour/fortunes/*.xml ma
 
 au BufNewFile,BufRead ~/Docs/Diary/* so ~/conf/Vim/diary.vim
 
-" For VILisp - http://www.vim.org/scripts/script.php?script_id=221
-
-" autocmd BufRead *.lsp,*.lisp so ~/Download/unpack/file/editors/vim/VIlisp-2.3/VIlisp.vim
-
 let g:Perl_Shlomif_Settings_Loaded = 0
 
 " Prevent perl from highlighting POD inside which is annoying for
@@ -266,10 +233,6 @@ function Perl_Load_File()
 endfunction
 
 autocmd FileType perl call Perl_Load_File()
-
-autocmd BufNewFile,BufRead ~/progs/prolog/*.pl set filetype=prolog
-
-autocmd BufNewFile,BufRead *.arc set filetype=arc
 
 " mapping to be able to move to the left and the right windows
 " without needing to leave the Ctrl key.
@@ -321,8 +284,6 @@ if has('multi_byte')
 endif
 
 au FileType sass setlocal shiftwidth=4
-
-au BufNewFile ~/conf/svn/*.sh r ~/conf/svn/sample.sh | 1d
 
 function! SetXslt()
     let g:xml_tag_syntax_prefixes='xsl\|xhtml\|db5\|db\|docbook\|xml\|xlink'
@@ -474,4 +435,5 @@ function! Shlomif_Open_Source()
     exe "sp " . new_fn
 endfunction
 
-autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/dest/t2/*.html command! S call Shlomif_Open_Source()
+autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/dest/t2/*.html
+    \ command! S call Shlomif_Open_Source()
