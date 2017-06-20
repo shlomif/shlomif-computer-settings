@@ -1,0 +1,25 @@
+[Desktop Entry]
+Categories=AudioVideo;Player;Recorder;Qt;
+Comment[en_GB]=Read, capture, broadcast your multimedia streams
+Comment=Read, capture, broadcast your multimedia streams
+Exec=/usr/bin/vlc --playlist-enqueue --started-from-file %U
+GenericName[en_GB]=Media player
+GenericName=Media player
+Icon=vlc
+Keywords=Player;Capture;DVD;Audio;Video;Server;Broadcast;
+MimeType=x-content/video-vcd;x-content/video-svcd;x-content/video-dvd;x-content/audio-player;x-content/audio-cdda;video/x-ogm+ogg;video/x-nsv;video/x-msvideo;video/x-msvideo;video/x-msvideo;video/x-ms-wmv;video/x-matroska;video/x-flv;video/x-flic;video/x-anim;video/webm;video/vnd.rn-realvideo;video/vnd.mpegurl;video/quicktime;video/ogg;video/mpeg;video/mpeg;video/mp4;video/mp4;video/mp2t;video/dv;image/vnd.rn-realpix;audio/x-wav;audio/x-vorbis+ogg;audio/x-scpls;audio/x-pn-windows-acm;audio/x-pn-wav;audio/x-pn-realaudio-plugin;audio/x-ms-wax;audio/x-ms-asx;audio/x-mpegurl;audio/x-matroska;audio/webm;audio/vnd.rn-realaudio;audio/vnd.rn-realaudio;audio/ogg;audio/mpeg;audio/mpeg;audio/mpeg;audio/mp4;audio/mp4;audio/flac;application/xspf+xml;application/x-matroska;application/x-flac;application/vnd.rn-realmedia;application/vnd.ms-asf;application/vnd.adobe.flash.movie;application/ogg;application/ogg;
+Name[en_GB]=VLC media player
+Name=VLC media player
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+TryExec=/usr/bin/vlc
+Type=Application
+Version=1.0
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-Desktop-File-Install-Version=0.23
+X-KDE-Protocols=ftp,http,https,mms,rtmp,rtsp,sftp,smb
+X-KDE-SubstituteUID=false
+X-KDE-Username=
