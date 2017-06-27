@@ -31,9 +31,9 @@ autoconf_git_build()
     ( cd "$git_co" && git s origin && NOCONFIGURE=1 ./autogen.sh && ./configure --prefix="$prefix" && make && _check && make install ) || { echo failed ; exit -1 ; }
 }
 
-autoconf_git_build "/home/shlomif/Download/unpack/graphics/gimp/babl/git/babl" git://git.gnome.org/babl "$babl_p"
-autoconf_git_build "/home/shlomif/Download/unpack/graphics/gimp/gegl/git/gegl" git://git.gnome.org/gegl "$gegl_p"
-autoconf_git_build "/home/shlomif/Download/unpack/graphics/gimp/libmypaint/git/libmypaint" https://github.com/mypaint/libmypaint.git "$mypaint_p"
-autoconf_git_build "/home/shlomif/Download/unpack/graphics/gimp/git/gimp" https://git.gnome.org/git "$HOME/apps/gimp-devel"
+autoconf_git_build "$HOME/Download/unpack/graphics/gimp/babl/git/babl" git://git.gnome.org/babl "$babl_p"
+autoconf_git_build "$HOME/Download/unpack/graphics/gimp/gegl/git/gegl" git://git.gnome.org/gegl "$gegl_p"
+autoconf_git_build "$HOME/Download/unpack/graphics/gimp/libmypaint/git/libmypaint" https://github.com/mypaint/libmypaint.git "$mypaint_p"
+autoconf_git_build "$HOME/Download/unpack/graphics/gimp/git/gimp" https://git.gnome.org/git "$HOME/apps/gimp-devel"
 
 # CFLAGS="-g"  ./configure --prefix="$HOME"/apps/gimp-devel --enable-maintainer-mode
