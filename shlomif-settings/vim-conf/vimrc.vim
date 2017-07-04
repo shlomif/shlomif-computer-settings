@@ -87,6 +87,7 @@ call vam#ActivateAddons([
     \ 'github:mattn/emmet-vim',
     \ 'github:nvie/vim-flake8',
     \ 'github:pboettch/vim-cmake-syntax',
+    \ 'github:romainl/Apprentice',
     \ 'github:thinca/vim-quickrun',
     \ 'github:vim-perl/vim-perl',
     \ 'hg:https://shlomif@bitbucket.org/shlomif/vim-screenplay-text',
