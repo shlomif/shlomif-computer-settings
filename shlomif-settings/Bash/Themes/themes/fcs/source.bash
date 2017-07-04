@@ -109,7 +109,7 @@ _dzil_inst()
 
 _Makefile_gnu__make()
 {
-    make -f "$c_src"/Makefile.gnu SRC_DIR="$c_src" -j4 "$@"
+    make -f "$t_fcs"/scripts/Makefile.gnu SRC_DIR="$c_src" -j4 "$@"
 }
 
 # Short for make
