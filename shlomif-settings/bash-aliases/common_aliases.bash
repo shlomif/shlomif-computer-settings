@@ -78,7 +78,12 @@ eo()
 alias q='urpmq --fuzzy -a'
 alias qv='q --sources'
 
-complete -F _urpmi u
-complete -F _urpme e
-complete -F _urpmq q
-complete -F _urpmq qv
+if test "$SHELL" = "/bin/bash" ; then
+    complete -F _urpmi u
+    complete -F _urpme e
+    complete -F _urpmq q
+    complete -F _urpmq qv
+fi
+
+alias hc='htop -s PERCENT_CPU'
+alias hm='htop -s PERCENT_MEM'
