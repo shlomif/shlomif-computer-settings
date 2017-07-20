@@ -72,6 +72,8 @@ alias co='mgarepo co'
 alias ci='mgarepo ci'
 alias b='bm -l -b'
 alias sd='mgarepo sync -d'
+alias ub='u_buildreq'
+alias ur='u_rpms'
 
 e()
 {
