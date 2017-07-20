@@ -66,7 +66,7 @@ find_ids()
 {
     (
         cd "$c_src"
-        local cmd='ruby ../scripts/find-ids.rb *.[ch] patsolve-shlomif/patsolve/*.[ch] > ids.txt'
+        local cmd='ruby ../scripts/find-ids.rb *.[ch] */*.[ch] patsolve-shlomif/patsolve/*.[ch] > ids.txt'
         echo "$cmd"
         eval "$cmd"
     )
