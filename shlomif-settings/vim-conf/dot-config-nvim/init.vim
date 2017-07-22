@@ -1,13 +1,4 @@
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	1999 Jul 25
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"             for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-
+" Based on 'An example for a vimrc file.' by Bram Moolenaar
 filetype plugin indent on
 set nocompatible	" Use Vim defaults (much better!)
 set bs=2		" allow backspacing over everything in insert mode
@@ -52,6 +43,9 @@ set expandtab
 
 set backupdir=.,~/tmp,~/
 
+" avoid handling 0.007 / etc. version numbers as octal
+set nrformats=bin,hex
+
 function File_Is_Readable(fn)
     return filereadable(fnamemodify(a:fn, ":p"))
 endfunction
@@ -70,11 +64,45 @@ let g:vim_addon_manager.auto_install = 1
 let g:vim_addon_manager.shell_commands_run_method = 'system'
 " Removed: unite
 " Removed: c%213
-call vam#ActivateAddons(['ack', 'Add_to_Word_Search', 'github:alessandroyorba/alduin', 'hg:https://shlomif@bitbucket.org/shlomif/vim-screenplay-text', 'closetag', 'Command-T', 'ctrlp', 'github:mattn/emmet-vim', 'matchit.zip', 'parrot', 'github:nvie/vim-flake8', 'github:vim-perl/vim-perl', 'github:dleonard0/pony-vim-syntax', 'github:aaronbieber/quicktask', 'range-search', 'repeat', 'spec%98', 'surround', 'textobj-user', 'textobj-rubyblock', 'The_NERD_tree', 'UltiSnips', 'vcscommand', 'VimClojure', 'vim-addon-scala', 'github:fatih/vim-go', 'github:wlangstroth/vim-racket', 'github:honza/vim-snippets', 'github:wting/rust.vim', 'github:leafgarland/typescript-vim', 'github:ironcamel/vim-script-runner', 'xml'], {'auto_install': 1, 'shell_commands_run_method': "system",})
+" Removed: 'github:bogado/file-line',
+" https://github.com/thinca/vim-quickrun
+call vam#ActivateAddons([
+    \ 'Add_to_Word_Search',
+    \ 'Command-T',
+    \ 'The_NERD_tree',
+    \ 'UltiSnips',
+    \ 'VimClojure',
+    \ 'a',
+    \ 'ack',
+    \ 'closetag',
+    \ 'ctrlp',
+    \ 'github:aaronbieber/quicktask',
+    \ 'github:alessandroyorba/alduin',
+    \ 'github:godlygeek/csapprox',
+    \ 'github:honza/vim-snippets',
+    \ 'github:ironcamel/vim-script-runner',
+    \ 'github:junegunn/fzf',
+    \ 'github:junegunn/fzf.vim',
+    \ 'github:leafgarland/typescript-vim',
+    \ 'github:mattn/emmet-vim',
+    \ 'github:nvie/vim-flake8',
+    \ 'github:pboettch/vim-cmake-syntax',
+    \ 'github:romainl/Apprentice',
+    \ 'github:thinca/vim-quickrun',
+    \ 'github:vim-perl/vim-perl',
+    \ 'hg:https://shlomif@bitbucket.org/shlomif/vim-screenplay-text',
+    \ 'matchit.zip',
+    \ 'range-search',
+    \ 'repeat',
+    \ 'spec%98',
+    \ 'surround',
+    \ 'textobj-rubyblock',
+    \ 'textobj-user',
+    \ 'vcscommand',
+    \ 'xml',
+    \ ],
+    \ {'auto_install': 1, 'shell_commands_run_method': "system",})
 set more
-
-" Create a new menu item to Convert to Website Meta Language
-an 50.740 &Syntax.Convert\ to\ &WML       :so $VIMRUNTIME/syntax/2html.vim<CR>:%!wml_safe.pl<CR>
 
 " Expand the syntax menu automatically
 let do_syntax_sel_menu = 1
@@ -87,8 +115,6 @@ let html_use_css = 1
 " This is so the indent inside the arguments/parameters of function calls will
 " be indented 4 spaces to the right instead of 8.
 set cinoptions+='(4,W4,b1,=0,m1'
-
-autocmd BufNewFile,BufRead ~/progs/svn/*.[ch] so ~/conf/Vim/svn-dev.vim
 
 function Dot_t_file_type()
     let fn = expand("<afile>")
@@ -123,17 +149,8 @@ set guifont=DejaVu\ Sans\ Mono\ 10
 map <F9> :set invrl<CR>
 imap <F9> <ESC>:set invrl<CR>a
 
-" To make sure Python file editing is tabbed according to 2 spaces
-" in the subversion Python files.
-autocmd BufNewFile,BufRead ~/progs/svn/*.py retab 2 | set shiftwidth=2
-
 " To make sure gimp code can be styled correctly.
-autocmd BufNewFile,BufRead ~/Download/unpack/graphics/Gimp/gimp-cvs/*.[ch] so ~/conf/Vim/gimp-dev.vim
-autocmd BufNewFile,BufRead ~/Download/unpack/graphics/Gimp/plug-ins/gimp-ace/*.[ch] so ~/conf/Vim/gimp-dev.vim
-" To make sure tabs in GIMP's change logs are really tabs as seems to be
-" the general convention
-
-autocmd BufNewFile,BufRead ~/Download/unpack/graphics/Gimp/gimp-cvs/*/ChangeLog set noexpandtab
+autocmd BufNewFile,BufRead ~/Download/unpack/graphics/gimp/*.[ch] so ~/conf/Vim/gimp-dev.vim
 
 " Make the Sure the Print Icon in the toolbar does not do anything.
 " By default it prints the page without a prompt, which is annoying, because
@@ -146,10 +163,6 @@ vnoremenu ToolBar.Print		:echo "hello"<CR>
 
 autocmd BufNewFile,BufRead ~/.gimp-*.scm set nobackup
 autocmd BufNewFile,BufRead ~/.gimp-*.py set nobackup
-
-" This is to import the range-search commands.
-" so ~/conf/Vim/range-search.vim
-" so ~/conf/Vim/ack.vim
 
 autocmd BufNewFile,BufRead */SConstruct set filetype=python
 
@@ -173,17 +186,6 @@ let g:Perl_Company         = 'None'
 let g:Perl_BraceOnNewLine  = "yes"
 
 au BufNewFile,BufRead *.p6 setlocal filetype=perl6
-au BufNewFile,BufRead *.io setlocal filetype=io
-
-function Docbook_Scripts()
-    so ~/conf/Vim/docbook/linuxjournal/mfuncs.vim
-    so ~/conf/Vim/docbook/linuxjournal/maps.vim
-    so ~/conf/Vim/docbook/linuxjournal/tagtmps.vim
-    so ~/conf/Vim/docbook/linuxjournal/tfuncs.vim
-endfunction
-
-au BufNewFile,BufRead ~/Docs/Svn/Docs/*.xml call Docbook_Scripts()
-au BufNewFile,BufRead ~/Docs/homepage/homepage/trunk/lib/docbook/xml/*.xml call Docbook_Scripts()
 
 au BufNewFile,BufRead ~/Docs/homepage/homepage/trunk/t2/art/recommendations/music/shlomi-fish-music-recommendations.xml so ~/conf/Vim/amazon-asin.vim
 
@@ -218,10 +220,6 @@ au BufNewFile,BufRead ~/Docs/homepage/homepage/trunk/t2/humour/fortunes/*.xml ma
 
 au BufNewFile,BufRead ~/Docs/Diary/* so ~/conf/Vim/diary.vim
 
-" For VILisp - http://www.vim.org/scripts/script.php?script_id=221
-
-" autocmd BufRead *.lsp,*.lisp so ~/Download/unpack/file/editors/vim/VIlisp-2.3/VIlisp.vim
-
 let g:Perl_Shlomif_Settings_Loaded = 0
 
 " Prevent perl from highlighting POD inside which is annoying for
@@ -236,10 +234,6 @@ function Perl_Load_File()
 endfunction
 
 autocmd FileType perl call Perl_Load_File()
-
-autocmd BufNewFile,BufRead ~/progs/prolog/*.pl set filetype=prolog
-
-autocmd BufNewFile,BufRead *.arc set filetype=arc
 
 " mapping to be able to move to the left and the right windows
 " without needing to leave the Ctrl key.
@@ -277,7 +271,7 @@ let perl_no_extended_vars=1
 
 let g:surround_indent = 1
 
-autocmd BufRead ~/progs/freecell/trunk/fc-solve/source/* map <F4> :!echo '<C-R><C-W>' >> ~/progs/freecell/trunk/fc-solve/source/scripts/ids-whitelist.txt<CR>
+" autocmd BufRead ~/progs/freecell/trunk/fc-solve/source/* map <F4> :!echo '<C-R><C-W>' >> ~/progs/freecell/trunk/fc-solve/source/scripts/ids-whitelist.txt<CR>
 
 if has('multi_byte')
     " So C-k.. will generate an ellipsis.
@@ -291,8 +285,6 @@ if has('multi_byte')
 endif
 
 au FileType sass setlocal shiftwidth=4
-
-au BufNewFile ~/conf/svn/*.sh r ~/conf/svn/sample.sh | 1d
 
 function! SetXslt()
     let g:xml_tag_syntax_prefixes='xsl\|xhtml\|db5\|db\|docbook\|xml\|xlink'
@@ -310,14 +302,20 @@ function! CopyAll()
     normal ggVG"+y
 endfunction
 
-command CopyAll call CopyAll()
+command! CopyAll call CopyAll()
+
+function! CopyLine()
+    .y +
+endfunction
+
+command! CopyLine call CopyLine()
 
 function! StyledQuotes(start_line, end_line)
     let cmd = a:start_line . ',' . a:end_line . 's/"\([^"]\+\)"/“\1”/'
     exe cmd
 endfunction
 
-command -range StyledQuotes call StyledQuotes(<line1>,<line2>)
+command! -range StyledQuotes call StyledQuotes(<line1>,<line2>)
 
 " Remmed out because nuvola is a confusing color-scheme.
 " source ~/.vim/colors/nuvola_shlomif.vim
@@ -327,7 +325,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-command -nargs=+ BufOut redir => bufout | silent <args> | redir END | new | call append(0, substitute(strtrans(bufout), '\^@', "\r", 'g'))
+command! -nargs=+ BufOut redir => bufout | silent <args> | redir END | new | call append(0, substitute(strtrans(bufout), '\^@', "\r", 'g'))
 
 function! Perl_FileType_Settings()
     noremap <buffer>  <silent> <LocalLeader>rs         :call Perl_SyntaxCheck()<CR>:redraw!<CR>:call Perl_SyntaxCheckMsg()<CR>
@@ -353,7 +351,7 @@ au BufEnter * match ExtraWhitespace /\s\+$/
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhiteSpace /\s\+$/
 
-command CancelExtWS highlight clear ExtraWhiteSpace
+command! CancelExtWS highlight clear ExtraWhiteSpace
 
 map <F6> <ESC>:Ack -ai <C-R><C-W> t2 lib<CR>
 
@@ -389,7 +387,7 @@ map <Leader>cc viW""ygv"+ygv"*y
 set wildignore+=*.o,*.obj,.git,.svn,.hg,.bzr,*~
 
 " RPM spec - convert Url to metacpan.org
-autocmd BufRead,BufNewFile *.spec command MC %!perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/rpmspec-convert-to-metacpan.pl
+autocmd BufRead,BufNewFile *.spec command! MC %!perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/rpmspec-convert-to-metacpan.pl
 
 " For setting ack.vim's to ag if available - see ~/.vim/ack/README.md
 if executable('ag')
@@ -399,11 +397,47 @@ endif
 let no_flake8_maps = 1
 autocmd FileType python map <buffer> <F5> :call Flake8()<CR>
 
-autocmd BufRead,BufNewFile /home/shlomif/progs/freecell/git/*/ids-whitelist.txt map <F2> o<C-R>"<ESC> | map <F4> :%!LC_ALL=C sort<CR>
+autocmd BufRead,BufNewFile */ids-whitelist.txt map <F2> o<C-R>"<ESC> | map <F4> :%!LC_ALL=C sort<CR>
 
 set scrolloff=0
 
-" Guifont DejaVu Sans Mono:h10
+" Taken from
+" https://github.com/oblitum/dotfiles/blob/archlinux/.vimrc#L415-L439
+" - thanks!
+" QuickRun Setup {{{
+let g:quickrun_config = {
+    \   '_': {
+    \     'outputter/buffer/close_on_empty': 1
+    \   },
+    \   'haskell' : {
+    \     'command': 'stack',
+    \     'cmdopt': 'runghc --verbosity silent'
+    \   },
+    \   'c' : {
+    \     'command': 'clang',
+    \     'cmdopt': '-g -O0 -Wall -Wextra -std=gnu11 -lpthread'
+    \   },
+    \   'cpp' : {
+    \     'command': 'clang++',
+    \     'cmdopt': '-g -O0 -Wall -Wextra -pedantic -std=c++1z -stdlib=libc++ -lc++abi -lpthread'
+    \   },
+    \   'swift' : {
+    \     'command': 'swiftc',
+    \     'exec': ['%c %o %s -o %s:p:r', '%s:p:r %a'],
+    \     'tempfile': '%{tempname()}.swift',
+    \     'hook/sweep/files': ['%S:p:r'],
+    \   }
+    \ }
+" }}}
+
+function! Shlomif_Open_Source()
+    let fn = expand('%:p')
+    let new_fn = substitute(fn, "^/home/shlomif/Docs/homepage/homepage/trunk/dest/", "/home/shlomif/Docs/homepage/homepage/trunk/", "") . '.wml'
+    exe "sp " . new_fn
+endfunction
+
+autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/dest/t2/*.html
+    \ command! S call Shlomif_Open_Source()
 
 map <A-f>s :w<CR>
 map <A-f>x :qa<CR>
