@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# export LD_PRELOAD=/home/shlomif/Download/unpack/prog/lockless_allocator/libllalloc.so.1.3
+export LD_LIBRARY_PATH=/home/shlomif/apps/tcmalloc/lib
+
 repeat_count="$1"
 shift
 
