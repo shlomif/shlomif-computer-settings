@@ -1,6 +1,9 @@
 load_common prompt
 
 base="$HOME/progs/riddles/golf/golf.shinh.org/challenges"
+b="$base"
+this="$base"
+t="$this"
 
 alias caddy="ruby $HOME/progs/riddles/golf/golf.shinh.org/caddy-tool-for-golfers/caddy/caddy.rb"
 
@@ -14,4 +17,11 @@ prompt()
         "~=$HOME"
 }
 
+c()
+{
+    cd "$this"
+}
+
 proj_name='golf'
+
+c
