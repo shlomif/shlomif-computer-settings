@@ -24,7 +24,7 @@ TEMP=sc-spamc.$$
 #
 # call spamc, redirect output to temporary file, and save return value
 #
-/usr/bin/spamc -s 10000000 -E -t 30 < "$FILE" > "$TEMP"
+/usr/bin/spamc -s 10000000 -E -t 600 < "$FILE" > "$TEMP"
 # /usr/bin/spamassassin -e < "$FILE" > "$TEMP"
 RC=$?
 
