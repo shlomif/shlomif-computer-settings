@@ -5,6 +5,7 @@
     <!-- The root menu. -->
     <RootMenu onroot="12">
         <Program icon="terminal.png" label="Terminal">/etc/alternatives/xvt</Program>
+        <Program icon="terminal.png" label="Konsole">/usr/bin/konsole</Program>
         <Menu icon="folder.png" label="Applications">
             <Program icon="music.png" label="VLC">vlc</Program>
             <Program icon="calculator.png" label="Calculator">kcalc</Program>
