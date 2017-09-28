@@ -7,8 +7,8 @@ load_common no_implicit_make
 
 ink="$HOME/Download/unpack/graphics/inkscape"
 base="$ink"
-# _base_trunk="$ink/inkscape"
-_base_trunk="$ink/shlomif--trunk-refactoring"
+_base_trunk="$ink/inkscape"
+# _base_trunk="$ink/shlomif--trunk-refactoring"
 trunk="$_base_trunk"
 c_src="$_base_trunk"
 this="$c_src"
