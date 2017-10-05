@@ -55,6 +55,8 @@ else
 : rm "$FILE.bak"
 fi
 
+# n --msg "sc-spamc exiting with RC=<$RC>"
+
 #
 # return spamc exit code
 #
