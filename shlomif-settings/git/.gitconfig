@@ -3,13 +3,14 @@
     email = shlomif@shlomifish.org
 
 [alias]
+    au = add -u
     ci = commit
     co = checkout
+    cp = cherry-pick
     dh = diff HEAD
+    dhs = diff HEAD --stat
     di = diff
     st = status
-    cp = cherry-pick
-    au = add -u
 
 [core]
     excludesfile = ~/conf/git/excludes
