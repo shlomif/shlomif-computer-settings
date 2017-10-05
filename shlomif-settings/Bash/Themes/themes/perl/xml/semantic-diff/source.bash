@@ -7,7 +7,7 @@ load_common git
 base="$HOME/progs/perl/cpan/XML/SemanticDiff"
 git_base="$base"
 trunk="$base/trunk"
-module="$trunk/perl/modules/XML-SemanaticDiff"
+module="$trunk/perl/modules/XML-SemanticDiff"
 this="$module"
 
 remote_repo="$(_shlomif_github "perl-XML-SemanticDiff")"
