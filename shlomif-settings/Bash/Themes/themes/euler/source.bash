@@ -26,5 +26,13 @@ prompt()
         "~=$HOME"
 }
 
+b()
+{
+    (
+        cd "$trunk/b"
+        make
+    )
+}
+
 proj_name='ProjEuler'
 
