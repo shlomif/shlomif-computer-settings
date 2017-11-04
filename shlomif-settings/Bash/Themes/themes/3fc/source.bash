@@ -23,8 +23,8 @@ t()
     (
         set -x
         cd "$this" && \
-        cp -f ~/Backup/Arcs/fc-solve/from-amazon-aws/downloaded/aws-2-3fc-output.txt . && \
-        pypy-c summarize1.py && \
+        \cp -f ~/Backup/Arcs/fc-solve/from-amazon-aws/downloaded/aws-3-3fc-output.txt . && \
+        pypy summarize1.py && \
         git au . && \
         git commit -m "Add more from amazon.com AWS - thanks." && \
         git push
