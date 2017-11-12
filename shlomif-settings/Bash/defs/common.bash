@@ -19,7 +19,12 @@ _Theme()
 {
     Theme "$@"
 }
-__complete_with_themes "_Theme"
+__complete_with_themes '_Theme'
+-t()
+{
+    Theme "$@"
+}
+__complete_with_themes '-t'
 # This is for X-over-ssh apps to know how to set their fonts.
 if test -z "$ORIGIN_HOSTNAME" ; then
     export ORIGIN_HOSTNAME="$HOSTNAME"
