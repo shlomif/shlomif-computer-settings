@@ -35,7 +35,7 @@ conf()
     (
         mkdir -p "$build"
         cd "$build"
-        bash ~/conf/build/inkscape-cmake.sh
+        bash ~/conf/build/inkscape-cmake.sh "$c"
     )
 }
 
