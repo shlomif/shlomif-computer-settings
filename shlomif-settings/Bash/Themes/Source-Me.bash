@@ -1,11 +1,11 @@
 __private_themes_dir="$HOME/conf/Bash/private-themes"
 
-function load_common
+load_common()
 {
     source "${__themes_dir}/common/$1.bash"
 }
 
-function __this_theme_dir
+__this_theme_dir()
 {
     local DIR F
 
@@ -20,12 +20,12 @@ function __this_theme_dir
     return 1
 }
 
-function __this_theme_source
+__this_theme_source()
 {
     echo "$(__this_theme_dir)/source.bash"
 }
 
-function Theme
+Theme()
 {
     local filename
 
@@ -44,7 +44,7 @@ __list_themes()
     cat ${__themes_dir}/list-of-themes.txt | perl -0777 -lap -e 's/[\s\n]+/ /g'
 }
 
-function __reload_themes_completion
+__reload_themes_completion()
 {
     for cmd in $__theme_completion_commands ; do
         if test "$SHELL" = "/bin/bash" ; then
@@ -55,7 +55,7 @@ function __reload_themes_completion
     done
 }
 
-function __complete_with_themes
+__complete_with_themes()
 {
     cmd="$1"
     shift
