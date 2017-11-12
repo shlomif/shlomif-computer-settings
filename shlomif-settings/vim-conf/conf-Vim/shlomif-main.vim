@@ -439,3 +439,6 @@ endfunction
 
 autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/dest/t2/*.html
     \ command! S call Shlomif_Open_Source()
+
+autocmd BufRead,BufNewFile ~/Download/unpack/games/pysolfc/*.py
+    \ so ~/Download/unpack/games/pysolfc/git/PySolFC/scripts/refactor1.vim
