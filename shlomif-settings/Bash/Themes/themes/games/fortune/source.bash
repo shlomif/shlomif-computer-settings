@@ -48,9 +48,9 @@ t()
 {
     (
         export HARNESS_BREAK=1
-        cd "$t_fcs/B" && \
+        cd "$git_base/B" && \
             make -j4 && \
-            perl "$c_src"/run-tests.pl
+            perl "$trunk"/run-tests.pl
         n --msg "Freecell Solver Test Finished"
     )
 }
@@ -77,18 +77,6 @@ _dzil_inst()
             dzil test --release && \
             dzil install --install-command='bash ~/conf/build/perl/install-to-apps-perl-modules.sh'
     )
-}
-
-_Makefile_gnu__make()
-{
-    make -f "$t_fcs"/scripts/Makefile.gnu SRC_DIR="$c_src" -j4 "$@"
-}
-
-# Short for make
-M()
-{
-    _Makefile_gnu__make clean
-    _Makefile_gnu__make all
 }
 
 c()

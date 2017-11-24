@@ -2,6 +2,8 @@ load_common mymake
 load_common completion
 load_common hg
 
+export AUTHOR_TESTING=1
+
 # load_common gen_patch
 base="$HOME/progs/perl/cpan/App/Notifier"
 trunk="$base/App-Notifier"
@@ -28,4 +30,3 @@ prompt()
 }
 
 proj_name='Notifier'
-

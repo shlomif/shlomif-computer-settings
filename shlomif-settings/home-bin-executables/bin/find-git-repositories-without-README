@@ -1,4 +1,4 @@
 #!/bin/bash
 # Copyright 2017 by Shlomi Fish and licensed under the MIT/Expat licence.
 # Share and enjoy!
-locate --regex "^$HOME/.*/\.(git|hg)$" | xargs dirname | perl -lne 'print if -d && (-e "$_/.git" || -e "$_/.hg")' | perl -lnE 'print unless (() = glob("$_/{README,readme,Readme,ReadMe}*") or () = glob("$_/{COPYING,LICENSE,COPYRIGHT}*))'
+locate --regex "^$HOME/.*/\.(git|hg)$" | xargs dirname | perl -lne 'print if -d && (-e "$_/.git" || -e "$_/.hg")' | perl -lnE 'print unless ((() = glob("$_/{README,readme,Readme,ReadMe}*")) and (() = glob("$_/{COPYING,LICENSE,COPYRIGHT}*")))'
