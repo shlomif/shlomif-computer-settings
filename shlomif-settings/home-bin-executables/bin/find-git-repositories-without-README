@@ -1,6 +1,14 @@
 #!/bin/bash
+#
 # Copyright 2017 by Shlomi Fish and licensed under the MIT/Expat licence.
+#
+# Find git and mercurial repositories inside your home directory that do not
+# contain README or LICENSE files.
+#
+# Written in bash and perl 5.
+#
 # Share and enjoy!
+
 locate --regex "^$HOME/.*/\.(git|hg)$" |
     xargs dirname |
     perl -lne 'print if -d && (-e "$_/.git" || -e "$_/.hg")' |
