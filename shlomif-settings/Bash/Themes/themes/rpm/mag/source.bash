@@ -95,9 +95,11 @@ coo()
     local pkg="$1"
     shift
 
-    co "$pkg" && cd "$pkg"
+    local pkg_base="${pkg#*/}"
+
+    co "$pkg" && cd "$pkg_base"
     # A global variable for convenience
-    p="$pkg"
+    p="$pkg_base"
     # A global variable with the directory, so one can do "cd $d" or "rm -fr $d"
     # etc.
     d="$(pwd)"
