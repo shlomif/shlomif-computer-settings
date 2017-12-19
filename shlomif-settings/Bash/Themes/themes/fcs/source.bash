@@ -41,7 +41,7 @@ this="$c_src"
 
 export LIBAVL2_SOURCE_DIR="$HOME/Download/unpack/prog/c/avl-2.0.3/"
 export FCS_USE_TEST_RUN=1
-export FCS_PGO_THEME="-l obf" FCS_TEST_CLANG_FORMAT=1
+export FCS_PGO_THEME="-l cm" FCS_TEST_CLANG_FORMAT=1
 
 # This causes problems with the threaded solver.
 unset MALLOC_CHECK_
@@ -129,6 +129,11 @@ cb()
     cd "$b"
 }
 
+cs()
+{
+    cd "$site"
+}
+
 i()
 {
     cd "$i"
@@ -159,7 +164,7 @@ bpat()
     (
     mkdir -p "$pats_b"
     pb
-    cmake "$pats" && make -j4 && make check && rm -fr "$pats_b" && rm -f "$pats/cmake"/*.cmake
+    cmake "$pats" && make -j4 && make check # && rm -fr "$pats_b" && rm -f "$pats/cmake"/*.cmake
     )
 }
 
