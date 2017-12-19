@@ -1,5 +1,6 @@
 #!/usr/bin/env perl
 
+use autodie;
 use strict;
 use warnings;
 
@@ -15,3 +16,15 @@ $rel_path =~ s{\A\Q$h/conf\E/}{../};
 
 mkpath(["$h/conf/Bash"]);
 symlink("$rel_path/Themes", "$h/conf/Bash/Themes");
+open my $o, '>>', "$h/.bashrc";
+print {$o} <<"EOF";
+for f in ~/conf/trunk/shlomif-settings/Bash/bashrc/bashrc.d/*.bash ; do
+    . "\$f"
+done
+_reread_aliases()
+{
+        . ~/conf/trunk/shlomif-settings/bash-aliases/user_aliases.bash
+    }
+_reread_aliases
+EOF
+close($o);
