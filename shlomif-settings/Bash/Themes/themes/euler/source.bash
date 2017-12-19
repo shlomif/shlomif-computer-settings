@@ -29,7 +29,8 @@ prompt()
 b()
 {
     (
-        cd "$trunk/b"
+        cd "$trunk/b" && \
+        cmake "$src" && \
         make
     )
 }
