@@ -72,7 +72,6 @@ call vam#ActivateAddons([
     \ 'The_NERD_tree',
     \ 'UltiSnips',
     \ 'VimClojure',
-    \ 'a',
     \ 'ack',
     \ 'closetag',
     \ 'ctrlp',
@@ -85,9 +84,11 @@ call vam#ActivateAddons([
     \ 'github:junegunn/fzf.vim',
     \ 'github:leafgarland/typescript-vim',
     \ 'github:mattn/emmet-vim',
+    \ 'github:nacitar/a.vim',
     \ 'github:nvie/vim-flake8',
     \ 'github:pboettch/vim-cmake-syntax',
     \ 'github:romainl/Apprentice',
+    \ 'github:terryma/vim-expand-region',
     \ 'github:thinca/vim-quickrun',
     \ 'github:vim-perl/vim-perl',
     \ 'hg:https://shlomif@bitbucket.org/shlomif/vim-screenplay-text',
@@ -103,6 +104,8 @@ call vam#ActivateAddons([
     \ ],
     \ {'auto_install': 1, 'shell_commands_run_method': "system",})
 set more
+
+    " \ 'github:vim-syntastic/syntastic',
 
 " Expand the syntax menu automatically
 let do_syntax_sel_menu = 1
@@ -442,3 +445,5 @@ autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/dest/t2/*.html
 
 autocmd BufRead,BufNewFile ~/Download/unpack/games/pysolfc/*.py
     \ so ~/Download/unpack/games/pysolfc/git/PySolFC/scripts/refactor1.vim
+
+let g:syntastic_typescript_checkers = ["tslint"]
