@@ -15,7 +15,8 @@ my $rel_path = $conf_dir;
 $rel_path =~ s{\A\Q$h/conf\E/}{../};
 
 mkpath(["$h/conf/Bash"]);
-symlink("$rel_path/Themes", "$h/conf/Bash/Themes");
+my $THEMES_DIR = "$rel_path/Themes";
+symlink($THEMES_DIR, "$h/conf/Bash/Themes");
 open my $o, '>>', "$h/.bashrc";
 print {$o} <<"EOF";
 for f in ~/conf/trunk/shlomif-settings/Bash/bashrc/bashrc.d/*.bash ; do
@@ -28,3 +29,4 @@ _reread_aliases()
 _reread_aliases
 EOF
 close($o);
+system(qq#cd "$THEMES_DIR" && ./gen_list.sh#);
