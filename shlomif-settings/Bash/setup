@@ -8,25 +8,21 @@ use File::Spec;
 use File::Basename;
 use File::Path qw(mkpath);
 
-my $conf_dir = File::Spec->rel2abs(dirname($0));
-my $h = $ENV{HOME};
+my $conf_dir = File::Spec->rel2abs( dirname($0) );
+my $h        = $ENV{HOME};
 
 my $rel_path = $conf_dir;
 $rel_path =~ s{\A\Q$h/conf\E/}{../};
 
-mkpath(["$h/conf/Bash"]);
+mkpath( ["$h/conf/Bash"] );
 my $THEMES_DIR = "$rel_path/Themes";
-symlink($THEMES_DIR, "$h/conf/Bash/Themes");
+symlink( $THEMES_DIR, "$h/conf/Bash/Themes" );
 open my $o, '>>', "$h/.bashrc";
 print {$o} <<"EOF";
 for f in ~/conf/trunk/shlomif-settings/Bash/bashrc/bashrc.d/*.bash ; do
     . "\$f"
 done
-_reread_aliases()
-{
-        . ~/conf/trunk/shlomif-settings/bash-aliases/user_aliases.bash
-    }
-_reread_aliases
+. ~/conf/trunk/shlomif-settings/bash-aliases/user_aliases_bootstrap.bash
 EOF
 close($o);
 system(qq#cd "$THEMES_DIR" && ./gen_list.sh#);
