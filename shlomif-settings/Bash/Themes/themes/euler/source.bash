@@ -35,5 +35,11 @@ b()
     )
 }
 
-proj_name='ProjEuler'
+t()
+{
+    (
+        cd "$src" && sh test.sh
+    )
+}
 
+proj_name='ProjEuler'
