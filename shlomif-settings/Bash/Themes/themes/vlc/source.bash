@@ -11,6 +11,11 @@ this="$module"
 git_remote_shlomif="$(_shlomif_github "vlc")"
 git_remote_upstream='git://git.videolan.org/vlc.git'
 
+c()
+{
+    cd "$this"
+}
+
 # Make sure that gvim's filename completion ignores filenames that it should
 # not edit.
 
@@ -43,7 +48,7 @@ setup()
 mi()
 {
     (
-        cd "$trunk" && ./bootstrap && . ~/conf/build/vlc-3.0-opt.sh && make -j4 install
+        cd "$trunk" && ./bootstrap && . ~/conf/build/vlc-3.0-opt.sh && make -j4 install
     )
 }
 

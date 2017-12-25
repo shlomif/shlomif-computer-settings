@@ -1,7 +1,7 @@
 load_common mymake
 load_common completion
 load_common prompt
-load_common hg
+load_common git
 
 # repos="https://svn.berlios.de/svnroot/repos/fc-solve/abc-path/"
 # repos_trunk="${repos}trunk/"
@@ -15,7 +15,7 @@ module="$trunk/abc-path/$mod/"
 # c_src="$trunk/nurikabe-solver"
 this="$module"
 
-remote_repo="$(_shlomif_bitbucket "abc-path")"
+remote_repo="$(_shlomif_github "abc-path")"
 
 cd "$this"
 
