@@ -1,0 +1,11 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use Path::Tiny qw/ path /;
+
+foreach my $fn (@ARGV)
+{
+    print "$fn\n" if path($fn)->slurp_raw =~ /\n\n\z/ms;
+}
