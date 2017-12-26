@@ -69,7 +69,6 @@ else
     print "\n";
 }
 
-
 =head1 COPYRIGHT & LICENSE
 
 Copyright 2012 by Shlomi Fish

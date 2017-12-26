@@ -16,7 +16,6 @@ foreach my $filename (@ARGV)
     io->file->($filename)->print(@lines);
 }
 
-
 =head1 COPYRIGHT & LICENSE
 
 Copyright 2012 by Shlomi Fish
