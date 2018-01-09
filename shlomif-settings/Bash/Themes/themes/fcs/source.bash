@@ -153,6 +153,7 @@ pb()
 fmt()
 {
     (
+        unset FCS_USE_TEST_RUN;
         cd "$t_fcs/B" && \
             make -j4 && \
             perl "$c_src"/run-tests.pl --glob='{clang-format,perltidy,py-flake8,style-trailing-space}*.t'
