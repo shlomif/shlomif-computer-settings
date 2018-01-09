@@ -93,6 +93,7 @@ call vam#ActivateAddons([
     \ 'github:vim-perl/vim-perl',
     \ 'hg:https://shlomif@bitbucket.org/shlomif/vim-screenplay-text',
     \ 'matchit.zip',
+    \ 'perlprove',
     \ 'range-search',
     \ 'repeat',
     \ 'spec%98',
