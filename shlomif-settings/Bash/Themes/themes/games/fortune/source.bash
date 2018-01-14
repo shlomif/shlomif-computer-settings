@@ -49,8 +49,8 @@ t()
     (
         export HARNESS_BREAK=1
         cd "$git_base/B" && \
-            make -j4 && \
-            perl "$trunk"/run-tests.pl
+            make && \
+            perl "$trunk"/run-tests.pl --src-dir="$trunk"
         n --msg "Freecell Solver Test Finished"
     )
 }
