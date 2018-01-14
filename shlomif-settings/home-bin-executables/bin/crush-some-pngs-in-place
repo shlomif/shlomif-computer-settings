@@ -1,7 +1,0 @@
-#!/bin/bash
-
-for I in "$@" ; do
-    NEW="==neW--$I"
-    pngcrush "$I" "$NEW"
-    mv -f "$NEW" "$I"
-done

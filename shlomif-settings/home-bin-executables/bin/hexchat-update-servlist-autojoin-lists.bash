@@ -5,6 +5,6 @@
 # directory of "servlist.conf" (normally ~/.config/hexchat/ ).
 #
 # Copyright by Shlomi Fish, 2013
-# Licensed under the MIT/X11 Licence.
+# Licensed under the MIT/Expat Licence.
 
 perl -pi.bak -l -e 'if (my ($l) = /\AJ=(.*)/) { $_ = join("\n", map { "J=$_" } split",",$l); }' servlist.conf

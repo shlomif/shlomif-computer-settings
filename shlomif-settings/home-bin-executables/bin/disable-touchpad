@@ -6,5 +6,5 @@
 # Based on http://kde-apps.org/content/show.php/Disable+-+Enable+Touchpad?content=50914
 # which is a link found in a web-search.
 #
-# Written by Shlomi Fish, 2016 - under the X11 licence.
+# Written by Shlomi Fish, 2016 - under the MIT Expat licence.
 synclient TouchpadOff=1

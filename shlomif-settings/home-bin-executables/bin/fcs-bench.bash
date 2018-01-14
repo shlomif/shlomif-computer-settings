@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Copyright by Shlomi Fish, under the MIT Expat licence.
+
 # export LD_PRELOAD=/home/shlomif/Download/unpack/prog/lockless_allocator/libllalloc.so.1.3
 # export LD_PRELOAD=/home/shlomif/Download/unpack/prog/c/ltalloc/gnu.make.lib/libltalloc.so
 export LD_LIBRARY_PATH=/home/shlomif/apps/tcmalloc/lib

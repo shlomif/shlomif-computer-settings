@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright by Shlomi Fish, 2016 under the
+# Copyright by Shlomi Fish, 2016 under the Expat licence
 # https://opensource.org/licenses/mit-license.php
 
 # This program installs a transaction of apt updates on Debian and derivatives
