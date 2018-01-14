@@ -93,7 +93,6 @@ call vam#ActivateAddons([
     \ 'github:vim-perl/vim-perl',
     \ 'hg:https://shlomif@bitbucket.org/shlomif/vim-screenplay-text',
     \ 'matchit.zip',
-    \ 'perlprove',
     \ 'range-search',
     \ 'repeat',
     \ 'spec%98',
@@ -107,6 +106,7 @@ call vam#ActivateAddons([
 set more
 
     " \ 'github:vim-syntastic/syntastic',
+    " \ 'perlprove',
 
 " Expand the syntax menu automatically
 let do_syntax_sel_menu = 1
