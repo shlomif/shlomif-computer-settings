@@ -1,3 +1,6 @@
+# Copyright by Shlomi Fish, 2018 under the Expat licence
+# https://opensource.org/licenses/mit-license.php
+
 # this line is a comment
 --style=allman      # this is a line-end comment
 # long options can be written without the preceding '--'
