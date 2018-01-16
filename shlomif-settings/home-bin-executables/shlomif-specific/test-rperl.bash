@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# Copyright by Shlomi Fish, 2018 under the Expat licence
+# https://opensource.org/licenses/mit-license.php
+
 perl Makefile.PL
 make
 rm -fr _Inline

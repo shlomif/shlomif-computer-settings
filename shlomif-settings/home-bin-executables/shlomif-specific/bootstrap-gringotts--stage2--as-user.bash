@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# Copyright by Shlomi Fish, 2018 under the Expat licence
+# https://opensource.org/licenses/mit-license.php
+
 wget -c 'http://garr.dl.sourceforge.net/project/gringotts.berlios/libgringotts-1.2.1.tar.bz2' && \
     tar -xvf libgringotts-1.2.1.tar.bz2 && \
     (

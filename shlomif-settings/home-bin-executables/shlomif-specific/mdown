@@ -1,3 +1,7 @@
 #!/bin/bash
+
+# Copyright by Shlomi Fish, 2018 under the Expat licence
+# https://opensource.org/licenses/mit-license.php
+
 d="$HOME/progs/perl/cpan/App/maniac-downloader/App-ManiacDownloader"
 perl -I"$d/lib" "$d/bin/mdown" "$@"

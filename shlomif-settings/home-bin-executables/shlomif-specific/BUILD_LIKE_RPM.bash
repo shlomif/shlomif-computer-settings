@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# This script builds a package similar with the Mageia Linux-like rpm
-# flags.
+# Copyright - who knows? taken from the Mageia rpm macros and Shlomi Fish
+# disclaims all ownership of this code.
+
+# This script builds a package with the Mageia Linux-like rpm flags.
 CFLAGS='-O2 -g -pipe -Wformat -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fstack-protector --param=ssp-buffer-size=4 -fPIC'
 export CFLAGS
 CXXFLAGS='-O2 -g -pipe -Wformat -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fstack-protector --param=ssp-buffer-size=4 -fPIC'

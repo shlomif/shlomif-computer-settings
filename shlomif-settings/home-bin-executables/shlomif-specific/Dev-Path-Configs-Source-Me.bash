@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Copyright by Shlomi Fish, 2018 under the Expat licence
+# https://opensource.org/licenses/mit-license.php
+
 # _emsdk_path="$HOME/Download/unpack/prog/llvm-to-js/emsdk_portable"
 _emsdk_path="$HOME/Download/unpack/prog/llvm-to-js/emsdk"
 
