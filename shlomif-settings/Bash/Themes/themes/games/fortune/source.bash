@@ -23,14 +23,9 @@ cd $this
 prompt()
 {
     __prompt_cmd \
-        "\$pats=$pats" \
-        "\$git_pats=$git_pats" \
-        "\$verify=$verify" \
-        "\$parallel=$parallel" \
-        "\$presets=$presets" \
-        "\$atomic_presets=$atomic_presets" \
         "\$trunk=$trunk" \
-        "\$fcs=$fcs" \
+        "\$git_base=$git_base" \
+        "\$base=$base" \
         "~=$HOME"
 }
 
