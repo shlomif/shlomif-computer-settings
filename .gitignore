@@ -2,6 +2,7 @@ shlomif-settings/Bash/Themes/list-of-themes.txt
 shlomif-settings/bash-aliases/PERL5LIB_gen.sh
 shlomif-settings/gdb/gdb_history
 shlomif-settings/perl/Dist-Zilla/dot-dzil/config.ini
+shlomif-settings/vim-conf/dot-vim/.netrwhist
 shlomif-settings/vim-conf/dot-vim/Add_to_Word_Search/
 shlomif-settings/vim-conf/dot-vim/Command-T/
 shlomif-settings/vim-conf/dot-vim/The_NERD_tree/
