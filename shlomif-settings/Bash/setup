@@ -18,12 +18,17 @@ mkpath( ["$h/conf/Bash"] );
 my $THEMES_DIR      = "$rel_path/Themes";
 my $THEMES_DIR_LINK = "$h/conf/Bash/Themes";
 symlink( $THEMES_DIR, $THEMES_DIR_LINK );
-open my $o, '>>', "$h/.bashrc";
-print {$o} <<"EOF";
+if (0)
+{
+    open my $o, '>>', "$h/.bashrc";
+    print {$o} <<"EOF";
 for f in ~/conf/trunk/shlomif-settings/Bash/bashrc/bashrc.d/*.bash ; do
     . "\$f"
 done
 . ~/conf/trunk/shlomif-settings/bash-aliases/user_aliases_bootstrap.bash
 EOF
-close($o);
+    close($o);
+}
+rename("$h/.bashrc", "$h/.bashrc.orig");
+symlink("$h/conf/trunk/shlomif-settings/Bash/bashrc/rc.bash", "$h/.bashrc");
 system(qq#cd "$THEMES_DIR_LINK" && ./gen_list.sh#);
