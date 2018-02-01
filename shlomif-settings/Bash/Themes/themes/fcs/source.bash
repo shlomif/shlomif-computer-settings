@@ -176,7 +176,7 @@ bp()
 
 ti1()
 {
-    perl "$c_src"/scripts/time-fcs.pl DUMPS-*/*
+    perl "$c_src"/../scripts/time-fcs.pl DUMPS-*/*
 }
 
 ti()
