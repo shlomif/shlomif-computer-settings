@@ -130,7 +130,7 @@ function Dot_t_file_type()
         set filetype=python
     else
         set filetype=perl
-        compiler perlprove
+        " compiler perlprove
     endif
     so ~/conf/Vim/perl-test-manage.vim
     map <F3> :call Perl_Tests_Count()<CR>
