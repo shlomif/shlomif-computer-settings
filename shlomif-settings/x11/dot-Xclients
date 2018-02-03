@@ -44,6 +44,8 @@ if [ "$WHICH_DESK" = "kde4" ] ; then
     exec startkde
 elif [ "$WHICH_DESK" = "kde5" ] ; then
     exec dbus-launch --exit-with-session startkde
+    # strace -f -o ~/k.strace dbus-launch --exit-with-session startkde
+    # startkde
 elif [ "$WHICH_DESK" = "kde4-trunk" ] ; then
     # export LIBGL_ALWAYS_INDIRECT=1
     export KDEDIR="/opt/kde4-trunk"
