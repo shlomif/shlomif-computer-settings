@@ -26,15 +26,6 @@ prompt()
         "~=$HOME"
 }
 
-__ignore_cmake_gen_files()
-{
-    (cd "$trunk" ;
-    for I in CMakeFiles cmake_install.cmake CMakeCache.txt ; do
-        perl ~/bin/add-file-to-svn-ignore.pl "$I"
-    done
-    )
-}
-
 e()
 {
     (cd "$this" ;
@@ -55,4 +46,3 @@ t()
 proj_name='wml'
 
 PATH="$HOME/apps/test/wml/bin/:$PATH"
-
