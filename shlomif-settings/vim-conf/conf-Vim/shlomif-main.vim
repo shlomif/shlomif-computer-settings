@@ -449,3 +449,4 @@ autocmd BufRead,BufNewFile ~/Download/unpack/games/pysolfc/*.py
     \ so ~/Download/unpack/games/pysolfc/git/PySolFC/scripts/refactor1.vim
 
 let g:syntastic_typescript_checkers = ["tslint"]
+let g:ack_apply_qmappings = 0
