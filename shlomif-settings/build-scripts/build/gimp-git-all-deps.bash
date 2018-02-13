@@ -25,17 +25,19 @@ autoconf_git_build()
     shift
     local branch="${1:-master}"
     shift
+    local tag="${1:-false}"
+    shift
 
     if ! test -e "$git_co" ; then
         mkdir -p "$(dirname "$git_co")"
         git clone "$url" "$git_co"
     fi
-    ( cd "$git_co" && git checkout "$branch" && git s origin "$branch" &&  NOCONFIGURE=1 ./autogen.sh && ./configure --prefix="$prefix" && make && _check && make install ) || { echo failed ; exit -1 ; }
+    ( cd "$git_co" && git checkout "$branch" && ($tag || git s origin "$branch") && NOCONFIGURE=1 ./autogen.sh && ./configure --prefix="$prefix" && make && _check && make install ) || { echo failed ; exit -1 ; }
 }
 
 autoconf_git_build "$HOME/Download/unpack/graphics/gimp/babl/git/babl" git://git.gnome.org/babl "$babl_p"
 autoconf_git_build "$HOME/Download/unpack/graphics/gimp/gegl/git/gegl" git://git.gnome.org/gegl "$gegl_p"
-autoconf_git_build "$HOME/Download/unpack/graphics/gimp/libmypaint/git/libmypaint" https://github.com/mypaint/libmypaint.git "$mypaint_p"
+autoconf_git_build "$HOME/Download/unpack/graphics/gimp/libmypaint/git/libmypaint" https://github.com/mypaint/libmypaint.git "$mypaint_p" "v1.3.0" true
 autoconf_git_build "$HOME/Download/unpack/graphics/gimp/libmypaint/git/mypaint-brushes" https://github.com/Jehan/mypaint-brushes.git "$mypaint_p" "v1.3.x"
 autoconf_git_build "$HOME/Download/unpack/graphics/gimp/git/gimp" https://git.gnome.org/git "$HOME/apps/gimp-devel"
 
