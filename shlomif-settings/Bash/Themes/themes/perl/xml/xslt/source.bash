@@ -1,18 +1,18 @@
 load_common mymake
 load_common completion
 load_common prompt
-load_common hg
+load_common git
 
 xslt_base="$HOME/progs/perl/cpan/XML/LibXSLT"
-xslt_hg_base="$HOME/progs/perl/cpan/XML/LibXSLT/hg"
-xslt_trunk="$HOME/progs/perl/cpan/XML/LibXSLT/hg/perl-xml-libxslt"
+xslt_git_base="$HOME/progs/perl/cpan/XML/LibXSLT/git"
+xslt_trunk="$HOME/progs/perl/cpan/XML/LibXSLT/git/perl-xml-libxslt"
 
 base="$xslt_base"
-hg_base="$xslt_hg_base"
+git_base="$xslt_git_base"
 trunk="$xslt_trunk"
 this="$trunk"
 
-remote_repo="$(_shlomif_bitbucket "perl-xml-libxslt")"
+remote_repo="$(_shlomif_github "perl-XML-LibXSLT")"
 
 __dist_name()
 {
@@ -45,11 +45,6 @@ __test_distribution()
         make disttest
         rm -fr "$(__dist_name)-$(__version)"
     )
-}
-
-__myctags()
-{
-    ( cd "$trunk"/build/build-tags && bash build-ctags.sh )
 }
 
 cd $this

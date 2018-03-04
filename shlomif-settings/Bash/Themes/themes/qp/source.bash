@@ -1,19 +1,34 @@
 load_common mymake
 load_common read_hist
 load_common completion
-load_common hg
+load_common git
 
 base="$HOME/progs/quadpres"
-hg_base="$base"
+git_base="$base"
 trunk="$base/trunk"
 this="$trunk/installer"
 site="$trunk/site"
 
-remote_repo="$(_shlomif_bitbucket "quad-pres")"
+remote_repo="$(_shlomif_github "quad-pres")"
 
 cd "$this"
 
 read_hist "$theme"
+
+b="$trunk/b"
+
+t()
+{
+    (
+        mkdir "$b" &&
+            cd "$b" &&
+            cmake "$this" &&
+            make &&
+            make check &&
+            cd ".." &&
+            rm -fr b
+        )
+}
 
 switch_to_quadpres()
 {
