@@ -10,6 +10,8 @@
     dh = diff HEAD
     dhs = diff HEAD --stat
     di = diff
+    dim = diff master
+    dims = diff master --stat
     st = status
 
 [core]
