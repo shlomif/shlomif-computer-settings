@@ -34,7 +34,7 @@ wml2()
 
 wml_mods()
 {
-    sudo urpmi --split-length 10 --downloader wget --wget-options -c --auto \
+    sudo urpmi --split-length 0 --downloader wget --wget-options -c --auto \
         'perl(CPANPLUS::Dist::Mageia)' \
         'perl(DBD::SQLite)' \
         'perl(DateTime)' \
@@ -57,6 +57,7 @@ wml_mods()
         'perl(MooseX::Getopt)' \
         'perl(MooseX::StrictConstructor)' \
         'perl(Pod::Xhtml)' \
+        'perl(Spork::Shlomify)' \
         'perl(Template)' \
         'perl(Term::ReadPassword)' \
         'perl(Test::Differences)' \
@@ -102,9 +103,11 @@ wml_mods()
         spamassassin-tools \
         subversion \
         tap-devel \
+        tidyp \
         txt2html \
         valgrind \
-        wml
+        wml \
+        zip
 
     if ! test -f /usr/bin/sass ; then
         sudo gem install sass
