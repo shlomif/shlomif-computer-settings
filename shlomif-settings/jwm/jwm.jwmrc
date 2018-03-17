@@ -174,5 +174,6 @@
     <Key mask="A" key="Left">ldesktop</Key>
     <Key mask="A" key="Up">udesktop</Key>
     <Key mask="A" key="Down">ddesktop</Key>
+    <Key mask="4" key="T">exec:konsole</Key>
 
 </JWM>
