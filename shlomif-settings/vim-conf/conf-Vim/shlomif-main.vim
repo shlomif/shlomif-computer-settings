@@ -450,3 +450,5 @@ autocmd BufRead,BufNewFile ~/Download/unpack/games/pysolfc/*.py
 
 let g:syntastic_typescript_checkers = ["tslint"]
 let g:ack_apply_qmappings = 0
+
+command! SwapPP s!\(\S\+\)\(++\|--\)!\2\1!
