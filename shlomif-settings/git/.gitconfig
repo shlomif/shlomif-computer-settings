@@ -5,6 +5,7 @@
 [alias]
     au = add -u
     ci = commit
+    ciread = commit -F ~/conf/trunk/shlomif-settings/git/commit-messages/add-README-or-LICENSE.txt
     co = checkout
     cp = cherry-pick
     dh = diff HEAD
