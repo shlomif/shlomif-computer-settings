@@ -26,21 +26,23 @@ use XML::LibXML;
 
 my $url = shift(@ARGV);
 
-my $page = XML::LibXML->load_html(
-    location => $url
-);
+my $page = XML::LibXML->load_html( location => $url );
 
-foreach my $tr ($page->findnodes('//tr'))
+foreach my $tr ( $page->findnodes('//tr') )
 {
     my @cells = $tr->findnodes('td');
-    if (@cells > 0)
+    if ( @cells > 0 )
     {
-        my $first = $cells[0];
+        my $first     = $cells[0];
         my $last_cell = $cells[-1];
-        my $last_a = $last_cell->findnodes('a')->[0]->textContent;
-        if ($last_a =~ /cpan/)
+        my $last_a    = $last_cell->findnodes('a')->[0]->textContent;
+        if ( $last_a =~ /cpan/ )
         {
-            say $first->textContent;
+            my $MOD = $first->textContent;
+            if ( $MOD !~ /Nagios-Plugin/ )
+            {
+                say $MOD;
+            }
         }
     }
 }

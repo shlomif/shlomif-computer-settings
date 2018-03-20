@@ -5,10 +5,11 @@ update_multi()
             echo "$mod"
             pco "$mod" && \
                 mu && \
-                cd .. \
+                cd .. && \
                 rm -fr "$mod"
-        )
+        ) || break
     done
+    n -m 'mu update'
 }
 
 # The Expat License
