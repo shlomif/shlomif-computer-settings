@@ -7,7 +7,7 @@ shift
 
 find "$dir" -name "*$suffix" | (LC_ALL=C sort) |
     (while read T ; do
-        diff -u20 "$T" "${T%%$suffix}"
+        diff -u "$T" "${T%%$suffix}"
     done)
 
 # The Expat License
