@@ -13,6 +13,8 @@ shlomif-settings/vim-conf/dot-vim/closetag/
 shlomif-settings/vim-conf/dot-vim/ctrlp/
 shlomif-settings/vim-conf/dot-vim/github-aaronbieber-quicktask/
 shlomif-settings/vim-conf/dot-vim/github-alessandroyorba-alduin/
+shlomif-settings/vim-conf/dot-vim/github-aperezdc-vim-template/
+shlomif-settings/vim-conf/dot-vim/github-dahu-Area-41/
 shlomif-settings/vim-conf/dot-vim/github-godlygeek-csapprox/
 shlomif-settings/vim-conf/dot-vim/github-honza-vim-snippets/
 shlomif-settings/vim-conf/dot-vim/github-ironcamel-vim-script-runner/
@@ -24,6 +26,7 @@ shlomif-settings/vim-conf/dot-vim/github-nacitar-a.vim/
 shlomif-settings/vim-conf/dot-vim/github-nvie-vim-flake8/
 shlomif-settings/vim-conf/dot-vim/github-pboettch-vim-cmake-syntax/
 shlomif-settings/vim-conf/dot-vim/github-romainl-Apprentice/
+shlomif-settings/vim-conf/dot-vim/github-shlomif-syntax-spork/
 shlomif-settings/vim-conf/dot-vim/github-terryma-vim-expand-region/
 shlomif-settings/vim-conf/dot-vim/github-thinca-vim-quickrun/
 shlomif-settings/vim-conf/dot-vim/github-vim-perl-vim-perl/
