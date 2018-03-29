@@ -4,7 +4,9 @@ load_common prompt
 load_common git
 
 base="$HOME/Download/unpack/games/pysolfc"
-trunk="$base/git/PySolFC"
+git_dir="$base/git"
+trunk="$git_dir/PySolFC"
+server="$git_dir/pysol-sound-server"
 proj="$trunk"
 a="$proj"
 
@@ -17,6 +19,16 @@ export PATH="$HOME/apps/fcs-for-pysol/bin:$PATH"
 export HARNESS_OPTIONS='j9:c'
 
 cd "$this"
+
+ce()
+{
+    cd "$server"
+}
+
+g()
+{
+    gvim +mak\ clean +mak\ PYTHON=python3
+}
 
 t()
 {
