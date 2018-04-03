@@ -43,6 +43,15 @@ t()
     )
 }
 
+b()
+{
+    mkdir -p "$b"
+    cd "$b"
+    cmake -DCMAKE_INSTALL_PREFIX="$HOME/apps/test/wml" ../src && \
+        make -j4 && \
+        make install
+}
+
 proj_name='wml'
 
 PATH="$HOME/apps/test/wml/bin/:$PATH"
