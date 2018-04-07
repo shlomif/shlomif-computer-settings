@@ -41,7 +41,5 @@ autoconf_git_build "$HOME/Download/unpack/graphics/gimp/libmypaint/git/libmypain
 autoconf_git_build "$HOME/Download/unpack/graphics/gimp/libmypaint/git/mypaint-brushes" https://github.com/Jehan/mypaint-brushes.git "$mypaint_p" "v1.3.x"
 autoconf_git_build "$HOME/Download/unpack/graphics/gimp/git/gimp" https://git.gnome.org/git "$HOME/apps/gimp-devel"
 
-echo
-echo "== Success =="
-echo
+printf '\n== Success ==\n\n'
 # CFLAGS="-g"  ./configure --prefix="$HOME"/apps/gimp-devel --enable-maintainer-mode
