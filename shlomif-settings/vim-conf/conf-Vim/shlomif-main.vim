@@ -81,6 +81,7 @@ call vam#ActivateAddons([
     \ 'github:dahu/Area-41',
     \ 'github:godlygeek/csapprox',
     \ 'github:honza/vim-snippets',
+    \ 'github:inkarkat/SyntaxAttr.vim',
     \ 'github:ironcamel/vim-script-runner',
     \ 'github:junegunn/fzf',
     \ 'github:junegunn/fzf.vim',
