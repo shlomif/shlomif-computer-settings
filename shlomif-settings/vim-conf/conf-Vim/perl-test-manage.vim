@@ -18,7 +18,7 @@
 " There's more to that - one can define variables and use them in the
 " arithmetic expressions. For more information see:
 "
-" http://search.cpan.org/dist/Test-Count/
+" http://metacpan.org/release/Test-Count/
 "
 " Which needs to be installed before this plugin can be used.
 "
@@ -42,4 +42,3 @@
 function! Perl_Tests_Count()
     execute '!perl' '-MTest::Count::FileMutator::ByFileType::App' '-e' '"run()"' '--' "--ft=" . &filetype '%'
 endfunction
-
