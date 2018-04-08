@@ -2,6 +2,8 @@
 " Date: 02 December 2006
 " License: MIT X11
 "
+" NOTE : superseded by https://github.com/mileszs/ack.vim .
+"
 " To use: install Ack ( http://petdance.com/ack/ ), source this script from
 " your .vimrc and then type:
 "      :Ack [Ack command line args] to use Ack.
