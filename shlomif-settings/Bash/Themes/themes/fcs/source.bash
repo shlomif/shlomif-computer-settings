@@ -72,7 +72,7 @@ find_ids()
     )
 }
 
-t()
+tes()
 {
     (
         export HARNESS_BREAK=1
@@ -82,6 +82,7 @@ t()
         n --msg "Freecell Solver Test Finished"
     )
 }
+alias t='tes'
 
 # parallel-tests
 pt()
@@ -183,6 +184,43 @@ ti()
 {
      ti1 | tac | cat -n | perl -lapE 's/:/\t/g; ' | less
 }
+
+alias g='gvim ids.txt +cbuf +cope +"sp scripts/ids-whitelist.txt" +"sp scripts/ids-whitelist.txt"' f=find_ids
+ca()
+{
+    cat ids.txt | perl -lapE 's#.*:##' | sort | uniq -c | sort -n | perl -lanE 'print $F[0]' | sort | uniq -c | sort -n -k 2 | less
+}
+alias m='make -j100'
+alias k='pkill -USR1 fc-solve'
+disp()
+{
+    perl ../scripts/time-fcs.pl DUMPS-*/* | tac | cat -n | perl -lapE 's/:/\t/g; ' | less
+}
+
+tot2()
+{
+    set -x
+    perl ../scripts/gen-obf-mod-1.pl > t.sh
+    FCS_PGO_THEME="--read-from-file 4,$(pwd)/t.sh" sudo /home/shlomif/bin/sudo_bench_fcs
+    disp
+    set +x
+}
+
+tot()
+{
+    set -x
+    perl ../scripts/cmd-line-compiler compile
+    make
+    y
+    set +x
+}
+
+y()
+{
+    sudo /home/shlomif/bin/sudo_bench_fcs
+    disp
+}
+export FCS_PATH="$b" FCS_SRC_PATH="$c_src"
 
 proj_name='fcs'
 
