@@ -456,3 +456,5 @@ let g:syntastic_typescript_checkers = ["tslint"]
 let g:ack_apply_qmappings = 0
 
 command! SwapPP s!\(\S\+\)\(++\|--\)!\2\1!
+
+let g:email = 'shlomif@cpan.org'
