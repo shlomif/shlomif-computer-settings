@@ -1,3 +1,5 @@
+" Copyright by Shlomi Fish, 2018
+" Licensed under the MIT / Expat licence.
 function Xmms_Play_Mp3(prog, xmms_opts)
     let line = getline(".")
     let repl = substitute(line, "'", "'\\\\''", "ge")
