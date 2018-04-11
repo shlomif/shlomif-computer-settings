@@ -1,6 +1,6 @@
 Date: Thu, 15 Dec 2005 12:30:23 -0600
 From: Eric Sandeen <sandeen@sgi.com>
-To: Shlomi Fish <shlomif@iglu.org.il>
+To: Shlomi Fish <shlomif@cpan.org>
 Subject: Re: XFS Mount Hangs the Partition (on latest kernel + many old 2.6.x
  ones)
 

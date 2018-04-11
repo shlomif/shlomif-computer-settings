@@ -44,7 +44,7 @@ t()
 
 e()
 {
-    cd "$src" && gvim -o gen-shlomif-at-iglu-sig shlomif-sig-quotes.txt
+    cd "$src" && gvim -o gen-shlomif-sig shlomif-sig-quotes.txt
 }
 
 proj_name='EmailSignature'
