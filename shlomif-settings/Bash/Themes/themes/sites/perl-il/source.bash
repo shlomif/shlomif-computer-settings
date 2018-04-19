@@ -1,7 +1,8 @@
 load_common completion
+load_common git
 load_common prompt
 
-base="$HOME/progs/perl/forums/Israel.PM/perl.org.il"
+base="$HOME/Download/unpack/perl/web-sites-perl.org.il/perl.org.il"
 site="$base/site"
 bin="$site/new_site_bin"
 sources="$site/new_site_sources"
@@ -18,10 +19,11 @@ prompt()
 
 gen_site()
 {
-    (cd "$bin" && perl update_site.pl --outdir dest)
+    (cd "$bin" && mkdir -p dest && perl update_site.pl --outdir `pwd`/dest)
 }
+
+alias t='gen_site'
 
 proj_name='perl-il-site'
 
 cd $this
-
