@@ -1,6 +1,6 @@
 #!/bin/bash
 cd ~/progs/perl/cpan/App/Notifier/App-Notifier/App-Notifier-Service/ &&
-    perl ./bin/app.pl --port=6300
+    plackup --port=6300 ./bin/app.psgi
 
 # The Expat License
 #
