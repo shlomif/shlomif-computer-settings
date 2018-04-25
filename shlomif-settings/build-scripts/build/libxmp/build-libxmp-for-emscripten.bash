@@ -22,4 +22,3 @@ ${TAB}emcc --jcache -s TOTAL_MEMORY="$((128 * 1024 * 1024 ))" -s EXPORTED_FUNCTI
 
 EOF
 emmake make -j4 "${jslib}"
-

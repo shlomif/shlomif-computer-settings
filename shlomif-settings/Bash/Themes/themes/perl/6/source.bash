@@ -26,4 +26,3 @@ prompt()
 }
 
 proj_name='Perl6'
-

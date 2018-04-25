@@ -5,4 +5,3 @@ args="--prefix=$prefix"
 perl Build.PL $args
 # ./Build test $args
 # ./Build install $args
-

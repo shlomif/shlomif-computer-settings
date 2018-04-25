@@ -2,7 +2,6 @@
 "
 " Tag templates.
 
-
 let g:Template_answer		= "  <answer><CR>"
     				\."  <para><CR>"
     				\."  <author><firstname></firstname><surname></surname></author><CR>"
@@ -138,4 +137,3 @@ let g:Template_table		= "<table><CR>"
 				\."</table>"
 
 let g:Template_ulink		= "<ulink url=\"-:-\"/>"
-

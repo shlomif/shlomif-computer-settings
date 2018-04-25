@@ -387,5 +387,3 @@ document printqtime
   Prints a QTime
   Usage: printqtime mytime
 end
-
-

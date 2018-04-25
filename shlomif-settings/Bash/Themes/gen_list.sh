@@ -10,4 +10,3 @@
     ) \
     | sort
 ) > list-of-themes.txt
-

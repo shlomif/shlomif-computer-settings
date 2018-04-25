@@ -31,4 +31,3 @@ CFLAGS="$optflags" CXXFLAGS="$optflags" \
                     --with-ipv6-lookup=auto \
                     --x-includes=/usr/X11R6/include \
                     --x-libraries=/usr/X11R6/lib
-

@@ -37,4 +37,3 @@ pw_d.projectwonderful_background_color = "";
 <qp:before_top_nav_bar>
 <if "<get-var display_ads />" "<project_wonderful_top_proto />" "" />
 </qp:before_top_nav_bar>
-

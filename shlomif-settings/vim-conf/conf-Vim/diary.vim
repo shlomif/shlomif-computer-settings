@@ -12,8 +12,6 @@ map <buffer> <LocalLeader>p i<CR><p><CR><CR></p><CR><ESC>kkko
 " Write an <li> tag.
 map <buffer> <LocalLeader>li i<CR><li><CR><CR><p><CR><CR></p><CR><CR></li><CR><ESC>kkkkko
 
-
 if (match(expand("%:p"), ("^" . expand("$HOME") . "/Docs/Diary/\\(tech\\|[^/]+\.html\$\\)")) >= 0)
     call Create_Blog_Entry_With_Tags()
 endif
-

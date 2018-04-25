@@ -5,5 +5,3 @@ all: $(P5LIB)
 
 $(P5LIB): $(P5S)
 	perl $(P5S) > $@
-
-

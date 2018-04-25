@@ -21,4 +21,3 @@ function! Kakuro_Put_Coords_In_Clip()
 endfunction
 
 command! -nargs=0 KakuroPos call Kakuro_Put_Coords_In_Clip()
-

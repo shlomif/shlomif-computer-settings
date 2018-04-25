@@ -6,4 +6,3 @@ trunk="$base/berlios/trunk/iglu/www"
 this="$trunk"
 
 cd $this
-

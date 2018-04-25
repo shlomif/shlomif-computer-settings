@@ -5,4 +5,3 @@ ac_add_options --enable-debug
 ac_add_options --enable-default-toolkit=gtk2
 ac_add_options --enable-xft
 ac_add_options --enable-svg
-

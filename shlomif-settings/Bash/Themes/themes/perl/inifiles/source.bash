@@ -33,4 +33,3 @@ prompt()
 }
 
 proj_name='cfg-ini'
-

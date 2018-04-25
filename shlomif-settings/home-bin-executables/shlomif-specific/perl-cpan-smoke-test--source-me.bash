@@ -7,4 +7,3 @@ cpan -i CPANPLUS && cpanp -i \
     Task::FreecellSolver::Testing \
     Dist::Zilla::PluginBundle::SHLOMIF \
     Dist::Zilla::PluginBundle::Author::PERLANCAR \
-

@@ -18,7 +18,6 @@ regen()
     cd ~/Backup/rsync.net/ && bash UNPACK-me.bash
 }
 
-
 cd "$HOME"
 
 prompt()
@@ -38,4 +37,3 @@ b()
 }
 
 proj_name='backup'
-

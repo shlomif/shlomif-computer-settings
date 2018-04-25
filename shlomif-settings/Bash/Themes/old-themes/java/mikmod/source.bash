@@ -23,4 +23,3 @@ __gvim_completion()
 complete -o filenames -F __gvim_completion gvim
 
 cd $this
-

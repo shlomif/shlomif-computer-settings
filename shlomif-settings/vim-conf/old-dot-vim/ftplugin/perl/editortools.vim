@@ -99,4 +99,3 @@ function! PickFromList( name, list, ... )
 
     return a:list[choice]
 endfunction
-

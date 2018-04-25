@@ -60,7 +60,6 @@ __install_to_temp()
     )
 }
 
-
 __prepare_install_all_to_temp_makefile()
 {
     (cd "$build_scripts_dir" && perl create-makefile.pl)
@@ -94,4 +93,3 @@ prompt()
 }
 
 proj_name='art-directory'
-

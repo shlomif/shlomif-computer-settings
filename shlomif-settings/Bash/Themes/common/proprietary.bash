@@ -8,3 +8,7 @@ cpan-upload-http()
     cpan-upload
 }
 
+cpan-upload-tiny()
+{
+    cpan-upload
+}

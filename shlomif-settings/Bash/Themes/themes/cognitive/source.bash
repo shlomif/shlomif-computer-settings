@@ -18,7 +18,6 @@ Sp()
     kate "sports/sports-log.txt"
 }
 
-
 prompt()
 {
     __prompt_cmd \
@@ -39,4 +38,3 @@ ang()
 proj_name='cognitive'
 
 cd "$this"
-

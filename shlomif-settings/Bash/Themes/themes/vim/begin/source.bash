@@ -11,7 +11,6 @@ this="$src"
 
 cd $this
 
-
 prompt()
 {
     __prompt_cmd \
@@ -27,4 +26,3 @@ up()
 }
 
 proj_name='vim-begin'
-

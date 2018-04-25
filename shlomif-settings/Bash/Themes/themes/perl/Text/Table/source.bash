@@ -89,4 +89,3 @@ prompt()
 }
 
 proj_name='Text-Table'
-

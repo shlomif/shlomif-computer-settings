@@ -3,4 +3,3 @@ perl Makefile.PL PREFIX="$HOME/apps/perl/modules" INSTALLSITEBIN="\$(SITEPREFIX)
 make && \
 make test && \
 make install
-

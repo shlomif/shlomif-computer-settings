@@ -64,24 +64,6 @@ __install_to_temp()
     )
 }
 
-
-#    (
-#        if [ -e Makefile.PL ] ; then
-#            perl Makefile.PL PREFIX="$inst_modules_dir"
-#            make
-#            make test
-#            make install
-#        elif [ -e Build.PL ] ; then
-#            perl Build.PL
-#            ./Build
-#            ./Build test
-#            ./Build install prefix="$inst_modules_dir"
-#        else
-#            echo "Unknown instamethod" 1>&2
-#            exit 1
-#        fi
-#    )
-
 __prepare_install_all_to_temp_makefile()
 {
     (cd "$build_scripts_dir" && perl create-makefile.pl)
@@ -110,4 +92,3 @@ prompt()
 }
 
 proj_name='Test-WWW-Mech-Mojo'
-

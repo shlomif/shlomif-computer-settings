@@ -28,7 +28,6 @@ __get_latest_log_rev()
     __get_latest_current_patch "log.txt"
 }
 
-
 edit_log()
 {
     (cd $this ;
@@ -74,4 +73,3 @@ Install_perl()
     )
 }
 cd $this
-

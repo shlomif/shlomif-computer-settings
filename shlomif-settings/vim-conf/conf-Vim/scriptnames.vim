@@ -21,4 +21,3 @@ function! s:Filter_lines(cmd, filter)
   0
 endfunction
 command! -nargs=? Scriptnames call s:Filter_lines('scriptnames', <q-args>)
-

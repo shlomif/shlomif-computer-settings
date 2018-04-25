@@ -9,4 +9,3 @@ if ! cmp grep-output.txt expected-output.txt ; then
     echo "Perl is incorrect" 1>&2
     exit 1
 fi
-

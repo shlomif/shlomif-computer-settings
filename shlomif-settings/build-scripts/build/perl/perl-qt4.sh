@@ -10,4 +10,3 @@ cmake -DCMAKE_INSTALL_PREFIX="$HOME/apps/perl" \
     -DCMAKE_BUILD_TYPE="debug" \
     -DENABLE_SMOKE="OFF" \
     ..
-

@@ -8,15 +8,16 @@ foreach (@ARGV)
 {
     if (/^([^=]+)=(.*)$/)
     {
-        my ($v, $s) = ($1,$2);
-        if (substr($string, 0, length($s)) eq $s)
+        my ( $v, $s ) = ( $1, $2 );
+        if ( substr( $string, 0, length($s) ) eq $s )
         {
-            if ((length($string) > length($s)) ?
-                (substr($string,length($s), 1) eq "/") :
-                1
-               )
+            if (
+                  ( length($string) > length($s) )
+                ? ( substr( $string, length($s), 1 ) eq "/" )
+                : 1
+                )
             {
-                print $v . substr($string, length($s));
+                print $v . substr( $string, length($s) );
                 exit(0);
             }
         }
@@ -27,4 +28,3 @@ foreach (@ARGV)
     }
 }
 print $string;
-

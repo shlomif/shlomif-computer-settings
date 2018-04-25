@@ -63,5 +63,3 @@ upload_patch()
     last_rev="$(__get_latest_patch_rev)" ;
     rsync --rsh=ssh -v --progress "$(__get_patch_path $last_rev)" "${__UPLOAD_PATCHES_PATH}"
 }
-
-

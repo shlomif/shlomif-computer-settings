@@ -79,4 +79,3 @@ prompt()
 }
 
 cd $this
-

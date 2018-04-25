@@ -79,4 +79,3 @@ prompt()
 }
 
 PS1="\\u:\$(prompt)\\$ "
-

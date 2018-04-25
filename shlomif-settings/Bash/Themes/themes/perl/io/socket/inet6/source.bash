@@ -82,4 +82,3 @@ prompt()
 }
 
 proj_name='inet6'
-

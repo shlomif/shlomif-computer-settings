@@ -43,4 +43,3 @@ xf86_nouv_compile:
 
 xf86_nouv_install:
 	cd $(XF86_NOUV_DIR) && cp -f src/.libs/nouveau_drv.so /usr/lib/xorg/modules/drivers/
-

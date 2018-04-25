@@ -14,7 +14,6 @@ remote_repo="$($__themes_dir/common/github-git-remote-repo.pl --user="Hamakor" -
 
 cd $this
 
-
 prompt()
 {
     __prompt_cmd \
@@ -30,4 +29,3 @@ up()
 }
 
 proj_name='www.linux.org.il'
-

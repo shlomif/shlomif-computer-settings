@@ -67,4 +67,3 @@ __complete_with_themes()
 }
 
 __complete_with_themes "Theme"
-

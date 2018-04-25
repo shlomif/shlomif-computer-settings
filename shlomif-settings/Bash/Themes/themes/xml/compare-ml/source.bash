@@ -63,4 +63,3 @@ prompt()
 }
 
 proj_name='xml-compareml'
-

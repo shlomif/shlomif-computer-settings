@@ -28,4 +28,3 @@ prompt()
 }
 
 proj_name='nurikabe'
-

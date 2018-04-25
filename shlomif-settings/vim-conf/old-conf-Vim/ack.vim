@@ -13,4 +13,3 @@ function! Ack_Search(command)
 endfunction
 
 command! -nargs=+ -complete=file Ack call Ack_Search(<q-args>)
-

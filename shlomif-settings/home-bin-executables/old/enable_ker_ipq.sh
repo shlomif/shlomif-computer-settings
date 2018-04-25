@@ -39,4 +39,3 @@
 
 /sbin/iptables -A INPUT -j QUEUE -i lo -p tcp
 /sbin/iptables -A INPUT -j QUEUE -i lo -p udp
-

@@ -32,4 +32,3 @@ prompt()
 }
 
 proj_name='app-sky'
-

@@ -31,4 +31,3 @@ prompt()
 }
 
 proj_name='dir-dump'
-

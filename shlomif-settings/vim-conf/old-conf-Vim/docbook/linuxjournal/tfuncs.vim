@@ -2,7 +2,6 @@
 "
 " Tag related functions.
 
-
 "**********************************************************
 
 " Patterns for XML tags and for words.
@@ -405,4 +404,3 @@ function! CursorLeftByTag()
 		endif
 	endif
 endfunction
-

@@ -10,4 +10,3 @@ this="$tutorial_app"
 # not edit.
 
 cd $this
-

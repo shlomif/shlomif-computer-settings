@@ -29,4 +29,3 @@ RPM_OPT_FLAGS="-O1 -g -Wp,-D_FORTIFY_SOURCE=2"
 
 CFLAGS="$RPM_OPT_FLAGS" CXXFLAGS="$RPM_OPT_FLAGS" \
 ./configure --prefix=$HOME/apps/vim
-

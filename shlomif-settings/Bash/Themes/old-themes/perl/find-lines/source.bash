@@ -59,4 +59,3 @@ view_prof()
 }
 
 PS1="\\u:\$(prompt)\\$ "
-

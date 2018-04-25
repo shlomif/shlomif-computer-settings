@@ -55,7 +55,6 @@ __install_to_temp()
     )
 }
 
-
 #    (
 #        if [ -e Makefile.PL ] ; then
 #            perl Makefile.PL PREFIX="$inst_modules_dir"
@@ -94,4 +93,3 @@ prompt()
 }
 
 proj_name='lm-solve';
-

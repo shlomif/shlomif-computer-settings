@@ -9,4 +9,3 @@ mkdir -p "$repo_dir"
 mkdir -p "$repo_dir/bash-history"
 
 perl ~/bin/backup-bash-history.pl
-

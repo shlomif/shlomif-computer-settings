@@ -55,4 +55,3 @@ target4-step2: target4-step3
 
 target4-step3:
 	(cd /home/shlomi/progs/perl/cpan/Test/Test-Harness/trunk/modules/plugins/cmdline/Test-Run-CmdLine-Plugin-ColorSummary && perl Build.PL)
-

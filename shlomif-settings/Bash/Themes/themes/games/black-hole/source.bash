@@ -48,4 +48,3 @@ prompt()
 }
 
 proj_name='black-hole'
-

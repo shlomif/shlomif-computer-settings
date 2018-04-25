@@ -19,4 +19,3 @@ wget -c 'http://garr.dl.sourceforge.net/project/gringotts.berlios/gringotts-1.2.
         make && \
         make install
     )
-

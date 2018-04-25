@@ -20,4 +20,3 @@ prompt()
 }
 
 cd "$this"
-

@@ -48,4 +48,3 @@ __update_main_file_test_coverage()
         cover
     )
 }
-

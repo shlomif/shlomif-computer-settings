@@ -28,4 +28,3 @@ gimp()
 }
 
 cd $this
-

@@ -21,4 +21,3 @@ prompt()
         "\$base=$base" \
         "~=$HOME"
 }
-

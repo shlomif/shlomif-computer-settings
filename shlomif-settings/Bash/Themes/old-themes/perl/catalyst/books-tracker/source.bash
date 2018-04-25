@@ -8,9 +8,4 @@ this="$trunk/catalyst"
 rw_repos_url="http://localhost:8080/svn/books-tracker/"
 read_repos_url="http://localhost:8080/svn/books-tracker/"
 
-# Make sure that gvim's filename completion ignores filenames that it should
-# not edit.
-
-
 cd $this
-

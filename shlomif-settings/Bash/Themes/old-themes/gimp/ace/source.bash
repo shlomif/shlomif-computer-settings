@@ -44,4 +44,3 @@ __Vipe_upload_patch()
 }
 
 cd $this
-

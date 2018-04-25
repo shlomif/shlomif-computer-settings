@@ -21,4 +21,3 @@ google_color_url = "008000";
 <qp:before_top_nav_bar>
 <if "<get-var display_ads />" "<google_ads />" "" />
 </qp:before_top_nav_bar>
-

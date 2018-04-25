@@ -5,4 +5,3 @@ LIBTSO_LIBS=-lpthread ../dist/configure --prefix=/usr/local/apps/dbxml-1.2 \
     --with-xerces=/usr \
     --enable-tcl --enable-test \
     --with-tcl=/usr/lib
-

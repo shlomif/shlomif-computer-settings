@@ -94,4 +94,3 @@ prompt()
 }
 
 proj_name='Statistics-Descriptive'
-

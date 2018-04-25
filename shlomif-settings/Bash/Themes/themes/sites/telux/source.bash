@@ -7,4 +7,3 @@ ann="$trunk/announcements"
 
 this="$site"
 cd $this
-

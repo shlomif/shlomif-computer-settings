@@ -83,4 +83,3 @@ prompt()
 }
 
 proj_name='qantor'
-

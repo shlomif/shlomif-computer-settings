@@ -11,7 +11,6 @@ remote_repo="$(_shlomif_github "perl-begin")"
 
 cd $this
 
-
 prompt()
 {
     __prompt_cmd \
@@ -26,4 +25,3 @@ up()
 }
 
 proj_name='perl-begin'
-

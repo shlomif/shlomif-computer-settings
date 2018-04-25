@@ -31,4 +31,3 @@ prompt()
 }
 
 proj_name='Rx.pl'
-

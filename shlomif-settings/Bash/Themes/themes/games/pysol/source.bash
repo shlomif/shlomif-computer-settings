@@ -66,4 +66,3 @@ mydiff()
 }
 
 proj_name='PySolFC'
-

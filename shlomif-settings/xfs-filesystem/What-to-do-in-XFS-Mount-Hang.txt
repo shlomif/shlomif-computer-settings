@@ -25,5 +25,3 @@ Well, you can't mount, because recovery hangs, so,
 mount -o ro,norecovery /dev/foo /mnt/point; xfs_info /mnt/point
 
 -Eric
-
-

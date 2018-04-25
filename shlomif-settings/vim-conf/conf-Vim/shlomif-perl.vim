@@ -35,4 +35,3 @@ function Perl_New_Test_Program()
 endfunction
 
 map <F2> :call Perl_Switch_Syntax()<CR>
-

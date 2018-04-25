@@ -30,4 +30,3 @@ prompt()
 }
 
 proj_name='kakuro'
-

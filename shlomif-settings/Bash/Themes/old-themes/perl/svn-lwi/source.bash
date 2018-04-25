@@ -30,4 +30,3 @@ __test_distribution()
 }
 
 cd $this
-
