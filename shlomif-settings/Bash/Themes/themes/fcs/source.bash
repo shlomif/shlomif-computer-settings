@@ -26,7 +26,7 @@ bench="$t_fcs/benchmarks"
 test_dir="$branches/trunk/testing/source"
 dd_branch="$branches/depth-dependent-moves-order/source"
 parallel="$t_fcs/scripts/parallel-solve-and-verify-for-bakers-game"
-arcs="$base/Arcs/fc-solve.shlomifish.org-downloads/fc-solve-site-assets"
+arcs="$base/Arcs/fc-solve-site-assets/fc-solve-site-assets"
 
 ai_path="$cpan/AI-Pathfinding-OptimizeMultiple"
 ai_path_sys_tests="$cpan/temp-AI-Pathfinding-OptimizeMultiple-system-tests"
@@ -221,6 +221,7 @@ y()
     disp
 }
 export FCS_PATH="$b" FCS_SRC_PATH="$c_src"
+PATH="$HOME/.local/bin:$PATH:$site/node_modules/.bin"
 
 proj_name='fcs'
 
