@@ -30,10 +30,6 @@
 
     <!-- Options for program groups. -->
     <Group>
-        <Class>Pidgin</Class>
-        <Option>sticky</Option>
-    </Group>
-    <Group>
         <Name>xterm</Name>
         <Option>vmax</Option>
         <Option>icon:terminal.png</Option>
@@ -170,10 +166,7 @@
     <Key mask="A" key="F1">root:1</Key>
     <Key mask="A" key="F2">window</Key>
     <Key mask="A" key="F10">maximize</Key>
-    <Key mask="A" key="Right">rdesktop</Key>
-    <Key mask="A" key="Left">ldesktop</Key>
-    <Key mask="A" key="Up">udesktop</Key>
-    <Key mask="A" key="Down">ddesktop</Key>
     <Key mask="4" key="T">exec:konsole</Key>
+    <Key mask="4" key="E">firefox</Key>
 
 </JWM>
