@@ -111,6 +111,7 @@ set more
 
     " \ 'github:vim-syntastic/syntastic',
     " \ 'perlprove',
+    " \ 'github:vim-syntastic/syntastic',
 
 " Expand the syntax menu automatically
 let do_syntax_sel_menu = 1
@@ -452,6 +453,7 @@ autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/dest/t2/*.html
 autocmd BufRead,BufNewFile ~/Download/unpack/games/pysolfc/*.py
     \ so ~/Download/unpack/games/pysolfc/git/PySolFC/scripts/refactor1.vim
 
+let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_typescript_checkers = ["tslint"]
 let g:ack_apply_qmappings = 0
 
