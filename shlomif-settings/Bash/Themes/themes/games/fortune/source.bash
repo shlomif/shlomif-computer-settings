@@ -11,6 +11,9 @@ trunk="$git_base/fortune-mod"
 this="$trunk"
 build="$git_base/B"
 
+c="$this"
+b="$build"
+
 export FCS_USE_TEST_RUN=1
 
 cd "$this"
@@ -43,10 +46,10 @@ t()
             mkdir "$build"
         fi
         cd "$build" && \
-            cmake "$trunk" && \
+            cmake -DCMAKE_INSTALL_PREFIX="$HOME/apps/to-del-fortune" "$trunk" && \
             make && \
             perl "$trunk"/run-tests.pl --src-dir="$trunk"
-        n --msg "Freecell Solver Test Finished"
+        n --msg "fortune Test Finished"
     )
 }
 
@@ -76,12 +79,12 @@ _dzil_inst()
 
 c()
 {
-    cd "$c"
+    cd "$this"
 }
 
 cb()
 {
-    cd "$b"
+    cd "$build"
 }
 
 i()
