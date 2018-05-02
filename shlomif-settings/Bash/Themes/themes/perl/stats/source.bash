@@ -1,11 +1,11 @@
 load_common mymake
 load_common completion
 load_common prompt
-load_common hg
+load_common git
 # load_common gen_patch
 
 base="$HOME/progs/perl/cpan/Statistics"
-hg_base="$base"
+git_base="$base"
 trunk="$base/trunk"
 stats_dir="$trunk/Statistics-Descriptive"
 this="$stats_dir"
@@ -13,7 +13,7 @@ build_scripts_dir="$trunk/build/test-and-install-all-modules"
 
 inst_modules_dir="$HOME/apps/perl/modules"
 modules_makefile="${build_scripts_dir}/Modules.mak"
-remote_repo="$(_shlomif_bitbucket "perl-statistics-descriptive")"
+remote_repo="$(_shlomif_github "perl-Statistics-Descriptive")"
 
 PATH="$inst_modules_dir/bin/:$PATH"
 
