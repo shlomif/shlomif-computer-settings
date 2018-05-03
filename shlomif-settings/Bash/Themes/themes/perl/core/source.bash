@@ -19,9 +19,9 @@ setup()
     (
         mkdir -p "$_base_trunk"
         cd "$_base_trunk"
-        git clone 'git://perl5.git.perl.org/perl.git'  "$trunk"
+        git clone 'git@github.com:shlomif/perl.git' "$trunk"
         cd "$trunk"
-        git remote add github 'git@github.com:shlomif/perl.git'
+        git remote add upstream 'git://perl5.git.perl.org/perl.git'
     )
     cd "$this"
 }
