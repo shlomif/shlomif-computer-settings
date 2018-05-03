@@ -1,15 +1,15 @@
 load_common mymake
 load_common completion
 load_common prompt
-load_common hg
+load_common git
 
 base="$HOME/progs/perl/cpan/XML/Grammar/Base"
-hg_base="$base"
+git_base="$base"
 trunk="$base/trunk"
 grammar_base="$trunk/XML-GrammarBase"
 this="$grammar_base"
 
-remote_repo="$(_shlomif_bitbucket "perl-xml-grammarbase")"
+remote_repo="$(_shlomif_github "perl-XML-GrammarBase")"
 
 __myctags()
 {
