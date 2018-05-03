@@ -7,7 +7,7 @@ _sys()
 u()
 {
     local common_args
-    common_args="--auto --keep --resume --noclean"
+    common_args="--auto --keep --resume --noclean --no-recommends"
     if test -n "$PROZ" ; then
         common_args+=" --downloader prozilla --prozilla-options '-k=${PROZ_N:-15} -r'"
     else
@@ -31,7 +31,7 @@ uu()
 
 up()
 {
-    sudo urpmi --auto $(perlmf as_rpm_colon "$@")
+    sudo urpmi --auto --no-recommends $(perlmf as_rpm_colon "$@")
 }
 
 _cpan_d_format()
