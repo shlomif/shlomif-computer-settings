@@ -13,7 +13,7 @@ use CPANPLUS;
 use File::Find::Object;
 use Term::ANSIColor;
 
-mkdir ("CPANP-TEMP");
+mkdir("CPANP-TEMP");
 chdir("CPANP-TEMP");
 
 my $base_mod = shift(@ARGV);
@@ -25,30 +25,29 @@ $perl_mod =~ s{-}{::}g;
 fetch($perl_mod);
 
 my @arc = bsd_glob("$dash_mod-*");
-if (@arc != 1)
+if ( @arc != 1 )
 {
     die "Cannot find archive.";
 }
 
 my $arc_fn = $arc[0];
 
-open (my $tar, "-|", "tar", "-tvf", $arc_fn)
+open( my $tar, "-|", "tar", "-tvf", $arc_fn )
     or die "Could not open tar.";
 
 my $perms = "drwxrwxr";
-my $l = length($perms);
+my $l     = length($perms);
 
 my @found;
-while (my $f = <$tar>)
+while ( my $f = <$tar> )
 {
     chomp($f);
-    if ($f =~ m/\A.{$l}w/)
+    if ( $f =~ m/\A.{$l}w/ )
     {
         push @found, $f;
     }
 }
 close($tar);
-
 
 chdir("..");
 rmtree("CPANP-TEMP");
@@ -57,15 +56,15 @@ print "\n";
 if (@found)
 {
     print "The $dash_mod archive contains world-writable files\n\n";
-    print "Found World-writable-files:\n", (map { "$_\n" } @found);
+    print "Found World-writable-files:\n", ( map { "$_\n" } @found );
     print "\n";
-    print colored("Wrong.", "red");
+    print colored( "Wrong.", "red" );
     print "\n";
     exit(1);
 }
 else
 {
-    print colored("OK.", "green");
+    print colored( "OK.", "green" );
     print "\n";
 }
 

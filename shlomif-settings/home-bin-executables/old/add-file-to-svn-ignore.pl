@@ -10,38 +10,37 @@ use List::MoreUtils (qw(any));
 
 my $filename = shift;
 
-if (!defined($filename))
+if ( !defined($filename) )
 {
     die "Filename not specified!";
 }
 
-my $tree = File::Find::Object->new({}, ".");
+my $tree = File::Find::Object->new( {}, "." );
 
-while (my $r = $tree->next())
+while ( my $r = $tree->next() )
 {
-    if (basename($r) eq ".svn")
+    if ( basename($r) eq ".svn" )
     {
         $tree->prune();
     }
-    elsif (basename($r) eq $filename)
+    elsif ( basename($r) eq $filename )
     {
         my $dir = dirname($r);
 
-        my $cmd = shell_quote("svn", "propget", "svn:ignore", $dir);
+        my $cmd = shell_quote( "svn", "propget", "svn:ignore", $dir );
         my @ignore = `$cmd`;
         chomp(@ignore);
-        if (any { $_ eq $filename } @ignore)
+        if ( any { $_ eq $filename } @ignore )
         {
             # Do nothing - it's already in ignore.
         }
         else
         {
             push @ignore, $filename;
-            my $new_ignore =
-                join("", map { "$_\n" } sort { $a cmp $b }
-                    grep { length($_) > 0 } @ignore
-                );
-            system("svn", "propset", "svn:ignore", $new_ignore, $dir);
+            my $new_ignore = join( "",
+                map { "$_\n" } sort { $a cmp $b }
+                grep { length($_) > 0 } @ignore );
+            system( "svn", "propset", "svn:ignore", $new_ignore, $dir );
         }
         $tree->prune();
     }

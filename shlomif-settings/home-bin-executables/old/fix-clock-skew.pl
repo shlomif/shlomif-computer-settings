@@ -11,31 +11,31 @@ sub check_file
 
     my @stat = stat($filename);
 
-    my @time =
-    (
+    my @time = (
         {
-            'id' => "a",
+            'id'    => "a",
             'epoch' => $stat[8],
         },
         {
-            'id' => "m",
+            'id'    => "m",
             'epoch' => $stat[9],
         }
     );
     foreach (@time)
     {
-        my @expanded = localtime($_->{epoch});
+        my @expanded = localtime( $_->{epoch} );
         $_->{'expanded'} = \@expanded;
-        if (($expanded[5] == 104) && ($expanded[4] == 4))
+        if ( ( $expanded[5] == 104 ) && ( $expanded[4] == 4 ) )
         {
-            print "Wrong Date at " . $_->{id} .  "time for \"$filename\"!\n";
+            print "Wrong Date at " . $_->{id} . "time for \"$filename\"!\n";
+
             # New time is the file time minus the number of seconds in April.
-            $_->{'new_epoch'} = $_->{epoch} - 30*24*3600;
+            $_->{'new_epoch'} = $_->{epoch} - 30 * 24 * 3600;
         }
     }
-    if (grep {exists($_->{new_epoch})} @time)
+    if ( grep { exists( $_->{new_epoch} ) } @time )
     {
-        utime((map { $_->{new_epoch} || $_->{epoch} } @time), $filename);
+        utime( ( map { $_->{new_epoch} || $_->{epoch} } @time ), $filename );
     }
 }
 
@@ -43,8 +43,7 @@ sub file_find_wrapper
 {
     check_file($File::Find::name);
 }
-find({ "wanted" => \&file_find_wrapper, "no_chdir" => 1,} , ".");
-
+find( { "wanted" => \&file_find_wrapper, "no_chdir" => 1, }, "." );
 
 =head1 COPYRIGHT & LICENSE
 

@@ -13,22 +13,22 @@ my $gitlab = '';
 
 GetOptions(
     'gitlab!' => \$gitlab,
-    'user=s' => \$gh_user,
-    'repo=s' => \$gh_repo,
+    'user=s'  => \$gh_user,
+    'repo=s'  => \$gh_repo,
 ) or die "GetOptions failed! $!";
 
-if (!defined ($gh_user))
+if ( !defined($gh_user) )
 {
     die "user not specified!";
 }
 
-if (!defined ($gh_repo))
+if ( !defined($gh_repo) )
 {
     die "repo not specified!";
 }
 
 my $host = $gitlab ? "gitlab" : "github";
-if (($ENV{GITHUB_USERS} || '') =~ m{,\Q$gh_user\E,})
+if ( ( $ENV{GITHUB_USERS} || '' ) =~ m{,\Q$gh_user\E,} )
 {
     print "git\@$host.com:$gh_user/$gh_repo.git\n";
 }

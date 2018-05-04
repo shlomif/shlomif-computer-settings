@@ -1,8 +1,16 @@
 #!/usr/bin/perl
 use feature 'say';
-BEGIN { %h = (map { $_ => 0 } 'a'..'z','A' .. 'Z'); }
+
+BEGIN
+{
+    %h = ( map { $_ => 0 } 'a' .. 'z', 'A' .. 'Z' );
+}
 ++$h{$_} for /([a-zA-Z])/g;
-END { while(($k,$v)=each%h){say "$k\t$v"} }
+
+END
+{
+    while ( ( $k, $v ) = each %h ) { say "$k\t$v" }
+}
 
 __END__
 

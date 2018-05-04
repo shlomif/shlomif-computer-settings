@@ -15,11 +15,11 @@ my $cwd = getcwd();
 
 my $package;
 
-if ($fn =~ m{/lib/(.*)\z}ms)
+if ( $fn =~ m{/lib/(.*)\z}ms )
 {
     $package = $1;
 }
-elsif ($fn =~ m{\A\Q$cwd\E/(.*)\z}ms)
+elsif ( $fn =~ m{\A\Q$cwd\E/(.*)\z}ms )
 {
     $package = $1;
 }

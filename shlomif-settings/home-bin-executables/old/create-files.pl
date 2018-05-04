@@ -11,14 +11,14 @@ sub get_rand_string
 {
     my $i;
     my $string = "";
-    for $i (1..100)
+    for $i ( 1 .. 100 )
     {
-        $string .= chr(ord('a')+int(rand(26)));
+        $string .= chr( ord('a') + int( rand(26) ) );
     }
     return $string;
 }
 
-foreach my $file_num (1 .. 20)
+foreach my $file_num ( 1 .. 20 )
 {
     open my $o_fh, '>', "file$file_num.asc";
     print {$o_fh} get_rand_string();

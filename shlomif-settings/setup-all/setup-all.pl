@@ -26,17 +26,17 @@ sub cwd_cmd
 
     my $pwd = getcwd();
 
-    chdir($args->{dir});
+    chdir( $args->{dir} );
 
-    do_system({ cmd => $args->{cmd} });
+    do_system( { cmd => $args->{cmd} } );
 
     chdir($pwd);
 
     return;
 }
 
-my $HOME = $ENV{HOME};
-my $CONF = "$HOME/conf";
+my $HOME  = $ENV{HOME};
+my $CONF  = "$HOME/conf";
 my $trunk = "$CONF/trunk";
 
 mkpath($CONF);
@@ -44,14 +44,18 @@ mkpath($CONF);
 cwd_cmd(
     {
         dir => $CONF,
-        # cmd => ["git", "clone", 'git@github.com:shlomif/shlomif-computer-settings.git', $trunk,],
-        cmd => ["git", "clone", 'https://github.com/shlomif/shlomif-computer-settings.git', $trunk,],
+
+# cmd => ["git", "clone", 'git@github.com:shlomif/shlomif-computer-settings.git', $trunk,],
+        cmd => [
+            "git", "clone",
+            'https://github.com/shlomif/shlomif-computer-settings.git', $trunk,
+        ],
     }
 );
 
 sub sub_c
 {
-    my ($sub_dir, $cmd) = @_;
+    my ( $sub_dir, $cmd ) = @_;
 
     return cwd_cmd(
         {
@@ -63,7 +67,7 @@ sub sub_c
 
 sub run_setup
 {
-    return sub_c(shift, ['./setup']);
+    return sub_c( shift, ['./setup'] );
 }
 
 run_setup('Bash');

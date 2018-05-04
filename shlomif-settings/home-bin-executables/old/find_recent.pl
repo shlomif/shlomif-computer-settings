@@ -10,18 +10,18 @@ my @array;
 sub get_mod_time
 {
     my $filename = shift;
-    my @stat = stat($filename);
+    my @stat     = stat($filename);
     return $stat[9];
 }
 
 sub wanted
 {
-    push @array, [$File::Find::name, get_mod_time($File::Find::name)];
+    push @array, [ $File::Find::name, get_mod_time($File::Find::name) ];
 }
 
-find(\&wanted, $ENV{HOME});
+find( \&wanted, $ENV{HOME} );
 
-foreach my $file_rec (sort { $a->[1] <=> $b->[1] } @array)
+foreach my $file_rec ( sort { $a->[1] <=> $b->[1] } @array )
 {
     print $file_rec->[0], "\n";
 }

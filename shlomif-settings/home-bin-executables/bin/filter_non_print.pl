@@ -5,9 +5,9 @@ use warnings;
 
 my $num_chars = shift || 9;
 my $buffer;
-read(STDIN, $buffer, 1024);
+read( STDIN, $buffer, 1024 );
 $buffer =~ s/([^[:print:]]| )//g;
-print ("Password = \"", substr($buffer,0,$num_chars), "\"\n");
+print( "Password = \"", substr( $buffer, 0, $num_chars ), "\"\n" );
 
 __END__
 

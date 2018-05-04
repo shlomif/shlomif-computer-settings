@@ -5,11 +5,11 @@ use warnings;
 
 use bytes;
 
-$/ = \(2**10);
+$/ = \( 2**10 );
 
 while (<>)
 {
-    print map { sprintf("%.2x\n", ord($_)) } split//, $_;
+    print map { sprintf( "%.2x\n", ord($_) ) } split //, $_;
 }
 
 =head1 COPYRIGHT & LICENSE

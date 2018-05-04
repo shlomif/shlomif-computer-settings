@@ -7,10 +7,10 @@ my $start;
 while (<>)
 {
     chomp;
-    my ($t, $l) = /\A([^\t]+)\t(.*)\z/
+    my ( $t, $l ) = /\A([^\t]+)\t(.*)\z/
         or die "Wrong format at line <$_> $.";
     $start //= $t;
-    printf "%f\t%s\n", ($t-$start), $l;
+    printf "%f\t%s\n", ( $t - $start ), $l;
 }
 
 __END__

@@ -3,33 +3,34 @@
 use strict;
 use warnings;
 
-my $data_dir = "$ENV{HOME}/.kde/share/apps/kabc";
+my $data_dir       = "$ENV{HOME}/.kde/share/apps/kabc";
 my $dist_list_name = q{"Beta Readers" Distribution List};
 open my $in, "<", "$data_dir/distlists";
 my $found = 0;
 my $members_string;
-while(<$in>)
+while (<$in>)
 {
     if (/^$dist_list_name=(.*),/)
     {
         $members_string = $1;
-        $found = 1;
+        $found          = 1;
         last;
     }
 }
 close($in);
-if (!$found)
+if ( !$found )
 {
     die "Could not find $dist_list_name";
 }
-my @members = split(/,,/, $members_string);
+my @members = split( /,,/, $members_string );
+
 # print map { "$_\n" } @members;
-my %emails = (map { $_ => undef } @members);
+my %emails = ( map { $_ => undef } @members );
 
 sub get_line
 {
     $_ = <$in>;
-    if (!defined($_))
+    if ( !defined($_) )
     {
         return undef;
     }
@@ -37,26 +38,26 @@ sub get_line
     return $_;
 }
 open $in, "<", "$data_dir/std.vcf";
-while (defined(get_line()))
+while ( defined( get_line() ) )
 {
     if (/^BEGIN:VCARD$/)
     {
-        my ($uid, $email);
-        UID_LOOP: while (defined(get_line()))
+        my ( $uid, $email );
+    UID_LOOP: while ( defined( get_line() ) )
         {
             if (/^END:VCARD$/)
             {
-                if (!defined ($uid))
+                if ( !defined($uid) )
                 {
                     die "Error uid not defined at line $.\n";
                 }
-                if (exists($emails{$uid}))
+                if ( exists( $emails{$uid} ) )
                 {
-                    if (!defined ($email))
+                    if ( !defined($email) )
                     {
                         die "Error email not defined for UID $uid\n";
                     }
-                    elsif (defined($emails{$uid}))
+                    elsif ( defined( $emails{$uid} ) )
                     {
                         die "Duplicate Entry for ID $uid!\n";
                     }
@@ -69,7 +70,7 @@ while (defined(get_line()))
             }
             elsif (/^EMAIL;TYPE=PREF:(.*)$/)
             {
-                if (defined ($email))
+                if ( defined($email) )
                 {
                     die "Duplicate E-mail at line $.!\n";
                 }
@@ -80,7 +81,7 @@ while (defined(get_line()))
             }
             elsif (/^UID:(.*)$/)
             {
-                if (defined ($uid))
+                if ( defined($uid) )
                 {
                     die "Duplicate UID at line $.!\n";
                 }
@@ -97,7 +98,7 @@ close($in);
 my $output = "";
 foreach my $m (@members)
 {
-    if (defined($emails{$m}))
+    if ( defined( $emails{$m} ) )
     {
         $output .= $emails{$m} . "\n";
     }
@@ -107,6 +108,7 @@ foreach my $m (@members)
     }
 }
 print $output;
+
 =head1 COPYRIGHT & LICENSE
 
 Copyright 2017 by Shlomi Fish

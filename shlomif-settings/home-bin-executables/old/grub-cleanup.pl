@@ -5,7 +5,7 @@ use warnings;
 use autodie;
 
 my $orig_file = "/boot/grub/menu.lst";
-my $new_file =  "/boot/grub/menu.lst-perlnew";
+my $new_file  = "/boot/grub/menu.lst-perlnew";
 open I, "<", $orig_file;
 open O, ">", $new_file;
 LINE_LOOP: while (<I>)
@@ -15,6 +15,7 @@ LINE_LOOP: while (<I>)
         my $ver = $1;
         print $ver, "\n";
         system("rm -f /boot/*$ver /boot/initrd-$ver.img");
+
         # Delete the paragraph.
         while (<I>)
         {
@@ -31,7 +32,7 @@ LINE_LOOP: while (<I>)
 }
 close(I);
 close(O);
-rename($new_file, $orig_file);
+rename( $new_file, $orig_file );
 
 =head1 COPYRIGHT & LICENSE
 

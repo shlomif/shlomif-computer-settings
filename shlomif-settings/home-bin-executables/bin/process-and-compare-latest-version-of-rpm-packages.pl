@@ -10,7 +10,7 @@ chomp(@files);
 
 foreach my $f (@files)
 {
-    my $bare_fn = ($f =~ s/-([0-9\.-]+).*//mrs);
+    my $bare_fn = ( $f =~ s/-([0-9\.-]+).*//mrs );
 
     my $f_d = $1;
 
@@ -19,13 +19,13 @@ foreach my $f (@files)
 
     $existing =~ s#.*/##ms;
 
-    if (! (my ($exist_d) = $existing =~ m#-([0-9\.-]+)#ms))
+    if ( !( my ($exist_d) = $existing =~ m#-([0-9\.-]+)#ms ) )
     {
         # No package exists.
     }
     else
     {
-        if ($f_d ne $exist_d)
+        if ( $f_d ne $exist_d )
         {
             print "$f [$exist_d]\n";
         }

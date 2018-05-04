@@ -3,12 +3,12 @@
 use strict;
 use warnings;
 
-while(my $l = <>)
+while ( my $l = <> )
 {
     chomp($l);
-    if ($l =~ /\A([^=]+)=(.*)/)
+    if ( $l =~ /\A([^=]+)=(.*)/ )
     {
-        print "export $1='" . ($2 =~ s/'/'\\''/gr) . "'\n";
+        print "export $1='" . ( $2 =~ s/'/'\\''/gr ) . "'\n";
     }
     else
     {

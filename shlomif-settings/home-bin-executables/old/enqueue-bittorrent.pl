@@ -8,22 +8,22 @@ use File::Spec::Functions;
 
 my $filename;
 
-if ($ARGV[0] eq "-f")
+if ( $ARGV[0] eq "-f" )
 {
     $filename = $ARGV[1];
 }
 
 my $full_path;
-if (!defined($filename))
+if ( !defined($filename) )
 {
     my $url = shift(@ARGV);
 
     $url =~ m{([^/]+)$};
     $filename = $1;
 
-    $full_path = $ENV{'HOME'}."/Download/Video/Torrents/".$filename;
+    $full_path = $ENV{'HOME'} . "/Download/Video/Torrents/" . $filename;
     unlink($full_path);
-    system("wget", "-O", $full_path, $url);
+    system( "wget", "-O", $full_path, $url );
 }
 else
 {
@@ -31,7 +31,7 @@ else
 }
 
 my $donkey = Net::Telnet->new();
-$donkey->open(Host => "localhost", Port => 4000);
+$donkey->open( Host => "localhost", Port => 4000 );
 
 $donkey->print("dllink $full_path");
 
@@ -42,6 +42,7 @@ $donkey->print("q");
 $donkey->waitfor("/\\n/");
 
 $donkey->close();
+
 =head1 COPYRIGHT & LICENSE
 
 Copyright 2017 by Shlomi Fish

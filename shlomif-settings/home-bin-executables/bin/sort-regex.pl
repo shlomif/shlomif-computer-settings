@@ -7,7 +7,6 @@ s#(\(\?:)([a-zA-Z0-9\\\.\|\-]+)(\))#
     my ($s, $m, $e) = ($1, $2, $3);
     $s . join("|", sort { $a cmp $b } split/\|/, $m) . $e#e;
 
-
 __END__
 
 =head1 COPYRIGHT & LICENSE

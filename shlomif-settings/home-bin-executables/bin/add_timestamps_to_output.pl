@@ -7,10 +7,10 @@ use Time::HiRes qw(time);
 
 STDOUT->autoflush(1);
 
-while (my $l = <>)
+while ( my $l = <> )
 {
     chomp($l);
-    printf("%f\t%s\n", time(), $l);
+    printf( "%f\t%s\n", time(), $l );
 }
 
 =head1 COPYRIGHT & LICENSE

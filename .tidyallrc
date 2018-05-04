@@ -1,0 +1,4 @@
+[PerlTidy]
+select = **/*.{pl,pm,t}
+argv = -ci=4 -bl -cti=0
+ignore = shlomif-settings/vim-conf/dot-vim/**/* shlomif-settings/perl/Dist-Zilla/dot-dzil/profiles/shlomif1/Module.pm
