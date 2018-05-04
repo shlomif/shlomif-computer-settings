@@ -135,6 +135,11 @@ cs()
     cd "$site"
 }
 
+ct()
+{
+    cd "$trunk"
+}
+
 i()
 {
     cd "$i"
