@@ -29,9 +29,11 @@ prompt()
 b()
 {
     (
-        cd "$trunk/b" && \
+        b="$trunk/b"
+        mkdir -p "$b"
+        cd "$b" && \
         cmake "$src" && \
-        make
+        make && rm -fr "$b"
     )
 }
 

@@ -32,7 +32,7 @@ ai_path="$cpan/AI-Pathfinding-OptimizeMultiple"
 ai_path_sys_tests="$cpan/temp-AI-Pathfinding-OptimizeMultiple-system-tests"
 
 # patsolve
-git_pats="$c_src/patsolve-shlomif"
+git_pats="$c_src/patsolve"
 pats="$git_pats/patsolve"
 pats_b="$git_pats/b"
 
@@ -66,7 +66,7 @@ find_ids()
 {
     (
         cd "$c_src"
-        local cmd='ruby ../scripts/find-ids.rb *.[ch] */*.[ch] patsolve-shlomif/patsolve/*.[ch] > ids.txt'
+        local cmd='ruby ../scripts/find-ids.rb *.[ch] */*.[ch] patsolve/patsolve/*.[ch] > ids.txt'
         echo "$cmd"
         eval "$cmd"
     )
@@ -225,6 +225,16 @@ y()
     sudo /home/shlomif/bin/sudo_bench_fcs
     disp
 }
+
+unalias z
+z()
+{
+    c
+    cd ../0fc-b
+    grep -L End results/* | xargs rm
+    bash ../scripts/0fcpar.bash
+}
+
 export FCS_PATH="$b" FCS_SRC_PATH="$c_src"
 PATH="$HOME/.local/bin:$PATH:$site/node_modules/.bin"
 
