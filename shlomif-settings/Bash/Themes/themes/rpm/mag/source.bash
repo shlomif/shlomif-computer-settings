@@ -163,5 +163,15 @@ ex()
     . ~/conf/trunk/shlomif-settings/home-bin-executables/bin/magpie-update-multiple.bash
 }
 
+rej()
+{
+    find . -name '*.rej' | perl -lanE 'print s/\.rej$//r, "\n", ,$_'  | sort | xargs gvim -o
+}
+
+rec()
+{
+    bash ~/bin/recursive-patch.bash "$1" */
+}
+
 disable_local_lib
 cd "$this"
