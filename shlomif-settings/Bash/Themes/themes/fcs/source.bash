@@ -226,12 +226,22 @@ y()
     disp
 }
 
-unalias z
+unalias z zz
+
+zz()
+{
+    (
+        c
+        cd ../0fc-b
+        find results/ -regextype egrep -regex 'results/[0-9]+' -print | xargs grep -L End | xargs rm -f
+    )
+}
+
 z()
 {
     c
     cd ../0fc-b
-    grep -L End results/* | xargs rm
+    zz
     bash ../scripts/0fcpar.bash
 }
 
