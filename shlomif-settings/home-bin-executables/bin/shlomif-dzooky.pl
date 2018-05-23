@@ -13,8 +13,20 @@ use warnings;
 
 use IO::All qw/ io /;
 
-print "[Keywords]\n",
-    map { "keyword = $_\n" } io('-')->all =~ /['"]([^"']+)['"]/g;
+system('dzooky dist --bundle SHLOMIF');
+
+if (io('Build.PL')->all =~ m%keywords%)
+{
+    system("perl -0777 -lnE 'say \$1 if m%.*keywords.*?\\[(.*?)\\]%ms' < Build.PL | perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/cpan-keywords-to-dzil.pl >> dist.ini");
+}
+
+my $f = io('dist.ini');
+my $t = $f->all;
+$t =~ s#repository.url#repository_url#g;
+$t =~ s#(^name = (\S+)\n.*\[\@SHLOMIF\]\n)#$1dist = $2\n#ms;
+$f->print($t);
+
+system('cp /home/shlomif/progs/perl/cpan/git/Module-Format/Module-Format/{.tidyallrc,MANIFEST.SKIP,weaver.ini} .');
 __END__
 
 =head1 COPYRIGHT & LICENSE
