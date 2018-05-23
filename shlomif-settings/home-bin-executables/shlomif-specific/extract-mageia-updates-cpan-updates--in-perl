@@ -39,7 +39,7 @@ foreach my $tr ( $page->findnodes('//tr') )
         if ( $last_a =~ /cpan/ )
         {
             my $MOD = $first->textContent;
-            if ( $MOD !~ /Nagios-Plugin/ )
+            if ( $MOD !~ /Nagios-Plugin|(?:\Aperl-libnet\z)/ )
             {
                 say $MOD;
             }
