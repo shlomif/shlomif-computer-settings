@@ -18,6 +18,11 @@ proj_name='rpms'
 
 mag_username="$(whoami)"
 
+cb()
+{
+    cd "$base"
+}
+
 k()
 {
     _sys scp "$@" kenobi:
