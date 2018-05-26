@@ -460,3 +460,4 @@ let g:ack_apply_qmappings = 0
 command! SwapPP s!\(\S\+\)\(++\|--\)!\2\1!
 
 let g:email = 'shlomif@cpan.org'
+let g:username = 'Shlomi Fish'
