@@ -274,7 +274,7 @@ autocmd BufNewFile,BufRead ~/progs/games/kakuro/trunk/*.rb so ~/conf/Vim/kakuro-
 
 autocmd BufNewFile *.pl call Perl_Load_File() | :call Perl_New_Script()
 autocmd BufNewFile *.pm call Perl_Load_File() | :call Perl_New_Module()
-autocmd BufNewFile */t/*.t call Perl_Load_File() | :call Perl_New_Test_Program()
+autocmd BufNewFile *.t call Perl_Load_File() | :call Perl_New_Test_Program()
 
 let perl_no_extended_vars=1
 
