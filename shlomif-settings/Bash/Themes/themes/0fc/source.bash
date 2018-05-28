@@ -9,6 +9,7 @@ git_base="$HOME"/Download/unpack/games/freecell/freecell-pro-0fc-deals
 this="$git_base"
 c="$this"
 
+PATH="/home/shlomif/apps/fcs/bin:$PATH"
 cd "$this"
 
 c()
@@ -34,5 +35,3 @@ ci()
 }
 
 proj_name='0fc'
-
-t
