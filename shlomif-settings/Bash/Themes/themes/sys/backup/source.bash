@@ -12,7 +12,7 @@ b="$HOME/Backup/rsync.net/unpack/home/shlomif"
 regen()
 {
     (
-        cd ~/Docs/Svn/progs/backup/make-based
+        cd ~/conf/trunk/shlomif-settings/backup-system/make-based/ && \
         make -f backup.mak rsync_net_home_dir
     )
     cd ~/Backup/rsync.net/ && bash UNPACK-me.bash
@@ -26,6 +26,7 @@ prompt()
         "~=$HOME"
 }
 
+unalias a
 a()
 {
     cd "$a"
