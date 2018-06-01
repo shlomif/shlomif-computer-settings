@@ -23,6 +23,16 @@ export FCS_USE_TEST_RUN=1
 
 cd "$this"
 
+c()
+{
+    cd "$c"
+}
+
+cb()
+{
+    cd "$b"
+}
+
 t()
 {
     (
