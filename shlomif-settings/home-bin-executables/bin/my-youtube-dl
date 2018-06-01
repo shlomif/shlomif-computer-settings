@@ -1,0 +1,9 @@
+#! /bin/bash
+#
+# my-youtube-dl.bash
+# Copyright (C) 2018 Shlomi Fish <shlomif@cpan.org>
+#
+# Distributed under terms of the MIT license.
+#
+
+youtube-dl -f 43 -o "%(title)s-%(id)s.%(ext)s" "$1"
