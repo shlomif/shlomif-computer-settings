@@ -9,8 +9,9 @@ use IO::All;
 my $filename = shift;
 
 my $text = io->file($filename)->slurp();
-my $wc = HTML::WikiConverter->new( dialect => 'Markdown', link_style => 'inline', );
-print $wc->html2wiki( $text );
+my $wc =
+    HTML::WikiConverter->new( dialect => 'Markdown', link_style => 'inline', );
+print $wc->html2wiki($text);
 
 =head1 COPYRIGHT & LICENSE
 
