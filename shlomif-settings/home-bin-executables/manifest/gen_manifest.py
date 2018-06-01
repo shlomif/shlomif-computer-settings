@@ -11,6 +11,7 @@
 """
 
 import os
+import os.path
 from six import print_
 
 
@@ -18,7 +19,14 @@ def main():
     """docstring for main"""
     DIRNAME = '/home/shlomif/bin'
     for fn in sorted(os.listdir(DIRNAME)):
-        print_(fn)
+        path = DIRNAME + '/' + fn
+        if os.path.islink(path):
+            linkto = os.readlink(path)
+            print_('Link: %s -> %s' % (fn, linkto))
+        elif os.path.isdir(path):
+            print_('Dir: %s' % (fn))
+        else:
+            print_('Plain: %s' % (fn))
 
 
 main()
