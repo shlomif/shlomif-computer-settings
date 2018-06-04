@@ -1,3 +1,4 @@
+load_common chdirs
 load_common mymake
 load_common completion
 load_common prompt
@@ -27,16 +28,6 @@ prompt()
         "~=$HOME"
 }
 
-find_ids()
-{
-    (
-        cd "$c_src"
-        local cmd='ruby ../scripts/find-ids.rb *.[ch] */*.[ch] patsolve-shlomif/patsolve/*.[ch] > ids.txt'
-        echo "$cmd"
-        eval "$cmd"
-    )
-}
-
 t()
 {
     (
@@ -57,49 +48,6 @@ t()
 pt()
 {
     ( unset FCS_USE_TEST_RUN; t; )
-}
-
-make()
-{
-    if [ "$*" = "pgo" ]; then
-        `which make` VERBOSE=1 "$@"
-    else
-        `which make` "$@"
-    fi
-}
-
-_dzil_inst()
-{
-    (
-        cd "$ai_path" && \
-            dzil test --release && \
-            dzil install --install-command='bash ~/conf/build/perl/install-to-apps-perl-modules.sh'
-    )
-}
-
-c()
-{
-    cd "$this"
-}
-
-cb()
-{
-    cd "$build"
-}
-
-i()
-{
-    cd "$i"
-}
-
-cdp()
-{
-    cd "$pats"
-}
-
-pb()
-{
-    cd "$pats_b"
 }
 
 proj_name='fortune'

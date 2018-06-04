@@ -1,5 +1,6 @@
 load_common mymake
 load_common completion
+load_common chdirs
 load_common prompt
 load_common no_implicit_make
 load_common git
@@ -10,11 +11,6 @@ this="$git_base"
 c="$this"
 
 cd "$this"
-
-c()
-{
-    cd "$c"
-}
 
 export PATH="$PATH:$HOME/Download/unpack/prog/python/pypy2-v5.7.1-src/pypy/goal/"
 
@@ -29,11 +25,6 @@ t()
         git commit -m "Add more from amazon.com AWS - thanks." && \
         git push
     )
-}
-
-cb()
-{
-    cd "$b"
 }
 
 i()

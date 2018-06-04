@@ -1,3 +1,4 @@
+load_common chdirs
 load_common mymake
 load_common completion
 load_common prompt
@@ -22,16 +23,6 @@ remote_repo="$(_shlomif_github "black-hole-solitaire")"
 export FCS_USE_TEST_RUN=1
 
 cd "$this"
-
-c()
-{
-    cd "$c"
-}
-
-cb()
-{
-    cd "$b"
-}
 
 t()
 {

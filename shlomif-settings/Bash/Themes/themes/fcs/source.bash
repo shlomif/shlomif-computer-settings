@@ -3,6 +3,7 @@ load_common completion
 load_common prompt
 load_common no_implicit_make
 load_common git
+load_common chdirs
 
 remote_repo="$(_shlomif_github "fc-solve")"
 fcs="$HOME/progs/freecell"
@@ -46,7 +47,7 @@ export FCS_PGO_THEME="-l lg" FCS_TEST_CLANG_FORMAT=1
 # This causes problems with the threaded solver.
 unset MALLOC_CHECK_
 
-cd $this
+cd "$this"
 
 prompt()
 {
@@ -120,24 +121,9 @@ M()
     _Makefile_gnu__make all
 }
 
-c()
-{
-    cd "$c"
-}
-
-cb()
-{
-    cd "$b"
-}
-
 cs()
 {
     cd "$site"
-}
-
-ct()
-{
-    cd "$trunk"
 }
 
 i()

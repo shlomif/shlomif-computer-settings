@@ -1,3 +1,4 @@
+load_common chdirs
 load_common mymake
 load_common completion
 load_common prompt
@@ -11,11 +12,6 @@ c="$this"
 
 PATH="/home/shlomif/apps/fcs/bin:$PATH"
 cd "$this"
-
-c()
-{
-    cd "$c"
-}
 
 t()
 {

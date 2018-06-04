@@ -1,3 +1,4 @@
+load_common chdirs
 load_common mymake
 load_common completion
 load_common prompt
@@ -37,16 +38,6 @@ conf()
         cd "$build"
         bash ~/conf/build/inkscape-cmake.sh "$c"
     )
-}
-
-c()
-{
-    cd "$c"
-}
-
-cb()
-{
-    cd "$b"
 }
 
 b()

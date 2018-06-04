@@ -1,3 +1,4 @@
+load_common chdirs
 load_common prompt
 
 base="$HOME/progs/riddles/golf/golf.shinh.org/challenges"
@@ -15,11 +16,6 @@ prompt()
     __prompt_cmd \
         "\$base=$base" \
         "~=$HOME"
-}
-
-c()
-{
-    cd "$this"
 }
 
 proj_name='golf'
