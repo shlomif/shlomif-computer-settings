@@ -12,4 +12,4 @@
 locate --regex "^$HOME/.*/\.(git|hg)$" |
     xargs dirname |
     perl -lne 'print if -d && (-e "$_/.git" || -e "$_/.hg")' |
-    perl -lnE 'print unless ((() = glob("$_/{README,readme,Readme,ReadMe}*")) and (() = glob("$_/{Copying,Copyright,COPYING,LICENSE,License,COPYRIGHT,license}*")))'
+    perl -lnE 'print unless ((() = glob("$_/{README,readme,Readme,ReadMe}*")) and (() = glob("$_/{Copying,Copyright,COPYING,LICENCE,LICENSE,License,COPYRIGHT,license}*")))'
