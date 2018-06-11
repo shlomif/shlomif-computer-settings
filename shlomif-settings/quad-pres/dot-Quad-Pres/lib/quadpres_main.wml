@@ -33,6 +33,8 @@ pw_d.projectwonderful_background_color = "";
 <script type="text/javascript" src="http://www.projectwonderful.com/ad_display.js"></script>
 <!-- End of Project Wonderful ad code. -->
 </define-tag>
+<define-tag project_wonderful_top_proto>
+</define-tag>
 
 <qp:before_top_nav_bar>
 <if "<get-var display_ads />" "<project_wonderful_top_proto />" "" />
