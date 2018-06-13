@@ -4,6 +4,7 @@ load_common chdirs
 load_common prompt
 load_common no_implicit_make
 load_common git
+load_common pypy
 
 remote_repo="$(_shlomif_github "freecell-3fc-determine-solvability")"
 git_base="$HOME"/Download/unpack/games/freecell/freecell-3fc-determine-solvability
@@ -11,8 +12,6 @@ this="$git_base"
 c="$this"
 
 cd "$this"
-
-export PATH="$PATH:$HOME/Download/unpack/prog/python/pypy2-v5.7.1-src/pypy/goal/"
 
 t()
 {

@@ -3,6 +3,7 @@ load_common prompt
 load_common completion
 load_common no_implicit_make
 load_common git
+load_common pypy
 
 remote_repo="$(_shlomif_github "project-euler")"
 

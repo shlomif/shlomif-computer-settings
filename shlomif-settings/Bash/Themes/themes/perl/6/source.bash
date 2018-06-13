@@ -2,6 +2,7 @@ load_common mymake
 load_common completion
 load_common prompt
 load_common git
+load_common pypy
 
 # load_common gen_patch
 base="$HOME/Download/unpack/perl/p6"
