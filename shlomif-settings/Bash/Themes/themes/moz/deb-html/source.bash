@@ -60,3 +60,4 @@ y()
 }
 
 proj_name='debugger.html'
+PATH="$trunk/node_modules/.bin:$PATH:/usr/sbin"
