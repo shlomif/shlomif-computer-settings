@@ -1,16 +1,35 @@
+#!/bin/bash
+
+list_fn="$HOME/mageia-perl-magpie-modules-list.txt"
+
+if ! test -e "$list_fn"
+then
+    extract-mageia-updates-cpan-updates http://check.mageia.org/cauldron/shlomif/updates.html > "$list_fn"
+fi
+
+minicpan
+
 update_multi()
 {
     while read mod ; do
         (
             echo "$mod"
-            pco "$mod" && \
-                mu && \
+            magpie checkout "$mod" && \
+                cd "$mod" && \
+                magpie update && \
                 cd .. && \
                 rm -fr "$mod"
         ) || break
     done
-    n -m 'mu update'
+    notifier notify -m 'mu update'
 }
+
+my_update()
+{
+    update_multi < "$list_fn"
+}
+
+my_update
 
 # The Expat License
 #
