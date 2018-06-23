@@ -395,10 +395,14 @@ map <Leader>cc viW""ygv"+ygv"*y
 
 set wildignore+=*.o,*.obj,.git,.svn,.hg,.bzr,*~
 
-" RPM spec - convert Url to metacpan.org
-autocmd BufRead,BufNewFile *.spec command! MC %!perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/rpmspec-convert-to-metacpan.pl
-autocmd BufRead,BufNewFile *.spec map <Leader>pl Oexport PERL5LIB="$PWD:$PERL5LIB"<ESC>
-autocmd BufRead,BufNewFile *.spec set path+=./../SOURCES/
+function Shlomif_rpm_spec()
+    " RPM spec - convert Url to metacpan.org
+    command! MC %!perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/rpmspec-convert-to-metacpan.pl
+    map <Leader>pl Oexport PERL5LIB="$PWD:$PERL5LIB"<ESC>
+    set path+=./../SOURCES/
+endfunction
+
+autocmd BufRead,BufNewFile *.spec call Shlomif_rpm_spec()
 
 " For setting ack.vim's to ag if available - see ~/.vim/ack/README.md
 if executable('ag')
