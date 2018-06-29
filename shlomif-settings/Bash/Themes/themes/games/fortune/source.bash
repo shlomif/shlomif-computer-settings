@@ -39,7 +39,7 @@ t()
         cd "$build" && \
             cmake -DCMAKE_INSTALL_PREFIX="$HOME/apps/to-del-fortune" "$trunk" && \
             make && \
-            perl "$trunk"/run-tests.pl --src-dir="$trunk"
+            make check
         n --msg "fortune Test Finished"
     )
 }
