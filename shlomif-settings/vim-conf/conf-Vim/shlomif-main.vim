@@ -458,6 +458,9 @@ autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/dest/t2/*.html
 autocmd BufRead,BufNewFile ~/Download/unpack/games/pysolfc/*.py
     \ so ~/Download/unpack/games/pysolfc/git/PySolFC/scripts/refactor1.vim
 
+autocmd BufRead,BufNewFile ~/progs/freecell/git/*
+    \ set path+=~/progs/freecell/git/fc-solve/fc-solve/source/t/lib/
+
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_typescript_checkers = ["tslint"]
 let g:ack_apply_qmappings = 0
