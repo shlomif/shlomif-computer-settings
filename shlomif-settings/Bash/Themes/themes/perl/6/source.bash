@@ -7,8 +7,11 @@ load_common pypy
 # load_common gen_patch
 base="$HOME/Download/unpack/perl/p6"
 rb="$base/rakudobrew"
+rs="$base/rakudo-star"
+export RAKUDO_ROOT=${RAKUDO_ROOT:-$rs}
 
-export PATH="${rb}/bin:$PATH"
+export PATH="${RAKUDO_ROOT}/bin:$PATH"
+PATH="$PATH:$HOME/Download/unpack/perl/p6/rakudo-star/rakudo-star-2018.04/install/bin:$HOME/Download/unpack/perl/p6/rakudo-star/rakudo-star-2018.04/install/share/perl6/site/bin"
 
 trunk="$base/doc"
 app_dir="$trunk"
