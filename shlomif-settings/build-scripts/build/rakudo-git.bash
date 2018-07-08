@@ -32,7 +32,7 @@ _check()
     if test -n "$SKIP_CHECK" ; then
         true
     else
-        make check
+        make test
     fi
 }
 
