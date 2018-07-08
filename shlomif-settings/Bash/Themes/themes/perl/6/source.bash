@@ -29,4 +29,13 @@ prompt()
         "~=$HOME"
 }
 
+# Rakudo git master
+rgm()
+{
+    (
+        PATH="$HOME/apps/perl6-rakudo/bin/:$PATH"
+        eval "$@"
+    )
+}
+
 proj_name='Perl6'
