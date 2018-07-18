@@ -469,3 +469,6 @@ command! SwapPP s!\(\S\+\)\(++\|--\)!\2\1!
 
 let g:email = 'shlomif@cpan.org'
 let g:username = 'Shlomi Fish'
+
+let g:CommandTCursorStartMap = ['<C-a>', '<Home>']
+let g:CommandTCursorEndMap = ['<C-e>', '<End>']
