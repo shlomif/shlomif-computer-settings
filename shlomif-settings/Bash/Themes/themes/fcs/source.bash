@@ -231,6 +231,22 @@ z()
     bash ../scripts/0fcpar.bash
 }
 
+# delta states test
+delta()
+{
+    (
+        set -x
+        set -e
+        cb
+        ../source/Tatzer -l n2t
+        fmt
+        pt
+        cmake -DFCS_DISABLE_DEBONDT_DELTA_STATES=1 ../source/
+        fmt
+        pt
+    )
+}
+
 export FCS_PATH="$b" FCS_SRC_PATH="$c_src"
 PATH="$HOME/.local/bin:$PATH:$site/node_modules/.bin"
 
