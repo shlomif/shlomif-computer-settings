@@ -6,8 +6,10 @@ load_common no_implicit_make
 load_common git
 
 remote_repo="$(_shlomif_github "freecell-pro-0fc-deals")"
-git_base="$HOME"/Download/unpack/games/freecell/freecell-pro-0fc-deals
-this="$git_base"
+git_base="$HOME"/Download/unpack/games/freecell
+base="$git_base"
+this="$git_base/freecell-pro-0fc-deals"
+trunk="$this"
 c="$this"
 
 PATH="/home/shlomif/apps/fcs/bin:$PATH"
