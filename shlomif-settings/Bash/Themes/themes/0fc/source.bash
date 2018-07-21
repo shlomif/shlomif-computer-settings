@@ -12,7 +12,7 @@ this="$git_base/freecell-pro-0fc-deals"
 trunk="$this"
 c="$this"
 
-PATH="/home/shlomif/apps/fcs/bin:$PATH"
+PATH="/home/shlomif/apps/fcs/bin:/home/shlomif/progs/freecell/git/0fc-b/:$PATH"
 cd "$this"
 
 t()
