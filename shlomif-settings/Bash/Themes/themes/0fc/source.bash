@@ -34,7 +34,13 @@ ci()
 
 run()
 {
-
+    (
+        set -x
+        rm -f offload/fcs_queue*
+        perl apply-solve-more-3-log.pl ; n
+        git au
+        ci
+    )
 }
 
 proj_name='0fc'
