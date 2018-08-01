@@ -32,4 +32,9 @@ ci()
     git commit -F "$this/add-more-to-log-commit-msg.txt"
 }
 
+run()
+{
+
+}
+
 proj_name='0fc'

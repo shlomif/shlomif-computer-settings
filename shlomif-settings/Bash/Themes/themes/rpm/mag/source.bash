@@ -71,6 +71,11 @@ pco()
     coo `perlmf rpm_dash "$1"`
 }
 
+pyco()
+{
+    coo "python-$1"
+}
+
 alias imp='mgarepo import'
 alias sub='mgarepo submit'
 alias co='mgarepo co'
