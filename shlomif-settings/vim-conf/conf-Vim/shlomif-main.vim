@@ -92,6 +92,7 @@ call vam#ActivateAddons([
     \ 'github:pboettch/vim-cmake-syntax',
     \ 'github:romainl/Apprentice',
     \ 'github:shlomif/syntax-spork',
+    \ 'github:sjl/gundo.vim',
     \ 'github:terryma/vim-expand-region',
     \ 'github:thinca/vim-quickrun',
     \ 'github:vim-perl/vim-perl',
