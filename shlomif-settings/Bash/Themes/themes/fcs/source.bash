@@ -183,9 +183,25 @@ ca()
 }
 alias m='make -j100'
 alias k='pkill -USR1 fc-solve'
+
+_display_post_processor()
+{
+    tac | cat -n | perl -lapE 's/:/\t/g; ' | less
+}
+
+_display_generic()
+{
+    perl ../scripts/time-fcs.pl "$@" | _display_post_processor
+}
+
 disp()
 {
-    perl ../scripts/time-fcs.pl DUMPS-*/* | tac | cat -n | perl -lapE 's/:/\t/g; ' | less
+    _display_generic DUMPS-*/*
+}
+
+disp-all()
+{
+    _display_generic DUMPS-*/* ~/Backup/Arcs/fc-solve/old-dumps/DUMPS-*/*
 }
 
 tot2()
@@ -249,6 +265,9 @@ delta()
 
 export FCS_PATH="$b" FCS_SRC_PATH="$c_src"
 PATH="$HOME/.local/bin:$PATH:$site/node_modules/.bin"
+# Temporary measure because valgrind-3.7.0 on mageia v7 does not handle
+# the new glibc well so we need to use the one from git master HEAD.
+PATH="$HOME/apps/valgrind/bin:$PATH"
 
 proj_name='fcs'
 
