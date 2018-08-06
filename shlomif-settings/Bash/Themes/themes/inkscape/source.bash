@@ -67,7 +67,7 @@ pt()
     ( unset FCS_USE_TEST_RUN; t; )
 }
 
-f()
+f-()
 {
     (
         cd "$trunk"
