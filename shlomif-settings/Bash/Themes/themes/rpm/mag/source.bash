@@ -23,6 +23,11 @@ cb()
     cd "$base"
 }
 
+ct()
+{
+    cd "$this"
+}
+
 k()
 {
     _sys scp "$@" kenobi:
@@ -87,7 +92,7 @@ alias ur='u_rpms'
 
 e()
 {
-    gvim SPECS/*.spec
+    gvim -o svn.log SPECS/*.spec
 }
 
 li()
@@ -100,21 +105,6 @@ li()
 alias lin='li'
 alias lint='li'
 
-coo()
-{
-    local pkg="$1"
-    shift
-
-    local pkg_base="${pkg#*/}"
-
-    co "$pkg" && cd "$pkg_base"
-    # A global variable for convenience
-    p="$pkg_base"
-    # A global variable with the directory, so one can do "cd $d" or "rm -fr $d"
-    # etc.
-    d="$(pwd)"
-}
-
 log()
 {
     local cmd='svn log -v . > svn.log'
@@ -123,6 +113,22 @@ log()
 }
 
 alias L='log'
+
+coo()
+{
+    local pkg="$1"
+    shift
+
+    local pkg_base="${pkg#*/}"
+
+    co "$pkg" && cd "$pkg_base" && log
+    # A global variable for convenience
+    p="$pkg_base"
+    # A global variable with the directory, so one can do "cd $d" or "rm -fr $d"
+    # etc.
+    d="$(pwd)"
+}
+
 
 myq()
 {
