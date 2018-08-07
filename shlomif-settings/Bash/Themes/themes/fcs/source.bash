@@ -121,6 +121,18 @@ M()
     _Makefile_gnu__make all
 }
 
+# Short for "profile"
+p-()
+{
+    local out_fn="$1"
+    shift
+    _Makefile_gnu__make clean
+    _Makefile_gnu__make PROFILE=2 all
+    local exe='./freecell-solver-multi-thread-solve' prof=/tmp/profile
+    CPUPROFILE="$prof" "$exe" 1 32000 4000 $FCS_PGO_THEME
+    echo top10000 | pprof "$exe" "$prof" | tee -a "$out_fn"
+}
+
 cs()
 {
     cd "$site"
