@@ -2,6 +2,7 @@ load_common mymake
 load_common completion
 load_common prompt
 load_common git
+load_common ctags_this
 # load_common gen_patch
 
 base="$HOME/progs/perl/cpan/XML/LibXML"
@@ -50,12 +51,7 @@ __test_distribution()
     )
 }
 
-__myctags()
-{
-    ( cd "$trunk"/build/build-tags && bash build-ctags.sh )
-}
-
-cd $this
+cd "$this"
 
 __install_to_temp()
 {

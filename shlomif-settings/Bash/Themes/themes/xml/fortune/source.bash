@@ -3,6 +3,7 @@ load_common completion
 load_common prompt
 load_common hg
 load_common perl_dzil
+load_common ctags_this
 
 base="$HOME/progs/perl/cpan/XML/Grammar/Fortune"
 hg_base="$base"
@@ -11,11 +12,6 @@ module="$trunk/XML-Grammar-Fortune/module"
 this="$module"
 
 remote_repo="$(_shlomif_bitbucket "fortune-xml")"
-
-__myctags()
-{
-    ( cd "$trunk"/build/build-tags && bash build-ctags.sh )
-}
 
 prompt()
 {

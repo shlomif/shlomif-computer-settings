@@ -2,6 +2,7 @@ load_common mymake
 load_common completion
 load_common prompt
 load_common github
+load_common ctags_all_langs
 
 base="$HOME/Download/unpack/firefox"
 trunk="$base/debugger.html"
@@ -11,15 +12,7 @@ this="$module"
 git_remote_shlomif="$(_shlomif_github "debugger.html")"
 git_remote_devtools='https://github.com/devtools-html/debugger.html.git'
 
-# Make sure that gvim's filename completion ignores filenames that it should
-# not edit.
-
-__myctags()
-{
-    ( cd "$trunk"/build/build-tags && bash build-ctags.sh )
-}
-
-cd $this
+cd "$this"
 
 prompt()
 {

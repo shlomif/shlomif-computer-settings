@@ -3,6 +3,7 @@ load_common completion
 load_common prompt
 # load_common gen_patch
 load_common hg
+load_common ctags_using_script
 
 base="$HOME/progs/perl/cpan/Test/Test-Harness"
 hg_base="$base"
@@ -61,12 +62,7 @@ __test_distribution()
     )
 }
 
-__myctags()
-{
-    ( cd "$trunk"/build/build-tags && bash build-ctags.sh )
-}
-
-cd $this
+cd "$this"
 
 __install_to_temp()
 {

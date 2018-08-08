@@ -4,6 +4,7 @@ load_common prompt
 load_common hg
 # load_common gen_patch
 load_common perl_dzil
+load_common ctags_this
 
 remote_repo="$(_shlomif_bitbucket "perl-test-count")"
 
@@ -20,10 +21,6 @@ inst_modules_dir="$HOME/apps/perl/modules"
 modules_makefile="${build_scripts_dir}/Modules.mak"
 
 PATH="$inst_modules_dir/bin/:$PATH"
-__myctags()
-{
-    ( cd "$trunk"/build/build-tags && bash build-ctags.sh )
-}
 
 prompt()
 {

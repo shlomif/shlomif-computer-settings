@@ -3,6 +3,7 @@ load_common completion
 load_common prompt
 load_common hg
 load_common perl_dzil
+load_common ctags_using_script
 
 # load_common gen_patch
 base="$HOME/progs/perl/cpan/XML/Grammar/Fiction"
@@ -13,11 +14,6 @@ fict="$modules_dir/XML-Grammar-Fiction"
 this="$fict"
 
 remote_repo="$(_shlomif_bitbucket "fiction-xml")"
-
-__myctags()
-{
-    ( cd "$trunk"/build/build-tags && bash build-ctags.sh )
-}
 
 cd "$this"
 

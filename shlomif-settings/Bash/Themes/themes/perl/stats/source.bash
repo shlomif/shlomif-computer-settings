@@ -3,6 +3,8 @@ load_common completion
 load_common prompt
 load_common git
 load_common perl_dzil
+load_common ctags_this
+
 # load_common gen_patch
 
 base="$HOME/progs/perl/cpan/Statistics"
@@ -17,11 +19,6 @@ modules_makefile="${build_scripts_dir}/Modules.mak"
 remote_repo="$(_shlomif_github "perl-Statistics-Descriptive")"
 
 PATH="$inst_modules_dir/bin/:$PATH"
-
-__myctags()
-{
-    ( cd "$trunk"/build/build-tags && bash build-ctags.sh )
-}
 
 prompt()
 {

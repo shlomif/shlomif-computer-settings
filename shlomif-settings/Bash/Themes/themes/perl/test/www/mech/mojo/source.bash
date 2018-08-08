@@ -4,6 +4,7 @@ load_common prompt
 load_common hg
 # load_common gen_patch
 load_common perl_dzil
+load_common ctags_this
 
 base="$HOME/progs/perl/cpan/Test/WWW/Mechanize"
 hg_base="$base"
@@ -13,10 +14,6 @@ this="$module"
 remote_repo="$(_shlomif_bitbucket "perl-test-www-mechanize-mojo")"
 
 PATH="$inst_modules_dir/bin/:$PATH"
-__myctags()
-{
-    ( cd "$trunk"/build/build-tags && bash build-ctags.sh )
-}
 
 prompt()
 {

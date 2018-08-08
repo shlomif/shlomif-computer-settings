@@ -1,6 +1,7 @@
 load_common mymake
 load_common perl_dzil
 load_common completion
+load_common ctags_this
 
 base="$HOME/progs/perl/cpan/XML/RSS"
 svk="$base/svk/local-trunk"
@@ -22,16 +23,6 @@ __test_coverage()
     )
 }
 
-__myctags()
-{
-    (
-        cd "$this"
-        ctags -f tags --recurse --totals \
-            --exclude='**/blib/**' --exclude='**/t/lib/**' \
-            --exclude='**/.svn/**' --exclude='*~' \
-            --languages=Perl --langmap=Perl:+.t
-    )
-}
 __update_main_file_test_coverage()
 {
     (

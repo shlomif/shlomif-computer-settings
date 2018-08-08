@@ -2,6 +2,7 @@ load_common mymake
 load_common completion
 load_common prompt
 load_common github
+load_common ctags_this
 
 base="$HOME/progs/perl/cpan/IO/All"
 trunk="$base/io-all-pm"
@@ -10,11 +11,6 @@ this="$module"
 
 git_remote_shlomif="$(_shlomif_github "io-all-pm")"
 git_remote_ingy='git@github.com:ingydotnet/io-all-pm.git'
-
-__myctags()
-{
-    ( cd "$trunk"/build/build-tags && bash build-ctags.sh )
-}
 
 prompt()
 {

@@ -3,6 +3,7 @@ load_common completion
 load_common prompt
 load_common github
 load_common chdirs
+load_common ctags_all_langs
 
 base="$HOME/Download/unpack/multimedia/vlc"
 trunk="$base/vlc-git"
@@ -11,14 +12,6 @@ this="$module"
 
 git_remote_shlomif="$(_shlomif_github "vlc")"
 git_remote_upstream='git://git.videolan.org/vlc.git'
-
-# Make sure that gvim's filename completion ignores filenames that it should
-# not edit.
-
-__myctags()
-{
-    ( cd "$trunk"/build/build-tags && bash build-ctags.sh )
-}
 
 cd "$this"
 
