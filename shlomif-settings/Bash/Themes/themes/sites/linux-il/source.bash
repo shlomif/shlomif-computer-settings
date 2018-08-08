@@ -12,7 +12,7 @@ this="$src"
 
 remote_repo="$($__themes_dir/common/github-git-remote-repo.pl --user="Hamakor" --repo="linux.org.il")"
 
-cd $this
+cd "$this"
 
 prompt()
 {

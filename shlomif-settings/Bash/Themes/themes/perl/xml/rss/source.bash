@@ -1,20 +1,14 @@
 load_common mymake
+load_common perl_dzil
 load_common completion
-# load_common gen_patch
 
 base="$HOME/progs/perl/cpan/XML/RSS"
 svk="$base/svk/local-trunk"
 svn="$base/from-perl.org/trunk"
 ask="$svn"
-patches_dir="$base/patches"
 this="$svn"
 
 cd "$this"
-
-diff_remote_to_local()
-{
-    svk diff //mirror/XML-RSS/trunk //local/XML-RSS/local-trunk
-}
 
 __test_coverage()
 {

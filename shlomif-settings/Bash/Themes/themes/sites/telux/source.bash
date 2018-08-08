@@ -6,4 +6,4 @@ site="$trunk/wml"
 ann="$trunk/announcements"
 
 this="$site"
-cd $this
+cd "$this"

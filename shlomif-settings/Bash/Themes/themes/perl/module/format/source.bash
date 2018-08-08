@@ -12,7 +12,6 @@ base="$repos/Module-Format/Module-Format"
 this="$base"
 remote_repo="$(_shlomif_github "perl-Module-Format")"
 
-
 prompt()
 {
     __prompt_cmd \

@@ -15,4 +15,4 @@ setup()
     )
 }
 this="$trunk"
-cd $this
+cd "$this"

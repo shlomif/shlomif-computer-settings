@@ -1,6 +1,7 @@
 load_common mymake
 load_common completion
 load_common hg
+load_common perl_dzil
 
 # load_common gen_patch
 base="$HOME/progs/perl/cpan/App/maniac-downloader"
@@ -11,15 +12,6 @@ this="$app_dir"
 remote_repo="$(_shlomif_bitbucket "maniac-downloader")"
 
 cd "$this"
-
-_dzil_inst()
-{
-    (
-        cd "$this" && \
-            dzil test --release && \
-            dzil install --install-command='bash ~/conf/build/perl/install-to-apps-perl-modules.sh'
-    )
-}
 
 prompt()
 {

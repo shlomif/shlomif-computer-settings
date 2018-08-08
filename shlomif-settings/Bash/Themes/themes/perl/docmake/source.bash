@@ -2,6 +2,7 @@ load_common mymake
 load_common completion
 load_common prompt
 load_common hg
+load_common perl_dzil
 # load_common gen_patch
 
 base="$HOME/progs/perl/cpan/App/Docmake"
@@ -13,29 +14,6 @@ test_dir="$HOME/Docs/Svn/Docs/programming/The-Perfect-IT-Workplace/docbook"
 remote_repo="$(_shlomif_bitbucket "docmake")"
 # Make sure that gvim's filename completion ignores filenames that it should
 # not edit.
-
-__dist_name()
-{
-    (cd "$this" &&
-        cat META.yml | grep "^name:" | sed 's/^name: //'
-    )
-}
-
-__version()
-{
-    (cd "$this" &&
-        cat META.yml | grep "^version:" | sed 's/^version: //'
-    )
-}
-
-__test_distribution()
-{
-    (
-        cd "$this"
-        ./Build disttest
-        rm -fr "$(__dist_name)-$(__version)"
-    )
-}
 
 __run_integration_tests()
 {
@@ -60,14 +38,6 @@ __rerun_coverage()
         cover -delete
         HARNESS_PERL_SWITCHES=-MDevel::Cover make test
         cover
-    )
-}
-
-__run_build_tests()
-{
-    (
-        cd "$trunk/tests/build/EU-MM/" ;
-        ./test.sh ;
     )
 }
 

@@ -2,6 +2,7 @@ load_common mymake
 load_common completion
 load_common prompt
 load_common hg
+load_common perl_dzil
 
 base="$HOME/progs/perl/cpan/XML/Grammar/Fortune"
 hg_base="$base"
@@ -27,4 +28,4 @@ prompt()
 
 proj_name='xml-fortune'
 
-cd $this
+cd "$this"

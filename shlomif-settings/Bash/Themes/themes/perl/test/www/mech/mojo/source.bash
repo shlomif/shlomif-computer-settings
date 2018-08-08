@@ -3,6 +3,7 @@ load_common completion
 load_common prompt
 load_common hg
 # load_common gen_patch
+load_common perl_dzil
 
 base="$HOME/progs/perl/cpan/Test/WWW/Mechanize"
 hg_base="$base"
@@ -27,4 +28,4 @@ prompt()
 }
 
 proj_name='Test-WWW-Mech-Mojo'
-cd $this
+cd "$this"

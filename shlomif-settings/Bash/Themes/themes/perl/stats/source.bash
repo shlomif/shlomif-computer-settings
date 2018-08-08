@@ -2,6 +2,7 @@ load_common mymake
 load_common completion
 load_common prompt
 load_common git
+load_common perl_dzil
 # load_common gen_patch
 
 base="$HOME/progs/perl/cpan/Statistics"
@@ -31,4 +32,4 @@ prompt()
 }
 
 proj_name='Statistics-Descriptive'
-cd $this
+cd "$this"

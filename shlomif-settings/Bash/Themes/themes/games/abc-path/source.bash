@@ -2,6 +2,7 @@ load_common mymake
 load_common completion
 load_common prompt
 load_common git
+load_common perl_dzil
 
 # repos="https://svn.berlios.de/svnroot/repos/fc-solve/abc-path/"
 # repos_trunk="${repos}trunk/"
@@ -18,11 +19,6 @@ this="$module"
 remote_repo="$(_shlomif_github "abc-path")"
 
 cd "$this"
-
-t()
-{
-    cd "$this" && ./Build runtest
-}
 
 prompt()
 {

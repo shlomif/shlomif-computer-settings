@@ -3,6 +3,7 @@ load_common completion
 load_common prompt
 load_common hg
 # load_common gen_patch
+load_common perl_dzil
 
 remote_repo="$(_shlomif_bitbucket "perl-test-count")"
 
@@ -33,4 +34,4 @@ prompt()
 }
 
 proj_name='Test-Count'
-cd $this
+cd "$this"

@@ -2,6 +2,7 @@ load_common mymake
 load_common completion
 load_common prompt
 load_common git
+load_common perl_dzil
 
 base="$HOME/progs/perl/cpan/File/Dir-Dumper"
 hg_base="$base"
@@ -11,11 +12,6 @@ remote_repo="$(_shlomif_github "perl-File-Dir-Dumper")"
 this="$module"
 
 cd "$this"
-
-t()
-{
-    cd "$this" && ./Build runtest
-}
 
 e()
 {

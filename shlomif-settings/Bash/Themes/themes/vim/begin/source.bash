@@ -9,7 +9,7 @@ trunk="$repo"
 src="$trunk/vim-begin/tt2-source"
 this="$src"
 
-cd $this
+cd "$this"
 
 prompt()
 {

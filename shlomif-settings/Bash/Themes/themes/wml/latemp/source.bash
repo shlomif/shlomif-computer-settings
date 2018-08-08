@@ -18,4 +18,4 @@ prompt()
 }
 
 proj_name='latemp'
-cd $this
+cd "$this"

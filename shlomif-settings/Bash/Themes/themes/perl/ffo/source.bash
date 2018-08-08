@@ -1,6 +1,7 @@
 load_common mymake
 load_common completion
 load_common prompt
+load_common perl_dzil
 
 base="$HOME/progs/perl/cpan/File/Find-Object"
 ffo_trunk="$base/trunk"
@@ -30,11 +31,6 @@ setup()
     cd "$this"
 }
 cd "$this"
-
-t()
-{
-    cd "$this" && ./Build runtest
-}
 
 e()
 {

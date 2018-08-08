@@ -26,4 +26,4 @@ alias t='gen_site'
 
 proj_name='perl-il-site'
 
-cd $this
+cd "$this"

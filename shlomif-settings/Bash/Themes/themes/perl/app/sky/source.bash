@@ -2,6 +2,7 @@ load_common mymake
 load_common completion
 load_common prompt
 load_common git
+load_common perl_dzil
 
 # load_common gen_patch
 base="$HOME/progs/perl/cpan/App/Sky"
@@ -12,15 +13,6 @@ this="$app_dir"
 rw_repos_url="$(_shlomif_github "Sky-uploader")"
 
 cd "$this"
-
-_dzil_inst()
-{
-    (
-        cd "$this" && \
-            dzil test --release && \
-            dzil install --install-command='bash ~/conf/build/perl/install-to-apps-perl-modules.sh'
-    )
-}
 
 prompt()
 {

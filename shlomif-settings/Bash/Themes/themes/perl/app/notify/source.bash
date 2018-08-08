@@ -1,6 +1,7 @@
 load_common mymake
 load_common completion
 load_common hg
+load_common perl_dzil
 
 export AUTHOR_TESTING=1
 
@@ -12,15 +13,6 @@ this="$trunk"
 remote_repo="$(_shlomif_bitbucket "app-notifier")"
 
 cd "$this"
-
-_dzil_inst()
-{
-    (
-        cd "$this" && \
-            dzil test --release && \
-            dzil install --install-command='bash ~/conf/build/perl/install-to-apps-perl-modules.sh'
-    )
-}
 
 prompt()
 {
