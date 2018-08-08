@@ -1,0 +1,7 @@
+Add a .travis.yml file for Travis-CI.
+
+See:
+
+* https://en.wikipedia.org/wiki/Travis_CI
+
+* https://en.wikipedia.org/wiki/Continuous_integration .
