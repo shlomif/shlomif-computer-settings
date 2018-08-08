@@ -2,6 +2,7 @@ load_common mymake
 load_common completion
 load_common prompt
 load_common git
+load_common perl_dzil
 
 cpan_base="$HOME/progs/perl/cpan"
 git_base="$cpan_base"
