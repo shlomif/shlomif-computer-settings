@@ -15,7 +15,6 @@ core="$test_run"
 cmdline="$modules_dir/Test-Run-CmdLine"
 this="$test_run"
 harness="$base/Test-Harness-2.56"
-__perl_version="5.8.8"
 plugins="$modules_dir"
 collect_stats="$plugins/Test-Run-Plugin-CollectStats"
 build_scripts_dir="$trunk/build/test-and-install-all-modules"
@@ -25,7 +24,6 @@ modules_makefile="${build_scripts_dir}/Modules.mak"
 
 remote_repo="$(_shlomif_bitbucket "perl-test-run")"
 PATH="$inst_modules_dir/bin/:$PATH"
-# export PERL5LIB="$inst_modules_dir/lib/perl5/site_perl/$__perl_version/:$inst_modules_dir/lib/perl5/$__perl_version"
 
 __install_to_temp()
 {

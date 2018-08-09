@@ -14,7 +14,6 @@ trunk="$base/trunk"
 modules_dir="$trunk/modules"
 test_count="$modules_dir/Test-Count"
 this="$test_count"
-__perl_version="5.8.8"
 build_scripts_dir="$trunk/build/test-and-install-all-modules"
 
 inst_modules_dir="$HOME/apps/perl/modules"
