@@ -62,8 +62,6 @@ __test_distribution()
     )
 }
 
-cd "$this"
-
 __install_to_temp()
 {
     (
@@ -99,3 +97,5 @@ prompt()
 }
 
 proj_name='Test-Run'
+
+cd "$this"
