@@ -3,6 +3,7 @@ load_common completion
 # load_common gen_patch
 load_common git
 load_common perl_dzil
+load_common perl_system_tests
 
 base="$HOME/progs/perl/www/Nav-Menu"
 git_base="$base"
@@ -11,24 +12,7 @@ this="$trunk/module"
 rw_repos_url="https://svn.berlios.de/svnroot/repos/web-cpan/nav-menu"
 read_repos_url="http://svn.berlios.de/web-cpan/nav-menu"
 test_dir="$trunk/tests/integration/sites-gen"
-
 remote_repo="$(_shlomif_github "perl-HTML-Widgets-NavMenu")"
-
-__run_integration_tests()
-{
-    (
-        touch "$test_dir"/head.pl ;
-        __display_integration_tests_results ;
-    )
-}
-
-__display_integration_tests_results()
-{
-    (
-        cd "$test_dir" ;
-        make ;
-    )
-}
 
 prompt()
 {
@@ -38,4 +22,6 @@ prompt()
         "~=$HOME"
 }
 
-cd $this
+proj_name='NavMenu'
+
+cd "$this"
