@@ -43,7 +43,6 @@ __install_to_temp()
     )
 }
 
-
 #    (
 #        if [ -e Makefile.PL ] ; then
 #            perl Makefile.PL PREFIX="$inst_modules_dir"
@@ -60,15 +59,3 @@ __install_to_temp()
 #            exit 1
 #        fi
 #    )
-
-__prepare_install_all_to_temp_makefile()
-{
-    (cd "$build_scripts_dir" && perl create-makefile.pl)
-}
-
-__install_all_to_temp()
-{
-    (
-        make -f "$modules_makefile" all
-    )
-}
