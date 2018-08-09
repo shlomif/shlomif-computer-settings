@@ -1,0 +1,12 @@
+Add badges for CI services.
+
+Travis-CI or appveyor or similar. They appear in the top-level README and
+provide a link or similar.
+
+See:
+
+* https://en.wikipedia.org/wiki/Continuous_integration .
+
+"Badges? We don't need no stinkin' badges!"
+
+https://en.wikipedia.org/wiki/Stinking_badges
