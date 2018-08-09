@@ -8,21 +8,6 @@ by_day="$base/by-day"
 
 cd "$this"
 
-today_todo="$(date +by-day/%Y/%m-%d.txt)"
-
-__promote()
-{
-    (cd "$this" &&
-        {
-            if ! [ -e "$today_todo" ] ; then
-                orig="$(find "$by_day" -name '*.txt' | sort | tail -1)"
-                mkdir -p "$(dirname $today_todo)"
-                cp "$orig" "$today_todo"
-            fi
-        }
-    )
-}
-
 __edit()
 {
     (cd "$this" &&
@@ -32,6 +17,5 @@ __edit()
 
 e()
 {
-    # __promote ;
-    __edit ;
+    __edit
 }
