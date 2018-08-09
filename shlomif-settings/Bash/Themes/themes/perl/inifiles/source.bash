@@ -3,6 +3,7 @@ load_common completion
 load_common prompt
 load_common git
 load_common perl_dzil
+load_common edit_perl_lib
 
 base="$HOME/progs/perl/cpan/Config/IniFiles"
 git_base="$base"
@@ -13,11 +14,6 @@ remote_repo="$(_shlomif_github "perl-Config-IniFiles")"
 this="$module"
 
 cd "$this"
-
-e()
-{
-    (cd "$this" && gvim -p $(ack -f lib/))
-}
 
 prompt()
 {

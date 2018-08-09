@@ -2,6 +2,7 @@ load_common mymake
 load_common completion
 load_common prompt
 load_common perl_dzil
+load_common edit_perl_lib
 
 base="$HOME/progs/perl/cpan/File/Find-Object"
 ffo_trunk="$base/trunk"
@@ -32,10 +33,6 @@ setup()
 }
 cd "$this"
 
-e()
-{
-    (cd "$this" && gvim -p $(ack -f lib/))
-}
 
 prompt()
 {

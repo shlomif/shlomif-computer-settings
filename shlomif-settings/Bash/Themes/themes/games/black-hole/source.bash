@@ -3,6 +3,7 @@ load_common mymake
 load_common completion
 load_common prompt
 load_common git
+load_common edit_perl_lib
 
 base="$HOME/progs/games/black-hole-solitaire"
 hg_base="$base"
@@ -31,11 +32,6 @@ t()
     rm -fr black-hole-solitaire/B/
     perl black-hole-solitaire/CI-testing/continuous-integration-testing.pl
     )
-}
-
-e()
-{
-    (cd "$this" && gvim -p $(ack -f lib/))
 }
 
 prompt()
