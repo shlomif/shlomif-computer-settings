@@ -4,6 +4,7 @@ load_common prompt
 # load_common gen_patch
 load_common hg
 load_common ctags_using_script
+load_common perl_mb
 
 base="$HOME/progs/perl/cpan/Test/Test-Harness"
 hg_base="$base"
@@ -29,20 +30,6 @@ PATH="$inst_modules_dir/bin/:$PATH"
 # Make sure that gvim's filename completion ignores filenames that it should
 # not edit.
 
-__dist_name()
-{
-    (__check_for_distro &&
-        cat META.yml | grep "^name:" | sed 's/^name: *//'
-    )
-}
-
-__version()
-{
-    (__check_for_distro &&
-        cat META.yml | grep "^version:" | sed 's/^version: *//'
-    )
-}
-
 __check_for_distro()
 {
     if [ -e "META.yml" ] ; then
@@ -51,15 +38,6 @@ __check_for_distro()
         echo "Not a distro dir" 1>&2
         return 1
     fi
-}
-
-__test_distribution()
-{
-    __check_for_distro &&
-    (
-        make disttest
-        rm -fr "$(__dist_name)-$(__version)"
-    )
 }
 
 __install_to_temp()
