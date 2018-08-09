@@ -27,19 +27,6 @@ remote_repo="$(_shlomif_bitbucket "perl-test-run")"
 PATH="$inst_modules_dir/bin/:$PATH"
 # export PERL5LIB="$inst_modules_dir/lib/perl5/site_perl/$__perl_version/:$inst_modules_dir/lib/perl5/$__perl_version"
 
-# Make sure that gvim's filename completion ignores filenames that it should
-# not edit.
-
-__check_for_distro()
-{
-    if [ -e "META.yml" ] ; then
-        return 0
-    else
-        echo "Not a distro dir" 1>&2
-        return 1
-    fi
-}
-
 __install_to_temp()
 {
     (
