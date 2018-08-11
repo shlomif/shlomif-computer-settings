@@ -34,18 +34,16 @@ switch_to_quadpres()
 {
     local which mypath
     which="$1"
-    mypath="$HOME/apps/test/quadpres/bin"
+    export mypath="$HOME/apps/test/quadpres/bin"
     if [ "$which" == "local" ] ; then
-        if echo "$PATH" | grep -F "$mypath" ; then
-            true # Do Nothing
-        else
-            PATH="$mypath:$PATH"
-        fi
+        PATH="$mypath:$PATH"
+        dedup_pathvar PATH
     elif [ "$which" == "global" ] ; then
-        PATH="$(echo "$PATH" | sed "s!$mypath:?!!")"
+        PATH="$(perl -E 'print $ENV{PATH} =~ s%\Q$ENV{mypath}\E:%%r')"
     else
         echo "Unknown QP Target $which" 1>&2
     fi
+    unset mypath
 }
 
 svn_tag()

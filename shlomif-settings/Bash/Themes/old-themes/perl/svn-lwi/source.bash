@@ -25,8 +25,8 @@ __test_distribution()
     (
         cd "$this"
         make disttest
-        rm -fr "$(cat Makefile | grep "^DISTVNAME = " | sed 's/^DISTVNAME = //')"
+        rm -fr "$(cat Makefile | perl -lpE 'say if s/\ADISTVNAME = //')"
     )
 }
 
-cd $this
+cd "$this"

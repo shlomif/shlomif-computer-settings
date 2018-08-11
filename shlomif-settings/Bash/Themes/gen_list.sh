@@ -1,12 +1,17 @@
 #!/bin/bash
 
 (
+
+_myfind()
+{
+    local mydir='themes'
+    find "$mydir" -type d -exec test -e {}/source.bash \; -print |
+            perl -lpE "s!^\\Q$mydir\\E/!!"
+}
+
     (
-        (find themes -type d -exec test -e {}/source.bash \; -print |
-            sed 's!themes/!!' ) ;
-        (cd ~/conf/Bash/private-themes && find themes -type d \
-            -exec test -e {}/source.bash \; -print |
-            sed 's!themes/!!' )
+        _myfind
+        (cd ~/conf/Bash/private-themes && _myfind)
     ) \
     | sort
 ) > list-of-themes.txt
