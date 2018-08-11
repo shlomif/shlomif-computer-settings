@@ -1,0 +1,9 @@
+Instruct the CI config file to inst missing deps.
+
+Install missing dependencies that are required by the build or tests.
+
+See:
+
+* https://en.wikipedia.org/wiki/Travis_CI
+
+* https://en.wikipedia.org/wiki/Continuous_integration .
