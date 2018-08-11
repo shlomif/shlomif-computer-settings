@@ -8,14 +8,14 @@
 __dist_name()
 {
     (cd "$this" &&
-        cat META.yml | grep "^name:" | sed 's/^name: //'
+        cat META.yml | perl -lnE 'say if s/^name: //'
     )
 }
 
 __version()
 {
     (cd "$this" &&
-        cat META.yml | grep "^version:" | sed 's/^version: //'
+        cat META.yml | perl -lnE 'say if s/^version: //'
     )
 }
 

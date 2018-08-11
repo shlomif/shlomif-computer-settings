@@ -3,7 +3,6 @@ load_common completion
 load_common hg
 load_common perl_dzil
 
-# load_common gen_patch
 base="$HOME/progs/perl/cpan/App/maniac-downloader"
 trunk="$base"
 app_dir="$trunk/App-ManiacDownloader"

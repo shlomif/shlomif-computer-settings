@@ -5,7 +5,6 @@ load_common hg
 load_common perl_dzil
 load_common ctags_using_script
 
-# load_common gen_patch
 base="$HOME/progs/perl/cpan/XML/Grammar/Fiction"
 hg_base="$base"
 trunk="$base/trunk"

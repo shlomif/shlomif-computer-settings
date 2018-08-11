@@ -2,7 +2,6 @@ load_common mymake
 load_common completion
 load_common prompt
 load_common hg
-# load_common gen_patch
 load_common perl_dzil
 load_common ctags_this
 

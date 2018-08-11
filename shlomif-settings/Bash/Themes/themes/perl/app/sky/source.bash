@@ -4,7 +4,6 @@ load_common prompt
 load_common git
 load_common perl_dzil
 
-# load_common gen_patch
 base="$HOME/progs/perl/cpan/App/Sky"
 trunk="$base/git"
 app_dir="$trunk/Sky-uploader/App-Sky"

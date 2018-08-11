@@ -1,5 +1,4 @@
 load_common mymake
-# load_common gen_patch
 
 base="/home/shlomi/progs/perl/Subversion/light-web-interface"
 trunk="$base/trunk"

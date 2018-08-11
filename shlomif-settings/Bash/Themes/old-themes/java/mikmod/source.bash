@@ -1,5 +1,4 @@
 load_common mymake
-# load_common gen_patch
 
 base="$HOME/progs/java/JMikMod/source/trunk/java"
 trunk="$base"
@@ -22,4 +21,4 @@ __gvim_completion()
 
 complete -o filenames -F __gvim_completion gvim
 
-cd $this
+cd "$this"

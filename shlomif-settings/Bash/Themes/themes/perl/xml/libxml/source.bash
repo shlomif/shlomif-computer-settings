@@ -4,7 +4,6 @@ load_common prompt
 load_common git
 load_common ctags_this
 load_common funcs_for_perl_dists
-# load_common gen_patch
 
 base="$HOME/progs/perl/cpan/XML/LibXML"
 git_base="$base/git"

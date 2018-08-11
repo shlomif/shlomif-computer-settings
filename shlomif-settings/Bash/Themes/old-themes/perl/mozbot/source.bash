@@ -2,7 +2,6 @@ load_common mymake
 load_common completion
 load_common prompt
 load_common sys
-# load_common gen_patch
 
 base="$HOME/progs/perl/net/irc/bots/mozbot"
 hg="$base/mozbot"

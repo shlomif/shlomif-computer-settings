@@ -1,6 +1,5 @@
 load_common mymake
 load_common completion
-# load_common gen_patch
 load_common git
 load_common perl_dzil
 load_common perl_system_tests

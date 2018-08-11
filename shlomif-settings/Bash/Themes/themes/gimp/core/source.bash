@@ -1,5 +1,4 @@
 load_common mymake
-load_common gen_patch
 load_common git
 load_common prompt
 

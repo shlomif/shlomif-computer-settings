@@ -3,7 +3,6 @@ load_common completion
 load_common prompt
 load_common git
 
-# load_common gen_patch
 base="$HOME/progs/perl/cpan/App/Catable"
 git_base="$base"
 trunk="$base/catable"
@@ -30,4 +29,4 @@ prompt()
 }
 
 proj_name='catable'
-cd $this
+cd "$this"

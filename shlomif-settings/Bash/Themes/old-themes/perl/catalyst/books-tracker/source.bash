@@ -1,6 +1,5 @@
 load_common mymake
 load_common completion
-# load_common gen_patch
 
 base="$HOME/progs/perl/www/Catalyst/WWW-Books-Tracker"
 trunk="$base/trunk"

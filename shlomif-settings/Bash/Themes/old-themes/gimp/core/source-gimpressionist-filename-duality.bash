@@ -1,5 +1,4 @@
 load_common mymake
-load_common gen_patch
 
 this="$HOME/Download/unpack/graphics/Gimp/gimp-cvs"
 # trunk="$this/gimp"
@@ -27,4 +26,4 @@ gimp()
     eval "$cmd"
 }
 
-cd $this
+cd "$this"

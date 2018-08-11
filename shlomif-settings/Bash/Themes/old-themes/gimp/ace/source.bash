@@ -43,4 +43,4 @@ __Vipe_upload_patch()
     rsync --rsh=ssh -v --progress "$(__get_patch_path $last_rev)" "shlomif@vipe:public_html/gimp/gimpressionist/"
 }
 
-cd $this
+cd "$this"

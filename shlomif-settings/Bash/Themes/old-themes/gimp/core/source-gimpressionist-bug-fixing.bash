@@ -27,4 +27,4 @@ gimp()
     eval "$cmd"
 }
 
-cd $this
+cd "$this"

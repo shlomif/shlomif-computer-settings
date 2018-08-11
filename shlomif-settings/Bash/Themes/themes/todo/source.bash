@@ -1,5 +1,4 @@
 load_common completion
-# load_common gen_patch
 
 notes="$HOME/Docs/Notes"
 base="$notes/To_Do"

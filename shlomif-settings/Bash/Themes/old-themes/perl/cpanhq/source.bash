@@ -1,7 +1,7 @@
 load_common mymake
 load_common completion
 load_common prompt
-# load_common gen_patch
+
 base="$HOME/progs/perl/cpan/CPANHQ/"
 trunk="$base/cpanhq"
 this="$trunk"

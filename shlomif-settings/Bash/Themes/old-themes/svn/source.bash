@@ -1,5 +1,4 @@
 load_common mymake
-load_common gen_patch
 
 this="/home/shlomi/progs/svn/SVN-From-Repos/vanilla/trunk"
 tests_dir="$this/subversion/tests/clients/cmdline/"

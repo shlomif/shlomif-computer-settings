@@ -3,7 +3,6 @@ load_common completion
 load_common prompt
 load_common git
 
-# load_common gen_patch
 base="$HOME/progs/perl/cpan/Rx.pl"
 trunk="$base/Rx.pl"
 app_dir="$trunk"

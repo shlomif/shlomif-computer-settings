@@ -1,5 +1,4 @@
 load_common completion
-# load_common gen_patch
 
 base="$HOME/progs/perl/www/Catalyst/tutorial-examples"
 tutorial_app="$base/MyApp"

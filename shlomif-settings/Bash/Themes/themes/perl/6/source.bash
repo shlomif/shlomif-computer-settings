@@ -4,7 +4,6 @@ load_common prompt
 load_common git
 load_common pypy
 
-# load_common gen_patch
 base="$HOME/Download/unpack/perl/p6"
 rb="$base/rakudobrew"
 rs="$base/rakudo-star"

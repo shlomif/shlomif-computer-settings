@@ -5,8 +5,6 @@ load_common git
 load_common perl_dzil
 load_common ctags_this
 
-# load_common gen_patch
-
 base="$HOME/progs/perl/cpan/Statistics"
 git_base="$base"
 trunk="$base/trunk"
