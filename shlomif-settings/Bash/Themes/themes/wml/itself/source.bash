@@ -2,7 +2,9 @@ load_common mymake
 load_common completion
 load_common prompt
 load_common git
+load_common chdirs
 
+export MAKEFLAGS='-j100'
 base="$HOME/progs/wml/wml-itself"
 core="$base/core"
 git_base="$core"
@@ -29,8 +31,7 @@ prompt()
 e()
 {
     (cd "$this" ;
-        gvim -p CMakeLists.txt ../p2_mp4h/CMakeLists.txt \
-        Makefile.in configure.in
+        gvim -p ../src/wml_frontend/wml.src
     )
 }
 
