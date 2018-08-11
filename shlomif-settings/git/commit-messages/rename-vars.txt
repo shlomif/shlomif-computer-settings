@@ -1,0 +1,1 @@
+Rename a variable to make it more descriptive.
