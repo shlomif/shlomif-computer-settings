@@ -275,6 +275,20 @@ delta()
     )
 }
 
+# test site
+ts()
+{
+    (
+        cs
+        make test
+    )
+}
+
+cv()
+{
+    cd "$verify"
+}
+
 export FCS_PATH="$b" FCS_SRC_PATH="$c_src"
 PATH="$HOME/.local/bin:$PATH:$site/node_modules/.bin"
 # Temporary measure because valgrind-3.7.0 on mageia v7 does not handle
