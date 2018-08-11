@@ -3,21 +3,8 @@
 # Copyright (C) 2018 shlomif <shlomif@cpan.org>
 #
 # Distributed under terms of the MIT license.
-#
 
-__dist_name()
-{
-    (cd "$this" &&
-        cat META.yml | perl -lnE 'say if s/^name: //'
-    )
-}
-
-__version()
-{
-    (cd "$this" &&
-        cat META.yml | perl -lnE 'say if s/^version: //'
-    )
-}
+load_common perl_meta_yml
 
 __test_distribution()
 {

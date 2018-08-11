@@ -3,19 +3,7 @@
 #
 # Distributed under terms of the MIT license.
 
-__dist_name()
-{
-    (__check_for_distro &&
-        cat META.yml | grep "^name:" | sed 's/^name: *//'
-    )
-}
-
-__version()
-{
-    (__check_for_distro &&
-        cat META.yml | grep "^version:" | sed 's/^version: *//'
-    )
-}
+load_common perl_meta_yml
 
 __check_for_distro()
 {
