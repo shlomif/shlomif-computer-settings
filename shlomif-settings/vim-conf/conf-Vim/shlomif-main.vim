@@ -464,6 +464,12 @@ autocmd BufRead,BufNewFile ~/Download/unpack/games/pysolfc/*.py
 autocmd BufRead,BufNewFile ~/progs/freecell/git/*
     \ set path+=~/progs/freecell/git/fc-solve/fc-solve/source/t/lib/
 
+function FCS_site_Customisation()
+    set path+=~/progs/freecell/git/fc-solve/fc-solve/site/wml/lib/
+endfunction
+
+autocmd BufRead,BufNewFile ~/progs/freecell/git/fc-solve/fc-solve/site/* call FCS_site_Customisation()
+
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_typescript_checkers = ["tslint"]
 let g:ack_apply_qmappings = 0
