@@ -30,6 +30,15 @@ t()
         )
 }
 
+b()
+{
+    mkdir -p "$b"
+    cd "$b"
+    cmake -DCMAKE_INSTALL_PREFIX="$HOME/apps/test/wml" "$this" && \
+        make -j4 && \
+        make install
+}
+
 switch_to_quadpres()
 {
     local which mypath
