@@ -1,0 +1,7 @@
+Sort the regex modifiers flags alphabetically.
+
+To make search easier.
+
+See:
+
+* http://perl-begin.org/tutorials/bad-elements/ .

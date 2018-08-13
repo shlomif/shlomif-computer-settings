@@ -1,1 +1,1 @@
-Rename a variable to make it more descriptive.
+Rename variable/s to make them more descriptive.
