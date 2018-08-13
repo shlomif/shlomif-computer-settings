@@ -470,6 +470,8 @@ endfunction
 
 autocmd BufRead,BufNewFile ~/progs/freecell/git/fc-solve/fc-solve/site/* call FCS_site_Customisation()
 
+autocmd BufRead,BufNewFile ~/progs/wml/wml-itself/core/*
+    \ set path+=~/progs/wml/wml-itself/core/trunk/src/wml_include/
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_typescript_checkers = ["tslint"]
 let g:ack_apply_qmappings = 0
