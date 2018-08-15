@@ -15,6 +15,17 @@ c="$this"
 PATH="/home/shlomif/apps/fcs/bin:/home/shlomif/progs/freecell/git/0fc-b/:$PATH"
 cd "$this"
 
+m()
+{
+    make "$@"
+}
+
+unalias p
+p()
+{
+    git push "$@"
+}
+
 t()
 {
     make total

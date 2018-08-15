@@ -65,6 +65,11 @@ genf()
     (cd $trunk && ./bin/gen-fortunes.pl)
 }
 
+did()
+{
+    diff -u -r  ../dest/ dest | gvim -
+}
+
 fastdiff()
 {
     local since="$1"
