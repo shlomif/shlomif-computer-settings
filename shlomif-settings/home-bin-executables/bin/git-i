@@ -6,11 +6,25 @@ use warnings;
 use 5.016;
 
 say `git status` =~ s#\A(On branch \S+).*#⇒ $1#mrs;
-system('git', 'status', '-s');
+system( 'git', 'status', '-s' );
 say "⇒ Remotes:";
-system('git', 'remote', '-v');
+system( 'git', 'remote', '-v' );
 
 __END__
+
+=head1 NAME
+
+git-i - displays a summary of information about the git repository.
+
+=head1 SYNOPSIS
+
+    shlomif@telaviv1:~/conf/trunk$ git i
+    ⇒ On branch master
+     M shlomif-settings/home-bin-executables/bin/git-i
+    ⇒ Remotes:
+    origin  git@github.com:shlomif/shlomif-computer-settings.git (fetch)
+    origin  git@github.com:shlomif/shlomif-computer-settings.git (push)
+    shlomif@telaviv1:~/conf/trunk$
 
 =head1 COPYRIGHT & LICENSE
 
