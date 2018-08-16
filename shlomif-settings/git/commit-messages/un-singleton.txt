@@ -1,0 +1,14 @@
+Refactoring / code cleanup.
+
+Convert away from global state and the singleton anti-pattern to lexical
+variables.
+
+See:
+
+* https://en.wikipedia.org/wiki/Code_refactoring
+
+* https://www.refactoring.com/
+
+* https://www.joelonsoftware.com/2002/01/23/rub-a-dub-dub/
+
+Some small optimisations may have slipped in as well.
