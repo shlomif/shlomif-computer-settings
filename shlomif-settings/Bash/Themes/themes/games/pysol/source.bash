@@ -7,6 +7,7 @@ base="$HOME/Download/unpack/games/pysolfc"
 git_dir="$base/git"
 trunk="$git_dir/PySolFC"
 server="$git_dir/pysol-sound-server"
+site="$git_dir/pysolfc-web-site"
 proj="$trunk"
 a="$proj"
 
@@ -65,4 +66,8 @@ mydiff()
     diff -u "$this/pysollib/tk/$fn"  "$this/pysollib/tile/$fn"
 }
 
+cs()
+{
+    cd "$site"
+}
 proj_name='PySolFC'

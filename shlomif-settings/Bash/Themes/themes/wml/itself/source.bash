@@ -53,6 +53,8 @@ b()
         make install
 }
 
+alias p='git push'
+
 proj_name='wml'
 
 PATH="$HOME/apps/test/wml/bin/:$PATH"

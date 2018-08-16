@@ -8,3 +8,13 @@ trunk="$base/trunk"
 comparison="$trunk/src/comparison"
 
 cd "$trunk"
+
+m()
+{
+    make "$@"
+}
+
+t()
+{
+    make test
+}
