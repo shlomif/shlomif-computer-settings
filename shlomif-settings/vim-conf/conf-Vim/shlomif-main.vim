@@ -335,12 +335,14 @@ function! UnderscorePrefix(start_line, end_line)
 endfunction
 
 command! -range UnderscorePrefix call UnderscorePrefix(<line1>,<line2>)
+
 function! SelfPrefix(start_line, end_line)
     let cmd = a:start_line . ',' . a:end_line . 's%[@\$]\(' . @/ . '\)%{$self->\1}%g'
     exe cmd
 endfunction
 
 command! -range SelfPrefix call SelfPrefix(<line1>,<line2>)
+
 " Remmed out because nuvola is a confusing color-scheme.
 " source ~/.vim/colors/nuvola_shlomif.vim
 
