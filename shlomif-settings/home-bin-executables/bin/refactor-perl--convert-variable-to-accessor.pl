@@ -39,6 +39,17 @@ $code =~ s&^(?P<start>\ *)\Q$type\E\$?\Q$var\E\ =\ (?P<rval>[^;\n]+);$
    $+{start} . "\$" . $obj_name . "->$var([" . $+{rval} ."]);"
 &egmsx;
 
+my $slot = "\$" . $obj_name . "->$var";
+$code =~ s&\Q$type\E\$\Q$var\E\b
+   &
+   ($type eq '@') ? "\@{$slot}" : $slot
+&egmsx;
+
+$code =~ s& \\ \Q$type\E \Q$var\E (?=[\ \n\t,;])
+   &
+   $slot
+&egmsx;
+
 print $code;
 
 __END__
