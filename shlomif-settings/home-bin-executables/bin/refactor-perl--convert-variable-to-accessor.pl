@@ -4,6 +4,26 @@ use strict;
 use warnings;
 use autodie;
 
+=head1 NAME
+
+refactor-perl--convert-variable-to-accessor.pl
+
+=head1 DESCRIPTION
+
+I am seeking a tool for converting a Perl 5 lexical var inside the class's
+main method and passed by the arg list to helper methods, into an object wide
+accessor ( using L<Class::XSAccessor> or L<Moo> or similar.)
+
+An example for this kind of refactoring change is L<this commit,https://github.com/thewml/website-meta-language/commit/67f289b146a0aefb1c0a245adf01aa6a87f3fd8f>
+
+I don't expect the tool to be flawless.
+
+=head1 SYNOPSIS
+
+    < MyModule.pm perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/refactor-perl--convert-variable-to-accessor.pl --var='_my_array' --type='@' > MyModule.pm.new
+
+=cut
+
 package Refactor::Var2Slot;
 
 sub new
