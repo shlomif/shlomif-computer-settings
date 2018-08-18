@@ -6,8 +6,6 @@ use autodie;
 
 package Refactor::Var2Slot;
 
-use parent qw(ParentClass);
-
 sub new
 {
     my $class = shift;
