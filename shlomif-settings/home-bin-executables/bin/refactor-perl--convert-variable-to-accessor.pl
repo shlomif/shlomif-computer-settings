@@ -4,6 +4,75 @@ use strict;
 use warnings;
 use autodie;
 
+package Refactor::Var2Slot;
+
+use parent qw(ParentClass);
+
+sub new
+{
+    my $class = shift;
+
+    my $self = bless {}, $class;
+
+    $self->_init(@_);
+
+    return $self;
+}
+
+sub _init
+{
+    my ( $self, $args ) = @_;
+
+    return;
+}
+
+sub transform
+{
+    my ( $self, $args ) = @_;
+
+    my $type     = $args->{type};
+    my $var      = $args->{var};
+    my $obj_name = $args->{obj_name} // 'self';
+
+    my $code = ${ $args->{code} };
+
+    if ( $type ne '@' )
+    {
+        die "Unknown type '$type'!";
+    }
+    my $code = io('-')->all;
+
+    $code =~
+s#^(?P<start> *my \([^\n\)]*) \$\Q$var\E(?=[,\) ])(?P<end>[^\n\)]*\) = \@_; *)$# $+{start} . $+{end}
+#egms;
+
+    $code =~ s&(?P<start>\$\Q$obj_name\E->[a-zA-Z0-9_]+\([^\n\)]*?)
+    \\?(?:\Q$type\E|\$)\Q$var\E(?=[,\) ])(?P<end>[^\n\)]*?\))
+   &
+   $+{start} . $+{end}
+&egmsx;
+
+    $code =~ s&^(?P<start>\ *)\Q$type\E\$?\Q$var\E\ =\ (?P<rval>[^;\n]+);$
+   &
+   $+{start} . "\$" . $obj_name . "->$var([" . $+{rval} ."]);"
+&egmsx;
+
+    my $slot = "\$" . $obj_name . "->$var";
+    $code =~ s&\Q$type\E\$\Q$var\E\b
+   &
+   ($type eq '@') ? "\@{$slot}" : $slot
+&egmsx;
+
+    $code =~ s& \\ \Q$type\E \Q$var\E (?=[\ \n\t,;])
+   &
+   $slot
+&egmsx;
+
+    return +{ code => ( \$code ), };
+}
+
+package main;
+
 my $obj_name = 'self';
 
 my $var;
@@ -18,39 +87,17 @@ GetOptions(
     'type=s'     => \$type,
 ) or die "$!";
 
-if ( $type ne '@' )
-{
-    die "Unknown type '$type'!";
-}
 my $code = io('-')->all;
 
-$code =~
-s#^(?P<start> *my \([^\n\)]*) \$\Q$var\E(?=[,\) ])(?P<end>[^\n\)]*\) = \@_; *)$# $+{start} . $+{end}
-#egms;
-
-$code =~ s&(?P<start>\$\Q$obj_name\E->[a-zA-Z0-9_]+\([^\n\)]*?)
-    \\?(?:\Q$type\E|\$)\Q$var\E(?=[,\) ])(?P<end>[^\n\)]*?\))
-   &
-   $+{start} . $+{end}
-&egmsx;
-
-$code =~ s&^(?P<start>\ *)\Q$type\E\$?\Q$var\E\ =\ (?P<rval>[^;\n]+);$
-   &
-   $+{start} . "\$" . $obj_name . "->$var([" . $+{rval} ."]);"
-&egmsx;
-
-my $slot = "\$" . $obj_name . "->$var";
-$code =~ s&\Q$type\E\$\Q$var\E\b
-   &
-   ($type eq '@') ? "\@{$slot}" : $slot
-&egmsx;
-
-$code =~ s& \\ \Q$type\E \Q$var\E (?=[\ \n\t,;])
-   &
-   $slot
-&egmsx;
-
-print $code;
+print ${ Refactor::Var2Slot->new->transform(
+        {
+            obj_name => $obj_name,
+            var      => $var,
+            type     => $type,
+            code     => \$code
+        }
+    )->{code}
+};
 
 __END__
 
