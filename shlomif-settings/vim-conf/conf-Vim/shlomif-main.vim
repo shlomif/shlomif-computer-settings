@@ -493,6 +493,8 @@ let g:ack_apply_qmappings = 0
 
 command! SwapPP s!\(\S\+\)\(++\|--\)!\2\1!
 
+command! ScalarRefactorVar2Slot normal n | %!perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/refactor-perl--convert-variable-to-accessor.pl --var='<cword>' --type='$'
+
 let g:email = 'shlomif@cpan.org'
 let g:username = 'Shlomi Fish'
 
