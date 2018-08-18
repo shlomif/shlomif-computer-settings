@@ -38,7 +38,6 @@ sub transform
     {
         die "Unknown type '$type'!";
     }
-    my $code = io('-')->all;
 
     $code =~
 s#^(?P<start> *my \([^\n\)]*) \$\Q$var\E(?=[,\) ])(?P<end>[^\n\)]*\) = \@_; *)$# $+{start} . $+{end}
