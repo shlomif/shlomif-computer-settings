@@ -34,7 +34,7 @@ sub transform
 
     my $code = ${ $args->{code} };
 
-    if ( $type ne '@' )
+    if ( not( $type eq '@' or $type eq '$' ) )
     {
         die "Unknown type '$type'!";
     }
@@ -49,20 +49,24 @@ s#^(?P<start> *my \([^\n\)]*) \$\Q$var\E(?=[,\) ])(?P<end>[^\n\)]*\) = \@_; *)$#
    $+{start} . $+{end}
 &egmsx;
 
+    my $slot = "\$" . $obj_name . "->$var";
+    my @brackets = +( $type eq '@' ) ? (qw/[ ]/) : ( '', '' );
     $code =~ s&^(?P<start>\ *)\Q$type\E\$?\Q$var\E\ =\ (?P<rval>[^;\n]+);$
    &
-   $+{start} . "\$" . $obj_name . "->$var([" . $+{rval} ."]);"
+   $+{start} . "${slot}($brackets[0]" . $+{rval} ."$brackets[-1]);"
 &egmsx;
 
-    my $slot = "\$" . $obj_name . "->$var";
-    $code =~ s&\Q$type\E\$\Q$var\E\b
-   &
-   ($type eq '@') ? "\@{$slot}" : $slot
-&egmsx;
-
+    my $sigil = +( $type eq '@' ) ? qr/\$/ : qr/\$?/;
     $code =~ s& \\ \Q$type\E \Q$var\E (?=[\ \n\t,;])
    &
-   $slot
+   ($type eq '@')
+   ?  $slot
+   :  "sub { my ( undef, \$v ) = \@_; $slot(\$v); }"
+&egmsx;
+
+    $code =~ s&\Q$type\E$sigil\Q$var\E\b
+   &
+   ($type eq '@') ? "\@{$slot}" : $slot
 &egmsx;
 
     return +{ code => ( \$code ), };
