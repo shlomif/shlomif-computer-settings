@@ -109,6 +109,5 @@ efact()
 }
 
 export PATH="$HOME/apps/quadpres/bin:$HOME/Download/unpack/xml/ebookmaker:$trunk/node_modules/.bin:$PATH:/usr/sbin"
-export HARNESS_OPTIONS="j4:c" TEST_JOBS=4
 
 proj_name='homepage'
