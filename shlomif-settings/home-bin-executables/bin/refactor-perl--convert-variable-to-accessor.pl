@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 use strict;
 use warnings;
@@ -20,7 +20,9 @@ I don't expect the tool to be flawless.
 
 =head1 SYNOPSIS
 
-    < MyModule.pm perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/refactor-perl--convert-variable-to-accessor.pl --var='_my_array' --type='@' > MyModule.pm.new
+    < MyModule.pm refactor-perl--convert-variable-to-accessor --var='_my_array' --type='@' > MyModule.pm.new
+
+    < MyModule.pm refactor-perl--convert-variable-to-accessor --var='a_scalar' --type='$' --obj-name='obj' > MyModule.pm.new
 
 =cut
 
