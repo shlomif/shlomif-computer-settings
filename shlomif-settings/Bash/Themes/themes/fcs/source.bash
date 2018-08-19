@@ -4,6 +4,7 @@ load_common prompt
 load_common no_implicit_make
 load_common git
 load_common chdirs
+load_common partests
 
 remote_repo="$(_shlomif_github "fc-solve")"
 fcs="$HOME/progs/freecell"
