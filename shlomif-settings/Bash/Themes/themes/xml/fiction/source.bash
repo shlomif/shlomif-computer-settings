@@ -1,6 +1,4 @@
-load_common mymake
-load_common completion
-load_common prompt
+load_common meta_inc1
 load_common hg
 load_common perl_dzil
 load_common ctags_using_script

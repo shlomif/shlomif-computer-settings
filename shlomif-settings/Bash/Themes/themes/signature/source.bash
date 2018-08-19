@@ -1,7 +1,4 @@
-load_common mymake
-load_common prompt
-load_common completion
-load_common no_implicit_make
+load_common meta_inc1
 load_common git
 
 remote_repo="$(_shlomif_github "shlomif-email-signature")"

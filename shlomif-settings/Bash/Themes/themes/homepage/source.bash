@@ -1,8 +1,5 @@
-load_common completion
+load_common meta_inc1
 load_common git
-load_common mymake
-load_common no_implicit_make
-load_common prompt
 load_common partests
 
 base="$HOME/Docs/homepage"

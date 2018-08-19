@@ -1,7 +1,5 @@
+load_common meta_inc1
 load_common chdirs
-load_common mymake
-load_common completion
-load_common prompt
 load_common git
 load_common edit_perl_lib
 

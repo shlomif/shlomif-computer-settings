@@ -1,6 +1,4 @@
-load_common mymake
-load_common completion
-load_common prompt
+load_common meta_inc1
 load_common git
 load_common ctags_this
 load_common funcs_for_perl_dists

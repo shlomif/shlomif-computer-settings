@@ -1,8 +1,5 @@
 load_common git
-load_common mymake
-load_common prompt
-load_common completion
-load_common no_implicit_make
+load_common meta_inc1
 
 base="$HOME/Docs/programming/Perl/web-sites/perl-begin"
 trunk="$base/trunk"

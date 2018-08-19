@@ -1,9 +1,6 @@
 load_common git
 load_common chdirs
-load_common mymake
-load_common prompt
-load_common completion
-load_common no_implicit_make
+load_common meta_inc1
 
 base=~/progs/JS/web-developer-tools
 trunk="$base/open-web-developer-tools"

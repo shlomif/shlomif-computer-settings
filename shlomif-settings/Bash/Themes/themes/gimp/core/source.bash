@@ -1,6 +1,5 @@
-load_common mymake
+load_common meta_inc1
 load_common git
-load_common prompt
 
 base="$HOME/Download/unpack/graphics/gimp"
 git_base="$base/git"

@@ -1,6 +1,5 @@
-load_common completion
+load_common meta_inc1
 load_common hg
-load_common prompt
 
 base="$HOME/progs/perl/www/Web-Cpan-Site/"
 hg_base="$base"
