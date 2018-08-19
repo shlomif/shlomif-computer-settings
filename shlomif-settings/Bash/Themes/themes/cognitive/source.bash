@@ -1,5 +1,4 @@
-load_common mymake
-load_common prompt
+load_common meta_inc1
 
 base="$HOME/Docs/Personal/Cognitive"
 this="$base"
