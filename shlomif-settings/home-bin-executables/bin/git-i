@@ -1,5 +1,13 @@
 #!/usr/bin/env perl
 
+=head1 NOTE!!!
+
+See: L<https://metacpan.org/pod/distribution/App-Git-Info/bin/git-info>
+
+and L<https://github.com/shlomif/perl-App-Git-Info> instead.
+
+=cut
+
 use strict;
 use warnings;
 

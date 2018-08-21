@@ -13,6 +13,7 @@
     di = diff
     dim = diff master
     dims = diff master --stat
+    i = info info
     ls = ls-files
     st = status
 
