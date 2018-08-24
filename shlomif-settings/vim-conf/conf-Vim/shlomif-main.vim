@@ -94,6 +94,7 @@ call vam#ActivateAddons([
     \ 'github:plasticboy/vim-markdown',
     \ 'github:romainl/Apprentice',
     \ 'github:shlomif/syntax-spork',
+    \ 'github:shlomif/vim-gitignore',
     \ 'github:sjl/gundo.vim',
     \ 'github:terryma/vim-expand-region',
     \ 'github:thinca/vim-quickrun',
@@ -483,6 +484,8 @@ function FCS_site_Customisation()
 endfunction
 
 autocmd BufRead,BufNewFile ~/progs/freecell/git/fc-solve/fc-solve/site/* call FCS_site_Customisation()
+
+autocmd BufRead,BufNewFile */.gitignore source ~/conf/Vim/gitignore-completion.vim
 
 autocmd BufRead,BufNewFile ~/progs/wml/wml-itself/core/*
     \ set path+=~/progs/wml/wml-itself/core/trunk/src/wml_include/ |
