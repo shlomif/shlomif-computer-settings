@@ -8,12 +8,6 @@ fun! CompleteGitIgnoreFilenames(findstart, base)
         endif
         return start
     else
-        " return globpath('^' + a:base +'*')
-        " return globpath(a:base + '*')
-        " return globpath(a:base, '*')
-        " call system("n -m " . a:base)
-        " return
-        " echo split(globpath('.', a:base . '*'), '\n')
         return map(split(globpath('.', a:base . '*'), '\n'), {k, v -> substitute(v, '\./', '', '')})
     endif
 endfun
