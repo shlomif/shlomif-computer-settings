@@ -1,6 +1,6 @@
 alias rm='rm -i' mv='mv -i' cp='cp -i' ls=' ls --color=auto'
 export SVN_EDITOR='gvim -f'
-export HISTSIZE=25000 FREECELL_SOLVER_QUIET=1 \
+export HISTSIZE=1000000 FREECELL_SOLVER_QUIET=1 \
     EDITOR=vim VISUAL=vim  PAGER="less -isrr" \
     BZR_EDITOR="$SVN_EDITOR" GIT_EDITOR="$SVN_EDITOR" HGEDITOR="$SVN_EDITOR" \
     NOPASTE_SERVICES="Debian Gist PastebinCom Pastie" \
