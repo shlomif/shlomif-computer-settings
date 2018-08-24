@@ -6,7 +6,7 @@ trunk="$base/trunk"
 this="$trunk"
 remote_repo="$(_shlomif_github "perl-begin")"
 
-cd $this
+cd "$this"
 
 prompt()
 {
@@ -19,6 +19,11 @@ prompt()
 up()
 {
     (cd "$trunk" && make -j4 upload upload_hexten)
+}
+
+t()
+{
+    (cd "$trunk" && make -j4 test)
 }
 
 proj_name='perl-begin'
