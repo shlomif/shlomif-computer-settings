@@ -37,4 +37,10 @@ b()
     cd "$b"
 }
 
+d()
+{
+    cd "$b"
+    du -ah . | sort -h
+}
+
 proj_name='backup'
