@@ -104,6 +104,18 @@ efact()
     )
 }
 
+rebuild()
+{
+    (
+        set -x
+        set -e
+        cd "$trunk"
+        time bin/rebuild
+        n -m "rebuild"
+    )
+}
+
 export PATH="$HOME/apps/quadpres/bin:$HOME/Download/unpack/xml/ebookmaker:$trunk/node_modules/.bin:$PATH:/usr/sbin"
 
+export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/shlomif-homepage-tidyall.d"
 proj_name='homepage'
