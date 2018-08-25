@@ -1,5 +1,4 @@
-load_common bundle/inc1
-load_common git
+load_common bundle/git
 load_common ctags_this
 load_common funcs_for_perl_dists
 

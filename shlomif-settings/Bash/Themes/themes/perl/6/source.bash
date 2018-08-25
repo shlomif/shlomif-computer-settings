@@ -1,5 +1,4 @@
-load_common bundle/inc1
-load_common git
+load_common bundle/git
 load_common pypy
 
 base="$HOME/Download/unpack/perl/p6"

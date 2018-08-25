@@ -1,7 +1,4 @@
-load_common mymake
-load_common completion
-load_common prompt
-load_common git
+load_common bundle/git
 
 base="$HOME/progs/perl/cpan/Games/Impatience"
 git_base="$git_base"

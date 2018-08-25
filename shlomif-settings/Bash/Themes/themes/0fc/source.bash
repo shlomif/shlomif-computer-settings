@@ -1,6 +1,5 @@
-load_common bundle/inc1
+load_common bundle/git
 load_common chdirs
-load_common git
 
 remote_repo="$(_shlomif_github "freecell-pro-0fc-deals")"
 git_base="$HOME"/Download/unpack/games/freecell

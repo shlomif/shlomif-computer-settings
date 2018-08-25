@@ -1,6 +1,5 @@
-load_common bundle/inc1
+load_common bundle/git
 load_common chdirs
-load_common git
 
 remote_repo="$(_shlomif_github "fortune-mod")"
 base="$HOME/progs/C/fortune-mod"

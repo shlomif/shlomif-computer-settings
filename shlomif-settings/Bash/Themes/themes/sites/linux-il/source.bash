@@ -1,5 +1,4 @@
-load_common bundle/inc1
-load_common git
+load_common bundle/git
 
 base="$HOME/Docs/IGLU/linux.org.il/linux.org.il"
 repo="$base"

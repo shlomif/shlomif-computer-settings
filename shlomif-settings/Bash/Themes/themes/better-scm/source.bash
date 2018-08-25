@@ -1,5 +1,5 @@
+load_common bundle/git
 load_common mymake
-load_common git
 
 remote_repo="$(_shlomif_github "better-scm")"
 base="$HOME/Docs/programming/SCM/better-scm/site"

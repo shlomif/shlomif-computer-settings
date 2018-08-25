@@ -1,6 +1,5 @@
 load_common chdirs
-load_common bundle/inc1
-load_common git
+load_common bundle/git
 
 . ~/conf/trunk/shlomif-settings/home-bin-executables/shlomif-specific/Dev-Path-Configs-Source-Me.bash
 

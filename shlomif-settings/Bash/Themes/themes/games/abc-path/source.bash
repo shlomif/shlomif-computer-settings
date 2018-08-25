@@ -1,5 +1,4 @@
-load_common bundle/inc1
-load_common git
+load_common bundle/git
 load_common perl_dzil
 
 # repos="https://svn.berlios.de/svnroot/repos/fc-solve/abc-path/"

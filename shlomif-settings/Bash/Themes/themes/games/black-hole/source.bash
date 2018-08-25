@@ -1,6 +1,5 @@
-load_common bundle/inc1
+load_common bundle/git
 load_common chdirs
-load_common git
 load_common edit_perl_lib
 
 base="$HOME/progs/games/black-hole-solitaire"

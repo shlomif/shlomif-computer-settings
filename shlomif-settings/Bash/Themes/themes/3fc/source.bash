@@ -1,6 +1,5 @@
-load_common bundle/inc1
+load_common bundle/git
 load_common chdirs
-load_common git
 load_common pypy
 
 remote_repo="$(_shlomif_github "freecell-3fc-determine-solvability")"

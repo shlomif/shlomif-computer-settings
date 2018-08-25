@@ -1,7 +1,5 @@
-load_common mymake
+load_common bundle/git
 load_common read_hist
-load_common completion
-load_common git
 
 base="$HOME/progs/quadpres"
 git_base="$base"

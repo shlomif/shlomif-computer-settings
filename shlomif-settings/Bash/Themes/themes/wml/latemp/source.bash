@@ -1,5 +1,4 @@
-load_common bundle/inc1
-load_common git
+load_common bundle/git
 
 base="$HOME/progs/wml/Latemp"
 git_base="$base/latemp"
