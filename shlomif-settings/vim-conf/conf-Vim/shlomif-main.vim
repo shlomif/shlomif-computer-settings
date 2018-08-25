@@ -401,6 +401,8 @@ autocmd BufRead,BufNewFile ~/Docs/programming/Vim/vim-begin/*.html set indentexp
 
 autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/lib/pages/t2/philosophy/putting-all-cards-on-the-table.xhtml setlocal indentexpr=
 
+autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/*.xml setlocal indentexpr=
+
 " For the Command-T plugin , because dest/t2-homepage in $homepage
 " has more than 30K files.
 let g:CommandTMaxFiles = 200000
@@ -490,6 +492,9 @@ autocmd BufRead,BufNewFile */.gitignore source ~/conf/Vim/gitignore-completion.v
 autocmd BufRead,BufNewFile ~/progs/wml/wml-itself/core/*
     \ set path+=~/progs/wml/wml-itself/core/trunk/src/wml_include/ |
     \ set suffixesadd+=.src
+
+autocmd BufWritePost /*/lib/hunspell/whitelist*.txt   :!bin/sort-check-spelling-file
+
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_typescript_checkers = ["tslint"]
 let g:ack_apply_qmappings = 0
