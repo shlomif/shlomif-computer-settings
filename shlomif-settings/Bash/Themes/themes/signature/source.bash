@@ -1,4 +1,4 @@
-load_common meta_inc1
+load_common bundle/inc1
 load_common git
 
 remote_repo="$(_shlomif_github "shlomif-email-signature")"

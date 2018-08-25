@@ -1,4 +1,4 @@
-load_common meta_inc1
+load_common bundle/inc1
 load_common git
 
 base="$HOME/Docs/IGLU/linux.org.il/linux.org.il"

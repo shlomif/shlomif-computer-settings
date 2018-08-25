@@ -1,4 +1,4 @@
-load_common meta_inc1
+load_common bundle/inc1
 
 base="$HOME/Docs/programming/Vim/vim-begin"
 repo="$base/git/vim-begin"

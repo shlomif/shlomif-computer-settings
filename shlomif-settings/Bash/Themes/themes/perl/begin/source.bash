@@ -1,5 +1,5 @@
 load_common git
-load_common meta_inc1
+load_common bundle/inc1
 
 base="$HOME/Docs/programming/Perl/web-sites/perl-begin"
 trunk="$base/trunk"

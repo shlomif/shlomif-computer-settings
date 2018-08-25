@@ -1,4 +1,4 @@
-load_common meta_inc1
+load_common bundle/inc1
 load_common sys
 load_common ssh_add
 load_common trim_pathes

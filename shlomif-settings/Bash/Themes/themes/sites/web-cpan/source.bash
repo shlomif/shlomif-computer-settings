@@ -1,4 +1,4 @@
-load_common meta_inc1
+load_common bundle/inc1
 load_common hg
 
 base="$HOME/progs/perl/www/Web-Cpan-Site/"

@@ -1,6 +1,6 @@
 load_common git
 load_common chdirs
-load_common meta_inc1
+load_common bundle/inc1
 
 base=~/progs/JS/web-developer-tools
 trunk="$base/open-web-developer-tools"

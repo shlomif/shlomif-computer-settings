@@ -1,4 +1,4 @@
-load_common meta_inc1
+load_common bundle/inc1
 
 base="$HOME/progs/java/Eclipse/workspace/NurikabeGarden"
 hg_base="$base"

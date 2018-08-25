@@ -1,4 +1,4 @@
-load_common meta_inc1
+load_common bundle/inc1
 load_common github
 load_common chdirs
 load_common ctags_all_langs

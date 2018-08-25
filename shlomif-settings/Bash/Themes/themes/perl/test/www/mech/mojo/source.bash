@@ -1,4 +1,4 @@
-load_common meta_inc1
+load_common bundle/inc1
 load_common hg
 load_common perl_dzil
 load_common ctags_this
