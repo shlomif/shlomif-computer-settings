@@ -94,6 +94,7 @@ call vam#ActivateAddons([
     \ 'github:plasticboy/vim-markdown',
     \ 'github:romainl/Apprentice',
     \ 'github:shlomif/syntax-spork',
+    \ 'github:shlomif/vim-extract-variable',
     \ 'github:shlomif/vim-gitignore',
     \ 'github:sjl/gundo.vim',
     \ 'github:terryma/vim-expand-region',
