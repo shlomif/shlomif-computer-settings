@@ -64,7 +64,7 @@ genf()
 
 did()
 {
-    diff -u -r  ../dest/ dest | gvim -
+    diff -u -r  ../post-dest/ post-dest/ | gvim -
 }
 
 fastdiff()
@@ -72,8 +72,7 @@ fastdiff()
     local since="$1"
     shift
 
-    svn diff -r "$since:HEAD" \
-        "file://$HOME/Backup/svn-dumps/projectlocker/svnsync-repos/shlomif/homepage/trunk"
+    git diff -r "$since" -r master .
 }
 
 up()
@@ -115,7 +114,11 @@ rebuild()
     )
 }
 
+alias p='git push'
 export PATH="$HOME/apps/quadpres/bin:$HOME/Download/unpack/xml/ebookmaker:$trunk/node_modules/.bin:$PATH:/usr/sbin"
+dedup_pathvar PATH
+dedup_pathvar PERL5LIB
+dedup_pathvar PYTHONPATH
 
 export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/shlomif-homepage-tidyall.d"
 proj_name='homepage'
