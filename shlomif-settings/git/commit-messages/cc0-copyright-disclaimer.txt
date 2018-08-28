@@ -1,0 +1,31 @@
+
+
+I hereby disclaim any implicit or explicit ownership of my changes in this
+changeset, and put them under a multiple licence consisting of your choice of
+one of more of:
+
+- The CC0 / Public Domain - https://creativecommons.org/choose/zero/ .
+
+- The MIT / Expat license - https://en.wikipedia.org/wiki/MIT_License
+
+- The default licence of your project
+
+- The https://en.wikipedia.org/wiki/GNU_Lesser_General_Public_License - version
+2.1 or higher
+
+- The https://en.wikipedia.org/wiki/GNU_General_Public_License - version 2 or
+higher
+
+- Any licence in the 2018-Aug-27 popular licenses list of
+https://opensource.org/licenses
+
+- The https://en.wikipedia.org/wiki/Apache_License version 2.0 or later
+
+- The https://en.wikipedia.org/wiki/Artistic_License version 2.0 or later
+
+- The https://en.wikipedia.org/wiki/ISC_license
+
+- The https://opensource.org/licenses/BSD-2-Clause
+
+Crediting me will be nice, but not mandatory, and you can change the licence
+of the project without needing my permission.

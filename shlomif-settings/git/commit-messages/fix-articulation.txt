@@ -1,0 +1,5 @@
+Fix some broken articulation.
+
+Missing "a", "the", "an", "some" or extraneous ones.
+
+See https://en.wikipedia.org/wiki/English_articles .
