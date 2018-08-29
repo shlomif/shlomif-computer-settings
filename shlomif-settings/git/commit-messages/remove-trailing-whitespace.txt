@@ -1,0 +1,7 @@
+Remove trailing whitespace.
+
+See:
+
+* http://www.shlomifish.org/lecture/C-and-CPP/bad-elements/#trailing-whitespace
+
+* http://vim.wikia.com/wiki/Highlight_unwanted_spaces
