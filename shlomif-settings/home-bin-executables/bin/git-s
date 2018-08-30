@@ -1,4 +1,12 @@
 #!/bin/bash
+
+# Synopsis:
+#   git s o
+#   git s origin
+#   git s origin master
+#
+# Sync all the remote git branches and tags
+
 remote="$1"
 shift
 if test "$remote" = 'o'
