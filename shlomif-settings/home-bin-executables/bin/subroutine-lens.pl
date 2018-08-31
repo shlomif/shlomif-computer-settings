@@ -9,12 +9,12 @@ while (<>)
 {
     if (/^sub (\w+)/)
     {
-        $name = $1;
+        $name  = $1;
         $start = $.;
     }
     elsif (/^\}/)
     {
-        print sprintf("%s\t%d\n", $name, $. - $start);
+        print sprintf( "%s\t%d\n", $name, $. - $start );
     }
 }
 
