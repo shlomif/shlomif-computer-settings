@@ -502,6 +502,12 @@ let g:ack_apply_qmappings = 0
 
 command! SwapPP s!\(\S\+\)\(++\|--\)!\2\1!
 
+function ArrayRefactorVar2Slot()
+    let id_ = substitute(substitute(@/, '^\\<', '', ''), '\\>$', '', '')
+    exe '%!perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/refactor-perl--convert-variable-to-accessor.pl --var=' . "'" . id_ . "'" . " --type='@'"
+endfunction
+
+command! ArrayRefactorVar2Slot call ArrayRefactorVar2Slot()
 function ScalarRefactorVar2Slot()
     let id_ = substitute(substitute(@/, '^\\<', '', ''), '\\>$', '', '')
     exe '%!perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/refactor-perl--convert-variable-to-accessor.pl --var=' . "'" . id_ . "'" . " --type='$'"
