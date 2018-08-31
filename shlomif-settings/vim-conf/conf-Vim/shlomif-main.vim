@@ -522,3 +522,4 @@ let g:CommandTCursorStartMap = ['<C-a>', '<Home>']
 let g:CommandTCursorEndMap = ['<C-e>', '<End>']
 let g:CommandTFileScanner = 'git'
 map <Leader>l :CommandTLine<CR>
+map <Leader>cl V[[o][g<C-G>
