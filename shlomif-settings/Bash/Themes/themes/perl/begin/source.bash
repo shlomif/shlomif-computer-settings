@@ -1,4 +1,5 @@
 load_common bundle/git
+load_common chdirs
 
 base="$HOME/Docs/programming/Perl/web-sites/perl-begin"
 trunk="$base/trunk"

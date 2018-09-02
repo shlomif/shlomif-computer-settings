@@ -28,7 +28,10 @@ prompt()
 e()
 {
     (cd "$this" ;
-        gvim -p ../src/wml_include/WML_Frontends/Wml/Runner.pm.src
+        gvim -p \
+            ../src/wml_include/WML_Frontends/Wml/Runner.pm \
+            ../src/wml_include/WML_Backends/IPP/Main.pm \
+
     )
 }
 

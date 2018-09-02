@@ -18,3 +18,8 @@ t()
 {
     make test
 }
+
+prompt()
+{
+    echo "[better-scm]"
+}

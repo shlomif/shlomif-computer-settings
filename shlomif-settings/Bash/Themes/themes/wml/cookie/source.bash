@@ -13,4 +13,5 @@ prompt()
 }
 
 proj_name='cookiecutter'
+alias p='git push'
 cd "$this"

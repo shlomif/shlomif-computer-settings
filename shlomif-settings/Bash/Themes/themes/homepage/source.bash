@@ -115,7 +115,7 @@ rebuild()
 }
 
 alias p='git push'
-export PATH="$HOME/apps/quadpres/bin:$HOME/Download/unpack/xml/ebookmaker:$trunk/node_modules/.bin:$PATH:/usr/sbin"
+export PATH="$HOME/apps/quadpres/bin:$HOME/Download/unpack/xml/ebookmaker:$trunk/node_modules/.bin:$PATH:/usr/sbin" QUAD_PRES_QUIET=1
 dedup_pathvar PATH
 dedup_pathvar PERL5LIB
 dedup_pathvar PYTHONPATH
