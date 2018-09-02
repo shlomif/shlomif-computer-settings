@@ -523,3 +523,15 @@ let g:CommandTCursorEndMap = ['<C-e>', '<End>']
 let g:CommandTFileScanner = 'git'
 map <Leader>l :CommandTLine<CR>
 map <Leader>cl V[[o][g<C-G>
+
+function ShowSubLens()
+    let fn = @%
+    sp
+    enew
+    exe "0read !perl /home/shlomif/conf/trunk/shlomif-settings/home-bin-executables/bin/subroutine-lens.pl " . fn
+    setlocal buftype=nofile
+    setlocal bufhidden=hide
+    setlocal noswapfile
+endfunction
+
+command! ShowSubLens call ShowSubLens()
