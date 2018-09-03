@@ -1,5 +1,6 @@
 load_common bundle/git
 load_common partests
+load_common chdirs
 
 base="$HOME/Docs/homepage"
 hg_base="$base"
