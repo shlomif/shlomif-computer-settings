@@ -9,14 +9,17 @@
 set -e
 set -x
 
-d=''
+dd=''
 for i in *
 do
     if test -d "$i"
     then
-        d="$i"
+        dd="$i"
     fi
 done
+
+d="${1:-$dd}"
+shift || true
 
 fn='.gen-ci.bash'
 cat > "$fn" <<EOF
@@ -35,4 +38,4 @@ EOF
 
 git add "$fn"
 bash "$fn"
-git add .travis.yml
+git add .appveyor.yml .travis.yml
