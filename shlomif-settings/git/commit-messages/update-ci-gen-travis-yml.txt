@@ -1,0 +1,10 @@
+Update appveyor / Travis-CI.
+
+Based on https://github.com/shlomif/perl6-CI-Gen and
+https://github.com/shlomif/ci-gen-framework .
+
+See:
+
+* https://en.wikipedia.org/wiki/Travis_CI
+
+* https://en.wikipedia.org/wiki/Continuous_integration .
