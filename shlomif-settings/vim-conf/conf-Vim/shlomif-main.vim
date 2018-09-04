@@ -100,6 +100,7 @@ call vam#ActivateAddons([
     \ 'github:terryma/vim-expand-region',
     \ 'github:thinca/vim-quickrun',
     \ 'github:vim-perl/vim-perl',
+    \ 'github:vim-perl/vim-perl6',
     \ 'hg:https://shlomif@bitbucket.org/shlomif/vim-screenplay-text',
     \ 'matchit.zip',
     \ 'range-search',
