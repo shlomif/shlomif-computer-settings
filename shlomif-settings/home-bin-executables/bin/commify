@@ -8,6 +8,8 @@ use Number::Format;
 
 my $f = Number::Format->new;
 
+STDOUT->autoflush(1);
+
 while (<>)
 {
     print s/(\d+(?:\.\d+)?)/$f->format_number($1)/egr;
