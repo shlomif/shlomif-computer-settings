@@ -10,7 +10,7 @@ export PATH="${RAKUDO_ROOT}/bin:$PATH"
 PATH="$PATH:$HOME/Download/unpack/perl/p6/rakudo-star/rakudo-star-2018.04/install/bin:$HOME/Download/unpack/perl/p6/rakudo-star/rakudo-star-2018.04/install/share/perl6/site/bin"
 
 # trunk="$base/doc"
-trunk="$base/CI-Gen"
+trunk="$base/CI-Gen/perl6-CI-Gen"
 app_dir="$trunk"
 this="$app_dir"
 

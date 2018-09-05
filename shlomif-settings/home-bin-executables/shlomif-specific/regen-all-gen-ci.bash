@@ -5,4 +5,4 @@
 #
 # Distributed under terms of the MIT license.
 #
-locate --regex '/\.travis\.yml$' | xargs dirname | perl -lnE 'my $f = "$_/.gen-ci.bash"; if (-f $f) { say "== $_ ; $f =="; say `cd $_ ; bash .gen-ci.bash ; git diff`}' 2>&1 | gvim -
+locate --regex '/\.git$' | xargs dirname | perl -lnE 'my $f = "$_/.ci-gen.ini"; if (-f $f) { say "== $_ ; $f =="; say `cd $_ ; ci-generate ; git diff ; git status -s`}' 2>&1 | gvim -
