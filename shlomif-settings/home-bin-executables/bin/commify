@@ -1,5 +1,6 @@
 #!/usr/bin/env perl
 
+use 5.014;
 use strict;
 use warnings;
 
@@ -7,11 +8,10 @@ use Number::Format;
 
 my $f = Number::Format->new;
 
-while(<>)
+while (<>)
 {
     print s/(\d+(?:\.\d+)?)/$f->format_number($1)/egr;
 }
-
 
 __END__
 
