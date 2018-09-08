@@ -115,6 +115,30 @@ rebuild()
     )
 }
 
+# fast render
+fr()
+{
+    (
+        set -x
+        set -e
+        git ls-files t2 | grep wml | xargs touch
+        make -j4 fastrender
+        t
+    )
+}
+
+mymv()
+{
+    local fn="$1"
+    shift
+    local new="${fn%%/index.html.wml}/index.xhtml.wml"
+    git mv "$fn" "$new"
+    perl -i -lpE 's/^#include.*template\K(\.wml)/5$1/' "$new"
+    rm -f lib/cache/STAMP.one
+    ./gen-helpers
+    t
+}
+
 alias p='git push'
 export PATH="$HOME/apps/quadpres/bin:$HOME/Download/unpack/xml/ebookmaker:$trunk/node_modules/.bin:$PATH:/usr/sbin" QUAD_PRES_QUIET=1
 dedup_pathvar PATH
