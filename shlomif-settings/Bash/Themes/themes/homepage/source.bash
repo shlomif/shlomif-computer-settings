@@ -12,6 +12,7 @@ blog="$HOME/Docs/homepage/blog"
 logs="$HOME/Download/homesite-logs"
 p4n="$trunk/lib/presentations/qp/perl-for-newbies"
 remote_repo="$(_shlomif_github "shlomi-fish-homepage")"
+pristine_copy=~/Backup/Arcs/post-dest/post-dest
 
 export SCREENPLAY_COMMON_INC_DIR="$trunk/lib/screenplay-xml/from-vcs/screenplays-common"
 sel="$trunk/lib/screenplay-xml/from-vcs/Selina-Mandrake/selina-mandrake/screenplay/"
@@ -65,7 +66,7 @@ genf()
 
 did()
 {
-    diff -u -r  ../post-dest/ post-dest/ | gvim -
+    diff -u -r "$pristine_copy" post-dest/ | gvim -
 }
 
 fastdiff()
@@ -129,17 +130,25 @@ fr()
 
 mymv()
 {
-    local fn="$1"
-    shift
-    local new="${fn%%/index.html.wml}/index.xhtml.wml"
-    git mv "$fn" "$new"
-    perl -i -lpE 's/^#include.*template\K(\.wml)/5$1/' "$new"
+    for fn in "$@"
+    do
+        local new="${fn%%/index.html.wml}/index.xhtml.wml"
+        git mv "$fn" "$new"
+        perl -i -lpE 's/^#include.*template\K(\.wml)/5$1/' "$new"
+    done
     rm -f lib/cache/STAMP.one
     ./gen-helpers
     t
 }
 
+ba()
+{
+    rm -fr "$pristine_copy"
+    cp -a post-dest/ "$pristine_copy"
+}
+
 alias p='git push'
+export PATH="/home/shlomif/apps/golang/bin:/home/shlomif/.local/bin:/home/shlomif/apps/test/wml/bin:$PATH"
 export PATH="$HOME/apps/quadpres/bin:$HOME/Download/unpack/xml/ebookmaker:$trunk/node_modules/.bin:$PATH:/usr/sbin" QUAD_PRES_QUIET=1
 dedup_pathvar PATH
 dedup_pathvar PERL5LIB
