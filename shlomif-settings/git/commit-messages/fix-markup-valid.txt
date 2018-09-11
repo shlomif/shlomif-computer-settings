@@ -1,0 +1,3 @@
+Fix markup / code validation.
+
+See https://www.shlomifish.org/philosophy/computers/web/validate-your-html/ .
