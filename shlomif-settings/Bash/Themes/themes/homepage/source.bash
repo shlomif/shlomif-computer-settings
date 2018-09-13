@@ -155,4 +155,7 @@ dedup_pathvar PERL5LIB
 dedup_pathvar PYTHONPATH
 
 export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/shlomif-homepage-tidyall.d"
+# Commented out because it makes matters slower:
+# export HTML_POST_INCS_DATA_DIR="$HOME/Backup/Arcs/shlomif-homepage-gezer.d"
+
 proj_name='homepage'
