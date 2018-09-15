@@ -18,7 +18,7 @@ b="$trunk/b"
 t()
 {
     (
-        mkdir "$b" &&
+        mkdir -p "$b" &&
             cd "$b" &&
             cmake "$this" &&
             make &&
@@ -69,3 +69,4 @@ prompt()
         "\$base=$base" \
         "~=$HOME"
 }
+proj_name='quad-pres'

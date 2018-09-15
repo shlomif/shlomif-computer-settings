@@ -12,7 +12,7 @@ blog="$HOME/Docs/homepage/blog"
 logs="$HOME/Download/homesite-logs"
 p4n="$trunk/lib/presentations/qp/perl-for-newbies"
 remote_repo="$(_shlomif_github "shlomi-fish-homepage")"
-pristine_copy=~/Backup/Arcs/post-dest/post-dest
+pristine_copy=~/Backup/Arcs/post-dest/post-incs
 
 export SCREENPLAY_COMMON_INC_DIR="$trunk/lib/screenplay-xml/from-vcs/screenplays-common"
 sel="$trunk/lib/screenplay-xml/from-vcs/Selina-Mandrake/selina-mandrake/screenplay/"
@@ -66,7 +66,7 @@ genf()
 
 did()
 {
-    diff -u -r "$pristine_copy" post-dest/ | gvim -
+    diff -u -r "$pristine_copy" dest/post-incs/ | gvim -
 }
 
 fastdiff()
@@ -144,7 +144,7 @@ mymv()
 ba()
 {
     rm -fr "$pristine_copy"
-    cp -a post-dest/ "$pristine_copy"
+    cp -a dest/post-incs/ "$pristine_copy"
 }
 
 alias p='git push'
