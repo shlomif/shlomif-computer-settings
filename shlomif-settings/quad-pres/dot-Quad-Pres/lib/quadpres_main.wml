@@ -1,4 +1,5 @@
-#include "/usr/share/quad-pres/wml/quadpres_main.wml"
+# PPPinclude "/usr/share/quad-pres/wml/quadpres_main.wml"
+#include "/home/shlomif/apps/test/wml/share/quad-pres/wml/quadpres_main.wml"
 
 <define-tag google_ads>
 <div class="center"><script type="text/javascript">
