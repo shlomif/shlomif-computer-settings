@@ -19,6 +19,23 @@ do
 done
 PATH="$HOME/apps/neovim/bin:$HOME/apps/fop/fop-20140425:$HOME/apps/vim/bin:$PATH"
 dedup_pathvar PATH
+
+# Code for sane binding of keys and handling of terminal modes {{{
+# Adapted from Debian's /etc/zshrc
+typeset -A key
+key=( BackSpace  "${terminfo[kbs]}"
+      Home       "${terminfo[khome]}"
+      End        "${terminfo[kend]}"
+      Insert     "${terminfo[kich1]}"
+      Delete     "${terminfo[kdch1]}"
+      Up         "${terminfo[kcuu1]}"
+      Down       "${terminfo[kcud1]}"
+      Left       "${terminfo[kcub1]}"
+      Right      "${terminfo[kcuf1]}"
+      PageUp     "${terminfo[kpp]}"
+      PageDown   "${terminfo[knp]}"
+)
+
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
