@@ -21,8 +21,8 @@ if ( !-l $THEMES_DIR_LINK )
 {
     symlink( $THEMES_DIR, $THEMES_DIR_LINK );
 }
-rename( "$h/.bashrc", "$h/.bashrc.orig" );
+eval { rename( "$h/.bashrc", "$h/.bashrc.orig" ); };
 symlink( "$h/conf/trunk/shlomif-settings/Bash/bashrc/rc.bash", "$h/.bashrc" );
-rename( "$h/.zshrc", "$h/.zshrc.orig" );
+eval { rename( "$h/.zshrc", "$h/.zshrc.orig" ); };
 symlink( "$h/conf/trunk/shlomif-settings/Bash/bashrc/rc.zsh", "$h/.zshrc" );
 system(qq#cd "$THEMES_DIR_LINK" && ./gen_list.sh#);
