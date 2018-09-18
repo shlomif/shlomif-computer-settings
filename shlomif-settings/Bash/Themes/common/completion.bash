@@ -7,6 +7,7 @@ __gvim_completion()
         )
 }
 
-if test "$SHELL" = "/bin/bash" ; then
+if test -n "$BASH_VERSION"
+then
     complete -o filenames -F __gvim_completion gvim
 fi
