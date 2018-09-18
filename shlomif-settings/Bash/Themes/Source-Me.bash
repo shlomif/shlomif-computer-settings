@@ -46,7 +46,9 @@ __list_themes()
 
 __reload_themes_completion()
 {
-    for cmd in $__theme_completion_commands ; do
+    for cmd in $__theme_completion_commands
+    do
+        echo "cmd=$cmd"
         if test -n "$BASH_VERSION"
         then
             complete -W "$(__list_themes)" -- "$cmd"
