@@ -30,7 +30,8 @@ if test -z "$ORIGIN_HOSTNAME" ; then
     export ORIGIN_HOSTNAME="$HOSTNAME"
 fi
 # See http://bugs.mageia.org/show_bug.cgi?id=237
-if test "$SHELL" = "/bin/bash" ; then
+if test -n "$BASH_VERSION"
+then
     shopt -s direxpand
 fi
 unalias d 2>/dev/null

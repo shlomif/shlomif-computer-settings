@@ -47,9 +47,11 @@ __list_themes()
 __reload_themes_completion()
 {
     for cmd in $__theme_completion_commands ; do
-        if test "$SHELL" = "/bin/bash" ; then
+        if test -n "$BASH_VERSION"
+        then
             complete -W "$(__list_themes)" -- "$cmd"
-        elif test "$SHELL" = "/bin/zsh" ; then
+        elif test -n "$ZSH_VERSION"
+        then
             compdef "_values description $(__list_themes)" "$cmd"
         fi
     done

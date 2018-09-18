@@ -78,7 +78,8 @@ eo()
 alias q='urpmq --fuzzy -a'
 alias qv='q --sources'
 
-if test "$SHELL" = "/bin/bash" ; then
+if test -n "$BASH_VERSION"
+then
     complete -F _urpmi u
     complete -F _urpme e
     complete -F _urpmq q

@@ -30,11 +30,17 @@ t()
 
 b()
 {
-    mkdir -p "$b"
-    cd "$b"
-    cmake -DCMAKE_INSTALL_PREFIX="$HOME/apps/test/wml" "$this" && \
-        make -j4 && \
+    (
+        set -e -x
+        mkdir -p "$b"
+        cd "$b"
+        cmake -DCMAKE_INSTALL_PREFIX="$HOME/apps/test/wml" "$this"
+        make -j4
         make install
+        cmake -DCMAKE_INSTALL_PREFIX="$HOME/apps/quadpres" "$this"
+        make -j4
+        make install
+    )
 }
 
 switch_to_quadpres()

@@ -111,6 +111,7 @@ call vam#ActivateAddons([
     \ 'textobj-user',
     \ 'vcscommand',
     \ 'xml',
+    \ 'github:vim-syntastic/syntastic',
     \ ],
     \ {'auto_install': 1, 'shell_commands_run_method': "system",})
 set more
@@ -500,6 +501,7 @@ autocmd BufWritePost /*/lib/hunspell/whitelist*.txt   :!bin/sort-check-spelling-
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_typescript_checkers = ["tslint"]
 let g:ack_apply_qmappings = 0
+let g:syntastic_enable_perl_checker = 1
 
 command! SwapPP s!\(\S\+\)\(++\|--\)!\2\1!
 
