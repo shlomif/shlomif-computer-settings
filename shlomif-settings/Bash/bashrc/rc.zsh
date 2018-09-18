@@ -42,3 +42,5 @@ zle -N down-line-or-beginning-search
 
 [[ -n "$key[PageUp]"   ]] && bindkey -- "$key[PageUp]"   up-line-or-beginning-search
 [[ -n "$key[PageDown]" ]] && bindkey -- "$key[PageDown]" down-line-or-beginning-search
+
+prompt redhat
