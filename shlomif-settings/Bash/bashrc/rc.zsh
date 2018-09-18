@@ -1,3 +1,5 @@
+# See https://stackoverflow.com/questions/6715388
+setopt SH_WORD_SPLIT
 HISTFILE=~/.histfile
 HISTSIZE=1000000
 SAVEHIST=1000000
