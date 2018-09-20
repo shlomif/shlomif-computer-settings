@@ -15,6 +15,10 @@ if test -n "$BASH_VERSION"
 then
     PS1="\u@telaviv1:\\w\$ "
 fi
+for f in ~/conf/trunk/shlomif-settings/Bash/bashrc/zshrc.d/*.zsh
+do
+    . "$f"
+done
 # Code for sane binding of keys and handling of terminal modes {{{
 # Adapted from Debian's /etc/zshrc
 typeset -A key
