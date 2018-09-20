@@ -15,13 +15,6 @@ if test -n "$BASH_VERSION"
 then
     PS1="\u@telaviv1:\\w\$ "
 fi
-for f in ~/conf/trunk/shlomif-settings/Bash/bashrc/bashrc.d/*.bash
-do
-    . "$f"
-done
-PATH="$HOME/apps/neovim/bin:$HOME/apps/fop/fop-20140425:$HOME/apps/vim/bin:$PATH"
-dedup_pathvar PATH
-
 # Code for sane binding of keys and handling of terminal modes {{{
 # Adapted from Debian's /etc/zshrc
 typeset -A key
@@ -48,4 +41,5 @@ zle -N down-line-or-beginning-search
 [[ -n "$key[End]"   ]] && bindkey -- "$key[End]"   end-of-line
 [[ -n "$key[Delete]"   ]] && bindkey -- "$key[Delete]"   delete-char
 
+. ~/conf/trunk/shlomif-settings/Bash/bashrc/common.bash
 prompt redhat
