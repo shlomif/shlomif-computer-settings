@@ -38,3 +38,8 @@ then
 fi
 unalias d 2>/dev/null
 d() { ls -A | xargs -d '\n' \du -s -- | sort -n ;}
+# See https://unix.stackexchange.com/questions/10525
+which()
+{
+    /usr/bin/which "$@"
+}
