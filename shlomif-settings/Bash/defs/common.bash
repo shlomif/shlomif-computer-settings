@@ -7,8 +7,10 @@ export HISTSIZE=1000000 FREECELL_SOLVER_QUIET=1 \
     HARNESS_SUMMARY_COLOR_FAIL="bold red" HARNESS_SUMMARY_COLOR_SUCCESS="bold blue" \
     HARNESS_PLUGINS="ColorSummary ColorFileVerdicts AlternateInterpreters BreakOnFailure" \
     HARNESS_ALT_INTRP_FILE="$HOME/conf/trunk/shlomif-settings/perl/Test-Run/alternate-interpreters.yml" \
-    HARNESS_OPTIONS=c PERL_MM_USE_DEFAULT=1 PERL_AUTOINSTALL="--skipdeps --alldeps" \
-    CPAN2PKG_DONT_CPANP_X=1
+    HARNESS_OPTIONS=c PERL_MM_USE_DEFAULT=1 CPAN2PKG_DONT_CPANP_X=1
+
+# PERL_AUTOINSTALL="--skipdeps --alldeps"
+
 unset LESSOPEN
 umask 022
 if test -e /etc/debian_version ; then
