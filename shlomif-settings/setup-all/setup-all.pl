@@ -5,6 +5,7 @@ use warnings;
 use autodie;
 use File::Path qw/ mkpath /;
 use Cwd qw/ getcwd /;
+use Carp ();
 
 sub do_system
 {
@@ -14,7 +15,7 @@ sub do_system
     print "Running [@$cmd]\n";
     if ( system(@$cmd) )
     {
-        die "Running [@$cmd] failed!";
+        Carp::confess("Running [@$cmd] failed!");
     }
 
     return;
