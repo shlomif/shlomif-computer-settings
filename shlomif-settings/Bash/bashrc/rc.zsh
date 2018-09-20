@@ -44,5 +44,8 @@ zle -N down-line-or-beginning-search
 
 [[ -n "$key[PageUp]"   ]] && bindkey -- "$key[PageUp]"   up-line-or-beginning-search
 [[ -n "$key[PageDown]" ]] && bindkey -- "$key[PageDown]" down-line-or-beginning-search
+[[ -n "$key[Home]"   ]] && bindkey -- "$key[Home]"   beginning-of-line
+[[ -n "$key[End]"   ]] && bindkey -- "$key[End]"   end-of-line
+[[ -n "$key[Delete]"   ]] && bindkey -- "$key[Delete]"   delete-char
 
 prompt redhat
