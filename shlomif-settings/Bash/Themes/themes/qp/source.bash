@@ -1,5 +1,4 @@
 load_common bundle/git
-load_common read_hist
 
 base="$HOME/progs/quadpres"
 git_base="$base"
@@ -10,8 +9,6 @@ site="$trunk/site"
 remote_repo="$(_shlomif_github "quad-pres")"
 
 cd "$this"
-
-read_hist "$theme"
 
 b="$trunk/b"
 
