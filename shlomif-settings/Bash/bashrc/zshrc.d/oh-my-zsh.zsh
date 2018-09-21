@@ -69,7 +69,6 @@ plugins=(
     perl
     pod
     python
-    tmux
 )
 
 source $ZSH/oh-my-zsh.sh
