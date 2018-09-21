@@ -7,5 +7,5 @@ for f in ~/conf/trunk/shlomif-settings/Bash/bashrc/bashrc.d/*.bash
 do
     . "$f"
 done
-PATH="$HOME/apps/neovim/bin:$HOME/apps/fop/fop-20140425:$HOME/apps/vim/bin:$PATH"
+PATH="$HOME/apps/neovim/bin:$HOME/apps/fop/fop-20140425:$HOME/apps/vim/bin:$PATH:/usr/games"
 dedup_pathvar PATH
