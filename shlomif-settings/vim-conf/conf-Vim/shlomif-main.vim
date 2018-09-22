@@ -526,6 +526,7 @@ let g:username = 'Shlomi Fish'
 let g:CommandTCursorStartMap = ['<C-a>', '<Home>']
 let g:CommandTCursorEndMap = ['<C-e>', '<End>']
 let g:CommandTFileScanner = 'git'
+let g:vim_markdown_folding_disabled = 1
 map <Leader>l :CommandTLine<CR>
 map <Leader>cl V[[o][g<C-G>
 
