@@ -1,15 +1,15 @@
 " Based on 'An example for a vimrc file.' by Bram Moolenaar
 filetype plugin indent on
-set nocompatible	" Use Vim defaults (much better!)
-set bs=2		" allow backspacing over everything in insert mode
-set ai			" always set autoindenting on
-set backup		" keep a backup file
-set viminfo='20,\"50	" read/write a .viminfo file, don't store more
-			" than 50 lines of registers
+set nocompatible        " Use Vim defaults (much better!)
+set bs=2                " allow backspacing over everything in insert mode
+set ai                  " always set autoindenting on
+set backup              " keep a backup file
+set viminfo='20,\"50    " read/write a .viminfo file, don't store more
+                        " than 50 lines of registers
 
 " Changed by Shlomi Fish to a much bigger setting
-set history=5000		" keep 5,000 lines of command line history
-set ruler		        " show the cursor position all the time
+set history=5000                " keep 5,000 lines of command line history
+set ruler                       " show the cursor position all the time
 
 "Display an incomplete command in the lower right corner of the Vim window,
 " left of the ruler.
@@ -174,7 +174,7 @@ autocmd BufNewFile,BufRead ~/Download/unpack/graphics/gimp/*.[ch] so ~/conf/Vim/
 " By default it prints the page without a prompt, which is annoying, because
 " it is sometimes pressed accidently.
 an 1.40 ToolBar.Print :echo "hello"<CR>
-vnoremenu ToolBar.Print		:echo "hello"<CR>
+vnoremenu ToolBar.Print         :echo "hello"<CR>
 
 " This is to prevent gvim from creating backup files under the GIMP
 " directories which just confuses the GIMP.
