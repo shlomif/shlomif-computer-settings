@@ -21,5 +21,10 @@ t()
 
 prompt()
 {
-    echo "[better-scm]"
+    __prompt_cmd \
+        "\$trunk=$trunk" \
+        "\$base=$base" \
+        "~=$HOME"
 }
+
+proj_name='better-scm'
