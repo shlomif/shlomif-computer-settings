@@ -11,40 +11,40 @@ endsnippet
 snippet sub
 sub ${1:function_name}
 {
-    ${2:#body ...}
+	${2:#body ...}
 }
 endsnippet
 # Conditional
 snippet if
 if (${1})
 {
-    ${2:# body...}
+	${2:# body...}
 }
 endsnippet
 # Conditional if..else
 snippet ife
 if (${1})
 {
-    ${2:# body...}
+	${2:# body...}
 }
 else
 {
-    ${3:# else...}
+	${3:# else...}
 }
 endsnippet
 # Conditional if..elsif..else
 snippet ifee
 if (${1})
 {
-    ${2:# body...}
+	${2:# body...}
 }
 elsif (${3})
 {
-    ${4:# elsif...}
+	${4:# elsif...}
 }
 else
 {
-    ${5:# else...}
+	${5:# else...}
 }
 endsnippet
 # Conditional One-line
@@ -55,7 +55,7 @@ endsnippet
 snippet unless
 unless (${1})
 {
-    ${2:# body...}
+	${2:# body...}
 }
 endsnippet
 # Unless conditional One-line
@@ -66,18 +66,18 @@ endsnippet
 snippet eval
 eval
 {
-    ${1:# do something risky...}
+	${1:# do something risky...}
 };
 if ($@)
 {
-    ${2:# handle failure...}
+	${2:# handle failure...}
 }
 endsnippet
 # While Loop
 snippet wh
 while (${1})
 {
-    ${2:# body...}
+	${2:# body...}
 }
 endsnippet
 # While Loop One-line
@@ -88,14 +88,14 @@ endsnippet
 snippet for
 for (my $${2:var} = 0; $$2 < ${1:count}; $$2${3:++})
 {
-    ${4:# body...}
+	${4:# body...}
 }
 endsnippet
 # Foreach Loop
 snippet fore
 foreach my $${1:x} (@${2:array})
 {
-    ${3:# body...}
+	${3:# body...}
 }
 endsnippet
 # Foreach Loop One-line
@@ -110,20 +110,20 @@ use parent qw(${2:ParentClass});
 
 sub new
 {
-    my $class = shift;
+	my $class = shift;
 
-    my $self = bless {}, $class;
+	my $self = bless {}, $class;
 
-    $self->_init(@_);
+	$self->_init(@_);
 
-    return $self;
+	return $self;
 }
 
 sub _init
 {
-    my ($self, $args) = @_;
+	my ($self, $args) = @_;
 
-    return;
+	return;
 }
 
 1;${3}
@@ -132,11 +132,11 @@ endsnippet
 snippet meth
 sub ${1:function_name}
 {
-    my $self = shift;
+	my $self = shift;
 
-    ${2:#body ...}
+	${2:#body ...}
 
-    return;
+	return;
 }
 
 endsnippet
@@ -144,9 +144,9 @@ endsnippet
 snippet methr
 sub ${1:function_name}
 {
-    my $self = shift;
+	my $self = shift;
 
-    return ${2:ret};
+	return ${2:ret};
 }
 
 endsnippet
@@ -154,28 +154,28 @@ endsnippet
 snippet methp
 sub ${1:function_name}
 {
-    my ($self,${2:param}) = @_;
+	my ($self,${2:param}) = @_;
 
-    return;
+	return;
 }
 
 endsnippet
 
 snippet ltb
-	 local $Test::Builder::Level = $Test::Builder::Level + 1;
+local $Test::Builder::Level = $Test::Builder::Level + 1;
 endsnippet
 
 snippet xsor
 sub ${1:field}
 {
-    my $self = shift;
+	my $self = shift;
 
-    if (@_)
-    {
-        $self->{$1} = shift;
-    }
+	if (@_)
+	{
+		$self->{$1} = shift;
+	}
 
-    return $self->{$1};
+	return $self->{$1};
 }
 endsnippet
 
@@ -205,16 +205,16 @@ endsnippet
 snippet _write_file
 sub _write_utf8_file
 {
-    my ($out_path, $contents) = @_;
+	my ($out_path, $contents) = @_;
 
-    open my $out_fh, '>:encoding(utf8)', $out_path
-        or die "Cannot open '$out_path' for writing - $!";
+	open my $out_fh, '>:encoding(utf8)', $out_path
+		or die "Cannot open '$out_path' for writing - $!";
 
-    print {$out_fh} $contents;
+	print {$out_fh} $contents;
 
-    close($out_fh);
+	close($out_fh);
 
-    return;
+	return;
 }
 endsnippet
 
