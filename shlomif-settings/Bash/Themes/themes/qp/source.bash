@@ -1,4 +1,5 @@
 load_common bundle/git
+load_common chdirs
 
 base="$HOME/progs/quadpres"
 git_base="$base"
