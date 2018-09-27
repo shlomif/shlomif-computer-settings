@@ -14,7 +14,7 @@ if ($FCS_PGO_THEME !~ m#\A(?:-l [A-Za-z0-9_]+)|(?:--read-from-file [0-9]+,[/A-Za
 }
 my $SUDO_USER = $ENV{SUDO_USER};
 print( "USER=$SUDO_USER\n");
-exec(qw#sudo nice -n-20 ionice -c1 -n0 sudo -u#, $SUDO_USER , qw#bash -c#, qq#SRC_DIR=\"$SRC_DIR\" FCS_PGO_THEME="$FCS_PGO_THEME" bash ~/bin/fcs-bench.bash 4#,);
+exec(qw#sudo nice -n-20 ionice -c1 -n0 sudo -u#, $SUDO_USER , qw#bash -c#, qq#SRC_DIR=\"$SRC_DIR\" FCS_PGO_THEME="$FCS_PGO_THEME" MALLOC_CONF=background_thread:true,metadata_thp:auto bash ~/bin/fcs-bench.bash 4#,);
 
 __END__
 
