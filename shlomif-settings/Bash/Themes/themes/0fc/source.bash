@@ -39,7 +39,7 @@ ci()
     git commit -F "$this/add-more-to-log-commit-msg.txt"
 }
 
-run()
+put()
 {
     (
         set -x
@@ -49,5 +49,18 @@ run()
         ci
     )
 }
+
+alias c=put
+
+run()
+{
+    (
+        set -e -x
+        set -o pipefail
+        bash solve-more-3.bash | commify | timestamper
+    )
+}
+
+alias r=run
 
 proj_name='0fc'
