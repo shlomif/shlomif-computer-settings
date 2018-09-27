@@ -78,6 +78,7 @@ call vam#ActivateAddons([
     \ 'github:aaronbieber/quicktask',
     \ 'github:alessandroyorba/alduin',
     \ 'github:aperezdc/vim-template',
+    \ 'github:cakebaker/scss-syntax.vim',
     \ 'github:cespare/vim-toml',
     \ 'github:dahu/Area-41',
     \ 'github:godlygeek/csapprox',
@@ -113,7 +114,6 @@ call vam#ActivateAddons([
     \ 'textobj-user',
     \ 'vcscommand',
     \ 'xml',
-    \ 'github:vim-syntastic/syntastic',
     \ ],
     \ {'auto_install': 1, 'shell_commands_run_method': "system",})
 set more
@@ -485,6 +485,12 @@ autocmd BufRead,BufNewFile ~/Download/unpack/games/pysolfc/*.py
 
 autocmd BufRead,BufNewFile ~/progs/freecell/git/*
     \ set path+=~/progs/freecell/git/fc-solve/fc-solve/source/t/lib/
+
+function WML_Paths()
+    set path+=~/apps/latemp/lib/wml/include/
+endfunction
+
+autocmd BufRead,BufNewFile *.wml call WML_Paths()
 
 function FCS_site_Customisation()
     set path+=~/progs/freecell/git/fc-solve/fc-solve/site/wml/lib/
