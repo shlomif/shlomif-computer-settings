@@ -23,4 +23,9 @@ prompt()
         "~=$HOME"
 }
 
+ct()
+{
+    cd "$trunk"
+}
+
 proj_name='xml-fiction'

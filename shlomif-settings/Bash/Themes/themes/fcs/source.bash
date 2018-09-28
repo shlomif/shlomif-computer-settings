@@ -38,6 +38,7 @@ this="$c_src"
 # this="$dd_branch"
 
 export LIBAVL2_SOURCE_DIR="$HOME/Download/unpack/prog/c/avl-2.0.3/"
+export PAGER='less'
 export FCS_USE_TEST_RUN=1
 export FCS_PGO_THEME="-l lg" FCS_TEST_CLANG_FORMAT=1
 
@@ -182,20 +183,20 @@ ti1()
 
 ti()
 {
-     ti1 | tac | cat -n | perl -lapE 's/:/\t/g; ' | less
+     ti1 | tac | cat -n | perl -lapE 's/:/\t/g; ' | $PAGER
 }
 
 alias g='gvim ids.txt +cbuf +cope +"sp scripts/ids-whitelist.txt" +"sp scripts/ids-whitelist.txt"' f=find_ids
 ca()
 {
-    cat ids.txt | perl -lapE 's#.*:##' | sort | uniq -c | sort -n | perl -lanE 'print $F[0]' | sort | uniq -c | sort -n -k 2 | less
+    cat ids.txt | perl -lapE 's#.*:##' | sort | uniq -c | sort -n | perl -lanE 'print $F[0]' | sort | uniq -c | sort -n -k 2 | $PAGER
 }
 alias m='make -j100'
 alias k='pkill -USR1 fc-solve'
 
 _display_post_processor()
 {
-    tac | cat -n | perl -lapE 's/:/\t/g; ' | less
+    tac | cat -n | perl -lapE 's/:/\t/g; ' | $PAGER
 }
 
 _display_generic()
