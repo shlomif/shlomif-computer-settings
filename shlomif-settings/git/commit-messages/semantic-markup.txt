@@ -1,0 +1,4 @@
+Make the markup more semantic.
+
+See https://www.shlomifish.org/philosophy/computers/web/validate-your-html/ and
+https://en.wikipedia.org/wiki/Semantic_HTML .
