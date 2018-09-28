@@ -2,11 +2,11 @@ load_common bundle/git
 load_common chdirs
 load_common edit_perl_lib
 
-base="$HOME/Download/unpack/file/vim/neovim"
-hg_base="$base"
-trunk="$base"
-proj="$trunk/black-hole-solitaire"
-module="$proj/Games-Solitaire-BlackHole-Solver"
+base="$HOME/Download/unpack/file/vim"
+git_base="$base"
+trunk="$base/neovim"
+qtrunk="$base/neovim-qt"
+qb="$base/b-neovim-qt"
 c_src="$proj/c-solver"
 c_build="$c_src/B"
 a_src="$c_src"
@@ -21,6 +21,19 @@ remote_repo="$(_shlomif_github "neovim")"
 export FCS_USE_TEST_RUN=1 FCS_TEST_CLANG_FORMAT=1
 
 cd "$this"
+
+qtb()
+{
+    (
+        set -e -x
+        mkdir -p "$qb"
+        cd "$qb"
+        bash -x ~/conf/build/neovim-qt.sh "$qtrunk"
+        make
+        make test
+        make install
+    )
+}
 
 t()
 {
