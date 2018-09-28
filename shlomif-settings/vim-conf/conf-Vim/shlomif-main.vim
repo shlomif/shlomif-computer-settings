@@ -547,3 +547,5 @@ function ShowSubLens()
 endfunction
 
 command! ShowSubLens call ShowSubLens()
+
+autocmd FileType scss setlocal iskeyword+=-
