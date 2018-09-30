@@ -26,4 +26,15 @@ t()
     (cd "$trunk" && make -j4 test)
 }
 
+rebuild()
+{
+    (
+        set -x
+        set -e
+        cd "$trunk"
+        time bin/rebuild
+        n -m "rebuild"
+    )
+}
+
 proj_name='perl-begin'
