@@ -36,8 +36,12 @@ key=( BackSpace  "${terminfo[kbs]}"
 )
 
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+autoload -U edit-command-line
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
+zle -N edit-command-line
+
+bindkey '^x^e' edit-command-line
 
 [[ -n "$key[PageUp]"   ]] && bindkey -- "$key[PageUp]"   up-line-or-beginning-search
 [[ -n "$key[PageDown]" ]] && bindkey -- "$key[PageDown]" down-line-or-beginning-search
