@@ -23,4 +23,5 @@ prompt()
         "~=$HOME"
 }
 
+__add_to_path
 proj_name='better-scm'
