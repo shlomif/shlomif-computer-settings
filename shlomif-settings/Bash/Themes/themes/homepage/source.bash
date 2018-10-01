@@ -1,6 +1,7 @@
 load_common bundle/git
 load_common partests
 load_common chdirs
+load_common latemp
 
 base="$HOME/Docs/homepage"
 hg_base="$base"
@@ -87,13 +88,6 @@ beta_up()
     (cd "$trunk" && make -j4 upload_var upload_local upload_beta)
 }
 
-b()
-{
-    (cd "$trunk" && make -j16 && make test ; n --msg "make")
-}
-
-alias t='b'
-
 # edit facts
 efact()
 {
@@ -102,17 +96,6 @@ efact()
         gvim -o lib/factoids/shlomif-factoids-lists.xml \
             t2/humour/fortunes/shlomif-factoids.xml \
             ~/Docs/Personal/email/signature/shlomif-sig-quotes.txt
-    )
-}
-
-rebuild()
-{
-    (
-        set -x
-        set -e
-        cd "$trunk"
-        time bin/rebuild
-        n -m "rebuild"
     )
 }
 
@@ -146,13 +129,6 @@ ba()
     rm -fr "$pristine_copy"
     cp -a dest/post-incs/ "$pristine_copy"
 }
-
-alias p='git push'
-export PATH="/home/shlomif/apps/golang/bin:/home/shlomif/.local/bin:/home/shlomif/apps/test/wml/bin:$PATH"
-export PATH="$HOME/apps/quadpres/bin:$HOME/Download/unpack/xml/ebookmaker:$trunk/node_modules/.bin:$PATH:/usr/sbin" QUAD_PRES_QUIET=1
-dedup_pathvar PATH
-dedup_pathvar PERL5LIB
-dedup_pathvar PYTHONPATH
 
 export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/shlomif-homepage-tidyall.d"
 # Commented out because it makes matters slower:
