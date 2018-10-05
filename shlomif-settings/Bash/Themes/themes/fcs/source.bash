@@ -289,7 +289,8 @@ cv()
 }
 
 export FCS_PATH="$b" FCS_SRC_PATH="$c_src"
-PATH="$HOME/.local/bin:$PATH:$site/node_modules/.bin"
+export HTML_VALID_VNU_JAR=~/Download/unpack/net/www/validator/build/dist/vnu.jar
+PATH="$HOME/apps/golang/bin:$HOME/.local/bin:$PATH:$site/node_modules/.bin"
 # Temporary measure because valgrind-3.7.0 on mageia v7 does not handle
 # the new glibc well so we need to use the one from git master HEAD.
 PATH="$HOME/apps/valgrind/bin:$PATH"
