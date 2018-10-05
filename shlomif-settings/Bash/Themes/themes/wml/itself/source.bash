@@ -53,6 +53,11 @@ b()
         make install
 }
 
+c()
+{
+    cd "$src"
+}
+
 alias p='git push'
 
 proj_name='wml'
