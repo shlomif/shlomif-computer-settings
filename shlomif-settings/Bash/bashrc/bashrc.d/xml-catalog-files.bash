@@ -2,7 +2,7 @@ homepage="$HOME/Docs/homepage/homepage/trunk"
 htdocs_base="$HOME/Download/unpack/prog/web"
 htdocs_b2="$htdocs_base/validator-1.1"
 htdocs_cat="$htdocs_b2/htdocs/sgml-lib/catalog.xml"
-export XML_CATALOG_FILES="$homepage/rng/catalog.xml $htdocs_cat /etc/xml/catalog"
+export XML_CATALOG_FILES="$homepage/rng/catalog.xml $htdocs_cat /etc/xml/catalog /usr/local/share/xml/catalog"
 
 if ! test -e "$htdocs_cat" ; then
     mkdir -p "$htdocs_base"
