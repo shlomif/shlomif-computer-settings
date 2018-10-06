@@ -92,9 +92,9 @@ pt()
 make()
 {
     if [ "$*" = "pgo" ]; then
-        `which make` VERBOSE=1 "$@"
+        `which gmake` VERBOSE=1 "$@"
     else
-        `which make` "$@"
+        `which gmake` "$@"
     fi
 }
 
@@ -109,7 +109,7 @@ _dzil_inst()
 
 _Makefile_gnu__make()
 {
-    make -f "$t_fcs"/scripts/Makefile.gnu SRC_DIR="$c_src" -j4 "$@"
+    gmake -f "$t_fcs"/scripts/Makefile.gnu SRC_DIR="$c_src" -j4 "$@"
 }
 
 # Short for make
