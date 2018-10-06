@@ -12,7 +12,7 @@ cd "$trunk"
 
 m()
 {
-    make "$@"
+    gmake "$@"
 }
 
 prompt()
