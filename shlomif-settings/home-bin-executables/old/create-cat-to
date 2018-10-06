@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 # create-cat-to.pl
 # cat to a file that can be created.

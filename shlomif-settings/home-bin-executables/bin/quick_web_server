@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 # Taken from:
 # http://blogs.perl.org/users/joel_berger/2013/01/a-quick-static-file-webserver.html

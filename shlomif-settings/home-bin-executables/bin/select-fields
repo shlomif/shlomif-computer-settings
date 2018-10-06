@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 # Written by Shlomi Fish - http://www.shlomifish.org/ - 2016
 # Licensed under the MIT/Expat License.

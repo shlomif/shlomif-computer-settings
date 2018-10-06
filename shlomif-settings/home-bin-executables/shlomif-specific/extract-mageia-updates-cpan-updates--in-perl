@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 # Script to extract the CPAN only updates and put them each on one stdout
 # line from pages like http://check.mageia.org/cauldron/shlomif/updates.html

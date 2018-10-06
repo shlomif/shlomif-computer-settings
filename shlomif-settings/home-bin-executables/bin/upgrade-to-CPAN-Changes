@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 # This program attempts to upgrade a CPAN changes from my own peculiar
 # format to something that https://metacpan.org/release/CPAN-Changes likes.

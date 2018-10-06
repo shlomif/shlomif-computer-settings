@@ -1,4 +1,4 @@
-#!/usr/bin/perl -lpi
+#!/usr/bin/env perl -lpi
 s/\r//;
 
 __END__

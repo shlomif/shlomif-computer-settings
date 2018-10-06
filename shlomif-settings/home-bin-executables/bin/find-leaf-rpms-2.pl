@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 # Based upon /usr/bin/urpmq from Mageia Linux.
 

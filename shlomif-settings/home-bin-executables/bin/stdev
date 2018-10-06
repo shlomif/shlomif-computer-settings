@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 #
 # stdev - figure N, min, max, median, mode, mean, & std deviation
 #
