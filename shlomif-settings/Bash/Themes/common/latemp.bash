@@ -16,7 +16,7 @@ rebuild()
 
 b()
 {
-    (cd "$trunk" && make -j16 && make test ; n --msg "make")
+    (cd "$trunk" && gmake -j16 && gmake test ; n --msg "gmake")
 }
 
 alias t='b'
