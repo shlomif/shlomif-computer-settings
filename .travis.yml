@@ -16,4 +16,7 @@ install:
     - cpanm --notest IPC::System::Simple
     - cpanm Code::TidyAll::Plugin::PerlTidy Number::Format Path::Tiny Perl::Tidy Test::Code::TidyAll Test::HTML::Tidy Test::TrailingSpace Text::Markdown
 script:
+    - mkdir -p ~/bin
+    - ln -sf /usr/bin/make ~/bin/gmake
+    - export PATH="$HOME/bin:$PATH"
     - prove shlomif-settings/tests/*.t
