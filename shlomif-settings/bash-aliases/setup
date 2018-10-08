@@ -14,5 +14,9 @@ my $h        = $ENV{HOME};
 my $rel_path = $conf_dir;
 $rel_path =~ s{\A\Q$h/conf\E/}{../};
 
-symlink( "$h/conf/trunk/shlomif-settings/bash-aliases/common_aliases.bash",
-    "$h/.common_aliases.bash" );
+my $tgt = "$h/.common_aliases.bash";
+if ( not -e $tgt )
+{
+    symlink( "$h/conf/trunk/shlomif-settings/bash-aliases/common_aliases.bash",
+        $tgt, );
+}

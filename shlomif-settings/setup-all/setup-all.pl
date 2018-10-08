@@ -42,17 +42,21 @@ my $trunk = "$CONF/trunk";
 
 mkpath($CONF);
 
-cwd_cmd(
-    {
-        dir => $CONF,
+if ( !-e $trunk )
+{
+    cwd_cmd(
+        {
+            dir => $CONF,
 
 # cmd => ["git", "clone", 'git@github.com:shlomif/shlomif-computer-settings.git', $trunk,],
-        cmd => [
-            "git", "clone",
-            'https://github.com/shlomif/shlomif-computer-settings.git', $trunk,
-        ],
-    }
-);
+            cmd => [
+                "git", "clone",
+                'https://github.com/shlomif/shlomif-computer-settings.git',
+                $trunk,
+            ],
+        }
+    );
+}
 
 sub sub_c
 {
@@ -81,6 +85,7 @@ run_setup('hg');
 run_setup('perl/Dist-Zilla');
 run_setup('perl/perldb');
 run_setup('perl/perltidy');
+run_setup('python/pdb');
 run_setup('rpm');
 run_setup('sky');
 run_setup('tmux');

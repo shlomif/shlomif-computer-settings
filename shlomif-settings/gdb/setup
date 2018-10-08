@@ -4,4 +4,8 @@ mkdir -p ~/conf
 cd ~/conf
 ln -s "$dir" gdb
 cd ~
-ln -s "$dir/dot-gdbinit.gdb" .gdbinit
+tgt=.gdbinit
+if ! test -e "$tgt"
+then
+    ln -s "$dir/dot-gdbinit.gdb"
+fi
