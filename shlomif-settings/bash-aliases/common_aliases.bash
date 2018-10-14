@@ -47,7 +47,7 @@ _cpan_d_format()
 
 c()
 {
-    sudo cpan2dist --verbose --format="$(_cpan_d_format)" \
+    cpan2dist --verbose --format="$(_cpan_d_format)" \
         --defaults --install --timeout 0 $(perlmf as_colon "$@")
 }
 
