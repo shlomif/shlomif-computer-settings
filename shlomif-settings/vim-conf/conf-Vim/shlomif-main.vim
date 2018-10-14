@@ -118,9 +118,12 @@ call vam#ActivateAddons([
     \ {'auto_install': 1, 'shell_commands_run_method': "system",})
 set more
 
-    " \ 'github:vim-syntastic/syntastic',
-    " \ 'perlprove',
-    " \ 'github:vim-syntastic/syntastic',
+if $VIMSYNT == 1
+    call vam#ActivateAddons([
+                \ 'github:vim-syntastic/syntastic',
+                \ ],
+    \ {'auto_install': 1, 'shell_commands_run_method': "system",})
+end
 
 " Expand the syntax menu automatically
 let do_syntax_sel_menu = 1
