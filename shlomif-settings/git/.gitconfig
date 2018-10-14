@@ -27,9 +27,14 @@
 	pushInsteadOf = kde:
 [url "ssh://git@github.com/"]
     pushInsteadOf = https://github.com/
+[url "ssh://git@gitlab.com/"]
+    pushInsteadOf = https://gitlab.com/
 [color]
     ui = false
 [github]
     user = shlomif
 [include]
     path = ~/.gitconfig-private
+[pager]
+    diff = diff-so-fancy | less --tabs=1,5 -RFX
+    show = diff-so-fancy | less --tabs=1,5 -RFX
