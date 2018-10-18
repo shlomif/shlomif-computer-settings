@@ -53,6 +53,14 @@ b()
         make install
 }
 
+fmt()
+{
+    (
+        unset WML_TEST_BUILD
+        t
+    )
+}
+
 c()
 {
     cd "$src"
