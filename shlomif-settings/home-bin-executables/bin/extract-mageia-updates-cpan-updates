@@ -1,0 +1,52 @@
+#!/usr/bin/env perl
+
+# Script to extract the CPAN only updates and put them each on one stdout
+# line from pages like http://check.mageia.org/cauldron/shlomif/updates.html
+#
+# See:
+#
+# http://check.mageia.org/cauldron/
+#
+# Usage: /path/to/exe [/path/to/filename] or /path/to/exe [URL]
+#
+# E.g:
+#
+# extract-mageia-updates-cpan-updates http://check.mageia.org/cauldron/shlomif/updates.html
+#
+# Copyright by Shlomi Fish, 2014 under the MIT/Expat License:
+#
+# http://en.wikipedia.org/wiki/MIT_License
+#
+# Note: this is a rewrite of the same Ruby script in Perl, due to frequent
+# problems installing the dependencies of ruby's nokogiri and other ruby
+# gems.
+
+use strict;
+use warnings;
+
+use feature qw/say/;
+
+use XML::LibXML ();
+
+my $url = shift(@ARGV);
+
+my $page = XML::LibXML->load_html( location => $url );
+
+foreach my $tr ( $page->findnodes('//tr') )
+{
+    my @cells = $tr->findnodes('td');
+    if ( @cells > 0 )
+    {
+        my $first     = $cells[0];
+        my $last_cell = $cells[-1];
+        my $last_a    = $last_cell->findnodes('a')->[0]->textContent;
+        if ( $last_a =~ /cpan/ )
+        {
+            my $MOD = $first->textContent;
+            if ( $MOD !~ /Nagios-Plugin|(?:\Aperl-libnet\z)/ )
+            {
+                say $MOD;
+            }
+        }
+    }
+}
