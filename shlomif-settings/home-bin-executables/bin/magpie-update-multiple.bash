@@ -1,5 +1,17 @@
 #!/bin/bash
 
+# Dependencies:
+#
+# * https://github.com/shlomif/shlomif-computer-settings/blob/master/shlomif-settings/home-bin-executables/bin/extract-mageia-updates-cpan-updates
+#
+# * https://metacpan.org/pod/distribution/App-Magpie/bin/magpie
+#
+# also see the mageia patches - http://madb.mageia.org/package/show/name/magpie/release/cauldron
+#
+# * https://metacpan.org/pod/distribution/CPAN-Mini/bin/minicpan
+#
+# * https://metacpan.org/pod/distribution/App-Notifier-Client/bin/notifier
+
 list_fn="$HOME/mageia-perl-magpie-modules-list.txt"
 
 if ! test -e "$list_fn"
@@ -11,7 +23,8 @@ minicpan
 
 update_multi()
 {
-    while read mod ; do
+    while read mod
+    do
         (
             echo "$mod"
             magpie checkout "$mod" && \
