@@ -49,6 +49,7 @@ _update_PERL5LIB()
 {
     . ~/conf/trunk/shlomif-settings/bash-aliases/PERL5LIB_gen.sh
 }
+_update_PERL5LIB
 alias myrsync='rsync -a --progress -v --inplace' \
   rem_up='HOMEPAGE_SSH_PATH="$__HOMEPAGE_REMOTE_PATH" make upload' \
   xz9='xz -9 --extreme' ifconfig='/sbin/ifconfig'
