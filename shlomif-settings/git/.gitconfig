@@ -21,6 +21,8 @@
     excludesfile = ~/conf/git/excludes
 [push]
     default = simple
+[url "https://gitlab.gnome.org/GNOME/"]
+	insteadOf = git://git.gnome.org/
 [url "git://anongit.kde.org/"]
 	insteadOf = kde:
 [url "git@git.kde.org:"]
@@ -36,5 +38,5 @@
 [include]
     path = ~/.gitconfig-private
 [pager]
-    diff = diff-so-fancy | less --tabs=1,5 -RFX
+    ; diff = diff-so-fancy | less --tabs=1,5 -RFX
     show = diff-so-fancy | less --tabs=1,5 -RFX
