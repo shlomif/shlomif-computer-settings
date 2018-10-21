@@ -19,7 +19,7 @@ setup()
     (
         mkdir -p "$_base_trunk"
         cd "$_base_trunk"
-        git clone 'git@github.com:shlomif/perl.git' "$trunk"
+        git clone 'https://github.com/shlomif/perl5' "$trunk"
         cd "$trunk"
         git remote add upstream 'git://perl5.git.perl.org/perl.git'
     )
