@@ -19,7 +19,7 @@ prompt()
 
 up()
 {
-    (cd "$trunk" && gmake -j4 upload upload_hexten)
+    (cd "$trunk" && gmake -j4 upload upload_hexten upload_home_remote)
 }
 
 __add_to_path

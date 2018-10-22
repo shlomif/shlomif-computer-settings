@@ -1,5 +1,4 @@
-load_common bundle/inc1
-load_common hg
+load_common bundle/git
 load_common perl_dzil
 load_common perl_system_tests
 
@@ -9,7 +8,7 @@ trunk="$base/trunk"
 module="$trunk/modules/App-XML-DocBook-Docmake"
 this="$module"
 test_dir="$HOME/Docs/Svn/Docs/programming/The-Perfect-IT-Workplace/docbook"
-remote_repo="$(_shlomif_bitbucket "docmake")"
+remote_repo="$(_shlomif_github "docmake")"
 
 prompt()
 {
