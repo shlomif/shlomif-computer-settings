@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e -x
+
+cd ~/.vim/Command-T/ruby/command-t/ext/command-t\n
+ruby extconf.rb
+make
