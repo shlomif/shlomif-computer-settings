@@ -30,7 +30,8 @@ prompt()
 rgm()
 {
     (
-        PATH="$HOME/apps/perl6-rakudo/bin/:$PATH"
+        r="$HOME/apps/perl6-rakudo"
+        PATH="$r/bin/:$r/share/perl6/site/bin:$PATH"
         eval "$@"
     )
 }
