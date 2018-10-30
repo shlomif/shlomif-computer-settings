@@ -552,3 +552,8 @@ endfunction
 command! ShowSubLens call ShowSubLens()
 
 autocmd FileType scss setlocal iskeyword+=-
+
+fun MarkdownSelfLinkRefactor()
+    map <F2> viW"ada[<c-r>a](./<c-r>a)<esc>
+endf
+
