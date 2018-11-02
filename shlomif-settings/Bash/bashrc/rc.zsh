@@ -43,11 +43,20 @@ zle -N edit-command-line
 
 bindkey '^x^e' edit-command-line
 
-[[ -n "$key[PageUp]"   ]] && bindkey -- "$key[PageUp]"   up-line-or-beginning-search
-[[ -n "$key[PageDown]" ]] && bindkey -- "$key[PageDown]" down-line-or-beginning-search
+# [[ -n "$key[PageUp]"   ]] && bindkey -- "$key[PageUp]"   up-line-or-beginning-search
+# [[ -n "$key[PageDown]" ]] && bindkey -- "$key[PageDown]" down-line-or-beginning-search
+[[ -n "$key[PageUp]"   ]] && bindkey -- "$key[PageUp]"   history-beginning-search-backward
+[[ -n "$key[PageDown]" ]] && bindkey -- "$key[PageDown]" history-beginning-search-forward
 [[ -n "$key[Home]"   ]] && bindkey -- "$key[Home]"   beginning-of-line
 [[ -n "$key[End]"   ]] && bindkey -- "$key[End]"   end-of-line
 [[ -n "$key[Delete]"   ]] && bindkey -- "$key[Delete]"   delete-char
 
 . ~/conf/trunk/shlomif-settings/Bash/bashrc/common.bash
+
+compl=~/conf/trunk/shlomif-settings/Bash/zsh-completions
+if ! test -e "$compl"
+then
+    git clone https://github.com/zsh-users/zsh-completions.git "$compl"
+fi
+# fpath=("$compl/src" $fpath)
 prompt redhat
