@@ -396,14 +396,17 @@ set t_Co=256
 " See:
 " http://stackoverflow.com/questions/9234925/spell-check-with-vim-and-xml-automatically
 function Shlomif_XML_file_type()
-    let fn = expand("<afile>:p")
+    " let fn = expand("<afile>:p")
     " Only for XML files under my homepage for now.
-    if (match(fn, "Docs/homepage/") >= 0)
+    " if (match(fn, "Docs/homepage/") >= 0)
+    " For all files.
+    if (1)
         syn spell toplevel
     end
 endfunction
 
 autocmd FileType xml call Shlomif_XML_file_type()
+autocmd FileType docbk call Shlomif_XML_file_type()
 
 autocmd BufRead,BufNewFile ~/Docs/programming/Vim/vim-begin/*.html set indentexpr=
 
