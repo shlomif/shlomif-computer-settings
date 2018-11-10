@@ -46,6 +46,17 @@ t()
     )
 }
 
+mi()
+{
+    (
+    set -e -x
+    cd "$trunk"
+    make distclean
+    make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX:PATH=$HOME/apps/neovim"
+    make install
+    )
+}
+
 prompt()
 {
     __prompt_cmd \
