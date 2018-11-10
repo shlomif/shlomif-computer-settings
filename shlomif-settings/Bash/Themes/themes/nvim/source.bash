@@ -49,7 +49,6 @@ t()
 prompt()
 {
     __prompt_cmd \
-        "\$module=$module" \
         "\$c_src=$c_src" \
         "\$trunk=$trunk" \
         "\$base=$base" \
