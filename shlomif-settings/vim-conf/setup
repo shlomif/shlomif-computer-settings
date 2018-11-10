@@ -26,3 +26,17 @@ vimrc="$HOME/.vimrc"
 if ! test -e "$vimrc" ; then
   ln -s "$conf_dir/vimrc.vim" "$vimrc"
 fi
+
+conf="$HOME/.config"
+nvim="$conf/nvim"
+mkdir -p "$conf"
+if ! test -e "$nvim"
+then
+    ln -s "$conf_dir/dot-config-nvim" "$nvim"
+fi
+extbase=ExtraUltiSnips
+ext="$nvim/$extbase"
+if ! test -e "$ext"
+then
+    ln -s "$HOME/.vim/$extbase" "$ext"
+fi
