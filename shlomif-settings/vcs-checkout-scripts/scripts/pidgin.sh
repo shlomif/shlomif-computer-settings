@@ -1,2 +1,2 @@
 #!/bin/bash
-hg clone https://hg.pidgin.im/pidgin/main pidgin-main
+hg clone https://bitbucket.org/pidgin/main pidgin-main
