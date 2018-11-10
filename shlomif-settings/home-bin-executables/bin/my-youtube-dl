@@ -6,4 +6,4 @@
 # Distributed under terms of the MIT license.
 #
 
-youtube-dl -f 43 -o "%(title)s-%(id)s.%(ext)s" "$1"
+youtube-dl -f best -o "%(title)s-%(id)s.%(ext)s" "$1"
