@@ -160,6 +160,16 @@ sub ${1:function_name}
 
 endsnippet
 
+# Method with args
+snippet metha
+sub ${1:function_name}
+{
+	my ($self, $args) = @_;
+
+	return;
+}
+
+endsnippet
 snippet ltb
 local $Test::Builder::Level = $Test::Builder::Level + 1;
 endsnippet
