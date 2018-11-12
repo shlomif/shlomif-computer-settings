@@ -113,6 +113,7 @@ call vam#ActivateAddons([
     \ 'textobj-rubyblock',
     \ 'textobj-user',
     \ 'vcscommand',
+    \ 'vim-airline',
     \ 'xml',
     \ ],
     \ {'auto_install': 1, 'shell_commands_run_method': "system",})
@@ -125,6 +126,8 @@ if $VIMSYNT == 1
     \ {'auto_install': 1, 'shell_commands_run_method': "system",})
 end
 
+let g:powerline_pycmd = 'py3'
+let g:airline_powerline_fonts = 1
 " Expand the syntax menu automatically
 let do_syntax_sel_menu = 1
 runtime! synmenu.vim
@@ -559,4 +562,3 @@ autocmd FileType scss setlocal iskeyword+=-
 fun MarkdownSelfLinkRefactor()
     map <F2> viW"ada[<c-r>a](./<c-r>a)<esc>
 endf
-
