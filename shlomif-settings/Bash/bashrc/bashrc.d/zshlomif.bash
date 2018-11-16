@@ -14,3 +14,11 @@ _reread_aliases
 export BITBUCKET_USERS=',shlomif,' GITHUB_USERS=',shlomif,thewml,' TEST_JOBS=4 PERLBREW_ROOT="$HOME/apps/perl/brew"
 # . "${PERLBREW_ROOT}/etc/bashrc"
 alias ls='ls --color=auto -N'
+if test "`uname`" = "Linux"
+then
+    export XDG_RUNTIME_DIR="/run/user/$UID"
+fi
+if test -z "$QT_QPA_PLATFORMTHEME"
+then
+    export QT_QPA_PLATFORMTHEME="qt5ct"
+fi
