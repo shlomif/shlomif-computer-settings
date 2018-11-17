@@ -11,13 +11,13 @@ my $tree = HTML::TreeBuilder::XPath->new;
 
 my $filename = shift;
 
-open (my $fh, '<:encoding(UTF-8)', $filename)
+open( my $fh, '<:encoding(UTF-8)', $filename )
     || die "Cannot open '$filename' - $!";
 
 $tree->parse_file($fh);
 
 {
-    my @nodes = $tree->findnodes( '/html/body//div[@class="editsection"]' );
+    my @nodes = $tree->findnodes('/html/body//div[@class="editsection"]');
 
     foreach my $n (@nodes)
     {
@@ -27,23 +27,22 @@ $tree->parse_file($fh);
 }
 
 {
-    my @nodes = map { $tree->findnodes( '/html/body//h' . $_ ) } (2 .. 4);
+    my @nodes = map { $tree->findnodes( '/html/body//h' . $_ ) } ( 2 .. 4 );
 
     foreach my $h2 (@nodes)
     {
         my $a_tag = $h2->left();
-        if (blessed($a_tag) && $a_tag->tag() eq "a" && $a_tag->attr('name'))
+        if ( blessed($a_tag) && $a_tag->tag() eq "a" && $a_tag->attr('name') )
         {
             my $id = $a_tag->attr('name');
-            $h2->attr('id', $id);
+            $h2->attr( 'id', $id );
             $a_tag->detach();
             $a_tag->delete();
         }
     }
 }
 
-my (@divs_to_delete) =
-(
+my (@divs_to_delete) = (
     $tree->findnodes('/html/body//div[@class="printfooter"]'),
     $tree->findnodes('/html/body//div[@id="catlinks"]'),
     $tree->findnodes('/html/body//div[@class="visualClear"]'),

@@ -27,7 +27,7 @@ while ( my $r = $tree->next() )
     {
         my $dir = dirname($r);
 
-        my $cmd = shell_quote( "svn", "propget", "svn:ignore", $dir );
+        my $cmd    = shell_quote( "svn", "propget", "svn:ignore", $dir );
         my @ignore = `$cmd`;
         chomp(@ignore);
         if ( any { $_ eq $filename } @ignore )

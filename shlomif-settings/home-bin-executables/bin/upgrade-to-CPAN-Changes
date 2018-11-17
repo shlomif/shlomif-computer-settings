@@ -10,14 +10,14 @@ use List::Util qw(first);
 
 use DateTime::Format::Strptime;
 
-my @strp_s = (map {
-    DateTime::Format::Strptime->new(
-    pattern   => $_,
-    locale    => 'en_US',
-    time_zone => 'Asia/Jerusalem',
-    )
-    }
-    (
+my @strp_s = (
+    map {
+        DateTime::Format::Strptime->new(
+            pattern   => $_,
+            locale    => 'en_US',
+            time_zone => 'Asia/Jerusalem',
+        )
+    } (
         '%b %d, %Y',
         '%Y-%m-%d',
         '%a %b %d %T %Y',
@@ -27,15 +27,23 @@ my @strp_s = (map {
     )
 );
 
-while (my $l = <STDIN>)
+while ( my $l = <STDIN> )
 {
     chomp($l);
-    if ($l !~ /Unknown/ and my ($v, $space, $date_str, $author) = $l =~ m{\A(v?[\d\.]+)(\s+)(?:-\s*)?(\S[^\-]*?)((?: - .*)?)\z}ms)
+    if ( $l !~ /Unknown/
+        and my ( $v, $space, $date_str, $author ) =
+        $l =~ m{\A(v?[\d\.]+)(\s+)(?:-\s*)?(\S[^\-]*?)((?: - .*)?)\z}ms )
     {
         $date_str =~ s/\s+\b(?:IDT|IST)\b\s+/ /;
-        if (defined (my $d = first {defined($_) } map { $_->parse_datetime($date_str) } @strp_s))
+        if (
+            defined(
+                my $d =
+                    first { defined($_) }
+                map { $_->parse_datetime($date_str) } @strp_s
+            )
+            )
         {
-            printf ("%-8s%s%s\n", $v, $d->strftime("%Y-%m-%d"), $author);
+            printf( "%-8s%s%s\n", $v, $d->strftime("%Y-%m-%d"), $author );
         }
         else
         {

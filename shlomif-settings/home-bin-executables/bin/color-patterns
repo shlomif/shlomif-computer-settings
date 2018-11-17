@@ -13,21 +13,21 @@ use Getopt::Long qw/ GetOptions /;
 use Term::ANSIColor qw/colored/;
 
 my %patterns;
-GetOptions('pat=s' => \%patterns)
+GetOptions( 'pat=s' => \%patterns )
     or die('Error in command line arguments.');
 
 my @p;
-while (my ($k, $v) = each (%patterns))
+while ( my ( $k, $v ) = each(%patterns) )
 {
     push @p, { pat => qr{$k}, color => $v };
 }
 
-while (my $l = <>)
+while ( my $l = <> )
 {
     foreach my $pat (@p)
     {
         my $re = $pat->{pat};
-        my $c = $pat->{color};
+        my $c  = $pat->{color};
         $l =~ s/($re)/colored($1, $c)/eg;
     }
     print $l;

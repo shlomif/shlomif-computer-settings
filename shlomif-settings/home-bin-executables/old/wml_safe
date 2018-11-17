@@ -13,6 +13,7 @@ while (<>)
     s/;;;/&#059;&#059;&#059;/g;
     print $_;
 }
+
 =head1 COPYRIGHT & LICENSE
 
 Copyright 2017 by Shlomi Fish

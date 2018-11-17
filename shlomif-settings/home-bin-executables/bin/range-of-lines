@@ -4,14 +4,14 @@ use strict;
 use warnings;
 
 my $start_from = shift(@ARGV);
-my $count = shift(@ARGV);
+my $count      = shift(@ARGV);
 
-for my $line_idx (1 .. $start_from)
+for my $line_idx ( 1 .. $start_from )
 {
     <>;
 }
 
-for my $line_idx (1 .. $count)
+for my $line_idx ( 1 .. $count )
 {
     print scalar <>;
 }

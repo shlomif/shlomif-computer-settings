@@ -4,15 +4,17 @@ use strict;
 use warnings;
 
 my $l = <>;
-if ($l =~ m{http://www\.amazon\.com/.*\/dp/(\w+)/})
+if ( $l =~ m{http://www\.amazon\.com/.*\/dp/(\w+)/} )
 {
     my $asin = $1;
-    print "http://www.amazon.com/exec/obidos/ASIN/$asin/ref=nosim/shlomifishhom-20/\n"
+    print
+"http://www.amazon.com/exec/obidos/ASIN/$asin/ref=nosim/shlomifishhom-20/\n";
 }
 else
 {
     die "Unknown URL";
 }
+
 =head1 COPYRIGHT & LICENSE
 
 Copyright 2017 by Shlomi Fish

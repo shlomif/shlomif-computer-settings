@@ -17,15 +17,18 @@ sub memusage
 
     my $pid = shift;
 
-    my $proc = Proc::ProcessTable->new;
+    my $proc   = Proc::ProcessTable->new;
     my %fields = map { $_ => 1 } $proc->fields;
     return undef unless exists $fields{'pid'};
-    foreach (@{$proc->table}) {
-        if ($_->pid eq $pid) {
+    foreach ( @{ $proc->table } )
+    {
+        if ( $_->pid eq $pid )
+        {
             return $_->size();
+
             # push (@results, $_->pctmem) if exists $fields{'pctmem'};
-        };
-    };
+        }
+    }
     return -1;
 }
 
@@ -33,9 +36,9 @@ while (1)
 {
     foreach my $pid (`pgrep mozilla-firefox`)
     {
-        if (memusage($pid) > $LIMIT)
+        if ( memusage($pid) > $LIMIT )
         {
-            kill (SIGTERM(), $pid);
+            kill( SIGTERM(), $pid );
         }
     }
     sleep(20);

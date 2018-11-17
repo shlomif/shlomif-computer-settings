@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-print "\033]0;" . join(' ', @ARGV)  . "\007";
+print "\033]0;" . join( ' ', @ARGV ) . "\007";
 
 =head1 COPYRIGHT & LICENSE
 

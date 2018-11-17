@@ -68,7 +68,7 @@ $conf->set_conf(
                 path   => $mirrors{ $_ . "_path" },
                 scheme => $mirrors{ $_ . "_scheme" },
                 host   => $mirrors{ $_ . "_host" },
-                }
+            }
         } ( map { "m" . $_ } 0 .. 1 )
     ]
 );

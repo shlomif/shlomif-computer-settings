@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 local $/;
-print join ' ', sort {$a cmp $b} <> =~ /(\S+)/g;
+print join ' ', sort { $a cmp $b } <> =~ /(\S+)/g;
 
 __END__
 

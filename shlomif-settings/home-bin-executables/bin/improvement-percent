@@ -5,14 +5,14 @@ use warnings;
 
 use v5.014;
 
-my ($from_w, $from_val, $to_w, $to_val, @rest) = @ARGV;
+my ( $from_w, $from_val, $to_w, $to_val, @rest ) = @ARGV;
 
-if (@rest or $from_w ne 'from' or $to_w ne 'to')
+if ( @rest or $from_w ne 'from' or $to_w ne 'to' )
 {
     die qq#Syntax is "percent from [from] to [to]"!#;
 }
 
-say ((($from_val - $to_val) / $to_val * 100), "%");
+say( ( ( $from_val - $to_val ) / $to_val * 100 ), "%" );
 
 # The Expat License
 #

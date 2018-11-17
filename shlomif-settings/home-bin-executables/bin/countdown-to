@@ -7,10 +7,10 @@ use IPC::System::Simple qw( capturex systemx );
 
 my ($date_spec) = @ARGV;
 
-my $future_stamp = capturex ('date', '-d', $date_spec, '+%s');
+my $future_stamp = capturex( 'date', '-d', $date_spec, '+%s' );
 chomp($future_stamp);
 
-systemx ("countdown", ($future_stamp-time()));
+systemx( "countdown", ( $future_stamp - time() ) );
 
 =head1 COPYRIGHT & LICENSE
 

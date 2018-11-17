@@ -9,13 +9,9 @@ use PGP::Mail;
 my $filename = shift(@ARGV);
 
 my $text = path($filename)->slurp_utf8;
-my $pgp =
-    PGP::Mail->new(
-        $text,
-        +{}
-    );
+my $pgp  = PGP::Mail->new( $text, +{} );
 print $pgp->status(), "\n";
-print $pgp->keyid(), "\n";
+print $pgp->keyid(),  "\n";
 
 =head1 COPYRIGHT & LICENSE
 

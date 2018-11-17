@@ -11,11 +11,12 @@ my $seconds = shift(@ARGV);
 
 my $d = DateTime::Format::Duration->new(
     normalise => 1,
-    pattern => '%Y years, %m months, %e days, '.
-    '%H hours, %M minutes, %S seconds'
+    pattern   => '%Y years, %m months, %e days, '
+        . '%H hours, %M minutes, %S seconds'
 );
 
-say $d->format_duration( DateTime::Duration->new( seconds => $seconds) );
+say $d->format_duration( DateTime::Duration->new( seconds => $seconds ) );
+
 =head1 COPYRIGHT & LICENSE
 
 Copyright 2018 by Shlomi Fish

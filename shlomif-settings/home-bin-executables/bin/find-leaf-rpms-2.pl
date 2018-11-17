@@ -325,7 +325,7 @@ my %requested;
             foreach my $blist (@$blists)
             {
                 my $medium = $blist->{medium};
-                my @pkgs = values %{ $blist->{pkgs} } or next;
+                my @pkgs   = values %{ $blist->{pkgs} } or next;
 
                 if ( my $dir = urpm::file_from_local_url( $medium->{url} ) )
                 {

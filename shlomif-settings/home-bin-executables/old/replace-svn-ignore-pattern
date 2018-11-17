@@ -5,14 +5,15 @@ use warnings;
 
 use File::Basename;
 
-while (my $l = <>)
+while ( my $l = <> )
 {
     chomp($l);
     $l =~ s/^\?\s+// or die "Unknown line '$_'";
-    my $dir = dirname($l);
+    my $dir  = dirname($l);
     my $file = basename($l);
 
     my $base = $file;
+
     #$base =~ s{\.html-for-quad-pres\z}{.html} or
     #    die "Unknown file in line '$l'";
 
@@ -20,8 +21,9 @@ while (my $l = <>)
     $ignore =~ s{\Q$base\E}{$file}
         or $ignore =~ s{\n?\z}{$file\n}ms;
 
-    system("svn", "propset", "svn:ignore", $ignore, $dir);
+    system( "svn", "propset", "svn:ignore", $ignore, $dir );
 }
+
 =head1 COPYRIGHT & LICENSE
 
 Copyright 2017 by Shlomi Fish

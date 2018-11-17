@@ -19,7 +19,7 @@ for ( $i = 0, $skip = 1 ; $i < @lines ; $i += $skip, $skip = 1 )
     if ( $l =~
         m{^/\*.*?have the (?:(?:`(\w+)')|(?:(\w+)\(\))) function.*?\*/\s*$} )
     {
-        my $func = $1 || $2;
+        my $func    = $1 || $2;
         my $uc_func = "HAVE_" . uc($func);
         if ( $lines[ $i + 1 ] =~ m{^#undef $uc_func\s*$} )
         {

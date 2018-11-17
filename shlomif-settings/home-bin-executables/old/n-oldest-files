@@ -13,62 +13,58 @@ package Elem;
 sub new
 {
     my $class = shift;
-    my $self = shift;
+    my $self  = shift;
     return bless $self, $class;
 }
 
 sub cmp
 {
-    my $self = shift;
+    my $self  = shift;
     my $other = shift;
 
-    return
-    (
-        ( -($self->{mtime} <=> $other->{mtime}) )
-        ||
-        ($self->{fn} cmp $other->{fn})
-    );
+    return (   ( -( $self->{mtime} <=> $other->{mtime} ) )
+            || ( $self->{fn} cmp $other->{fn} ) );
 }
 
 package main;
 
 my $num_to_find = 1_000;
-my $output_nul = 0;
+my $output_nul  = 0;
 
 GetOptions(
     '--limit=i' => \$num_to_find,
-    '-0' => \$output_nul,
+    '-0'        => \$output_nul,
 );
 
 my $dir_to_scan = shift(@ARGV);
 
-my $ffo = File::Find::Object->new({}, $dir_to_scan);
+my $ffo        = File::Find::Object->new( {}, $dir_to_scan );
 my $files_heap = Heap::Binary->new();
 my $heap_count = 0;
 
-while (my $result = $ffo->next_obj())
+while ( my $result = $ffo->next_obj() )
 {
     $files_heap->add(
         RefElem(
             Elem->new(
                 {
                     mtime => $result->stat_ret->[9],
-                    fn => $result->path(),
+                    fn    => $result->path(),
                 }
             )
         )
     );
 
-    if (++$heap_count > $num_to_find)
+    if ( ++$heap_count > $num_to_find )
     {
         $files_heap->extract_top();
         --$heap_count;
     }
 }
 
-while (my $elem = $files_heap->extract_top())
+while ( my $elem = $files_heap->extract_top() )
 {
-    print $elem->val->{fn}, ($output_nul ? "\0" : "\n");
+    print $elem->val->{fn}, ( $output_nul ? "\0" : "\n" );
 }
 
 =head1 COPYRIGHT & LICENSE
