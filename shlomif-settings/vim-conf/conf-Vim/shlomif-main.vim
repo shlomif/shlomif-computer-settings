@@ -562,3 +562,6 @@ autocmd FileType scss setlocal iskeyword+=-
 fun MarkdownSelfLinkRefactor()
     map <F2> viW"ada[<c-r>a](./<c-r>a)<esc>
 endf
+
+command! ReadIrcLog read !cat ~/irc.log | perl ~/bin/convert-irc-log-to-fortune-xml.pl
+command! ReadBackupIrcLog read !cat ~/Backup/Arcs/irc2.log | perl ~/bin/convert-irc-log-to-fortune-xml.pl
