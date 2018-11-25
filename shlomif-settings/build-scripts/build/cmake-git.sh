@@ -1,2 +1,2 @@
 #!/bin/bash
-cmake -DCMAKE_INSTALL_PREFIX="$HOME/apps/cmake-git" ../gwenview
+cmake -DCMAKE_INSTALL_PREFIX="$HOME/apps/cmake-git" "$1"

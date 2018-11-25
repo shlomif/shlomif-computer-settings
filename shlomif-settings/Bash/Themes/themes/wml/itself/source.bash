@@ -38,6 +38,7 @@ e()
 t()
 {
     (
+        mkdir -p "$b"
         cd "$b"
         rm -fr tests/
         perl ../src/wml_test/run_test.pl
