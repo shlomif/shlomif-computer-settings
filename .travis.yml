@@ -1,3 +1,6 @@
+env:
+    - TEST_INSTALL=0
+    - TEST_INSTALL=1
 sudo: false
 language: perl
 perl:
@@ -19,4 +22,4 @@ script:
     - mkdir -p ~/bin
     - ln -sf /usr/bin/make ~/bin/gmake
     - export PATH="$HOME/bin:$PATH"
-    - prove shlomif-settings/tests/*.t
+    - if test "$TEST_INSTALL" = 1 ; then repo="`pwd`" ; cd ~ ; perl "$repo"/shlomif-settings/setup-all/setup-all.pl ; else prove shlomif-settings/tests/*.t ; fi
