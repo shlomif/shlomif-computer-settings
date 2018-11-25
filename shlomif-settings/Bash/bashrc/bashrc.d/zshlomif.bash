@@ -22,3 +22,4 @@ if test -z "$QT_QPA_PLATFORMTHEME"
 then
     export QT_QPA_PLATFORMTHEME="qt5ct"
 fi
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/apps/to-del-ncurses/lib"
