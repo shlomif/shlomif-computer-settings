@@ -1,26 +1,24 @@
+before_install:
+    - git config --global user.name "TravisCI"
+    - git config --global user.email $HOSTNAME":not-for-mail@travis-ci.org"
 dist: xenial
 env:
     - TEST_INSTALL=0
     - TEST_INSTALL=1
-sudo: false
-language: perl
-perl:
-    - '5.26'
-matrix:
-    allow_failures:
-        - perl: 'blead'
-    fast_finish: true
-before_install:
-    - git config --global user.name "TravisCI"
-    - git config --global user.email $HOSTNAME":not-for-mail@travis-ci.org"
 install:
     - cpanm Alien::Tidyp
     - cpanm --notest HTML::Tidy
     # Sometimes fails.
     - cpanm --notest IPC::System::Simple
     - cpanm Code::TidyAll::Plugin::PerlTidy Number::Format Path::Tiny Perl::Tidy Test::Code::TidyAll Test::HTML::Tidy Test::TrailingSpace Text::Markdown
+language: perl
+matrix:
+    fast_finish: true
+perl:
+    - '5.26'
 script:
     - mkdir -p ~/bin
     - ln -sf /usr/bin/make ~/bin/gmake
     - export PATH="$HOME/bin:$PATH"
     - if test "$TEST_INSTALL" = 1 ; then repo="`pwd`" ; cd ~ ; perl "$repo"/shlomif-settings/setup-all/setup-all.pl ; else prove shlomif-settings/tests/*.t ; fi
+sudo: false
