@@ -94,6 +94,7 @@ call vam#ActivateAddons([
     \ 'github:nvie/vim-flake8',
     \ 'github:pboettch/vim-cmake-syntax',
     \ 'github:plasticboy/vim-markdown',
+    \ 'github:prettier/vim-prettier',
     \ 'github:romainl/Apprentice',
     \ 'github:shlomif/syntax-spork',
     \ 'github:shlomif/vim-extract-variable',
@@ -565,3 +566,6 @@ endf
 
 command! ReadIrcLog read !cat ~/irc.log | perl ~/bin/convert-irc-log-to-fortune-xml.pl
 command! ReadBackupIrcLog read !cat ~/Backup/Arcs/irc2.log | perl ~/bin/convert-irc-log-to-fortune-xml.pl
+
+" number of spaces per indentation level
+let g:prettier#config#tab_width = 4
