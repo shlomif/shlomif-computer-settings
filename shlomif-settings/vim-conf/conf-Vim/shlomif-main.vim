@@ -103,6 +103,7 @@ call vam#ActivateAddons([
     \ 'github:terryma/vim-expand-region',
     \ 'github:thinca/vim-quickrun',
     \ 'github:timonv/vim-cargo',
+    \ 'github:vim-airline/vim-airline-themes',
     \ 'github:vim-perl/vim-perl',
     \ 'github:vim-perl/vim-perl6',
     \ 'hg:https://shlomif@bitbucket.org/shlomif/vim-screenplay-text',
@@ -129,6 +130,7 @@ end
 
 let g:powerline_pycmd = 'py3'
 let g:airline_powerline_fonts = 1
+let g:airline_theme = 'powerlineish'
 " Expand the syntax menu automatically
 let do_syntax_sel_menu = 1
 runtime! synmenu.vim
