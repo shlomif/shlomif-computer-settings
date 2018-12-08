@@ -1,0 +1,7 @@
+Avoid predeclaring variables and localize their decl.
+
+See:
+
+* http://perl-begin.org/tutorials/bad-elements/#declaring_all_vars_at_top
+
+* https://en.wikipedia.org/wiki/Perl_Best_Practices
