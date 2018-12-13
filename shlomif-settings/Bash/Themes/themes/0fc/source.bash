@@ -57,7 +57,7 @@ run()
     (
         set -e -x
         set -o pipefail
-        bash solve-more-3.bash | commify | timestamper
+        bash solve-more-6-gnupar.bash | commify | timestamper
     )
 }
 
