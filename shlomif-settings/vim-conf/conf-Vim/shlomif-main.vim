@@ -571,3 +571,6 @@ command! ReadBackupIrcLog read !cat ~/Backup/Arcs/irc2.log | perl ~/bin/convert-
 
 " number of spaces per indentation level
 let g:prettier#config#tab_width = 4
+
+autocmd BufRead,BufNewFile ~/conf/trunk/*.bash
+    \ set path+=~/conf/trunk/shlomif-settings/Bash/Themes/common/ | set suffixesadd+=.bash
