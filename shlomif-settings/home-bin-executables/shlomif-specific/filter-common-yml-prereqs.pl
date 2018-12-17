@@ -15,8 +15,7 @@ foreach my $key ( keys( %{ $common->{required}->{perl5_modules} } ) )
     delete $specific->{required}->{perl5_modules}->{$key};
 }
 $specific->{required}->{executables} = [
-    grep
-    {
+    grep {
         my $exe = $_->{exe};
         !grep { $_->{exe} eq $exe } @{ $common->{required}->{executables} }
     } @{ $specific->{required}->{executables} }
