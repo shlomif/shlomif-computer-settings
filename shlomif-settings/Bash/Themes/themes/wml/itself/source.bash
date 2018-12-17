@@ -70,6 +70,6 @@ c()
 alias p='git push'
 
 proj_name='wml'
-export WML_TEST_BUILD=1
+export WML_TEST_BUILD=1 WML_TEST_TIDY=1
 
 PATH="$HOME/apps/test/wml/bin/:$PATH"
