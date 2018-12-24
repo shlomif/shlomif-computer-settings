@@ -130,6 +130,13 @@ ba()
     cp -a dest/post-incs/ "$pristine_copy"
 }
 
+# Update a story / screenplay repo based on the ci-generate config.
+# See: https://github.com/shlomif/ci-gen-framework .
+g()
+{
+    ( ci-generate && git au && git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/update-ci-gen-travis-yml.txt && p )
+}
+
 alias m=gmake
 
 export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/shlomif-homepage-tidyall.d"
