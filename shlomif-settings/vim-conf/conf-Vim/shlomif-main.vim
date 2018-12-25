@@ -574,3 +574,9 @@ let g:prettier#config#tab_width = 4
 
 autocmd BufRead,BufNewFile ~/conf/trunk/*.bash
     \ set path+=~/conf/trunk/shlomif-settings/Bash/Themes/common/ | set suffixesadd+=.bash
+
+" Convert html to markdown
+" Requires
+" https://metacpan.org/pod/distribution/HTML-WikiConverter/bin/html2wiki
+" and https://metacpan.org/pod/HTML::WikiConverter::Markdown .
+command! -range HTML2MD :<line1>,<line2>!html2wiki --dialect Markdown --link-style=inline
