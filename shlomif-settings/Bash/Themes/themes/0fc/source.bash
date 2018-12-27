@@ -44,6 +44,7 @@ put()
     (
         set -x
         rm -f offload/fcs_queue*
+        rm -fr offload/deal*
         perl apply-solve-more-3-log.pl ; n
         git au
         ci
