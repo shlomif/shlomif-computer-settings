@@ -17,6 +17,8 @@
     ls = ls-files
     st = status
 
+[commit]
+    verbose = true
 [core]
     excludesfile = ~/conf/git/excludes
 [push]
