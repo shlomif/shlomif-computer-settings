@@ -105,6 +105,8 @@ call vam#ActivateAddons([
     \ 'github:terryma/vim-expand-region',
     \ 'github:thinca/vim-quickrun',
     \ 'github:timonv/vim-cargo',
+    \ 'github:tpope/vim-fugitive',
+    \ 'github:tpope/vim-rhubarb',
     \ 'github:vim-airline/vim-airline-themes',
     \ 'github:vim-perl/vim-perl',
     \ 'github:vim-perl/vim-perl6',
