@@ -43,6 +43,11 @@ set expandtab
 
 set backupdir=.,~/tmp,~/
 
+" See:
+" https://github.com/neovim/neovim/commit/deb18a050ef522791c48c7c8c549a2c4b2043be0
+" I use a light background.
+set background=light
+
 " avoid handling 0.007 / etc. version numbers as octal
 set nrformats=bin,hex
 
