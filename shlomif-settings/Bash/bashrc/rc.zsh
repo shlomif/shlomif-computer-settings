@@ -15,10 +15,6 @@ compinit
 autoload -Uz promptinit
 promptinit
 
-if test -n "$BASH_VERSION"
-then
-    PS1="\u@telaviv1:\\w\$ "
-fi
 for f in ~/conf/trunk/shlomif-settings/Bash/bashrc/zshrc.d/*.zsh
 do
     . "$f"

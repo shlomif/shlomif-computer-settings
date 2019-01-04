@@ -1,4 +1,4 @@
-PS1="\u@telaviv1:\\w\$ "
+PS1="\u@\\h:\\w\$ "
 # This is so the Gtk+ 2.x Theme will be the same in KDE as it is in
 # GNOME.
 unset GTK2_RC_FILES PROMPT_COMMAND
