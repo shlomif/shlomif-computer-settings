@@ -41,7 +41,7 @@ t()
         mkdir -p "$b"
         cd "$b"
         rm -fr tests/
-        perl ../src/wml_test/run_test.pl
+        perl "$src"/wml_test/run_test.pl
     )
 }
 
@@ -49,7 +49,7 @@ b()
 {
     mkdir -p "$b"
     cd "$b"
-    cmake -DCMAKE_INSTALL_PREFIX="$HOME/apps/test/wml" ../src && \
+    cmake -DCMAKE_INSTALL_PREFIX="$HOME/apps/test/wml" "$src" && \
         make -j4 && \
         make install
 }
