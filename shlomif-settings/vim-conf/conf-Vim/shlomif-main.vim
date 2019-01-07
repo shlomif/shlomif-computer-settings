@@ -446,6 +446,9 @@ function Shlomif_rpm_spec()
     command! MC %!perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/rpmspec-convert-to-metacpan.pl
     " Open the url
     command! OU !perl -lnE 'say $_ if s/\Aurl:\s*//i' % | xargs xdg-open
+    " URL for pypi dload per https://wiki.mageia.org/en/Python_policy
+    let b:pypi_url="https://pypi.io/packages/source/p/%{module}/%{module}-%{version}.tar.gz"
+    let @p = b:pypi_url
     map <Leader>pl Oexport PERL5LIB="$PWD:$PERL5LIB"<ESC>
     set path+=./../SOURCES/
 endfunction
