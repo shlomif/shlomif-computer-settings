@@ -187,5 +187,14 @@ rec()
     bash ~/bin/recursive-patch.bash "$1" */
 }
 
+pymode()
+{
+    r()
+    {
+        b && ur && ci -m '- Rebuild for python3 3.7' && sub
+        n --msg "rpm/mag"
+    }
+}
+
 disable_local_lib
 cd "$this"
