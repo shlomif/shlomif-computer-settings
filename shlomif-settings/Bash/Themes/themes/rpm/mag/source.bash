@@ -191,7 +191,9 @@ pymode()
 {
     r()
     {
-        b && ur && ci -m '- Rebuild for python3 3.7' && sub
+        local msg="${1:-Rebuild for python3 3.7}"
+        shift
+        b && ur && ci -m "$msg" && sub
         n --msg "rpm/mag"
     }
 }
