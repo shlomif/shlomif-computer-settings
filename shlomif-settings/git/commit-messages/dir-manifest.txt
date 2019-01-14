@@ -1,0 +1,19 @@
+Convert a long embeddded text to be in a catalog / manifest.
+
+This is Refactoring / code cleanup.
+
+See:
+
+* https://metacpan.org/pod/Dir::Manifest
+
+* https://github.com/shlomif/Dir-Manifest
+
+---
+
+* https://en.wikipedia.org/wiki/Code_refactoring
+
+* https://www.refactoring.com/
+
+* https://www.joelonsoftware.com/2002/01/23/rub-a-dub-dub/
+
+Some small optimisations may have slipped in as well.

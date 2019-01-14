@@ -270,3 +270,14 @@ use parent 'Exporter';
 
 our @EXPORT_OK = (qw($1));
 endsnippet
+
+# Some boilerplate for Path::Tiny handling
+snippet pa
+
+use Path::Tiny qw/ path tempdir tempfile cwd /;
+
+my $dir = tempdir();
+
+my $fh = $dir->child("foo.txt");
+
+endsnippet
