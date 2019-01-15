@@ -18,7 +18,7 @@ this="$c_src"
 
 remote_repo="$(_shlomif_github "black-hole-solitaire")"
 
-export FCS_USE_TEST_RUN=1 FCS_TEST_CLANG_FORMAT=1
+export FCS_USE_TEST_RUN=1 FCS_TEST_CLANG_FORMAT=1 FCS_TEST_BUILD=1
 
 cd "$this"
 
@@ -28,6 +28,14 @@ t()
     cd "$trunk"
     rm -fr black-hole-solitaire/B/
     perl black-hole-solitaire/CI-testing/continuous-integration-testing.pl
+    )
+}
+
+fmt()
+{
+    (
+        unset FCS_TEST_BUILD
+        t
     )
 }
 
