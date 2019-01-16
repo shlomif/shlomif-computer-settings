@@ -23,4 +23,4 @@ then
     export QT_QPA_PLATFORMTHEME="qt5ct"
 fi
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/apps/to-del-ncurses/lib"
-PATH="$HOME/apps/golang/bin:$HOME/.local/bin:$PATH"
+PATH="$HOME/apps/golang/bin:$HOME/.local/bin:$HOME/.perl6/bin:$PATH"
