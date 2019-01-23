@@ -25,6 +25,7 @@
 /shlomif-settings/vim-conf/dot-vim/github-honza-vim-snippets/
 /shlomif-settings/vim-conf/dot-vim/github-inkarkat-SyntaxAttr.vim/
 /shlomif-settings/vim-conf/dot-vim/github-ironcamel-vim-script-runner/
+/shlomif-settings/vim-conf/dot-vim/github-jlanzarotta-bufexplorer/
 /shlomif-settings/vim-conf/dot-vim/github-junegunn-fzf.vim/
 /shlomif-settings/vim-conf/dot-vim/github-junegunn-fzf/
 /shlomif-settings/vim-conf/dot-vim/github-leafgarland-typescript-vim/
@@ -34,6 +35,7 @@
 /shlomif-settings/vim-conf/dot-vim/github-pboettch-vim-cmake-syntax/
 /shlomif-settings/vim-conf/dot-vim/github-plasticboy-vim-markdown/
 /shlomif-settings/vim-conf/dot-vim/github-prettier-vim-prettier/
+/shlomif-settings/vim-conf/dot-vim/github-qpkorr-vim-bufkill/
 /shlomif-settings/vim-conf/dot-vim/github-romainl-Apprentice/
 /shlomif-settings/vim-conf/dot-vim/github-shlomif-syntax-spork/
 /shlomif-settings/vim-conf/dot-vim/github-shlomif-vim-extract-variable/
@@ -42,6 +44,8 @@
 /shlomif-settings/vim-conf/dot-vim/github-terryma-vim-expand-region/
 /shlomif-settings/vim-conf/dot-vim/github-thinca-vim-quickrun/
 /shlomif-settings/vim-conf/dot-vim/github-timonv-vim-cargo/
+/shlomif-settings/vim-conf/dot-vim/github-tpope-vim-fugitive/
+/shlomif-settings/vim-conf/dot-vim/github-tpope-vim-rhubarb/
 /shlomif-settings/vim-conf/dot-vim/github-vim-airline-vim-airline-themes/
 /shlomif-settings/vim-conf/dot-vim/github-vim-perl-vim-perl/
 /shlomif-settings/vim-conf/dot-vim/github-vim-perl-vim-perl6/
