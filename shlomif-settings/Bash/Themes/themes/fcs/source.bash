@@ -288,6 +288,40 @@ cv()
     cd "$verify"
 }
 
+_reprb_diff_builds()
+{
+    _reprb_gen_build_sum 1 && \
+    _reprb_gen_build_sum 2 && \
+    cd "$reprb_dir" && \
+    gvimdiff ../1.txt ../2.txt
+}
+reprb_dir="$c_src/../reproducible-build-dir"
+
+_reprb_gen_build_sum()
+{
+    (
+        cd "$c_src"/..
+        set -e -x
+        rm -fr "$reprb_dir"
+        mkdir -p "$reprb_dir"
+        cd "$reprb_dir"
+        "$c_src"/Tatzer ${args:--l n2t}
+        perl "$c_src"/../scripts/cmd-line-compiler compile
+        m
+        rm -f ./CMakeFiles/CMakeError.log
+        rm -f ./CMakeFiles/CMakeOutput.log
+        rm -f ./_Inline/build/FC_Solve/SplitCmdLine/Makefile.PL
+        rm -f ./_Inline/lib/auto/FC_Solve/SplitCmdLine/SplitCmdLine.inl
+        ~/progs/rshasum/rshasum.bash > "../$1.txt"
+    )
+}
+
+reprb()
+{
+    alias f='_reprb_gen_build_sum'
+    alias g='_reprb_diff_builds'
+}
+
 export FCS_PATH="$b" FCS_SRC_PATH="$c_src"
 export HTML_VALID_VNU_JAR=~/Download/unpack/net/www/validator/build/dist/vnu.jar
 export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/fc-solve-tidyall.d"
