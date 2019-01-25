@@ -290,12 +290,28 @@ cv()
 
 _reprb_diff_builds()
 {
-    _reprb_gen_build_sum 1 && \
-    _reprb_gen_build_sum 2 && \
-    cd "$reprb_dir" && \
-    gvimdiff ../1.txt ../2.txt
+    (
+        set -e -x
+        _reprb_gen_build_sum 1
+        _reprb_gen_build_sum 2
+        cd "$reprb_dir"
+        if cmp -s ../1.txt ../2.txt
+        then
+            true
+        else
+            diff -u ../1.txt ../2.txt > ../repr-build.diff
+            echo "Reproducible build failed with args=$args !" 1>&2
+            exit 1
+        fi
+    )
 }
 reprb_dir="$c_src/../reproducible-build-dir"
+
+_reprb_view_diffs()
+{
+    cd "$reprb_dir"
+    gvimdiff ../1.txt ../2.txt
+}
 
 _reprb_gen_build_sum()
 {
@@ -320,6 +336,7 @@ reprb()
 {
     alias f='_reprb_gen_build_sum'
     alias g='_reprb_diff_builds'
+    alias v='_reprb_view_diffs'
 }
 
 export FCS_PATH="$b" FCS_SRC_PATH="$c_src"
