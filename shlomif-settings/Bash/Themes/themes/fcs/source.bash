@@ -191,7 +191,11 @@ ca()
 {
     cat ids.txt | perl -lapE 's#.*:##' | sort | uniq -c | sort -n | perl -lanE 'print $F[0]' | sort | uniq -c | sort -n -k 2 | $PAGER
 }
-alias m='make -j100'
+m()
+{
+    make -j100 "$@"
+}
+
 alias k='pkill -USR1 fc-solve'
 
 _display_post_processor()
@@ -321,7 +325,7 @@ _reprb_gen_build_sum()
         rm -fr "$reprb_dir"
         mkdir -p "$reprb_dir"
         cd "$reprb_dir"
-        "$c_src"/Tatzer ${args:--l n2t}
+        "$c_src"/Tatzer ${args}
         perl "$c_src"/../scripts/cmd-line-compiler compile
         m
         rm -f ./CMakeFiles/CMakeError.log
