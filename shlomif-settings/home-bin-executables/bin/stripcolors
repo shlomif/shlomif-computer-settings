@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+#
+# Strip color codes from the input.
+#
+# Taken from https://unix.stackexchange.com/questions/4527/program-that-passes-stdin-to-stdout-with-color-codes-stripped
+# based on https://metacpan.org/release/Term-ANSIColor - thanks!
+exec perl -pe 's/\e\[?.*?[\@-~]//g'
