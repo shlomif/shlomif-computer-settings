@@ -319,6 +319,8 @@ _reprb_view_diffs()
 
 _reprb_gen_build_sum()
 {
+    local id="$1"
+    shift
     (
         cd "$c_src"/..
         set -e -x
@@ -332,7 +334,10 @@ _reprb_gen_build_sum()
         rm -f ./CMakeFiles/CMakeOutput.log
         rm -f ./_Inline/build/FC_Solve/SplitCmdLine/Makefile.PL
         rm -f ./_Inline/lib/auto/FC_Solve/SplitCmdLine/SplitCmdLine.inl
-        ~/progs/rshasum/rshasum.bash > "../$1.txt"
+        ~/progs/rshasum/rshasum.bash > "../$id.txt"
+        cd "$c_src"/..
+        rm -fr "$reprb_dir-$id"
+        cp -a "$reprb_dir" "$reprb_dir-$id"
     )
 }
 
