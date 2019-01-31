@@ -34,7 +34,7 @@ while ( my $l = <STDIN> )
         and my ( $v, $space, $date_str, $author ) =
         $l =~ m{\A(v?[\d\.]+)(\s+)(?:-\s*)?(\S[^\-]*?)((?: - .*)?)\z}ms )
     {
-        $date_str =~ s/\s+\b(?:IDT|IST)\b\s+/ /;
+        $date_str =~ s/\s+\b(?:IDT|IST|EDT|CDT|PDT)\b\s+/ /;
         if (
             defined(
                 my $d =
