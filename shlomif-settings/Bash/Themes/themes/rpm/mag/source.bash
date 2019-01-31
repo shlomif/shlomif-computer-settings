@@ -9,7 +9,8 @@ trim_pathes
 base="$HOME/progs/Rpms"
 b="$base"
 s="$base/SRPMS"
-mag_base="$HOME/Download/unpack/Mageia"
+mag_base_base="$HOME/Download/unpack/mageia"
+mag_base="$mag_base_base/mgarepos"
 this="$mag_base"
 t="$this"
 proj_name='rpms'
