@@ -142,6 +142,7 @@ alias m=gmake
 export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/shlomif-homepage-tidyall.d"
 # Commented out because it makes matters slower:
 # export HTML_POST_INCS_DATA_DIR="$HOME/Backup/Arcs/shlomif-homepage-gezer.d"
+export VNU_CACHE="$HOME/Backup/Arcs/shlomif-homepage-vnu-cache.json"
 
 __add_to_path
 
