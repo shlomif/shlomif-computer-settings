@@ -8,7 +8,8 @@ this="$git_base/freecell-pro-0fc-deals"
 trunk="$this"
 c="$this"
 
-PATH="/home/shlomif/apps/fcs/bin:/home/shlomif/progs/freecell/git/0fc-b/:$PATH"
+bindir="$HOME/progs/freecell/git/0fc-b/"
+PATH="/home/shlomif/apps/fcs/bin:$bindir:$bindir/board_gen:$PATH"
 cd "$this"
 
 m()
@@ -34,6 +35,11 @@ prompt()
         "~=$HOME"
 }
 
+ci7()
+{
+    git commit -F "$this/add-more-to-log-commit-msg-7.txt"
+}
+
 ci()
 {
     git commit -F "$this/add-more-to-log-commit-msg.txt"
@@ -51,7 +57,18 @@ put()
     )
 }
 
+put7()
+{
+    (
+        set -x
+        perl apply-solve-more-3-log.pl ; n
+        git au
+        ci7
+    )
+}
+
 alias c=put
+alias c7=put7
 
 run()
 {
@@ -62,6 +79,16 @@ run()
     )
 }
 
-alias r=run
+run7()
+{
+    (
+        set -e -x
+        set -o pipefail
+        bash solve-more-7-gnupar.bash | commify | timestamper
+    )
+}
+
+# alias r=run
+alias r=run7
 
 proj_name='0fc'
