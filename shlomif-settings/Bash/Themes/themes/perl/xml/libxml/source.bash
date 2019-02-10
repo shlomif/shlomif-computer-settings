@@ -14,6 +14,7 @@ xslt_git_base="$HOME/progs/perl/cpan/XML/LibXSLT/git"
 xslt_trunk="$HOME/progs/perl/cpan/XML/LibXSLT/git/perl-xml-libxslt"
 
 export RELEASE_TESTING=1 AUTHOR_TESTING=1
+export HARNESS_OPTIONS="j4:c" TEST_JOBS=4
 
 prompt()
 {
@@ -32,6 +33,11 @@ conv()
 {
     local fn="$1"
     ( perl "$trunk"/scripts/Test.pm-to-Test-More.pl --inplace "$fn" )
+}
+
+t()
+{
+    perl Makefile.PL && make disttest
 }
 
 cd "$this"
