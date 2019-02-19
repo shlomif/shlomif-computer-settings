@@ -444,6 +444,7 @@ set wildignore+=*.o,*.obj,.git,.svn,.hg,.bzr,*~
 function Shlomif_rpm_spec()
     " RPM spec - convert Url to metacpan.org
     command! MC %!perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/rpmspec-convert-to-metacpan.pl
+    command! BPL %!perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/rpmspec-convert-from-Makefile.PL-to-Build.PL.pl
     " Open the url
     command! OU !perl -lnE 'say $_ if s/\Aurl:\s*//i' % | xargs xdg-open
     " URL for pypi dload per https://wiki.mageia.org/en/Python_policy
