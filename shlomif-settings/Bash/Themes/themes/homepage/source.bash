@@ -14,6 +14,8 @@ logs="$HOME/Download/homesite-logs"
 p4n="$trunk/lib/presentations/qp/perl-for-newbies"
 remote_repo="$(_shlomif_github "shlomi-fish-homepage")"
 pristine_copy=~/Backup/Arcs/post-dest/post-incs
+pristine_copy_reduced=~/Backup/Arcs/post-dest/post-incs-reduced
+this_copy_reduced=~/Backup/Arcs/post-dest/this-incs-reduced
 
 export SCREENPLAY_COMMON_INC_DIR="$trunk/lib/screenplay-xml/from-vcs/screenplays-common"
 sel="$trunk/lib/screenplay-xml/from-vcs/Selina-Mandrake/selina-mandrake/screenplay/"
@@ -67,7 +69,9 @@ genf()
 
 did()
 {
-    diff -u -r "$pristine_copy" dest/post-incs/ | gvim -
+    bash "$trunk/bin/reduce-differences-in-diff-dash-r.bash" "$pristine_copy" "$pristine_copy_reduced"
+    bash "$trunk/bin/reduce-differences-in-diff-dash-r.bash" "dest/post-incs" "$this_copy_reduced"
+    diff -u -r "$pristine_copy_reduced" "$this_copy_reduced" | gvim -
 }
 
 fastdiff()
