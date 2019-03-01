@@ -9,7 +9,7 @@ sites:
             - '--progress'
             - '--inplace'
         dest_upload_prefix: 'hostgator:public_html/'
-        dest_upload_url_prefix: 'http://www.shlomifish.org/'
+        dest_upload_url_prefix: 'https://www.shlomifish.org/'
         dirs_section: 'dirs'
         sections:
             archives:
