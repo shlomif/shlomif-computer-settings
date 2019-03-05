@@ -28,7 +28,7 @@ setup()
 
 _build_generic()
 {
-    script="$1"
+    local script="$1"
     shift
 
     _sys bash ~/conf/build/perl/"$script" && _sys make -j4
@@ -39,6 +39,11 @@ _build_generic()
 b()
 {
     _build_generic "perl-bleadperl.sh"
+}
+
+bd()
+{
+    _build_generic "perl-bleadperl-debug.sh"
 }
 
 # Short for build-with-threads-support
