@@ -42,10 +42,7 @@ MUSIC_INDEXES_FULL_PATHS = $(patsubst %,$(BACKUP_DIR)/%,$(MUSIC_INDEXES))
 ACER_LAP_MUSIC_INDEXES_FULL_PATHS = $(patsubst %,$(BACKUP_DIR)/%,$(ACER_LAP_MUSIC_INDEXES))
 
 LOCAL_SVNS = \
-	linux.org.il \
-	main \
 	my-blogs-aggregate \
-	perl-phalanx \
 	vim-site \
 	www-form-article
 

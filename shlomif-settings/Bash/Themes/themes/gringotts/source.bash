@@ -15,6 +15,7 @@ setup()
         cd "$_base_trunk"
         git clone 'git@github.com:shlomif/gringotts.git' "$trunk"
     )
+    mkdir -p "$this"
     cd "$this"
 }
 
