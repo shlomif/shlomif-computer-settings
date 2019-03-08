@@ -14,4 +14,4 @@ foreach my $ver (qw( 5.28.0 5.26.1 ))
     }
 }
 
-print "export PERL5LIB='" . join( ":", @d ) . "'\n";
+print "export PERL5LIB=\"\$PERL5LIB:\"'" . join( ":", @d ) . "'\n";
