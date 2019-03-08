@@ -348,6 +348,11 @@ reprb()
     alias v='_reprb_view_diffs'
 }
 
+gentags()
+{
+    ctags {$c_src,$pats}/*.[ch]
+}
+
 export FCS_PATH="$b" FCS_SRC_PATH="$c_src"
 export HTML_VALID_VNU_JAR=~/Download/unpack/net/www/validator/build/dist/vnu.jar
 export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/fc-solve-tidyall.d"
