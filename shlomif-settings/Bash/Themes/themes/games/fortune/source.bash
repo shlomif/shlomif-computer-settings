@@ -5,7 +5,7 @@ remote_repo="$(_shlomif_github "fortune-mod")"
 base="$HOME/progs/C/fortune-mod"
 git_base="$base/git"
 trunk="$git_base/fortune-mod"
-this="$trunk"
+this="$trunk/fortune-mod"
 build="$git_base/B"
 
 c="$this"
@@ -33,7 +33,7 @@ t()
             mkdir "$build"
         fi
         cd "$build" && \
-            cmake -DCMAKE_INSTALL_PREFIX="$HOME/apps/to-del-fortune" "$trunk" && \
+            cmake -DCMAKE_INSTALL_PREFIX="$HOME/apps/to-del-fortune" "$this" && \
             make && \
             make check
         n --msg "fortune Test Finished"
