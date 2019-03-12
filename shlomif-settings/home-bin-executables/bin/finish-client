@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 notifier notify --to="${NOTIFIER_TO:-default}" "$@"
 
 # The Expat License

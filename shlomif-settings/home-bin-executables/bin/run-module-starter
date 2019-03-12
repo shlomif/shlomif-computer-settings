@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 module-starter --module=HTML::Latemp::GenMakeHelpers \
     --author="Shlomi Fish" --email='shlomif@cpan.org' \
     --dir=HTML-Latemp-GenMakeHelpers --builder=Module::Build \

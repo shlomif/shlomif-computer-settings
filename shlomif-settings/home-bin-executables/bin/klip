@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Copy standard input or a string to the KDE clipboard.
 if [[ $# -eq 0 ]]; then

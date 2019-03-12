@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Copyright - who knows? taken from the Mageia rpm macros and Shlomi Fish
 # disclaims all ownership of this code.

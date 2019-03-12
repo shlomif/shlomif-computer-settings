@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ./configure --prefix="/opt/svn-1.6.x" --without-apache-libexecdir \
     --with-swig="/opt/svn-1.6.x/bin/swig"
 # Documenting the process:

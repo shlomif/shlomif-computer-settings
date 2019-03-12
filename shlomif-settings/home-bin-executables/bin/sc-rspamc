@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # sc-spamc : a script for using SpamAssassin header modification / subject
 # tagging vi Claws Mail filtering actions.

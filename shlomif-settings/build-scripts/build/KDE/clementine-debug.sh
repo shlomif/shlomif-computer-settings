@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 test ! -e build && mkdir build
 cd build
 rm -f CMakeCache.txt

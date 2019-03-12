@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Script to trim a minicpan directory by not keeping old releases.
 #

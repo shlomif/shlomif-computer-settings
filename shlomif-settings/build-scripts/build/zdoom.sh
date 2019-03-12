@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 FMODFOLDER="fmodapi44451linux"
 if [ "$(uname -m)" = "x86_64" ]; then
     FMODFILE="libfmodex64-4.44.51"

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 myprefix="$HOME/apps/test/apache1-perl"
 autoconf
 ./configure --prefix="$myprefix"

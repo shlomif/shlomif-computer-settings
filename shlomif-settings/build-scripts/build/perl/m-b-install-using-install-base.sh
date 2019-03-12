@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 install_base="$HOME/apps/perl/modules"
 # args="--prefix=$prefix --install_path extradata=$prefix/extradata"
 args="--install_base=$install_base"

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 p="/opt/vlc-3.0"
 export LUAC="/usr/bin/luac"
 export CFLAGS='-g'

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 xmessage "Your task has been finished! Go check it out." &
 mpv /home/music/Music/dosd-mp3s/Theme\ -\ Eurovision.mp2
 

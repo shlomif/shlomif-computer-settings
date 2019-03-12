@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 prefix="$HOME/apps/gtk-2.16.x"
 export PKG_CONFIG_PATH=$prefix/lib/pkgconfig/
 export LD_LIBRARY_PATH=$prefix/lib:"$LD_LIBRARY_PATH"

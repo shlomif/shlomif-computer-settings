@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 k4d="/opt/kde4-trunk"
 k4sd="$k4d/share"
 k4bd="$k4d/bin"

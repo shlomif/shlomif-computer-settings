@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 song="/home/shlomif/Download/Video/Jessie J - Domino-UJtB55MaoD0.webm"
 

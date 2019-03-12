@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 p="/opt/vlc-3.0"
 export LUAC="${LUAC:-/usr/bin/luac5.2}"
 export CFLAGS="${CFLAGS:--O3 -march=native}"

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Enabling the GNOME Accessibility / Assistive Technology causes gvim to
 # emit some warnings. This script disables it.
 #

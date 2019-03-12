@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 prefix="$HOME/apps/perl/Padre"
 # args="--prefix=$prefix --install_path extradata=$prefix/extradata"
 args="--prefix=$prefix"

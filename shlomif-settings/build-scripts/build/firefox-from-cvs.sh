@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ./configure --prefix="$HOME/apps/net/www/firefox-cvs" \
     --enable-application=browser \
     --enable-svg \

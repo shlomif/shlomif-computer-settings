@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 k4d="/opt/kde-4.5-debug"
 k4sd="$k4d/share"
 k4bd="$k4d/bin"

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ./configure --prefix="/opt/svn-1.6.x"
 # Documenting the process:
 # Install swig-1.3.36:

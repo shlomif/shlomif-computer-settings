@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ./configure --prefix="$HOME/apps/python3" --with-threads \
                 --enable-ipv6 --with-dbmliborder=gdbm \
                 --with-system-expat \

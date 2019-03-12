@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 cat input.txt | perl -ne 'print unless m{(?:^|/)\.svn(?:$|/)}' > perl-output.txt
 if ! cmp perl-output.txt expected-output.txt ; then
     echo "Perl is incorrect" 1>&2

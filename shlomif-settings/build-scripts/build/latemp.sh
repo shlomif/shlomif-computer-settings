@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # For reference
 # scons -Q PREFIX="$HOME/apps/latemp" install

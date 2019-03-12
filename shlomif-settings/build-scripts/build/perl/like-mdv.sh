@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 prefix="$HOME/apps/perl/perl-5.10.0-like-mdv"
 
 # 3 6 14 15 16 21 23 24 29 32  ==> make test is succesful.

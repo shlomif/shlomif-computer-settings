@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Compile Freecell Solver against libredblack
 cmake -DCMAKE_BUILD_TYPE=release \
     -DFCS_STATE_STORAGE="FCS_STATE_STORAGE_LIBREDBLACK_TREE" \

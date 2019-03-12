@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 pref="$HOME/apps/pidgin-beta"
 gp=/opt/gplugin/
 export PKG_CONFIG_PATH="$pref/lib/pkgconfig:$pref/lib64/pkgconfig:$gp/lib64/pkgconfig"

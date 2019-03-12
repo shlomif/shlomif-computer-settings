@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 source "$HOME/.common_aliases.bash"
 function cp_to_shlomif()

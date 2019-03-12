@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 bn="hgrc"
 conf_dir="$(cd "$(dirname "$0")" && pwd)"

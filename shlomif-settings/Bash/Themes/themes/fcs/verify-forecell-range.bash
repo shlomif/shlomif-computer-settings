@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 seq 1 32000 |
 (
     while read DEAL ; do

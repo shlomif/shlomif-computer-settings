@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 build_type=''
 if test "$DEBUG" = 1 ; then
     build_type='-DCMAKE_BUILD_TYPE=Debug'

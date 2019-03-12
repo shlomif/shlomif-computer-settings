@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 mpv -shuffle "$@" *.{mp3,flv,ogg,mp4,avi,wmv,mpg,MP3,m4a,wma,webm}
 
 # The Expat License

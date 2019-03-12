@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 SQUEAK="/usr/bin/squeak -plugins /usr/lib/squeak/3.9-8" startsqueak
 
 # The Expat License

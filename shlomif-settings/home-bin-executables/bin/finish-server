@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 cd ~/progs/perl/cpan/App/Notifier/App-Notifier/App-Notifier-Service/ &&
     plackup --port=6300 ./bin/app.psgi
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 setxkbmap -option terminate:ctrl_alt_bksp
 
 # The Expat License

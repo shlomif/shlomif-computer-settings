@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ( echo 's conf verbose 1' ; echo 's conf prefer_bin 1' )
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Script to unload the sound modules on Linux for making sound available
 # again.
 #

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # For disabling single_click_activate in Qt 5.
 # Including VLC.

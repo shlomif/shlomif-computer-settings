@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 b='/opt/llvm'
 export LD='/usr/bin/ld.gold'
 export PATH="$b/bin:$PATH"

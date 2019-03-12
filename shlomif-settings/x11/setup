@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 conf_dir="$(cd "$(dirname "$0")" && pwd)"
 

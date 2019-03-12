@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 kver="4.7.3"
 ever="1.mga6"
 

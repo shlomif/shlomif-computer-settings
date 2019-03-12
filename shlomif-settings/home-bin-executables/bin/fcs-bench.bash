@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Copyright by Shlomi Fish, under the MIT Expat licence.
 

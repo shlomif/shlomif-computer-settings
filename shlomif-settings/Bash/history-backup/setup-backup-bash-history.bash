@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 base="$HOME/Backup/bash-history/"
 mkdir -p "$base"

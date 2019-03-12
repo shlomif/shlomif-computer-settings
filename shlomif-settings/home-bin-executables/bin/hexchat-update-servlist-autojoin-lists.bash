@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # The "J=" syntax for autojoin channels was changed in HexChat's servlist.conf
 # starting from version 2.9.6. This script updates it - run it in the same

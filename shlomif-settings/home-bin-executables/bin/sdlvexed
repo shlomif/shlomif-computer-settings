@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 export SDL_AUDIODRIVER=noasd
 cd "$HOME"/apps/games/sdlvexed-0.6/
 ./vexed

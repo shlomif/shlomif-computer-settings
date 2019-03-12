@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # With these :VCSDiff aborts the program
 # RPM_OPT_FLAGS="-O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fomit-frame-pointer -march=i586 -mtune=generic -fasynchronous-unwind-tables"

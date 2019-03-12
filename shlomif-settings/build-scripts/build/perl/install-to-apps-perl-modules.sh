@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 b_pl="Build.PL"
 prefix="$HOME/apps/perl/modules"

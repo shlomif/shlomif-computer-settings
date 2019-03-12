@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -x
 ./configure "$@" --prefix=$HOME/apps/vim \
     --enable-fail-if-missing \

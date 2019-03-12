@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Disables the touchpad/trackpad if it's a synpatic touchpad (which is the
 # case for my Acer Aspire laptop).

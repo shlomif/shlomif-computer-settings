@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Outputs the resolution / size / dimension of the screen in pixels.
 

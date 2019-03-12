@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 sudo nice -n-20 ionice -c1 -n0 sudo -u "$USER" "$@"
 
 # The Expat License

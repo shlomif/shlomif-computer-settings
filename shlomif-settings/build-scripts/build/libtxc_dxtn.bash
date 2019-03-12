@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # This is the build script for:
 # http://cgit.freedesktop.org/~mareko/libtxc_dxtn/
 #

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 pref="$HOME/apps/dist--perl--metaconfig"
 
 echo "Freeecll Solver Enterprises" | \

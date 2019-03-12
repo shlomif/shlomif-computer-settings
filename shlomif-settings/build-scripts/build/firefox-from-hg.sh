@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ./configure --prefix="$HOME/apps/net/www/firefox-hg" \
     --enable-application=browser \
     --enable-debug --disable-optimize \

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Choqok is a micro-blogging client for KDE.
 test ! -e build && mkdir build
 cd build

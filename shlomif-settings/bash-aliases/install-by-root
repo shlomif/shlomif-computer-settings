@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 cp -f "$(dirname "$0")"/root_aliases ~/.shlomif_root_aliases
 cp -f "$(dirname "$0")"/common_aliases.bash ~/.common_aliases.bash
 if ! grep -q -F 'source ~/.shlomif_root_aliases' ~/.aliases; then

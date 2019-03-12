@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 find "$@" -type f -name '*.gz' -print |
 (while read gz ; do
     local base="${gz%%.gz}"

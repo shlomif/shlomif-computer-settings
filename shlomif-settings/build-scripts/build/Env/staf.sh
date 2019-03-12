@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # One needs staf to build the main things, connprov* to be able to
 # run STAFProc on the local machine and perl because I needed it.
 export OS_NAME=linux BUILD_TYPE=debug PROJECTS="staf connprov* perl"

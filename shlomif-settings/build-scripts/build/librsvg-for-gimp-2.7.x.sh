@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 basedir=/usr/local/apps/gtk-2.4.x
 basedir=$HOME/apps/gtk-2.4.x
 export PKG_CONFIG_PATH="$basedir"/lib/pkgconfig/

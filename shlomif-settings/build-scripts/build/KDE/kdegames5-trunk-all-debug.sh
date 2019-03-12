@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 rm -f CMakeCache.txt
 # export CXXFLAGS="-DQT_NO_DEBUG_OUTPUT"
 cmake -DCMAKE_INSTALL_PREFIX="/opt/kde5-trunk" \

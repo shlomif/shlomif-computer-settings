@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 CFLAGS="-g" CXXFLAGS="-g" ./configure \
     --prefix=$HOME/apps/gui/KDE/akregator-debug
 

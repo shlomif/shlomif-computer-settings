@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 IP="10.0.0.138"
 # IP="192.168.1.1"
 while true ; do

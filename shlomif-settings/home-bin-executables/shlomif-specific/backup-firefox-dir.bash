@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 cd "$HOME"
 d="$HOME/Backup/firefox-config/old-configs/"
 mkdir -p "$d"

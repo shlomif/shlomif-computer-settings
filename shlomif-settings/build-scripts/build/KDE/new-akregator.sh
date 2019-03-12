@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ./configure --prefix=$HOME/apps/gui/KDE/3.5.2
 find . -name Makefile |
     xargs perl -pli -e \
