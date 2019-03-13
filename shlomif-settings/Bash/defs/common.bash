@@ -1,10 +1,11 @@
 alias rm='rm -i' mv='mv -i' cp='cp -i' ls=' ls --color=auto'
 export SVN_EDITOR='gvim -f'
+    # HARNESS_SUMMARY_COLOR_SUCCESS="bold blue" \
 export HISTSIZE=1000000 FREECELL_SOLVER_QUIET=1 \
     EDITOR=nvim VISUAL=nvim  PAGER="less -isrr" \
     BZR_EDITOR="$SVN_EDITOR" GIT_EDITOR="$SVN_EDITOR" HGEDITOR="$SVN_EDITOR" \
     NOPASTE_SERVICES="Debian Gist PastebinCom Pastie" \
-    HARNESS_SUMMARY_COLOR_FAIL="bold red" HARNESS_SUMMARY_COLOR_SUCCESS="bold blue" \
+    HARNESS_SUMMARY_COLOR_FAIL="bold red" \
     HARNESS_PLUGINS="ColorSummary ColorFileVerdicts AlternateInterpreters BreakOnFailure" \
     HARNESS_ALT_INTRP_FILE="$HOME/conf/trunk/shlomif-settings/perl/Test-Run/alternate-interpreters.yml" \
     HARNESS_OPTIONS=c PERL_MM_USE_DEFAULT=1 CPAN2PKG_DONT_CPANP_X=1
