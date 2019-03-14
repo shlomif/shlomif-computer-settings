@@ -50,6 +50,7 @@ then
     wget https://ftp.gnu.org/pub/gnu/avl/avl-2.0.3.tar.gz
     tar -xvf avl-2.0.3.tar.gz
     find "$LIBAVL2_SOURCE_DIR" -type f | xargs perl -i -lpE 's/[\t ]+$//'
+    set +e
 fi
 
 # This causes problems with the threaded solver.
