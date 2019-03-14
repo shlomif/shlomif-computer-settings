@@ -1,0 +1,4 @@
+Optimize the speed.
+
+See https://en.wikibooks.org/wiki/Optimizing_Code_for_Speed . There may have
+been some refactorings too.
