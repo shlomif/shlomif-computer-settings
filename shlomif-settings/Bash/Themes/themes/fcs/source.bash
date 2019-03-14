@@ -37,10 +37,20 @@ pats_b="$git_pats/b"
 this="$c_src"
 # this="$dd_branch"
 
-export LIBAVL2_SOURCE_DIR="$HOME/Download/unpack/prog/c/avl-2.0.3/"
+export LIBAVL2_SOURCE_DIR="$HOME/Download/unpack/prog/c/avl-2.0.3"
 export PAGER='less'
 export FCS_USE_TEST_RUN=1
 export FCS_PGO_THEME="-l lg" FCS_TEST_CLANG_FORMAT=1
+
+if ! test -e "$LIBAVL2_SOURCE_DIR"
+then
+    set -e
+    mkdir -p "$(dirname "$LIBAVL2_SOURCE_DIR")"
+    cd "$(dirname "$LIBAVL2_SOURCE_DIR")"
+    wget https://ftp.gnu.org/pub/gnu/avl/avl-2.0.3.tar.gz
+    tar -xvf avl-2.0.3.tar.gz
+    find "$LIBAVL2_SOURCE_DIR" -type f | xargs perl -i -lpE 's/[\t ]+$//'
+fi
 
 # This causes problems with the threaded solver.
 unset MALLOC_CHECK_
