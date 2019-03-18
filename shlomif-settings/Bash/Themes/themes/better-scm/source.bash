@@ -23,5 +23,6 @@ prompt()
         "~=$HOME"
 }
 
+export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/better-scm-tidyall.d"
 __add_to_path
 proj_name='better-scm'
