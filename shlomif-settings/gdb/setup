@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
+set -e
 dir="$(pwd)"
-mkdir -p ~/conf
-cd ~/conf
-ln -s "$dir" gdb
 cd ~
 tgt=.gdbinit
 if ! test -e "$tgt"
 then
-    ln -s "$dir/dot-gdbinit.gdb"
+    ln -s "$dir/dot-gdbinit.gdb" "$tgt"
 fi
