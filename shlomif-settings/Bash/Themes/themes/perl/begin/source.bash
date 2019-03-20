@@ -1,5 +1,6 @@
 load_common bundle/git
 load_common chdirs
+load_common partests
 load_common latemp
 
 base="$HOME/Docs/programming/Perl/web-sites/perl-begin"
