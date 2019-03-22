@@ -226,7 +226,7 @@ HEXCHAT_SCROLLBACK_ARC := $(EXTRA_DATA_DIR)/hexchat-scrollback-$(STAMP)$(ARC_EXT
 hexchat_logs: $(HEXCHAT_LOGS_ARC) $(HEXCHAT_SCROLLBACK_ARC)
 
 $(HEXCHAT_LOGS_ARC): $(EXTRA_DATA_STAMP)
-	(cd $(HOME) ; $(PACK_CMD) $@ ".config/hexchat/logs")
+	(cd $(HOME) ; $(PACK_CMD) $@ ".local/share/hexchat/logs")
 
 $(HEXCHAT_SCROLLBACK_ARC): $(EXTRA_DATA_STAMP)
 	(cd $(HOME) ; $(PACK_CMD) $@ ".config/hexchat/scrollback")
