@@ -6,6 +6,9 @@
     au = add -u
     ci = commit
     ciread = commit -F ~/conf/trunk/shlomif-settings/git/commit-messages/add-README-or-LICENSE.txt
+    ; Count of commits in a repo. See:
+    ; https://stackoverflow.com/questions/677436/how-do-i-get-the-git-commit-count
+    cnt = rev-list --all --count
     co = checkout
     cp = cherry-pick
     dh = diff HEAD
