@@ -2,6 +2,7 @@
 
 use strict;
 use warnings;
+use autodie;
 
 use Path::Tiny qw/ path tempdir tempfile cwd /;
 
