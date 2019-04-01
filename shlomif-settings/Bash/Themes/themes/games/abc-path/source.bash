@@ -26,4 +26,10 @@ prompt()
         "~=$HOME"
 }
 
+ct()
+{
+    cd "$trunk"
+}
+
+
 proj_name='abc-path'
