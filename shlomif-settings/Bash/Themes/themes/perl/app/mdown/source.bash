@@ -1,14 +1,15 @@
 load_common mymake
 load_common completion
-load_common hg
+load_common git
 load_common perl_dzil
 
 base="$HOME/progs/perl/cpan/App/maniac-downloader"
-trunk="$base"
+git_base="$base"
+trunk="$git_base/git"
 app_dir="$trunk/App-ManiacDownloader"
 this="$app_dir"
 
-remote_repo="$(_shlomif_bitbucket "maniac-downloader")"
+remote_repo="$(_shlomif_github "maniac-downloader")"
 
 cd "$this"
 
