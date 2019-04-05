@@ -1,0 +1,7 @@
+Progress towards having reproducible builds.
+
+See https://reproducible-builds.org/ ,
+https://wiki.debian.org/ReproducibleBuilds ,
+https://en.wikipedia.org/wiki/Reproducible_builds .
+
+Normally it means reducing differences between two rebuilds.
