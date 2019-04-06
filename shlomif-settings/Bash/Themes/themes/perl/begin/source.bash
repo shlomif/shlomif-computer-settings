@@ -8,6 +8,11 @@ trunk="$base/trunk"
 this="$trunk"
 remote_repo="$(_shlomif_github "perl-begin")"
 
+pristine_copy=~/Backup/Arcs/sites--perl-begin-post-dest/post-incs
+pristine_copy_reduced=~/Backup/Arcs/sites--perl-begin-post-dest/post-incs-reduced
+this_copy_reduced=~/Backup/Arcs/sites--perl-begin-post-dest/this-incs-reduced
+_post_dest="dest"
+
 cd "$this"
 
 prompt()

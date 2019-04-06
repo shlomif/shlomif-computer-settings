@@ -27,20 +27,7 @@ prompt()
 pristine_copy=~/Backup/Arcs/better-scm-post-dest/post-incs
 pristine_copy_reduced=~/Backup/Arcs/better-scm-post-dest/post-incs-reduced
 this_copy_reduced=~/Backup/Arcs/better-scm-post-dest/this-incs-reduced
-
-did()
-{
-    bash "$trunk/bin/reduce-differences-in-diff-dash-r.bash" "$pristine_copy" "$pristine_copy_reduced"
-    bash "$trunk/bin/reduce-differences-in-diff-dash-r.bash" "dest" "$this_copy_reduced"
-    diff -u -r "$pristine_copy_reduced" "$this_copy_reduced" | gvim -
-}
-
-ba()
-{
-    mkdir -p "$pristine_copy"
-    rm -fr "$pristine_copy"
-    cp -a dest/ "$pristine_copy"
-}
+_post_dest="dest"
 
 export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/better-scm-tidyall.d"
 __add_to_path

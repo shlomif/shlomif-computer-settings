@@ -16,6 +16,7 @@ remote_repo="$(_shlomif_github "shlomi-fish-homepage")"
 pristine_copy=~/Backup/Arcs/post-dest/post-incs
 pristine_copy_reduced=~/Backup/Arcs/post-dest/post-incs-reduced
 this_copy_reduced=~/Backup/Arcs/post-dest/this-incs-reduced
+_post_dest="dest/post-incs"
 
 export SCREENPLAY_COMMON_INC_DIR="$trunk/lib/screenplay-xml/from-vcs/screenplays-common"
 sel="$trunk/lib/screenplay-xml/from-vcs/Selina-Mandrake/selina-mandrake/screenplay/"
@@ -67,12 +68,6 @@ genf()
     (cd $trunk && ./bin/gen-fortunes.pl)
 }
 
-did()
-{
-    bash "$trunk/bin/reduce-differences-in-diff-dash-r.bash" "$pristine_copy" "$pristine_copy_reduced"
-    bash "$trunk/bin/reduce-differences-in-diff-dash-r.bash" "dest/post-incs" "$this_copy_reduced"
-    diff -u -r "$pristine_copy_reduced" "$this_copy_reduced" | gvim -
-}
 
 fastdiff()
 {
@@ -126,12 +121,6 @@ mymv()
     rm -f lib/cache/STAMP.one
     ./gen-helpers
     t
-}
-
-ba()
-{
-    rm -fr "$pristine_copy"
-    cp -a dest/post-incs/ "$pristine_copy"
 }
 
 # Update a story / screenplay repo based on the ci-generate config.
