@@ -6,14 +6,8 @@ _sys()
 
 u()
 {
-    local common_args
-    common_args="--auto --keep --resume --noclean --no-recommends"
-    if test -n "$PROZ" ; then
-        common_args+=" --downloader prozilla --prozilla-options '-k=${PROZ_N:-15} -r'"
-    else
-        common_args+=" --downloader wget --wget-options -c"
-    fi
-    cmd="_sys sudo urpmi"
+    local common_args="-y"
+    cmd="_sys sudo dnf install"
     ( cd $HOME ;
         eval "$cmd $common_args $@";
     )
@@ -21,17 +15,17 @@ u()
 
 uas()
 {
-    u --auto-select "$@"
+    _sys sudo dnf -y upgrade --refresh
 }
 
 uu()
 {
-    (cd $HOME ; sudo urpmi.update -a)
+    uas
 }
 
 up()
 {
-    sudo urpmi --auto --no-recommends $(perlmf as_rpm_colon "$@")
+    sudo dnf -y install $(perlmf as_rpm_colon "$@")
 }
 
 _cpan_d_format()
@@ -56,7 +50,7 @@ qp()
     local pm="$1"
     shift
 
-    urpmq --whatprovides "$(perlmf as_rpm_colon "$pm")" ;
+    dnf search --whatprovides "$(perlmf as_rpm_colon "$pm")" ;
 }
 
 pap()
@@ -66,24 +60,24 @@ pap()
 
 e()
 {
-    sudo urpme "$@"
+    sudo dnf remove "$@"
 }
 
 # urpme orphans.
 eo()
 {
-    e --auto-orphans
+    sudo dnf autoremove
 }
 
-alias q='urpmq --fuzzy -a'
-alias qv='q --sources'
+alias q='dnf search'
+alias qv='q --source'
 
 if test -n "$BASH_VERSION"
 then
-    complete -F _urpmi u
-    complete -F _urpme e
-    complete -F _urpmq q
-    complete -F _urpmq qv
+    complete -F dnf u
+    complete -F dnf e
+    complete -F dnf q
+    complete -F dnf qv
 fi
 
 alias hc='htop -s PERCENT_CPU'
