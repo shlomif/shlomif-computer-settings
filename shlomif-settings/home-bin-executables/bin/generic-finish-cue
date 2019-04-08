@@ -25,7 +25,7 @@ done
 (
     kdialog --msgbox "$msg" || xmessage "$msg"
 ) &
-mpv --volume=30 "$song"
+mpv --volume=100 "$song"
 
 # The Expat License
 #
