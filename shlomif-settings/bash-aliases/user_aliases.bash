@@ -53,3 +53,10 @@ _update_PERL5LIB
 alias myrsync='rsync -a --progress -v --inplace' \
   rem_up='HOMEPAGE_SSH_PATH="$__HOMEPAGE_REMOTE_PATH" make upload' \
   xz9='xz -9 --extreme' ifconfig='/sbin/ifconfig'
+
+rexz9()
+{
+    local fn="$1"
+    unxz "$fn"
+    xz9 "${fn%.xz}"
+}
