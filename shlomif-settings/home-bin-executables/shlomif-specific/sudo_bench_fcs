@@ -20,7 +20,7 @@ exec(
     qw#sudo nice -n-20 ionice -c1 -n0 sudo -u#,
     $SUDO_USER,
     qw#bash -c#,
-qq#SRC_DIR=\"$SRC_DIR\" FCS_PGO_THEME="$FCS_PGO_THEME" MALLOC_CONF=background_thread:true,metadata_thp:auto bash ~/bin/fcs-bench.bash 4#,
+qq#SRC_DIR=\"$SRC_DIR\" FCS_PGO_THEME="$FCS_PGO_THEME" MALLOC_CONF=background_thread:true,metadata_thp:auto LD_PRELOAD=/home/shlomif/progs/freecell/git/fc-solve/fc-solve/source/rpmalloc/bin/linux/release/x86-64/librpmallocwrap.so bash ~/bin/fcs-bench.bash 4#,
 );
 
 __END__
