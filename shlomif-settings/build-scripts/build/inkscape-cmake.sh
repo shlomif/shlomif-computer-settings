@@ -3,7 +3,6 @@ build_type=''
 if test "$DEBUG" = 1 ; then
     build_type='-DCMAKE_BUILD_TYPE=Debug'
 fi
-flags='-DWITH_GTK3_EXPERIMENTAL=ON'
 # flags=''
 
 ninja='-G Ninja'
