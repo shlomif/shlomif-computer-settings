@@ -606,3 +606,9 @@ function Python_Import_Order()
 endfunction
 
 autocmd BufNewFile,BufRead *.py call Python_Import_Order()
+
+function JavaScr_Commands()
+    command! -range Const :<line1>,<line2>!perl -0777 -lpE 's/\A(\s*)(?:var\b)?\s*/${1}const /ms; s/[,;]?(\s*)\z/;$1/ms'
+endfunction
+
+autocmd BufNewFile,BufRead *.js call JavaScr_Commands()
