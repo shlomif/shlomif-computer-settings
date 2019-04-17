@@ -77,3 +77,4 @@ export PATH="$HOME/apps/test/wml/bin:$PATH"
 proj_name='quad-pres'
 export HARNESS_OPTIONS=j4:c TEST_JOBS=4
 export WMLOPTS="-q"
+export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/quadpres-tidyall.d"
