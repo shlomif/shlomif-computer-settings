@@ -112,6 +112,7 @@ call vam#ActivateAddons([
     \ 'github:terryma/vim-expand-region',
     \ 'github:thinca/vim-quickrun',
     \ 'github:timonv/vim-cargo',
+    \ 'github:tomasr/molokai',
     \ 'github:tpope/vim-fugitive',
     \ 'github:tpope/vim-rhubarb',
     \ 'github:vim-airline/vim-airline-themes',
