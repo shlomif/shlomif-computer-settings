@@ -26,8 +26,7 @@ set -x
 cat <<'SQL' | sqlite3 cpandb.sql
 select auths.auth_id as id, cpanid, count(*) as cnt
 from auths, dists
-where dists.auth_id = id
-group by id
+where dists.auth_id = auths.auth_id
+group by dists.auth_id
 order by cnt, cpanid;
 SQL
-
