@@ -1,0 +1,1 @@
+symlink from ~/.pdbrc to ./dot-pdbrc
