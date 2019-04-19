@@ -1,2 +1,0 @@
-#!/bin/sh
-cd shlomif-preferred-style/ && (a="`pwd`"; fn='.clang-format'; cd $HOME; if ! test -e "$fn"; then ln -s "$a/dot-clang-format" "$fn" ; fi)

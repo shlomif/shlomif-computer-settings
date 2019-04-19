@@ -1,0 +1,1 @@
+symlink from ~/.clang-format to ./shlomif-preferred-style/dot-clang-format
