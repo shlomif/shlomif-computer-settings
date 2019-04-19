@@ -98,7 +98,15 @@ sub run_manifest
             print "Linking $dd to $ss\n";
             if ( -e $dd )
             {
-                if ( $ENV{V} )
+                if ( not -l $dd )
+                {
+                    die "$dd is not a symlink!";
+                }
+                elsif ( readlink($dd) ne $ss )
+                {
+                    die "$dd does not point to $ss !";
+                }
+                elsif ( $ENV{V} )
                 {
                     warn "Not replacing $dd";
                 }
