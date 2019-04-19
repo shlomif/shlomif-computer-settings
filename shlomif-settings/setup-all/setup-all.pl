@@ -70,47 +70,52 @@ sub sub_c
     );
 }
 
-sub run_setup
+sub run_manifest
 {
     my $dir      = shift;
     my $pwd      = getcwd();
     my $manifest = "$dir/setup.symlinks.manifest.txt";
-    if ( -f $manifest )
+    my $ret      = ( -f $manifest );
+    return '' if !$ret;
+
+    open my $fh, "<", $manifest;
+    while ( my $l = <$fh> )
     {
-        open my $fh, "<", $manifest;
-        while ( my $l = <$fh> )
+        chomp $l;
+        if ( my ( $dest, $src ) =
+            $l =~ m#\Asymlink from ~/(\S+) to \./(\S+)\z# )
         {
-            chomp $l;
-            if ( my ( $dest, $src ) =
-                $l =~ m#\Asymlink from ~/(\S+) to \./(\S+)\z# )
+            chdir($dir);
+            my $conf_dir = getcwd();
+            my $h        = $ENV{HOME};
+            if ( $dest =~ m#/# )
             {
-                chdir($dir);
-                my $conf_dir = getcwd();
-                my $h        = $ENV{HOME};
-                if ( $dest =~ m#/# )
-                {
-                    mkpath( [ "$h/" . dirname($dest) ] );
-                }
-                my $dd = "$h/$dest";
-                if ( -e $dd )
-                {
-                    warn "Not replacing $dd";
-                }
-                else
-                {
-                    symlink( "$conf_dir/$src", "$h/$dest" );
-                }
+                mkpath( [ "$h/" . dirname($dest) ] );
+            }
+            my $dd = "$h/$dest";
+            if ( -e $dd )
+            {
+                warn "Not replacing $dd";
             }
             else
             {
-                die "wrong line <$l> in $manifest !";
+                symlink( "$conf_dir/$src", "$h/$dest" );
             }
-            chdir $pwd;
         }
-        close $fh;
-        return;
+        else
+        {
+            die "wrong line <$l> in $manifest !";
+        }
+        chdir $pwd;
     }
-    else
+    close $fh;
+    return 1;
+}
+
+sub run_setup
+{
+    my $dir = shift;
+    if ( !run_manifest($dir) )
     {
         warn "Running ./setup for $dir";
         return sub_c( $dir, ['./setup'] );
