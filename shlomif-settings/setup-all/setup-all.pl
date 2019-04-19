@@ -122,6 +122,7 @@ sub run_setup
         return sub_c( $dir, ['./setup'] );
     }
 }
+run_setup('vim-conf');
 
 run_setup('Bash');
 run_setup('bash-aliases');
@@ -138,7 +139,6 @@ run_setup('rpm');
 run_setup('sky');
 run_setup('tmux');
 run_setup('vcs-checkout-scripts');
-run_setup('vim-conf');
 run_setup('x11');
 
 __END__
