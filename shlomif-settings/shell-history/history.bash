@@ -7,6 +7,7 @@
 -t wml/itself
 . ~/bin/Dev-Path-Configs-Source-Me.bash
 ../source/Tatzer -l n2t
+./bwbasic fizz-buzz.bas | gvim -
 ./gen-helpers
 ./kpat
 Cancel_reminder
@@ -21,18 +22,30 @@ WD=xfce startx
 ah
 b
 ba
+bash /home/shlomif/conf/build/gimp-git-all-deps.bash
+bash /home/shlomif/conf/trunk/shlomif-settings/home-bin-executables/bin/trim-installed-rpms.bash
+bash /home/shlomif/conf/trunk/shlomif-settings/home-bin-executables/shlomif-specific/reddit11-11.bash
 bash bin/rebuild
 bash ~/bin/backup-total.sh ; bash ~/bin/backup-extra-data.sh ; bash ~/bin/backup-total.sh ; bash ~/bin/backup-extra-data.sh ; n --msg "Backup finished"
+c
 c7
 cd -
 cd ..
+ci -m '- Add BRs'
 ci-generate
 claws-mail
+cmake -DWITH_GOLF_SOLVER=1 -DCMAKE_BUILD_TYPE=Release ../kpat
+cpan-upload HTML-T5-0.001.tar.gz
+cpanp -i App::cpanminus
+cpanp -i Task::BeLike::SHLOMIF ; n -m cpan
+cs
+ct
 d
 date
 did
 dolphin ~/Music/dosd-mp3s/ ~/Music/mp3s/ ~/Download/Video/
 du .
+dzil authordeps | xargs cpan -i
 dzil build
 dzil release
 dzil test --all
@@ -50,6 +63,7 @@ git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/fix-markup-valid.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/refactoring.txt
 git clean -dxf .
 git clean -dxf ..
+git co master
 git dh
 git dhs
 git i
