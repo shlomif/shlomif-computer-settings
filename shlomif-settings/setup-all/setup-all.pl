@@ -11,7 +11,7 @@ use Carp ();
 
 my $skip_re;
 
-GetOptions( '--skip-re=s' => \$skip_re, )
+GetOptions( 'skip-re=s' => \$skip_re, )
     or die "Wrong options $!";
 
 sub do_system
@@ -102,19 +102,22 @@ sub run_manifest
             my $dd = "$h/$dest";
             my $ss = "$conf_dir/$src";
             print "Linking $dd to $ss\n";
-            if ( -e $dd and ( ( !defined $skip_re ) or ( $dd !~ /$skip_re/ ) ) )
+            if ( -e $dd )
             {
-                if ( not -l $dd )
+                if ( ( !defined $skip_re ) or ( $dd !~ /$skip_re/ ) )
                 {
-                    die "$dd is not a symlink!";
-                }
-                elsif ( readlink($dd) ne $ss )
-                {
-                    die "$dd does not point to $ss !";
-                }
-                elsif ( $ENV{V} )
-                {
-                    warn "Not replacing $dd";
+                    if ( not -l $dd )
+                    {
+                        die "$dd is not a symlink!";
+                    }
+                    elsif ( readlink($dd) ne $ss )
+                    {
+                        die "$dd does not point to $ss !";
+                    }
+                    elsif ( $ENV{V} )
+                    {
+                        warn "Not replacing $dd";
+                    }
                 }
             }
             else
