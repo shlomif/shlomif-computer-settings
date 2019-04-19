@@ -5,8 +5,14 @@ use warnings;
 use autodie;
 use File::Basename qw/ dirname /;
 use File::Path qw/ mkpath /;
+use Getopt::Long qw/ GetOptions /;
 use Cwd qw/ getcwd /;
 use Carp ();
+
+my $skip_re;
+
+GetOptions( '--skip-re=s' => \$skip_re, )
+    or die "Wrong options $!";
 
 sub do_system
 {
@@ -96,7 +102,7 @@ sub run_manifest
             my $dd = "$h/$dest";
             my $ss = "$conf_dir/$src";
             print "Linking $dd to $ss\n";
-            if ( -e $dd )
+            if ( -e $dd and ( ( !defined $skip_re ) or ( $dd !~ /$skip_re/ ) ) )
             {
                 if ( not -l $dd )
                 {

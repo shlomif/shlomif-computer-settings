@@ -20,5 +20,5 @@ script:
     - mkdir -p ~/bin
     - ln -sf /usr/bin/make ~/bin/gmake
     - export PATH="$HOME/bin:$PATH"
-    - if test "$TEST_INSTALL" = 1 ; then repo="`pwd`" ; cd ~ ; perl "$repo"/shlomif-settings/setup-all/setup-all.pl ; else prove shlomif-settings/tests/*.t ; fi
+    - if test "$TEST_INSTALL" = 1 ; then repo="`pwd`" ; cd ~ ; perl "$repo"/shlomif-settings/setup-all/setup-all.pl --skip-re='gitconfig' ; else prove shlomif-settings/tests/*.t ; fi
 sudo: false
