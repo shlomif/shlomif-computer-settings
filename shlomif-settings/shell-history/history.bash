@@ -7,8 +7,12 @@
 -t wml/itself
 . ~/bin/Dev-Path-Configs-Source-Me.bash
 ./gen-helpers
+./kpat
 Cancel_reminder
+PATH="/home/shlomif/apps/golang/bin:/home/shlomif/.local/bin:/home/shlomif/apps/test/wml/bin:$PATH"
+ah
 b
+ba
 bash bin/rebuild
 c7
 cd -
@@ -25,6 +29,8 @@ dzil release
 dzil test --all
 e
 et
+export PATH="/home/shlomif/apps/golang/bin:/home/shlomif/.local/bin:/home/shlomif/apps/test/wml/bin:$PATH"
+finish-server
 fmt
 fmt && pt
 fmt && t
@@ -48,7 +54,9 @@ git stash pop
 git tag -l
 gvim
 gvim +mak
+gvim .gitignore
 gvim .travis.yml
+gvim Changes
 gvim dist.ini
 gvim lib/make/main.mak
 hc
@@ -87,6 +95,7 @@ rm -fr RPMS/ SRPMS/ BUILD BUILDROOT/
 run
 sd
 sub
+sudo -i
 svn di
 svn st
 t
