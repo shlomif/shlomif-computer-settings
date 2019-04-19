@@ -72,7 +72,49 @@ sub sub_c
 
 sub run_setup
 {
-    return sub_c( shift, ['./setup'] );
+    my $dir      = shift;
+    my $pwd      = getcwd();
+    my $manifest = "$dir/setup.symlinks.manifest.txt";
+    if ( -f $manifest )
+    {
+        open my $fh, "<", $manifest;
+        while ( my $l = <$fh> )
+        {
+            chomp $l;
+            if ( my ( $dest, $src ) =
+                $l =~ m#\Asymlink from ~/(\S+) to \./(\S+)\z# )
+            {
+                chdir($dir);
+                my $conf_dir = getcwd();
+                my $h        = $ENV{HOME};
+                if ( $dest =~ m#/# )
+                {
+                    mkpath( [ "$h/" . dirname($dest) ] );
+                }
+                my $dd = "$h/$dest";
+                if ( -e $dd )
+                {
+                    warn "Not replacing $dd";
+                }
+                else
+                {
+                    symlink( "$conf_dir/$src", "$h/$dest" );
+                }
+            }
+            else
+            {
+                die "wrong line <$l> in $manifest !";
+            }
+            chdir $pwd;
+        }
+        close $fh;
+        return;
+    }
+    else
+    {
+        warn "Running ./setup for $dir";
+        return sub_c( $dir, ['./setup'] );
+    }
 }
 
 run_setup('Bash');
