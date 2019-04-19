@@ -14,6 +14,7 @@ ah
 b
 ba
 bash bin/rebuild
+bash ~/bin/backup-total.sh ; bash ~/bin/backup-extra-data.sh ; bash ~/bin/backup-total.sh ; bash ~/bin/backup-extra-data.sh ; n --msg "Backup finished"
 c7
 cd -
 cd ..
