@@ -6,10 +6,18 @@
 -t rpm/mag
 -t wml/itself
 . ~/bin/Dev-Path-Configs-Source-Me.bash
+../source/Tatzer -l n2t
 ./gen-helpers
 ./kpat
 Cancel_reminder
 PATH="/home/shlomif/apps/golang/bin:/home/shlomif/.local/bin:/home/shlomif/apps/test/wml/bin:$PATH"
+VirtualBox
+WD=awe startx
+WD=cin startx
+WD=gnome startx
+WD=jwm startx
+WD=lxde startx
+WD=xfce startx
 ah
 b
 ba
@@ -58,6 +66,7 @@ gvim +mak
 gvim .gitignore
 gvim .travis.yml
 gvim Changes
+gvim Tests/validate-html-using-vnu.py
 gvim dist.ini
 gvim lib/make/main.mak
 hc
@@ -77,6 +86,7 @@ make
 make -j8
 make PROD=1 upload
 make clean
+make package_source
 make test
 make upload
 p --tags
@@ -85,6 +95,7 @@ perl ../scripts/multi_config_tests.pl ; n --msg 'fcs test'
 pidgin
 ping www.google.com
 pm-suspend
+prove Tests/validate-html-using-vnu.py 2>&1 | tee ~/f
 pt
 python3 Tests/validate-html-using-vnu.py
 rake
