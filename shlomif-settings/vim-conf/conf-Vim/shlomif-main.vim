@@ -104,6 +104,7 @@ call vam#ActivateAddons([
     \ 'github:prettier/vim-prettier',
     \ 'github:qpkorr/vim-bufkill',
     \ 'github:romainl/Apprentice',
+    \ 'github:shlomif/mojovai',
     \ 'github:shlomif/syntax-spork',
     \ 'github:shlomif/vim-extract-variable',
     \ 'github:shlomif/vim-gitignore',
