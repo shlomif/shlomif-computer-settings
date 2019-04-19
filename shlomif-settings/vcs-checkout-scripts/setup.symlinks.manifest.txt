@@ -1,0 +1,1 @@
+symlink from ~/conf/svn to ./scripts

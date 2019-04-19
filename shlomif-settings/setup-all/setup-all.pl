@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use autodie;
+use File::Basename qw/ dirname /;
 use File::Path qw/ mkpath /;
 use Cwd qw/ getcwd /;
 use Carp ();
