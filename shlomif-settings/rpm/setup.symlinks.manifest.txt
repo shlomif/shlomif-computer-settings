@@ -1,0 +1,1 @@
+symlink from ~/.rpmmacros to ./.rpmmacros
