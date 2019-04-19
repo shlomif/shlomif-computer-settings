@@ -1,4 +1,5 @@
 -t 0fc
+-t dotfiles
 -t euler
 -t fcs
 -t homepage
@@ -9,6 +10,7 @@ b
 c7
 cd -
 cd ..
+ci-generate
 claws-mail
 d
 did
@@ -22,6 +24,7 @@ fmt && pt
 fmt && t
 fortune
 git au
+git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/fix-markup-valid.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/refactoring.txt
 git clean -dxf .
 git clean -dxf ..
@@ -31,9 +34,12 @@ git i
 git push
 git pushu
 git rebase master
+git s o
 git s u
 gvim
 gvim +mak
+gvim .travis.yml
+gvim lib/make/main.mak
 hc
 hexchat
 hg pull
@@ -56,13 +62,16 @@ ping www.google.com
 pm-suspend
 pt
 python3 Tests/validate-html-using-vnu.py
+rake
 rake prettier
 rake test
 rebuild
 sd
 sub
+svn di
 svn st
 t
+tidyall -a
 tmux
 tmux a
 ts
