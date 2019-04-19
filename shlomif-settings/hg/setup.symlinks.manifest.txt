@@ -1,0 +1,1 @@
+symlink from ~/.hgrc to ./hgrc
