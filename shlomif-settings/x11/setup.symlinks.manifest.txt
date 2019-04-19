@@ -1,0 +1,2 @@
+symlink from ~/.Xclients to ./dot-Xclients
+symlink from ~/.Xkbmap to ./dot-Xkbmap
