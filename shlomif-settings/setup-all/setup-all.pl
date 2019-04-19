@@ -73,8 +73,8 @@ sub sub_c
 
 sub run_manifest
 {
-    my $dir      = shift;
-    my $pwd      = getcwd();
+    my $sub_dir  = shift;
+    my $dir      = "$trunk/shlomif-settings/$sub_dir", my $pwd = getcwd();
     my $manifest = "$dir/setup.symlinks.manifest.txt";
     my $ret      = ( -f $manifest );
     return '' if !$ret;
