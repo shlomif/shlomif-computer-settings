@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-set -e
-dir="$(pwd)"
-cd ~
-tgt=.gdbinit
-if ! test -e "$tgt"
-then
-    ln -s "$dir/dot-gdbinit.gdb" "$tgt"
-fi
