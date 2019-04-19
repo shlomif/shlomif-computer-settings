@@ -1,0 +1,1 @@
+symlink from ~/.common_aliases.bash to ./common_aliases.bash
