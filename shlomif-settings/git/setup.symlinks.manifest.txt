@@ -1,0 +1,2 @@
+symlink from ~/.gitconfig to ./.gitconfig
+symlink from ~/conf/git to ./conf-git
