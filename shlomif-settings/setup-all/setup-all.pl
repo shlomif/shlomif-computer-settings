@@ -96,7 +96,10 @@ sub run_manifest
             my $dd = "$h/$dest";
             if ( -e $dd )
             {
-                warn "Not replacing $dd";
+                if ( $ENV{V} )
+                {
+                    warn "Not replacing $dd";
+                }
             }
             else
             {
