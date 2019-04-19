@@ -94,6 +94,8 @@ sub run_manifest
                 mkpath( [ "$h/" . dirname($dest) ] );
             }
             my $dd = "$h/$dest";
+            my $ss = "$conf_dir/$src";
+            print "Linking $dd to $ss\n";
             if ( -e $dd )
             {
                 if ( $ENV{V} )
@@ -103,7 +105,7 @@ sub run_manifest
             }
             else
             {
-                symlink( "$conf_dir/$src", "$h/$dest" );
+                symlink( $ss, $dd );
             }
         }
         else
@@ -121,13 +123,12 @@ sub run_setup
     my $dir = shift;
     if ( !run_manifest($dir) )
     {
-        warn "Running ./setup for $dir";
         return sub_c( $dir, ['./setup'] );
     }
 }
+run_setup('Bash');
 run_setup('vim-conf');
 
-run_setup('Bash');
 run_setup('bash-aliases');
 run_setup('build-scripts');
 run_setup('clang-format');
