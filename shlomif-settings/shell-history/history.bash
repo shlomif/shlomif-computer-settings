@@ -2,7 +2,10 @@
 -t dotfiles
 -t euler
 -t fcs
+-t games/black-hole
+-t games/pysol
 -t homepage
+-t qp
 -t rpm/mag
 -t wml/itself
 . ~/bin/Dev-Path-Configs-Source-Me.bash
@@ -21,6 +24,7 @@ WD=lxde startx
 WD=xfce startx
 ah
 b
+b ; n --msg bm
 ba
 bash /home/shlomif/conf/build/gimp-git-all-deps.bash
 bash /home/shlomif/conf/trunk/shlomif-settings/home-bin-executables/bin/trim-installed-rpms.bash
@@ -42,6 +46,7 @@ cs
 ct
 d
 date
+df
 did
 dolphin ~/Music/dosd-mp3s/ ~/Music/mp3s/ ~/Download/Video/
 du .
@@ -84,6 +89,7 @@ gvim Tests/validate-html-using-vnu.py
 gvim dist.ini
 gvim lib/make/main.mak
 hc
+hebrew-keymap.sh
 hexchat
 hg pull
 hg push
@@ -100,9 +106,12 @@ make
 make -j8
 make PROD=1 upload
 make clean
+make install
 make package_source
 make test
 make upload
+make upload_beta
+minicpan
 p --tags
 perl ../scripts/cmd-line-compiler compile && m && y
 perl ../scripts/multi_config_tests.pl ; n --msg 'fcs test'
@@ -116,10 +125,12 @@ rake
 rake prettier
 rake test
 rebuild
+regen
 rehash
 rm -fr RPMS/ SRPMS/ BUILD BUILDROOT/
 run
 sd
+strip -s *
 sub
 sudo -i
 svn di
