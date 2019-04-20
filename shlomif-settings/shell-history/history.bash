@@ -9,10 +9,12 @@
 -t rpm/mag
 -t wml/itself
 . ~/bin/Dev-Path-Configs-Source-Me.bash
+../scripts/Tatzer -l extra_speed2
 ../source/Tatzer -l n2t
 ./bwbasic fizz-buzz.bas | gvim -
 ./gen-helpers
 ./kpat
+./node_modules/.bin/tsc abc-path.ts | gvim -
 Cancel_reminder
 PATH="/home/shlomif/apps/golang/bin:/home/shlomif/.local/bin:/home/shlomif/apps/test/wml/bin:$PATH"
 VirtualBox
@@ -86,6 +88,7 @@ gvim .gitignore
 gvim .travis.yml
 gvim Changes
 gvim Tests/validate-html-using-vnu.py
+gvim bin/gen-docbook-make-helpers.pl
 gvim dist.ini
 gvim lib/make/main.mak
 hc
