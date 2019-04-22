@@ -3,6 +3,10 @@ load_common chdirs
 load_common partests
 
 remote_repo="$(_shlomif_github "fc-solve")"
+pristine_copy=~/Backup/Arcs/fcs-site--post-dest/post-incs
+pristine_copy_reduced=~/Backup/Arcs/fcs-site--post-dest/post-incs-reduced
+this_copy_reduced=~/Backup/Arcs/fcs-site--post-dest/this-incs-reduced
+_post_dest="dest"
 fcs="$HOME/progs/freecell"
 base="$fcs"
 branches="$fcs/branches"
@@ -15,6 +19,8 @@ b="$t_fcs/B"
 o="$t_fcs/scripts/TEST_OPTIMIZATIONS"
 i="$trunk/../ids-whitelist/"
 site="$t_fcs/site/wml"
+latemp_trunk="$site"
+load_common latemp
 blog="$t_fcs/site/blog"
 presets="$t_fcs/presets/soft-threads/meta-moves/auto-gen"
 atomic_presets="$t_fcs/presets/soft-threads/atomic-moves/auto-gen"

@@ -3,6 +3,11 @@
 #
 # Distributed under terms of the MIT license.
 
+if test -z "$latemp_trunk"
+then
+    latemp_trunk="$trunk"
+fi
+
 rebuild()
 {
     (
