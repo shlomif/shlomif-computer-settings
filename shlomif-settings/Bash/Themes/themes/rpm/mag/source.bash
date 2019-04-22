@@ -174,7 +174,6 @@ bn()
 
 ex()
 {
-    extract-mageia-updates-cpan-updates http://check.mageia.org/cauldron/shlomif/updates.html > ~/y40.txt
     . ~/conf/trunk/shlomif-settings/home-bin-executables/bin/magpie-update-multiple.bash
 }
 
