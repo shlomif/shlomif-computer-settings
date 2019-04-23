@@ -16,6 +16,7 @@
 ./kpat
 ./node_modules/.bin/tsc abc-path.ts | gvim -
 Cancel_reminder
+NODE_PATH="`pwd`"/lib/for-node/js qunit-cli lib/for-node/test-code-emcc.js
 PATH="/home/shlomif/apps/golang/bin:/home/shlomif/.local/bin:/home/shlomif/apps/test/wml/bin:$PATH"
 VirtualBox
 WD=awe startx
@@ -60,6 +61,7 @@ e
 et
 export PATH="/home/shlomif/apps/golang/bin:/home/shlomif/.local/bin:/home/shlomif/apps/test/wml/bin:$PATH"
 finish-server
+flake8 .
 fmt
 fmt && pt
 fmt && t
@@ -68,12 +70,20 @@ git au
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/extract-method.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/fix-markup-valid.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/refactoring.txt
+git ci -m 'package.json'
 git clean -dxf .
 git clean -dxf ..
 git co master
 git dh
 git dhs
 git i
+git log --stat
+git log --stat | less
+git log -p
+git log -p | gvim -
+git log -p | less
+git log .
+git log . | less
 git push
 git pushu
 git rebase master
@@ -98,12 +108,14 @@ hg pull
 hg push
 hg st
 hm
+ifconfig -a
 k5
 ls
 ls -l
 ls -lrS
 ls -lrt
 ls -rt
+lynx www.shlomifish.org
 m
 make
 make -j8
@@ -118,11 +130,13 @@ minicpan
 p --tags
 perl ../scripts/cmd-line-compiler compile && m && y
 perl ../scripts/multi_config_tests.pl ; n --msg 'fcs test'
+pi-make-microsoft-freecell-board -t 830910836 | ./fc-solve --load-config video-editing  -p -t -sam -sel -mi 200000
 pidgin
 ping www.google.com
 pm-suspend
 prove Tests/validate-html-using-vnu.py 2>&1 | tee ~/f
 pt
+pypy3 sums_of_powers.py
 python3 Tests/validate-html-using-vnu.py
 rake
 rake prettier
