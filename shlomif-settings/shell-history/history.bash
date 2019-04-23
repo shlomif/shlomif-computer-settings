@@ -110,6 +110,7 @@ hg st
 hm
 ifconfig -a
 k5
+ldd freecell-solver-multi-thread-solve
 ls
 ls -l
 ls -lrS
@@ -144,7 +145,10 @@ rake test
 rebuild
 regen
 rehash
+rm -fr CM*
 rm -fr RPMS/ SRPMS/ BUILD BUILDROOT/
+rm -fr SPLIT_FCC
+rpmbuild --undefine=_disable_source_fetch -ba /home/shlomif/progs/Rpms/SPECS/lepton.spec
 run
 sd
 strip -s *
@@ -154,10 +158,15 @@ svn di
 svn st
 t
 tidyall -a
+time rebuild
 tmux
 tmux a
 ts
+u /home/shlomif/progs/Rpms/RPMS/noarch/task-shlomif-homesite-0.0.1-1.mga7.noarch.rpm
 ub
+uname -a
 up
+up $(dzil authordeps)
 ur
 uu
+which quadp
