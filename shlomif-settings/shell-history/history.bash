@@ -32,11 +32,13 @@
 -t wml/latemp
 -t xml/fiction
 . ../scripts/split-fcc-SOURCE-ME.bash
+. /home/shlomif/conf/build/KDE/kdegames5-trunk-all-debug.sh ../kpat
 . bin/spell.bash
 . build.sh
 . par-Source-Me.bash
 . ~/bin/Dev-Path-Configs-Source-Me.bash
 . ~/conf/trunk/shlomif-settings/home-bin-executables/bin/magpie-update-multiple.bash
+. ~/h.bash
 ../c-solver/Tatzer -l n2b --prefix=/home/shlomif/apps/test/bhs
 ../scripts/Tatzer
 ../scripts/Tatzer -l extra_speed2
@@ -54,6 +56,8 @@
 ./bwbasic fizz-buzz.bas | gvim -
 ./configure
 ./dbm_fc_solver --offload-dir-path offl/ 11982.board
+./fc-solve -l ve 24.board
+./fc-solve 24.board
 ./gen-helpers
 ./kpat
 ./kpat --start 830910836 --end 830910836 --solve 3 | cat
@@ -180,6 +184,7 @@ cd ../..
 cd ../../
 cd ../../..
 cd ../b
+cd /home/shlomif/Docs/homepage/homepage/trunk/../_trunk--clones/
 cd /home/shlomif/progs/freecell/extern/Solitairey/
 cd 451
 cd 662
@@ -187,27 +192,38 @@ cd 665
 cd B
 cd BUILD
 cd Backup
+cd Backup/
 cd Docs/programming/irc/freenode-##programming/faq/FreenodesprogrammingWiki
+cd Docs/programming/what-i-learned-from-porting-to-freebsd
 cd Download/Docs/Books/
+cd Download/unpack/
 cd Download/unpack/kernel/from-git/linux
 cd Download/unpack/to-del
+cd Download/unpack/to-del/
+cd Download/unpack/web-sites/awesome-opensource-israel
 cd Music/mp3s
 cd bin
 cd build
 cd conf/trunk/
 cd dest
 cd english
+cd extensions
 cd git
 cd hg
 cd kpat
 cd lib/blogs/shlomif-tech-diary
 cd lib/repos/Solitairey
 cd neovim
+cd progs
+cd progs/JS/greasemonkey-scripts/
 cd progs/perl/snippets
+cd shlomif-settings
+cd site
 cd src
 cd src/
 cd todel
 cd todel/
+cd trunk
 cd webwml
 cd wml
 cd wml_include
@@ -215,6 +231,8 @@ cd wrapper
 cdown-to 18:09:40 ; n --msg "11:11 on #Reddit"
 cdp
 chromium-browser
+chromium-browser 'http://localhost/shlomif/temp-Solitairey/dest/'
+chromium-browser 'https://www.shlomifish.org/fc-solve-temp/js-fc-solve/automated-tests/'
 chromium-browser --user-data-dir=del"$a"/ https://www.shlomifish.org/fc-solve-temp/js-fc-solve/text/ ; let ++a
 chromium-browser https://www.shlomifish.org/fc-solve-temp/js-fc-solve/text/
 ci
@@ -222,6 +240,7 @@ ci -m '- Add BRs'
 ci -m '- New version'
 ci -m '- Rebuild for new perl 5.28.0'
 ci -m '- Rebuild for python3 3.7'
+ci -m '- add BRs'
 ci -m 'SILENT: add BRs'
 ci -m 'add BRs'
 ci-generate
@@ -241,18 +260,22 @@ cp -a post-dest/ ~/Backup/Arcs/post-dest/
 cp ../../../Selina-Mandrake/selina-mandrake/screenplay/tests/valid-html-tidy.t tests/
 cp ../Star-Trek--We-the-Living-Dead/.gen-ci.bash .
 cp /home/shlomif/progs/perl/cpan/git/Module-Format/Module-Format/.tidyallrc .
+cp installer/tests/perl/t/data/p4n5-copy/all-in/index.html installer/tests/perl/t/data/p4n5-copy/all-in/index.foo.xhtml && sky up installer/tests/perl/t/data/p4n5-copy/all-in/index.foo.xhtml
 cpan-upload HTML-T5-0.001.tar.gz
 cpandb --CPAN /home/shlomif/Download/Arcs/Perl/minicpan/ --cpanid PERLANCAR | gvim -
+cpanm .
 cpanp -i App::cpanminus
 cpanp -i Task::BeLike::SHLOMIF ; n -m cpan
 cs
 ct
 ctags -R .
 cv
+cython-3 *.pyx
 d
 date
 date +%s.%N
 date ; date +%s
+depth_run 1
 df
 df -i
 did
@@ -277,6 +300,7 @@ dzil release
 dzil test
 dzil test --all
 e
+echo $PATH
 emsdk list
 eo
 eslint -c .eslintrc.yml src/js/solitaire.js
@@ -287,11 +311,13 @@ export CC=/home/shlomif/bin/clang CXX=/home/shlomif/bin/clang++ FCS_CLANG=1
 export HARNESS_OPTIONS=j4:c
 export NOTIFIER_TO=lap
 export PATH="$PATH:/home/shlomif/.local/bin:$PWD"
+export PATH="$PWD/node_modules/.bin:$PATH"
 export PATH="/home/shlomif/.local/bin:/home/shlomif/apps/test/wml/bin:$PATH"
 export PATH="/home/shlomif/apps/golang/bin:/home/shlomif/.local/bin:/home/shlomif/apps/test/wml/bin:$PATH"
 export VIMSYNT=1
 export XZ_OPT="-T4"
 f() { "$1" -l cpb 24.board } ; gvimdiff <(f fc-solve ) <(f ./fc-solve)
+fd txt t2 | xargs touch
 fd wml src | xargs gvim -p
 fg
 find
@@ -311,6 +337,7 @@ force_u_rpms
 fortune
 fortune shlomif-shlomif
 g
+g++ -O3 -march=native -flto -fwhole-program ecnerwala-e654.cpp
 g++ -Wall -Wextra -O3 -march=native -flto -fwhole-program 660/e660-jfirester.cpp
 g++ -g 665_v1.cpp
 g++ -o e -Wall -Wextra -O3 -march=native -flto -fwhole-program 665-verify.cpp
@@ -328,18 +355,24 @@ get_nums | summary
 ghc -O2 mniip.hs
 gimp
 git
+git add .gen-ci.bash
 git add .gitignore
 git add .tidyallrc
 git add .travis.yml
+git add LICENSE
 git add Makefile
+git add README.md
 git add bin/install-tidyp-systemwide.bash
 git add tests/valid-html-tidy.t
+git ai
+git am --continue
 git au
 git au .
 git bisect good
 git branch -l
 git branch -l -a
 git ci -F add-more-to-log-commit-msg.txt
+git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/add-README-or-LICENSE.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/add-ci-gen-travis-yml.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/add-missing-deps-to-ci.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/convert-var-to-slot.txt
@@ -365,6 +398,7 @@ git ci -m 'add test'
 git ci -m 'add to gitignore'
 git ci -m 'appveyor isolate'
 git ci -m 'bump version'
+git ci -m 'cleanups'
 git ci -m 'consolidate diffs w master'
 git ci -m 'convert more pages to (x)html5'
 git ci -m 'convert more pages to x/html5'
@@ -380,11 +414,13 @@ git ci -m 'merge some delta_states code'
 git ci -m 'more cleanups: avoid braindead portability'
 git ci -m 'optimization'
 git ci -m 'package.json'
+git ci -m 'perltidy'
 git ci -m 'refactor'
 git ci -m 'refactoring'
 git ci -m 'remove old'
 git ci -m 'remove unused'
 git ci -m 'still reproducing leak'
+git ci -m 'tidyall'
 git ci -m 'try debug for appveyor'
 git ci -m 'ui/ux and css tweaks'
 git ci -m 'validate more'
@@ -392,6 +428,7 @@ git ci -m fix
 git ci -m optimize
 git ci -t ~/conf/trunk/shlomif-settings/git/commit-messages/convert-var-to-slot.txt
 git ci -t ~/conf/trunk/shlomif-settings/git/commit-messages/refactoring.txt
+git ci shlomif-settings/Bash/
 git ci shlomif-settings/vim-conf/
 git clean -dxf .
 git clean -dxf ..
@@ -404,7 +441,9 @@ git clean -dxf lib/presentations/spork/
 git cnt
 git co .
 git co ..
+git co fix-tests
 git co master
+git co update-rand-gen
 git com
 git dh
 git dh shlomif-settings/Bash/
@@ -412,10 +451,12 @@ git dh | gvim -
 git dh | less
 git dhs
 git di
+git di --stat master
 git di master
 git di master | gvim -
 git hub
 git hub apply-pr 1
+git hub fork
 git hub help
 git i
 git init .
@@ -425,6 +466,7 @@ git log --stat | gvim -
 git log --stat | less
 git log -p
 git log -p | gvim -
+git log -p | head -1000 | gvim -
 git log -p | less
 git log .
 git log . | less
@@ -445,6 +487,7 @@ git rebase -i master
 git rebase master
 git remote -v
 git reset .
+git rm abstract.txt
 git s o
 git s u
 git s u blead
@@ -465,6 +508,7 @@ gvim $(__this_theme_source )
 gvim +mak
 gvim -S a.sess
 gvim -o $homepage/lib/make/main.mak lib/make/main.mak
+gvim -o $homepage/lib/sass/style.scss lib/sass/style.scss
 gvim -o .tidyallrc /home/shlomif/progs/perl/cpan/App/Sky/git/Sky-uploader/App-Sky/.tidyallrc
 gvim -o .travis.yml /home/shlomif/Docs/homepage/homepage/trunk/.travis.yml
 gvim -o .travis.yml /home/shlomif/Download/unpack/games/pysolfc/git/PySolFC/.travis.yml
@@ -476,16 +520,19 @@ gvim -o dist.ini /home/shlomif/progs/perl/cpan/Dir/Manifest/Dir-Manifest/p5/Dir-
 gvim -o lib/hunspell/whitelist1.txt Tests/valid-html-tidy.t
 gvim -o lib/hunspell/whitelist1.txt Tests/valid-html-tidy.t Tests/gmake-unit.t
 gvim -o lib/make/main.mak $homepage/lib/make/main.mak
+gvim -o lib/sass/common-style.scss lib/sass/style.scss t2/meta/FAQ/index.xhtml.wml
 gvim -o src/js/fcs-validate.ts src/js/web-fc-solve-tests--fcs-validate.ts
 gvim -o y.txt lib/hunspell/whitelist1.txt
 gvim ../../scripts/Makefile.to-javascript.mak
 gvim ../.appveyor.yml
 gvim ../c-solver/black_hole_solver.c
+gvim ../scripts/check-max-iters.pl
 gvim ../scripts/fuzz-build.p6
 gvim ../scripts/multi_config_tests.pl
 gvim ../source/CMakeLists.txt
 gvim ../source/Tatzer
 gvim ../source/lib.c
+gvim ../src/wml_test/run_test.pl
 gvim .appveyor.yml
 gvim .ci-gen.ini
 gvim .gen-ci.bash
@@ -495,12 +542,16 @@ gvim /home/shlomif/conf/trunk/shlomif-settings/home-bin-executables/bin/dnf-py-s
 gvim 630-v1.py
 gvim 657/657_v1.py
 gvim 658/658_v1.py
+gvim 662_v1.py
+gvim 665_v1.py
 gvim CI-testing/continuous-integration-testing.pl
 gvim CONTRIBUTING.md
 gvim ChangeLog
 gvim Changes
 gvim FAQ.mdwn
+gvim HACKING.asciidoc
 gvim LICENSE
+gvim META6.json
 gvim Makefile
 gvim Makefile.PL
 gvim README
@@ -520,6 +571,7 @@ gvim Tests/validate-html-using-vnu.py
 gvim about-supporting-older-perl5-releases.pod
 gvim apply-solve-more-3-log.pl
 gvim bin/ci-generate
+gvim bin/fix-spork.pl
 gvim bin/gen-docbook-make-helpers.pl
 gvim bin/gen-helpers-main.pl
 gvim bin/gen-sect-nav-menus.pl
@@ -533,6 +585,7 @@ gvim bin/render
 gvim bin/render-source.pl
 gvim bin/render_v2-proto.pl
 gvim bin/required-modules.yml
+gvim bin/tt-render.pl
 gvim black_hole_solver.c
 gvim blocks.tt2
 gvim board_gen/make_pysol_freecell_board.py
@@ -540,15 +593,18 @@ gvim build.sh
 gvim debondt-compact-freecell-positions--document.asciidoc
 gvim dist.ini
 gvim euler-248-v1.py
+gvim f.json
 gvim foo.txt
 gvim fr.bash
 gvim gen-helpers
+gvim h.bash
 gvim index.erb
 gvim index.html
 gvim instance.h
 gvim irc2.log
 gvim lib.c
 gvim lib/App/Deps/Verify.pm
+gvim lib/App/Git/Info.pm
 gvim lib/App/HTML/PostProc/Gezer.pm
 gvim lib/CI/Gen.pm6
 gvim lib/Games/Solitaire/BlackHole/Solver/Golf/App.pm
@@ -567,11 +623,13 @@ gvim lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-essays-5-xhtml-common.xs
 gvim lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-essays-5-xhtml-onechunk.xsl
 gvim m.txt +cbuf +cope
 gvim main_cl_callback_common.h
+gvim mniip.hs
 gvim perl5/Shlomif/Quad/Pres/CmdLine.pm
 gvim pysollib/hint.py
 gvim rakefile
 gvim rpm-qa.txt
 gvim run-tests.pl
+gvim setup.py
 gvim src/charts/fc-pro--4fc-intractable-deals--report/chart-using-flot.ts
 gvim src/download.html.wml
 gvim src/faq.html.wml
@@ -587,11 +645,14 @@ gvim t2/meta/FAQ/index.html.wml
 gvim templates/index.html
 gvim tests/valid-html-tidy.t
 gvim tslint.json
+gvim ver.txt
+gvim wrapper/src/usearch_wrapper.c
 gvim y.txt
 gvim ~/.vimrc
 gvim ~/f
 gvim ~/o.txt
 gvimdiff $homepage/bin/gen-sect-nav-menus.pl bin/gen-sect-nav-menus.pl
+gvimdiff black_hole_solver_main.c black_hole_solver_resume_api_main.c
 gvimdiff dest/web-forums/index.html ../dest/web-forums/index.html
 gvimdiff dest/web-forums/index.html ../dest/web-forums/index.html +colorscheme" apprentice" +"exe \"normal \\<c-w>J\""
 gvimdiff j j2
@@ -614,10 +675,12 @@ i
 i=0; while bash SPLIT_FCC/by-depth/2/active/AAAAAAAAAAAAAAAARA==/driver.bash ; do let i++ ; done ; echo $i
 i=0; while bash SPLIT_FCC/by-depth/3/active/AAAAAAAAAAAAAAABFA==/driver.bash ; do let i++ ; done ; echo $i
 ifconfig -a
+java -jar /home/shlomif/Download/unpack/net/www/validator/build/dist/vnu.jar --format json --Werror --skip-non-html /tmp/zjzj 2>f.json
 java -jar build/dist/vnu.jar --skip-non-html ../dest-xh/
 k
 k5
 kate
+kate Backup/Arcs/emo.txt
 kill %1
 kmix
 kpat
@@ -635,8 +698,11 @@ less README
 less README.md
 less db.txt
 less dist.ini
+less f
 less l
 less lib/docbook/5/essays/The-Enemy-English-v7/all-in-one.xhtml
+less lib/docbook/5/essays/The-Enemy-English-v7/all-in-one.xhtml.temp.xml.xhtml
+less lib/docbook/5/essays/c-and-cpp-elements-to-avoid/all-in-one.xhtml
 less lib/docbook/5/essays/foss-and-other-beasts-v3/all-in-one.xhtml
 li
 ls
@@ -655,6 +721,7 @@ ls foo/
 ls reproducible-build-dir/run-t-*.bash
 ls t
 ls ~
+lynx https://www.shlomifish.org/
 lynx www.shlomifish.org
 m
 m 2>&1 | cat > /dev/null
@@ -673,6 +740,7 @@ make -j4 test
 make -j5
 make -j5 bzImage modules
 make -j8
+make -j8 install
 make -j8 test
 make -j8 upload
 make -j8 upload_var
@@ -687,10 +755,12 @@ make PROD=1 upload
 make PROD=1 upload_beta
 make VERBOSE=1 2>&1 | gvim -
 make VERBOSE=1 > m.txt 2>&1
+make all_games_html
 make check
 make clean
 make dist
 make disttest
+make docbook_extended
 make docs
 make edit
 make gen_divs
@@ -707,6 +777,7 @@ make time
 make upload
 make upload_beta
 make upload_home_remote
+make upload_local
 make upload_var
 man bash
 man tidy
@@ -716,6 +787,7 @@ meson ..
 mgarepo submit --define section=core/updates_testing -t 6
 mgarepo up
 mi
+mi ; n -m mi
 mi6 test
 minicpan
 mkdir b
@@ -723,6 +795,7 @@ mkdir tests
 mono ./630-v1.exe
 mono ./630-v1.exe 2>&1 | less
 mplayer 01\ See\ Her\ Out.mp3
+mpv --volume=50 --vo=null Music/mp3s/Playlist\ -\ Girls\ On\ The\ Rise/003-1353450-Bohemian\ Hideaway-Brave\ Soul\ _ft.\ Juliet\ Lyons_.ogg
 mpv Music/mp3s/Playlist\ -\ Summer\ 2015/006\ -\ David\ Amber\ -\ Gnarly\ _feat.\ Devyn\ Rush_.ogg
 mr st
 mv du-new.txt du.txt
@@ -738,6 +811,7 @@ node test.js && echo succ
 node test.js 2>&1 | tee f
 npm i
 npm test
+nvim
 nvim -- dbm_solver.h
 nvim -o e658log2par.txt 658/par2.bash
 nvim solve-more-7-gnupar.bash
@@ -749,6 +823,7 @@ nvim-qt -- dbm_solver.h
 okular Humble-Bundle-Books-Linux-No-starch/howlinuxworks.pdf
 p --tags
 p upstream
+patch -p1 < ~/g1.diff
 perl -Ilib t/001_routes.t
 perl -d bin/tt-render.pl
 perl ../c-solver/run-tests.pl
@@ -763,10 +838,13 @@ perl Makefile.PL
 perl Makefile.PL && make disttest
 perl Tests/spell-check--hebrew.t
 perl apply-solve-more-3-log.pl
+perl bin/gen-rpm-for-build-deps -o f.spec
 perl bin/process.pl
 perl bin/rel-links-parse.pl $(find post-dest/ -name '*.html' -o -name '*.xhtml')
 perl bin/sort-check-spelling-file
 perl bin/tt-render.pl
+perl github-dashboard
+perl script/tag-release.pl
 perl scripts/tag-release.pl
 perl test.pl
 perl tests/installation/bin/wml -
@@ -787,6 +865,7 @@ pi-make-microsoft-freecell-board -t 830910836 | ./fc-solve --load-config video-e
 pi-make-microsoft-freecell-board -t 830910836 | ./fc-solve --load-config video-editing -mi 900000
 pi-make-microsoft-freecell-board -t 830910836 | ./fc-solve --load-config video-editing -p -t -sam -sel -mi 200000
 pi-make-microsoft-freecell-board -t 830910836 | fc-solve --load-config video-editing
+pi-make-microsoft-freecell-board -t 90291042 | ./fc-solve --freecells-num 0 -to 0AB
 pidgin
 ping 192.168.1.1
 ping www.google.com
@@ -824,6 +903,8 @@ pypy3 665_v1.py | timestamper
 pypy3 e451_v2_step2.py
 pypy3 e451_v2_step2.py | less
 pypy3 euler-248-v1.py
+pypy3 euler-248-v1.py | tee good
+pypy3 euler_659_v1.py
 pypy3 sums_of_powers.py
 pysol
 python build/build.py all
@@ -833,8 +914,10 @@ python refactor1.py
 python2 650-fakesson.py
 python3 -i 658/658_v1.py
 python3 -m trace --trace ../../source/t/t/several-iter-limits.py >f
+python3 -mpdb Tests/validate-html-using-vnu.py
 python3 -mpdb pysol.py
 python3 ../../source/t/t/several-iter-limits.py
+python3 650-fakesson.py
 python3 650/650-v1.py
 python3 654_v1.py
 python3 657/657_v1.py
@@ -845,7 +928,9 @@ python3 658/658_v1.py | tee -a 658log.txt
 python3 658/658_v1.py| timestamper | tee -a e658-log1.txt
 python3 662_v1.py
 python3 Tests/validate-html-using-vnu.py
+python3 bin/split-lwall-facts.py
 python3 euler-248-v1.py
+python3 gen-multiple-pysol-layouts --dir=deals/ --ms --prefix '' --suffix .board seq 1 32000
 python3 pysol.py
 python3 setup.py build
 python3 setup.py sdist
