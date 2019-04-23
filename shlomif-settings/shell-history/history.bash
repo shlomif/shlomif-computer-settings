@@ -148,8 +148,11 @@ pm-suspend
 prove Tests/validate-html-using-vnu.py 2>&1 | tee ~/f
 pt
 pypy3 sums_of_powers.py
+python build/build.py test
 python3 Tests/validate-html-using-vnu.py
+python3 setup.py build
 python3 setup.py test
+python3 setup.py test 2>&1 | gvim -
 python3 setup.py test 2>&1 | tee ~/inkscape-ext-tests.txt
 pythonsetup.py sdist
 rake
