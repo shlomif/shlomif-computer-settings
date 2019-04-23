@@ -30,6 +30,7 @@ b
 b ; n --msg bm
 ba
 bash /home/shlomif/conf/build/gimp-git-all-deps.bash
+bash /home/shlomif/conf/build/perl/install-to-apps-perl-modules.sh
 bash /home/shlomif/conf/trunk/shlomif-settings/home-bin-executables/bin/trim-installed-rpms.bash
 bash /home/shlomif/conf/trunk/shlomif-settings/home-bin-executables/shlomif-specific/reddit11-11.bash
 bash bin/rebuild
@@ -38,6 +39,7 @@ c
 c7
 cd -
 cd ..
+cd lib/repos/Solitairey
 ci -m '- Add BRs'
 ci-generate
 claws-mail
@@ -60,7 +62,9 @@ dzil test --all
 e
 et
 export PATH="/home/shlomif/apps/golang/bin:/home/shlomif/.local/bin:/home/shlomif/apps/test/wml/bin:$PATH"
+export VIMSYNT=1
 finish-server
+firefox -no-remote
 flake8 .
 fmt
 fmt && pt
@@ -70,9 +74,11 @@ git au
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/extract-method.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/fix-markup-valid.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/refactoring.txt
+git ci -m 'add to gitignore'
 git ci -m 'package.json'
 git clean -dxf .
 git clean -dxf ..
+git clean -dxf lib/presentations/qp/
 git co master
 git dh
 git dhs
@@ -110,7 +116,9 @@ hg st
 hm
 ifconfig -a
 k5
+kate
 ldd freecell-solver-multi-thread-solve
+less .travis.yml
 ls
 ls -l
 ls -lrS
@@ -131,6 +139,8 @@ minicpan
 p --tags
 perl ../scripts/cmd-line-compiler compile && m && y
 perl ../scripts/multi_config_tests.pl ; n --msg 'fcs test'
+perl Makefile.PL
+perl bin/sort-check-spelling-file
 pi-make-microsoft-freecell-board -t 830910836 | ./fc-solve --load-config video-editing  -p -t -sam -sel -mi 200000
 pidgin
 ping www.google.com
@@ -139,6 +149,9 @@ prove Tests/validate-html-using-vnu.py 2>&1 | tee ~/f
 pt
 pypy3 sums_of_powers.py
 python3 Tests/validate-html-using-vnu.py
+python3 setup.py test
+python3 setup.py test 2>&1 | tee ~/inkscape-ext-tests.txt
+pythonsetup.py sdist
 rake
 rake prettier
 rake test
@@ -158,15 +171,21 @@ svn di
 svn st
 t
 tidyall -a
+time pythone-brob.py
 time rebuild
 tmux
 tmux a
+tmux ls
 ts
 u /home/shlomif/progs/Rpms/RPMS/noarch/task-shlomif-homesite-0.0.1-1.mga7.noarch.rpm
+uas --split-length
 ub
 uname -a
+unset HTML_VALID_VNU_JAR
+unset MAKEFLAGS
 up
 up $(dzil authordeps)
 ur
 uu
 which quadp
+xsltproc -v -o lib/docbook//indiv-nodes/case-for-drug-legalisation-v/ --stringparam docmake.output.format xhtml --stringparam docmake.output.path_to_root ../../ --stringparam docmake.output.work_in_progress '' lib/sgml/shlomif-docbook/xsl--stylesheets/shlomif-essays--xhtml.xsl lib/docbook//xml/case-for-drug-legalisation-v.xml
