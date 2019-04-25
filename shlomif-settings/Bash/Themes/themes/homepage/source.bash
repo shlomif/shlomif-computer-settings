@@ -1,7 +1,6 @@
 load_common bundle/git
 load_common partests
 load_common chdirs
-load_common latemp
 
 base="$HOME/Docs/homepage"
 hg_base="$base"
@@ -18,6 +17,7 @@ pristine_copy_reduced=~/Backup/Arcs/post-dest/post-incs-reduced
 this_copy_reduced=~/Backup/Arcs/post-dest/this-incs-reduced
 _post_dest="dest/post-incs"
 
+load_common latemp
 export SCREENPLAY_COMMON_INC_DIR="$trunk/lib/screenplay-xml/from-vcs/screenplays-common"
 sel="$trunk/lib/screenplay-xml/from-vcs/Selina-Mandrake/selina-mandrake/screenplay/"
 pope="$trunk/lib/fiction-xml/from-vcs/The-Pope-Died-on-Sunday/Pope/text/"
