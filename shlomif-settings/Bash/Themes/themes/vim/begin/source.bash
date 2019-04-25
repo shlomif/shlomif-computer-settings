@@ -1,13 +1,14 @@
 load_common bundle/git
 load_common partests
 load_common chdirs
-load_common latemp
 
 base="$HOME/Docs/programming/Vim/vim-begin"
 repo="$base/git/vim-begin"
 trunk="$repo"
 src="$trunk/vim-begin/tt2-source"
 this="$src"
+
+load_common latemp
 
 cd "$this"
 

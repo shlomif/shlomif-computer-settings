@@ -1,12 +1,13 @@
 load_common bundle/git
 load_common chdirs
 load_common partests
-load_common latemp
 
 base="$HOME/Docs/programming/Perl/web-sites/perl-begin"
 trunk="$base/trunk"
 this="$trunk"
 remote_repo="$(_shlomif_github "perl-begin")"
+
+load_common latemp
 
 pristine_copy=~/Backup/Arcs/sites--perl-begin-post-dest/post-incs
 pristine_copy_reduced=~/Backup/Arcs/sites--perl-begin-post-dest/post-incs-reduced
