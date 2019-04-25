@@ -2,6 +2,7 @@
 (git clone git@github.com:thewml/website-meta-language.git w && (cd w && mkdir b && cd b && cmake ../src && make) && rm -fr w )
 -s
 -t 0fc
+-t 3fc
 -t better-scm
 -t cognitive
 -t dotfiles
@@ -19,6 +20,7 @@
 -t perl/begin
 -t perl/core
 -t perl/docmake
+-t perl/ffo
 -t perl/golf
 -t perl/inifiles
 -t perl/stats
@@ -80,6 +82,8 @@
 ./multi-bhs-solver --game golf --display-boards --rank-reach-prune boards/golf2.board
 ./node_modules/.bin/tsc abc-path.ts | gvim -
 ./refresh
+./scripts/code.sh
+./snaptile.py
 /home/shlomif/Download/unpack/prog/python/pypy3.5-6.0.0-linux_x86_64-portable/bin/pypy3 316-v1.py
 /home/shlomif/Download/unpack/prog/python/pypy3.5-6.0.0-linux_x86_64-portable/bin/pypy3 396-v1.py
 /home/shlomif/Download/unpack/prog/python/pypy3.5-6.0.0-linux_x86_64-portable/bin/pypy3 650/650-v1.py
@@ -96,6 +100,7 @@
 /home/shlomif/apps/perl/bleadperl/bin/cpanp -i Task::BeLike::SHLOMIF
 /opt/kde5-trunk/bin/kpat
 /opt/vlc-3.0/inkscape-trunk/bin/inkscape
+/usr/bin/time ./freecell-solver-range-parallel-solve 1 3200 100 --method random-dfs -to '[0123467j]=seq()' -sp r:tf -mi 100000
 /usr/bin/time bin/rebuild
 /usr/bin/time perl "$c_src"/run-tests.pl --glob='{clang-format,perltidy,py-flake8,style-trailing-space}*.t'\
 /usr/bin/time perl bin/process.pl
@@ -119,8 +124,10 @@ PATH="/home/shlomif/apps/golang/bin:/home/shlomif/.local/bin:/home/shlomif/apps/
 PYTHONPATH="`pwd`/src:$PWD" /home/shlomif/Download/unpack/prog/python/pypy3.5-6.0.0-linux_x86_64-portable/bin/pypy3 Tests/validate-html-using-vnu.py
 PYTHONPATH="`pwd`/src:$PWD" python3 Tests/validate-html-using-vnu.py
 PYTHONPATH="`pwd`/tests/lib:$PWD" python2 -mpdb tests/unit-generated/test__pysol_tests.scorpion_canMove__v3.py
+PYTHONPATH="`pwd`/tests/lib:$PWD" python3 -mpdb tests/unit-generated/test__pysol_tests.scorpion_canMove__v3.py
 PYTHONPATH="`pwd`/tests/lib:$PWD" python3 tests/unit-generated/test__pysol_tests.scorpion_canMove__v3.py
 SKIP_EMCC=1 NODE_PATH="`pwd`"/lib/for-node/js qunit lib/for-node/test-code-emcc.js
+V=1 bash /home/shlomif/conf/trunk/shlomif-settings/home-bin-executables/shlomif-specific/mr-register-all.bash
 VirtualBox
 WD=awe startx
 WD=cin startx
@@ -1184,6 +1191,7 @@ py.test-3 --pdb tests/test_media_zip.py
 py.test-3 --pdb tests/test_output_scour.py
 py.test-3 tests/test_output_scour.py
 pymode
+pypy euler_601_v1.py
 pypy3 -i 658/658_v1.py
 pypy3 654_v1.py
 pypy3 655_v1.py
@@ -1200,18 +1208,26 @@ pypy3 e451_v2_step2.py | less
 pypy3 euler-248-v1.py
 pypy3 euler-248-v1.py | tee good
 pypy3 euler_659_v1.py
+pypy3 pysol.py
 pypy3 sums_of_powers.py
+pypy3 sums_of_powers.py | grep -vE '^[2] '
 pysol
+python -m SimpleHTTPServer
 python build/build.py all
 python build/build.py jar
 python build/build.py test
 python refactor1.py
 python2 650-fakesson.py
+python2 sum.py
+python2 t2/humour/fortunes/python-show.py && echo fii
+python3
 python3 -i 658/658_v1.py
 python3 -m trace --trace ../../source/t/t/several-iter-limits.py >f
 python3 -mpdb Tests/validate-html-using-vnu.py
+python3 -mpdb filt.py
 python3 -mpdb pysol.py
 python3 ../../source/t/t/several-iter-limits.py
+python3 ../source/board_gen/gen-multiple-pysol-layouts.py --dir foo/ --prefix "" --suffix .board 24
 python3 650-fakesson.py
 python3 650/650-v1.py
 python3 654_v1.py
@@ -1227,6 +1243,7 @@ python3 bin/split-lwall-facts.py
 python3 euler-248-v1.py
 python3 gen-multiple-pysol-layouts --dir=deals/ --ms --prefix '' --suffix .board seq 1 32000
 python3 pysol.py
+python3 refactor1.py
 python3 setup.py build
 python3 setup.py sdist
 python3 setup.py test
@@ -1251,14 +1268,20 @@ regen
 rehash
 rej
 reprb
+rg '[ \t]$'
+rg VERS
 rgm i
 rgm perl6 e396_v1.p6
 rgm t
 rgm zef install --force-install .
 rm *~
+rm -f *.board
 rm -f *.npy
 rm -f *~
+rm -f lib/docbook/5/essays/foss-licences-wars/all-in-one.xhtml docbook.css
 rm -f offload/fcs_queue*
+rm -f run-t-*
+rm -f t/valgrind--*
 rm -f t/verify-cache/*
 rm -f t/verify-cache/nht.sha
 rm -fr $TIDYALL_DATA_DIR
@@ -1266,16 +1289,24 @@ rm -fr *
 rm -fr ../b
 rm -fr ../build-1
 rm -fr ../dest-xh ; cp -a ../wml/dest ../dest-xh
+rm -fr ../prerel-build
+rm -fr .git
 rm -fr .tidyall.d/
 rm -fr B
+rm -fr BUILD
 rm -fr C*
 rm -fr CM*
+rm -fr CMake*
 rm -fr RPMS/ SRPMS/ BUILD BUILDROOT/
 rm -fr SPLIT_FCC
 rm -fr _CPack_Packages
 rm -fr b
 rm -fr b/
 rm -fr d
+rm -fr dbm_fcs_dist*
+rm -fr del*
+rm -fr dest/
+rm -fr dest/js/yui-unpack
 rm -fr dest/t2/humour/fortunes/
 rm -fr node_modules
 rm -fr perl-*
@@ -1289,8 +1320,10 @@ rm a.out
 rm backup.tar
 rm du.txt
 rm f
+rm f.txt
 rm foo.txt
 rm foo.txt y.txt
+rm g1.diff
 rm git.log
 rm golfs6.txt
 rm htdocs/index.html~
@@ -1303,9 +1336,13 @@ rm lib/docbook/5/essays/c-and-cpp-elements-to-avoid/all-in-one.xhtml
 rm lib/docbook/5/essays/foss-and-other-beasts-v3/all-in-one.xhtml
 rm lib/docbook/5/indiv-nodes/rindolf-spec/index.xhtml
 rm log.txt
+rm mageia-perl-magpie-modules-list.txt
 rm o.txt
 rm y.txt
+rpm -qa --qf '%{NAME}\t%{ARCH}\n' | grep 586
+rpm -ql wml
 rpmbuild --undefine=_disable_source_fetch -ba /home/shlomif/progs/Rpms/SPECS/lepton.spec
+rpmbuild --undefine=_disable_source_fetch -ba /home/shlomif/progs/Rpms/SPECS/python-pywavelets.spec
 rpmbuild --undefine=_disable_source_fetch -ba SPECS/diff-so-fancy.spec
 rpmbuild --undefine=_disable_source_fetch -ba SPECS/gumbo.spec
 rpmbuild -ba /home/shlomif/progs/Rpms/SPECS/cddlib.spec
@@ -1315,6 +1352,7 @@ rpmbuild -ba /home/shlomif/progs/Rpms/SPECS/python-google-auth.spec
 rpmbuild -ba SPECS/modules.spec
 rpmbuild -ba f.spec
 rshasum --digest=SHA-256
+rsync -a dest/ docs
 rsync -a dest/ docs/
 rubocop -a ./Rakefile
 rubocop -a Rakefile
@@ -1323,20 +1361,27 @@ rubocop Rakefile
 ruby 1.rb
 run
 s
+sbt
 sd
 sensors
+set +x
 setup
 sha256sum freecell-solver-* libfreecell-solver.* | sha256sum -
 shutter
+simplescreenrecorder
 sky up-r ../js
 sky up-r js
+solve 1
+source apps/venv/buildbot/bin/activate
 source myrsync.bash
 spectacle
 ssh hostgator
 ssh lap
 ssh shlomif@perlish.org
 startup
+strace -f -o w.st wml -p1-3 -D CUR_YEAR=2019 social_contract.wml
 strace -f -o w.st wml -p1-3 -D CUR_YEAR=2019 social_contract.wml | less
+strace -o f.st -f ../scripts/Tatzer -l extra_speed2
 strip -s *
 sub
 sudo -i
@@ -1344,6 +1389,7 @@ sudo /usr/bin/restart-unbound
 sudo /usr/bin/start-mandrake-everytime
 sudo dnf -y --refresh upgrade
 sudo iotop
+sudo mock `pwd`/SRPMS/*.rpm
 sudo urpmi --auto-select --auto --auto-update
 svn di
 svn revert -R .
@@ -1358,21 +1404,26 @@ tail -100000 ~/.config/hexchat/logs/freenode-##programming.log > ~/irc2.log
 tail -f 658log.txt | commify| timestamper | tee -a proclog.txt
 tail -f du-new.txt
 tail ~/d.txt
+tar -tvf 2018-10-23-12.tar.xz
 tidyall -a
 time ./a.out
 time ./e451.exe
 time ./mniip
 time /home/shlomif/Download/unpack/prog/python/pypy3.5-6.0.0-linux_x86_64-portable/bin/pypy3 630-v1.py
 time /home/shlomif/Download/unpack/prog/python/pypy3.5-6.0.0-linux_x86_64-portable/bin/pypy3 650/650-v1.py
+time bash -c 'perl bin/sort -n -r --head 100 ~/d.txt'
 time gmake
 time make
 time make fastrender
 time perl 15/15.pl
+time perl 24/24.pl
 time perl 4.pl
 time perl bin/tt-render.pl
 time perl stats.pl 0fc-log.txt
 time pypy 630-v1.py
 time pypy3 6.py
+time pypy3 e655-brob26.py
+time python3 6.py
 time python3 630-v1.py
 time python3 650/650-v1.py
 time python3 e655-brob26.py
@@ -1381,28 +1432,46 @@ time rebuild
 tmux
 tmux a
 tmux a -t 0
+tmux a -t 1
+tmux a -t 2
 tmux ls
 touch lib/docbook/5/xml/*
+touch lib/fc-solve-for-javascript-asmjs/libfreecell-solver-asm.js.mem
+touch lib/presentations/spork/Perl/Lightning/Test-Run/Spork.slides
 touch lib/template.wml
 touch lib/template.wml lib/template5.wml
+touch src/js-fc-solve/text/index.html.wml
 touch src/js/fcs-base-ui.ts
 touch t2/*.wml
 touch t2/humour/index.xhtml.wml
 touch t2/index.xhtml.wml
+touch t2/index.xhtml.wml t2/old-news.html.wml
 touch t2/links.html.wml
 ts
 tsc --target es6 --moduleResolution node --module commonjs --outDir lib/for-node/js --rootDir src/js src/js/jq_qs.d.ts src/js/libfcs-wrap.d.ts src/js/web-fc-solve-tests.ts || echo fail
 tsc --target es6 --moduleResolution node --module commonjs --outDir lib/for-node/js --rootDir src/js src/js/jq_qs.d.ts src/js/web-fc-solve-tests.ts || echo fail
 u --buildrequires /home/shlomif/Download/unpack/Mageia/SPECS-only-for-deps/inkscape/SPECS/inkscape.spec
 u --buildrequires /home/shlomif/Download/unpack/Mageia/SPECS-only-for-deps/kpat/SPECS/kpat.spec
+u --buildrequires /home/shlomif/Download/unpack/mageia/SPECS-only-for-deps/gimp/SPECS/gimp.spec
 u --buildrequires /home/shlomif/Download/unpack/mageia/SPECS-only-for-deps/kpat/SPECS/kpat.spec
+u --buildrequires /home/shlomif/Download/unpack/mageia/SPECS-only-for-deps/wml/SPECS/wml.spec
 u --buildrequires /home/shlomif/progs/Rpms/SPECS/cocoalib.spec
+u --buildrequires /home/shlomif/progs/Rpms/SPECS/gfan.spec
 u --buildrequires /home/shlomif/progs/Rpms/SPECS/giac.spec
 u --buildrequires /home/shlomif/progs/Rpms/SPECS/python-aiohttp.spec
 u --buildrequires /home/shlomif/progs/Rpms/SPECS/python-autobahn.spec
+u --buildrequires /home/shlomif/progs/Rpms/SPECS/python-readme-renderer.spec
 u --buildrequires /home/shlomif/progs/Rpms/SPECS/python-sqlalchemy-migrate.spec
 u /home/shlomif/progs/Rpms/RPMS/noarch/task-shlomif-homesite-0.0.1-1.mga7.noarch.rpm
+u asciidoc
+u lib64gdl-devel
+u lib64gtkmm3.0-devel
+u libreoffice
 u magpie
+u perl-App-Notifier-Service
+u perl-Dist-Zilla-PluginBundle-Author-ETHER
+u python3-flake8
+u spamassassin-spamd
 uas
 uas --split-length
 uas --split-length 1
@@ -1412,38 +1481,54 @@ uname -a
 unset DBUS_SESSION_BUS_ADDRESS
 unset HTML_VALID_VNU_JAR
 unset MAKEFLAGS
+unset TEST_JOBS
 unxz < golfs6.txt.xz| wc -c
 unxz wml-2.18.0.tar.xz
+unzip -l dest/arch_doc/fcs_arch_doc.epub
 up
 up $(dzil authordeps)
 uptime
 ur
 uu
 valgrind -v ./black-hole-solve --game black_hole --display-boards --rank-reach-prune ../c-solver/t/data/26464608654870335080.bh.board.txt
+valgrind -v ./black-hole-solve --game black_hole --display-boards --rank-reach-prune ../c-solver/t/data/26464608654870335080.bh.board.txt 2>&1 | gvim -
 valgrind ./fc-solve 24.board
 valgrind board_gen/pi-make-microsoft-freecell-board -t 1
 vim 658/summarize.pl
 vim d2.c
+vim dbm_solver.c
+vim t2/humour/fortunes/ver.txt
+virt-manager
 vlc *.{mp3,flv,ogg,mp4,avi,wmv,mpg,MP3,m4a,wma,webm}
 vlc Arcs/vlc-all.xspf
+vlc Arcs/vlc14.xspf
 vlc Arcs/vlc25.xspf
 vlc Arcs/vlc27.xspf
 vlc Arcs/vlc32.xspf
 vlc Arcs/vlc4.xspf
 vlc Arcs/vlc5.xspf
 vlc Arcs/vlc6.xspf
+vlc Arcs/vlc8.xspf
 vlc Download/Video/*4U*
 vlc Download/Video/David_Amber_-_Wild_Hearts__feat._Ashley_Jana_.ogg
+vlc Music/mp3s/01\ See\ Her\ Out.wav
+vlc Music/mp3s/Playlist\ -\ Summer\ 2015/006\ -\ David\ Amber\ -\ Gnarly\ _feat.\ Devyn\ Rush_.ogg
 wc -l Backup/Arcs/msdeals-sha.txt
 wc -l o.txt
+which deps-app
+which depth_dbm_fc_solver
 which fc-solve
 which gcc
 which gvim
 which latemp-config
+which node
 which nvim
 which quadp
 which sass
+which vim
 which wml
+wmd
+wml -o UNDEFuEN:1997 /dev/null
 wml f
 xsetbg ~/Download/Images/Women/Y2YVNnu.jpg
 xsetbg ~/Download/Images/Women/hjZIPaw.jpg
@@ -1455,7 +1540,11 @@ xsltproc -v -o lib/docbook//indiv-nodes/case-for-drug-legalisation-v/ --stringpa
 xsltproc -v -o lib/docbook/5/indiv-nodes/case-for-drug-legalisation-v3/ --stringparam docmake.output.format xhtml --stringparam docmake.output.path_to_root ../../ --stringparam docmake.output.work_in_progress '' lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-essays-5-xhtml.xsl lib/docbook/5/xml/case-for-drug-legalisation-v3.xml
 xterm
 xz9 wml-2.18.0.tar
+yarn
+youtube-dl -U
+yp
 z
 zef install --force-install .
+zef install .
 zsh
 ~/apps/vagrant/2.1.5/vagrant up ; n -m vagrant
