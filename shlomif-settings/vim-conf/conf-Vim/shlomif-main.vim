@@ -302,7 +302,9 @@ autocmd BufNewFile,BufRead ~/progs/bash/completion/trunk/bash_completion/cmds/* 
 
 autocmd BufNewFile,BufRead ~/progs/games/kakuro/trunk/*.rb so ~/conf/Vim/kakuro-ruby.vim
 
-autocmd BufNewFile *.pl call Perl_Load_File() | :call Perl_New_Script()
+if 0
+    autocmd BufNewFile *.pl call Perl_Load_File() | :call Perl_New_Script()
+endif
 autocmd BufNewFile *.pm call Perl_Load_File() | :call Perl_New_Module()
 autocmd BufNewFile *.t call Perl_Load_File() | :call Perl_New_Test_Program()
 
@@ -614,3 +616,4 @@ function JavaScr_Commands()
 endfunction
 
 autocmd BufNewFile,BufRead *.js call JavaScr_Commands()
+let g:templates_directory = [ $HOME . '/conf/Vim/templates' ]
