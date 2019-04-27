@@ -32,6 +32,7 @@ conf()
     (
         mkdir -p "$build"
         cd "$build"
+        rm -fr CMakeCache.txt CMakeFiles/
         bash ~/conf/build/inkscape-cmake.sh "$c"
     )
 }
@@ -72,5 +73,8 @@ f-()
 }
 
 alias g='gvim ids.txt +cbuf +cope +"sp scripts/ids-whitelist.txt" +"sp scripts/ids-whitelist.txt"'
+
+# Enable clang+ccache and a debug build.
+export CC=$HOME/bin/clang CXX=$HOME/bin/clang++ DEBUG=1
 
 proj_name='ink'
