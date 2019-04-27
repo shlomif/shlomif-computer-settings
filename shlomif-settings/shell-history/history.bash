@@ -1,4 +1,5 @@
 ( . ~/bin/Dev-Path-Configs-Source-Me.bash && make )
+( b ; n --msg bm ) 2>&1 | tee ~/curl.bm.txt
 (git clone git@github.com:thewml/website-meta-language.git w && (cd w && mkdir b && cd b && cmake ../src && make) && rm -fr w )
 -s
 -t 0fc
@@ -41,12 +42,14 @@
 . ../scripts/test-regressions.bash
 . /home/shlomif/conf/build/KDE/kdegames5-trunk-all-debug.sh ../kpat
 . /home/shlomif/conf/build/pidgin.sh
+. bin/db4db5.bash
 . bin/spell.bash
 . build.sh
 . par-Source-Me.bash
 . ~/bin/Dev-Path-Configs-Source-Me.bash
 . ~/conf/trunk/shlomif-settings/home-bin-executables/bin/magpie-update-multiple.bash
 . ~/h.bash
+../board_gen/make_pysol_freecell_board.py -t 6240 freecell | /home/shlomif/progs/freecell/git/fc-solve/fc-solve/B/fc-solve -g freecell -l qs -fif 5 --flares-choice fcpro -p -t -sam \
 ../c-solver/Tatzer -l n2b --prefix=/home/shlomif/apps/test/bhs
 ../scripts/Tatzer
 ../scripts/Tatzer --break-back-compat-1
@@ -57,6 +60,7 @@
 ../source/Tatzer -l extra_speed2
 ../source/Tatzer -l n2b
 ../source/Tatzer -l n2t
+./Build
 ./Build disttest
 ./Build manifest
 ./Build test
@@ -66,17 +70,24 @@
 ./autogen.sh
 ./autotests/SolverFormatTest
 ./black-hole-solve --game golf --display-boards --rank-reach-prune --wrap-ranks boards/golf906.board | gvim -
+./black-hole-solve --game golf --display-boards --rank-reach-prune ../Games-Solitaire-BlackHole-Solver/t/data/35.golf.board.txt
+./bootstrap
 ./bwbasic fizz-buzz.bas
 ./bwbasic fizz-buzz.bas | gvim -
 ./configure
+./configure --help
 ./dbm_fc_solver --offload-dir-path offl/ 11982.board
 ./e
 ./e451.exe 3-1000
 ./euler383_v3.exe
+./fc-solve -l cpb 24.board
 ./fc-solve -l ve 24.board
 ./fc-solve 24.board
 ./freecell-solver-fork-solve 1 5000 1000 -l lg && echo goo
+./freecell-solver-multi-thread-solve 1 10000000 1000 --num-workers 4 -l lg -mi 200000
+./freecell-solver-multi-thread-solve 1 32000 400 -l lg
 ./gen-helpers
+./gen-helpers.pl
 ./kpat
 ./kpat --start 1 --end 1000000 --solve Golf
 ./kpat --start 830910836 --end 830910836 --solve 3 | cat
@@ -149,26 +160,36 @@ a=`pwd`
 a=dest/about.html ; cmp $a ../$a ; gvimdiff $a ../$a +colorscheme" apprentice" +"exe \"normal \\<c-w>J\""
 a=dest/uses/qa/index.html; cmp $a ../$a ; gvimdiff $a ../$a +colorscheme" apprentice" +"exe \"normal \\<c-w>J\""
 a=dest/uses/text-generation/index.html; cmp $a ../$a ; gvimdiff $a ../$a +colorscheme" apprentice" +"exe \"normal \\<c-w>J\""
+ack --sort "\\bchar\\b" > ~/char.txt
 ack -f
+ack -h '^<h2_sect' | sort | uniq -c | sort -n
 ack href=\"\\./'[^"]' dest/pre-incs/t2 | gvim -
 ag ' $'
+ag '[ \t]$'
 ag -g index.html.wml t2
 ag -g wml src
+ag -l '\(\(\(inclu' post-dest/
+ag rarr
 ah
 alias p='git push'
 alias s='svn st'
 an
+autoreconf -s -i
 b
 b ; n --msg bm
 ba
 bash
 bash --rcfile build.sh
+bash --rcfile shlomif-build.sh
+bash -c "export FCS_PATH=\"$b\"; export FCS_SRC_PATH=\"$c_src\"; time make -j4 -f par.mak"
 bash -x bin/install-npm-deps.sh
+bash -x ~/f.sh
 bash ../scripts/c-subroutine-metrics-line-count.bash
 bash ../scripts/fuzz-build.bash
 bash ../scripts/fuzz-build.bash g
 bash ../scripts/fuzz-build.bash g ; n -m fuzz
 bash ../scripts/golf-bench-2.bash
+bash ../scripts/golf-bench-3.bash | tee have.txt
 bash ../scripts/golf-pat-perl-range-solve.bash
 bash ../scripts/mint-new-release.bash ; n -m 'new fcs release'
 bash ../scripts/split-fcc--all-in-one.bash
@@ -194,34 +215,44 @@ bash Install.bash
 bash SPLIT_FCC/by-depth/2/active/AAAAAAAAAAAAAAAARA==/driver.bash
 bash SPLIT_FCC/by-depth/3/active/AAAAAAAAAAAAAAABFA==/driver.bash
 bash analyze.bash
+bash analyze.bash | gvim -
 bash bin/copy-web-fc-solve.bash
 bash bin/install-npm-deps.sh
 bash bin/rebuild
+bash client.bash
+bash conf/build/gimp-git-all-deps.bash
 bash download-gtest.sh
 bash filt.bash
 bash fr.bash
 bash fr.bash 2>l
 bash gen_list.sh
 bash h.bash
+bash mix.bash
 bash myrsync.bash
 bash pgo.sh
 bash rakudo-git.bash
 bash run.bash
+bash scripts/repack-min-cardsets.bash
 bash shlomif-build.sh ; n -m icu2
 bash solve-more-3.bash | commify | timestamper
+bash solve-more-6-gnupar.bash
 bash test.bash
 bash update.sh
 bash vendu-deploy-1.bash
 bash ~/bin/backup-total.sh ; bash ~/bin/backup-extra-data.sh ; bash ~/bin/backup-total.sh ; bash ~/bin/backup-extra-data.sh ; n --msg "Backup finished"
+bash ~/bin/backup-total.sh ; n --msg "Backup finished"
 bash ~/conf/trunk/shlomif-settings/home-bin-executables/bin/gen-gen-ci.bash
+bash ~/conf/trunk/shlomif-settings/home-bin-executables/shlomif-specific/merge-prereqs-yml.bash
 bash ~/h.sh
 bat README.md
 bat f
+bat log.txt
 bd
 bg
 bin/spell-checker-iface > foo.txt
 bm -l -p
 bm -l -s
+bm -s
 bpat
 buildbot start master
 bundle exec bin/validate
@@ -237,8 +268,11 @@ cat /etc/resolv.conf
 cat abstract.txt
 cat f
 cat foo.txt
+ccache -C
 cd
+cd $a
 cd $arcs
+cd $homepage
 cd $mag_base
 cd $this
 cd -
@@ -249,72 +283,106 @@ cd ../..
 cd ../../
 cd ../../..
 cd ../b
+cd ../build-1
 cd ../docs
 cd ../extensions
 cd ../scripts
+cd .config
 cd /home/shlomif/Docs/homepage/homepage/trunk/../_trunk--clones/
 cd /home/shlomif/progs/freecell/extern/Solitairey/
 cd 0fc-b
 cd 2018
+cd 2018/
 cd 451
+cd 6
+cd 655
 cd 658
+cd 660
 cd 662
 cd 665
+cd App-Deps-Verify/
 cd Arcs
 cd B
 cd BUILD
 cd Backup
 cd Backup/
 cd Backup/Arcs
+cd Desktop
+cd Docs
 cd Docs/Notes/Passwords
 cd Docs/programming/irc/freenode-##programming/faq/FreenodesprogrammingWiki
 cd Docs/programming/what-i-learned-from-porting-to-freebsd
 cd Download/Arcs
+cd Download/Arcs/ISOs/mageia-beta
 cd Download/Docs/Books/
+cd Download/Video/
 cd Download/unpack/
+cd Download/unpack/kde/kdegames/git/kpat/
 cd Download/unpack/kernel/from-git/linux
+cd Download/unpack/perl/cpan/to-del/html-tidy5/
+cd Download/unpack/prog/c
 cd Download/unpack/to-del
 cd Download/unpack/to-del/
+cd Download/unpack/to-del/GitTutoring
 cd Download/unpack/to-del/amigojapan.github.io/
 cd Download/unpack/web-sites/awesome-opensource-israel
 cd Games-Solitaire-BlackHole-Solver
 cd Music/mp3s
+cd PySolFC
 cd SOURCES
 cd Solitairey
+cd VirtualBox\ VMs
+cd XorShift128Plus
 cd apps
+cd apps/
 cd bin
 cd bin/
 cd bin/private
+cd bin/shlom.in-redirect
 cd build
 cd conf/trunk/
 cd dest
+cd disk-fs
 cd english
 cd extensions
+cd extra-data
+cd fc-solve/docs
 cd git
 cd hg
+cd js
 cd kpat
 cd lib/blogs/shlomif-tech-diary
 cd lib/repos/Solitairey
 cd neovim
+cd neovim-qt
+cd perl
 cd perl-byacc-2.0.orig
+cd pidgin
 cd progs
 cd progs/JS/greasemonkey-scripts/
+cd progs/perl/cpan/
 cd progs/perl/snippets
 cd progs/wml/Latemp/cookiecutter--shlomif-latemp-sites/\{\{cookiecutter.project_slug\}\}/
 cd pysolfc-web-site/
 cd s
 cd shlomif-settings
+cd shlomif-settings/
 cd site
+cd site-assets
 cd src
 cd src/
 cd to-del
 cd todel
 cd todel/
 cd trunk
+cd valgrind/
 cd webwml
 cd wml
+cd wml-2.18.0
+cd wml/
 cd wml_include
 cd wrapper
+cd wrapper/
 cdown-to 18:09:40 ; n --msg "11:11 on #Reddit"
 cdp
 chromium-browser
@@ -332,33 +400,49 @@ ci -m '- add BRs'
 ci -m '- fix reqs'
 ci -m 'SILENT: add BRs'
 ci -m 'add BRs'
+ci -m 'add deps'
+ci -m 'add docs'
+ci -m 'mageiaify'
 ci -m fix
 ci-generate
 clang++ -Weverything -O3 -march=native -flto -fwhole-program e451-quasisphere.cpp
 clang++ -Weverything -O3 -march=native -flto -fwhole-program e662-james-rauen.cpp -Ofast
 claws-mail
+cloc
 cmake -DFCS_DISABLE_DEBONDT_DELTA_STATES=1 ../source/
 cmake -DWITH_BH_SOLVER=1 -DCMAKE_BUILD_TYPE=Debug ../kpat
+cmake -DWITH_GOLF_SOLVER= -DCMAKE_BUILD_TYPE=Release ../kpat
 cmake -DWITH_GOLF_SOLVER=1 -DCMAKE_BUILD_TYPE=Release ../kpat
 cmake .
+cmake ..
+cmake ../source
 cmake ../src
 cmp dest/web-forums/index.html ../dest/web-forums/index.html
 conf
+coo PySolFC
 coo cppcheck
+coo curl
 coo freecell-solver
 coo libuv
+coo pylint
 coo wml
+coo xterm
 countdown 1000 ; sub
 cp -a dest ..
+cp -a dest/ ..
 cp -a dest/ ~
 cp -a dest/post-incs/t2/lecture/Perl/Lightning d
 cp -a post-dest/ ~/Backup/Arcs/post-dest/
 cp ../../../Selina-Mandrake/selina-mandrake/screenplay/tests/valid-html-tidy.t tests/
 cp ../Star-Trek--We-the-Living-Dead/.gen-ci.bash .
+cp ./pidgin/libpurple/protocols/facebook/.libs/libfacebook.so ~/.purple/plugins/
 cp /home/shlomif/progs/perl/cpan/git/Module-Format/Module-Format/.tidyallrc .
 cp installer/tests/perl/t/data/p4n5-copy/all-in/index.html installer/tests/perl/t/data/p4n5-copy/all-in/index.foo.xhtml && sky up installer/tests/perl/t/data/p4n5-copy/all-in/index.foo.xhtml
+cpan -i HTML::T5
 cpan-upload HTML-T5-0.001.tar.gz
+cpan2pkg App::SerializeUtils
 cpandb --CPAN /home/shlomif/Download/Arcs/Perl/minicpan/ --cpanid PERLANCAR | gvim -
+cpandb --CPAN /home/shlomif/Download/Arcs/Perl/minicpan/ --cpanid SHLOMIF | gvim -
 cpanm .
 cpanp -i App::cpanminus
 cpanp -i Task::BeLike::SHLOMIF ; n -m cpan
@@ -374,6 +458,9 @@ date
 date +%s
 date +%s.%N
 date ; date +%s
+delta
+deps-app commands
+depth_run 0
 depth_run 1
 df
 df -i
@@ -382,11 +469,15 @@ diff -u -r ../dest/ dest | gvim -
 diff -u -r dest ../dest/ | gvim -
 diff -u -r dest /home/shlomif/dest | gvim -
 diff -u -r ~/Backup/Arcs/post-dest/post-dest/ post-dest/ | gvim -
+diff -u j j2 | gvim -
+diff -u j2 j | less
 disp
 dolphin /home/shlomif/Download/unpack/graphics/inkscape/extensions/tests/
 dolphin ~/Music/dosd-mp3s/ ~/Music/mp3s/ ~/Download/Video/
+du *
 du -a . | sort -h
 du -ah . | sort -h
+du -h .
 du -h . | sort -h
 du -ha . | sort -h
 du -s *
@@ -404,6 +495,7 @@ dzil release
 dzil test
 dzil test --all
 e
+echo $HARNESS_OPTIONS
 echo $PATH
 echo $PERL5LIB
 emsdk list
@@ -420,6 +512,7 @@ export EMSDK_ENV=/home/shlomif/Download/unpack/prog/llvm-to-js/emsdk/emsdk_env.s
 export HARNESS_OPTIONS=c
 export HARNESS_OPTIONS=j4:c
 export HARNESS_VERBOSE=1
+export MAKEFLAGS="-j4"
 export NOTIFIER_TO=lap
 export PATH="$PATH:/home/shlomif/.local/bin:$PWD"
 export PATH="$PWD/node_modules/.bin:$PATH"
@@ -427,7 +520,9 @@ export PATH="/home/shlomif/.local/bin:/home/shlomif/apps/test/wml/bin:$PATH"
 export PATH="/home/shlomif/apps/golang/bin:/home/shlomif/.local/bin:/home/shlomif/apps/test/wml/bin:$PATH"
 export VIMSYNT=1
 export XZ_OPT="-T4"
+f
 f 1
+f 2
 f() { "$1" -l cpb 24.board } ; gvimdiff <(f fc-solve ) <(f ./fc-solve)
 fd
 fd \\.html ./d | xargs rename .html .xhtml
@@ -435,6 +530,9 @@ fd txt t2 | xargs touch
 fd wml src | xargs gvim -p
 fg
 find
+find . -name '*.so'
+find . -name .git | xargs dirname | perl -nlE 'say unless -f "$_/.travis.yml"' | sort
+find . -name home
 find ../dest-xh -name '*.html' | xargs rename .html .xhtml
 find dest/pre-incs/t2 -regex '.*\.x?html' | grep -vF -e philosophy/by-others/sscce -e WebMetaLecture/slides/examples -e homesteading/catb-heb -e t2/catb-heb.html | perl -lpe 's=\A(?:./)?dest/pre-incs/t2/?==' | grep -vE '^humour/fortunes' | APPLY_TEXTS=1 xargs perl -d:NYTProf bin/post-incs-v2.pl --mode=minify --minifier-conf=bin/html-min-cli-config-file.conf --texts-dir=lib/ads --source-dir=dest/pre-incs/t2 --dest-dir=dest/post-incs/t2 --
 find | wc -l
@@ -442,6 +540,7 @@ finish-server
 firefox
 firefox -no-remote
 firefox -no-remote 'http://localhost/shlomif/temp-Solitairey/dest/'
+firefox http://www.shlomifish.org/Files/files/code/arrow-keys-for-accesskey.user.js
 flake8 .
 flake8 . | perl -lpE 's/:.*//' | uniq | xargs gvim -p
 fmt
@@ -454,6 +553,7 @@ force_u_rpms
 fortune
 fortune shlomif-shlomif
 fortune shlomif-shlomif-fav
+freecell-solver-range-parallel-solve 1 320000000 1 -l lg
 g
 g++ -O3 -march=native -flto -fwhole-program ecnerwala-e654.cpp
 g++ -Wall -Wextra -O3 -march=native -flto -fwhole-program 660/e660-jfirester.cpp
@@ -466,14 +566,18 @@ g++ -o e451.exe -Wall -Wextra -O3 -march=native -flto -fwhole-program e451_v1.cp
 g++ -o e451.exe -Wall -Wextra -O3 -march=native -flto -fwhole-program e662-james-rauen.cpp
 g++ -o e451.exe -Wall -Wextra -O3 -march=native -flto -fwhole-program e662-james-rauen.cpp -Ofast
 g++ -o e451.exe -Wall -Wextra -O3 -march=native -flto -fwhole-program e663-pwild.cpp -Ofast
+g++ 665-verify.cpp
 gdb --command=~/cmds.gdb ./kpat
 gdb -args ./black-hole-solve --game black_hole --display-boards --rank-reach-prune ../c-solver/t/data/26464608654870335080.bh.board.txt
 gdb -args ./fc-solve --load-config video-editing -mi 1271 -p -t -sam -sel <(pi-make-microsoft-freecell-board -t 7186)
 gdb -args python3 -m trace --trace ../../source/t/t/several-iter-limits.py
 gdb -args python3 ../../source/t/t/several-iter-limits.py
 gdb ./kpat
+gedit
 gedit emo.txt
+gedit ~/emo.txt
 genf
+gentags
 get_nums | summary
 ghc -O2 mniip.hs
 gimp
@@ -596,7 +700,9 @@ git ci -t ~/conf/trunk/shlomif-settings/git/commit-messages/convert-var-to-slot.
 git ci -t ~/conf/trunk/shlomif-settings/git/commit-messages/extract-method.txt
 git ci -t ~/conf/trunk/shlomif-settings/git/commit-messages/refactoring.txt
 git ci .
+git ci .travis.yml
 git ci shlomif-settings/Bash/
+git ci shlomif-settings/build-scripts/
 git ci shlomif-settings/vim-conf/
 git clean -dxf .
 git clean -dxf ..
@@ -606,18 +712,24 @@ git clean -dxf lib/docbook/5/
 git clean -dxf lib/presentations/qp/
 git clean -dxf lib/presentations/qp/Website-Meta-Lecture/
 git clean -dxf lib/presentations/spork/
+git clean -dxf lib/screenplay-xml/
+git clean -dxf t2
 git cnt
 git co -b pr1
 git co .
 git co ..
+git co ../../
+git co elim-clang-warnings
 git co fc-solve--deal-and-sol--preview
 git co fix-tests
+git co index.html
 git co master
 git co update-rand-gen
 git co use-template-toolkit
 git co web-fc-solve--animated-display
 git com
 git dh
+git dh > ~/g1.diff
 git dh shlomif-settings/Bash/
 git dh | gvim -
 git dh | less
@@ -625,10 +737,15 @@ git dhs
 git di
 git di --stat master
 git di --stat releases/wml-2.18.0..master
+git di fee560f | gvim -
 git di master
 git di master | gvim -
+git format-patch -1
 git hub
 git hub apply-pr 1
+git hub apply-pr 2
+git hub create
+git hub diff 60be69f90cd1d89f16bd60e0cc75bddd846eb891 master
 git hub diff master master
 git hub fork
 git hub help
