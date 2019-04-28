@@ -68,4 +68,5 @@ cs()
 {
     cd "$site"
 }
+export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/pysolfc-tidyall.d"
 proj_name='PySolFC'
