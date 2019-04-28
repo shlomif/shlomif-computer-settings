@@ -49,7 +49,7 @@ toxz()
 
 u_buildreq()
 {
-    _sys sudo dnf builddep "$(pwd)"/SPECS/*.spec
+    _sys sudo dnf -y builddep "$(pwd)"/SPECS/*.spec
 }
 
 u_rpms()
