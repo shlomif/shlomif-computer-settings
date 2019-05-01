@@ -1,5 +1,10 @@
 #!/usr/bin/env perl
+
+use strict;
+use warnings;
 use feature 'say';
+
+use vars qw/ %h /;
 
 BEGIN
 {
@@ -9,7 +14,7 @@ BEGIN
 
 END
 {
-    while ( ( $k, $v ) = each %h ) { say "$k\t$v" }
+    while ( ( $k, $v ) = each %h ) { say "$k\t$v"; }
 }
 
 __END__

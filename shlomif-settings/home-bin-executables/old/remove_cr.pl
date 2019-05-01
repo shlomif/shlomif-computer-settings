@@ -1,4 +1,8 @@
 #!/usr/bin/env perl -lpi
+
+use strict;
+use warnings;
+
 s/\r//;
 
 __END__

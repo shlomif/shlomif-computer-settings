@@ -21,9 +21,9 @@ my $insert_entry_sth = $dbh->prepare(
 );
 
 my (@components_stack);
-open I, "<", "home-dir-backup.txt";
+open my $in_fh, "<", "home-dir-backup.txt";
 my $line_num = 0;
-while ( my $line = <I> )
+while ( my $line = <$in_fh> )
 {
     chomp($line);
     $line_num++;
@@ -88,7 +88,7 @@ while (@components_stack)
         $rec->{name}, $rec->{mysize}, $rec->{totalsize}, );
 }
 
-close(I);
+close($in_fh);
 
 =head1 COPYRIGHT & LICENSE
 

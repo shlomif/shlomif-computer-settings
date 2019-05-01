@@ -32,18 +32,18 @@ sub get_line
     $_ = <$in>;
     if ( !defined($_) )
     {
-        return undef;
+        return;
     }
     s{\r?\n?$}{};
     return $_;
 }
 open $in, "<", "$data_dir/std.vcf";
-while ( defined( get_line() ) )
+while ( defined( scalar( get_line() ) ) )
 {
     if (/^BEGIN:VCARD$/)
     {
         my ( $uid, $email );
-    UID_LOOP: while ( defined( get_line() ) )
+    UID_LOOP: while ( defined( scalar( get_line() ) ) )
         {
             if (/^END:VCARD$/)
             {

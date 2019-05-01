@@ -2,16 +2,14 @@
 
 use strict;
 use warnings;
-
 use autodie;
 
 srand(24);
 
 sub get_rand_string
 {
-    my $i;
     my $string = "";
-    for $i ( 1 .. 100 )
+    for my $i ( 1 .. 100 )
     {
         $string .= chr( ord('a') + int( rand(26) ) );
     }

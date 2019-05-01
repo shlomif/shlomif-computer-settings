@@ -45,7 +45,7 @@ our @files;
 our @names;
 our @src_names;
 
-sub escape_shell ($)
+sub escape_shell
 {
     my ($s) = @_;
     if ( $s =~ /\s|'|"/ )

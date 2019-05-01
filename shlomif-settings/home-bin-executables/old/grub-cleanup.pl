@@ -6,9 +6,9 @@ use autodie;
 
 my $orig_file = "/boot/grub/menu.lst";
 my $new_file  = "/boot/grub/menu.lst-perlnew";
-open I, "<", $orig_file;
-open O, ">", $new_file;
-LINE_LOOP: while (<I>)
+open my $in, "<", $orig_file;
+open $out, ">", $new_file;
+LINE_LOOP: while (<$in>)
 {
     if (/^title (2\.6\.(?:\d+)(?:-rc\d+)?-g[\da-f]+)/)
     {
@@ -17,7 +17,7 @@ LINE_LOOP: while (<I>)
         system("rm -f /boot/*$ver /boot/initrd-$ver.img");
 
         # Delete the paragraph.
-        while (<I>)
+        while (<$in>)
         {
             if (/^title/)
             {
@@ -27,11 +27,11 @@ LINE_LOOP: while (<I>)
     }
     else
     {
-        print O $_;
+        print $out $_;
     }
 }
-close(I);
-close(O);
+close($in);
+close($out);
 rename( $new_file, $orig_file );
 
 =head1 COPYRIGHT & LICENSE

@@ -7,7 +7,8 @@ my %installed = ( map { chomp; $_ => +{} }
         `rpm -qa --qf "%{n}\\n" | grep -vP '^(task-shlomif|msttcorefonts)\$'` );
 
 my @installed_rpms = sort keys %installed;
-open my $in_fh, qq#urpmq --debug --whatrequires @installed_rpms 2>&1 |#;
+open my $in_fh, "-|", "bash", "-c",
+    qq#urpmq --debug --whatrequires @installed_rpms 2>&1#;
 while ( my $l = <$in_fh> )
 {
     if ( my ( $requires, $what_req ) =
