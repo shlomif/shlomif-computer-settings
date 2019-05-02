@@ -41,4 +41,23 @@ t()
     )
 }
 
+__next_func()
+{
+    local inc="$1"
+    shift
+    perl -MPath::Tiny=cwd -E "$(printf '$c = cwd(); @d = sort { $a->basename <=> $b->basename } grep{$_->is_dir} $c->parent->children(qr/\A[0-9]+\z/); my @i = grep { $d[$_]->basename == $c->basename } keys @d;say $d[$i[0]%s]->absolute;' "$inc")"
+}
+
+prev()
+{
+    cd "$(__next_func "-1")"
+}
+
+next()
+{
+    cd "$(__next_func "+1")"
+}
+
+alias ne=next pr=prev
+
 proj_name='ProjEuler'
