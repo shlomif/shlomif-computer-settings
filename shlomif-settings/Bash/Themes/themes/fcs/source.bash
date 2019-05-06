@@ -292,7 +292,7 @@ delta()
         set -x
         set -e
         cb
-        ../source/Tatzer -l n2t
+        ../scripts/Tatzer -l n2t
         fmt
         pt
         cmake -DFCS_DISABLE_DEBONDT_DELTA_STATES=1 ../source/
@@ -350,7 +350,7 @@ _reprb_gen_build_sum()
         rm -fr "$reprb_dir"
         mkdir -p "$reprb_dir"
         cd "$reprb_dir"
-        "$c_src"/Tatzer ${args}
+        "$c_src"/../scripts/Tatzer ${args}
         perl "$c_src"/../scripts/cmd-line-compiler compile
         m
         rm -f ./CMakeFiles/CMakeError.log
@@ -379,6 +379,9 @@ gentags()
 export FCS_PATH="$b" FCS_SRC_PATH="$c_src"
 export HTML_VALID_VNU_JAR=~/Download/unpack/net/www/validator/build/dist/vnu.jar
 export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/fc-solve-tidyall.d"
+export REPRODUCIBLE_BUILDS=1
+slightly_wrong_gcc_flag_see_man_gcc="-frandom-seed=1977";
+export CFLAGS="$slightly_wrong_gcc_flag_see_man_gcc"
 PATH="$HOME/apps/golang/bin:$HOME/.local/bin:$PATH:$site/node_modules/.bin"
 # Temporary measure because valgrind-3.7.0 on mageia v7 does not handle
 # the new glibc well so we need to use the one from git master HEAD.
