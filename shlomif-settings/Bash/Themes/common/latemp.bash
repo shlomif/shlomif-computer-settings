@@ -13,7 +13,7 @@ rebuild()
     (
         set -x
         set -e
-        cd "$trunk"
+        cd "$latemp_trunk"
         time bin/rebuild
         n -m "rebuild"
     )
@@ -21,7 +21,7 @@ rebuild()
 
 b()
 {
-    (cd "$trunk" && gmake -j16 && gmake test ; n --msg "gmake")
+    (cd "$latemp_trunk" && gmake -j16 && gmake test ; n --msg "gmake")
 }
 
 alias t='b'

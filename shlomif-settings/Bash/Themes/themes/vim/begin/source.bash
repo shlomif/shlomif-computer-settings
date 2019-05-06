@@ -7,6 +7,7 @@ repo="$base/git/vim-begin"
 trunk="$repo"
 src="$trunk/vim-begin/tt2-source"
 this="$src"
+latemp_trunk="$src"
 
 load_common latemp
 
