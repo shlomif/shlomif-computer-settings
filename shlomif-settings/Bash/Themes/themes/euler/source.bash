@@ -61,3 +61,4 @@ next()
 alias ne=next pr=prev
 
 proj_name='ProjEuler'
+export HARNESS_OPTIONS=j4:c
