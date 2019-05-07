@@ -25,6 +25,8 @@
     verbose = true
 [core]
     excludesfile = ~/conf/git/excludes
+[merge]
+    renamelimit = 30000
 [push]
     default = simple
 [url "https://gitlab.gnome.org/GNOME/"]
