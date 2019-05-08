@@ -10,7 +10,7 @@ install:
     - cpanm --notest HTML::Tidy
     # Sometimes fails.
     - cpanm --notest IPC::System::Simple
-    - cpanm Code::TidyAll::Plugin::PerlTidy Number::Format Path::Tiny Perl::Tidy Test::Code::TidyAll Test::HTML::Tidy Test::TrailingSpace Text::Markdown
+    - cpanm Code::TidyAll::Plugin::PerlCritic Code::TidyAll::Plugin::PerlTidy Code::TidyAll::Plugin::TestCount Number::Format Path::Tiny Perl::Tidy Test::Code::TidyAll Test::HTML::Tidy Test::TrailingSpace Text::Markdown
 language: perl
 matrix:
     fast_finish: true
