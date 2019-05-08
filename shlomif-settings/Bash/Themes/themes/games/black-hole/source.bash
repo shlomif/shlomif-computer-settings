@@ -48,5 +48,6 @@ prompt()
         "\$base=$base" \
         "~=$HOME"
 }
+alias pt='t'
 
 proj_name='black-hole'
