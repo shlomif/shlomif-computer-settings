@@ -1,7 +1,7 @@
 [PerlCritic]
 select = **/*.{pl,pm,t}
 argv =
-ignore = shlomif-settings/vim-conf/dot-vim/**/* shlomif-settings/vim-conf/conf-Vim/texts/test-skeleton.pl
+ignore = shlomif-settings/vim-conf/dot-vim/**/* shlomif-settings/vim-conf/conf-Vim/texts/test-skeleton.pl shlomif-settings/perl/Dist-Zilla/dot-dzil/profiles/shlomif1/Module.pm
 
 [PerlTidy]
 select = **/*.{pl,pm,t}
