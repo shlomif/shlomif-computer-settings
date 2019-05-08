@@ -152,6 +152,7 @@ run_setup('clang-format');
 run_setup('gdb');
 run_setup('git');
 run_setup('hg');
+run_setup('jwm');
 run_setup('perl/Dist-Zilla');
 run_setup('perl/perldb');
 run_setup('perl/perltidy');
