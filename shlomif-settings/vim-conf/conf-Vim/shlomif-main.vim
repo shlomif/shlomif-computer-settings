@@ -81,6 +81,7 @@ call vam#ActivateAddons([
     \ 'closetag',
     \ 'ctrlp',
     \ 'github:Carpetsmoker/auto_mkdir2.vim',
+    \ 'github:Glench/Vim-Jinja2-Syntax',
     \ 'github:aaronbieber/quicktask',
     \ 'github:alessandroyorba/alduin',
     \ 'github:aperezdc/vim-template',
