@@ -84,44 +84,55 @@ sub handle_line
     my $skip_re = $self->skip_re;
     my $pwd     = getcwd();
 
-    if ( my ( $dest, $src ) = $l =~ m#\Asymlink from ~/(\S+) to \./(\S+)\z# )
+    my ( $dest, $src );
+    unless ( ( $dest, $src ) = $l =~ m#\Asymlink from ~/(\S+) to \./(\S+)\z# )
     {
-        chdir($dir);
-        my $conf_dir = getcwd();
-        my $h        = $ENV{HOME};
-        if ( $dest =~ m#/# )
+        die "wrong line <$l> in @{[$self->manifest]} !";
+    }
+    foreach my $str ( $src, $dest )
+    {
+        if ( $str =~ /([^a-zA-Z\-_0-9\.\/])/ )
         {
-            mkpath( [ "$h/" . dirname($dest) ] );
+            die
+"unacceptable character $1 in line <$l> in @{[$self->manifest]} !";
         }
-        my $dd = "$h/$dest";
-        my $ss = "$conf_dir/$src";
-        print "Linking $dd to $ss\n";
-        if ( -e $dd )
+        if ( $str =~ m%((?:\.\.)|(?:/\./)|(?:/.\z) )% )
         {
-            if ( ( !defined $skip_re ) or ( $dd !~ /$skip_re/ ) )
+            die
+"unacceptable sequence $1 in line <$l> in @{[$self->manifest]} !";
+        }
+    }
+    chdir($dir);
+    my $conf_dir = getcwd();
+    my $h        = $ENV{HOME};
+    if ( $dest =~ m#/# )
+    {
+        mkpath( [ "$h/" . dirname($dest) ] );
+    }
+    my $dd = "$h/$dest";
+    my $ss = "$conf_dir/$src";
+    print "Linking $dd to $ss\n";
+    if ( -e $dd )
+    {
+        if ( ( !defined $skip_re ) or ( $dd !~ /$skip_re/ ) )
+        {
+            if ( not -l $dd )
             {
-                if ( not -l $dd )
-                {
-                    die "$dd is not a symlink!";
-                }
-                elsif ( readlink($dd) ne $ss )
-                {
-                    die "$dd does not point to $ss !";
-                }
-                elsif ( $ENV{V} )
-                {
-                    warn "Not replacing $dd";
-                }
+                die "$dd is not a symlink!";
             }
-        }
-        else
-        {
-            symlink( $ss, $dd );
+            elsif ( readlink($dd) ne $ss )
+            {
+                die "$dd does not point to $ss !";
+            }
+            elsif ( $ENV{V} )
+            {
+                warn "Not replacing $dd";
+            }
         }
     }
     else
     {
-        die "wrong line <$l> in @{[$self->manifest]} !";
+        symlink( $ss, $dd );
     }
     chdir $pwd;
 
