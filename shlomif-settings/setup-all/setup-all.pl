@@ -9,6 +9,127 @@ use Getopt::Long qw/ GetOptions /;
 use Cwd qw/ getcwd /;
 use Carp ();
 
+package Symlink::Manifest;
+
+use strict;
+use warnings;
+use autodie;
+use Cwd qw/ getcwd /;
+use File::Basename qw/ dirname /;
+use File::Path qw/ mkpath /;
+
+sub new
+{
+    my $class = shift;
+
+    my $self = bless {}, $class;
+
+    $self->_init(@_);
+
+    return $self;
+}
+
+sub _init
+{
+    my ( $self, $args ) = @_;
+    $self->{dir} = $args->{dir};
+    $self->skip_re( $args->{skip_re} );
+    $self->manifest( $self->dir . "/setup.symlinks.manifest.txt" );
+
+    return;
+}
+
+sub manifest
+{
+    my $self = shift;
+
+    if (@_)
+    {
+        $self->{manifest} = shift;
+    }
+
+    return $self->{manifest};
+}
+
+sub skip_re
+{
+    my $self = shift;
+
+    if (@_)
+    {
+        $self->{skip_re} = shift;
+    }
+
+    return $self->{skip_re};
+}
+
+sub dir
+{
+    my $self = shift;
+
+    if (@_)
+    {
+        $self->{dir} = shift;
+    }
+
+    return $self->{dir};
+}
+
+sub handle_line
+{
+    my ( $self, $args ) = @_;
+
+    my $l       = $args->{line};
+    my $dir     = $self->dir;
+    my $skip_re = $self->skip_re;
+    my $pwd     = getcwd();
+
+    if ( my ( $dest, $src ) = $l =~ m#\Asymlink from ~/(\S+) to \./(\S+)\z# )
+    {
+        chdir($dir);
+        my $conf_dir = getcwd();
+        my $h        = $ENV{HOME};
+        if ( $dest =~ m#/# )
+        {
+            mkpath( [ "$h/" . dirname($dest) ] );
+        }
+        my $dd = "$h/$dest";
+        my $ss = "$conf_dir/$src";
+        print "Linking $dd to $ss\n";
+        if ( -e $dd )
+        {
+            if ( ( !defined $skip_re ) or ( $dd !~ /$skip_re/ ) )
+            {
+                if ( not -l $dd )
+                {
+                    die "$dd is not a symlink!";
+                }
+                elsif ( readlink($dd) ne $ss )
+                {
+                    die "$dd does not point to $ss !";
+                }
+                elsif ( $ENV{V} )
+                {
+                    warn "Not replacing $dd";
+                }
+            }
+        }
+        else
+        {
+            symlink( $ss, $dd );
+        }
+    }
+    else
+    {
+        die "wrong line <$l> in @{[$self->manifest]} !";
+    }
+    chdir $pwd;
+
+    return;
+}
+
+package main;
+
 my $skip_re;
 
 GetOptions( 'skip-re=s' => \$skip_re, )
@@ -79,57 +200,17 @@ sub sub_c
 
 sub run_manifest
 {
-    my $sub_dir  = shift;
-    my $dir      = "$trunk/shlomif-settings/$sub_dir", my $pwd = getcwd();
-    my $manifest = "$dir/setup.symlinks.manifest.txt";
-    my $ret      = ( -f $manifest );
+    my $sub_dir = shift;
+    my $dir     = "$trunk/shlomif-settings/$sub_dir";
+    my $obj     = Symlink::Manifest->new( { dir => $dir } );
+    my $ret     = ( -f $obj->manifest );
     return '' if !$ret;
 
-    open my $fh, "<", $manifest;
+    open my $fh, "<", $obj->manifest;
     while ( my $l = <$fh> )
     {
         chomp $l;
-        if ( my ( $dest, $src ) =
-            $l =~ m#\Asymlink from ~/(\S+) to \./(\S+)\z# )
-        {
-            chdir($dir);
-            my $conf_dir = getcwd();
-            my $h        = $ENV{HOME};
-            if ( $dest =~ m#/# )
-            {
-                mkpath( [ "$h/" . dirname($dest) ] );
-            }
-            my $dd = "$h/$dest";
-            my $ss = "$conf_dir/$src";
-            print "Linking $dd to $ss\n";
-            if ( -e $dd )
-            {
-                if ( ( !defined $skip_re ) or ( $dd !~ /$skip_re/ ) )
-                {
-                    if ( not -l $dd )
-                    {
-                        die "$dd is not a symlink!";
-                    }
-                    elsif ( readlink($dd) ne $ss )
-                    {
-                        die "$dd does not point to $ss !";
-                    }
-                    elsif ( $ENV{V} )
-                    {
-                        warn "Not replacing $dd";
-                    }
-                }
-            }
-            else
-            {
-                symlink( $ss, $dd );
-            }
-        }
-        else
-        {
-            die "wrong line <$l> in $manifest !";
-        }
-        chdir $pwd;
+        $obj->handle_line( { line => $l } );
     }
     close $fh;
     return 1;
