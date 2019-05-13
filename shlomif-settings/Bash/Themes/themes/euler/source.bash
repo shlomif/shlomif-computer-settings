@@ -48,14 +48,28 @@ __next_func()
     perl -MPath::Tiny=cwd -E "$(printf '$c = cwd(); @d = sort { $a->basename <=> $b->basename } grep{$_->is_dir} $c->parent->children(qr/\A[0-9]+\z/); my @i = grep { $d[$_]->basename == $c->basename } keys @d;say $d[$i[0]%s]->absolute;' "$inc")"
 }
 
+dir_hist_fn="$HOME/Arcs/temp/euler-dir-hist.sh"
+
+rec_hist()
+{
+    echo "cd `pwd`" >> "$dir_hist_fn"
+}
+
 prev()
 {
     cd "$(__next_func "-1")"
+    rec_hist
 }
 
 next()
 {
     cd "$(__next_func "+1")"
+    rec_hist
+}
+
+last()
+{
+    . "$dir_hist_fn"
 }
 
 alias ne=next pr=prev
