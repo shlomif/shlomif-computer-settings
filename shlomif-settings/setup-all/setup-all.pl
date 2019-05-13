@@ -128,6 +128,23 @@ sub handle_line
     return;
 }
 
+sub process_manifest
+{
+    my $self = shift;
+
+    my $ret = ( -f $self->manifest );
+    return '' if !$ret;
+
+    open my $fh, "<", $self->manifest;
+    while ( my $l = <$fh> )
+    {
+        chomp $l;
+        $self->handle_line( { line => $l } );
+    }
+    close $fh;
+    return 1;
+}
+
 package main;
 
 my $skip_re;
@@ -202,18 +219,7 @@ sub run_manifest
 {
     my $sub_dir = shift;
     my $dir     = "$trunk/shlomif-settings/$sub_dir";
-    my $obj     = Symlink::Manifest->new( { dir => $dir } );
-    my $ret     = ( -f $obj->manifest );
-    return '' if !$ret;
-
-    open my $fh, "<", $obj->manifest;
-    while ( my $l = <$fh> )
-    {
-        chomp $l;
-        $obj->handle_line( { line => $l } );
-    }
-    close $fh;
-    return 1;
+    return Symlink::Manifest->new( { dir => $dir } )->process_manifest;
 }
 
 sub run_setup
