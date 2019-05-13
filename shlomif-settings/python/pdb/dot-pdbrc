@@ -2,3 +2,7 @@
 alias pi for k in %1.__dict__.keys(): print("%1.",k,"=",%1.__dict__[k])
 # Print instance variables in self
 alias ps pi self
+# NB: This file only works with single-line statements
+import os
+execfile(os.path.expanduser("~/conf/trunk/shlomif-settings/python/pdb/pdbrc.py"))
+
