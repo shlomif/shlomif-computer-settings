@@ -386,6 +386,9 @@ PATH="$HOME/apps/golang/bin:$HOME/.local/bin:$PATH:$site/node_modules/.bin"
 # Temporary measure because valgrind-3.7.0 on mageia v7 does not handle
 # the new glibc well so we need to use the one from git master HEAD.
 PATH="$HOME/apps/valgrind/bin:$PATH"
+CPATH+=":/opt/vlc-3.0/libtap/include/"
+LIBRARY_PATH+=":/opt/vlc-3.0/libtap/lib/"
+export CPATH LIBRARY_PATH CMAKE_LIBRARY_PATH="$LIBRARY_PATH"
 
 proj_name='fcs'
 
