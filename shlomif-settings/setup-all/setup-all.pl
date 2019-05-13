@@ -96,7 +96,7 @@ sub handle_line
             die
 "unacceptable character $1 in line <$l> in @{[$self->manifest]} !";
         }
-        if ( $str =~ m%((?:\.\.)|(?:/\./)|(?:/.\z) )% )
+        if ( $str =~ m%((?:\.\.)|(?:/\./)|(?:/.\z)|(?:\A-)|(?:/-))% )
         {
             die
 "unacceptable sequence $1 in line <$l> in @{[$self->manifest]} !";
