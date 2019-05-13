@@ -230,7 +230,8 @@ sub run_manifest
 {
     my $sub_dir = shift;
     my $dir     = "$trunk/shlomif-settings/$sub_dir";
-    return Symlink::Manifest->new( { dir => $dir } )->process_manifest;
+    return Symlink::Manifest->new( { dir => $dir, skip_re => $skip_re, } )
+        ->process_manifest;
 }
 
 sub run_setup
