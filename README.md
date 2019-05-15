@@ -7,10 +7,12 @@ is organised differently.
 
 ## Quick start
 
-You can automatically set up most settings using:
+You can automatically set up most settings (but please do it in a new
+[OS user](https://en.wikipedia.org/wiki/Multi-user_software) that can
+be discarded; at least at first) using:
 
 ```
-wget http://shlom.in/setup
+wget https://shlom.in/setup
 perl setup
 ```
 
