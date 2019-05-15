@@ -388,7 +388,7 @@ PATH="$HOME/apps/golang/bin:$HOME/.local/bin:$PATH:$site/node_modules/.bin"
 PATH="$HOME/apps/valgrind/bin:$PATH"
 CPATH+=":/opt/vlc-3.0/libtap/include/"
 LIBRARY_PATH+=":/opt/vlc-3.0/libtap/lib/"
-export CPATH LIBRARY_PATH CMAKE_LIBRARY_PATH="$LIBRARY_PATH"
+export CPATH LIBRARY_PATH CMAKE_LIBRARY_PATH="$LIBRARY_PATH" LD_LIBRARY_PATH="$LIBRARY_PATH"
 
 proj_name='fcs'
 
