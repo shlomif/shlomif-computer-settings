@@ -72,6 +72,11 @@ last()
     . "$dir_hist_fn"
 }
 
+ff()
+{
+    xdg-open "https://projecteuler.net/problem=$(basename "`pwd`")"
+}
+
 alias ne=next pr=prev
 
 proj_name='ProjEuler'
