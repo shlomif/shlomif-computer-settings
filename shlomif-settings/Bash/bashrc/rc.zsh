@@ -51,6 +51,9 @@ bindkey '^x^e' edit-command-line
 [[ -n "$key[End]"   ]] && bindkey -- "$key[End]"   end-of-line
 [[ -n "$key[Delete]"   ]] && bindkey -- "$key[Delete]"   delete-char
 
+# https://stackoverflow.com/questions/11670935/comments-in-command-line-zsh
+setopt interactivecomments
+
 . ~/conf/trunk/shlomif-settings/Bash/bashrc/common.bash
 
 compl=~/conf/trunk/shlomif-settings/Bash/zsh-completions
