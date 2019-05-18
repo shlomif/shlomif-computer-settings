@@ -77,6 +77,30 @@ ff()
     xdg-open "https://projecteuler.net/problem=$(basename "`pwd`")"
 }
 
+runhelper()
+{
+    local prog="$1"
+    shift
+    if test -x "$prog"
+    then
+        time "./$prog" "$@"
+    elif [[ $prog = *.py ]]
+    then
+        time pypy3 "$prog" "$@"
+    elif [[ $prog = *.pl ]]
+    then
+        time perl "$prog" "$@"
+    elif [[ $prog = *.rb ]]
+    then
+        time ruby "$prog" "$@"
+    fi
+}
+
+r()
+{
+    runhelper "$@"
+}
+
 alias ne=next pr=prev
 
 proj_name='ProjEuler'
