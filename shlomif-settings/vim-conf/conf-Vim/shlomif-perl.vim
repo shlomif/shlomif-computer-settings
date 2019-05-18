@@ -5,6 +5,9 @@
 " The MIT X11 Licensing Blurb.
 source ~/conf/Vim/mit-x11.vim
 
+for l in systemlist("perl -E 'say for @INC'")
+    exe 'set path+='.l
+endfor
 function Perl_Switch_Syntax()
     let current = &syntax
     if current ==# "pod"

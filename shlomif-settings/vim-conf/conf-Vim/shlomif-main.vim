@@ -230,7 +230,7 @@ au BufNewFile,BufRead *.p6 setlocal filetype=perl6
 au BufNewFile,BufRead ~/Docs/homepage/homepage/trunk/t2/art/recommendations/music/shlomi-fish-music-recommendations.xml so ~/conf/Vim/amazon-asin.vim
 
 function Homepage_Customisation()
-    set path=~/Docs/homepage/homepage/trunk/lib,~/Docs/homepage/homepage/trunk
+    set path+=~/Docs/homepage/homepage/trunk/lib,~/Docs/homepage/homepage/trunk
     " so ~/conf/Vim/homepage.vim
 
     " see http://vim.1045645.n5.nabble.com/How-do-one-open-files-for-editing-from-a-function-td1153531.html for why.
