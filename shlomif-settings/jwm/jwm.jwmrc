@@ -168,5 +168,6 @@
     <Key mask="A" key="F10">maximize</Key>
     <Key mask="4" key="T">exec:konsole</Key>
     <Key mask="4" key="E">exec:firefox</Key>
+    <Key key="Multi_key">root:1</Key>
 
 </JWM>
