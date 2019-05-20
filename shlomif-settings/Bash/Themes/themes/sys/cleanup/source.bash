@@ -10,8 +10,7 @@ prompt()
         "~=$HOME"
 }
 
-unalias l
-l()
+-l()
 {
     rpm -qa | (LC_ALL=C sort) > ~/rpm-qa.txt
 }
