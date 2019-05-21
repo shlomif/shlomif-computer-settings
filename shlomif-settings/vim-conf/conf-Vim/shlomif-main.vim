@@ -82,6 +82,7 @@ call vam#ActivateAddons([
     \ 'ctrlp',
     \ 'github:Carpetsmoker/auto_mkdir2.vim',
     \ 'github:Glench/Vim-Jinja2-Syntax',
+    \ 'github:Houl/cxf_mod-vim',
     \ 'github:aaronbieber/quicktask',
     \ 'github:alessandroyorba/alduin',
     \ 'github:aperezdc/vim-template',
@@ -624,3 +625,7 @@ endfunction
 
 autocmd BufNewFile,BufRead *.js call JavaScr_Commands()
 let g:templates_directory = [ $HOME . '/conf/Vim/templates' ]
+
+" Usage: add a mapping for i_CTRL-X_CTRL-F in your vimrc
+imap <expr> <C-X><C-F>  nwo#mappings#cxf_mod#Plug()
+
