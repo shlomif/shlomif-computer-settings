@@ -16,20 +16,20 @@ sites:
                 basename_re: '\.(?:7z|AppImage\.xz|ova(?:\.xz)?|tar|tar\.bz2|tar\.gz|tar\.xz|zip|exe|rpm)(?:\.zsync)?\z'
                 target_dir: 'Files/files/arcs/'
             code:
-                basename_re: '\.(?:bash|cpp|hs|p6|pl|pm|c|py|js|rb|rs|s|scm|spec|ts|json|patch|diff|vim)(?:\.xz)?\z'
+                basename_re: '\.(?:bash|c|cpp|diff|hs|js|json|p6|patch|pl|pm|py|rb|rs|s|scm|spec|ts|vim)(?:\.xz)?\z'
                 target_dir: 'Files/files/code/'
             dirs:
                 basename_re: '\.(MYDIR)\z'
                 target_dir: 'Files/files/dirs/'
             images:
-                basename_re: '\.(?:kra|png|jpg|jpeg|gif|(?:ai|svg|xcf)(?:\.xz|\.bz2|\.gz)?|svgz|webp)\z'
+                basename_re: '\.(?:gif|jpeg|jpg|kra|png|(?:ai|svg|xcf)(?:\.xz|\.bz2|\.gz)?|svgz|webp)\z'
                 target_dir: 'Files/files/images/'
             music:
-                basename_re: '\.(?:mod|mp3|ogg|s3m|xm|wav|aac|m4a)\z'
+                basename_re: '\.(?:aac|m4a|mod|mp3|ogg|s3m|wav|xm)\z'
                 target_dir: 'Files/files/music/mp3-ogg/'
             text:
-                basename_re: '\.(?:epub|pdf|md|mkdn|tsv|txt|odt|docx|html|xhtml|xlsx)(?:\.xz)?\z'
+                basename_re: '\.(?:docx|epub|html|md|mkdn|odt|pdf|tsv|txt|xhtml|xlsx)(?:\.xz)?\z'
                 target_dir: 'Files/files/text/'
             video:
-                basename_re: '\.(?:webm|flv|avi|mpeg|mpg|mp4|ogv|srt|mkv)\z'
+                basename_re: '\.(?:avi|flv|mkv|mp4|mpeg|mpg|ogv|srt|webm)\z'
                 target_dir: 'Files/files/video/'
