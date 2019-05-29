@@ -16,7 +16,7 @@ sites:
                 basename_re: '\.(?:7z|AppImage\.xz|ova(?:\.xz)?|tar|tar\.bz2|tar\.gz|tar\.xz|zip|exe|rpm)(?:\.zsync)?\z'
                 target_dir: 'Files/files/arcs/'
             code:
-                basename_re: '\.(?:bash|cpp|hs|p6|pl|pm|c|py|js|rb|rs|s|spec|ts|json|patch|diff|vim)(?:\.xz)?\z'
+                basename_re: '\.(?:bash|cpp|hs|p6|pl|pm|c|py|js|rb|rs|s|scm|spec|ts|json|patch|diff|vim)(?:\.xz)?\z'
                 target_dir: 'Files/files/code/'
             dirs:
                 basename_re: '\.(MYDIR)\z'
