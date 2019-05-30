@@ -373,7 +373,7 @@ reprb()
 
 gentags()
 {
-    ctags {$c_src,$pats}/*.[ch]
+    ctags {$c_src,$pats}/*.[ch] $c_src/**/*.{pl,pm,t}
 }
 
 export FCS_PATH="$b" FCS_SRC_PATH="$c_src"
