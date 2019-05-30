@@ -1,0 +1,7 @@
+Silence compile-time or run-time warnings.
+
+See:
+
+* https://duckduckgo.com/?q=warnings+programming&atb=v140-1&ia=web
+
+They are a distraction at best and may indicate other issues.
