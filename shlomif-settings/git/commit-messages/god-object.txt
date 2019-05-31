@@ -1,0 +1,21 @@
+Extract a function or class to step away from God Object.
+
+See:
+
+* https://en.wikipedia.org/wiki/God_object
+
+* https://www.c-sharpcorner.com/article/god-object-a-code-smell/ .
+
+This is Refactoring / code cleanup.
+
+See:
+
+* https://refactoring.com/catalog/extractMethod.html
+
+* https://en.wikipedia.org/wiki/Code_refactoring
+
+* https://www.refactoring.com/
+
+* https://www.joelonsoftware.com/2002/01/23/rub-a-dub-dub/
+
+Some small optimisations may have slipped in as well.
