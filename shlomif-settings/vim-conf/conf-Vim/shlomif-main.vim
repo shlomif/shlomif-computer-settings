@@ -545,7 +545,9 @@ autocmd BufRead,BufNewFile ~/progs/wml/wml-itself/core/*
     \ set path+=~/progs/wml/wml-itself/core/trunk/src/wml_include/ |
     \ set suffixesadd+=.src
 
-autocmd BufWritePost /*/lib/hunspell/whitelist*.txt   :!bin/sort-check-spelling-file
+for glob in ['/*/lib/hunspell/whitelist*.txt', '/*/lib/hunspell/hebrew-whitelist*.txt']
+    exe "autocmd BufWritePost " . glob . " :!bin/sort-check-spelling-file ; test -x bin/heb-sort-check-spelling-file && bin/heb-sort-check-spelling-file"
+endfor
 
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_typescript_checkers = ["tslint"]
