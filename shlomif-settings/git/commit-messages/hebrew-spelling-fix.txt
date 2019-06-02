@@ -1,0 +1,5 @@
+Correct some broken Hebrew spelling / grammar / etc.
+
+Or whitelist non-errors.
+
+See http://hspell.ivrix.org.il/ and hunspell-he.
