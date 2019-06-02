@@ -2,7 +2,7 @@ load_common bundle/inc1
 load_common hg
 load_common chdirs
 
-base=~/progs/JS/greasemonkey-scripts
+base=~/progs/JS/browser-userscripts/
 trunk="$base"
 this="$trunk/greasemonkey-scripts"
 remote_repo="$(_shlomif_bitbucket "shlomi-fishs-greasemonkey-scripts")"
