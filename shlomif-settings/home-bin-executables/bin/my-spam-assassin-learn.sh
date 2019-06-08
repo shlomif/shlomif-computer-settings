@@ -1,18 +1,28 @@
 #!/usr/bin/env bash
 process_dir()
 {
-    mytype="$1"
+    local mytype="$1"
     shift
-    dir="$1"
+    local dir="$1"
     shift
-    sa-learn --showdots "$mytype" --dir "$dir"/Received
+    sa-learn --showdots "$mytype" --dir "$dir"
     # mv "$dir"/Received/cur/* "$dir"/Saved/cur/
+    local t=learn_spam
+    if test "$mytype" = "--ham"
+    then
+        t=learn_ham
+    fi
+    # Disabling because it is far too slow.
+    if false
+    then
+        rspamc -v "$t" "$dir"
+    fi
 }
-process_dir --spam "$HOME"/Mail/Spam/Spam/
-process_dir --spam "$HOME"/Mail/Spam/Uncaught/
-process_dir --ham "$HOME"/Mail/Spam/Ham/
-sa-learn --showdots --ham --dir "$HOME"/Mail/Spam/Ham/"To Delete"
-sa-learn --showdots --spam --dir "$HOME"/Mail/Spam/Spam/"To Delete"
+process_dir --spam "$HOME"/Mail/Spam/Spam/Received
+process_dir --spam "$HOME"/Mail/Spam/Uncaught/Received
+process_dir --ham "$HOME"/Mail/Spam/Ham/Received
+process_dir --ham "$HOME"/Mail/Spam/Ham/"To Delete"
+process_dir --spam "$HOME"/Mail/Spam/Spam/"To Delete"
 
 
 # The Expat License
