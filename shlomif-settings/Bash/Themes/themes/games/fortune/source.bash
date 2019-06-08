@@ -12,6 +12,7 @@ c="$this"
 b="$build"
 
 export FCS_USE_TEST_RUN=1
+export FORTUNE_TEST_TIDY=1
 
 cd "$this"
 
