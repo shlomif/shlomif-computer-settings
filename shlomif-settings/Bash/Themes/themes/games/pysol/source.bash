@@ -63,7 +63,6 @@ mydiff()
     diff -u "$this/pysollib/tk/$fn"  "$this/pysollib/tile/$fn"
 }
 
-alias p='git push'
 cs()
 {
     cd "$site"

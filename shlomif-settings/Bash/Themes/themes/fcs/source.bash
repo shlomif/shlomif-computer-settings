@@ -284,7 +284,6 @@ z()
     bash ../scripts/0fcpar.bash
 }
 
-alias p='git push'
 # delta states test
 delta()
 {

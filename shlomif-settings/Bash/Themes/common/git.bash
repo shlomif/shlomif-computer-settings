@@ -9,4 +9,3 @@ setup()
 }
 
 load_common github
-alias p='git push'

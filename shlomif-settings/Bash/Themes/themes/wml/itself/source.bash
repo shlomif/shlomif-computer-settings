@@ -67,8 +67,6 @@ c()
     cd "$src"
 }
 
-alias p='git push'
-
 proj_name='wml'
 export WML_TEST_BUILD=1 WML_TEST_TIDY=1
 export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/wml-itself-tidyall.d"

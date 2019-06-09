@@ -17,12 +17,6 @@ m()
     make "$@"
 }
 
-unalias p
-p()
-{
-    git push "$@"
-}
-
 t()
 {
     make total
