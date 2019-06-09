@@ -612,6 +612,8 @@ autocmd BufRead,BufNewFile ~/conf/trunk/*.bash
 " and https://metacpan.org/pod/HTML::WikiConverter::Markdown .
 command! -range HTML2MD :<line1>,<line2>!html2wiki --dialect Markdown --link-style=inline
 
+command! -range EscapeHTML :<line1>,<line2>!perl -lpE 'use strict; use warnings; use CGI; $_=CGI::escapeHTML($_)'
+
 function Python_Import_Order()
     command! -range II :<line1>,<line2>!perl -lpE 's/^(from \S+ import )(.*)$/$1 . join(", ", sort {$a cmp $b} split m[, *],$2)/e' | LC_ALL=C perl -E 'my @l=<>;print sort { $a=~/^impo/<=>$b=~/^impo/ or $a=~/^from \./<=>$b=~/^from \./ or $a cmp $b} @l'
     map <F2> vip:II<cr>
