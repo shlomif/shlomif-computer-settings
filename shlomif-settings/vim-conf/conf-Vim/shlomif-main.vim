@@ -89,6 +89,7 @@ call vam#ActivateAddons([
     \ 'github:cakebaker/scss-syntax.vim',
     \ 'github:cespare/vim-toml',
     \ 'github:dahu/Area-41',
+    \ 'github:flazz/vim-colorschemes',
     \ 'github:godlygeek/csapprox',
     \ 'github:godlygeek/tabular',
     \ 'github:honza/vim-snippets',
