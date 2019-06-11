@@ -1,24 +1,25 @@
-#! /usr/bin/env -S perl -lna
-#
-# Short description for uniq-by.pl
-# Put records into bins based on the first record.
-# Author Shlomi Fish <shlomif@cpan.org>
-# Version 0.0.1
-#
+#!/usr/bin/env perl
+
 use strict;
 use warnings;
-use 5.014;
-use autodie;
+use Test::More tests => 1;
 
-use vars qw/ %h /;
+{
+    # TEST
+    is(
+        scalar(
+`printf "1\\t2\\n1\\t3\\n2\\t4\\n" | shlomif-settings/home-bin-executables/bin/uniq-by`
+        ),
+        "1\t2\t3\n2\t4\n",
+        "uniq-by is working"
+    );
+}
 
-++( $h{ $F[0] }{ $F[1] } );
-END { say join( "\t", $_, sort keys %{ $h{$_} } ) for sort keys %h }
 __END__
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2019 by Shlomi Fish
+Copyright 2018 by Shlomi Fish
 
 This program is distributed under the MIT / Expat License:
 L<http://www.opensource.org/licenses/mit-license.php>
