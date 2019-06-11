@@ -1,4 +1,4 @@
-#! /usr/bin/env -S perl -lna
+#! /usr/bin/env perl
 #
 # Short description for uniq-by.pl
 # Put records into bins based on the first record.
@@ -12,8 +12,15 @@ use autodie;
 
 use vars qw/ %h /;
 
-++( $h{ $F[0] }{ $F[1] } );
-END { say join( "\t", $_, sort keys %{ $h{$_} } ) for sort keys %h }
+while (<>)
+{
+    chomp;
+    my @F = split /\s+/, $_;
+    ++( $h{ $F[0] }{ $F[1] } );
+}
+
+say join( "\t", $_, sort keys %{ $h{$_} } ) for sort keys %h;
+
 __END__
 
 =head1 COPYRIGHT & LICENSE
