@@ -99,7 +99,8 @@ DOCS_SVN_TAR = $(BACKUP_DIR)/Docs-Svn-hg-repo-backup-$(STAMP).tar.xz
 docs_svn_dump: $(DOCS_SVN_TAR)
 
 PACK_CMD_RAW = tar
-PACK_CMD_ARGS = -cavf
+TAR_ARGS := --sort=name
+PACK_CMD_ARGS = $(TAR_ARGS) -cavf
 PACK_CMD = $(PACK_CMD_RAW) $(PACK_CMD_ARGS)
 
 $(DOCS_SVN_TAR):
@@ -135,7 +136,7 @@ $(HAM_EMAILS_CLAWS_ARC): $(BACKUP_STAMP)
 	$(PACK_CMD) $@ $(HOME)/Mail/Spam/Ham/
 
 $(IMPORTANT_HAM_EMAIL_CLAWS_ARC): $(BACKUP_STAMP)
-	tar --exclude-from=$(HOME_DIR_EXCLUDE_LIST) -cavf $@ $(HOME)/Mail
+	tar $(TAR_ARGS) --exclude-from=$(HOME_DIR_EXCLUDE_LIST) -cavf $@ $(HOME)/Mail
 
 ACER_LAP_EMAILS_ARC = $(BACKUP_DIR)/Acer-Lap-emails$(ARC_EXT)
 
@@ -172,7 +173,7 @@ dl_images: $(DOWNLOAD_IMAGES_ARC)
 
 $(DOWNLOAD_IMAGES_ARC): $(BACKUP_STAMP)
 	(cd $(HOME) ; dir_to_back="Download/Images" ; \
-		tar --dereference --exclude="$$dir_to_back/Clip-Art/open-clip-art"  \
+		tar $(TAR_ARGS) --dereference --exclude="$$dir_to_back/Clip-Art/open-clip-art"  \
     	--exclude="$$dir_to_back/Propaganda" \
     	-cavf $@ "$$dir_to_back" \
 	)
@@ -190,7 +191,7 @@ home_dir: $(HOME_DIR_ARC)
 COMMON_EXCLUDES = --exclude-from=$(HOME_DIR_EXCLUDE_LIST) --exclude=$(HOME)/Mail
 
 $(HOME_DIR_ARC): $(BACKUP_STAMP) $(HOME_DIR_EXCLUDE_LIST)
-	tar $(COMMON_EXCLUDES) -cavf $@ $(HOME_DIR_DIR) || true
+	tar $(TAR_ARGS) $(COMMON_EXCLUDES) -cavf $@ $(HOME_DIR_DIR) || true
 
 RSYNC_NET_ARC_DIR = $(HOME)/Backup/rsync.net
 RSYNC_NET_ARC = $(RSYNC_NET_ARC_DIR)/backup.tar
@@ -199,7 +200,7 @@ rsync_net_home_dir: $(RSYNC_NET_ARC)
 
 $(RSYNC_NET_ARC): $(EXCLUDE_LISTS)
 	temptar="$@.tar" ; \
-	tar  $(COMMON_EXCLUDES) --exclude-from=$(RSYNC_NET_EXCLUDE_LIST) -cavf "$$temptar" $(HOME_DIR_DIR) || true ; \
+	tar  $(TAR_ARGS) $(COMMON_EXCLUDES) --exclude-from=$(RSYNC_NET_EXCLUDE_LIST) -cavf "$$temptar" $(HOME_DIR_DIR) || true ; \
 	cd $(RSYNC_NET_ARC_DIR) && \
 	rm -fr "$(RSYNC_NET_ARC_DIR)/TRIM" ; \
 	mkdir TRIM && \
