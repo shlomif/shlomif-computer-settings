@@ -636,3 +636,6 @@ let g:templates_directory = [ $HOME . '/conf/Vim/templates' ]
 " Usage: add a mapping for i_CTRL-X_CTRL-F in your vimrc
 imap <expr> <C-X><C-F>  nwo#mappings#cxf_mod#Plug()
 
+au BufNewFile,BufRead *.fc.board setlocal filetype=freecell
+au BufNewFile,BufRead *.fc.sol setlocal filetype=freecell
+au BufNewFile,BufRead *.fc.solution setlocal filetype=freecell
