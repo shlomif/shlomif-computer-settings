@@ -110,6 +110,7 @@ call vam#ActivateAddons([
     \ 'github:shlomif/mojovai',
     \ 'github:shlomif/syntax-spork',
     \ 'github:shlomif/vim-extract-variable',
+    \ 'github:shlomif/vim-freecell',
     \ 'github:shlomif/vim-gitignore',
     \ 'github:shlomif/vim-screenplay-text',
     \ 'github:sjl/gundo.vim',
