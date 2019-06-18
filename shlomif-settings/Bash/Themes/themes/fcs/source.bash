@@ -97,7 +97,7 @@ tes()
     (
         export HARNESS_BREAK=1
         clean_bpat
-        cd "$t_fcs/B" && \
+        cd "$b" && \
             make -j4 && \
             perl "$c_src"/run-tests.pl
         n --msg "Freecell Solver Test Finished"
@@ -179,7 +179,7 @@ fmt()
     (
         unset FCS_USE_TEST_RUN;
         clean_bpat
-        cd "$t_fcs/B" && \
+        cd "$b" && \
             make -j4 && \
             perl "$c_src"/run-tests.pl --glob='{clang-format,tidy,py-flake8,style-trailing-space,verify--nht}*.t'
     )
