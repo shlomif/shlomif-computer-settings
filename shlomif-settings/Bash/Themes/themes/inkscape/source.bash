@@ -72,6 +72,17 @@ f-()
     )
 }
 
+s-()
+{
+    (
+        set -e -x
+        git co master
+        git s u
+        git co refactoring
+        git rebase master
+    )
+}
+
 alias g='gvim ids.txt +cbuf +cope +"sp scripts/ids-whitelist.txt" +"sp scripts/ids-whitelist.txt"'
 
 # Enable clang+ccache and a debug build.
