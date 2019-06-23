@@ -14,6 +14,11 @@ trunk="$base/CI-Gen/perl6-CI-Gen"
 app_dir="$trunk"
 this="$app_dir"
 
+u-()
+{
+    bash "$base/s/rakudo-git-master-install/rakudo-git.bash"
+}
+
 rw_repos_url="$(_shlomif_github "Rx.pl")"
 
 cd "$this"
