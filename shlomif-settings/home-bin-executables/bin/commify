@@ -8,9 +8,14 @@ import sys
 locale.setlocale(locale.LC_ALL, '')
 
 r = re.compile(r'(\d+)((?:\.\d+)?)')
-for li in sys.stdin:
-    sys.stdout.write(r.sub(
-        lambda m: format(int(m.group(1)), "n")+m.group(2), li))
+try:
+    for li in sys.stdin:
+        sys.stdout.write(r.sub(
+            lambda m: format(int(m.group(1)), "n")+m.group(2), li))
+except BaseException:
+    pass
+finally:
+    pass
 
 """
 __END__
