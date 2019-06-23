@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::More tests => 1;
+use Test::More tests => 2;
 
 {
     # TEST
@@ -11,6 +11,15 @@ use Test::More tests => 1;
 `echo -n "1000000 242424" | shlomif-settings/home-bin-executables/bin/commify`
         ),
         "1,000,000 242,424",
+        "commify is working"
+    );
+
+    # TEST
+    is(
+        scalar(
+`echo -n "1000000000000000000000000000000000000000000000000000000000000000000000000" | shlomif-settings/home-bin-executables/bin/commify`
+        ),
+"1,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000",
         "commify is working"
     );
 }

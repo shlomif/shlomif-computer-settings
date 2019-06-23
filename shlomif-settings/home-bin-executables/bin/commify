@@ -1,20 +1,18 @@
-#!/usr/bin/env perl
+#!/usr/bin/env python3
 
-use 5.014;
-use strict;
-use warnings;
+import locale
+import re
+import sys
 
-use Number::Format;
 
-my $f = Number::Format->new;
+locale.setlocale(locale.LC_ALL, '')
 
-STDOUT->autoflush(1);
+r = re.compile(r'(\d+)((?:\.\d+)?)')
+for li in sys.stdin:
+    sys.stdout.write(r.sub(
+        lambda m: format(int(m.group(1)), "n")+m.group(2), li))
 
-while (<>)
-{
-    print s/(\d+(?:\.\d+)?)/$f->format_number($1)/egr;
-}
-
+"""
 __END__
 
 =head1 COPYRIGHT & LICENSE
@@ -46,3 +44,4 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 =cut
+"""
