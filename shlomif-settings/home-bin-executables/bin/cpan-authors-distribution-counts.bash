@@ -23,7 +23,12 @@
 # SOFTWARE.
 
 set -x
-cat <<'SQL' | sqlite3 cpandb.sql
+db="cpandb.sql"
+if ! test -e "$db"
+then
+    cpandb --CPAN "$HOME"/Download/Arcs/Perl/minicpan/ --setup
+fi
+cat <<'SQL' | sqlite3 "$db"
 select auths.auth_id as id, cpanid, count(*) as cnt
 from auths, dists
 where dists.auth_id = auths.auth_id
