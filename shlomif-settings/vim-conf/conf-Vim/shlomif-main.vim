@@ -95,6 +95,7 @@ call vam#ActivateAddons([
     \ 'github:honza/vim-snippets',
     \ 'github:inkarkat/SyntaxAttr.vim',
     \ 'github:ironcamel/vim-script-runner',
+    \ 'github:jeetsukumaran/vim-pythonsense',
     \ 'github:jlanzarotta/bufexplorer',
     \ 'github:junegunn/fzf',
     \ 'github:junegunn/fzf.vim',
