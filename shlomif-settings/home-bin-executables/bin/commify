@@ -12,6 +12,7 @@ try:
     for li in sys.stdin:
         sys.stdout.write(r.sub(
             lambda m: format(int(m.group(1)), "n")+m.group(2), li))
+        sys.stdout.flush()
 except BaseException:
     pass
 finally:
