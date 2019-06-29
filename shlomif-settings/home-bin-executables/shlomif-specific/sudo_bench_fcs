@@ -20,7 +20,10 @@ exec(
     qw#sudo nice -n-20 ionice -c1 -n0 sudo -u#,
     $SUDO_USER,
     qw#bash -c#,
-qq#SRC_DIR=\"$SRC_DIR\" FCS_PGO_THEME="$FCS_PGO_THEME" MALLOC_CONF=background_thread:true,metadata_thp:auto bash ~/bin/fcs-bench.bash 4#,
+
+qq#LD_PRELOAD="/home/shlomif/progs/freecell/git/fc-solve/fc-solve/mimalloc/b/libmimalloc.so" SRC_DIR=\"$SRC_DIR\" FCS_PGO_THEME="$FCS_PGO_THEME" bash ~/bin/fcs-bench.bash 4#,
+
+# qq#SRC_DIR=\"$SRC_DIR\" FCS_PGO_THEME="$FCS_PGO_THEME" MALLOC_CONF=background_thread:true,metadata_thp:auto bash ~/bin/fcs-bench.bash 4#,
 );
 
 __END__
