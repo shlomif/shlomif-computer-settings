@@ -82,7 +82,7 @@ run7()
     )
 }
 
-# alias r=run
-alias r=run7
+alias r=run
+# alias r=run7
 
 proj_name='0fc'
