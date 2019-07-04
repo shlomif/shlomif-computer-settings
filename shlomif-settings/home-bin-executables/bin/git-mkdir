@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -e -x
+for dir in "$@"
+do
+    ph="$dir/PLACEHOLDER"
+    if ! test -e "$ph"
+    then
+        mkdir -p "$dir"
+        touch "$ph"
+        git add "$ph"
+    fi
+done
