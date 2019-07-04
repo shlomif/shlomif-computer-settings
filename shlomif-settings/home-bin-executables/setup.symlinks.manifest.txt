@@ -1,0 +1,2 @@
+symlink from ~/bin/git-mkdir to ./bin/git-mkdir
+symlink from ~/bin/git-s to ./bin/git-s
