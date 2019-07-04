@@ -9,7 +9,7 @@ use Getopt::Long qw/ GetOptions /;
 use Cwd qw/ getcwd /;
 use Carp ();
 
-package Symlink::Manifest;
+package Symlink::DSL;
 
 use strict;
 use warnings;
@@ -236,7 +236,7 @@ sub create_manifest
 {
     my $sub_dir = shift;
     my $dir     = "$trunk/shlomif-settings/$sub_dir";
-    return Symlink::Manifest->new( { dir => $dir, skip_re => $skip_re, } );
+    return Symlink::DSL->new( { dir => $dir, skip_re => $skip_re, } );
 }
 
 sub run_setup
