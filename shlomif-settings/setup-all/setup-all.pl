@@ -139,12 +139,18 @@ sub handle_line
     return;
 }
 
+sub manifest_exists
+{
+    my $self = shift;
+
+    return ( -f $self->manifest );
+}
+
 sub process_manifest
 {
     my $self = shift;
 
-    my $ret = ( -f $self->manifest );
-    return '' if !$ret;
+    die "Manifest does not exist" if !$self->manifest_exists;
 
     open my $fh, "<", $self->manifest;
     while ( my $l = <$fh> )
@@ -226,18 +232,22 @@ sub sub_c
     );
 }
 
-sub run_manifest
+sub create_manifest
 {
     my $sub_dir = shift;
     my $dir     = "$trunk/shlomif-settings/$sub_dir";
-    return Symlink::Manifest->new( { dir => $dir, skip_re => $skip_re, } )
-        ->process_manifest;
+    return Symlink::Manifest->new( { dir => $dir, skip_re => $skip_re, } );
 }
 
 sub run_setup
 {
     my $dir = shift;
-    if ( !run_manifest($dir) )
+    my $obj = create_manifest($dir);
+    if ( $obj->manifest_exists )
+    {
+        return $obj->process_manifest;
+    }
+    else
     {
         return sub_c( $dir, ['./setup'] );
     }
