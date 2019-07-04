@@ -49,5 +49,6 @@ prompt()
         "~=$HOME"
 }
 alias pt='t'
+alias m='make -j8'
 
 proj_name='black-hole'
