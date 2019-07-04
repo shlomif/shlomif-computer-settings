@@ -1,4 +1,8 @@
+symlink from ~/bin/80_chars_ruler to ./bin/80_chars_ruler
 symlink from ~/bin/SPECS-only-for-deps-co to ./bin/SPECS-only-for-deps-co
+symlink from ~/bin/backup-slash.bash to ./bin/backup-slash.bash
+symlink from ~/bin/commify to ./bin/commify
+symlink from ~/bin/desktop-finish-cue to ./bin/desktop-finish-cue
 symlink from ~/bin/git-com to ./bin/git-com
 symlink from ~/bin/git-mkdir to ./bin/git-mkdir
 symlink from ~/bin/git-s to ./bin/git-s
