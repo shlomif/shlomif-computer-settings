@@ -239,40 +239,44 @@ sub create_manifest
     return Symlink::DSL->new( { dir => $dir, skip_re => $skip_re, } );
 }
 
-sub run_setup
+sub run_dsl
 {
     my $dir = shift;
     my $obj = create_manifest($dir);
-    if ( $obj->manifest_exists )
-    {
-        return $obj->process_manifest;
-    }
-    else
-    {
-        return sub_c( $dir, ['./setup'] );
-    }
+    return $obj->process_manifest;
+}
+
+sub run_setup
+{
+    my $dir = shift;
+    return sub_c( $dir, ['./setup'] );
 }
 run_setup('Bash');
 run_setup('vim-conf');
 
-run_setup('bash-aliases');
-run_setup('build-scripts');
-run_setup('clang-format');
-run_setup('gdb');
-run_setup('git');
-run_setup('hg');
-run_setup('home-bin-executables');
-run_setup('jwm');
-run_setup('perl/Dist-Zilla');
-run_setup('perl/perldb');
-run_setup('perl/perltidy');
-run_setup('python/pdb');
-run_setup('rpm');
-run_setup('sky');
-run_setup('tmux');
-run_setup('vcs-checkout-scripts');
-run_setup('x11');
+foreach my $dir (
+    'bash-aliases',
+    'build-scripts',
+    'clang-format',
+    'gdb',
+    'git',
+    'hg',
+    'home-bin-executables',
+    'jwm',
+    'perl/Dist-Zilla',
+    'perl/perldb',
+    'perl/perltidy',
+    'python/pdb',
+    'rpm',
+    'sky',
+    'tmux',
+    'vcs-checkout-scripts',
+    'x11',
 
+    )
+{
+    run_dsl($dir);
+}
 __END__
 
 =head1 COPYRIGHT & LICENSE
