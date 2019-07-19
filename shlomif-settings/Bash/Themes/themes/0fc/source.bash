@@ -61,7 +61,13 @@ put7()
     )
 }
 
-alias c=put
+c()
+{
+    put
+    p
+    t
+}
+
 alias c7=put7
 
 run()

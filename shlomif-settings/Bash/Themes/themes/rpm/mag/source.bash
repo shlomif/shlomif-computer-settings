@@ -120,7 +120,10 @@ coo()
 
     local pkg_base="${pkg#*/}"
 
-    co "$pkg" && cd "$pkg_base" && log
+    if ! { co "$pkg" && cd "$pkg_base" && log }
+    then
+        return 1
+    fi
     # A global variable for convenience
     p="$pkg_base"
     # A global variable with the directory, so one can do "cd $d" or "rm -fr $d"
@@ -195,6 +198,34 @@ pymode()
         shift
         b && ur && ci -m "$msg" && sub
         n --msg "rpm/mag"
+    }
+}
+
+pymod=''
+
+pymodepkg()
+{
+    r()
+    {
+        set -x
+        r_helper "$@"
+        set +x
+    }
+
+    r_helper()
+    {
+        pymod="$1"
+        shift
+        if ! pyco "$pymod"
+        then
+            rm -f "$s"/python-"$pymod"-*.src.rpm
+            pyp2rpm --srpm -p3 "$pymod" || return
+            imp -l "pyp2rpm" "$s/python-$pymod"-*.rpm || return
+            pyco "$pymod" || return
+        fi
+        ub || return
+        b || return
+        sub || return
     }
 }
 
