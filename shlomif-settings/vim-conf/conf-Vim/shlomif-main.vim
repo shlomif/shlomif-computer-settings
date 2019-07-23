@@ -115,6 +115,7 @@ call vam#ActivateAddons([
     \ 'github:shlomif/vim-gitignore',
     \ 'github:shlomif/vim-screenplay-text',
     \ 'github:sjl/gundo.vim',
+    \ 'github:sunuslee/vim-plugin-random-colorscheme-picker',
     \ 'github:terryma/vim-expand-region',
     \ 'github:thinca/vim-quickrun',
     \ 'github:timonv/vim-cargo',
