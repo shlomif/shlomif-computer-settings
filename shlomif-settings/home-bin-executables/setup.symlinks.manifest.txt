@@ -1,8 +1,11 @@
 symlink from ~/bin/80_chars_ruler to ./bin/80_chars_ruler
+symlink from ~/bin/Dev-Path-Configs-Source-Me.bash to ./shlomif-specific/Dev-Path-Configs-Source-Me.bash
 symlink from ~/bin/SPECS-only-for-deps-co to ./bin/SPECS-only-for-deps-co
 symlink from ~/bin/backup-slash.bash to ./bin/backup-slash.bash
 symlink from ~/bin/cdown-to to ./bin/countdown-to
+symlink from ~/bin/collect-feeds.sh to ./shlomif-specific/collect-feeds.sh
 symlink from ~/bin/commify to ./bin/commify
+symlink from ~/bin/copy-backup-to-external-hard-disk.sh to ./shlomif-specific/copy-backup-to-external-hard-disk.sh
 symlink from ~/bin/desktop-finish-cue to ./bin/desktop-finish-cue
 symlink from ~/bin/display-X-resolution to ./bin/display-X-resolution
 symlink from ~/bin/enable-ctrl-alt-backspace to ./bin/enable-ctrl-alt-backspace
@@ -18,6 +21,7 @@ symlink from ~/bin/git-pushu to ./bin/git-pushu
 symlink from ~/bin/git-s to ./bin/git-s
 symlink from ~/bin/hebrew-keymap.sh to ./bin/hebrew-keymap.sh
 symlink from ~/bin/improvement-percent to ./bin/improvement-percent
+symlink from ~/bin/mdown to ./shlomif-specific/mdown
 symlink from ~/bin/mod-pysolfc to ./bin/mod-pysolfc
 symlink from ~/bin/mplayer-shuffle to ./bin/mplayer-shuffle
 symlink from ~/bin/my-spam-assassin-learn.sh to ./bin/my-spam-assassin-learn.sh
@@ -27,6 +31,7 @@ symlink from ~/bin/quick_web_server to ./bin/quick_web_server
 symlink from ~/bin/recursive-patch.bash to ./bin/recursive-patch.bash
 symlink from ~/bin/rpmspec-convert-from-Makefile.PL-to-Build.PL.pl to ./bin/rpmspec-convert-from-Makefile.PL-to-Build.PL.pl
 symlink from ~/bin/sc-spamc to ./bin/sc-rspamc
+symlink from ~/bin/sudo_bench_fcs to ./shlomif-specific/sudo_bench_fcs
 symlink from ~/bin/sudo_time_fcs to ./bin/sudo_time_fcs
 symlink from ~/bin/sus to ./bin/sus
 symlink from ~/bin/tail-extract to ./bin/tail-extract
