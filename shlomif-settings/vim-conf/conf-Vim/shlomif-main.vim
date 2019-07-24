@@ -115,7 +115,6 @@ call vam#ActivateAddons([
     \ 'github:shlomif/vim-gitignore',
     \ 'github:shlomif/vim-screenplay-text',
     \ 'github:sjl/gundo.vim',
-    \ 'github:sunuslee/vim-plugin-random-colorscheme-picker',
     \ 'github:terryma/vim-expand-region',
     \ 'github:thinca/vim-quickrun',
     \ 'github:timonv/vim-cargo',
@@ -145,6 +144,7 @@ if $VIMSYNT == 1
                 \ ],
     \ {'auto_install': 1, 'shell_commands_run_method': "system",})
 end
+" \ 'github:sunuslee/vim-plugin-random-colorscheme-picker',
 
 let g:powerline_pycmd = 'py3'
 let g:airline_powerline_fonts = 1
