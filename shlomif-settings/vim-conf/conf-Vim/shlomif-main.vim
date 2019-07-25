@@ -285,54 +285,6 @@ autocmd FileType perl call Perl_Load_File()
 map <C-W><C-Right> <C-W><Right>
 map <C-W><C-Left> <C-W><Left>
 
-" Cancel indentation on the Perl timeline's HTMLs.
-autocmd BufNewFile,BufRead ~/Docs/programming/Perl/Timeline/*.html set indentexpr=
-
-map <F8> :cn<CR>
-map <F7> :cp<CR>
-
-" Load the matchit it plugin which enhances the % for opening/closing
-" XML/HTML tags/elements and stuff.
-so $VIMRUNTIME/macros/matchit.vim
-
-au BufNewFile,BufRead */screenplay-xml/txt/*.txt setlocal filetype=screenplay-text
-au BufNewFile,BufRead *.screenplay-text.txt setlocal filetype=screenplay-text
-
-function Set_to_Bash()
-    let g:is_bash = 1
-    set ft=sh
-endfunction
-
-autocmd BufNewFile,BufRead ~/progs/bash/completion/trunk/bash_completion/bash_completion call Set_to_Bash()
-autocmd BufNewFile,BufRead ~/progs/bash/completion/trunk/bash_completion/cmds/* call Set_to_Bash()
-
-autocmd BufNewFile,BufRead ~/progs/games/kakuro/trunk/*.rb so ~/conf/Vim/kakuro-ruby.vim
-
-if 0
-    autocmd BufNewFile *.pl call Perl_Load_File() | :call Perl_New_Script()
-endif
-autocmd BufNewFile *.pm call Perl_Load_File() | :call Perl_New_Module()
-autocmd BufNewFile *.t call Perl_Load_File() | :call Perl_New_Test_Program()
-
-let perl_no_extended_vars=1
-
-let g:surround_indent = 1
-
-" autocmd BufRead ~/progs/freecell/trunk/fc-solve/source/* map <F4> :!echo '<C-R><C-W>' >> ~/progs/freecell/trunk/fc-solve/source/scripts/ids-whitelist.txt<CR>
-
-if has('multi_byte')
-    " So C-k.. will generate an ellipsis.
-    digraphs .. 8230
-    " So C-k,, will generate a Hebrew opening double-quotes
-    digraphs ,, 8222
-    " So C-k`` will generate a Hebrew closing double-quotes
-    digraphs `` 8220
-    " So C-kab (abbreviation) will generate a Hebrew abbreviation sign
-    digraphs ab 1524
-endif
-
-set tabpagemax=200
-
 " Unobtrusive highlighting of trailing space.
 "
 " Taken from http://blog.kamil.dworakowski.name/2009/09/unobtrusive-highlighting-of-trailing.html
