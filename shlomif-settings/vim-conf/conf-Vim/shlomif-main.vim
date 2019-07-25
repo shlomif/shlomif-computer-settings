@@ -1,25 +1,6 @@
 " Based on 'An example for a vimrc file.' by Bram Moolenaar
 filetype plugin indent on
 set nocompatible        " Use Vim defaults (much better!)
-set bs=2                " allow backspacing over everything in insert mode
-set ai                  " always set autoindenting on
-set backup              " keep a backup file
-set viminfo='20,\"50    " read/write a .viminfo file, don't store more
-                        " than 50 lines of registers
-
-" Changed by Shlomi Fish to a much bigger setting
-set history=5000                " keep 5,000 lines of command line history
-set ruler                       " show the cursor position all the time
-
-"Display an incomplete command in the lower right corner of the Vim window,
-" left of the ruler.
-set showcmd
-
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
-
-" Don't use Ex mode, use Q for formatting
-map Q gq
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -28,39 +9,10 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-" Add Microsoft Windows-like behaviour
-" Old habits die hard.
-"  - cancelled so old habits will die
-" source $VIMRUNTIME/mswin.vim
-
-" Make sure that indentation is 4 whitespace
-set shiftwidth=4
-" Cancelling because it causes problems in the file explorer (:E or whatever)
-" retab 4
-set tabstop=4
-" Expand tabs to whitespace.
-set expandtab
-
-set backupdir=.,~/tmp,~/
-
 " See:
 " https://github.com/neovim/neovim/commit/deb18a050ef522791c48c7c8c549a2c4b2043be0
 " I use a light background.
 set background=light
-
-" avoid handling 0.007 / etc. version numbers as octal
-set nrformats=bin,hex
-
-function File_Is_Readable(fn)
-    return filereadable(fnamemodify(a:fn, ":p"))
-endfunction
-
-" Set Incremental Search (I-Search)
-set incsearch
-
-" Make sure vim searches all the upper directories for the tags file.
-" See: http://www.vim.org/tips/tip.php?tip_id=94
-set tags=tags;/
 
 set runtimepath+=~/.vim/vim-addon-manager/
 set nomore
@@ -136,6 +88,5 @@ call vam#ActivateAddons([
     \ 'xml',
     \ ],
     \ {'auto_install': 1, 'shell_commands_run_method': "system",})
-set more
 
 set t_Co=256
