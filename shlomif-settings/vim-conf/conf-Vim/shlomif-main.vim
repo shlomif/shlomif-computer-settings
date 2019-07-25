@@ -331,52 +331,6 @@ if has('multi_byte')
     digraphs ab 1524
 endif
 
-au FileType sass setlocal shiftwidth=4
-
-function! SetXslt()
-    let g:xml_tag_syntax_prefixes='xsl\|xhtml\|db5\|db\|docbook\|xml\|xlink'
-endfunction
-
-au BufNewFile,BufRead ~/*.xsl call SetXslt()
-au BufNewFile,BufRead ~/*.xslt call SetXslt()
-
-" Local customisations
-if File_Is_Readable("~/.local.vimrc.vim")
-    so ~/.local.vimrc.vim
-endif
-
-function! CopyAll()
-    normal ggVG"+y
-endfunction
-
-command! CopyAll call CopyAll()
-
-function! CopyLine()
-    .y +
-endfunction
-
-command! CopyLine call CopyLine()
-
-function! NLCopyLine()
-    normal 0"+y$
-endfunction
-
-command! NLCopyLine call NLCopyLine()
-
-function! StyledQuotes(start_line, end_line)
-    let cmd = a:start_line . ',' . a:end_line . 's/"\([^"]\+\)"/“\1”/'
-    exe cmd
-endfunction
-
-command! -range StyledQuotes call StyledQuotes(<line1>,<line2>)
-
-function! UnderscorePrefix(start_line, end_line)
-    let cmd = a:start_line . ',' . a:end_line . 's%' . @/ . '%_\0%g'
-    exe cmd
-endfunction
-
-command! -nargs=+ BufOut redir => bufout | silent <args> | redir END | new | call append(0, substitute(strtrans(bufout), '\^@', "\r", 'g'))
-
 set tabpagemax=200
 
 " Unobtrusive highlighting of trailing space.
