@@ -19,31 +19,8 @@ set nomore
 let g:vim_addon_manager = {}
 let g:vim_addon_manager.auto_install = 1
 let g:vim_addon_manager.shell_commands_run_method = 'system'
-" Removed: unite
-" Removed: c%213
-" Removed: 'github:bogado/file-line',
-" https://github.com/thinca/vim-quickrun
 call vam#ActivateAddons([
-    \ 'Add_to_Word_Search',
-    \ 'Command-T',
-    \ 'The_NERD_tree',
-    \ 'UltiSnips',
-    \ 'VimClojure',
-    \ 'ack',
-    \ 'closetag',
-    \ 'ctrlp',
-    \ 'github:Carpetsmoker/auto_mkdir2.vim',
-    \ 'github:Glench/Vim-Jinja2-Syntax',
-    \ 'github:Houl/cxf_mod-vim',
-    \ 'github:aaronbieber/quicktask',
-    \ 'github:alessandroyorba/alduin',
-    \ 'github:aperezdc/vim-template',
-    \ 'github:cakebaker/scss-syntax.vim',
-    \ 'github:cespare/vim-toml',
-    \ 'github:dahu/Area-41',
-    \ 'github:flazz/vim-colorschemes',
     \ 'github:godlygeek/csapprox',
-    \ 'github:godlygeek/tabular',
     \ 'github:honza/vim-snippets',
     \ 'github:inkarkat/SyntaxAttr.vim',
     \ 'github:ironcamel/vim-script-runner',
