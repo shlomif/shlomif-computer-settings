@@ -146,44 +146,6 @@ if $VIMSYNT == 1
 end
 " \ 'github:sunuslee/vim-plugin-random-colorscheme-picker',
 
-let g:powerline_pycmd = 'py3'
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'powerlineish'
-" Expand the syntax menu automatically
-let do_syntax_sel_menu = 1
-runtime! synmenu.vim
-" aunmenu &Syntax.&Show\ individual\ choices
-
-" Make the To-HTML conversion use CSS styles
-let html_use_css = 1
-
-" This is so the indent inside the arguments/parameters of function calls will
-" be indented 4 spaces to the right instead of 8.
-set cinoptions+='(4,W4,b1,=0,m1'
-
-function Dot_t_file_type()
-    let fn = expand("<afile>")
-    if (match(fn, "\\.arc\\.t$") >= 0)
-        set filetype=arc
-    elseif (match(fn, "\\.c\\(\\.t\\)\\?$") >= 0)
-        set filetype=c
-    elseif (match(fn, "\\.py\\(\\.t\\)\\?$") >= 0)
-        set filetype=python
-    else
-        set filetype=perl
-        " compiler perlprove
-    endif
-    so ~/conf/Vim/perl-test-manage.vim
-    map <F3> :call Perl_Tests_Count()<CR>
-endfunction
-
-" Clear the autocmd's from filetype.vim because it confuses t/*.t
-autocmd! filetypedetect BufNewFile,BufRead *.t
-autocmd BufNewFile,BufRead *.t call Dot_t_file_type()
-autocmd BufNewFile,BufRead ~/progs/freecell/*/t/*.py call Dot_t_file_type()
-autocmd BufNewFile,BufRead ~/progs/freecell/*/t/*.c call Dot_t_file_type()
-
-autocmd BufNewFile,BufRead ~/Download/unpack/graphics/*.pdb set filetype=perl
 
 set guifont=DejaVu\ Sans\ Mono\ 10
 
