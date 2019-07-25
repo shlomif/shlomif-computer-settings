@@ -11,9 +11,6 @@ endif
 set background=light
 
 set runtimepath+=~/.vim/vim-addon-manager/
-let g:vim_addon_manager = {}
-let g:vim_addon_manager.auto_install = 1
-let g:vim_addon_manager.shell_commands_run_method = 'system'
 call vam#ActivateAddons([
     \ 'github:godlygeek/csapprox',
     \ ],
