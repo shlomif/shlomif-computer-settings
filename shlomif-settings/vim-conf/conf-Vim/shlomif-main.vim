@@ -1,7 +1,3 @@
-" Based on 'An example for a vimrc file.' by Bram Moolenaar
-filetype plugin indent on
-set nocompatible        " Use Vim defaults (much better!)
-
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
