@@ -375,37 +375,7 @@ function! UnderscorePrefix(start_line, end_line)
     exe cmd
 endfunction
 
-command! -range UnderscorePrefix call UnderscorePrefix(<line1>,<line2>)
-
-function! SelfPrefix(start_line, end_line)
-    let cmd = a:start_line . ',' . a:end_line . 's%[@\$]\(' . @/ . '\)%{$self->\1}%g'
-    exe cmd
-endfunction
-
-command! -range SelfPrefix call SelfPrefix(<line1>,<line2>)
-
-" Remmed out because nuvola is a confusing color-scheme.
-" source ~/.vim/colors/nuvola_shlomif.vim
-
-let g:UltiSnipsSnippetDirectories = ["ExtraUltiSnips"]
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
 command! -nargs=+ BufOut redir => bufout | silent <args> | redir END | new | call append(0, substitute(strtrans(bufout), '\^@', "\r", 'g'))
-
-function! Perl_FileType_Settings()
-    noremap <buffer>  <silent> <LocalLeader>rs         :call Perl_SyntaxCheck()<CR>:redraw!<CR>:call Perl_SyntaxCheckMsg()<CR>
-    " ---------- Add ':' to the keyword characters -----------
-    "            Tokens like 'File::Find' are recognized as
-    "            one keyword
-    "
-    setlocal iskeyword+=:
-endfunction
-
-autocmd FileType perl call Perl_FileType_Settings()
-
-autocmd BufRead,BufNewFile *.clay set filetype=clay
 
 set tabpagemax=200
 
