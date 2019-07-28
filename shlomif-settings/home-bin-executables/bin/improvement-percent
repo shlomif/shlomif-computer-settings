@@ -11,7 +11,11 @@ if ( @rest or $from_w ne 'from' or $to_w ne 'to' )
 {
     die qq#Syntax is "percent from [from] to [to]"!#;
 }
-
+foreach my $val ( $from_val, $to_val )
+{
+    $val =~ s/(\A[0-9]+(?:\.[0-9]*)?)s?\z/$1/
+        or die qq#Invalid value "$val"!#;
+}
 say( ( ( $from_val - $to_val ) / $to_val * 100 ), "%" );
 
 __END__
