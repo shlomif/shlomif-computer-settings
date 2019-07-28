@@ -14,6 +14,8 @@ if ( @rest or $from_w ne 'from' or $to_w ne 'to' )
 
 say( ( ( $from_val - $to_val ) / $to_val * 100 ), "%" );
 
+__END__
+
 # The Expat License
 #
 # Copyright (c) 2018, Shlomi Fish
