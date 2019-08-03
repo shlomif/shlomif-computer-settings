@@ -28,6 +28,7 @@ babl_p="$HOME/apps/graphics/babl"
 mypaint_p="$HOME/apps/graphics/libmypaint"
 export PATH="$gegl_p/bin:$PATH"
 export PKG_CONFIG_PATH="$gegl_p/lib/pkgconfig:$mypaint_p/lib/pkgconfig:$mypaint_p/share/pkgconfig:$babl_p/lib/pkgconfig:$PKG_CONFIG_PATH"
+export XDG_DATA_DIRS="$gegl_p/share:$mypaint_p/share:$mypaint_p/share/pkgconfig:$babl_p/share:$XDG_DATA_DIRS"
 
 _check()
 {
@@ -58,8 +59,28 @@ autoconf_git_build()
     ( cd "$git_co" && git checkout "$branch" && ($tag || git s origin "$branch") && NOCONFIGURE=1 ./autogen.sh && ./configure --prefix="$prefix" && make && _check && make install ) || { echo failed ; exit -1 ; }
 }
 
+meson_git_build()
+{
+    local git_co="$1"
+    shift
+    local url="$1"
+    shift
+    local prefix="$1"
+    shift
+    local branch="${1:-master}"
+    shift
+    local tag="${1:-false}"
+    shift
+
+    if ! test -e "$git_co" ; then
+        mkdir -p "$(dirname "$git_co")"
+        git clone "$url" "$git_co"
+    fi
+    ( cd "$git_co" && git checkout "$branch" && ($tag || git s origin "$branch") && mkdir -p "build" && cd build && meson --prefix="$prefix" .. && ninja -j1 && ninja -j1 test && ninja -j1 install ) || { echo failed ; exit -1 ; }
+}
+
 GNOME_GIT='https://gitlab.gnome.org/GNOME'
-autoconf_git_build "$HOME/Download/unpack/graphics/gimp/babl/git/babl" "$GNOME_GIT"/babl "$babl_p"
+meson_git_build "$HOME/Download/unpack/graphics/gimp/babl/git/babl" "$GNOME_GIT"/babl "$babl_p"
 autoconf_git_build "$HOME/Download/unpack/graphics/gimp/gegl/git/gegl" "$GNOME_GIT"/gegl "$gegl_p"
 autoconf_git_build "$HOME/Download/unpack/graphics/gimp/libmypaint/git/libmypaint" https://github.com/mypaint/libmypaint.git "$mypaint_p" "v1.3.0" true
 autoconf_git_build "$HOME/Download/unpack/graphics/gimp/libmypaint/git/mypaint-brushes" https://github.com/Jehan/mypaint-brushes.git "$mypaint_p" "v1.3.x"
