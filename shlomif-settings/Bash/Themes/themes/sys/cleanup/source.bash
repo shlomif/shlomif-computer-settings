@@ -1,4 +1,4 @@
-load_common du
+load_common du_db
 load_common prompt
 
 

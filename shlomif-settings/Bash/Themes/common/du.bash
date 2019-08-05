@@ -1,5 +1,3 @@
-export ANALYZE_DU_INPUT_FN="$HOME"/du.txt
-
 an()
 {
     analyze-du "$@"
@@ -18,12 +16,4 @@ ah()
 shs()
 {
     du -sh * | sort -h
-}
-
-regen()
-{
-    (
-        cd "$HOME"
-        \du . > du-new.txt
-    )
 }
