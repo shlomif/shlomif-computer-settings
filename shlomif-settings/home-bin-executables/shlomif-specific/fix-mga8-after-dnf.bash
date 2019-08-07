@@ -13,6 +13,7 @@ force_u_rpms
 cd ..
 
 cd pulseaudio
+rm -f RPMS/*/*debug*.rpm
 force_u_rpms
 cd ..
 )
