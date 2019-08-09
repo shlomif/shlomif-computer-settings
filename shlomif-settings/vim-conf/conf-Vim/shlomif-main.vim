@@ -463,8 +463,8 @@ function Shlomif_rpm_spec()
     command! MC %!perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/rpmspec-convert-to-metacpan.pl
     command! BPL %!perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/rpmspec-convert-from-Makefile.PL-to-Build.PL.pl
     " Open the url
-    command! OU !perl -lnE 'say $_ if s/\Aurl:\s*//i' % | xargs xdg-open
-    command! FF !perl -lnE 'say $_ if s/\Aurl:\s*//i' % | xargs firefox
+    command! OU !rpmspec -P % | perl -lnE 'say $_ if s/\Aurl:\s*//i' - | xargs xdg-open
+    command! FF !rpmspec -P % | perl -lnE 'say $_ if s/\Aurl:\s*//i' - | xargs firefox
     " URL for pypi dload per https://wiki.mageia.org/en/Python_policy
     let b:pypi_url="https://pypi.io/packages/source/p/%{module}/%{module}-%{version}.tar.gz"
     let @p = b:pypi_url
