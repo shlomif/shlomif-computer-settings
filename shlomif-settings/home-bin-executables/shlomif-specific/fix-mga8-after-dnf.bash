@@ -8,12 +8,15 @@
 (
 -t rpm/mag
 set -e -x
+if true
+then
 cd pango
 force_u_rpms
 cd ..
+fi
 
 cd pulseaudio
-rm -f RPMS/*/*debug*.rpm
+rm -f RPMS/*/*debug*.rpm || true
 force_u_rpms
 cd ..
 )
