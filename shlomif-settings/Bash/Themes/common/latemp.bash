@@ -15,8 +15,8 @@ rebuild()
         set -e
         cd "$latemp_trunk"
         time bin/rebuild
-        n -m "rebuild"
     )
+    n -m "rebuild"
 }
 
 b()
