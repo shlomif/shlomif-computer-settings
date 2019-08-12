@@ -2,7 +2,7 @@ ba()
 {
     mkdir -p "$pristine_copy"
     rm -fr "$pristine_copy"
-    cp -a "$_post_dest" "$pristine_copy"
+    rsync -a --exclude '**/MathJax/**' "$_post_dest/" "$pristine_copy"
 }
 
 did()
