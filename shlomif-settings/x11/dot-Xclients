@@ -4,7 +4,8 @@
 # Including VLC.
 qt5_plat()
 {
-    export QT_QPA_PLATFORMTHEME=lxqt
+    # export QT_QPA_PLATFORMTHEME=lxqt
+    true
 }
 
 # DEFAULT_DESK="kde4"
