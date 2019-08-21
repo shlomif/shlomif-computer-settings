@@ -1,12 +1,12 @@
 load_common bundle/inc1
-load_common hg
+load_common git
 
 base="$HOME/Docs/Humour/The-Enemy"
-hg_base="$base"
-trunk="$base/hg"
-repos="$trunk/The-Enemy"
+git_base="$base"
+trunk="$base/git"
+repos="$trunk/the-enemy"
 this="$repos"
-remote_repo="$(_shlomif_bitbucket "the-enemy")"
+remote_repo="$(_shlomif_github "the-enemy")"
 
 export THE_ENEMY_DEST="the-enemy-glareenxet"
 
