@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-./configure --prefix="$HOME/apps/net/www/firefox-hg" \
+set -e -x
+./mach build
+exit
+python3 ./moz.configure --prefix="$HOME/apps/net/www/firefox-hg" \
     --enable-application=browser \
     --enable-debug --disable-optimize \
     --enable-debug-symbols \
