@@ -1,5 +1,5 @@
 load_common bundle/inc1
-load_common hg
+load_common git
 load_common perl_dzil
 load_common ctags_this
 
@@ -9,7 +9,7 @@ trunk="$base/trunk"
 module="$trunk/XML-Grammar-Fortune/module"
 this="$module"
 
-remote_repo="$(_shlomif_bitbucket "fortune-xml")"
+remote_repo="$(_shlomif_github "fortune-xml")"
 
 prompt()
 {

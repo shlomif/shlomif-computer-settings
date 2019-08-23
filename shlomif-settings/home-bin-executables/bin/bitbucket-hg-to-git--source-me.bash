@@ -18,7 +18,7 @@ _mylocate_hg()
     locate -e --regex /\\.hg\$ | grep -v /old-hg/ | perl -lpE 's#/.hg$##' |tee a
 }
 
-l()
+hgl()
 {
     _mylocate_hg "$@"
 }
