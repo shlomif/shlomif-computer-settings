@@ -6,6 +6,22 @@
 # Distributed under terms of the MIT license.
 #
 
+# Bash/zsh functions to help in converting from bitbucket and mercurial
+# to github and git. See:
+#
+# * https://bitbucket.org/blog/sunsetting-mercurial-support-in-bitbucket
+#
+# * https://www.shlomifish.org/humour/fortunes/sharp-programming.html#the-last-mercurialian
+
+_mylocate_hg()
+{
+    locate -e --regex /\\.hg\$ | grep -v /old-hg/ | perl -lpE 's#/.hg$##' |tee a
+}
+
+l()
+{
+    _mylocate_hg "$@"
+}
 
 h()
 {
