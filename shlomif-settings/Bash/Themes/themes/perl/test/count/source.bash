@@ -1,9 +1,9 @@
 load_common bundle/inc1
-load_common hg
+load_common git
 load_common perl_dzil
 load_common ctags_this
 
-remote_repo="$(_shlomif_bitbucket "perl-test-count")"
+remote_repo="$(_shlomif_github "perl-test-count")"
 
 base="$HOME/progs/perl/cpan/Test/Count"
 hg_base="$base"

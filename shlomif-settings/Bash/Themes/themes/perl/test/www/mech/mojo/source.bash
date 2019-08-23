@@ -1,5 +1,5 @@
 load_common bundle/inc1
-load_common hg
+load_common git
 load_common perl_dzil
 load_common ctags_this
 
@@ -8,7 +8,7 @@ hg_base="$base"
 trunk="$base/trunk"
 module="$trunk/Test-WWW-Mechanize-Mojo"
 this="$module"
-remote_repo="$(_shlomif_bitbucket "perl-test-www-mechanize-mojo")"
+remote_repo="$(_shlomif_github "perl-test-www-mechanize-mojo")"
 
 PATH="$inst_modules_dir/bin/:$PATH"
 

@@ -15,7 +15,7 @@
 
 _mylocate_hg()
 {
-    locate -e --regex /\\.hg\$ | grep -v /old-hg/ | perl -lpE 's#/.hg$##' |tee a
+    locate -e --regex /\\.hg\$ | grep -v /old-hg/ | grep -vE '^/home/shlomif/Download/unpack/sys/smem/hg' |grep -vE '^/home/shlomif/Download/unpack/net/pidgin/' | grep -vE '^/home/shlomif/Download/unpack/conf/hg-prompt/hg-prompt' | perl -lpE 's#/.hg$##' |tee a
 }
 
 hgl()

@@ -1,5 +1,5 @@
 load_common bundle/inc1
-load_common hg
+load_common git
 load_common perl_dzil
 load_common ctags_using_script
 
@@ -10,7 +10,7 @@ modules_dir="$trunk/perl/modules"
 fict="$modules_dir/XML-Grammar-Fiction"
 this="$fict"
 
-remote_repo="$(_shlomif_bitbucket "fiction-xml")"
+remote_repo="$(_shlomif_github "fiction-xml")"
 
 cd "$this"
 
