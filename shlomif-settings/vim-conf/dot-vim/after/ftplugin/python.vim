@@ -11,3 +11,5 @@ for p in sys.path:
         # Command 'set' needs backslash before each space.
         vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
 EOF
+" Fix = and == in normal mode
+setlocal formatprg=autopep8\ -
