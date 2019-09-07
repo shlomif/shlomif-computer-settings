@@ -5,6 +5,12 @@ files of [Shlomi Fish](http://www.shlomifish.org/) that he made public.
 Repositories like this are commonly called “dotfiles” but this repository
 is organised differently.
 
+## WARNING!!!
+
+This repository reflects my preferences which most probably differ from
+yours. While you can read its code to learn from, and use parts of it
+in your own configuration, using it as a whole is not recommended.
+
 ## Quick start
 
 You can automatically set up most settings (but please do it in a new
