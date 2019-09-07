@@ -6,7 +6,7 @@ trunk="$repo"
 src="$trunk/www.linux.org.il-new-site/template-toolkit"
 this="$src"
 
-remote_repo="$($__themes_dir/common/github-git-remote-repo.pl --user="Hamakor" --repo="linux.org.il")"
+remote_repo="$($__themes_dir/common/github-git-remote-repo.pl --user="Hamakor" --repo="linux.org.il--old-sources")"
 
 cd "$this"
 

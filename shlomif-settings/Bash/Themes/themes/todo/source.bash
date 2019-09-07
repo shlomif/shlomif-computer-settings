@@ -18,5 +18,3 @@ e()
 {
     __edit
 }
-
-alias p='hg push'

@@ -112,3 +112,4 @@ fi
 
 alias hc='htop -s PERCENT_CPU'
 alias hm='htop -s PERCENT_MEM'
+alias qvim='nvim-qt'
