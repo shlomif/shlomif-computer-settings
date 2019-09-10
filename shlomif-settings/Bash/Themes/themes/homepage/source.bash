@@ -132,6 +132,7 @@ g()
     ( ci-generate && git au && git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/update-ci-gen-travis-yml.txt && p )
 }
 
+MAKEFLAGS+=" -s"
 alias m=gmake
 
 export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/shlomif-homepage-tidyall.d"

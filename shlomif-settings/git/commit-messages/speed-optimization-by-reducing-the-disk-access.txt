@@ -1,0 +1,6 @@
+Optimize the speed by reducing disk I/O.
+
+See https://blog.codinghorror.com/the-infinite-space-between-words/ .
+
+Also see https://en.wikibooks.org/wiki/Optimizing_Code_for_Speed . There may have
+been some refactorings too.
