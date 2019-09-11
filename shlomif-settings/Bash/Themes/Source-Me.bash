@@ -41,7 +41,12 @@ __theme_completion_commands=''
 
 __list_themes()
 {
-    cat ${__themes_dir}/list-of-themes.txt | perl -0777 -lap -e 's/[\s\n]+/ /g'
+    local fn="${__themes_dir}/list-of-themes.txt"
+    if ! test -e "$fn"
+    then
+        ( cd "$__themes_dir" && bash gen_list.sh )
+    fi
+    cat "$fn" | perl -0777 -lap -e 's/[\s\n]+/ /g'
 }
 
 __reload_themes_completion()

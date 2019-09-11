@@ -47,7 +47,14 @@ cache()
 }
 _update_PERL5LIB()
 {
-    . ~/conf/trunk/shlomif-settings/bash-aliases/PERL5LIB_gen.sh
+    local dir="$HOME/conf/trunk/shlomif-settings/bash-aliases"
+    local bn="PERL5LIB_gen.sh"
+    local fn="$dir/$bn"
+    if ! test -e "$fn"
+    then
+        ( cd "$dir" && make )
+    fi
+    . "$fn"
 }
 _update_PERL5LIB
 alias myrsync='rsync -a --progress -v --inplace' \
