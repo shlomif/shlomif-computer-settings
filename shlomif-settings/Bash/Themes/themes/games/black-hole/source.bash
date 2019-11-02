@@ -48,6 +48,12 @@ prompt()
         "\$base=$base" \
         "~=$HOME"
 }
+
+cm()
+{
+    cd "$module"
+}
+
 alias pt='t'
 alias m='make -j8'
 

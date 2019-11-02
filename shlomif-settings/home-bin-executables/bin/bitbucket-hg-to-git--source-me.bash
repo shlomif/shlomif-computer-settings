@@ -23,6 +23,23 @@ hgl()
     _mylocate_hg "$@"
 }
 
+_hgfastexp()
+{
+    (
+    set -e -x
+    mkdir repo-git # or whatever
+    cd repo-git
+    git init
+    bash /home/shlomif/Download/unpack/to-del/fast-export/hg-fast-export.sh -r ..
+    git checkout HEAD
+    cd ..
+    bn="$(basename "$(pwd)")"
+    cd ..
+    mkdir -p old-hg
+    mv "$bn" old-hg/
+    mv old-hg/"$bn"/repo-git "$bn"
+    )
+}
 h()
 {
     hg st && hg push
@@ -50,4 +67,8 @@ _replace()
 r()
 {
     _replace
+}
+w()
+{
+    _hgfastexp
 }

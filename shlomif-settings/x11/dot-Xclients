@@ -50,7 +50,8 @@ elif [ "$WHICH_DESK" = "kde4" ] ; then
     # qt5_plat
     exec startkde
 elif [ "$WHICH_DESK" = "kde5" ] ; then
-    exec dbus-launch --exit-with-session startkde
+    startplasma-x11
+    # exec dbus-launch --exit-with-session startkde
     # strace -f -o ~/k.strace dbus-launch --exit-with-session startkde
     # startkde
 elif [ "$WHICH_DESK" = "lxde" ] ; then
