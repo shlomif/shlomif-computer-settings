@@ -538,6 +538,12 @@ endfunction
 
 autocmd BufRead,BufNewFile *.wml call WML_Paths()
 
+function Shlomif_HTML_TT2()
+    command! -range LocalLinks :<line1>,<line2>s=\vhttps?\:\/\/www\.shlomifish\.org\/=[% base_path %]=g
+endfunction
+
+autocmd BufRead,BufNewFile *.xhtml.tt2 call Shlomif_HTML_TT2()
+
 function FCS_site_Customisation()
     set path+=~/progs/freecell/git/fc-solve/fc-solve/site/wml/lib/
 endfunction
