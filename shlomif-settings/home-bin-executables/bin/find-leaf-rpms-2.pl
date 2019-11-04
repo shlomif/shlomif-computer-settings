@@ -531,7 +531,7 @@ my %requested;
         'conflicts', 'obsoletes', 'recommends' )
     {
         my @l = uniq_ { scalar $_->fullname }
-        map { $urpm->{depslist}[$_] }
+        map     { $urpm->{depslist}[$_] }
             map { split /\|/, $_ } keys %{ $state->{selected} };
         foreach my $pkg (@l)
         {
