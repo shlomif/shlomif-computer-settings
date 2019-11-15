@@ -141,7 +141,7 @@ export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/shlomif-homepage-tidyall.d"
 export VNU_CACHE="$HOME/Backup/Arcs/shlomif-homepage-vnu-cache.json"
 
 # one can unset it.
-export SKIP_SPELL_CHECK=1
+# export SKIP_SPELL_CHECK=1
 __add_to_path
 
 proj_name='homepage'

@@ -15,6 +15,7 @@ remote_repo="$(_shlomif_github "PySolFC")"
 export FCS_USE_TEST_RUN=1
 export PATH="$HOME/apps/fcs-for-pysol/bin:$PATH"
 export HARNESS_OPTIONS='j9:c'
+export TEST_TAGS=" SKIP_GTK "
 
 cd "$this"
 
