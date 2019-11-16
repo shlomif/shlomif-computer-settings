@@ -132,6 +132,22 @@ g()
     ( ci-generate && git au && git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/update-ci-gen-travis-yml.txt && p )
 }
 
+partial_rebuild()
+{
+    (
+        set -e -x
+        cd "$trunk"
+        gmake fastrender
+        rm -f lib/cache/STAMP.post-dest
+        t
+    )
+}
+
+-p()
+{
+    partial_rebuild
+}
+
 MAKEFLAGS+=" -s"
 alias m=gmake
 
