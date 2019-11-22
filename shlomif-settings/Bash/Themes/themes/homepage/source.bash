@@ -149,6 +149,11 @@ partial_rebuild()
     partial_rebuild
 }
 
+y()
+{
+    ack "${1##lib/}"
+}
+
 MAKEFLAGS+=" -s"
 alias m=gmake
 

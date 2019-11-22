@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use File::Find::Object;
+use File::Find::Object ();
 use List::MoreUtils qw(any);
 
 my $ff = File::Find::Object->new( {}, "." );
@@ -11,7 +11,7 @@ my $ff = File::Find::Object->new( {}, "." );
 while ( my $r = $ff->next() )
 {
     if ( $r =~
-m#\A(\./)?(?:apps/perl/brew|Backup/(?:Arcs/(?:fc-solve/old-dumps|old-dest|post-dest)|web-hosting-backup/hostgator)|Download/Arcs/Perl/minicpan/authors|Mail|\.purple|\.ccache|\.cpan|\.cpanplus)\z#
+m#\A(\./)?(?:apps/perl/brew|Backup/(?:Arcs/(?:fc-solve/old-dumps|old-dest|post-dest)|web-hosting-backup/hostgator)|Download/Arcs/Perl/minicpan/authors|Mail|\.purple|\.cache|\.ccache|\.cpan|\.cpanplus)\z#
         )
     {
         $ff->prune();

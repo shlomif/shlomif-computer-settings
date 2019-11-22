@@ -19,6 +19,7 @@ this="$c_src"
 remote_repo="$(_shlomif_github "black-hole-solitaire")"
 
 export FCS_USE_TEST_RUN=1 FCS_TEST_CLANG_FORMAT=1 FCS_TEST_BUILD=1
+export SKIP_RINUTILS_INSTALL=1
 
 cd "$this"
 
