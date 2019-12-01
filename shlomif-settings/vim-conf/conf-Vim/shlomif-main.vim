@@ -542,6 +542,10 @@ function Shlomif_HTML_TT2()
     command! -range LocalLinks :<line1>,<line2>s=\vhttps?\:\/\/www\.shlomifish\.org\/=[% base_path %]=g
 endfunction
 
+function Shlomif_HTML_ROOT()
+    command! -range LocalRootLinks :<line1>,<line2>s=\vhttps?\:\/\/www\.shlomifish\.org\/=\$(ROOT)/=g
+endfunction
+
 autocmd BufRead,BufNewFile *.xhtml.tt2 call Shlomif_HTML_TT2()
 
 function FCS_site_Customisation()
