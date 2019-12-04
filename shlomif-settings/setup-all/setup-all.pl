@@ -209,12 +209,24 @@ if ( !-e $trunk )
     cwd_cmd(
         {
             dir => $CONF,
-
-# cmd => ["git", "clone", 'git@github.com:shlomif/shlomif-computer-settings.git', $trunk,],
             cmd => [
                 "git", "clone",
                 'https://github.com/shlomif/shlomif-computer-settings.git',
                 $trunk,
+            ],
+        }
+    );
+}
+
+my $ohmyzsh = "$HOME/.oh-my-zsh";
+if ( !-e $ohmyzsh )
+{
+    cwd_cmd(
+        {
+            dir => $HOME,
+            cmd => [
+                "git", "clone", "--branch", "shlomif-custom",
+                'https://github.com/shlomif/oh-my-zsh.git', $ohmyzsh,
             ],
         }
     );
