@@ -26,3 +26,11 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/apps/to-del-ncurses/lib"
 PATH="$HOME/apps/golang/bin:$HOME/.local/bin:$HOME/.perl6/bin:$PATH"
 alias p='git push'
 alias pu='git pushu'
+if ! which latemp-config > /dev/null 2>&1
+then
+    export PATH="$HOME/apps/latemp/bin:$PATH"
+fi
+if ! git info > /dev/null 2>&1
+then
+    eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+fi
