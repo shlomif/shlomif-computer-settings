@@ -5,15 +5,20 @@ snippet lmk
 endsnippet
 
 snippet h2sect
-[% WRAPPER h2_section id="${1}" title="${2}" %]
+[% WRAPPER h2_section id = "${1}" title = "${2}"  %]
 
-[%- END -%]
-
+[% END %]
 endsnippet
 
 snippet h3sect
-[% WRAPPER h3_section id="${1}" title="${2}" %]
+[% WRAPPER h3_section id = "${1}" title = "${2}"  %]
 
-[%- END -%]
+[% END %]
+endsnippet
 
+snippet h4sect
+[% WRAPPER h4_section id = "${1}" title = "${2}"  %]
+>>>>>>> Stashed changes
+
+[% END %]
 endsnippet

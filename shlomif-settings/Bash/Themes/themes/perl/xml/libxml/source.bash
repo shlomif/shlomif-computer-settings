@@ -39,5 +39,5 @@ t()
 {
     perl Makefile.PL && make disttest
 }
-
+export XML_LIBXML_ENABLE_TIDYALL=1
 cd "$this"
