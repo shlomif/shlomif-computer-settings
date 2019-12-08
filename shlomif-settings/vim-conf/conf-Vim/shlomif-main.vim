@@ -658,3 +658,8 @@ au BufNewFile,BufRead *.fc.solution setlocal filetype=freecell
 au BufNewFile,BufRead *.pari setlocal filetype=gp
 autocmd BufNewFile,BufRead ~/*/putting-cards-2019-2020/shlomif-putting-cards-on-the-table-2019-2020.docbook5.xml set indentexpr=
 autocmd BufNewFile,BufRead ~/Docs/homepage/homepage/trunk/lib/blogs/shlomif-hsite/*.xhtml set indentexpr=
+function PerlBegin_Customisation()
+    set path+=~/Docs/programming/Perl/web-sites/perl-begin/trunk/,~/Docs/programming/Perl/web-sites/perl-begin/trunk/lib
+endfunction
+
+autocmd BufRead,BufNewFile ~/Docs/programming/Perl/web-sites/perl-begin/trunk/* call PerlBegin_Customisation()
