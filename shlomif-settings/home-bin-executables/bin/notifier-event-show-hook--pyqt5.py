@@ -184,16 +184,16 @@ class Player(QtWidgets.QMainWindow):
 
 
 @click.command()
-@click.option("--video", default="/home/shlomif/Music/mp3s/" +
+@click.option("--song", default="/home/shlomif/Music/mp3s/" +
               "Jessie J - Domino-UJtB55MaoD0.webm", help="file to play")
-@click.option("-m", "--msg",
+@click.option("-m", "--msg", "--message",
               default="Your task has finished - go check it out!",
               help="notification message")
-def main(video, msg):
+def main(song, msg):
     """Entry point for our simple vlc player
     """
     app = QtWidgets.QApplication(sys.argv)
-    player = Player(video, msg)
+    player = Player(song, msg)
     player.show()
     player.resize(640, 480)
     sys.exit(app.exec_())
