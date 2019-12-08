@@ -27,6 +27,7 @@ symlink from ~/bin/mplayer-shuffle to ./bin/mplayer-shuffle
 symlink from ~/bin/my-spam-assassin-learn.sh to ./bin/my-spam-assassin-learn.sh
 symlink from ~/bin/my-youtube-dl to ./bin/my-youtube-dl
 symlink from ~/bin/n to ./bin/finish-client
+symlink from ~/bin/notifier-event-show-hook to ./bin/notifier-event-show-hook--pyqt5.py
 symlink from ~/bin/quick_web_server to ./bin/quick_web_server
 symlink from ~/bin/recursive-patch.bash to ./bin/recursive-patch.bash
 symlink from ~/bin/rpmspec-convert-from-Makefile.PL-to-Build.PL.pl to ./bin/rpmspec-convert-from-Makefile.PL-to-Build.PL.pl
