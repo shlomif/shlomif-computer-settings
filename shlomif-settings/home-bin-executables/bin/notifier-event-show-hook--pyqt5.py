@@ -183,15 +183,20 @@ class Player(QtWidgets.QMainWindow):
                 self.stop()
 
 
+DEFAULT_MESSAGE = "Your task has finished - go check it out!"
+
+
 @click.command()
 @click.option("--song", default="/home/shlomif/Music/mp3s/" +
               "Jessie J - Domino-UJtB55MaoD0.webm", help="file to play")
 @click.option("-m", "--msg", "--message",
-              default="Your task has finished - go check it out!",
+              default=DEFAULT_MESSAGE,
               help="notification message")
 def main(song, msg):
     """Entry point for our simple vlc player
     """
+    if not len(msg):
+        msg = DEFAULT_MESSAGE
     app = QtWidgets.QApplication(sys.argv)
     player = Player(song, msg)
     player.show()
