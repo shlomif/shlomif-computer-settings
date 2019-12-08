@@ -110,6 +110,11 @@ class Player(QtWidgets.QMainWindow):
         self.timer.setInterval(100)
         self.timer.timeout.connect(self.update_ui)
 
+        quit = QtWidgets.QAction(self)
+        quit.setShortcut(QtGui.QKeySequence(QtGui.QKeySequence.Quit))
+        quit.triggered.connect(sys.exit)
+        self.addAction(quit)
+
     def play_pause(self):
         """Toggle play/pause status
         """
