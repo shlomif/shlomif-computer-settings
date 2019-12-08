@@ -10,5 +10,10 @@ p="$(pwd)"
 find . -name '.git' -type d | ( LC_ALL=C sort ) | xargs dirname | \
     (while read mydir
 do
-    cd "$mydir" && git s o && cd "$p"
+    if cd "$mydir" && git s o
+    then
+        cd "$p"
+    else
+        exit 1
+    fi
 done)
