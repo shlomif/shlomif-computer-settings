@@ -1,10 +1,25 @@
 #!/usr/bin/env python3
 
 """
+
+notifier-event-show-hook--pyqt5.py
+
+Play a vlc video/etc. in a window while displaying a textual message.
+
+Based on:
+
+<<<
 A simple example for VLC python bindings using PyQt5.
 
 Author: Saveliy Yusufov, Columbia University, sy2685@columbia.edu
 Date: 25 December 2018
+>>>
+
+https://git.videolan.org/?p=vlc/bindings/python.git;a=blob;f=examples/pyqt5vlc.py;h=abf0cf20b38cae0a3faf39044d2d97b48a4f39f1;hb=HEAD
+
+Modified by Shlomi Fish ( https://www.shlomifish.org/ ) while disclaiming all
+explicit or implicit copyrights claims.
+
 """
 
 import platform
