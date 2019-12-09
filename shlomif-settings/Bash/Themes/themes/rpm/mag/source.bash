@@ -212,6 +212,20 @@ rec()
     bash ~/bin/recursive-patch.bash "$1" */
 }
 
+__commit_new_version()
+{
+    local __cmd="$(rpmspec -P SPECS/*.spec | perl -MSQ -lnE 'say "ci -m ${S}- New version $_${S}" if s/\Aversion:\s*//i')"
+    if test -n "$__cmd"
+    then
+        (
+        set -e -x
+        eval "$__cmd"
+        )
+    fi
+}
+
+alias civ='__commit_new_version'
+
 pymode()
 {
     r()
