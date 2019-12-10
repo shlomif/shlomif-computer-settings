@@ -69,24 +69,20 @@ class Player(QtWidgets.QMainWindow):
         self.vlayout = QtWidgets.QVBoxLayout()
         self.vlayout.addWidget(self.videoframe)
 
-        if 1:
-            self.message_text = QtWidgets.QLineEdit(self)
-            self.message_text.setText(msg)
-            self.message_text.setReadOnly(True)
-            f = self.message_text.font()
-            f.setPointSize(20)
-            self.message_text.setFont(f)
-            # self.message_text.resize(400,100)
-            self.vlayout.addWidget(self.message_text)
+        self.message_text = QtWidgets.QLineEdit(self)
+        self.message_text.setText(msg)
+        self.message_text.setReadOnly(True)
+        f = self.message_text.font()
+        f.setPointSize(20)
+        self.message_text.setFont(f)
+        self.vlayout.addWidget(self.message_text)
 
         self.widget.setLayout(self.vlayout)
 
         menu_bar = self.menuBar()
 
-        # File menu
         file_menu = menu_bar.addMenu("&File")
 
-        # Add actions to file menu
         close_action = QtWidgets.QAction("E&xit", self)
         file_menu.addAction(close_action)
 
@@ -152,8 +148,6 @@ class Player(QtWidgets.QMainWindow):
         self.mediaplayer.audio_set_volume(volume)
 
     def update_ui(self):
-        """Updates the user interface"""
-
         # No need to call this function if nothing is played
         if not self.mediaplayer.is_playing():
             self.timer.stop()
