@@ -33,9 +33,6 @@ import vlc
 
 
 class Player(QtWidgets.QMainWindow):
-    """A simple Media Player using VLC and Qt
-    """
-
     def __init__(self, video_fn, msg, master=None):
         QtWidgets.QMainWindow.__init__(self, master)
         self.setWindowTitle("Notification:" + msg)
@@ -69,34 +66,8 @@ class Player(QtWidgets.QMainWindow):
         self.videoframe.setPalette(self.palette)
         self.videoframe.setAutoFillBackground(True)
 
-        if False:
-            self.positionslider = QtWidgets.QSlider(QtCore.Qt.Horizontal, self)
-            self.positionslider.setToolTip("Position")
-            self.positionslider.setMaximum(1000)
-            self.positionslider.sliderMoved.connect(self.set_position)
-            self.positionslider.sliderPressed.connect(self.set_position)
-
         self.vlayout = QtWidgets.QVBoxLayout()
-        self.close_button = QtWidgets.QPushButton("Close")
-        self.vlayout.addWidget(self.close_button)
-        self.close_button.clicked.connect(self.play_pause)
-
-        # self.stopbutton = QtWidgets.QPushButton("Stop")
-        # self.vlayout.addWidget(self.stopbutton)
-        # self.stopbutton.clicked.connect(self.stop)
-
-        # self.vlayout.addStretch(1)
-        if False:
-            self.volumeslider = QtWidgets.QSlider(QtCore.Qt.Horizontal, self)
-            self.volumeslider.setMaximum(100)
-            self.volumeslider.setValue(self.mediaplayer.audio_get_volume())
-            self.volumeslider.setToolTip("Volume")
-            # self.hbuttonbox.addWidget(self.volumeslider)
-            self.volumeslider.valueChanged.connect(self.set_volume)
-
-        # self.vboxlayout = QtWidgets.QVBoxLayout()
         self.vlayout.addWidget(self.videoframe)
-        # self.vboxlayout.addLayout(self.hbuttonbox)
 
         if 1:
             self.message_text = QtWidgets.QLineEdit(self)
@@ -135,7 +106,6 @@ class Player(QtWidgets.QMainWindow):
         """
         if self.mediaplayer.is_playing():
             self.mediaplayer.pause()
-            self.close_button.setText("Play")
             self.is_paused = True
             self.timer.stop()
         else:
@@ -144,15 +114,11 @@ class Player(QtWidgets.QMainWindow):
                 return
 
             self.mediaplayer.play()
-            self.close_button.setText("Pause")
             self.timer.start()
             self.is_paused = False
 
     def stop(self):
-        """Stop player
-        """
         self.mediaplayer.stop()
-        self.close_button.setText("Play")
 
     def open_file(self, filename):
         """Open a media file in a MediaPlayer
@@ -166,10 +132,6 @@ class Player(QtWidgets.QMainWindow):
 
         # Parse the metadata of the file
         self.media.parse()
-
-        if False:
-            # Set the title of the track as window title
-            self.setWindowTitle(self.media.get_meta(0))
 
         # The media player has to be 'connected' to the QFrame (otherwise the
         # video would be displayed in it's own window). This is platform
