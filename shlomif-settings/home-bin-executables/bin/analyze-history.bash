@@ -1,1 +1,1 @@
-cat ~/.histfile | perl -lpE 's/[ \t]+$//' | sus > ~/todel.txt
+cat ~/.histfile | perl -lpE 's%^:\s*[0-9]+:[0-9]+;%%; s/[ \t]+$//' | sus > ~/todel.txt
