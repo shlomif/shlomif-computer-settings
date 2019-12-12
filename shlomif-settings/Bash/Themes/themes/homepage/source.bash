@@ -13,7 +13,7 @@ logs="$HOME/Download/homesite-logs"
 p4n="$trunk/lib/presentations/qp/perl-for-newbies"
 remote_repo="$(_shlomif_github "shlomi-fish-homepage")"
 export QUAD_PRES_CACHE_DIR=~/Arcs/temp/quad-pres-cache
-export PERL_INLINE_DIRECTORY="$TMPDIR/shlomif-hp-Inline"
+export PERL_INLINE_DIRECTORY="${TMPDIR:-/tmp}/shlomif-hp-Inline"
 if ! test -d "$PERL_INLINE_DIRECTORY"
 then
     mkdir -p "$PERL_INLINE_DIRECTORY"
