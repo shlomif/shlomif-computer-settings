@@ -23,30 +23,35 @@ snippet sbash
 endsnippet
 
 snippet if
-	if [[ ${1:condition} ]]; then
+	if test ${1:condition}
+	then
 		${0:${VISUAL}}
 	fi
 endsnippet
 
 snippet elif
-	elif [[ ${1:condition} ]]; then
+	elif test ${1:condition}
+	then
 		${0:${VISUAL}}
 endsnippet
 
 snippet for
-	for (( ${2:i} = 0; $2 < ${1:count}; $2++ )); do
+	for (( ${2:i} = 0; $2 < ${1:count}; $2++ ))
+	do
 		${0:${VISUAL}}
 	done
 endsnippet
 
 snippet fori
-	for ${1:needle} in ${2:haystack} ; do
+	for ${1:needle} in ${2:haystack}
+	do
 		${0:${VISUAL}}
 	done
 endsnippet
 
 snippet wh
-	while [[ ${1:condition} ]]; do
+	while test ${1:condition}
+	do
 		${0:${VISUAL}}
 	done
 endsnippet
