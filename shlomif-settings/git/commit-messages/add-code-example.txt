@@ -1,0 +1,5 @@
+Add a code / usage / invocation example.
+
+See:
+
+* http://blogs.perl.org/users/neilb/2014/07/give-your-modules-a-good-synopsis.html

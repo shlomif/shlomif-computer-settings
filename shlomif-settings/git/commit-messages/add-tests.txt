@@ -1,0 +1,7 @@
+Add new test assertions.
+
+See:
+
+* https://github.com/shlomif/what-you-should-know-about-automated-testing
+
+* https://en.wikipedia.org/wiki/Test_automation
