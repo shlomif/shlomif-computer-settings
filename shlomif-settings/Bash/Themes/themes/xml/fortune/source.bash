@@ -2,6 +2,7 @@ load_common bundle/inc1
 load_common git
 load_common perl_dzil
 load_common ctags_this
+load_common chdirs
 
 base="$HOME/progs/perl/cpan/XML/Grammar/Fortune"
 hg_base="$base"
