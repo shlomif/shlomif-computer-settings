@@ -677,6 +677,7 @@ autocmd BufRead,BufNewFile ~/Docs/programming/Perl/web-sites/perl-begin/trunk/* 
 " So whenever you're not sure what a variable in the makefile is getting
 " set to, you can do "make FOO.show" and it will show you the value of
 " $(FOO). This helps a lot with debugging.
+" >>>
 
 py3 << EOF
 
