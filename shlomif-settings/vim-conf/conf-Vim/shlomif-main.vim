@@ -547,6 +547,7 @@ function Shlomif_HTML_ROOT()
     command! -range LocalRootLinks :<line1>,<line2>s=\vhttps?\:\/\/www\.shlomifish\.org\/=\$(ROOT)/=g
 endfunction
 
+autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/lib/pages/*.tt2 call Shlomif_HTML_TT2()
 autocmd BufRead,BufNewFile *.html.tt2 call Shlomif_HTML_TT2()
 autocmd BufRead,BufNewFile *.xhtml.tt2 call Shlomif_HTML_TT2()
 
@@ -663,3 +664,46 @@ function PerlBegin_Customisation()
 endfunction
 
 autocmd BufRead,BufNewFile ~/Docs/programming/Perl/web-sites/perl-begin/trunk/* call PerlBegin_Customisation()
+
+" Requires this:
+" https://www.fysh.org/~katie/computing/make.txt
+"
+" <<<
+" This is a rule that's useful to put in all your makefiles:
+"
+" %.show:
+"        @echo "$* = $($*)"
+"
+" So whenever you're not sure what a variable in the makefile is getting
+" set to, you can do "make FOO.show" and it will show you the value of
+" $(FOO). This helps a lot with debugging.
+
+py3 << EOF
+
+import re
+import subprocess
+import vim
+
+def get_show_val(var_id):
+    assert re.match("^[A-Za-z0-9_]+$", var_id)
+    text = subprocess.Popen(["gmake", var_id + ".show"], stdout=subprocess.PIPE).stdout.read()
+    return text
+
+def vim_get_show_val():
+    return get_show_val(vim.eval('g:for_py_get_show_val'))
+
+EOF
+
+function Shlomif_Makefile_show_var()
+    let prev = @a
+    normal viw"ay
+    let g:for_py_get_show_val = @a
+    let @a = prev
+    echo py3eval('vim_get_show_val()')
+endfunction
+
+function Shlomif_Makefile_file_type()
+    command! ShowVar call Shlomif_Makefile_show_var()
+endfunction
+
+autocmd FileType make call Shlomif_Makefile_file_type()
