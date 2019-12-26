@@ -21,7 +21,7 @@ export FCS_USE_TEST_RUN=1 FCS_TEST_CLANG_FORMAT=1 FCS_TEST_BUILD=1
 
 cd "$this"
 
-t()
+__run_tests()
 {
     (
     cd "$trunk"
@@ -34,8 +34,13 @@ fmt()
 {
     (
         unset FCS_TEST_BUILD
-        t
+        __run_tests
     )
+}
+
+t()
+{
+    __run_tests "$@"
 }
 
 prompt()
@@ -53,7 +58,7 @@ cm()
     cd "$module"
 }
 
-alias pt='t'
+alias pt='__run_tests'
 alias m='make -j8'
 
-proj_name='black-hole'
+proj_name='rinutils'
