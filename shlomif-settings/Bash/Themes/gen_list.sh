@@ -11,7 +11,11 @@ _myfind()
 
     (
         _myfind
-        (cd ~/conf/Bash/private-themes && _myfind)
+        dir="$HOME/conf/Bash/private-themes"
+        if test -d "$dir"
+        then
+            (cd "$dir" && _myfind)
+        fi
     ) \
     | sort
 ) > list-of-themes.txt
