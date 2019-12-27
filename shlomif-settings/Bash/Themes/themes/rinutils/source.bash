@@ -18,6 +18,8 @@ this="$c_src"
 remote_repo="$(_shlomif_github "rinutils")"
 
 export FCS_USE_TEST_RUN=1 FCS_TEST_CLANG_FORMAT=1 FCS_TEST_BUILD=1
+export RINUTILS_TEST_BUILD=1
+export RINUTILS_TEST_TIDY=1
 
 cd "$this"
 
@@ -46,16 +48,9 @@ t()
 prompt()
 {
     __prompt_cmd \
-        "\$module=$module" \
-        "\$c_src=$c_src" \
         "\$trunk=$trunk" \
         "\$base=$base" \
         "~=$HOME"
-}
-
-cm()
-{
-    cd "$module"
 }
 
 alias pt='__run_tests'
