@@ -15,5 +15,15 @@ prompt()
     __prompt_cmd "\$modules_=$modules_" "\$trunk=$trunk" "\$base=$base" "~=$HOME"
 }
 
+__run_tests()
+{
+    (cd "$trunk" && perl CI-testing/continuous-integration-testing.pl test)
+}
+
+t()
+{
+    __run_tests "$@"
+}
+
 proj_name='latemp'
 cd "$this"

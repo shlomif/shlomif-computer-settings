@@ -456,6 +456,7 @@ autocmd BufRead,BufNewFile ~/progs/perl/Quizzes/Golf/* setlocal noeol binary
 " Copy the current WORD (delimited by whitespace) into
 " both the * and + clipboards.
 map <Leader>cc viW""ygv"+ygv"*y
+command! CopyWord normal viW""ygv"+ygv"*y
 
 set wildignore+=*.o,*.obj,.git,.svn,.hg,.bzr,*~
 
