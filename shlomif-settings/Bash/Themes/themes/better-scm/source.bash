@@ -1,4 +1,5 @@
 load_common bundle/git
+load_common chdirs
 load_common partests
 load_common mymake
 
