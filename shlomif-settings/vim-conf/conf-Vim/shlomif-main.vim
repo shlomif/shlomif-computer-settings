@@ -470,6 +470,10 @@ function Shlomif_rpm_spec()
     " URL for pypi dload per https://wiki.mageia.org/en/Python_policy
     let b:pypi_url="https://pypi.io/packages/source/p/%{module}/%{module}-%{version}.tar.gz"
     let @p = b:pypi_url
+    if 0
+        let b:fix_py_shebang = "perl -i -lpE 's{^(#!/usr/bin/env python)\\b}{${1}3}' `find %{buildroot}/%{_datadir} -name '*.py'`\n"
+    endif
+    let b:fix_py_shebang = "pathfix.py -pni \"%{__python3} %{py3_shbang_opts}\" `find %{buildroot}/%{_datadir} -name '*.py'`\n"
     map <Leader>pl Oexport PERL5LIB="$PWD:$PERL5LIB"<ESC>
     set path+=./../SOURCES/
 endfunction
