@@ -6,13 +6,11 @@ env:
     - TEST_INSTALL=0
     - TEST_INSTALL=1
 install:
-    - cpanm Alien::Tidyp
-    - cpanm --notest HTML::Tidy
     # Sometimes fails.
     - cpanm --notest IPC::System::Simple
     # Date::Format 's tests started failing due to https://rt.cpan.org/Public/Bug/Display.html?id=124509
     - cpanm --notest Date::Format
-    - cpanm Code::TidyAll::Plugin::PerlCritic Code::TidyAll::Plugin::PerlTidy Code::TidyAll::Plugin::TestCount Number::Format Path::Tiny Perl::Critic Perl::Tidy Test::Code::TidyAll Test::HTML::Tidy Test::TrailingSpace Text::Markdown
+    - cpanm Code::TidyAll::Plugin::PerlCritic Code::TidyAll::Plugin::PerlTidy Code::TidyAll::Plugin::TestCount Number::Format Path::Tiny Perl::Critic Perl::Tidy Test::Code::TidyAll Test::TrailingSpace
 language: perl
 matrix:
     fast_finish: true
