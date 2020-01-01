@@ -27,7 +27,7 @@ gegl_p="$HOME/apps/graphics/gegl"
 babl_p="$HOME/apps/graphics/babl"
 mypaint_p="$HOME/apps/graphics/libmypaint"
 export PATH="$gegl_p/bin:$PATH"
-export PKG_CONFIG_PATH="$gegl_p/lib/pkgconfig:$mypaint_p/lib/pkgconfig:$mypaint_p/share/pkgconfig:$babl_p/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="$gegl_p/lib64/pkgconfig:$mypaint_p/lib64/pkgconfig:$mypaint_p/share/pkgconfig:$babl_p/lib64/pkgconfig:$gegl_p/lib/pkgconfig:$mypaint_p/lib/pkgconfig:$mypaint_p/share/pkgconfig:$babl_p/lib/pkgconfig:$PKG_CONFIG_PATH"
 export XDG_DATA_DIRS="$gegl_p/share:$mypaint_p/share:$mypaint_p/share/pkgconfig:$babl_p/share:$XDG_DATA_DIRS"
 
 _check()
@@ -81,7 +81,7 @@ meson_git_build()
 
 GNOME_GIT='https://gitlab.gnome.org/GNOME'
 meson_git_build "$HOME/Download/unpack/graphics/gimp/babl/git/babl" "$GNOME_GIT"/babl "$babl_p"
-autoconf_git_build "$HOME/Download/unpack/graphics/gimp/gegl/git/gegl" "$GNOME_GIT"/gegl "$gegl_p"
+meson_git_build "$HOME/Download/unpack/graphics/gimp/gegl/git/gegl" "$GNOME_GIT"/gegl "$gegl_p"
 autoconf_git_build "$HOME/Download/unpack/graphics/gimp/libmypaint/git/libmypaint" https://github.com/mypaint/libmypaint.git "$mypaint_p" "v1.3.0" true
 autoconf_git_build "$HOME/Download/unpack/graphics/gimp/libmypaint/git/mypaint-brushes" https://github.com/Jehan/mypaint-brushes.git "$mypaint_p" "v1.3.x"
 autoconf_git_build "$HOME/Download/unpack/graphics/gimp/git/gimp" "$GNOME_GIT"/gimp "$HOME/apps/gimp-devel"
