@@ -56,7 +56,7 @@ autoconf_git_build()
         mkdir -p "$(dirname "$git_co")"
         git clone "$url" "$git_co"
     fi
-    ( cd "$git_co" && git checkout "$branch" && ($tag || git s origin "$branch") && NOCONFIGURE=1 ./autogen.sh && ./configure --prefix="$prefix" && make && _check && make install ) || { echo failed ; exit -1 ; }
+    ( cd "$git_co" && git checkout "$branch" && ($tag || git s origin "$branch") && NOCONFIGURE=1 ./autogen.sh && ./configure --prefix="$prefix" && make -j4 && _check && make install ) || { echo failed ; exit -1 ; }
 }
 
 meson_git_build()
@@ -76,7 +76,7 @@ meson_git_build()
         mkdir -p "$(dirname "$git_co")"
         git clone "$url" "$git_co"
     fi
-    ( cd "$git_co" && git checkout "$branch" && ($tag || git s origin "$branch") && mkdir -p "build" && cd build && meson --prefix="$prefix" .. && ninja -j1 && ninja -j1 test && ninja -j1 install ) || { echo failed ; exit -1 ; }
+    ( cd "$git_co" && git checkout "$branch" && ($tag || git s origin "$branch") && mkdir -p "build" && cd build && meson --prefix="$prefix" .. && ninja -j4 && ninja -j4 test && ninja -j4 install ) || { echo failed ; exit -1 ; }
 }
 
 GNOME_GIT='https://gitlab.gnome.org/GNOME'
@@ -84,7 +84,8 @@ meson_git_build "$HOME/Download/unpack/graphics/gimp/babl/git/babl" "$GNOME_GIT"
 meson_git_build "$HOME/Download/unpack/graphics/gimp/gegl/git/gegl" "$GNOME_GIT"/gegl "$gegl_p"
 autoconf_git_build "$HOME/Download/unpack/graphics/gimp/libmypaint/git/libmypaint" https://github.com/mypaint/libmypaint.git "$mypaint_p" "v1.3.0" true
 autoconf_git_build "$HOME/Download/unpack/graphics/gimp/libmypaint/git/mypaint-brushes" https://github.com/Jehan/mypaint-brushes.git "$mypaint_p" "v1.3.x"
-autoconf_git_build "$HOME/Download/unpack/graphics/gimp/git/gimp" "$GNOME_GIT"/gimp "$HOME/apps/gimp-devel"
+# autoconf_git_build "$HOME/Download/unpack/graphics/gimp/git/gimp" "$GNOME_GIT"/gimp "$HOME/apps/gimp-devel"
+meson_git_build "$HOME/Download/unpack/graphics/gimp/git/gimp" "$GNOME_GIT"/gimp "$HOME/apps/gimp-devel"
 
 printf '\n== Success ==\n\n'
 # CFLAGS="-g"  ./configure --prefix="$HOME"/apps/gimp-devel --enable-maintainer-mode

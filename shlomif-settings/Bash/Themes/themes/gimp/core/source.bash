@@ -1,4 +1,5 @@
 load_common bundle/git
+load_common chdirs
 
 base="$HOME/Download/unpack/graphics/gimp"
 git_base="$base/git"
