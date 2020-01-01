@@ -16,7 +16,7 @@ my $HOME = $ENV{HOME};
 
 sub _p
 {
-    my $ret = $HOME . shift();
+    my $ret = $HOME . "/" . shift();
     return ( "$ret/lib", "$ret/lib64" );
 }
 
