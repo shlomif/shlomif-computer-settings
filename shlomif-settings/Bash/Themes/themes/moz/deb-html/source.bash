@@ -8,7 +8,7 @@ module="$trunk"
 this="$module"
 
 git_remote_shlomif="$(_shlomif_github "debugger.html")"
-git_remote_devtools='https://github.com/devtools-html/debugger.html.git'
+git_remote_devtools='https://github.com/firefox-devtools/debugger.git'
 
 cd "$this"
 
@@ -27,7 +27,7 @@ setup()
         cd "$base"
         git clone "$git_remote_shlomif"
         cd "$trunk"
-        git remote add ingy "$git_remote_devtools"
+        git remote add upstream "$git_remote_devtools"
     )
 }
 
