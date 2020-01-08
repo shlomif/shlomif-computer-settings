@@ -71,7 +71,12 @@ toxz()
 
 u_buildreq()
 {
-    _sys sudo dnf -y builddep "$(pwd)"/SPECS/*.spec
+    if test -z "$USE_URPMI"
+    then
+        _sys sudo dnf -y builddep "$(pwd)"/SPECS/*.spec
+    else
+        _sys sudo urpmi --auto --buildrequires "$(pwd)"/SPECS/*.spec
+    fi
 }
 
 u_rpms()
