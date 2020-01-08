@@ -83,7 +83,10 @@ s-()
     )
 }
 
-alias g='gvim ids.txt +cbuf +cope +"sp scripts/ids-whitelist.txt" +"sp scripts/ids-whitelist.txt"'
+__vim_ids_args='ids.txt +cbuf +cope +"sp scripts/ids-whitelist.txt" +"sp scripts/ids-whitelist.txt"'
+alias g="gvim $__vim_ids_args"
+alias qv="qvim $__vim_ids_args"
+
 
 # Enable clang+ccache and a debug build.
 export CC=$HOME/bin/clang CXX=$HOME/bin/clang++ DEBUG=1
