@@ -8,6 +8,11 @@ use autodie;
 use Path::Tiny qw/ path tempdir tempfile cwd /;
 use MetaCPAN::Client       ();
 use Module::Format::Module ();
+use Getopt::Long qw/ GetOptions /;
+
+my $rpm = 0;
+GetOptions( '!rpm' => \$rpm, )
+    or die $!;
 
 my $module = Module::Format::Module->from_guess(
     {
@@ -19,7 +24,12 @@ my $mod = $module->format_as('colon');
 
 my $mcpan        = MetaCPAN::Client->new;
 my $download_url = $mcpan->download_url($mod);
-say $download_url->download_url;
+my $ret          = $download_url->download_url;
+if ($rpm)
+{
+    $ret = "$ret" =~ s#/[^/]+\z#%{upstream_name}-%{upstream_version}.tar.gz#r;
+}
+say $ret;
 
 __END__
 
