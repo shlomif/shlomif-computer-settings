@@ -3,9 +3,9 @@
 use strict;
 use warnings;
 
-use Getopt::Long;
+use Getopt::Long qw/ GetOptions /;
 use List::Util qw(min);
-use XML::Feed;
+use XML::Feed ();
 
 my @feed_urls;
 my $output_file;
@@ -75,7 +75,8 @@ my @entries = $feed->entries();
             && (
             defined($subj_filter_out)
             ? ( $_->title() !~ /$subj_filter_out/ )
-            : 1 )
+            : 1
+            )
     } @entries
 );
 

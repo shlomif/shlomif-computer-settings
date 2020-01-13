@@ -3,11 +3,11 @@
 use strict;
 use warnings;
 
-use Test::Count::Filter;
-use Getopt::Long;
+use Test::Count::Filter ();
+use Getopt::Long qw/ GetOptions /;
 
 my $filetype = "perl";
-GetOptions( 'ft=s' => \$filetype );
+GetOptions( 'ft=s' => \$filetype ) or $!;
 
 my %params = (
     'lisp' => {

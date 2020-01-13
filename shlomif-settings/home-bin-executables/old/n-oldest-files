@@ -3,10 +3,10 @@
 use strict;
 use warnings;
 
-use Heap::Elem::Ref (qw(RefElem));
-use Heap::Binary;
-use File::Find::Object;
-use Getopt::Long;
+use Heap::Elem::Ref    (qw(RefElem));
+use Heap::Binary       ();
+use File::Find::Object ();
+use Getopt::Long qw/ GetOptions /;
 
 package Elem;
 

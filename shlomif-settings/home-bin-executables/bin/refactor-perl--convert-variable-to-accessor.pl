@@ -104,7 +104,7 @@ my $obj_name = 'self';
 my $var;
 my $type;
 
-use Getopt::Long;
+use Getopt::Long qw/ GetOptions /;
 use IO::All qw/ io /;
 
 GetOptions(
