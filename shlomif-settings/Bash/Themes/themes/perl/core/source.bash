@@ -21,7 +21,7 @@ setup()
         cd "$_base_trunk"
         git clone 'https://github.com/shlomif/perl5' "$trunk"
         cd "$trunk"
-        git remote add upstream 'git://perl5.git.perl.org/perl.git'
+        git remote add upstream 'https://github.com/Perl/perl5'
     )
     cd "$this"
 }
