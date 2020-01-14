@@ -28,7 +28,7 @@ sites:
                 basename_re: '\.(?:aac|m4a|mod|mp3|ogg|s3m|wav|xm)\z'
                 target_dir: 'Files/files/music/mp3-ogg/'
             text:
-                basename_re: '\.(?:docx|epub|html|md|mkdn|odt|pdf|tsv|txt|xml|xhtml|xlsx)(?:\.xz)?\z'
+                basename_re: '\.(?:asciidoc|docx|epub|html|md|mkdn|odt|pdf|tsv|txt|xml|xhtml|xlsx)(?:\.xz)?\z'
                 target_dir: 'Files/files/text/'
             video:
                 basename_re: '\.(?:avi|flv|mkv|mp4|mpeg|mpg|ogv|srt|webm)\z'
