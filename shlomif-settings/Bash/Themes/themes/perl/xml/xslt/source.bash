@@ -10,6 +10,9 @@ git_base="$xslt_git_base"
 trunk="$xslt_trunk"
 this="$trunk"
 
+export RELEASE_TESTING=1 AUTHOR_TESTING=1
+export HARNESS_OPTIONS="j4:c" TEST_JOBS=4
+
 remote_repo="$(_shlomif_github "perl-XML-LibXSLT")"
 
 prompt()
@@ -22,4 +25,9 @@ prompt()
 
 proj_name='XML-LibXSLT'
 
+t()
+{
+    perl Makefile.PL && make disttest
+}
+export XML_LIBXML_ENABLE_TIDYALL=1
 cd "$this"

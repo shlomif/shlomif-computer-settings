@@ -1,5 +1,5 @@
 load_common bundle/inc1
-load_common hg
+load_common bundle/git
 load_common ctags_using_script
 load_common perl_mb
 
@@ -19,7 +19,7 @@ build_scripts_dir="$trunk/build/test-and-install-all-modules"
 inst_modules_dir="$HOME/apps/perl/modules"
 modules_makefile="${build_scripts_dir}/Modules.mak"
 
-remote_repo="$(_shlomif_bitbucket "perl-test-run")"
+remote_repo="$(_shlomif_github "perl-test-run")"
 PATH="$inst_modules_dir/bin/:$PATH"
 
 __install_to_temp()
