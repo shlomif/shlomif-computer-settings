@@ -22,8 +22,12 @@ explicit or implicit copyrights claims.
 
 """
 
+import fcntl
 import platform
+import re
 import sys
+import time
+from pathlib import Path
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
@@ -173,6 +177,18 @@ def main(song, msg):
     """
     if not len(msg):
         msg = DEFAULT_MESSAGE
+    dir_ = Path.home() / '.local' / 'share' / 'App-Notifier'
+    dir_.mkdir(parents=True, exist_ok=True)
+    lockfile = dir_ / 'log.lock'
+    lockfile.touch()
+    with open(lockfile, 'a') as f:
+        fcntl.flock(f, fcntl.LOCK_EX)
+        with open(dir_ / "log.txt", 'at') as log_f:
+            log_f.write("{}\t{}\t{}\n".format(
+                "RECEIVED", time.time(),
+                re.match("^([^\\r\\n\\t]*)", msg).group(1)))
+        fcntl.flock(f, fcntl.LOCK_UN)
+
     app = QtWidgets.QApplication(sys.argv)
     player = Player(song, msg)
     player.show()
