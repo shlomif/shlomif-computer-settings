@@ -5,4 +5,9 @@
 #
 # Distributed under terms of the MIT license.
 #
-eval "$(fasd --init auto)"
+if test -e /etc/fedora-release
+then
+    true  # Do nothing
+else
+    eval "$(fasd --init auto)"
+fi
