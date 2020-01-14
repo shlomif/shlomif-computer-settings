@@ -512,6 +512,7 @@ export EMSDK_ENV=/home/shlomif/Download/unpack/prog/llvm-to-js/emsdk/emsdk_env.s
 export HARNESS_OPTIONS=c
 export HARNESS_OPTIONS=j4:c
 export HARNESS_VERBOSE=1
+export LD_LIBRARY_PATH=/opt/vlc-3.0/pango-dev/lib64/ ; pidgin
 export MAKEFLAGS="-j4"
 export NOTIFIER_TO=lap
 export PATH="$PATH:/home/shlomif/.local/bin:$PWD"
@@ -638,6 +639,7 @@ git ci -m 'bump version'
 git ci -m 'c99 stdbool'
 git ci -m 'cleanups'
 git ci -m 'consolidate diffs w master'
+git ci -m 'convert from wml to template toolkit'
 git ci -m 'convert more pages to (x)html5'
 git ci -m 'convert more pages to x/html5'
 git ci -m 'convert to @shlomif'
@@ -1232,6 +1234,7 @@ lynx https://www.shlomifish.org/
 lynx www.shlomifish.org
 m
 m 2>&1 | cat > /dev/null
+m ; NODE_PATH="`pwd`"/lib/for-node/js ./qunit.js lib/for-node/test-code-emcc.js
 m clean
 m clean 2>&1 | cat > /dev/null
 m clean all
