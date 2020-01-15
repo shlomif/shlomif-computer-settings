@@ -29,9 +29,9 @@ then
     cpandb --CPAN "$HOME"/Download/Arcs/Perl/minicpan/ --setup
 fi
 cat <<'SQL' | sqlite3 "$db"
-select auths.auth_id as id, cpanid, count(*) as cnt
-from auths, dists
-where dists.auth_id = auths.auth_id
-group by auths.auth_id
-order by cnt, cpanid;
+SELECT auths.auth_id AS id, cpanid, count(*) AS cnt
+FROM auths, dists
+WHERE dists.auth_id = auths.auth_id
+GROUP BY auths.auth_id
+ORDER BY cnt, cpanid;
 SQL
