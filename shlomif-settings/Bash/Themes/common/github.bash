@@ -5,6 +5,13 @@ _shlomif_github()
 
     $__themes_dir/common/github-git-remote-repo.pl --user="shlomif" --repo="$repo"
 }
+_shlomif_bitbucket_git()
+{
+    local repo="$1"
+    shift
+
+    $__themes_dir/common/github-git-remote-repo.pl --bitbucket --user="shlomif" --repo="$repo"
+}
 _shlomif_gitlab()
 {
     local repo="$1"
