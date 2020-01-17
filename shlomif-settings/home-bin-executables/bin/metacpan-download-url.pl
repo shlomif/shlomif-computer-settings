@@ -11,7 +11,7 @@ use Module::Format::Module ();
 use Getopt::Long qw/ GetOptions /;
 
 my $rpm = 0;
-GetOptions( '!rpm' => \$rpm, )
+GetOptions( 'rpm!' => \$rpm, )
     or die $!;
 
 my $module = Module::Format::Module->from_guess(
@@ -27,7 +27,7 @@ my $download_url = $mcpan->download_url($mod);
 my $ret          = $download_url->download_url;
 if ($rpm)
 {
-    $ret = "$ret" =~ s#/[^/]+\z#%{upstream_name}-%{upstream_version}.tar.gz#r;
+    $ret = "$ret" =~ s#/[^/]+\z#/%{upstream_name}-%{upstream_version}.tar.gz#r;
 }
 say $ret;
 
