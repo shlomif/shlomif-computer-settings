@@ -5,7 +5,7 @@
 #
 # Distributed under terms of the MIT license.
 #
-if test -e /etc/fedora-release
+if test \( -e /etc/fedora-release \) -o \( -e /etc/centos-release \)
 then
     true  # Do nothing
 else
