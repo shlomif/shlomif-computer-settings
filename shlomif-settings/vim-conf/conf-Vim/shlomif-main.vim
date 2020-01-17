@@ -713,3 +713,4 @@ function Shlomif_Makefile_file_type()
 endfunction
 
 autocmd FileType make call Shlomif_Makefile_file_type()
+autocmd BufNewFile,BufRead ~/progs/riddles/golf/*.py3 set filetype=python
