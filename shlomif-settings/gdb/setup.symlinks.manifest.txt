@@ -1,1 +1,2 @@
-symlink from ~/.gdbinit to ./dot-gdbinit.gdb
+symlink from ~/.gdbinit to ./gdb/dot-gdbinit.gdb
+symlink from ~/conf/gdb to ./gdb
