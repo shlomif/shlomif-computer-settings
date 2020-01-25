@@ -460,6 +460,11 @@ command! CopyWord normal viW""ygv"+ygv"*y
 
 set wildignore+=*.o,*.obj,.git,.svn,.hg,.bzr,*~
 
+function Shlomif_rpm_copyurl()
+    let @+ = system('rpmspec -P ' . @% . ' | perl -lnE '."'".'say $_ if s/\Aurl:\s*//i'."'".' -')
+    let @* = @+
+endfunction
+
 function Shlomif_rpm_spec()
     " RPM spec - convert Url to metacpan.org
     command! MC %!perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/rpmspec-convert-to-metacpan.pl
@@ -467,6 +472,7 @@ function Shlomif_rpm_spec()
     " Open the url
     command! OU !rpmspec -P % | perl -lnE 'say $_ if s/\Aurl:\s*//i' - | xargs xdg-open
     command! FF !rpmspec -P % | perl -lnE 'say $_ if s/\Aurl:\s*//i' - | xargs firefox
+    command! CopyUrl call Shlomif_rpm_copyurl()
     " URL for pypi dload per https://wiki.mageia.org/en/Python_policy
     let b:pypi_url="https://pypi.io/packages/source/p/%{module}/%{module}-%{version}.tar.gz"
     let @p = b:pypi_url
