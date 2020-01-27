@@ -101,7 +101,6 @@ efact()
     (
         cd "$trunk"
         gvim -o lib/factoids/shlomif-factoids-lists.xml \
-            t2/humour/fortunes/shlomif-factoids.xml \
             ~/Docs/Personal/email/signature/shlomif-sig-quotes.txt
     )
 }
