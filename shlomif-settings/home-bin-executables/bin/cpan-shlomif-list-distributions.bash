@@ -52,4 +52,4 @@ do
     find "$dv/lib" -name '*.pm' | xargs perl -0777 -n -E 'my ($v, $n); if (/^=head1[\t ]*VERSION/ms) { $v = $-[0]; } if (/^=head1[\t ]*NAME/ms) { $n = $-[0]; } say $ARGV if ((defined $n ) && (defined $v) && $v <= $n)'
     popd
     rm -fr "$unpack_dir"
-done) 2>/dev/null | grep -E '\.pm$'
+done) 2>/dev/null | grep -E '\.pm$' | grep -vE '^(XML|Test-Count|Text-Hspell|File-Find-Object|App-CSV2Chart)'
