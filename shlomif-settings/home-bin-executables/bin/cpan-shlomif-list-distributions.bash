@@ -39,6 +39,10 @@ ORDER BY dists.dist_name
 SQL
 }
 
+cancelled_filter__already_done_by_minicpan()
+{
+    grep -vE '^(XML|Test-Count|Text-Hspell|File-IsSorted|File-Find-Object|App-CSV2Chart)'
+}
 
 _list | (while IFS='|' read dist ver
 do
@@ -52,4 +56,4 @@ do
     find "$dv/lib" -name '*.pm' | xargs perl -0777 -n -E 'my ($v, $n); if (/^=head1[\t ]*VERSION/ms) { $v = $-[0]; } if (/^=head1[\t ]*NAME/ms) { $n = $-[0]; } say $ARGV if ((defined $n ) && (defined $v) && $v <= $n)'
     popd
     rm -fr "$unpack_dir"
-done) 2>/dev/null | grep -E '\.pm$' | grep -vE '^(XML|Test-Count|Text-Hspell|File-Find-Object|App-CSV2Chart)'
+done) 2>/dev/null | grep -E '\.pm$'
