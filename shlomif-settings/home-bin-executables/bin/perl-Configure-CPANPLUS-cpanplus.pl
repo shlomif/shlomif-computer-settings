@@ -7,7 +7,7 @@ package SmokeConf;
 
 sub get_primary_cpan_mirror
 {
-    return "http://biocourse.weizmann.ac.il/CPAN/";
+    return "http://www.cpan.org/";
 
     # return "http://cpan.cpantesters.org/";
 }
@@ -31,7 +31,7 @@ sub _get_mirror
 {
     my ( $id, $url ) = @_;
     if ( my ( $scheme, $host, $path ) =
-        $url =~ m{\A(http|ftp)://([^/]+)(/.*)\z}ms )
+        $url =~ m{\A(http|https|ftp)://([^/]+)(/.*)\z}ms )
     {
         return {
             "${id}_scheme" => $scheme,
