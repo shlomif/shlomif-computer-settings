@@ -1,0 +1,13 @@
+POD-order-of-NAME-and-VERSION-sections.txt
+
+:Author: Shlomi Fish
+:Email: shlomif@cpan.org
+:Date: 2020-01-28 15:56
+
+Rebuild for order of 'NAME' and 'VERSION'.
+
+Rebuild for order of 'NAME' and 'VERSION' sections in the generated
+POD documentation (see:
+    https://metacpan.org/changes/distribution/Pod-Weaver-PluginBundle-SHLOMIF#L3
+).
+
