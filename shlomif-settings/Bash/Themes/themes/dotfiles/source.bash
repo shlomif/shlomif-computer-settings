@@ -26,9 +26,20 @@ prompt()
         "~=$HOME"
 }
 
+__regen_themes_list()
+{
+    ( cd "$trunk/shlomif-settings/Bash/Themes/" && bash gen_list.sh )
+}
+
 t()
 {
+    __regen_themes_list
     ( cd "$trunk" && prove shlomif-settings/tests/*.t )
+}
+
+-r()
+{
+    __regen_themes_list "$@"
 }
 
 cd "$this"
