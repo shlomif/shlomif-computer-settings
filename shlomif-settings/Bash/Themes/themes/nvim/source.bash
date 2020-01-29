@@ -22,6 +22,18 @@ export FCS_USE_TEST_RUN=1 FCS_TEST_CLANG_FORMAT=1
 
 cd "$this"
 
+__qtnvim_make_install()
+{
+    (
+        set -e -x
+        mkdir -p "$qb"
+        cd "$qb"
+        bash -x ~/conf/build/neovim-qt.sh "$qtrunk"
+        make
+        make install
+    )
+}
+
 qtb()
 {
     (
@@ -46,7 +58,7 @@ t()
     )
 }
 
-mi()
+__nvim_make_install()
 {
     (
     set -e -x
@@ -57,6 +69,11 @@ mi()
     )
 }
 
+mi()
+{
+    __nvim_make_install "$@"
+}
+
 prompt()
 {
     __prompt_cmd \
@@ -64,6 +81,19 @@ prompt()
         "\$trunk=$trunk" \
         "\$base=$base" \
         "~=$HOME"
+}
+
+update_all()
+{
+    (
+        set -e -x
+        cd "$trunk"
+        git s u || true
+        __nvim_make_install
+        cd "$qtrunk"
+        git s u || true
+        __qtnvim_make_install
+    )
 }
 
 proj_name='neovim'
