@@ -27,8 +27,8 @@ setup()
         cd "$base"
         git clone "$git_remote_shlomif" "$trunk"
         cd "$trunk"
-        git remote add uptream "$git_remote_petdance"
-        git remote add uptream2 "$git_remote_robrow"
+        git remote add upstream "$git_remote_petdance"
+        git remote add upstream2 "$git_remote_robrow"
     )
 }
 
