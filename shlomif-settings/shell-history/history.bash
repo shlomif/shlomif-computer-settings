@@ -1,6 +1,7 @@
 ( . ~/bin/Dev-Path-Configs-Source-Me.bash && make )
 ( b ; n --msg bm ) 2>&1 | tee ~/curl.bm.txt
 (git clone git@github.com:thewml/website-meta-language.git w && (cd w && mkdir b && cd b && cmake ../src && make) && rm -fr w )
+-p
 -s
 -t 0fc
 -t 3fc
@@ -45,8 +46,10 @@
 . bin/db4db5.bash
 . bin/spell.bash
 . build.sh
+. conf/trunk/shlomif-settings/home-bin-executables/shlomif-specific/fix-mga8-after-dnf.bash
 . par-Source-Me.bash
 . ~/bin/Dev-Path-Configs-Source-Me.bash
+. ~/conf/trunk/shlomif-settings/home-bin-executables/bin/bitbucket-hg-to-git--source-me.bash
 . ~/conf/trunk/shlomif-settings/home-bin-executables/bin/magpie-update-multiple.bash
 . ~/h.bash
 ../board_gen/make_pysol_freecell_board.py -t 6240 freecell | /home/shlomif/progs/freecell/git/fc-solve/fc-solve/B/fc-solve -g freecell -l qs -fif 5 --flares-choice fcpro -p -t -sam \
@@ -54,6 +57,7 @@
 ../scripts/Tatzer
 ../scripts/Tatzer --break-back-compat-1
 ../scripts/Tatzer -l extra_speed2
+../scripts/Tatzer -l n2b
 ../scripts/Tatzer -l n2t
 ../source/Tatzer
 ../source/Tatzer --break-back-compat-1
@@ -106,6 +110,8 @@
 /home/shlomif/Download/unpack/to-del/bookmarks-manager/node_modules/.bin/web-ext run -s .
 /home/shlomif/apps/ff/64/firefox/firefox -no-remote 'https://www.shlomifish.org/fc-solve-temp/js-fc-solve/automated-tests/?alert=1'
 /home/shlomif/apps/ff/66-nightly/firefox/firefox -no-remote 'https://www.shlomifish.org/fc-solve-temp/js-fc-solve/automated-tests/?alert=1'
+/home/shlomif/apps/julia-1.1.0/bin/julia -O2 506-v1.jl
+/home/shlomif/apps/julia-1.1.0/bin/julia 506-v1.jl
 /home/shlomif/apps/julia-1.1.0/bin/julia 658/e658_v3.jl
 /home/shlomif/apps/julia-1.1.0/bin/julia 658/e658_v3.jl | tee -a jlog2.txt | timestamper
 /home/shlomif/apps/julia-1.1.0/bin/julia 658/e658_v3.jl | tee -a jlog3.txt
@@ -122,6 +128,7 @@
 /usr/bin/time bin/rebuild
 /usr/bin/time perl "$c_src"/run-tests.pl --glob='{clang-format,perltidy,py-flake8,style-trailing-space}*.t'\
 /usr/bin/time perl bin/process.pl
+1
 80_chars_ruler
 Cancel_reminder
 FCS_TEST_BUILD=1 t
@@ -137,6 +144,7 @@ NODE_PATH="`pwd`"/lib/for-node/js qunit-cli lib/for-node/test-code-emcc.js
 NODE_PATH="`pwd`"/lib/for-node/js qunit-cli lib/for-node/test-code.js | gvim -
 PATH+=:$PWD
 PATH+=:/home/shlomif/Download/unpack/prog/python/pypy3.5-6.0.0-linux_x86_64-portable/bin
+PATH+=:/home/shlomif/Download/unpack/prog/python/pypy3.6-7.1.1-beta-linux_x86_64-portable/bin/
 PATH+=:/home/shlomif/apps/perl6-rakudo/bin
 PATH="/home/shlomif/apps/golang/bin:/home/shlomif/.local/bin:/home/shlomif/apps/test/wml/bin:$PATH"
 PYTHONPATH="`pwd`/src:$PWD" /home/shlomif/Download/unpack/prog/python/pypy3.5-6.0.0-linux_x86_64-portable/bin/pypy3 Tests/validate-html-using-vnu.py
@@ -176,6 +184,7 @@ alias s='svn st'
 an
 autoreconf -s -i
 b
+b ; n
 b ; n --msg bm
 ba
 bash
@@ -219,6 +228,7 @@ bash analyze.bash | gvim -
 bash bin/copy-web-fc-solve.bash
 bash bin/install-npm-deps.sh
 bash bin/rebuild
+bash bin/tot.bash
 bash client.bash
 bash conf/build/gimp-git-all-deps.bash
 bash download-gtest.sh
@@ -231,6 +241,7 @@ bash mix.bash
 bash myrsync.bash
 bash pgo.sh
 bash rakudo-git.bash
+bash run-me.bash
 bash run.bash
 bash scripts/repack-min-cardsets.bash
 bash shlomif-build.sh ; n -m icu2
@@ -244,6 +255,7 @@ bash ~/bin/backup-total.sh ; n --msg "Backup finished"
 bash ~/conf/trunk/shlomif-settings/home-bin-executables/bin/gen-gen-ci.bash
 bash ~/conf/trunk/shlomif-settings/home-bin-executables/shlomif-specific/merge-prereqs-yml.bash
 bash ~/h.sh
+bat *.time
 bat README.md
 bat f
 bat log.txt
@@ -259,15 +271,18 @@ bundle exec bin/validate
 c
 c7
 ca
+caddy 2020-calendar.pl
 caddy XorShift128Plus.pl 2>&1 | gvim -
 caddy XorShift128Plus.py
 caddy XorShift128Plus.py | less
+caddy base-2-to-36.pl6
 cargo build
 cat .gitignore | perl -lpE 's#^/#ls #' | bash -e
 cat /etc/resolv.conf
 cat abstract.txt
 cat f
 cat foo.txt
+cb
 ccache -C
 cd
 cd $a
@@ -405,6 +420,7 @@ ci -m 'add docs'
 ci -m 'mageiaify'
 ci -m fix
 ci-generate
+civ
 clang++ -Weverything -O3 -march=native -flto -fwhole-program e451-quasisphere.cpp
 clang++ -Weverything -O3 -march=native -flto -fwhole-program e662-james-rauen.cpp -Ofast
 claws-mail
@@ -494,6 +510,7 @@ dzil build
 dzil release
 dzil test
 dzil test --all
+dzil test --all ; n
 e
 echo $HARNESS_OPTIONS
 echo $PATH
@@ -579,6 +596,7 @@ gedit emo.txt
 gedit ~/emo.txt
 genf
 gentags
+get-telegram
 get_nums | summary
 ghc -O2 mniip.hs
 gimp
@@ -600,6 +618,7 @@ git au .
 git bisect good
 git branch -l
 git branch -l -a
+git ci
 git ci -F add-more-to-log-commit-msg.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/add-README-or-LICENSE.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/add-ci-gen-travis-yml.txt
@@ -616,6 +635,7 @@ git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/fix-deps.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/fix-grammar.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/fix-indent.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/fix-markup-valid.txt
+git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/hebrew-spelling-fix.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/move-to-cookiecutter-latemp.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/refactoring.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/remove-unused-var.txt
@@ -646,6 +666,7 @@ git ci -m 'convert to @shlomif'
 git ci -m 'css fix'
 git ci -m 'css tweaks - fortunes'
 git ci -m 'css tweaks - mobile devices'
+git ci -m 'debug emcc'
 git ci -m 'enable more warnings'
 git ci -m 'eslint'
 git ci -m 'fix build'
@@ -670,6 +691,7 @@ git ci -m 'move away'
 git ci -m 'move to cookiecutter'
 git ci -m 'new release'
 git ci -m 'optimization'
+git ci -m 'optimize'
 git ci -m 'package.json'
 git ci -m 'perltidy'
 git ci -m 'progress'
@@ -729,6 +751,7 @@ git co master
 git co update-rand-gen
 git co use-template-toolkit
 git co web-fc-solve--animated-display
+git co wml2tt
 git com
 git dh
 git dh > ~/g1.diff
@@ -837,6 +860,7 @@ gvim -o gen-helpers /home/shlomif/Docs/homepage/homepage/trunk/gen-helpers
 gvim -o lib/App/HTML/PostProc/Gezer.pm
 gvim -o lib/hunspell/whitelist1.txt Tests/valid-html-tidy.t
 gvim -o lib/hunspell/whitelist1.txt Tests/valid-html-tidy.t Tests/gmake-unit.t
+gvim -o lib/hunspell/whitelist1.txt foo.txt y.txt
 gvim -o lib/latemp/themes/sf.org1/template.wml lib/driver.wml
 gvim -o lib/make/main.mak $homepage/lib/make/main.mak
 gvim -o lib/sass/common-style.sass lib/sass/style.sass t2/index.xhtml.wml dest/post-incs/t2/index.xhtml
@@ -1128,6 +1152,7 @@ gwenview Screenshot_20181109_184254.png
 gwenview dest/images/fedora-logo.min.svg
 gwenview f.svg
 gwenview termtosvg_k3fbrw0s.svg
+h
 hc
 hebrew-keymap.sh
 help set
@@ -1169,6 +1194,7 @@ kill %1
 kmix
 konversation
 kpat
+l
 la
 ld
 ldd freecell-solver-multi-thread-solve
@@ -1288,6 +1314,7 @@ make disttest
 make docbook_extended
 make docs
 make edit
+make fastrender
 make foo
 make gen_divs
 make install
@@ -1339,6 +1366,7 @@ mono ./630-v1.exe
 mono ./630-v1.exe 2>&1 | less
 mplayer 01\ See\ Her\ Out.mp3
 mpv --vo=drm relax.jp2
+mpv --vo=null --volume=50 Music/mp3s/Playlist\ -\ Girls\ On\ The\ Rise/003-1353450-Bohemian\ Hideaway-Brave\ Soul\ _ft.\ Juliet\ Lyons_.ogg
 mpv --volume=50 --vo=null Music/mp3s/Playlist\ -\ Girls\ On\ The\ Rise/003-1353450-Bohemian\ Hideaway-Brave\ Soul\ _ft.\ Juliet\ Lyons_.ogg
 mpv --volume=50 --wid=0 Music/mp3s/Shine\ 4U\ -\ Carmen\ and\ Camille-B8ehY5tutHs.mp4
 mpv Music/mp3s/Playlist\ -\ Summer\ 2015/006\ -\ David\ Amber\ -\ Gnarly\ _feat.\ Devyn\ Rush_.ogg
@@ -1382,10 +1410,13 @@ nvim-qt -- -p `cat ../filelist.txt`
 nvim-qt -- dbm_solver.h
 nvim-qt ../src/wml_test/t/build-process.t
 nvim-qt d1.c
+nvim-qt o
 nvim-qt state.c
 okteta libfreecell-solver.a
 okular Humble-Bundle-Books-Linux-No-starch/howlinuxworks.pdf
+p
 p --tags
+p -f
 p upstream
 patch -p1 < ~/g1.diff
 perl -I ../source/t/lib ../source/scripts/horne-autoplay-board.pl 24.board
@@ -1396,9 +1427,11 @@ perl -d bin/process.pl
 perl -d bin/tt-render.pl
 perl -i -0777 -p bin/wml2tt.pl src/uses/databases/index.html.tt2
 perl ../c-solver/run-tests.pl
+perl ../c-solver/run-tests.pl --glob '[bc]la*.t'
 perl ../run-tests.pl
 perl ../scripts/cmd-line-compiler compile
 perl ../scripts/cmd-line-compiler compile && m && y
+perl ../scripts/docker-test.pl
 perl ../scripts/multi_config_tests.pl ; n --msg 'fcs test'
 perl ../source/run-tests.pl
 perl ../source/run-tests.pl --glob='*qual*'
@@ -1473,6 +1506,7 @@ pkill -9 gvimdiff
 pkill claws-mail
 pkill gvim
 pkill sshd
+pkill xfce4-screensav
 pm-suspend
 poweroff
 prettier --parser scss --arrow-parens always --tab-width 4 --trailing-comma all --write lib/sass/*.scss
@@ -1494,6 +1528,9 @@ prove shlomif-settings/tests/*.t
 ps
 ps axo pid,cmd,etime | grep make
 pt
+pu
+put
+put ; p ; t
 pwd
 py.test-3 --pdb tests/test_gimp_xcf.py
 py.test-3 --pdb tests/test_media_zip.py
@@ -1514,6 +1551,8 @@ pypy3 658/e657.py| timestamper
 pypy3 660_v1.py
 pypy3 663_v1.py
 pypy3 665_v1.py | timestamper
+pypy3 675-v1.py
+pypy3 685-v1.py
 pypy3 e451_v2_step2.py
 pypy3 e451_v2_step2.py | less
 pypy3 euler-248-v1.py
@@ -1549,6 +1588,7 @@ python3 658/658_v1.py
 python3 658/658_v1.py | tee -a 658log.txt
 python3 658/658_v1.py| timestamper | tee -a e658-log1.txt
 python3 662_v1.py
+python3 685-v1.py
 python3 Tests/validate-html-using-vnu.py
 python3 bin/split-lwall-facts.py
 python3 euler-248-v1.py
@@ -1564,6 +1604,9 @@ pythonsetup.py sdist
 qmmp 01\ See\ Her\ Out.mp3
 qtb
 quadp render -a
+qvim
+qvim o
+r
 r '- New version'
 rake
 rake prettier
@@ -1572,6 +1615,7 @@ reboot
 rebuild
 rebuild 2>&1 | tee ~/o.txt
 rebuild 2>&1 | tee ~/o.txt ; n -m rebuild
+rebuild ; n
 rebuild ; n -m rebuild
 rec .ORIG
 rec .orig
@@ -1672,12 +1716,14 @@ rubocop Rakefile
 ruby 1.rb
 run
 s
+s *
 sbt
 sd
 sensors
 set +x
 setup
 sha256sum freecell-solver-* libfreecell-solver.* | sha256sum -
+shs
 shutter
 simplescreenrecorder
 sky up-r ../js
@@ -1686,10 +1732,12 @@ solve 1
 source apps/venv/buildbot/bin/activate
 source myrsync.bash
 spectacle
+ssh -X 192.168.1.192
 ssh hostgator
 ssh lap
 ssh shlomif@perlish.org
 startup
+stdbuf -o 0 -i 0 pypy3 641-v1.py
 strace -f -o w.st wml -p1-3 -D CUR_YEAR=2019 social_contract.wml
 strace -f -o w.st wml -p1-3 -D CUR_YEAR=2019 social_contract.wml | less
 strace -o f.st -f ../scripts/Tatzer -l extra_speed2
@@ -1701,6 +1749,7 @@ sudo /usr/bin/start-mandrake-everytime
 sudo dnf -y --refresh upgrade
 sudo iotop
 sudo mock `pwd`/SRPMS/*.rpm
+sudo urpmi --auto --auto-update
 sudo urpmi --auto-select --auto --auto-update
 svn di
 svn revert -R .
@@ -1722,6 +1771,7 @@ time ./e451.exe
 time ./mniip
 time /home/shlomif/Download/unpack/prog/python/pypy3.5-6.0.0-linux_x86_64-portable/bin/pypy3 630-v1.py
 time /home/shlomif/Download/unpack/prog/python/pypy3.5-6.0.0-linux_x86_64-portable/bin/pypy3 650/650-v1.py
+time /home/shlomif/apps/julia-1.1.0/bin/julia -O2 506-v1.jl
 time bash -c 'perl bin/sort -n -r --head 100 ~/d.txt'
 time gmake
 time make
@@ -1732,6 +1782,7 @@ time perl 4.pl
 time perl bin/tt-render.pl
 time perl stats.pl 0fc-log.txt
 time pypy 630-v1.py
+time pypy3 384-v1.py
 time pypy3 6.py
 time pypy3 e655-brob26.py
 time python3 6.py
@@ -1851,6 +1902,7 @@ xsltproc -v -o lib/docbook//indiv-nodes/case-for-drug-legalisation-v/ --stringpa
 xsltproc -v -o lib/docbook/5/indiv-nodes/case-for-drug-legalisation-v3/ --stringparam docmake.output.format xhtml --stringparam docmake.output.path_to_root ../../ --stringparam docmake.output.work_in_progress '' lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-essays-5-xhtml.xsl lib/docbook/5/xml/case-for-drug-legalisation-v3.xml
 xterm
 xz9 wml-2.18.0.tar
+y
 yarn
 youtube-dl -U
 yp
