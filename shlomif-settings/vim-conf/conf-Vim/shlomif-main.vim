@@ -480,6 +480,7 @@ function Shlomif_rpm_spec()
         let b:fix_py_shebang = "perl -i -lpE 's{^(#!/usr/bin/env python)\\b}{${1}3}' `find %{buildroot}/%{_datadir} -name '*.py'`\n"
     endif
     let b:fix_py_shebang = "pathfix.py -pni \"%{__python3} %{py3_shbang_opts}\" `find %{buildroot}/%{_datadir} -name '*.py'`\n"
+    let b:mb = "BuildRequires: perl(Module::Build)"
     map <Leader>pl Oexport PERL5LIB="$PWD:$PERL5LIB"<ESC>
     set path+=./../SOURCES/
 endfunction
