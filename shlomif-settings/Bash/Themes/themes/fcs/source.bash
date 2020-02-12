@@ -3,6 +3,7 @@ load_common chdirs
 load_common partests
 
 remote_repo="$(_shlomif_github "fc-solve")"
+remote_repo_of_assets="$(_shlomif_github "fc-solve-site-assets")"
 pristine_copy=~/Backup/Arcs/fcs-site--post-dest/post-incs
 pristine_copy_reduced=~/Backup/Arcs/fcs-site--post-dest/post-incs-reduced
 this_copy_reduced=~/Backup/Arcs/fcs-site--post-dest/this-incs-reduced
@@ -31,7 +32,8 @@ bench="$t_fcs/benchmarks"
 test_dir="$branches/trunk/testing/source"
 dd_branch="$branches/depth-dependent-moves-order/source"
 parallel="$t_fcs/scripts/parallel-solve-and-verify-for-bakers-game"
-arcs="$base/Arcs/fc-solve-site-assets/fc-solve-site-assets"
+arcs_git="$base/Arcs/fc-solve-site-assets"
+arcs="$arcs_git/fc-solve-site-assets"
 
 ai_path="$cpan/AI-Pathfinding-OptimizeMultiple"
 ai_path_sys_tests="$cpan/temp-AI-Pathfinding-OptimizeMultiple-system-tests"
@@ -376,12 +378,22 @@ gentags()
     ctags {$c_src,$pats}/**/*.[ch] $c_src/**/*.{pl,pm,t}
 }
 
+setup_arcs_dir()
+{
+    mkdir -p "$(dirname "$arcs_git")"
+    git clone "$remote_repo_of_assets" "$arcs_git"
+}
+
 export FCS_PATH="$b" FCS_SRC_PATH="$c_src"
 export HTML_VALID_VNU_JAR=~/Download/unpack/net/www/validator/build/dist/vnu.jar
 export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/fc-solve-tidyall.d"
-export REPRODUCIBLE_BUILDS=1
-slightly_wrong_gcc_flag_see_man_gcc="-frandom-seed=1977";
-export CFLAGS="$slightly_wrong_gcc_flag_see_man_gcc"
+# Causes rpmbuild to fail.
+if true
+then
+    export REPRODUCIBLE_BUILDS=1
+    slightly_wrong_gcc_flag_see_man_gcc="-frandom-seed=1977";
+    export CFLAGS="$slightly_wrong_gcc_flag_see_man_gcc"
+fi
 PATH="$HOME/apps/golang/bin:$HOME/.local/bin:$PATH:$site/node_modules/.bin"
 # Temporary measure because valgrind-3.7.0 on mageia v7 does not handle
 # the new glibc well so we need to use the one from git master HEAD.
