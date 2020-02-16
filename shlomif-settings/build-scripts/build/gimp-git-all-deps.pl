@@ -138,6 +138,7 @@ _git_build(
     }
 );
 
-printf '\n== Success ==\n\n'
+use Term::ANSIColor qw/ colored /;
+print colored( ['bold green'], "\n== Success ==\n\n" );
 
 # CFLAGS="-g"  ./configure --prefix="$HOME"/apps/gimp-devel --enable-maintainer-mode
