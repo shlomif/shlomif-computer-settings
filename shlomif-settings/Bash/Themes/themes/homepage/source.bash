@@ -106,15 +106,20 @@ efact()
 }
 
 # fast render
-fr()
+_fast_render()
 {
     (
         set -x
         set -e
-        git ls-files t2 | grep wml | xargs touch
+        git ls-files src | grep -E '\.tt2$' | xargs touch
         gmake -j4 fastrender
         t
     )
+}
+
+fr()
+{
+    _fast_render "$@"
 }
 
 mymv()
@@ -132,10 +137,12 @@ mymv()
 
 # Update a story / screenplay repo based on the ci-generate config.
 # See: https://github.com/shlomif/ci-gen-framework .
-g()
+update_a_story_ci_gen()
 {
     ( ci-generate && git au && git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/update-ci-gen-travis-yml.txt && p )
 }
+
+alias g=update_a_story_ci_gen
 
 partial_rebuild()
 {
@@ -153,10 +160,12 @@ partial_rebuild()
     partial_rebuild
 }
 
-y()
+_ack_with_no_lib_prefix()
 {
     ack "${1##lib/}"
 }
+
+# alias y=_ack_with_no_lib_prefix
 
 MAKEFLAGS+=" -s"
 alias m=gmake
