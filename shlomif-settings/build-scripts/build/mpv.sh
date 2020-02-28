@@ -6,4 +6,4 @@
 # Distributed under terms of the MIT license.
 #
 
-waf configure --prefix="$HOME/apps/mpv"
+waf configure --prefix="/opt/`whoami`/mpv"
