@@ -45,6 +45,7 @@ elif [ "$WHICH_DESK" = "icewm-trace" ] ; then
     strace -f -o "$HOME/icewm.strace" starticewm
 elif [ "$WHICH_DESK" = "jwm" ] ; then
     # qt5_plat
+    PATH="/opt/shlomif/jwm/bin:$PATH"
     exec jwm
 elif [ "$WHICH_DESK" = "kde4" ] ; then
     # qt5_plat
