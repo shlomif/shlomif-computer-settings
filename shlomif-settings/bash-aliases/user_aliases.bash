@@ -6,7 +6,7 @@ dc()
 }
 disable_local_lib()
 {
-    unset MODULEBUILDRC PERL_MM_OPT
+    unset MODULEBUILDRC PERL_MB_OPT PERL_MM_OPT PERL_LOCAL_LIB_ROOT
 }
 rpmbuild()
 {
