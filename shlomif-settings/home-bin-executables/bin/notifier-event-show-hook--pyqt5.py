@@ -81,6 +81,11 @@ class Player(QtWidgets.QMainWindow):
         self.message_text.setFont(f)
         self.vlayout.addWidget(self.message_text)
 
+        self.close_button = QtWidgets.QPushButton()
+        self.close_button.setText("Close")
+        self.close_button.clicked.connect(sys.exit)
+        self.vlayout.addWidget(self.close_button)
+
         self.widget.setLayout(self.vlayout)
 
         menu_bar = self.menuBar()
