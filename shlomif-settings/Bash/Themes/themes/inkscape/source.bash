@@ -41,8 +41,8 @@ b()
 {
     (
         cd "$build" && \
-            ninja -j4 check && \
-            ninja -j4 install \
+            ninja -j4 install && \
+            ninja -j4 check \
             ; n --msg "Inkscape build finished"
     )
 }
