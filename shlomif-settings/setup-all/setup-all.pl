@@ -273,7 +273,6 @@ foreach my $dir (
     'gdb',
     'git',
     'hg',
-    'home-bin-executables',
     'jwm',
     'perl/Dist-Zilla',
     'perl/perldb',
@@ -288,6 +287,22 @@ foreach my $dir (
     )
 {
     run_dsl($dir);
+}
+
+{
+    my $dir = 'home-bin-executables';
+
+    my $obj = create_manifest($dir);
+    $obj->process_manifest;
+    if ( `hostname` =~ m#\Atelaviv1\.shlomifish\.org$#ms )
+    {
+        $obj->handle_line(
+            {
+                line =>
+'symlink from ~/bin/backup-total.sh to ./shlomif-specific/backup-total.sh'
+            }
+        );
+    }
 }
 __END__
 
