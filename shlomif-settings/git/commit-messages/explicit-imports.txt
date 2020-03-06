@@ -1,0 +1,5 @@
+Avoid implicit perl imports - make them explicit.
+
+See:
+
+https://perl-begin.org/tutorials/bad-elements/#non_explicitly_imported_symbols .
