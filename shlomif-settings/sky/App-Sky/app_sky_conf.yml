@@ -22,7 +22,7 @@ sites:
                 basename_re: '\.(MYDIR)\z'
                 target_dir: 'Files/files/dirs/'
             images:
-                basename_re: '\.(?:gif|jpeg|jpg|kra|png|(?:ai|svg|xcf)(?:\.xz|\.bz2|\.gz)?|svgz|webp)\z'
+                basename_re: '\.(?:bmp|gif|jpeg|jpg|kra|png|(?:ai|svg|xcf)(?:\.xz|\.bz2|\.gz)?|svgz|webp)\z'
                 target_dir: 'Files/files/images/'
             music:
                 basename_re: '\.(?:aac|m4a|mod|mp3|ogg|s3m|wav|xm)\z'
