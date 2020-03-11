@@ -5,6 +5,11 @@
 # Copyright © 2020 Shlomi Fish <shlomif@cpan.org>
 #
 # Distributed under terms of the MIT license.
+"""
+A constantly updating wallclock time clock for the command line / terminal /
+console. "python3 console_clock.py" or "pypy3 console_clock.py" should
+be able to execute it.
+"""
 
 
 from time import asctime, sleep
@@ -17,4 +22,5 @@ def main():
         sleep(0.2)
 
 
-main()
+if __name__ == '__main__':
+    main()
