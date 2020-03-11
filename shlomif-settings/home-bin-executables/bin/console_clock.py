@@ -16,10 +16,13 @@ from time import asctime, sleep
 
 
 def main():
-    while True:
-        s = asctime()
-        print("\r{:50}".format(s), end='', flush=True,)
-        sleep(0.2)
+    try:
+        while True:
+            s = asctime()
+            print("\r{:50}".format(s), end='', flush=True,)
+            sleep(0.2)
+    except KeyboardInterrupt:
+        print("")
 
 
 if __name__ == '__main__':
