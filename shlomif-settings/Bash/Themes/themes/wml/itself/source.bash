@@ -78,8 +78,9 @@ c()
 }
 
 PATH="$HOME/apps/test/wml/bin/:$PATH:$pbyacc_dir"
+rehash > /dev/null 2>&1
 
-if ! which pbyacc
+if ! which pbyacc > /dev/null 2>&1
 then
     pushd "$(pwd)"
     cd "$core"
