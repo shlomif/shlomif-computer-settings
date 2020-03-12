@@ -54,7 +54,7 @@ t()
 
 run()
 {
-    /home/shlomif/apps/graphics/inkscape-trunk/bin/inkscape "$@"
+    $HOME/apps/graphics/inkscape-trunk/bin/inkscape "$@"
 }
 alias r='run'
 
@@ -68,7 +68,7 @@ f-()
 {
     (
         cd "$trunk"
-        ruby /home/shlomif/progs/freecell/git/fc-solve/fc-solve/scripts/find-ids.rb $( ack --sort -f --cpp --cc ) > ids.txt
+        ruby $HOME/progs/freecell/git/fc-solve/fc-solve/scripts/find-ids.rb $( ack --sort -f --cpp --cc ) > ids.txt
     )
 }
 

@@ -29,7 +29,7 @@ $t =~ s#(^name = (\S+)\n.*\[\@SHLOMIF\]\n)#$1dist = $2\n#ms;
 $f->print($t);
 
 system(
-'cp /home/shlomif/progs/perl/cpan/git/Module-Format/Module-Format/{.tidyallrc,MANIFEST.SKIP,weaver.ini} .'
+'cp "$HOME"/progs/perl/cpan/git/Module-Format/Module-Format/{.tidyallrc,MANIFEST.SKIP,weaver.ini} .'
 );
 __END__
 

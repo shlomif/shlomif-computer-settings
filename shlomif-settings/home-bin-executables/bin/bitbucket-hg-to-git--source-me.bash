@@ -13,9 +13,10 @@
 #
 # * https://www.shlomifish.org/humour/fortunes/sharp-programming.html#the-last-mercurialian
 
+export UNPACK_PATH="$HOME/Download/unpack"
 _mylocate_hg()
 {
-    locate -e --regex /\\.hg\$ | grep -v /old-hg/ | grep -vE '^/home/shlomif/Download/unpack/sys/smem/hg' |grep -vE '^/home/shlomif/Download/unpack/net/pidgin/' | grep -vE '^/home/shlomif/Download/unpack/conf/hg-prompt/hg-prompt' | grep -vE '^/home/shlomif/Download/unpack/games/ksokoban/ksokoban-code' | perl -lpE 's#/.hg$##' | tee a
+    locate -e --regex /\\.hg\$ | grep -v /old-hg/ | perl -lnE 'BEGIN{$re=qr#\A\Q$ENV{UNPACK_PATH}\E/(net/pidgin|conf/hg-prompt/hg-prompt|games/ksokoban/ksokoban-code)#ms}; say if ($_ !~ $re);' | perl -lpE 's#/.hg$##' | tee a
 }
 
 hgl()
@@ -30,7 +31,7 @@ _hgfastexp()
     mkdir repo-git # or whatever
     cd repo-git
     git init
-    bash /home/shlomif/Download/unpack/to-del/fast-export/hg-fast-export.sh -r ..
+    bash ~/Download/unpack/to-del/fast-export/hg-fast-export.sh -r ..
     git checkout HEAD
     cd ..
     bn="$(basename "$(pwd)")"

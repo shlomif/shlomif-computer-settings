@@ -18,5 +18,5 @@ export CPATH="/usr/lib64/giomm-2.4/include"
 
 # The compilation of emscripten-fastcomp is broken and should not be set.
 #
-# export clang_dir=/home/shlomif/Download/unpack/prog/llvm-to-js/fastcomp/emscripten-fastcomp/build/Release/bin
+# export clang_dir=~/Download/unpack/prog/llvm-to-js/fastcomp/emscripten-fastcomp/build/Release/bin
 # export CC="$clang_dir/clang" CXX="$clang_dir/clang++"

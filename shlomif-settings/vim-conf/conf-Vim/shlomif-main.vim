@@ -531,7 +531,7 @@ let g:quickrun_config = {
 
 function! Shlomif_Open_Source()
     let fn = expand('%:p')
-    let new_fn = substitute(fn, "^/home/shlomif/Docs/homepage/homepage/trunk/dest/", "/home/shlomif/Docs/homepage/homepage/trunk/", "") . '.wml'
+    let new_fn = substitute(fn, "^" . $HOME . "/Docs/homepage/homepage/trunk/dest/\(post-incs\|pre-incs\)/", $HOME . "/Docs/homepage/homepage/trunk/", "") . '.tt2'
     exe "sp " . new_fn
 endfunction
 
@@ -614,7 +614,7 @@ function ShowSubLens()
     let fn = @%
     sp
     enew
-    exe "0read !perl /home/shlomif/conf/trunk/shlomif-settings/home-bin-executables/bin/subroutine-lens.pl " . fn
+    exe "0read !perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/subroutine-lens.pl " . fn
     setlocal buftype=nofile
     setlocal bufhidden=hide
     setlocal noswapfile

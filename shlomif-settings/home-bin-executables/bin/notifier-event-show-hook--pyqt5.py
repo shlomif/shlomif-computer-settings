@@ -25,6 +25,7 @@ explicit or implicit copyrights claims.
 import fcntl
 import platform
 import re
+import os.path
 import sys
 import time
 from pathlib import Path
@@ -172,8 +173,8 @@ DEFAULT_MESSAGE = "Your task has finished - go check it out!"
 
 
 @click.command()
-@click.option("--song", default="/home/shlomif/Music/mp3s/" +
-              "Jessie J - Domino-UJtB55MaoD0.webm", help="file to play")
+@click.option("--song", default=os.path.expanduser("~/Music/mp3s/" +
+              "Jessie J - Domino-UJtB55MaoD0.webm"), help="file to play")
 @click.option("-m", "--msg", "--message",
               default=DEFAULT_MESSAGE,
               help="notification message")

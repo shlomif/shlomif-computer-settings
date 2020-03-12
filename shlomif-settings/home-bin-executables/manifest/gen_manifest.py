@@ -6,10 +6,6 @@
 #
 # Distributed under terms of the MIT license.
 
-"""
-
-"""
-
 import os
 import os.path
 from six import print_
@@ -17,7 +13,7 @@ from six import print_
 
 def main():
     """docstring for main"""
-    DIRNAME = '/home/shlomif/bin'
+    DIRNAME = os.path.expanduser('~/bin')
     for fn in sorted(os.listdir(DIRNAME)):
         path = DIRNAME + '/' + fn
         if os.path.islink(path):

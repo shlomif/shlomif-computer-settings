@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 export PATH="$HOME/apps/fcs-for-pysol/bin:$PATH"
-cd /home/shlomif/Download/unpack/games/pysolfc/git/PySolFC
+cd "$HOME"/Download/unpack/games/pysolfc/git/PySolFC
 ./pysol.py
 
 # The Expat License

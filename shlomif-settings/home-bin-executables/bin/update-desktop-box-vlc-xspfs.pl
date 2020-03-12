@@ -1,7 +1,5 @@
 #! /usr/bin/env perl
 #
-# Short description for update-laptop-vlc-xspfs.pl
-#
 # Author Shlomi Fish <shlomif@cpan.org>
 # Version 0.0.1
 # Copyright (C) 2019 Shlomi Fish <shlomif@cpan.org>
@@ -9,7 +7,7 @@
 use strict;
 use warnings;
 
-s%(<location>file:///home/shlomif)/Download/Video/%$1/Music/mp3s/%ms;
+s%(<location>file://\Q$ENV{HOME}\E)/Download/Video/%$1/Music/mp3s/%ms;
 
 __END__
 

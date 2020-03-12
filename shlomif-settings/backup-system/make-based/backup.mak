@@ -207,7 +207,7 @@ $(RSYNC_NET_ARC): $(EXCLUDE_LISTS)
 	cd TRIM && \
 	tar -xvf $$temptar ; \
 	find home -depth -print0 | xargs -0 rmdir ; \
-	( cd ./home/shlomif && $(PACK_CMD) "$@" . ) || true ; \
+	( cd ."$$HOME" && $(PACK_CMD) "$@" . ) || true ; \
 	rm -f "$$temptar"
 
 $(EXTRA_DATA_STAMP):

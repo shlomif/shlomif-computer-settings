@@ -9,7 +9,7 @@ trunk="$this"
 c="$this"
 
 bindir="$HOME/progs/freecell/git/0fc-b/"
-PATH="/home/shlomif/apps/fcs/bin:$bindir:$bindir/board_gen:$PATH"
+PATH="$HOME/apps/fcs/bin:$bindir:$bindir/board_gen:$PATH"
 cd "$this"
 
 m()

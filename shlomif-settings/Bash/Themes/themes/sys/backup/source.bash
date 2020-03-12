@@ -2,12 +2,12 @@ load_common prompt
 
 an()
 {
-    export ANALYZE_DU_INPUT_FN=$HOME/Backup/rsync.net/unpack/home/shlomif/du.txt
+    export ANALYZE_DU_INPUT_FN=$HOME/Backup/rsync.net/unpack$HOME/du.txt
     analyze-du "$@"
 }
 
 a="$HOME/Backup/rsync.net"
-b="$HOME/Backup/rsync.net/unpack/home/shlomif"
+b="$HOME/Backup/rsync.net/unpack$HOME"
 
 regen()
 {
