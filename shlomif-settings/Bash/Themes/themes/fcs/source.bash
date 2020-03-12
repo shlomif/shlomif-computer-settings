@@ -248,7 +248,7 @@ tot2()
 {
     set -x
     perl ../scripts/gen-obf-mod-1.pl > t.sh
-    FCS_PGO_THEME="--read-from-file 4,$(pwd)/t.sh" sudo /home/shlomif/bin/sudo_bench_fcs
+    FCS_PGO_THEME="--read-from-file 4,$(pwd)/t.sh" sudo "$HOME"/bin/sudo_bench_fcs
     disp
     set +x
 }
@@ -264,7 +264,7 @@ tot()
 
 y()
 {
-    sudo /home/shlomif/bin/sudo_bench_fcs
+    sudo "$HOME"/bin/sudo_bench_fcs
     disp
 }
 
