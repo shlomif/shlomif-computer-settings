@@ -56,7 +56,7 @@ while ( my $l = <> )
             $str = $n;
         }
         die if !defined $str;
-        printf "%-20s%s", $str, $l;
+        printf "%-10s%s", $str, $l;
     }
     else
     {
