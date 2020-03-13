@@ -16,12 +16,13 @@ use Path::Tiny qw/ path tempdir tempfile cwd /;
 
 my $FACTOR = ( $ENV{FACTOR} // 1 );
 
-while ( my $l = <> )
+sub convert_to_suffixed
 {
-    if ( my ($n) = $l =~ /\A([0-9]+)\s/ )
+    my $n = shift(@_) * $FACTOR;
+    my $str;
+    if ( $n > 1024 )
     {
-        $n *= $FACTOR;
-        my $str;
+        $n = int( $n / 1024 );
         if ( $n > 1024 )
         {
             $n = int( $n / 1024 );
@@ -30,38 +31,36 @@ while ( my $l = <> )
                 $n = int( $n / 1024 );
                 if ( $n > 1024 )
                 {
-                    $n = int( $n / 1024 );
-                    if ( $n > 1024 )
-                    {
-                        $n   = int( $n / 1024 );
-                        $str = $n . "T";
-                    }
-                    else
-                    {
-                        $str = $n . "G";
-                    }
+                    $n   = int( $n / 1024 );
+                    $str = $n . "T";
                 }
                 else
                 {
-                    $str = $n . "M";
+                    $str = $n . "G";
                 }
             }
             else
             {
-                $str = $n . 'K';
+                $str = $n . "M";
             }
         }
         else
         {
-            $str = $n;
+            $str = $n . 'K';
         }
-        die if !defined $str;
-        printf "%-10s%s", $str, $l;
     }
     else
     {
-        die "Wrong line '$l' does not contain digits!";
+        $str = $n;
     }
+    die if !defined $str;
+    return $str;
+}
+
+while ( my $l = <> )
+{
+    $l =~ s#\b([0-9]+)\b#convert_to_suffixed($1)#egms;
+    print $l;
 }
 
 __END__
