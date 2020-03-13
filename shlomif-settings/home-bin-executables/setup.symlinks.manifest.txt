@@ -5,6 +5,7 @@ symlink from ~/bin/backup-slash.bash to ./bin/backup-slash.bash
 symlink from ~/bin/cdown-to to ./bin/countdown-to
 symlink from ~/bin/collect-feeds.sh to ./shlomif-specific/collect-feeds.sh
 symlink from ~/bin/commify to ./bin/commify
+symlink from ~/bin/console_clock to ./bin/console_clock.py
 symlink from ~/bin/copy-backup-to-external-hard-disk.sh to ./shlomif-specific/copy-backup-to-external-hard-disk.sh
 symlink from ~/bin/desktop-finish-cue to ./bin/desktop-finish-cue
 symlink from ~/bin/display-X-resolution to ./bin/display-X-resolution
