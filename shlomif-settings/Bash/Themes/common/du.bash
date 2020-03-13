@@ -17,3 +17,8 @@ shs()
 {
     du -sh * | sort -h
 }
+
+h()
+{
+    FACTOR='1024' ~/conf/trunk/shlomif-settings/home-bin-executables/bin/add-num-suffixes.pl
+}
