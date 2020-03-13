@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Copyright by Shlomi Fish, under the MIT Expat licence.
+set -e -x
 echo "USER=$SUDO_USER"
-sudo nice -n-20 ionice -c1 -n0 sudo -u "$SUDO_USER" ./freecell-solver-range-parallel-solve "$@"
+sudo nice -n-20 ionice -c1 -n0 sudo -u "$SUDO_USER" bash -c "LD_LIBRARY_PATH+=\":/usr/local/lib\"; export LD_LIBRARY_PATH ; ./freecell-solver-range-parallel-solve $*"
 # sudo nice -n-20 ionice -c1 -n0 sudo -u "$SUDO_USER" ./freecell-solver-multi-thread-solve "$@"
