@@ -71,7 +71,7 @@ install_perl()
     (cd ~/apps/perl/bleadperl/bin ;
         ext='5.31.10'
         for fn in *$ext ; do
-            ln -s "$fn" "${fn%$ext}" ;
+            ln -sf "$fn" "${fn%$ext}" ;
         done
     )
 }
