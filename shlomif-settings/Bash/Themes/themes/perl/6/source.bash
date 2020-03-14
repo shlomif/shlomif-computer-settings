@@ -10,8 +10,9 @@ export PATH="${RAKUDO_ROOT}/bin:$PATH"
 PATH="$PATH:$HOME/Download/unpack/perl/p6/rakudo-star/rakudo-star-2018.04/install/bin:$HOME/Download/unpack/perl/p6/rakudo-star/rakudo-star-2018.04/install/share/perl6/site/bin"
 
 # trunk="$base/doc"
-trunk="$base/CI-Gen/perl6-CI-Gen"
-app_dir="$trunk"
+git_base="$base"
+trunk="$base/CI-Gen"
+app_dir="$trunk/perl6-CI-Gen"
 this="$app_dir"
 
 u-()
@@ -19,7 +20,8 @@ u-()
     bash "$base/s/rakudo-git-master-install/rakudo-git.bash"
 }
 
-rw_repos_url="$(_shlomif_github "Rx.pl")"
+rw_repos_url="$(_shlomif_github "ci-gen-framework")"
+remote_repo="$rw_repos_url"
 
 cd "$this"
 
