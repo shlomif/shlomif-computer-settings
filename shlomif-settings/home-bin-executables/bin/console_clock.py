@@ -9,6 +9,19 @@
 A constantly updating wallclock time clock for the command line / terminal /
 console. "python3 console_clock.py" or "pypy3 console_clock.py" should
 be able to execute it.
+
+Prior and open source art:
+
+* https://github.com/trehn/termdown - countdown, timer and stop watch in your
+terminal ( python / PyPI / GPL3 ). Hint: try "termdown -z --no-figlet"
+
+* https://metacpan.org/pod/distribution/App-stopw/script/stopw -
+stopwatch and timer (perl 5 / CPAN / Same license as perl)
+
+* https://www.shlomifish.org/open-source/projects/countdown/ - displays a
+countdown up to a given time / for a given duration (perl 5 / CPAN / MITL)
+
+
 """
 
 
