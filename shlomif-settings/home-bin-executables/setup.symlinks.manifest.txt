@@ -39,5 +39,6 @@ symlink from ~/bin/sus to ./bin/sus
 symlink from ~/bin/tail-extract to ./bin/tail-extract
 symlink from ~/bin/to-markdown to ./bin/to-markdown
 symlink from ~/bin/to-mediawiki-syntax to ./bin/to-mediawiki-syntax
+symlink from ~/bin/to-webp to ./bin/to-webp
 symlink from ~/bin/upgrade-to-CPAN-Changes to ./bin/upgrade-to-CPAN-Changes
 symlink from ~/bin/wayback-machine-web.archive.org-downloader to ./bin/wayback-machine-web.archive.org-downloader
