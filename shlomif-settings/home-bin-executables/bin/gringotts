@@ -1,6 +1,13 @@
 #!/bin/sh
 export LD_LIBRARY_PATH="$HOME"/apps/file/libgringotts/lib
-exec "$HOME"/apps/file/gringotts/bin/gringotts
+for bn in gringotts-exe gringotts
+do
+    fn="$HOME"/apps/file/gringotts/bin/"$bn"
+    if test -e "$fn"
+    then
+        exec "$fn"
+    fi
+done
 
 # The Expat License
 #
