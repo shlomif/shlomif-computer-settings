@@ -722,3 +722,10 @@ endfunction
 autocmd FileType make call Shlomif_Makefile_file_type()
 autocmd BufNewFile,BufRead ~/progs/riddles/golf/*.py3 set filetype=python
 autocmd BufNewFile,BufRead ~/Download/unpack/graphics/inkscape/* set path+=~/Download/unpack/graphics/inkscape/inkscape/src/
+
+function Shlomif_C_and_CPP_file_type()
+    let b:no_depr_warnings = '#pragma GCC diagnostic ignored "-Wdeprecated-declarations"'
+endfunction
+
+autocmd FileType c call Shlomif_C_and_CPP_file_type()
+autocmd FileType cpp call Shlomif_C_and_CPP_file_type()
