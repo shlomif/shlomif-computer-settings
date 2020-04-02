@@ -16,6 +16,10 @@ DEFAULT_DESK="kde5"
 # DEFAULT_DESK="wmaker"
 # DEFAULT_DESK="gnome"
 
+if test -e /etc/fedora-release
+then
+    export NO_AT_BRIDGE=1
+fi
 WHICH_DESK="${WD:-${DEFAULT_DESK}}"
 
 if false ; then
