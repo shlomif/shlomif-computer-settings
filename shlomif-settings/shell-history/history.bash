@@ -1,6 +1,7 @@
 ( . ~/bin/Dev-Path-Configs-Source-Me.bash && make )
 ( PATH=/home/shlomif/apps/python3/bin:$PATH ; export LD_LIBRARY_PATH=/home/shlomif/apps/python3/lib ; time python3 collect-stats.py 0fc-log.txt )
 ( b ; n --msg bm ) 2>&1 | tee ~/curl.bm.txt
+( set -x ; export GIMPGITBUILD__BUILD_GIMP_USING_MESON=0 GIMPGITBUILD__PAR_JOBS_FLAGS='-j8' ; gimpgitbuild build ; notifier notify -m "gimp build" ) |& tee ~/gimpgitbuild-try1.txt
 ( time make test ) 2>&1 | tee -a /home/shlomif/desk-time-oldpysol.txt
 (git clone git@github.com:thewml/website-meta-language.git w && (cd w && mkdir b && cd b && cmake ../src && make) && rm -fr w )
 (unset MAKEFLAGS; gmake test )
@@ -435,6 +436,7 @@ cd primesieve-python
 cd progs
 cd progs/JS/greasemonkey-scripts/
 cd progs/perl/cpan/
+cd progs/perl/cpan/App/App-gimpgitbuild
 cd progs/perl/snippets
 cd progs/wml/Latemp/cookiecutter--shlomif-latemp-sites/\{\{cookiecutter.project_slug\}\}/
 cd pysolfc-web-site/
@@ -1535,6 +1537,7 @@ mpv --volume=50 --vo=null Music/mp3s/Playlist\ -\ Girls\ On\ The\ Rise/003-13534
 mpv --volume=50 --wid=0 Music/mp3s/Shine\ 4U\ -\ Carmen\ and\ Camille-B8ehY5tutHs.mp4
 mpv --volume=50 Music/dosd-mp3s/George\ Harrison\ -\ I\'ve\ Got\ my\ Mind\ Set\ on\ you.mp3
 mpv Music/mp3s/Playlist\ -\ Summer\ 2015/006\ -\ David\ Amber\ -\ Gnarly\ _feat.\ Devyn\ Rush_.ogg
+mr run git clean -dxf .
 mr st
 mu
 mv bookmarks-* ../Arcs/old-firefox-bookmarks/
