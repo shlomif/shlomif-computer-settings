@@ -1,0 +1,7 @@
+Extract a common module/library/header.
+
+This is Refactoring / code cleanup.
+
+See:
+
+* https://github.com/shlomif/Docker-CLI-Wrapper .
