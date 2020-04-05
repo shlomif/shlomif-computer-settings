@@ -8,6 +8,7 @@ trunk="$repo"
 src="$trunk/vim-begin/tt2-source"
 this="$src"
 latemp_trunk="$src"
+remote_repo="$(_shlomif_github "vim-begin")"
 
 load_common latemp
 

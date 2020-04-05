@@ -7,7 +7,7 @@ hg_base="$base"
 trunk="$base/homepage/trunk"
 section_menus="$trunk/lib/Shlomif/Homepage/SectionMenu/Sects/"
 this="$trunk"
-fortunes="$trunk/t2/humour/fortunes/"
+fortunes="$trunk/src/humour/fortunes/"
 blog="$HOME/Docs/homepage/blog"
 logs="$HOME/Download/homesite-logs"
 p4n="$trunk/lib/presentations/qp/perl-for-newbies"
@@ -53,11 +53,11 @@ anti()
 {
     (
         cd "$trunk"
-        gvim -p t2/open-source/anti/apple/index.html.wml \
-            t2/open-source/anti/mysql/index.html.wml \
-            t2/open-source/anti/windows-vista/index.html.wml \
-            t2/no-ie/index.html.wml \
-            t2/philosophy/case-for-file-swapping/index.html.wml
+        gvim -p src/open-source/anti/apple/index.html.tt2 \
+            src/open-source/anti/mysql/index.html.tt2 \
+            src/open-source/anti/windows-vista/index.html.tt2 \
+            src/no-ie/index.html.tt2 \
+            src/philosophy/case-for-file-swapping/index.html.tt2
     )
 }
 
