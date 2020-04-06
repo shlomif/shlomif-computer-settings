@@ -724,7 +724,9 @@ autocmd BufNewFile,BufRead ~/progs/riddles/golf/*.py3 set filetype=python
 autocmd BufNewFile,BufRead ~/Download/unpack/graphics/inkscape/* set path+=~/Download/unpack/graphics/inkscape/inkscape/src/
 
 function Shlomif_C_and_CPP_file_type()
+    let b:pragma_push = '#pragma GCC diagnostic push'
     let b:no_depr_warnings = '#pragma GCC diagnostic ignored "-Wdeprecated-declarations"'
+    let b:pragma_pop = '#pragma GCC diagnostic pop'
 endfunction
 
 autocmd FileType c call Shlomif_C_and_CPP_file_type()
