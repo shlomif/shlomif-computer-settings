@@ -1,3 +1,5 @@
+export SHLOMIF_DNF_OPTS="--color=never"
+
 _sys()
 {
     echo "$@"
@@ -7,7 +9,7 @@ _sys()
 u()
 {
     local common_args="-y"
-    cmd="_sys sudo dnf install"
+    cmd="_sys sudo dnf $SHLOMIF_DNF_OPTS install"
     ( cd $HOME ;
         eval "$cmd $common_args $@";
     )
@@ -15,7 +17,7 @@ u()
 
 uas()
 {
-    _sys sudo dnf -y upgrade --refresh
+    _sys sudo dnf $SHLOMIF_DNF_OPTS -y upgrade --refresh
 }
 
 uu()
@@ -25,7 +27,7 @@ uu()
 
 up()
 {
-    sudo dnf -y install $(perlmf as_rpm_colon "$@")
+    sudo dnf  $SHLOMIF_DNF_OPTS -y install $(perlmf as_rpm_colon "$@")
 }
 
 _cpan_d_format()
@@ -50,7 +52,7 @@ qp()
     local pm="$1"
     shift
 
-    dnf search --whatprovides "$(perlmf as_rpm_colon "$pm")" ;
+    dnf $SHLOMIF_DNF_OPTS search --whatprovides "$(perlmf as_rpm_colon "$pm")" ;
 }
 
 pap()
@@ -60,16 +62,16 @@ pap()
 
 e()
 {
-    sudo dnf remove "$@"
+    sudo dnf $SHLOMIF_DNF_OPTS remove "$@"
 }
 
 # urpme orphans.
 eo()
 {
-    sudo dnf autoremove
+    sudo dnf $SHLOMIF_DNF_OPTS autoremove
 }
 
-alias q='dnf search'
+alias q="dnf $SHLOMIF_DNF_OPTS search"
 alias qv='q --source'
 
 __delegate_complete()

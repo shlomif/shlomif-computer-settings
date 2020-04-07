@@ -11,7 +11,7 @@ __bash_sudo_setup()
 {
     (
         set -x
-        sudo dnf -y install gcc git make libtirpc libtirpc-devel policycoreutils-python-utils python3-fedora
+        sudo dnf $SHLOMIF_DNF_OPTS -y install gcc git make libtirpc libtirpc-devel policycoreutils-python-utils python3-fedora
         sudo semanage boolean -m --on selinuxuser_execheap
     )
 }

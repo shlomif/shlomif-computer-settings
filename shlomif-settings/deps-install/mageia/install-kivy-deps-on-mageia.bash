@@ -7,7 +7,7 @@
 #
 # Taken from https://kivy.org/doc/stable/installation/installation-linux.html - thanks!
 
-sudo dnf install \
+sudo dnf $SHLOMIF_DNF_OPTS install \
     SDL_mixer-devel \
     SDL_ttf-devel \
     automake \

@@ -7,4 +7,4 @@
 #
 
 set -e -x
-sudo dnf -y install bison flex gperf lib64lz4-devel lib64pcre-devel lib64tk-devel lib64tomcrypt-devel lib64tommath-devel lib64zlib-devel
+sudo dnf $SHLOMIF_DNF_OPTS -y install bison flex gperf lib64lz4-devel lib64pcre-devel lib64tk-devel lib64tomcrypt-devel lib64tommath-devel lib64zlib-devel

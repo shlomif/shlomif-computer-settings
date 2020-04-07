@@ -4,7 +4,7 @@
 #
 # Distributed under terms of the MIT license.
 set -e -x
-dnf -y install \
+dnf -y  $SHLOMIF_DNF_OPTS install \
     aspell-devel \
     gc-devel \
     gdl-devel \
