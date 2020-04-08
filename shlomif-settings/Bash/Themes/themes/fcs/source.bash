@@ -95,11 +95,33 @@ clean_bpat()
     rm -fr "$pats_b"
 }
 
+_configure_build()
+{
+    (
+    set -e -x
+    if ! test -e "$b"
+    then
+        mkdir "$b"
+    fi
+    cd "$b"
+    if ! test -e CMakeCache.txt
+    then
+        "$c_src"/../scripts/Tatzer ${args}
+    fi
+    )
+}
+
+conf()
+{
+    _configure_build "$@"
+}
+
 tes()
 {
     (
         export HARNESS_BREAK=1
         clean_bpat
+        _configure_build
         cd "$b" && \
             make -j4 && \
             perl "$c_src"/run-tests.pl
