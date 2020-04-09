@@ -406,6 +406,25 @@ setup_arcs_dir()
     git clone "$remote_repo_of_assets" "$arcs_git"
 }
 
+total_tests()
+{
+    (
+        set -e -x
+        (cd "$site" && git clean -dxf .) || true
+        fmt
+        pt
+        (export FCS_TEST_BUILD=1 ; t)
+        cd "$c_src"
+        perl ../scripts/multi_config_tests.pl
+    )
+    notifier notify --msg "fc-solve testing"
+}
+
+tt()
+{
+    total_tests "$@"
+}
+
 export FCS_PATH="$b" FCS_SRC_PATH="$c_src"
 export HTML_VALID_VNU_JAR=~/Download/unpack/net/www/validator/build/dist/vnu.jar
 export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/fc-solve-tidyall.d"
