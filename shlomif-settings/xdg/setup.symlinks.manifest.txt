@@ -1,0 +1,1 @@
+symlink from ~/.config/user-dirs.dirs to ./user-dirs.dirs

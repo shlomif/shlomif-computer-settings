@@ -267,23 +267,15 @@ run_setup('Bash');
 run_setup('vim-conf');
 
 foreach my $dir (
-    'bash-aliases',
-    'build-scripts',
-    'clang-format',
-    'gdb',
-    'git',
-    'hg',
-    'jwm',
-    'perl/Dist-Zilla',
-    'perl/perldb',
-    'perl/perltidy',
-    'python/pdb',
-    'rpm',
-    'sky',
-    'tmux',
-    'vcs-checkout-scripts',
-    'x11',
-
+    'bash-aliases',         'build-scripts',
+    'clang-format',         'gdb',
+    'git',                  'hg',
+    'jwm',                  'perl/Dist-Zilla',
+    'perl/perldb',          'perl/perltidy',
+    'python/pdb',           'rpm',
+    'sky',                  'tmux',
+    'vcs-checkout-scripts', 'x11',
+    'xdg',
     )
 {
     run_dsl($dir);
