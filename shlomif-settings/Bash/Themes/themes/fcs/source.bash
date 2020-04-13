@@ -116,15 +116,23 @@ conf()
     _configure_build "$@"
 }
 
-tes()
+test_without_notify()
 {
     (
         export HARNESS_BREAK=1
+        set -e -x
         clean_bpat
         _configure_build
         cd "$b" && \
             make -j4 && \
             perl "$c_src"/run-tests.pl
+    )
+}
+
+tes()
+{
+    (
+        test_without_notify
         n --msg "Freecell Solver Test Finished"
     )
 }
@@ -412,8 +420,11 @@ total_tests()
         set -e -x
         (cd "$site" && git clean -dxf .) || true
         fmt
-        pt
-        (export FCS_TEST_BUILD=1 ; t)
+        (
+            unset FCS_USE_TEST_RUN
+            test_without_notify
+        )
+        (export FCS_TEST_BUILD=1 ; test_without_notify)
         cd "$c_src"
         perl ../scripts/multi_config_tests.pl
     )
