@@ -418,6 +418,7 @@ total_tests()
 {
     (
         set -e -x
+        perl -E "use Path::Tiny qw/path/ ; die qq%remaining build directories% if path(shift(@ARGV))->parent()->children(qr/\\Abuild-[0-9]+\\z/)" "$c_src"
         (cd "$site" && git clean -dxf .) || true
         fmt
         (
