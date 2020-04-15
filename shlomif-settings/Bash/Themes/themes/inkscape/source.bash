@@ -90,11 +90,26 @@ ninja()
         do
             if test "$target" = "test"
             then
-                echo "Do not invoka 'ninja test'. Use 'check' instead" 1>&2
+                echo "Do not invoke 'ninja test'. Use 'check' instead" 1>&2
                 exit -1
             fi
         done
         `which ninja` "$@"
+    )
+}
+
+make()
+{
+    (
+        for target in "$@"
+        do
+            if test "$target" = "test"
+            then
+                echo "Do not invoke 'make test'. Use 'check' instead" 1>&2
+                exit -1
+            fi
+        done
+        `which make` "$@"
     )
 }
 
