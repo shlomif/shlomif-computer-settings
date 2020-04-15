@@ -1,4 +1,4 @@
-# The Expat License
+# The MIT / Expat License
 #
 # Copyright (c) 2012, Shlomi Fish
 #
