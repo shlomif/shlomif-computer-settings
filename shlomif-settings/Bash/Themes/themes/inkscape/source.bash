@@ -83,6 +83,21 @@ s-()
     )
 }
 
+ninja()
+{
+    (
+        for target in "$@"
+        do
+            if test "$target" = "test"
+            then
+                echo "Do not invoka 'ninja test'. Use 'check' instead" 1>&2
+                exit -1
+            fi
+        done
+        `which ninja` "$@"
+    )
+}
+
 __vim_ids_args='ids.txt +cbuf +cope +"sp scripts/ids-whitelist.txt" +"sp scripts/ids-whitelist.txt"'
 alias g="gvim $__vim_ids_args"
 alias qv="qvim $__vim_ids_args"
