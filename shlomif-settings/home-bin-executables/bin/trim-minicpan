@@ -7,10 +7,19 @@
 # Licensed under the MIT/Expat licence.
 
 # Configuration:
-localdir="$HOME/Download/Arcs/Perl/minicpan"
-newlocal="$HOME/Download/Arcs/Perl/__New-minicpan"
-oldlocal="$HOME/Download/Arcs/Perl/__Old-minicpan"
+set -e -x
+
+common_prefix="$HOME/Download/Arcs/Perl"
+localdir="$common_prefix/minicpan"
+newlocal="$common_prefix/__New-minicpan"
+oldlocal="$common_prefix/__Old-minicpan"
 port=2908
+webserver=/usr/sbin/thttpd
+
+test -e "$localdir"
+test -x "$webserver"
+test \! -e "$newlocal"
+test \! -e "$oldlocal"
 
 mkdir -p "$newlocal"
 /usr/sbin/thttpd -p "$port" -d "$localdir"
