@@ -1,0 +1,9 @@
+Avoid collision of files with different case.
+
+See:
+
+* https://metacpan.org/pod/Test::File::Find::CaseCollide
+
+* https://metacpan.org/pod/File::Find::CaseCollide
+
+.
