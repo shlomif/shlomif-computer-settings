@@ -5,8 +5,8 @@ set -x
     --with-features=huge \
     --enable-luainterp \
     --enable-perlinterp \
-    --enable-perlinterp \
     --enable-pythoninterp \
     --enable-rubyinterp \
     --enable-tclinterp \
     --enable-gui=gtk3 \
+
