@@ -1,9 +1,9 @@
 load_common bundle/git
 load_common perl_dzil
 
-cpan_base="$HOME/progs/perl/cpan"
+cpan_base="$HOME/progs/perl/cpan/Module"
 git_base="$cpan_base"
-repos="$cpan_base/git"
+repos="$cpan_base/perl-Module-Format"
 trunk="$repos"
 base="$repos/Module-Format/Module-Format"
 this="$base"
