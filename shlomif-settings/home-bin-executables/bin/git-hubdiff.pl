@@ -28,3 +28,5 @@ my $new_b  = shift @ARGV;
 my $url = qq#https://${host}/${user}/${repo}/compare/${orig_b}..${new_b}#;
 
 say $url;
+use Clipboard;
+Clipboard->copy_to_all_selections($url);
