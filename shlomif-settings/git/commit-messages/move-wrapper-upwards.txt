@@ -1,0 +1,9 @@
+Move a wrapper / abstraction / indirection upwards.
+
+So it will be useful there.
+
+See:
+
+* https://en.wikipedia.org/wiki/Indirection
+
+* https://www.shlomifish.org/humour/fortunes/show.cgi?id=linus-torvalds-about-indirections
