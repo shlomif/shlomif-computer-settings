@@ -10,6 +10,7 @@ symlink from ~/bin/copy-backup-to-external-hard-disk.sh to ./shlomif-specific/co
 symlink from ~/bin/desktop-finish-cue to ./bin/desktop-finish-cue
 symlink from ~/bin/display-X-resolution to ./bin/display-X-resolution
 symlink from ~/bin/enable-ctrl-alt-backspace to ./bin/enable-ctrl-alt-backspace
+symlink from ~/bin/enable-vim-command-t.bash to ./bin/enable-vim-command-t.bash
 symlink from ~/bin/fcs-bench.bash to ./bin/fcs-bench.bash
 symlink from ~/bin/filter_alphanumerics.pl to ./bin/filter_alphanumerics.pl
 symlink from ~/bin/filter_non_print.pl to ./bin/filter_non_print.pl
