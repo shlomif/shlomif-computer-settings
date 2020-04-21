@@ -22,7 +22,7 @@ t()
     set -e -x
     mkdir -p "$b"
     cd "$b"
-    cmake -DWITH_BH_SOLVER=1 -DCMAKE_BUILD_TYPE=Debug "$c"
+    cmake -DWITH_BH_SOLVER=1 -DCMAKE_BUILD_TYPE=Release "$c"
     make
     make test
     )
