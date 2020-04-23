@@ -19,6 +19,7 @@ DEFAULT_DESK="kde5"
 if test -e /etc/fedora-release
 then
     export NO_AT_BRIDGE=1
+    isfedora=1
 fi
 WHICH_DESK="${WD:-${DEFAULT_DESK}}"
 
@@ -38,13 +39,23 @@ elif [ "$WHICH_DESK" = "fvwm" ] ; then
     # exec fvwm-themes-start -e fvwm2
     fvwm2
 elif [ "$WHICH_DESK" = "gnome" ] ; then
-    exec startgnome
+    if test -n "$isfedora"
+    then
+        gnome-session
+    else
+        exec startgnome
+    fi
 elif [ "$WHICH_DESK" = "gnome-trace" ] ; then
     strace -f -o "$HOME/gnome.strace" startgnome
 elif [ "$WHICH_DESK" = "i3" ] ; then
     i3
 elif [ "$WHICH_DESK" = "icewm" ] ; then
-    starticewm
+    if test -n "$isfedora"
+    then
+        icewm
+    else
+        starticewm
+    fi
 elif [ "$WHICH_DESK" = "icewm-trace" ] ; then
     strace -f -o "$HOME/icewm.strace" starticewm
 elif [ "$WHICH_DESK" = "jwm" ] ; then
