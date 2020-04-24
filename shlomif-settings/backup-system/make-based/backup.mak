@@ -241,7 +241,7 @@ OWN_PHOTOS_ARC := $(EXTRA_DATA_DIR)/Docs-Images-Photos-$(STAMP)$(PHOTOS_ARC_EXT)
 own_photos: $(OWN_PHOTOS_ARC)
 
 $(OWN_PHOTOS_ARC): $(EXTRA_DATA_STAMP)
-	(cd $(HOME) ; $(PACK_CMD) $@ "Docs/Images/Photos")
+	(cd $(HOME) ; set -e -x ; dir="Docs/Images/Photos" ; l="Docs/Images/lep-photos" ; if test -d "$$l" ; then dir="$$l"; fi; $(PACK_CMD) $@ "$$dir" )
 
 MLEMAIL_CLAWS_ARC := $(EXTRA_DATA_DIR)/email-Mailing-Lists-claws-$(STAMP)$(ARC_EXT)
 
