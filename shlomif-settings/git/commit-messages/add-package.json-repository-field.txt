@@ -1,0 +1,9 @@
+package.json and package-lock.json updates.
+
+We have updated the versions of npm / node.js packages specified
+in the files:
+
+* https://en.wikipedia.org/wiki/Npm_(software)
+
+This is possibly thanks to a prompting by https://snyk.io/ or GitHub
+or GitLab.
