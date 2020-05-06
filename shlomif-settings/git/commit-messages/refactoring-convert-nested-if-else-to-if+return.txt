@@ -1,0 +1,5 @@
+Convert nested if-else chains to sequential if+returns
+
+This is a code refactoring ( https://en.wikipedia.org/wiki/Code_refactoring ) change.
+
+This avoids large indentation steps and is clearer and easier to understand.
