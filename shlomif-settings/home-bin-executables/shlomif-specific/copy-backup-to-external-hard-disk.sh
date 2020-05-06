@@ -25,4 +25,8 @@
 # cp -rL --preserve "$1" /mnt/external/shlomi/Data-Backup/
 # cp -rL --preserve "$1" /media/My\ Passport/Shlomif/Backups/Data/telaviv1.shlomifish.org/
 # cp -rL --preserve "$1" /run/media/shlomif/My\ Passport/Shlomif/Backups/Data/telaviv1.shlomifish.org/
-cp -rL --preserve "$1" /run/media/shlomif/Elements/Shlomif/Backups/Data/telaviv1.shlomifish.org/
+set -e -x
+for path in "$@"
+do
+    cp -rL --preserve "$path" /run/media/shlomif/Elements/Shlomif/Backups/Data/telaviv1.shlomifish.org/
+done
