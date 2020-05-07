@@ -1,25 +1,16 @@
 load_common bundle/inc1
-load_common hg
+load_common git
 
 base="$HOME/progs/games/nurikabe"
-hg_base="$base"
+git_base="$base"
 trunk="$base/trunk"
 c_src="$trunk/nurikabe-solver"
 module="$c_src/Games-Nurikabe-Solver"
-remote_repo="$(_shlomif_bitbucket "nurikabe")"
+remote_repo="$(_shlomif_github "nurikabe")"
 
 this="$module"
 
 cd "$this"
-
-setup()
-{
-    (
-        mkdir -p "$base"
-        cd "$base"
-        hg clone 'ssh://hg@bitbucket.org/shlomif/nurikabe' trunk
-    )
-}
 
 t()
 {

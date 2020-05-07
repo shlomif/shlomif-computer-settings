@@ -7,7 +7,7 @@ load_common perl_dzil
 
 mod="Games-ABC_Path-Solver"
 base="$HOME/progs/games/abc-path"
-hg_base="$base"
+git_base="$base"
 trunk="$base/trunk"
 module="$trunk/abc-path/$mod/"
 # c_src="$trunk/nurikabe-solver"

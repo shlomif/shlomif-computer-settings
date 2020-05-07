@@ -1,7 +1,7 @@
 load_common bundle/inc1
 
 base="$HOME/progs/java/Eclipse/workspace/NurikabeGarden"
-hg_base="$base"
+git_base="$base"
 trunk="$base"
 this="$trunk"
 

@@ -4,7 +4,7 @@ load_common perl_dzil
 load_common ctags_this
 
 base="$HOME/progs/perl/cpan/Test/WWW/Mechanize"
-hg_base="$base"
+git_base="$base"
 trunk="$base/trunk"
 module="$trunk/Test-WWW-Mechanize-Mojo"
 this="$module"

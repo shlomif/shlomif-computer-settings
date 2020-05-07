@@ -4,7 +4,7 @@ load_common ctags_using_script
 load_common perl_mb
 
 base="$HOME/progs/perl/cpan/Test/Test-Harness"
-hg_base="$base"
+git_base="$base"
 trunk="$base/trunk"
 modules_dir="$trunk/modules"
 test_run="$modules_dir/Test-Run"

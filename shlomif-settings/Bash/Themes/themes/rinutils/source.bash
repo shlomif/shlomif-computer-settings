@@ -3,7 +3,7 @@ load_common chdirs
 load_common edit_perl_lib
 
 base="$HOME/progs/C/rinutils"
-hg_base="$base"
+git_base="$base"
 trunk="$base"
 proj="$trunk"
 c_src="$proj"

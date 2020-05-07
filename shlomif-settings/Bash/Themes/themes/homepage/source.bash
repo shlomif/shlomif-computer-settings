@@ -3,8 +3,8 @@ load_common partests
 load_common chdirs
 
 base="$HOME/Docs/homepage"
-hg_base="$base"
-trunk="$base/homepage/trunk"
+git_base="$base/homepage"
+trunk="$git_base/trunk"
 section_menus="$trunk/lib/Shlomif/Homepage/SectionMenu/Sects/"
 this="$trunk"
 fortunes="$trunk/src/humour/fortunes/"

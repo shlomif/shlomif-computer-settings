@@ -6,7 +6,7 @@ load_common ctags_this
 remote_repo="$(_shlomif_github "perl-test-count")"
 
 base="$HOME/progs/perl/cpan/Test/Count"
-hg_base="$base"
+git_base="$base"
 trunk="$base/trunk"
 modules_dir="$trunk/modules"
 test_count="$modules_dir/Test-Count"

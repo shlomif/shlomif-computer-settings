@@ -3,7 +3,7 @@ load_common chdirs
 load_common edit_perl_lib
 
 base="$HOME/progs/games/black-hole-solitaire"
-hg_base="$base"
+git_base="$base"
 trunk="$base/trunk"
 proj="$trunk/black-hole-solitaire"
 module="$proj/Games-Solitaire-BlackHole-Solver"

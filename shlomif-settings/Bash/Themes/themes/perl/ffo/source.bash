@@ -7,22 +7,23 @@ ffo_trunk="$base/trunk"
 module="$ffo_trunk"
 bench="$base/benchmark"
 berlios_base="$base/from-berlios"
-hg_base="$berlios_base"
+git_base="$berlios_base"
 berlios_trunk="$berlios_base/trunk"
 ffor_trunk="$berlios_trunk"
 rule_trunk="$berlios_trunk/File-Find-Object-Rule"
 libfilefind="$berlios_trunk/libfilefind/c_glib_based"
-rule_remote_repo='ssh://hg@bitbucket.org/shlomif/perl-file-find-object-rule'
-ffo_remote_repo='https://github.com/shlomif/perl-file-find-object'
+rule_remote_repo="$(_shlomif_github "perl-file-find-object-rule")"
+ffo_remote_repo="$(_shlomif_github "perl-file-find-object")"
+
 
 this="$module"
 
 setup()
 {
     (
-        mkdir -p "$hg_base"
-        cd "$hg_base"
-        hg clone "$rule_remote_repo" "$ffor_trunk"
+        mkdir -p "$git_base"
+        cd "$git_base"
+        git clone "$rule_remote_repo" "$ffor_trunk"
         mkdir -p "$base"
         cd "$base"
         git clone "$ffo_remote_repo" "$ffo_trunk"

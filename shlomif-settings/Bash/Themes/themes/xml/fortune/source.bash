@@ -5,7 +5,7 @@ load_common ctags_this
 load_common chdirs
 
 base="$HOME/progs/perl/cpan/XML/Grammar/Fortune"
-hg_base="$base"
+git_base="$base"
 trunk="$base/trunk"
 module="$trunk/XML-Grammar-Fortune/module"
 this="$module"

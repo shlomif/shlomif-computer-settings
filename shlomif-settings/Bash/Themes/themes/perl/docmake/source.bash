@@ -3,7 +3,7 @@ load_common perl_dzil
 load_common perl_system_tests
 
 base="$HOME/progs/perl/cpan/App/Docmake"
-hg_base="$base"
+git_base="$base"
 trunk="$base/trunk"
 module="$trunk/modules/App-XML-DocBook-Docmake"
 this="$module"

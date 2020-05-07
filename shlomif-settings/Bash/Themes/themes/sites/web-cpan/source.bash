@@ -1,12 +1,12 @@
 load_common bundle/inc1
-load_common hg
+load_common git
 
 base="$HOME/progs/perl/www/Web-Cpan-Site/"
-hg_base="$base"
+git_base="$base"
 trunk="$base/trunk"
 site="$trunk/wml"
 
-remote_repo="$(_shlomif_bitbucket "web-cpan-site")"
+remote_repo="$(_shlomif_github "web-cpan-site")"
 
 this="$site"
 
