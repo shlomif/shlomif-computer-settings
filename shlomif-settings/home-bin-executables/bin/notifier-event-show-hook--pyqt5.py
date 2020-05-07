@@ -30,11 +30,13 @@ import sys
 import time
 from pathlib import Path
 
-from PySide2 import QtCore, QtGui, QtWidgets
-
 import click
-
 import vlc
+
+if os.path.exists("/etc/fedora-release"):
+    from PyQt5 import QtCore, QtGui, QtWidgets
+else:
+    from PySide2 import QtCore, QtGui, QtWidgets
 
 
 class Player(QtWidgets.QMainWindow):
