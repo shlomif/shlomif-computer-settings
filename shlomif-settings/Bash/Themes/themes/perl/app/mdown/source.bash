@@ -1,5 +1,4 @@
-load_common bundle/git
-load_common perl_dzil
+load_common bundle/dzil_git
 
 base="$HOME/progs/perl/cpan/App/maniac-downloader"
 git_base="$base"

@@ -1,5 +1,4 @@
-load_common bundle/git
-load_common perl_dzil
+load_common bundle/dzil_git
 
 cpan_base="$HOME/progs/perl/cpan"
 base="$cpan_base/Text/Table"

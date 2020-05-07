@@ -1,5 +1,4 @@
-load_common bundle/git
-load_common perl_dzil
+load_common bundle/dzil_git
 
 # repos="https://svn.berlios.de/svnroot/repos/fc-solve/abc-path/"
 # repos_trunk="${repos}trunk/"

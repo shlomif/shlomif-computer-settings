@@ -1,5 +1,4 @@
-load_common bundle/git
-load_common perl_dzil
+load_common bundle/dzil_git
 load_common ctags_using_script
 
 base="$HOME/progs/perl/cpan/XML/Grammar/Fiction"

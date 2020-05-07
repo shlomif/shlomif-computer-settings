@@ -1,5 +1,4 @@
-load_common bundle/git
-load_common perl_dzil
+load_common bundle/dzil_git
 load_common edit_perl_lib
 
 base="$HOME/progs/perl/cpan/File/Dir-Dumper"
