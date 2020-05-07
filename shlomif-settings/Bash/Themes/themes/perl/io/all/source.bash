@@ -1,5 +1,4 @@
-load_common bundle/inc1
-load_common github
+load_common bundle/git
 load_common ctags_this
 
 base="$HOME/progs/perl/cpan/IO/All"

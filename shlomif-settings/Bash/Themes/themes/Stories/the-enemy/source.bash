@@ -1,5 +1,4 @@
-load_common bundle/inc1
-load_common git
+load_common bundle/git
 
 base="$HOME/Docs/Humour/The-Enemy"
 git_base="$base"

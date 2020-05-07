@@ -1,6 +1,4 @@
-load_common mymake
-load_common completion
-load_common git
+load_common bundle/git
 load_common perl_dzil
 
 export AUTHOR_TESTING=1

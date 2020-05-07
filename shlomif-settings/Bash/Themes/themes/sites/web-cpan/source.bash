@@ -1,5 +1,4 @@
-load_common bundle/inc1
-load_common git
+load_common bundle/git
 
 base="$HOME/progs/perl/www/Web-Cpan-Site/"
 git_base="$base"
