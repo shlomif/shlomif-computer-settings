@@ -11,9 +11,9 @@ sgml_lib()
     # tar -tvf sgml-lib.tar.gz
     d="$HOME/Download/unpack/prog/web/"
     mkdir -p "$d"
-    cd "$d"
+    cd "$d" || return
     tar -xvf "$x/sgml-lib.tar.gz"
-    cd "$x"
+    cd "$x" || return
 }
 
 wml1()
@@ -25,11 +25,11 @@ wml2()
 {
     d="wml-extended-apis"
     mkdir "$d"
-    cd "$d"
+    cd "$d" || return
     hg clone https://shlomif@bitbucket.org/shlomif/wml-extended-apis trunk
-    cd trunk/xhtml/1.x
+    cd trunk/xhtml/1.x || return
     bash Install.bash
-    cd "$x"
+    cd "$x" || return
 }
 
 wml_mods()

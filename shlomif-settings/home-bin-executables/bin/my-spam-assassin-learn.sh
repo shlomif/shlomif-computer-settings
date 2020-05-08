@@ -18,11 +18,11 @@ process_dir()
         rspamc -v "$t" "$dir"
     fi
 }
-process_dir --spam "$HOME"/Mail/Spam/Spam/Received
-process_dir --spam "$HOME"/Mail/Spam/Uncaught/Received
-process_dir --ham "$HOME"/Mail/Spam/Ham/Received
-process_dir --ham "$HOME"/Mail/Spam/Ham/"To Delete"
-process_dir --spam "$HOME"/Mail/Spam/Spam/"To Delete"
+process_dir --spam "$HOME/Mail/Spam/Spam/Received"
+process_dir --spam "$HOME/Mail/Spam/Uncaught/Received"
+process_dir --ham "$HOME/Mail/Spam/Ham/Received"
+process_dir --ham "$HOME/Mail/Spam/Ham/To Delete"
+process_dir --spam "$HOME/Mail/Spam/Spam/To Delete"
 
 
 # The Expat License
