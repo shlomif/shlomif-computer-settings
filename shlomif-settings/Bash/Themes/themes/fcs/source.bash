@@ -112,7 +112,8 @@ find_ids()
         eval "$cmd"
     )
 }
-clean_bpat()
+
+clean_patsolve_build_dir()
 {
     rm -fr "$pats_b"
 }
@@ -143,7 +144,7 @@ test_without_notify()
     (
         export HARNESS_BREAK=1
         set -e -x
-        clean_bpat
+        clean_patsolve_build_dir
         _configure_build
         cd "$b" && \
             make -j4 && \
@@ -208,9 +209,14 @@ p-()
     echo top10000 | pprof "$exe" "$prof" | tee -a "$out_fn"
 }
 
-cs()
+__cd_site()
 {
     cd "$site"
+}
+
+cs()
+{
+    __cd_site "$@"
 }
 
 i()
@@ -228,17 +234,18 @@ pb()
     cd "$pats_b"
 }
 
-# Short for format.
-fmt()
+test_using_formatting_tests()
 {
     (
         unset FCS_USE_TEST_RUN;
-        clean_bpat
+        clean_patsolve_build_dir
         cd "$b" && \
             make -j4 && \
             perl "$c_src"/run-tests.pl --glob='{clang-format,tidy,py-flake8,style-trailing-space,verify--nht}*.t'
     )
 }
+
+alias fmt=test_using_formatting_tests
 
 bpat()
 {
@@ -347,10 +354,10 @@ delta()
         set -e
         cb
         ../scripts/Tatzer -l n2t
-        fmt
+        test_using_formatting_tests
         pt
         cmake -DFCS_DISABLE_DEBONDT_DELTA_STATES=1 ../source/
-        fmt
+        test_using_formatting_tests
         pt
     )
 }
@@ -359,7 +366,7 @@ delta()
 ts()
 {
     (
-        cs
+        __cd_site
         make test
     )
 }
@@ -442,7 +449,7 @@ total_tests()
         set -e -x
         perl -E "use Path::Tiny qw/path/ ; die qq%remaining build directories% if path(shift(@ARGV))->parent()->children(qr/\\Abuild-[0-9]+\\z/)" "$c_src"
         (cd "$site" && git clean -dxf .) || true
-        fmt
+        test_using_formatting_tests
         (
             unset FCS_USE_TEST_RUN
             test_without_notify
