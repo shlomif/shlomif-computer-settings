@@ -1,0 +1,5 @@
+Set a minimal perl version.
+
+See:
+
+* https://github.com/shlomif/supporting-older-perl5-releases
