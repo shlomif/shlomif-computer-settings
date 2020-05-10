@@ -1,0 +1,9 @@
+Elim C preprocessor #ifdef s / #if s [refactoring].
+
+This is a code refactoring ( https://en.wikipedia.org/wiki/Code_refactoring ) change.
+
+This avoids clutter.
+
+Also see:
+
+* https://en.wikipedia.org/wiki/C_preprocessor
