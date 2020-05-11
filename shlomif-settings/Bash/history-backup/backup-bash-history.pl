@@ -4,8 +4,7 @@ use strict;
 use warnings;
 use autodie;
 
-use File::Copy;
-use String::ShellQuote;
+use File::Copy qw/ copy /;
 
 use POSIX (qw(strftime));
 
@@ -38,8 +37,8 @@ foreach my $f (@files)
 {
     my $to = "$trunk_files/$f->{to}";
     copy( $f->{from}, $to );
-    my $fn = shell_quote($to);
-    my ($num_lines) = ( `wc -l $fn` =~ m{([0-9]+)} )
+    my $fn = $to;
+    my ($num_lines) = ( `wc -l "$fn"` =~ m{([0-9]+)} )
         or die "Cannot find num lines for $fn.";
     $f->{num_lines} = $num_lines;
 }
