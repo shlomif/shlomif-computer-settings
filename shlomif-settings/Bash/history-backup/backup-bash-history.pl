@@ -36,7 +36,19 @@ my @files = (
 foreach my $f (@files)
 {
     my $to = "$trunk_files/$f->{to}";
-    copy( $f->{from}, $to );
+    if ( -e $f->{from} )
+    {
+        copy( $f->{from}, $to );
+    }
+    else
+    {
+        if ( !-e $to )
+        {
+            open my $fh, ">>", $to;
+            $fh->print("");
+            close $fh;
+        }
+    }
     my $fn = $to;
     my ($num_lines) = ( `wc -l "$fn"` =~ m{([0-9]+)} )
         or die "Cannot find num lines for $fn.";
