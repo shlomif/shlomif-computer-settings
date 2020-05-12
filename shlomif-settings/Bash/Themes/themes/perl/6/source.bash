@@ -14,10 +14,25 @@ git_base="$base"
 trunk="$base/CI-Gen"
 app_dir="$trunk/perl6-CI-Gen"
 this="$app_dir"
+rgm_dir="$base/s/rakudo-git-master-install"
+
+__setup_rgm_installer()
+{
+    if ! test -e "$rgm_dir"
+    then
+        rgm_basedir="$(dirname "$rgm_dir")"
+        mkdir -p "$rgm_basedir"
+        (
+            git clone 'https://github.com/shlomif/rakudo-git-master-install' "$rgm_dir"
+        )
+    fi
+}
+
+__setup_rgm_installer
 
 u-()
 {
-    bash "$base/s/rakudo-git-master-install/rakudo-git.bash"
+    bash "$rgm_dir/rakudo-git.bash"
 }
 
 rw_repos_url="$(_shlomif_github "ci-gen-framework")"
