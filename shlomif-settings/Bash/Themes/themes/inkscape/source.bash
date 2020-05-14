@@ -59,7 +59,7 @@ conf()
     )
 }
 
-b()
+build_project()
 {
     (
         cd "$build" && \
@@ -69,9 +69,14 @@ b()
     )
 }
 
+b()
+{
+    build_project "$@"
+}
+
 t()
 {
-    b
+    build_project "$@"
 }
 
 run()
