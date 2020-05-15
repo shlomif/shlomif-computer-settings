@@ -10,7 +10,7 @@ install:
     - cpanm --notest IPC::System::Simple
     # Date::Format 's tests started failing due to https://rt.cpan.org/Public/Bug/Display.html?id=124509
     - cpanm --notest Date::Format
-    - cpanm Code::TidyAll::Plugin::PerlCritic Code::TidyAll::Plugin::PerlTidy Code::TidyAll::Plugin::TestCount Number::Format Path::Tiny Perl::Critic Perl::Tidy Test::Code::TidyAll Test::TrailingSpace
+    - cpanm Code::TidyAll::Plugin::PerlCritic Code::TidyAll::Plugin::PerlTidy Code::TidyAll::Plugin::TestCount Number::Format Path::Tiny Perl::Critic Perl::Tidy Test::Code::TidyAll Test::File::IsSorted Test::TrailingSpace
 language: perl
 matrix:
     fast_finish: true

@@ -266,21 +266,14 @@ sub run_setup
 run_setup('Bash');
 run_setup('vim-conf');
 
-foreach my $dir (
-    'Bash',                 'bash-aliases',
-    'build-scripts',        'clang-format',
-    'freedesktop',          'gdb',
-    'git',                  'hg',
-    'jwm',                  'perl/Dist-Zilla',
-    'perl/perldb',          'perl/perltidy',
-    'python/pdb',           'rpm',
-    'sky',                  'tmux',
-    'vcs-checkout-scripts', 'x11',
-    'xdg',
-    )
+open my $dirs_list_fh, "<",
+    "$trunk/shlomif-settings/setup-all/symlink-dsl-sub-dirs-list.txt";
+while ( my $dir = <$dirs_list_fh> )
 {
+    chomp $dir;
     run_dsl($dir);
 }
+close($dirs_list_fh);
 
 sub_c( "Bash/history-backup", [ "sh", "setup-backup-bash-history.bash" ] );
 
