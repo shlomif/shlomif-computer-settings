@@ -1,0 +1,1 @@
+symlink from ~/.local/share/applications/vlc.desktop to ./vlc.desktop

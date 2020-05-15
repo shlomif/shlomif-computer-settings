@@ -1,3 +1,4 @@
+#!/usr/bin/env xdg-open
 [Desktop Entry]
 Categories=AudioVideo;Player;Recorder;Qt;
 Comment[en_GB]=Read, capture, broadcast your multimedia streams
