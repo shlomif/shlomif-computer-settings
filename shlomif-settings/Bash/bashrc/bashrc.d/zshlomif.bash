@@ -37,3 +37,14 @@ if ! git info > /dev/null 2>&1
 then
     eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 fi
+# Protecting from reboots when doing reb[PgUp]
+# for rebuild
+reboot()
+{
+    if declare -f "rebuild" > /dev/null 2>&1
+    then
+        echo "You probably wanted 'rebuild'"
+    else
+        `which reboot` "$@"
+    fi
+}
