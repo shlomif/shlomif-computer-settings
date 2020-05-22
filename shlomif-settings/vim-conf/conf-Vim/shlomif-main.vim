@@ -64,6 +64,9 @@ set tags=tags;/
 
 set runtimepath+=~/.vim/vim-addon-manager/
 set nomore
+let g:licenses_authors_name = 'Shlomi Fish ( https://www.shlomifish.org/ )'
+let g:licenses_copyright_holders_name = g:licenses_authors_name
+let g:licenses_default_commands = ['apache', 'cc0', 'ccby', 'gpl', 'mit']
 let g:vim_addon_manager = {}
 let g:vim_addon_manager.auto_install = 1
 let g:vim_addon_manager.shell_commands_run_method = 'system'
@@ -86,6 +89,7 @@ call vam#ActivateAddons([
     \ 'github:Houl/cxf_mod-vim',
     \ 'github:aaronbieber/quicktask',
     \ 'github:alessandroyorba/alduin',
+    \ 'github:antoyo/vim-licenses',
     \ 'github:aperezdc/vim-template',
     \ 'github:cakebaker/scss-syntax.vim',
     \ 'github:cespare/vim-toml',
