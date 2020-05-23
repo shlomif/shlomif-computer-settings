@@ -39,7 +39,7 @@ is(
 # TEST
 is(
     scalar(`gmake -f backup.mak YS.pr`),
-    POSIX::strftime( "%Y/%Y-%m-%d\n", localtime() ),
+    POSIX::strftime( "%Y-%m-%d\n", localtime() ),
     "Checking for YS - year stamp",
 );
 
@@ -47,7 +47,7 @@ is(
 is(
     scalar(`gmake -f backup.mak BACKUP_DIR.pr`),
     POSIX::strftime(
-        "$ENV{HOME}/Backup/Backup/%Y/%Y-%m-%d/disk-fs\n",
+        "$ENV{HOME}/Backup/Backup/%Y-%m-%d/disk-fs\n",
         localtime()
     ),
     "Checking for BACKUP_DIR",
@@ -57,7 +57,7 @@ is(
 is(
     scalar(`gmake -f backup.mak EXTRA_DATA_DIR.pr`),
     POSIX::strftime(
-        "$ENV{HOME}/Backup/extra-data/%Y/%Y-%m-%d/disk-fs\n",
+        "$ENV{HOME}/Backup/extra-data/%Y-%m-%d/disk-fs\n",
         localtime()
     ),
     "Checking for BACKUP_DIR",

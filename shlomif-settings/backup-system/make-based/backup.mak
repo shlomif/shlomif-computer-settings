@@ -22,7 +22,7 @@
 
 STAMP := $(shell date "+%Y-%m-%d")
 
-YS := $(shell date +%Y)/$(STAMP)
+YS := $(STAMP)
 
 BACKUP_DIR = $(HOME)/Backup/Backup/$(YS)/disk-fs
 BACKUP_STAMP = $(BACKUP_DIR)/stamp
