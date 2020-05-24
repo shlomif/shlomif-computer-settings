@@ -466,6 +466,22 @@ tt()
     total_tests "$@"
 }
 
+partial_rebuild()
+{
+    (
+        set -e -x
+        cd "$site"
+        touch bin/jinja-render.py
+        gmake fastrender
+        ts
+    )
+}
+
+-p()
+{
+    partial_rebuild
+}
+
 export FCS_PATH="$b" FCS_SRC_PATH="$c_src"
 export HTML_VALID_VNU_JAR=~/Download/unpack/net/www/validator/build/dist/vnu.jar
 export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/fc-solve-tidyall.d"
