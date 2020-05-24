@@ -735,3 +735,9 @@ endfunction
 
 autocmd FileType c call Shlomif_C_and_CPP_file_type()
 autocmd FileType cpp call Shlomif_C_and_CPP_file_type()
+
+" sanity check.
+let g:sniptest = ( $HOME . '/.config/nvim/ExtraUltiSnips/perl.snippets' )
+if (!(filereadable(g:sniptest)))
+    throw ( g:sniptest . ' does not exist - run setup-all' )
+endif
