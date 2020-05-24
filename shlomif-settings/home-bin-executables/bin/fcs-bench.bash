@@ -10,6 +10,12 @@ repeat_count="$1"
 shift
 
 num_cpus="$(cat /proc/cpuinfo | grep -P '^processor\s*:' | wc -l)"
+step=16
+if test -e /etc/fedora-release
+then
+    step=20
+    num_cpus=10
+fi
 
 loop()
 {
@@ -20,7 +26,6 @@ loop()
     done
 }
 
-step=16
 flags=''
 
 f()
