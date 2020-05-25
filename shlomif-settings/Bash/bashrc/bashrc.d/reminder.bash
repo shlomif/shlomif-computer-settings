@@ -1,16 +1,10 @@
-reminder_file="$HOME/.local/share/shlomif/reminder/reminder.txt"
+#! /bin/bash
+#
+# reminder.bash
+# Copyright (C) 2020 Shlomi Fish <shlomif@cpan.org>
+#
+# Distributed under terms of the MIT license.
+#
 
-__display_reminder()
-{
-    if [ -s "$reminder_file" ] ; then
-        perl -Mstrict -Mwarnings -MTerm::ANSIColor -E 'my $x = colored("===", "bold red"); say "$x Reminders $x"'
-        cat "$reminder_file"
-    fi
-}
-__display_reminder
-export PROMPT_COMMAND='__display_reminder'
+. "$HOME/conf/trunk/shlomif-settings/Bash/defs/reminder.bash"
 
-Cancel_reminder()
-{
-    rm "$reminder_file"
-}

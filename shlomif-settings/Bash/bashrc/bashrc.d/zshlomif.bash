@@ -48,3 +48,13 @@ reboot()
         `which reboot` "$@"
     fi
 }
+# Avoid installing pip / pip3 / pip2 in a system path
+# This makes installation buggier
+for bn in "pip" "pip2" "pip3" "pip-2" "pip-3"
+do
+    exe_fn=~/.local/bin/"$bn"
+    if test -e "$exe_fn"
+    then
+        echo "$exe_fn exists!" >> "$reminder_file"
+    fi
+done
