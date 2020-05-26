@@ -8,9 +8,10 @@
 
 set -e -x
 cd ~/.oh-my-zsh/
-git co master
+git checkout master
 git s u master
-git co shlomif-custom
+git push
+git checkout shlomif-custom
 git rebase master
 git pull --rebase origin shlomif-custom
-git push
+git push --all
