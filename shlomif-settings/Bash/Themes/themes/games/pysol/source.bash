@@ -1,6 +1,6 @@
 load_common bundle/git
 
-base="$HOME/Download/unpack/games/pysolfc"
+base="$HOME/progs/games/pysolfc"
 git_dir="$base/git"
 trunk="$git_dir/PySolFC"
 server="$git_dir/pysol-sound-server"
