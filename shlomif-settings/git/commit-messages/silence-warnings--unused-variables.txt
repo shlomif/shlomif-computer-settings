@@ -1,0 +1,3 @@
+Silence compiler/linter warnings of declared but unused variables.
+
+They are a distraction.
