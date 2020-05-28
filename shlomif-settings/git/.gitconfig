@@ -11,6 +11,7 @@
     cnt = rev-list --all --count
     co = checkout
     cp = cherry-pick
+    datetags = tag -l --format='%(refname:strip=2)%09%09%(authordate)'
     dh = diff HEAD
     dhs = diff HEAD --stat
     di = diff
