@@ -83,6 +83,7 @@ rehash > /dev/null 2>&1
 if ! which pbyacc > /dev/null 2>&1
 then
     pushd "$(pwd)"
+    mkdir -p "$core"
     cd "$core"
     deburl="http://deb.debian.org/debian/pool/main/p/$pbyacc_base"
     wget -c "$deburl/$pbyacc_tarball_bn"
