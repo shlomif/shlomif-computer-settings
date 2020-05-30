@@ -16,14 +16,12 @@ my @todel = qw%
        # m%(?:Shlomi_Fish|rcs-states-storage|New-Site|Version-2_[68]_|mdv-hang)%
         m%
         (?:
-            nedmalloc |
-            integrate-patsolve-atomic-moves-logic |
-            add-depth-dependent-moves-order |
-            first-class-citizen-card-columns-objects |
-            get_rid_of_max_num_in_growing_arrays |
-            solving-using-several-instances-in-different-pthreads |
-            switch-to-fcs_move_stack_push_params |
-            extract-ansi-c-macros-into-functions
+            add-support-for-nedtries |
+            old-2\.9\.x-state-ordering |
+            cmake-make-pdfs-breakage-investigation |
+            dllexport-playground |
+            tcc-breakage |
+            reduce-the-size-of-the-internal-move-token-structs
   )
   %msx
         }
@@ -35,7 +33,7 @@ my @todel = qw%
         (
             scalar( $branch =~ s#\A.*/##mrs ),
             (
-                  ( @components == 4 )
+                  ( @components == 4 or @components == 2 )
                 ? ( join "/", @components[ -2 .. -1 ] )
                 : ()
             )
