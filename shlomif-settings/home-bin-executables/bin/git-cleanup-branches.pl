@@ -16,12 +16,14 @@ my @todel = qw%
        # m%(?:Shlomi_Fish|rcs-states-storage|New-Site|Version-2_[68]_|mdv-hang)%
         m%
         (?:
-  porting-to-more-linux-c-compilers |
-  prepare-a-windows-nsis-package |
-  tcc-breaking |
-  website-deprecate-pysol-integration-page |
-  refactoring-convert-state-with-locations-to-key-val-pairs
-
+            nedmalloc |
+            integrate-patsolve-atomic-moves-logic |
+            add-depth-dependent-moves-order |
+            first-class-citizen-card-columns-objects |
+            get_rid_of_max_num_in_growing_arrays |
+            solving-using-several-instances-in-different-pthreads |
+            switch-to-fcs_move_stack_push_params |
+            extract-ansi-c-macros-into-functions
   )
   %msx
         }
