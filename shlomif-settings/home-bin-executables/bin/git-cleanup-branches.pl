@@ -11,17 +11,33 @@ use Path::Tiny qw/ path tempdir tempfile cwd /;
 my @todel = qw%
     %;
 
-@todel = qw%
-    %;
-
 @todel = uniq(
-    grep { m%(?:Shlomi_Fish|New-Site|Version-2_[68]_|mdv-hang)% }
+    grep {
+       # m%(?:Shlomi_Fish|rcs-states-storage|New-Site|Version-2_[68]_|mdv-hang)%
+        m%
+        (?:
+  porting-to-more-linux-c-compilers |
+  prepare-a-windows-nsis-package |
+  tcc-breaking |
+  website-deprecate-pysol-integration-page |
+  refactoring-convert-state-with-locations-to-key-val-pairs
+
+  )
+  %msx
+        }
         map {
         my $branch = $_;
         chomp $branch;
         $branch =~ s/\A\s*//;
-        $branch =~ s#\A.*/##ms;
-        $branch
+        my @components = split( m#/#, $branch, -1 );
+        (
+            scalar( $branch =~ s#\A.*/##mrs ),
+            (
+                  ( @components == 4 )
+                ? ( join "/", @components[ -2 .. -1 ] )
+                : ()
+            )
+        )
         } path("$ENV{HOME}/branches.txt")->lines_utf8
 );
 
