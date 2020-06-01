@@ -16,12 +16,15 @@ my @todel = qw%
        # m%(?:Shlomi_Fish|rcs-states-storage|New-Site|Version-2_[68]_|mdv-hang)%
         m%
         (?:
-            add-support-for-nedtries |
-            old-2\.9\.x-state-ordering |
-            cmake-make-pdfs-breakage-investigation |
-            dllexport-playground |
-            tcc-breakage |
-            reduce-the-size-of-the-internal-move-token-structs
+        befs
+        | feature-branch--depth-dbm-solver--condvars--issue8
+  | feature-branch--penguin-solving-wrapper
+  | feature-branch--store-cols-inside-pointers
+  | feature-branch-opt-reverse-bool
+  | feature-branch--try-shell-sort
+  | cmake-gnu-install-dirs--feature-branch
+  | feature-branch--make-rank-king-compile-time-configurable
+  | zerofc
   )
   %msx
         }
@@ -78,7 +81,7 @@ if (0)
     }
 }
 
-eval { do_system( { cmd => [ "git", "branch", "-d", @todel ] } ); };
+eval { do_system( { cmd => [ "git", "branch", "-D", @todel ] } ); };
 path("$ENV{HOME}/deleted-branches-log.txt")
     ->append_utf8( map { "$_\n" } @todel );
 __END__
