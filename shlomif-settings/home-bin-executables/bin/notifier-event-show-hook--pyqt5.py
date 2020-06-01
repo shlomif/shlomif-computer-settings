@@ -33,10 +33,16 @@ from pathlib import Path
 import click
 import vlc
 
+from PySide2 import QtCore, QtGui, QtWidgets
+'''
+Remove workaround since PySide2 is working on the latest Fedora 32 x86-64
+again:
+
 if os.path.exists("/etc/fedora-release"):
     from PyQt5 import QtCore, QtGui, QtWidgets
 else:
     from PySide2 import QtCore, QtGui, QtWidgets
+'''
 
 
 class Player(QtWidgets.QMainWindow):
