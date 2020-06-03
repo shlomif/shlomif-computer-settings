@@ -6,7 +6,7 @@
 # http://kdesrc-build.kde.org/documentation/
 global
     branch-group kf5-qt5
-    kdedir /opt/kde-5-from-kdesrc-build # Where to install KF5-based software
+    kdedir /opt/shlomif/kde-5-from-kdesrc-build # Where to install KF5-based software
     qtdir /usr     # Where to find Qt5
 
     # Where to download source code. By default the build directory and

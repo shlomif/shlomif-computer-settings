@@ -7,6 +7,7 @@ gdb
 git
 hg
 jwm
+kdesrc-buildrc
 perl/Dist-Zilla
 perl/perldb
 perl/perltidy
