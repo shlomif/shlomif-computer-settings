@@ -1,6 +1,7 @@
 ( . ~/bin/Dev-Path-Configs-Source-Me.bash && make )
 ( PATH=/home/shlomif/apps/python3/bin:$PATH ; export LD_LIBRARY_PATH=/home/shlomif/apps/python3/lib ; time python3 collect-stats.py 0fc-log.txt )
 ( b ; n --msg bm ) 2>&1 | tee ~/curl.bm.txt
+( set -x ; export GIMPGITBUILD__BUILD_GIMP_USING_MESON=0 ; gimpgitbuild build ; notifier notify -m "gimp build" ) |& tee ~/gimpgitbuild-try-gnuautotools.txt
 ( set -x ; export GIMPGITBUILD__BUILD_GIMP_USING_MESON=0 GIMPGITBUILD__PAR_JOBS_FLAGS='-j8' ; gimpgitbuild build ; notifier notify -m "gimp build" ) |& tee ~/gimpgitbuild-try1.txt
 ( time make test ) 2>&1 | tee -a /home/shlomif/desk-time-oldpysol.txt
 (git clone git@github.com:thewml/website-meta-language.git w && (cd w && mkdir b && cd b && cmake ../src && make) && rm -fr w )
@@ -71,6 +72,7 @@
 ../scripts/Tatzer -l extra_speed2
 ../scripts/Tatzer -l n2b
 ../scripts/Tatzer -l n2t
+../scripts/Tatzer -l n2t -p OBT
 ../source/Tatzer
 ../source/Tatzer --break-back-compat-1
 ../source/Tatzer -l extra_speed2
@@ -295,9 +297,11 @@ bash test.bash
 bash update.sh
 bash vendu-deploy-1.bash
 bash ~/bin/backup-total.sh ; bash ~/bin/backup-extra-data.sh ; bash ~/bin/backup-total.sh ; bash ~/bin/backup-extra-data.sh ; n --msg "Backup finished"
+bash ~/bin/backup-total.sh ; bash ~/bin/backup-extra-data.sh ; bash ~/bin/backup-total.sh ; bash ~/bin/backup-extra-data.sh ; n --msg "Backup finished"\
 bash ~/bin/backup-total.sh ; n --msg "Backup finished"
 bash ~/conf/trunk/shlomif-settings/home-bin-executables/bin/gen-gen-ci.bash
 bash ~/conf/trunk/shlomif-settings/home-bin-executables/shlomif-specific/merge-prereqs-yml.bash
+bash ~/conf/trunk/shlomif-settings/home-bin-executables/shlomif-specific/reddit11-11.bash
 bash ~/h.sh
 bat *.time
 bat LICENSE
@@ -617,6 +621,7 @@ export MAKEFLAGS="-r"
 export MAKEFLAGS='-r'
 export NOTIFIER_TO=lap
 export NOTIFIER_TO=sh
+export NUM_CPUS=2
 export PATH="$PATH:/home/shlomif/.local/bin:$PWD"
 export PATH="$PWD/node_modules/.bin:$PATH"
 export PATH="/home/shlomif/.local/bin:/home/shlomif/apps/test/wml/bin:$PATH"
@@ -1543,6 +1548,7 @@ mu
 mv bookmarks-* ../Arcs/old-firefox-bookmarks/
 mv du-new.txt du.txt
 my_update
+myrsync .config/gtk-3.0-fixed/ .config/gtk-3.0/
 n
 n -m foo
 nano
@@ -1698,6 +1704,7 @@ pip2 install --upgrade --user .
 pip3 install --upgrade --user .
 pkill -9 gvim
 pkill -9 gvimdiff
+pkill baloo_file
 pkill claws-mail
 pkill gvim
 pkill hexchat
@@ -1871,6 +1878,7 @@ qvim README.md
 qvim TODO.quicktask
 qvim dist.ini
 qvim files.txt
+qvim lib/App/gimpgitbuild/Command/build.pm
 qvim lib/blocks.tt2
 qvim lib/make/main.mak
 qvim o
@@ -2025,6 +2033,7 @@ source myrsync.bash
 spectacle
 ssh -X 192.168.1.192
 ssh -X 192.168.1.232
+ssh -X sh
 ssh hostgator
 ssh lap
 ssh shlomif@perlish.org
