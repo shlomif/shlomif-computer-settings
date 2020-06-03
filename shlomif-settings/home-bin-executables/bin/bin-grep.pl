@@ -20,12 +20,16 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+=head1 USAGE
+
+perl bin-grep.pl "needle_string" /path/to/large-file
+
+=cut
+
 use strict;
 use warnings;
 use 5.014;
 use autodie;
-
-use Path::Tiny qw/ path tempdir tempfile cwd /;
 
 my $BLOCKSIZE      = 64 * 1024;
 my $MAX_needle_len = 256;
