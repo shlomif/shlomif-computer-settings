@@ -25,6 +25,7 @@ my @todel = qw%
   | cmake-gnu-install-dirs--feature-branch
   | feature-branch--make-rank-king-compile-time-configurable
   | zerofc
+  | robert
   )
   %msx
         }
@@ -44,7 +45,7 @@ my @todel = qw%
         } path("$ENV{HOME}/branches.txt")->lines_utf8
 );
 
-# die "@todel";
+# die "<<@todel>>";
 
 # @todel = grep { /Shlomi_Fish/ } @todel;
 my @remotes = (qw/ origin bitbucket /);
