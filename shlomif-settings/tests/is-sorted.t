@@ -9,7 +9,10 @@ use Test::File::IsSorted ();
 {
     # TEST
     Test::File::IsSorted::are_sorted(
-        [ "shlomif-settings/setup-all/symlink-dsl-sub-dirs-list.txt", ],
+        [
+            ".gitignore",
+            "shlomif-settings/setup-all/symlink-dsl-sub-dirs-list.txt",
+        ],
         "input files are sorted.",
     );
 }
