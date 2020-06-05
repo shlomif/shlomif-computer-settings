@@ -106,6 +106,7 @@ call vam#ActivateAddons([
     \ 'github:junegunn/fzf.vim',
     \ 'github:leafgarland/typescript-vim',
     \ 'github:mattn/emmet-vim',
+    \ 'github:majutsushi/tagbar',
     \ 'github:nacitar/a.vim',
     \ 'github:nvie/vim-flake8',
     \ 'github:pboettch/vim-cmake-syntax',
@@ -735,6 +736,10 @@ endfunction
 
 autocmd FileType c call Shlomif_C_and_CPP_file_type()
 autocmd FileType cpp call Shlomif_C_and_CPP_file_type()
+
+" See:
+" https://stackoverflow.com/questions/26789467/how-can-i-display-the-function-name-in-vim-airline
+let g:airline#extensions#tagbar#enabled = 1
 
 " sanity check.
 let g:sniptest = ( $HOME . '/.config/nvim/ExtraUltiSnips/perl.snippets' )
