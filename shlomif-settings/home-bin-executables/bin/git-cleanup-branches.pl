@@ -26,6 +26,8 @@ my @todel = qw%
   | feature-branch--make-rank-king-compile-time-configurable
   | zerofc
   | robert
+  | \@
+  | trunk
   )
   %msx
         }
