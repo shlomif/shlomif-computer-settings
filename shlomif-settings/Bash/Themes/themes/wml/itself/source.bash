@@ -59,7 +59,7 @@ b()
 {
     mkdir -p "$b"
     cd "$b"
-    cmake -DCMAKE_INSTALL_PREFIX="$HOME/apps/test/wml" "$src" && \
+    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="$HOME/apps/test/wml" "$src" && \
         make -j4 && \
         make install
 }
