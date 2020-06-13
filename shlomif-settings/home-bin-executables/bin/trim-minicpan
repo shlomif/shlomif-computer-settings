@@ -22,8 +22,17 @@ test \! -e "$newlocal"
 test \! -e "$oldlocal"
 
 mkdir -p "$newlocal"
-/usr/sbin/thttpd -p "$port" -d "$localdir"
+if test "$HTTPD" = "python"
+    (cd "$localdir" && python3 -m http.server "$port") &
+    sleep 1
+else
+    /usr/sbin/thttpd -p "$port" -d "$localdir"
+fi
 minicpan -r "http://localhost:${port}/" -l "$newlocal"
 mv "$localdir" "$oldlocal"
-pkill thttpd
+if test "$HTTPD" = "python"
+    kill %1
+else
+    pkill thttpd
+fi
 mv "$newlocal" "$localdir"
