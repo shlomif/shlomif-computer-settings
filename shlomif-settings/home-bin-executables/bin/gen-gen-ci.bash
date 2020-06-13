@@ -23,8 +23,6 @@ shift || true
 
 fn='.ci-gen.ini'
 cat > "$fn" <<EOF
-;! /bin/bash
-;
 ; .ci-gen.ini
 ; Copyright (C) 2018 Shlomi Fish <shlomif@cpan.org>
 ;
