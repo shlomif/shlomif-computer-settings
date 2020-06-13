@@ -23,6 +23,7 @@ test \! -e "$oldlocal"
 
 mkdir -p "$newlocal"
 if test "$HTTPD" = "python"
+then
     (cd "$localdir" && python3 -m http.server "$port") &
     sleep 1
 else
@@ -31,6 +32,7 @@ fi
 minicpan -r "http://localhost:${port}/" -l "$newlocal"
 mv "$localdir" "$oldlocal"
 if test "$HTTPD" = "python"
+then
     kill %1
 else
     pkill thttpd
