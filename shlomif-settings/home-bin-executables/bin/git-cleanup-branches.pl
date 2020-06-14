@@ -17,16 +17,9 @@ my @todel = qw%
         m%
         (?:
         befs
-        | feature-branch--depth-dbm-solver--condvars--issue8
-  | feature-branch--penguin-solving-wrapper
-  | feature-branch--store-cols-inside-pointers
-  | feature-branch-opt-reverse-bool
-  | feature-branch--try-shell-sort
-  | cmake-gnu-install-dirs--feature-branch
-  | feature-branch--make-rank-king-compile-time-configurable
-  | zerofc
-  | robert
-  | \@
+        | feature-branch--move-from-fc-to-empty-stack-and-immediately-put-child-card-on-top
+        | feature-branch--test-optimization-based-on-fact-that-leading-cols-are-empty
+        | \Qfc-solve-3.18.1-bench\E
   | trunk
   )
   %msx
