@@ -1,3 +1,4 @@
+proj_name='better-scm'
 load_common bundle/git
 load_common chdirs
 load_common partests
@@ -31,6 +32,4 @@ pristine_copy_reduced=~/Backup/Arcs/better-scm-post-dest/post-incs-reduced
 this_copy_reduced=~/Backup/Arcs/better-scm-post-dest/this-incs-reduced
 _post_dest="dest"
 
-export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/better-scm-tidyall.d"
 __add_to_path
-proj_name='better-scm'

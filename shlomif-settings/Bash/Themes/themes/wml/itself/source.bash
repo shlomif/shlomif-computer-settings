@@ -1,5 +1,7 @@
+proj_name='wml'
 load_common bundle/git
 load_common chdirs
+load_common data_caches
 
 export MAKEFLAGS='-j100'
 base="$HOME/progs/wml/wml-itself"
@@ -97,7 +99,4 @@ then
     popd
     rehash > /dev/null 2>&1
 fi
-proj_name='wml'
 export WML_TEST_BUILD=1 WML_TEST_TIDY=1 HARNESS_OPTIONS="j9:c"
-export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/wml-itself-tidyall.d"
-

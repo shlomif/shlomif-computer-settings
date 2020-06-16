@@ -1,4 +1,6 @@
+proj_name='PySolFC'
 load_common bundle/git
+load_common data_caches
 
 base="$HOME/progs/games/pysolfc"
 git_dir="$base/git"
@@ -68,5 +70,3 @@ cs()
 {
     cd "$site"
 }
-export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/pysolfc-tidyall.d"
-proj_name='PySolFC'

@@ -19,6 +19,7 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+proj_name='fcs'
 
 load_common bundle/git
 load_common chdirs
@@ -484,7 +485,6 @@ partial_rebuild()
 
 export FCS_PATH="$b" FCS_SRC_PATH="$c_src"
 export HTML_VALID_VNU_JAR=~/Download/unpack/net/www/validator/build/dist/vnu.jar
-export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/fc-solve-tidyall.d"
 # Causes rpmbuild to fail.
 if true
 then
@@ -499,8 +499,6 @@ PATH="$HOME/apps/valgrind/bin:$PATH"
 CPATH+=":/opt/vlc-3.0/libtap/include/"
 LIBRARY_PATH+=":/opt/vlc-3.0/libtap/lib/"
 export CPATH LIBRARY_PATH CMAKE_LIBRARY_PATH="$LIBRARY_PATH" LD_LIBRARY_PATH="$LIBRARY_PATH"
-
-proj_name='fcs'
 
 # Clean up the environment for the valgrind tests to succeed.
 # Commented out because now it makes things worse in t/t/build-process.t

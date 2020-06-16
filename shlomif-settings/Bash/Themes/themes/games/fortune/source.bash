@@ -1,5 +1,7 @@
+proj_name='fortune'
 load_common bundle/git
 load_common chdirs
+load_common data_caches
 
 remote_repo="$(_shlomif_github "fortune-mod")"
 base="$HOME/progs/C/fortune-mod"
@@ -13,7 +15,6 @@ b="$build"
 
 export FCS_USE_TEST_RUN=1
 export FORTUNE_TEST_TIDY=1
-export TIDYALL_DATA_DIR="$HOME/Arcs/temp/fortune-dir-tidyall.d"
 
 cd "$this"
 
@@ -45,14 +46,12 @@ t()
 # parallel-tests
 pt()
 {
-    ( unset FCS_USE_TEST_RUN; t; )
+( unset FCS_USE_TEST_RUN; t; )
 }
 
 real_tidyall="$(which tidyall)"
 
 tidyall()
 {
-    "$real_tidyall" --data-dir="$TIDYALL_DATA_DIR" "$@"
+"$real_tidyall" --data-dir="$TIDYALL_DATA_DIR" "$@"
 }
-
-proj_name='fortune'

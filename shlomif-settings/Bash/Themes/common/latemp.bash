@@ -35,4 +35,5 @@ __add_to_path()
     dedup_pathvar PYTHONPATH
 }
 export HTML_VALID_VNU_JAR=~/Download/unpack/net/www/validator/build/dist/vnu.jar
+load_common data_caches
 load_common latemp_diff

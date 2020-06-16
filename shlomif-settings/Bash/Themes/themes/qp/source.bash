@@ -1,5 +1,7 @@
+proj_name='quad-pres'
 load_common bundle/git
 load_common chdirs
+load_common data_caches
 
 base="$HOME/progs/quadpres"
 git_base="$base"
@@ -74,7 +76,5 @@ prompt()
         "~=$HOME"
 }
 export PATH="$HOME/apps/test/wml/bin:$PATH"
-proj_name='quad-pres'
 export HARNESS_OPTIONS=j4:c TEST_JOBS=4
 export WMLOPTS="-q"
-export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/quadpres-tidyall.d"

@@ -1,3 +1,4 @@
+proj_name='homepage'
 load_common bundle/git
 load_common partests
 load_common chdirs
@@ -170,13 +171,9 @@ _ack_with_no_lib_prefix()
 MAKEFLAGS+=" -s"
 alias m=gmake
 
-export TIDYALL_DATA_DIR="$HOME/Backup/Arcs/shlomif-homepage-tidyall.d"
 # Commented out because it makes matters slower:
 # export HTML_POST_INCS_DATA_DIR="$HOME/Backup/Arcs/shlomif-homepage-gezer.d"
-export VNU_CACHE="$HOME/Backup/Arcs/shlomif-homepage-vnu-cache.json"
 
 # one can unset it.
 # export SKIP_SPELL_CHECK=1
 __add_to_path
-
-proj_name='homepage'
