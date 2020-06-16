@@ -35,4 +35,6 @@ up()
 
 __add_to_path
 
+export TIDYALL_DATA_DIR="$HOME/Arcs/temp/sites/vim-begin-tidyall.d"
+export VNU_CACHE="$HOME/Arcs/temp/sites/vim-begin-vnu-cache.json"
 proj_name='vim-begin'
