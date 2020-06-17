@@ -10,7 +10,7 @@ b="$c_build"
 c="$trunk"
 this="$c"
 
-remote_repo="kde:kpat"
+remote_repo="kde:games/kpat"
 
 export FCS_USE_TEST_RUN=1 FCS_TEST_CLANG_FORMAT=1 FCS_TEST_BUILD=1
 
