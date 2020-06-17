@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
-dbus-launch --exit-with-session /usr/bin/startplasmacompositor
+exe=/usr/bin/startplasma-wayland
+if test ! -e "$exe"
+then
+    exe=/usr/bin/startplasmacompositor
+fi
+dbus-launch --exit-with-session "$exe"
 # /usr/bin/startplasmacompositor
 
 # The Expat License
