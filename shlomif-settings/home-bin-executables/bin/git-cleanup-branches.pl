@@ -20,6 +20,14 @@ my @todel = qw%
         | feature-branch--move-from-fc-to-empty-stack-and-immediately-put-child-card-on-top
         | feature-branch--test-optimization-based-on-fact-that-leading-cols-are-empty
         | \Qfc-solve-3.18.1-bench\E
+        | \Qrb\.c\E
+        | test-new-is-parent-buf-opt-on-old-commit
+        | site-wml-require-js-and-typescript-problem
+        | range-solvers-avoid-parsing-argv-opt
+        | web-fc
+        | webfcs-typescript
+        | web_based_solver_textarea_for_arbitrary_cmd_line_params
+        | to-del
   | trunk
   )
   %msx
@@ -37,7 +45,7 @@ my @todel = qw%
                 : ()
             )
         )
-        } path("$ENV{HOME}/branches.txt")->lines_utf8
+        } path("$ENV{HOME}/Arcs/temp/branches.txt")->lines_utf8
 );
 
 # die "<<@todel>>";
@@ -76,8 +84,10 @@ if (0)
         do_system( { cmd => [ "git", "fetch", $rem, "--prune" ] } );
     }
 }
-
-eval { do_system( { cmd => [ "git", "branch", "-D", @todel ] } ); };
+if (@todel)
+{
+    eval { do_system( { cmd => [ "git", "branch", "-D", @todel ] } ); };
+}
 path("$ENV{HOME}/deleted-branches-log.txt")
     ->append_utf8( map { "$_\n" } @todel );
 __END__
