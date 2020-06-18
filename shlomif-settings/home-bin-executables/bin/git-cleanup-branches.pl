@@ -6,8 +6,10 @@ use 5.014;
 use autodie;
 
 use List::Util qw/ uniq /;
-use Path::Tiny qw/ path tempdir tempfile cwd /;
+use Path::Tiny qw/ path /;
 
+my $data_dirh = path("$ENV{HOME}/Arcs/temp");
+$data_dirh->mkpath();
 my @todel = qw%
     %;
 
@@ -27,7 +29,10 @@ my @todel = qw%
         | web-fc
         | webfcs-typescript
         | web_based_solver_textarea_for_arbitrary_cmd_line_params
+        | by[\-_]rank
+        | pseudo
         | to-del
+        | multi-gen
   | trunk
   )
   %msx
@@ -45,7 +50,7 @@ my @todel = qw%
                 : ()
             )
         )
-        } path("$ENV{HOME}/Arcs/temp/branches.txt")->lines_utf8
+        } path("$data_dirh/branches.txt")->lines_utf8
 );
 
 # die "<<@todel>>";
@@ -88,7 +93,7 @@ if (@todel)
 {
     eval { do_system( { cmd => [ "git", "branch", "-D", @todel ] } ); };
 }
-path("$ENV{HOME}/deleted-branches-log.txt")
+path("$data_dirh/deleted-branches-log.txt")
     ->append_utf8( map { "$_\n" } @todel );
 __END__
 
