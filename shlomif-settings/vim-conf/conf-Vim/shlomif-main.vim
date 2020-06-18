@@ -191,6 +191,8 @@ autocmd BufNewFile,BufRead ~/progs/freecell/*/t/*.c call Dot_t_file_type()
 
 autocmd BufNewFile,BufRead ~/Download/unpack/graphics/*.pdb set filetype=perl
 
+autocmd BufNewFile,BufRead *.gdb set filetype=gdb
+
 set guifont=DejaVu\ Sans\ Mono\ 10
 
 " Cancelling so the Hebrew keyboard won't be so bad.
