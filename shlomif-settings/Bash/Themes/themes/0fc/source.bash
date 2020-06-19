@@ -70,25 +70,34 @@ c()
 
 alias c7=put7
 
+__mytimestamper()
+{
+    timestamper-with-elapsed --from-start
+}
+
+__myprettyprinter()
+{
+    commify | __mytimestamper
+}
+
 run()
 {
     (
         set -e -x
         set -o pipefail
-        bash solve-more-6-gnupar.bash | commify | timestamper
+        bash solve-more-6-gnupar.bash | __myprettyprinter
     )
 }
 
-run7()
+_old_run7__deprecated()
 {
     (
         set -e -x
         set -o pipefail
-        bash solve-more-7-gnupar.bash | commify | timestamper
+        bash solve-more-7-gnupar.bash | __myprettyprinter
     )
 }
 
 alias r=run
-# alias r=run7
 
 proj_name='0fc'
