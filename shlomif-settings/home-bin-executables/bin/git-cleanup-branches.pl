@@ -33,6 +33,9 @@ my @todel = qw%
         | pseudo
         | to-del
         | multi-gen
+        | avoid-looking-up-hard_thread-and-instance
+        | before-integrating-patsolve-into-fc-solve--trying-out-optimisations
+        | branch-for-reproducing-slowdown-with-gcc-5.2.x
   | trunk
   )
   %msx
