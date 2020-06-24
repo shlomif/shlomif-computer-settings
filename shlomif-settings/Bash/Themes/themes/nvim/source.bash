@@ -91,7 +91,7 @@ update_all()
         git s u || true
         __nvim_make_install
         cd "$qtrunk"
-        git s o || true
+        git s u || true
         __qtnvim_make_install
     )
 }
