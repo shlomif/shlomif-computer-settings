@@ -12,6 +12,7 @@ global
     # Where to download source code. By default the build directory and
     # logs will be kept under this directory as well.
     source-dir /home/shlomif/Download/unpack/kde/kdesrc-build--downloaded-sources
+    make-options -j5
 end global
 
 # Instead of specifying modules here, the current best practice is to refer to
@@ -34,4 +35,6 @@ include /home/shlomif/Download/unpack/kde/kdesrc-build/kf5-qt5-build-include
 # options kcoreaddons
     # make-options -j4
 # end options
-#
+options kauth
+    cmake-options -DKAUTH_BACKEND_NAME=FAKE
+end options
