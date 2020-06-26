@@ -3,8 +3,10 @@
 use strict;
 use warnings;
 
+use List::Util qw/ uniq /;
+
 local $/;
-print join ' ', sort { $a cmp $b } <> =~ /(\S+)/g;
+print join ' ', uniq( sort { $a cmp $b } <> =~ /(\S+)/g );
 
 __END__
 
