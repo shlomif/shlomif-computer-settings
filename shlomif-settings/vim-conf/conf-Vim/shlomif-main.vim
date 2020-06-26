@@ -371,6 +371,13 @@ endfunction
 
 command! NLCopyLine call NLCopyLine()
 
+function! SearchForEvilChars()
+    let @/='[^[:graph:] ]'
+    normal n
+endfunction
+
+command! SearchForEvilChars call SearchForEvilChars()
+
 function! StyledQuotes(start_line, end_line)
     let cmd = a:start_line . ',' . a:end_line . 's/"\([^"]\+\)"/“\1”/'
     exe cmd
