@@ -490,6 +490,9 @@ function Shlomif_rpm_spec()
     let b:mb = "BuildRequires: perl(Module::Build)"
     map <Leader>pl Oexport PERL5LIB="$PWD:$PERL5LIB"<ESC>
     set path+=./../SOURCES/
+    " See:
+    " https://docs.fedoraproject.org/en-US/packaging-guidelines/Debuginfo/
+    let b:debug_pkg_disable = "# Comment why\n%global debug_package %{nil}\n"
 endfunction
 
 autocmd BufRead,BufNewFile *.spec call Shlomif_rpm_spec()
