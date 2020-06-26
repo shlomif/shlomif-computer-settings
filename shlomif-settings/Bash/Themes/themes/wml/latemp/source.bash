@@ -25,5 +25,10 @@ t()
     __run_tests "$@"
 }
 
+ct()
+{
+    cd "$trunk"
+}
+
 proj_name='latemp'
 cd "$this"
