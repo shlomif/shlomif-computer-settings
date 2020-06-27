@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/shlomif/temp-bin/envs'
 let g:netrw_dirhist_3='/home/shlomif/Docs/homepage/homepage/trunk/src/humour/bits/The-Song-Wide-Awake-is-Evil'
 let g:netrw_dirhist_2='/home/shlomif/Docs/homepage/homepage/trunk/src/humour/Muppets-Show-TNI'
 let g:netrw_dirhist_1='/home/shlomif/.vim/ExtraUltiSnips'

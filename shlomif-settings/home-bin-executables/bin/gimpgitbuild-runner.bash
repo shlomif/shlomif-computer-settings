@@ -35,7 +35,7 @@ fi
     gimpgitbuild cleanbuild
     rm -f ~/temp-bin/envs/* ~/temp-bin/next-id.txt
     set -x
-    export SHELL=/bin/sh PYTHONPATH="$HOME"/conf/trunk/shlomif-settings/home-bin-executables/bin CC="$HOME"/temp-bin/gcc CXX="$HOME"/temp-bin/g++ GIMPGITBUILD__BUILD_GIMP_USING_MESON="${use_meson}" GIMPGITBUILD__PAR_JOBS_FLAGS='-j1'
+    export LANGUAGE=C LC_ALL=C SHELL=/bin/sh PYTHONPATH="$HOME"/conf/trunk/shlomif-settings/home-bin-executables/bin CC="$HOME"/temp-bin/gcc CXX="$HOME"/temp-bin/g++ GIMPGITBUILD__BUILD_GIMP_USING_MESON="${use_meson}" GIMPGITBUILD__PAR_JOBS_FLAGS='-j1'
     $CXX
     gimpgitbuild build
     notifier notify -m "gimp build"

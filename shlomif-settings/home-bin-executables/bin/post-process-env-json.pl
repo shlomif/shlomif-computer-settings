@@ -23,6 +23,7 @@ s/^ *"TMUX_PANE": "%[0-9]+",/        "TMUX_PANE": "%1",/ms;
 }
 s%("/home/shlomif/Download/unpack/graphics/gimp/[^"]*/tmp(?:/\.libs/)?)[^/"]*%$1%gms;
 s%("/home/shlomif/Download/unpack/graphics/gimp/[^"]*/tests/\.libs/)[0-9]*%$1%gms;
+s%(^ *"SHLVL": ")[0-9]+(",)%${1}5${2}%gms;
 s%("/tmp/tmp)[^/"]*%$1%gms;
 s%("/tmp/)[^/"]*(/dummy\.c")%$1$2%gms;
 s%(["/]g-ir-cpp)[^/"]*(\.[ic]")%$1$2%gms;
