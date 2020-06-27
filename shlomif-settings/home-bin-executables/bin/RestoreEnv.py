@@ -10,10 +10,11 @@
 
 """
 
+import fcntl
 import json
 import os
-import re
 import sys
+from pathlib import Path
 
 
 class SaveEnv:
@@ -36,9 +37,22 @@ class SaveEnv:
         os.execv(exepath, [exepath]+sys.argv[1:])
 
     def dirsave(self, dirname):
-        maxidx = 0
-        for fn in os.listdir(dirname):
-            m = re.match('^([0-9]+)\\.env\\.json$', fn)
-            if m:
-                maxidx = max([maxidx, int(m.group(1))])
-        return self.save(dirname + "/" + str(maxidx+1)+".env.json")
+        os.makedirs(dirname, exist_ok=True)
+        os.makedirs(dirname+"/envs", exist_ok=True)
+
+        lockfile = Path(dirname) / 'log.lock'
+        next_id_fn = Path(dirname) / 'next-id.txt'
+        next_id = 1
+        lockfile.touch()
+        with open(lockfile, 'a') as f:
+            fcntl.flock(f, fcntl.LOCK_EX)
+            try:
+                with open(next_id_fn, 'rt') as ifp:
+                    next_id = int(ifp.read())
+            except FileNotFoundError:
+                pass
+            with open(next_id_fn, 'wt') as ofp:
+                ofp.write(str(next_id + 1))
+            fcntl.flock(f, fcntl.LOCK_UN)
+
+        return self.save(dirname + "/envs/" + str(next_id) + ".env.json")
