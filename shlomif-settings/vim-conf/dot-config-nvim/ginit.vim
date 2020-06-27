@@ -1,1 +1,1 @@
-Guifont Consolas:h12
+Guifont Inconsolata:h11
