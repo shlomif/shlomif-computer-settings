@@ -193,7 +193,7 @@ autocmd BufNewFile,BufRead ~/Download/unpack/graphics/*.pdb set filetype=perl
 
 autocmd BufNewFile,BufRead *.gdb set filetype=gdb
 
-set guifont=DejaVu\ Sans\ Mono\ 10
+set guifont='Consolas:h12'
 
 " Cancelling so the Hebrew keyboard won't be so bad.
 " so ~/conf/Vim/hebrew.vim

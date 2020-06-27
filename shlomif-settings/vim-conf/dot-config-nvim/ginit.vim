@@ -1,1 +1,1 @@
-Guifont DejaVu Sans Mono:h10
+Guifont Consolas:h12
