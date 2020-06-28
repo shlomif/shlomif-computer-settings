@@ -193,7 +193,9 @@ autocmd BufNewFile,BufRead ~/Download/unpack/graphics/*.pdb set filetype=perl
 
 autocmd BufNewFile,BufRead *.gdb set filetype=gdb
 
-set guifont=Inconsolata\ 11
+if !exists("g:shlomif_is_nvim")
+    set guifont=Inconsolata\ 11
+endif
 
 " Cancelling so the Hebrew keyboard won't be so bad.
 " so ~/conf/Vim/hebrew.vim
