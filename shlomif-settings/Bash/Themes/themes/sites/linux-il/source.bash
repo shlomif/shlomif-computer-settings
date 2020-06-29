@@ -1,9 +1,10 @@
 load_common bundle/git
 
-base="$HOME/Docs/IGLU/linux.org.il/linux.org.il"
+git_base="$HOME/Docs/IGLU/linux.org.il"
+base="$git_base/linux.org.il"
 repo="$base"
 trunk="$repo"
-src="$trunk/www.linux.org.il-new-site/template-toolkit"
+src="$trunk/www.linux.org.il-oldish-site/template-toolkit"
 this="$src"
 
 remote_repo="$($__themes_dir/common/github-git-remote-repo.pl --user="Hamakor" --repo="linux.org.il--old-sources")"
