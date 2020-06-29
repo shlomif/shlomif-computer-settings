@@ -16,3 +16,9 @@ if test -z "$VNU_CACHE"
 then
     export VNU_CACHE="$temp_data_caches_project_dir/vnu-cache.json"
 fi
+
+if test -z "$LATEMP_SPELL_CACHE_DIR"
+then
+    export LATEMP_SPELL_CACHE_DIR="$temp_data_caches_project_dir/spelling-cache"
+fi
+mkdir -p "$LATEMP_SPELL_CACHE_DIR"
