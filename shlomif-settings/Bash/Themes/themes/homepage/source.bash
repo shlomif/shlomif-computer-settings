@@ -174,7 +174,7 @@ alias m=gmake
 _setup_node_modules_cache()
 {
     (
-    set -e -x
+    set -e
     local nm="$trunk/node_modules"
     local nmgit="$nm/.git"
     if ! test -e "$nmgit"
