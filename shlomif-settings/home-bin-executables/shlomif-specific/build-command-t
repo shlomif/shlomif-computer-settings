@@ -2,6 +2,6 @@
 
 set -e -x
 
-cd ~/.vim/Command-T/ruby/command-t/ext/command-t\n
+cd ~/.vim/Command-T/ruby/command-t/ext/command-t/
 ruby extconf.rb
 make
