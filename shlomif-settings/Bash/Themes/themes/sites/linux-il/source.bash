@@ -1,3 +1,4 @@
+proj_name='www.linux.org.il'
 load_common bundle/git
 
 git_base="$HOME/Docs/IGLU/linux.org.il"
@@ -25,4 +26,9 @@ up()
     (cd "$src" && make upload)
 }
 
-proj_name='www.linux.org.il'
+pristine_copy=~/Backup/Arcs/www.linux.org.il-post-dest/post-incs
+pristine_copy_reduced=~/Backup/Arcs/www.linux.org.il-post-dest/post-incs-reduced
+this_copy_reduced=~/Backup/Arcs/www.linux.org.il-post-dest/this-incs-reduced
+_post_dest="dest/"
+
+load_common latemp
