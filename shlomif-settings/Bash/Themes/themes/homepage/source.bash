@@ -171,6 +171,30 @@ _ack_with_no_lib_prefix()
 MAKEFLAGS+=" -s"
 alias m=gmake
 
+_setup_node_modules_cache()
+{
+    (
+    set -e -x
+    local nm="$trunk/node_modules"
+    local nmgit="$nm/.git"
+    if ! test -e "$nmgit"
+    then
+        cd "$trunk"
+        bash bin/install-npm-deps.sh
+        cd "$nm"
+        git init .
+        cd "$trunk/bower_components"
+        git init .
+    fi
+    )
+    if test "$?" = 0
+    then
+        export SKIP_NODE_INST=1
+    fi
+}
+
+_setup_node_modules_cache
+
 # Commented out because it makes matters slower:
 # export HTML_POST_INCS_DATA_DIR="$HOME/Backup/Arcs/shlomif-homepage-gezer.d"
 
