@@ -214,11 +214,11 @@ use warnings;
 endsnippet
 
 snippet _slurp
-sub _slurp
+sub _raw_slurp
 {
 	my $filename = shift;
 
-	open my $in, '<', $filename
+	open my $in, '<:raw', $filename
 		or die "Cannot open '$filename' for slurping - $!";
 
 	local $/;
@@ -229,6 +229,20 @@ sub _slurp
 	return $contents;
 }
 
+sub _utf8_slurp
+{
+	my $filename = shift;
+
+	open my $in, '<:encoding(utf8)', $filename
+		or die "Cannot open '$filename' for slurping - $!";
+
+	local $/;
+	my $contents = <$in>;
+
+	close($in);
+
+	return $contents;
+}
 endsnippet
 
 snippet _write_file
@@ -238,6 +252,50 @@ sub _write_utf8_file
 
 	open my $out_fh, '>:encoding(utf8)', $out_path
 		or die "Cannot open '$out_path' for writing - $!";
+
+	print {$out_fh} $contents;
+
+	close($out_fh);
+
+	return;
+}
+
+sub _write_raw_file
+{
+	my ($out_path, $contents) = @_;
+
+	open my $out_fh, '>:raw', $out_path
+		or die "Cannot open '$out_path' for writing - $!";
+
+	print {$out_fh} $contents;
+
+	close($out_fh);
+
+	return;
+}
+endsnippet
+
+snippet _append_file
+sub _append_utf8_file
+{
+	my ($out_path, $contents) = @_;
+
+	open my $out_fh, '>>:encoding(utf8)', $out_path
+		or die "Cannot open '$out_path' for appending - $!";
+
+	print {$out_fh} $contents;
+
+	close($out_fh);
+
+	return;
+}
+
+sub _append_raw_file
+{
+	my ($out_path, $contents) = @_;
+
+	open my $out_fh, '>>:raw', $out_path
+		or die "Cannot open '$out_path' for appending - $!";
 
 	print {$out_fh} $contents;
 
@@ -270,12 +328,13 @@ endsnippet
 # Some boilerplate for File handling
 snippet files
 
-use File::Spec;
+use File::Spec ();
 use File::Basename (qw( basename dirname ));
 use File::Temp (qw/ tempfile tempdir /);
 use File::Path (qw/ rmtree mkpath /);
 
-use IO::All qw / io /;
+use Path::Tiny qw/ path cwd /;
+# use Path::Tiny qw/ path tempdir tempfile cwd /;
 
 endsnippet
 
