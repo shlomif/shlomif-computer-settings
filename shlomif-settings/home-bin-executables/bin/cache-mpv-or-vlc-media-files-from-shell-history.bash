@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 #
 # cache-mpv-or-vlc-media-files-from-shell-history.bash
 # Copyright (C) 2019 Shlomi Fish <shlomif@cpan.org>

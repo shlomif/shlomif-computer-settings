@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 #
 # install-vnu-validator.bash
 # Copyright (C) 2019 Shlomi Fish <shlomif@cpan.org>

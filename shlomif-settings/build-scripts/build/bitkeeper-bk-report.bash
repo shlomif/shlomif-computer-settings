@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 #
 # bk-report.bash - prepare a bitkeeper bug report.
 #

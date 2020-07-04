@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 #
 # data_caches.bash
 # Copyright (C) 2020 Shlomi Fish <shlomif@cpan.org>

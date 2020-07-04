@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 #
 # oh-my-zsh.bash
 # Copyright (C) 2019 Shlomi Fish <shlomif@cpan.org>

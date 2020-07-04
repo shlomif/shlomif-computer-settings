@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 #
 # merge-prereqs-yml.bash
 # Copyright (C) 2018 Shlomi Fish <shlomif@cpan.org>

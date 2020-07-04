@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 #
 # startx.bash
 # Copyright (C) 2018 shlomif <shlomif@cpan.org>

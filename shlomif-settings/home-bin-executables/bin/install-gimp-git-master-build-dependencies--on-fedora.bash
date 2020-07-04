@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 #
 # install-gimp-git-master-build-dependencies--on-fedora.bash
 # Copyright (C) 2020 Shlomi Fish <shlomif@cpan.org>

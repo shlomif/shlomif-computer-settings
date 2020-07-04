@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 #
 # update-oh-my-zsh.bash
 # Copyright (C) 2020 Shlomi Fish <shlomif@cpan.org>
