@@ -760,3 +760,6 @@ let g:sniptest = ( $HOME . '/.config/nvim/ExtraUltiSnips/perl.snippets' )
 if (!(filereadable(g:sniptest)))
     throw ( g:sniptest . ' does not exist - run setup-all' )
 endif
+
+autocmd BufNewFile,BufRead ~/Docs/Notes/To_Do/Done.txt call UltiSnips#AddSnippetWithPriority('date', '`!v strftime("%Y-%m-%d\n----------\n")`', "date", '', 'all', 20)
+
