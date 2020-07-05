@@ -724,6 +724,10 @@ def get_show_val(var_id):
 def vim_get_show_val():
     return get_show_val(vim.eval('g:for_py_get_show_val'))
 
+def vim_append_get_show_val_to_file(fn):
+    with open(fn, 'at') as fh:
+        fh.write(vim_get_show_val().decode('utf-8'))
+
 EOF
 
 function Shlomif_Makefile_show_var()
@@ -734,8 +738,21 @@ function Shlomif_Makefile_show_var()
     echo py3eval('vim_get_show_val()')
 endfunction
 
+let g:for_py_get_show_val__log_fn = $HOME . '/Arcs/temp/gmake_vars__values.txt'
+
+function Shlomif_Makefile_log_var()
+    let prev = @a
+    normal viw"ay
+    let g:for_py_get_show_val = @a
+    let @a = prev
+    call py3eval('vim_append_get_show_val_to_file("' . g:for_py_get_show_val__log_fn . '")')
+    exec "sp " . g:for_py_get_show_val__log_fn
+    e
+endfunction
+
 function Shlomif_Makefile_file_type()
     command! ShowVar call Shlomif_Makefile_show_var()
+    command! LogVar call Shlomif_Makefile_log_var()
 endfunction
 
 autocmd FileType make call Shlomif_Makefile_file_type()
