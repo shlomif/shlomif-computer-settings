@@ -86,6 +86,7 @@ call vam#ActivateAddons([
     \ 'git:https://gitlab.com/dylnmc/novum.vim',
     \ 'github:Carpetsmoker/auto_mkdir2.vim',
     \ 'github:Glench/Vim-Jinja2-Syntax',
+    \ 'github:JuliaEditorSupport/julia-vim',
     \ 'github:Houl/cxf_mod-vim',
     \ 'github:aaronbieber/quicktask',
     \ 'github:alessandroyorba/alduin',
