@@ -15,7 +15,7 @@ regen()
         cd ~/conf/trunk/shlomif-settings/backup-system/make-based/ && \
         make -f backup.mak rsync_net_home_dir
     )
-    cd ~/Backup/rsync.net/ && bash UNPACK-me.bash
+    cd ~/Backup/rsync.net/ && bash ~/conf/trunk/shlomif-settings/backup-system/make-based/UNPACK-backup-archive.bash
 }
 
 cd "$HOME"
