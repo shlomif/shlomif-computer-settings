@@ -67,10 +67,10 @@ DOWNLOAD_IMAGES_ARC = $(BACKUP_DIR)/download-images-$(STAMP)$(ARC_EXT)
 FORTUNES_ARC = $(BACKUP_DIR)/usr-share-games-fortunes-$(STAMP)$(ARC_EXT)
 
 EXCLUDES_DIR = $(HOME)/bin/private
-HOME_DIR_EXCLUDE_LIST := $(EXCLUDES_DIR)/backup-exclude-list-for-input-to-tar.txt
-RSYNC_NET_EXCLUDE_LIST := $(EXCLUDES_DIR)/backup-extra-exclude-list-for-rsync.net-for-input-to-tar.txt
-HOME_DIR_EXCLUDE_SOURCES := $(EXCLUDES_DIR)/backup-exclude-list.txt $(EXCLUDES_DIR)/backup-extra-exclude-list-for-rsync.net.txt
-EXCLUDE_LISTS = $(patsubst %.txt,%-for-input-to-tar.txt,$(HOME_DIR_EXCLUDE_SOURCES))
+GENERATED_EXCLUDES_DIR = $(EXCLUDES_DIR)/__GENERATED-DO-NOT-EDIT/
+HOME_DIR_EXCLUDE_LIST := $(GENERATED_EXCLUDES_DIR)/backup-exclude-list-for-input-to-tar.txt
+RSYNC_NET_EXCLUDE_LIST := $(GENERATED_EXCLUDES_DIR)/backup-extra-exclude-list-for-rsync.net-for-input-to-tar.txt
+EXCLUDE_LISTS = $(HOME_DIR_EXCLUDE_LIST) $(RSYNC_NET_EXCLUDE_LIST)
 
 HOME_DIR_DIR := $(HOME)
 HOME_DIR_ARC := $(BACKUP_DIR)/home-dir-$(STAMP)$(ARC_EXT)
@@ -183,7 +183,7 @@ fortunes: $(FORTUNES_ARC)
 $(FORTUNES_ARC): $(BACKUP_STAMP)
 	(cd / ; $(PACK_CMD) $@ usr/share/games/fortune*)
 
-$(EXCLUDE_LISTS): %-for-input-to-tar.txt: %.txt
+$(EXCLUDE_LISTS): $(GENERATED_EXCLUDES_DIR)/%-for-input-to-tar.txt: $(EXCLUDES_DIR)/%.txt
 	cat $< | perl -e 'while(<STDIN>){print"$$ARGV[0]/$$_"}' "$(HOME_DIR_DIR)" > $@
 
 home_dir: $(HOME_DIR_ARC)
