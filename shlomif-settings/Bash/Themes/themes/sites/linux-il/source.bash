@@ -31,4 +31,5 @@ pristine_copy_reduced=~/Backup/Arcs/www.linux.org.il-post-dest/post-incs-reduced
 this_copy_reduced=~/Backup/Arcs/www.linux.org.il-post-dest/this-incs-reduced
 _post_dest="dest/"
 
+latemp_trunk="$src"
 load_common latemp
