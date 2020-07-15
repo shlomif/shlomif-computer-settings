@@ -1,2 +1,2 @@
 #!/bin/sh
-svn co https://svn.berlios.de/svnroot/repos/jmikmod/jmikmod/trunk/
+git clone "https://github.com/shlomif/mikmod-for-java-jmikmod"

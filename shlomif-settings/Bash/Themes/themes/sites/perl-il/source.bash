@@ -1,9 +1,12 @@
 load_common bundle/git
 
-base="$HOME/Download/unpack/perl/web-sites-perl.org.il/perl.org.il"
+git_base="$HOME/Download/unpack/perl/web-sites-perl.org.il"
+base="$git_base/perl.org.il"
+trunk="$base"
 site="$base/site"
 bin="$site/new_site_bin"
 sources="$site/new_site_sources"
+remote_repo="$(_shlomif_github "perl.org.il")"
 
 this="$sources"
 

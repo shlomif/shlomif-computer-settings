@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-svn co 'https://svn.berlios.de/svnroot/repos/web-cpan/CPAN-Smoke-AutoSetup/trunk/'
+git clone "https://github.com/shlomif/cpan-smoke-auto-setup"

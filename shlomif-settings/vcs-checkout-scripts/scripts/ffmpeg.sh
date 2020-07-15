@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-svn co 'svn://svn.ffmpeg.org/ffmpeg/trunk'
+git clone "https://git.ffmpeg.org/ffmpeg.git" ffmpeg
