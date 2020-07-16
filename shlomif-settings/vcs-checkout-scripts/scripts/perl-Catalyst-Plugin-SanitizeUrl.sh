@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-svn co https://svn.berlios.de/svnroot/repos/web-cpan/Catalyst-Plugin-SanitizeUrl/trunk
+git clone "https://github.com/shlomif/perl-catalyst-plugin-sanitizeurl"

@@ -1,2 +1,2 @@
 #!/bin/sh
-svn co https://svn.berlios.de/svnroot/repos/quad-pres/lm-solve/layouts/layouts
+git clone https://github.com/shlomif/lm-solve-layouts

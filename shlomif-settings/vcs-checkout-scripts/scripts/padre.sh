@@ -1,2 +1,2 @@
 #!/bin/sh
-svn co https://svn.perlide.org/padre/trunk
+git clone "https://github.com/PadreIDE/Padre"

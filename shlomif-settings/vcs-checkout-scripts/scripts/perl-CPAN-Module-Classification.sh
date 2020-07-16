@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-svn co 'https://svn.berlios.de/svnroot/repos/web-cpan/CPAN-Module-Classification/trunk'
+git clone "https://github.com/shlomif/CPAN-Module-Classification"

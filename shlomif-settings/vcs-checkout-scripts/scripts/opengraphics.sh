@@ -1,2 +1,2 @@
 #!/bin/sh
-svn co 'svn://svn.opengraphics.org/ogp/trunk'
+# See: https://en.wikipedia.org/wiki/Open_Graphics_Project

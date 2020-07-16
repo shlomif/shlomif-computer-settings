@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-svn co http://oss.dwim.org/cpanplus-devel/
+git clone "https://github.com/jib/cpanplus-devel"
