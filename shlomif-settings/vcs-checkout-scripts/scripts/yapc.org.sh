@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-svn co http://tpf.googlecode.com/svn/trunk/yapc/yapc_org
+git clone "https://github.com/perlconference/yapc-org-website"

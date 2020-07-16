@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-svn co 'https://svn.berlios.de/svnroot/repos/web-cpan/XML-Grammar-ProductsSyndication/trunk'
+git clone "https://github.com/shlomif/perl-xml-grammar-productssyndication"

@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-svn co http://svn.collab.net/repos/svn/trunk
+svn co https://svn.apache.org/repos/asf/subversion/trunk

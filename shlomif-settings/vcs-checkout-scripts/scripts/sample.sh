@@ -1,3 +1,2 @@
 #!/bin/sh
-svn co ''
-# git clone ''
+git clone ""
