@@ -21,7 +21,7 @@
 before_install:
     - git config --global user.name "TravisCI"
     - git config --global user.email $HOSTNAME":not-for-mail@travis-ci.org"
-dist: xenial
+dist: bionic
 env:
     - TEST_INSTALL=0
     - TEST_INSTALL=1
@@ -35,7 +35,7 @@ language: perl
 matrix:
     fast_finish: true
 perl:
-    - '5.26'
+    - '5.28'
 script:
     - mkdir -p ~/bin
     - ln -sf /usr/bin/make ~/bin/gmake
