@@ -1,2 +1,2 @@
 #!/bin/sh
-svn co 'https://svn.berlios.de/svnroot/repos/web-cpan/Graph-Easy/trunk'
+git clone "https://github.com/shlomif/perl-graph-easy"

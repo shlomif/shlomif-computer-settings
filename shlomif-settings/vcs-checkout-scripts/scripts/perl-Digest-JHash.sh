@@ -1,2 +1,2 @@
 #!/bin/sh
-svn co 'https://svn.berlios.de/svnroot/repos/web-cpan/Digest-JHash/trunk'
+git clone "https://github.com/shlomif/perl-Digest-JHash"

@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-svn co https://svn.berlios.de/svnroot/repos/web-cpan/Error.pm/trunk
+git clone "https://github.com/shlomif/perl-error.pm"
