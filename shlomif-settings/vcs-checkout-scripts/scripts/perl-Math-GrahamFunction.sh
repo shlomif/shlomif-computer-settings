@@ -1,2 +1,2 @@
 #!/bin/sh
-hg clone 'ssh://hg@bitbucket.org/shlomif/perl-math-grahamfunction'
+git clone "https://github.com/shlomif/perl-math-grahamfunction"

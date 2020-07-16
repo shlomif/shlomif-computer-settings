@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-hg clone 'ssh://hg@bitbucket.org/shlomif/perl-www-form'
+git clone "https://github.com/shlomif/perl-www-form"
