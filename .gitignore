@@ -2,6 +2,7 @@
 /shlomif-settings/Bash/Themes/list-of-themes.txt
 /shlomif-settings/Bash/zsh-completions/
 /shlomif-settings/bash-aliases/PERL5LIB_gen.sh
+/shlomif-settings/gdb/gdb/gdb_history
 /shlomif-settings/gdb/gdb_history
 /shlomif-settings/perl/Dist-Zilla/dot-dzil/config.ini
 /shlomif-settings/vim-conf/dot-config-nvim/ExtraUltiSnips
