@@ -1,0 +1,3 @@
+Optimize the site's rebuild speed.
+
+Got rid of unnecessary build timestamps/files updates. Also did "cd lib/cache/ && git init .".
