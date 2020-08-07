@@ -781,3 +781,12 @@ endif
 
 autocmd BufNewFile,BufRead ~/Docs/Notes/To_Do/Done.txt call UltiSnips#AddSnippetWithPriority('date', '`!v strftime("%Y-%m-%d\n----------\n")`', "date", '', 'all', 20)
 
+function Shlomif_Apply_Whitelist()
+    exe '/^==== In: dest.*sharp-programming'
+    normal 4j
+    normal p
+    exe '%s/\t.*//'
+    w
+    e
+    return
+endfunction
