@@ -19,24 +19,27 @@ my @todel = qw%
         m%
         (?:
         befs
-        | feature-branch--move-from-fc-to-empty-stack-and-immediately-put-child-card-on-top
-        | feature-branch--test-optimization-based-on-fact-that-leading-cols-are-empty
         | \Qfc-solve-3.18.1-bench\E
         | \Qrb\.c\E
-        | test-new-is-parent-buf-opt-on-old-commit
-        | site-wml-require-js-and-typescript-problem
-        | range-solvers-avoid-parsing-argv-opt
-        | web-fc
-        | webfcs-typescript
-        | web_based_solver_textarea_for_arbitrary_cmd_line_params
-        | by[\-_]rank
-        | pseudo
-        | to-del
-        | multi-gen
         | avoid-looking-up-hard_thread-and-instance
+        | backcompat
         | before-integrating-patsolve-into-fc-solve--trying-out-optimisations
         | branch-for-reproducing-slowdown-with-gcc-5.2.x
-        | backcompat
+        | by[\-_]rank
+        | feature-branch--move-from-fc-to-empty-stack-and-immediately-put-child-card-on-top
+        | feature-branch--test-optimization-based-on-fact-that-leading-cols-are-empty
+        | inline-best-first-search
+        | multi-gen
+        | pseudo
+        | qunit-typescript
+        | range-solvers-avoid-parsing-argv-opt
+        | site-wml-require-js-and-typescript-problem
+        | snyk
+        | test-new-is-parent-buf-opt-on-old-commit
+        | to-del
+        | web-fc
+        | web_based_solver_textarea_for_arbitrary_cmd_line_params
+        | webfcs-typescript
   | trunk
   )
   %msx
