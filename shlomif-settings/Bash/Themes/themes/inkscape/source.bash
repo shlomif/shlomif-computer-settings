@@ -62,6 +62,10 @@ conf()
 build_project()
 {
     (
+        if ! test -d "$build"
+        then
+            conf
+        fi
         cd "$build" && \
             ninja -j4 install && \
             ninja -j4 check \
