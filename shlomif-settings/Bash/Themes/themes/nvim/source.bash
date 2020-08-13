@@ -83,15 +83,21 @@ prompt()
         "~=$HOME"
 }
 
+__git_update_with_tags()
+{
+    git pull --ff-only upstream master --tags --force || true
+    git s u || true
+}
+
 update_all()
 {
     (
         set -e -x
         cd "$trunk"
-        git s u || true
+        __git_update_with_tags
         __nvim_make_install
         cd "$qtrunk"
-        git s u || true
+        __git_update_with_tags
         __qtnvim_make_install
     )
 }
