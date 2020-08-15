@@ -3,5 +3,6 @@
 set -e -x
 
 cd ~/.vim/Command-T/ruby/command-t/ext/command-t/
+git clean -dxf . || true
 ruby extconf.rb
 make
