@@ -27,14 +27,35 @@ prompt()
         "~=$HOME"
 }
 
+create_build_dir()
+{
+    if ! test -e "$build"
+    then
+        mkdir "$build"
+    fi
+}
+
+build()
+{
+    (
+        export HARNESS_BREAK=1
+        create_build_dir
+        cd "$build" && \
+            cmake -DCMAKE_INSTALL_PREFIX="$HOME/apps/to-del-fortune" "$this" && \
+            make && \
+    )
+}
+
+b()
+{
+    build "$@"
+}
+
 t()
 {
     (
         export HARNESS_BREAK=1
-        if ! test -e "$build"
-        then
-            mkdir "$build"
-        fi
+        create_build_dir
         cd "$build" && \
             cmake -DCMAKE_INSTALL_PREFIX="$HOME/apps/to-del-fortune" "$this" && \
             make && \
