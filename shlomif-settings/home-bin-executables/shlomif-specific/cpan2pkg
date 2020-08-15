@@ -22,4 +22,4 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-cd ~/Download/unpack/perl/cpan/app-cpan2pkg/ && perl -Ilib bin/cpan2pkg "$@"
+cd ~/Download/unpack/perl/cpan/app-cpan2pkg/ && perl -Ilib bin/cpan2pkg $(perlmf as_colon "$@")
