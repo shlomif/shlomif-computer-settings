@@ -3,9 +3,6 @@
 conf_dir="$(cd "$(dirname "$0")" && pwd)"
 
 dot_vim="$HOME/.vim"
-if ! test -e "$dot_vim" ; then
-  ln -s "$conf_dir/dot-vim" "$dot_vim"
-fi
 (
     cd "$dot_vim"
     if ! test -d "vim-addon-manager" ; then
@@ -17,23 +14,10 @@ fi
 )
 
 conf_vim_dir="$HOME/conf/Vim"
-if ! test -e "$conf_vim_dir" ; then
-  mkdir -p "$(dirname "$conf_vim_dir")"
-  ln -s "$conf_dir/conf-Vim" "$conf_vim_dir"
-fi
 
 vimrc="$HOME/.vimrc"
-if ! test -e "$vimrc" ; then
-  ln -s "$conf_dir/vimrc.vim" "$vimrc"
-fi
-
 conf="$HOME/.config"
 nvim="$conf/nvim"
-mkdir -p "$conf"
-if ! test -e "$nvim"
-then
-    ln -s "$conf_dir/dot-config-nvim" "$nvim"
-fi
 extbase=ExtraUltiSnips
 ext="$nvim/$extbase"
 if ! test -e "$ext"

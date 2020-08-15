@@ -1,0 +1,4 @@
+symlink from ~/.config/nvim to ./dot-config-nvim
+symlink from ~/.vim to ./dot-vim
+symlink from ~/.vimrc to ./vimrc.vim
+symlink from ~/conf/Vim to ./conf-Vim

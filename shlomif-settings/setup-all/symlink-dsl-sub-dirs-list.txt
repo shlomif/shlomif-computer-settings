@@ -16,5 +16,6 @@ rpm
 sky
 tmux
 vcs-checkout-scripts
+vim-conf
 x11
 xdg

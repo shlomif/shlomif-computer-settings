@@ -264,7 +264,6 @@ sub run_setup
     return sub_c( $dir, ['./setup'] );
 }
 run_setup('Bash');
-run_setup('vim-conf');
 
 open my $dirs_list_fh, "<",
     "$trunk/shlomif-settings/setup-all/symlink-dsl-sub-dirs-list.txt";
@@ -274,6 +273,7 @@ while ( my $dir = <$dirs_list_fh> )
     run_dsl($dir);
 }
 close($dirs_list_fh);
+run_setup('vim-conf');
 
 sub_c( "Bash/history-backup", [ "sh", "setup-backup-bash-history.bash" ] );
 
