@@ -2,10 +2,11 @@
 #
 # Short description for %FFILE%
 #
-# Author %USER% <%MAIL%>
 # Version 0.0.1
-# Copyright (C) %YEAR% %USER% <%MAIL%>
+# Copyright (C) %YEAR% %USER% < https://www.shlomifish.org/ >
 #
+# Licensed under the terms of the %LICENSE% license.
+
 use strict;
 use warnings;
 use 5.014;
