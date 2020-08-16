@@ -6,5 +6,4 @@
 # Distributed under the terms of the MIT license.
 #
 
-
-git clone -b add-bash-vresion "https://github.com/shlomif/rshasum"
+git clone "https://github.com/shlomif/rshasum"
