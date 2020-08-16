@@ -1,7 +1,7 @@
 # common.bash
 # Copyright (C) 2018 Shlomi Fish <shlomif@cpan.org>
 #
-# Distributed under terms of the MIT license.
+# Distributed under the terms of the MIT license.
 #
 for f in ~/conf/trunk/shlomif-settings/Bash/bashrc/bashrc.d/*.bash
 do

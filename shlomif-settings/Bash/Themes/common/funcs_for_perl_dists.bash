@@ -1,7 +1,7 @@
 # funcs_for_perl_dists.bash
 # Copyright (C) 2018 Shlomi Fish <shlomif@cpan.org>
 #
-# Distributed under terms of the MIT license.
+# Distributed under the terms of the MIT license.
 
 load_common perl_meta_yml
 

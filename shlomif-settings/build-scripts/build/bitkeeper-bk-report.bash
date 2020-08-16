@@ -6,7 +6,7 @@
 #
 # Copyright (C) 2020 Shlomi Fish <shlomif@cpan.org>
 #
-# Distributed under terms of the MIT license.
+# Distributed under the terms of the MIT license.
 #
 
 # See: https://users.bitkeeper.org/t/bk-clone-bk-bkbits-net-u-bk-dev-dev-segfaults-after-being-built-from-the-source-tarball-on-mageia-v8-x86-64/1149/8

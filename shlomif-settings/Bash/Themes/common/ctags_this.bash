@@ -3,7 +3,7 @@
 # ctags_this.bash
 # Copyright (C) 2018 Shlomi Fish <shlomif@cpan.org>
 #
-# Distributed under terms of the MIT license.
+# Distributed under the terms of the MIT license.
 #
 
 __myctags()

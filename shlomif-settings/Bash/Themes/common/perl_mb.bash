@@ -2,7 +2,7 @@
 # perl_mb.bash
 # Copyright (C) 2018 shlomif <shlomif@cpan.org>
 #
-# Distributed under terms of the MIT license.
+# Distributed under the terms of the MIT license.
 
 load_common perl_meta_yml
 

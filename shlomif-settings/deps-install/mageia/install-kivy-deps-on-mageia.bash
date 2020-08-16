@@ -3,7 +3,7 @@
 # install-kivy-deps.bash
 # Copyright (C) 2018 Shlomi Fish <shlomif@cpan.org>
 #
-# Distributed under terms of the MIT license.
+# Distributed under the terms of the MIT license.
 #
 # Taken from https://kivy.org/doc/stable/installation/installation-linux.html - thanks!
 
