@@ -8,6 +8,11 @@ use strict;
 use warnings;
 use 5.014;
 use autodie;
+use Getopt::Long qw/ GetOptions /;
+
+my $min = 0;
+GetOptions( '--min-len=i' => \$min, )
+    or die $!;
 
 # use vars qw/ %h /;
 
@@ -16,7 +21,7 @@ my @lines;
 
 sub flush_lines
 {
-    if (@lines)
+    if ( @lines >= $min )
     {
         print @lines;
         say "";

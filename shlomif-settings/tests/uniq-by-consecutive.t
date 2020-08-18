@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::More tests => 1;
+use Test::More tests => 2;
 
 {
     # TEST
@@ -11,6 +11,17 @@ use Test::More tests => 1;
 `printf "1\\t2\\n1\\t3\\n2\\t4\\n" | shlomif-settings/home-bin-executables/bin/uniq-by-consecutive`
         ),
         "1\t2\n1\t3\n\n2\t4\n\n",
+        "uniq-by-consecutive is working"
+    );
+}
+
+{
+    # TEST
+    is(
+        scalar(
+`printf "1\\t2\\n1\\t3\\n2\\t4\\n" | shlomif-settings/home-bin-executables/bin/uniq-by-consecutive --min-len=2`
+        ),
+        "1\t2\n1\t3\n\n",
         "uniq-by-consecutive is working"
     );
 }
