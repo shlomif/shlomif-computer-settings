@@ -10,7 +10,7 @@ use 5.014;
 use autodie;
 use Getopt::Long qw/ GetOptions /;
 
-my $min = 0;
+my $min = 1;
 GetOptions( '--min-len=i' => \$min, )
     or die $!;
 
