@@ -1,7 +1,6 @@
 #! /usr/bin/env perl
-#
-# Short description for uniq-by.pl
-# Put records into bins based on the first record.
+# uniq-by-consecutive
+# Put consecutive records into bins based on the first record.
 # Author Shlomi Fish <shlomif@cpan.org>
 # Version 0.0.1
 #
