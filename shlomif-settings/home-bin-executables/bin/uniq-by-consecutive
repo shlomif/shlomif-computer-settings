@@ -18,7 +18,7 @@ sub flush_lines
 {
     if (@lines)
     {
-        say for @lines;
+        print @lines;
         say "";
     }
     $#lines = -1;
@@ -27,7 +27,6 @@ sub flush_lines
 
 while ( my $line = <> )
 {
-    chomp $line;
     my @fields  = split /\s+/, $line, -1;
     my $new_key = $fields[0];
     if ( defined $last_key )
