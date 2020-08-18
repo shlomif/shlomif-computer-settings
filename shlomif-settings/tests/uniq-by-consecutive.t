@@ -1,56 +1,25 @@
-#! /usr/bin/env perl
-#
-# Short description for uniq-by.pl
-# Put records into bins based on the first record.
-# Author Shlomi Fish <shlomif@cpan.org>
-# Version 0.0.1
-#
+#!/usr/bin/env perl
+
 use strict;
 use warnings;
-use 5.014;
-use autodie;
+use Test::More tests => 1;
 
-# use vars qw/ %h /;
-
-my $last_key;
-my @lines;
-
-sub flush_lines
 {
-    if (@lines)
-    {
-        say for @lines;
-        say "";
-    }
-    $#lines = -1;
-    return;
+    # TEST
+    is(
+        scalar(
+`printf "1\\t2\\n1\\t3\\n2\\t4\\n" | shlomif-settings/home-bin-executables/bin/uniq-by-consecutive`
+        ),
+        "1\t2\n1\t3\n\n2\t4\n\n",
+        "uniq-by-consecutive is working"
+    );
 }
-
-while ( my $line = <> )
-{
-    chomp $line;
-    my @fields  = split /\s+/, $line, -1;
-    my $new_key = $fields[0];
-    if ( defined $last_key )
-    {
-        if ( $new_key ne $last_key )
-        {
-            flush_lines();
-        }
-    }
-    $last_key = $new_key;
-    push @lines, $line;
-}
-
-flush_lines();
-
-# say join( "\t", $_, sort keys %{ $h{$_} } ) for sort keys %h;
 
 __END__
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2019 by Shlomi Fish
+Copyright 2018 by Shlomi Fish
 
 This program is distributed under the MIT / Expat License:
 L<http://www.opensource.org/licenses/mit-license.php>
