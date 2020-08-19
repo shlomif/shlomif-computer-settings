@@ -69,6 +69,8 @@ pats_b="$git_pats/b"
 this="$c_src"
 # this="$dd_branch"
 
+export PERL_INLINE_DIRECTORY="${TMPDIR:-/tmp}/${proj_name}-perl-Inline"
+mkdir -p "$PERL_INLINE_DIRECTORY"
 export LIBAVL2_SOURCE_DIR="$HOME/Download/unpack/prog/c/avl-2.0.3"
 export PAGER='less'
 export FCS_USE_TEST_RUN=1
