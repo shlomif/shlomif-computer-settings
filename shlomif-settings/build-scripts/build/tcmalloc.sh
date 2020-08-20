@@ -1,2 +1,2 @@
-export CC=/opt/llvm/bin/clang CXX=/opt/llvm/bin/clang++
+export CC=`which clang` CXX=`which clang++` CFLAGS="-O3 -march=native"
 ./configure --prefix="$HOME/apps/tcmalloc"
