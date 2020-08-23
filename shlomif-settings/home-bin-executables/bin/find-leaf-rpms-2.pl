@@ -416,10 +416,10 @@ my %requested;
                     }
                     if ( $options{info} )
                     {
-                        printf "%-12s: %s\n", "Name",    $pkg->name;
-                        printf "%-12s: %s\n", "Version", $pkg->version;
-                        printf "%-12s: %s\n", "Release", $pkg->release;
-                        printf "%-12s: %s\n", "Group",   $pkg->group;
+                        printf "%-12s: %s\n", "Name",             $pkg->name;
+                        printf "%-12s: %s\n", "Version",          $pkg->version;
+                        printf "%-12s: %s\n", "Release",          $pkg->release;
+                        printf "%-12s: %s\n", "Group",            $pkg->group;
                         printf "%-12s: %-28s %12s: %s\n", "Size", $pkg->size,
                             "Architecture", $pkg->arch;
                         if ( $pkg->sourcerpm || $pkg->buildhost )
