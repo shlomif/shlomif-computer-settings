@@ -155,20 +155,25 @@ test_without_notify()
     )
 }
 
-tes()
+test_with_notify()
 {
     (
         test_without_notify
         n --msg "Freecell Solver Test Finished"
     )
 }
-alias t='tes'
+alias t='test_with_notify'
 
 # parallel-tests
-pt()
+run_tests_in_parallel()
 {
-    ( unset FCS_USE_TEST_RUN; t; )
+    (
+        unset FCS_USE_TEST_RUN;
+        test_with_notify
+    )
 }
+
+alias pt='run_tests_in_parallel'
 
 make()
 {
@@ -358,10 +363,10 @@ delta()
         cb
         ../scripts/Tatzer -l n2t
         test_using_formatting_tests
-        pt
+        run_tests_in_parallel
         cmake -DFCS_DISABLE_DEBONDT_DELTA_STATES=1 ../source/
         test_using_formatting_tests
-        pt
+        run_tests_in_parallel
     )
 }
 

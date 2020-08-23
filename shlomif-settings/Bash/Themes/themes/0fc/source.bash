@@ -17,7 +17,7 @@ m()
     make "$@"
 }
 
-t()
+test_without_notify()
 {
     make total
 }
@@ -65,9 +65,10 @@ c()
 {
     put
     p
-    t
+    test_without_notify
 }
 
+alias t='test_without_notify'
 alias c7=put7
 
 __mytimestamper()
