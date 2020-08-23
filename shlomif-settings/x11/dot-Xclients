@@ -76,6 +76,15 @@ elif [ "$WHICH_DESK" = "lxqt" ] ; then
     exec startlxqt
 elif [ "$WHICH_DESK" = "mate" ] ; then
     exec startmate
+elif [ "$WHICH_DESK" = "nimdow" ] ; then
+    (
+        set -e -x
+        cd ~/Download/unpack/to-del/Nim
+        PATH="$PWD/bin:$PATH"
+        cd ~/Download/unpack/to-del/Nim/nimdow
+        PATH="$PWD/bin:$PATH"
+        nimdow ./config.toml
+    )
 elif [ "$WHICH_DESK" = "razor" ] ; then
     exec startrazor
 elif [ "$WHICH_DESK" = "sawfish" ] ; then
