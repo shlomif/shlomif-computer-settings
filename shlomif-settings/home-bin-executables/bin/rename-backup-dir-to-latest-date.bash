@@ -8,7 +8,13 @@
 set -e -x
 old_date="$1"
 shift
-new_date="`date +%Y-%m-%d`"
+if test -n "$1"
+then
+    new_date="$1"
+    shift
+else
+    new_date="`date +%Y-%m-%d`"
+fi
 echo "$new_date"
 if ! test -d "$new_date"
 then
