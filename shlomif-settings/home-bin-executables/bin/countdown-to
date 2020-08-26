@@ -10,7 +10,12 @@ my ($date_spec) = @ARGV;
 my $future_stamp = capturex( 'date', '-d', $date_spec, '+%s' );
 chomp($future_stamp);
 
-systemx( "countdown", ( $future_stamp - time() ) );
+my $delay = ( $future_stamp - time() );
+if ( $delay < 0 )
+{
+    $delay += 24 * 60 * 60;
+}
+systemx( "countdown", $delay );
 
 =head1 COPYRIGHT & LICENSE
 
