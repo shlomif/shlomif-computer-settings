@@ -4,10 +4,11 @@
 # Distributed under the terms of the MIT license.
 #
 
-t()
+test_without_notify()
 {
     dzil test --all
 }
+alias t='test_without_notify'
 
 _dzil_inst()
 {
