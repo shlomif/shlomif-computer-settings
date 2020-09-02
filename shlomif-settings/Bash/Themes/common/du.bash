@@ -25,17 +25,29 @@ an()
 
 ah()
 {
-    du -ah . | sort -h
+    du -ah "${1:-.}" | sort -h
+}
+
+du__summary_h()
+{
+    local dir="$1"
+    if test -n "$dir"
+    then
+        du -sh "$dir"/*
+    else
+        du -sh *
+    fi
 }
 
 -s()
 {
-    du -sh *
+    du__summary_h "$@"
 }
 
 shs()
 {
-    du -sh * | sort -h
+    local dir="$1"
+    du__summary_h "$dir" | sort -h
 }
 
 h()
