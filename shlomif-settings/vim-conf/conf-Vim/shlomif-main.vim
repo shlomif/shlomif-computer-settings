@@ -782,7 +782,8 @@ endif
 autocmd BufNewFile,BufRead ~/Docs/Notes/To_Do/Done.txt call UltiSnips#AddSnippetWithPriority('date', '`!v strftime("%Y-%m-%d\n----------\n")`', "date", '', 'all', 20)
 
 function Shlomif_Apply_Whitelist()
-    exe '/^==== In: dest.*sharp-programming'
+    " exe '/^==== In: dest.*sharp-programming'
+    exe '/^==== In: dest.*shlomif\.html$'
     normal 4j
     normal p
     exe '%s/\t.*//'
@@ -790,3 +791,5 @@ function Shlomif_Apply_Whitelist()
     e
     return
 endfunction
+
+autocmd BufNewFile,BufRead */commit.msg set filetype=gitcommit
