@@ -23,7 +23,7 @@ export SKIP_RINUTILS_INSTALL=1
 
 cd "$this"
 
-t()
+test_without_notify()
 {
     (
     cd "$trunk"
@@ -32,11 +32,12 @@ t()
     )
 }
 
-fmt()
+alias t='test_without_notify'
+quick_test_without_build()
 {
     (
         unset FCS_TEST_BUILD
-        t
+        test_without_notify
     )
 }
 
@@ -55,7 +56,8 @@ cm()
     cd "$module"
 }
 
-alias pt='t'
+alias pt='test_without_notify'
 alias m='make -j8'
+alias fmt='quick_test_without_build'
 
 proj_name='black-hole'
