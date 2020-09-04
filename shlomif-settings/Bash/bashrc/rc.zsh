@@ -1,4 +1,15 @@
+logg()
+{
+    return 0
+    local str="$1"
+    shift
+    local param="$1"
+    shift
+    printf "time = %s ; < %s > param=%s\\n" "$(date +"%s.%N")" "$str" "$param" >> /tmp/zsh-shlomify-logg-0.1.txt
+}
+
 # See https://stackoverflow.com/questions/6715388
+logg "start" "s"
 setopt SH_WORD_SPLIT
 if alias which > /dev/null
 then
@@ -15,10 +26,13 @@ compinit
 autoload -Uz promptinit
 promptinit
 
+logg "befloop" "s"
 for f in ~/conf/trunk/shlomif-settings/Bash/bashrc/zshrc.d/*.zsh
 do
+    logg "in-loop" "$f"
     . "$f"
 done
+logg "aft-loop" "s"
 # Code for sane binding of keys and handling of terminal modes {{{
 # Adapted from Debian's /etc/zshrc
 typeset -A key
@@ -54,12 +68,16 @@ bindkey '^x^e' edit-command-line
 # https://stackoverflow.com/questions/11670935/comments-in-command-line-zsh
 setopt interactivecomments
 
+logg "bef-common" "s"
 . ~/conf/trunk/shlomif-settings/Bash/bashrc/common.bash
+logg "aft-common" "s"
 
 compl=~/conf/trunk/shlomif-settings/Bash/zsh-completions
 if ! test -e "$compl"
 then
     git clone https://github.com/zsh-users/zsh-completions.git "$compl"
 fi
+logg "aft-git" "s"
 # fpath=("$compl/src" $fpath)
 prompt redhat
+logg "aft-prompt" "s"
