@@ -1,5 +1,8 @@
 # Reenable for now:
-# return 0
+if test "$(hostname)" = "telaviv1.shlomifish.org"
+then
+    return 0
+fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
