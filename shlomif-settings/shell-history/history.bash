@@ -279,6 +279,7 @@ bash fr.bash
 bash fr.bash 2>l
 bash gen_list.sh
 bash h.bash
+bash histogram.bash
 bash mix.bash
 bash myrsync.bash
 bash pgo.sh
@@ -304,6 +305,7 @@ bash ~/conf/trunk/shlomif-settings/home-bin-executables/shlomif-specific/merge-p
 bash ~/conf/trunk/shlomif-settings/home-bin-executables/shlomif-specific/reddit11-11.bash
 bash ~/h.sh
 bat *.time
+bat /tmp/out-aft0.txt
 bat LICENSE
 bat README.md
 bat f
@@ -401,6 +403,7 @@ cd Download/unpack/to-del/amigojapan.github.io/
 cd Download/unpack/web-sites/awesome-opensource-israel
 cd Games-Solitaire-BlackHole-Solver
 cd Music/mp3s
+cd OB_table
 cd PySolFC
 cd SOURCES
 cd Solitairey
@@ -539,6 +542,7 @@ cs
 csv2chart
 ct
 ctags -R .
+ctest -V
 ctest -V -R svgz
 cv
 cython-3 *.pyx
@@ -595,6 +599,7 @@ e
 echo $HARNESS_OPTIONS
 echo $PATH
 echo $PERL5LIB
+editspell
 emsdk install latest
 emsdk list
 emsdk list | head -20
@@ -607,6 +612,7 @@ et
 eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 eval $(ssh-agent)
 ex
+export $(dbus-launch )
 export $(dbus-launch)
 export CC=/home/shlomif/apps/prog/gcc-9.2.0/bin/gcc CXX=/home/shlomif/apps/prog/gcc-9.2.0/bin/g++
 export CC=/home/shlomif/bin/clang CXX=/home/shlomif/bin/clang++ FCS_CLANG=1
@@ -627,6 +633,7 @@ export PATH="$PWD/node_modules/.bin:$PATH"
 export PATH="/home/shlomif/.local/bin:/home/shlomif/apps/test/wml/bin:$PATH"
 export PATH="/home/shlomif/apps/golang/bin:/home/shlomif/.local/bin:/home/shlomif/apps/test/wml/bin:$PATH"
 export PATH=$HOME/apps/latemp/bin:$PATH
+export TEST_TAGS=" SKIP_GTK SKIP_PY2 "
 export VIMSYNT=1
 export XZ_OPT="-T4"
 f
@@ -704,6 +711,7 @@ get-telegram
 get_nums | summary
 ghc -O2 mniip.hs
 gimp
+gimpgitbuild build --mode=clean
 gimpgitbuild build ; n -m "gimp build"
 git
 git add .gen-ci.bash
@@ -847,6 +855,8 @@ git ci .travis.yml
 git ci shlomif-settings/Bash/
 git ci shlomif-settings/build-scripts/
 git ci shlomif-settings/vim-conf/
+git clean -dfqx .
+git clean -dfx .
 git clean -dxf .
 git clean -dxf ..
 git clean -dxf lib/cache/
@@ -1335,6 +1345,7 @@ java -jar build/dist/vnu.jar --skip-non-html ../dest-xh/
 jing lib/sgml/relax-ng/docbook.rng $(ls lib/docbook/5/xml/*.xml | grep -v arabic)
 jobs
 json_pp < f.json > l.json
+julia test.jl
 k
 k5
 kate
@@ -1468,6 +1479,8 @@ make VERBOSE=1 > m.txt 2>&1
 make VERBOSE=1 test
 make all_deps
 make all_games_html
+make bench
+make browser-tests
 make check
 make clean
 make css_targets
@@ -1502,6 +1515,7 @@ make test
 make tests
 make time
 make upload
+make upload browser-tests
 make upload_beta
 make upload_home_remote
 make upload_local
@@ -1723,6 +1737,7 @@ prettier --parser typescript --arrow-parens always --tab-width 4 --trailing-comm
 prettier --parser typescript --arrow-parens always --tab-width 4 --trailing-comma all --write src/js/fcs-validate.ts
 prettier --parser typescript --arrow-parens always --tab-width 4 --trailing-comma all --write src/js/web-fc-solve--expand-moves.ts
 prettier --parser typescript --arrow-parens always --tab-width 4 --trailing-comma all --write src/js/web-fc-solve-tests--fcs-validate.ts
+prettier --parser typescript --arrow-parens always --tab-width 4 --trailing-comma all --write src/ts/*.ts\
 prompt fire
 prove --timer Tests/case-insense-file-collision.t
 prove -j1 Tests/*.t
@@ -1844,6 +1859,7 @@ python3 gen-multiple-pysol-layouts --dir=deals/ --ms --prefix '' --suffix .board
 python3 lib/factoids/merge_into_fortunes.py
 python3 lib/faq/split_into_sections.py
 python3 pysol.py
+python3 pysol.py --deal 24 --game FreeCell
 python3 pysol.py -g FreeCell --deal ms100000
 python3 refactor1.py
 python3 setup.py build
@@ -1901,6 +1917,7 @@ rebuild 2>&1 | tee ~/o.txt
 rebuild 2>&1 | tee ~/o.txt ; n -m rebuild
 rebuild ; n
 rebuild ; n -m rebuild
+rebuild |& tee /tmp/out-aft.txt
 rec .ORIG
 rec .orig
 regen
@@ -2049,6 +2066,7 @@ sub
 sudo -i
 sudo /usr/bin/restart-unbound
 sudo /usr/bin/start-mandrake-everytime
+sudo /usr/local/bin/mount-mnt-music
 sudo dnf -y --refresh upgrade
 sudo dnf -y upgrade --refresh
 sudo iotop
@@ -2144,6 +2162,7 @@ touch t2/links.html.wml
 ts
 tsc --target es6 --moduleResolution node --module commonjs --outDir lib/for-node/js --rootDir src/js src/js/jq_qs.d.ts src/js/libfcs-wrap.d.ts src/js/web-fc-solve-tests.ts || echo fail
 tsc --target es6 --moduleResolution node --module commonjs --outDir lib/for-node/js --rootDir src/js src/js/jq_qs.d.ts src/js/web-fc-solve-tests.ts || echo fail
+tt
 u --buildrequires /home/shlomif/Download/unpack/Mageia/SPECS-only-for-deps/inkscape/SPECS/inkscape.spec
 u --buildrequires /home/shlomif/Download/unpack/Mageia/SPECS-only-for-deps/kpat/SPECS/kpat.spec
 u --buildrequires /home/shlomif/Download/unpack/mageia/SPECS-only-for-deps/gimp/SPECS/gimp.spec
@@ -2177,6 +2196,7 @@ unset HTML_VALID_VNU_JAR
 unset MAKEFLAGS
 unset QT_QPA_PLATFORMTHEME
 unset TEST_JOBS
+unshare -c -n sh -c "( time bin/rebuild ) > /tmp/out-aft0.txt 2>&1" ; n -m "site build"
 unxz < dbm.time.txt.xz | wc -c
 unxz < golfs6.txt.xz| wc -c
 unxz wml-2.18.0.tar.xz
