@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::More tests => 1;
+use Test::More tests => 2;
 
 use Path::Tiny qw/ path tempdir tempfile cwd /;
 
@@ -14,6 +14,15 @@ use Path::Tiny qw/ path tempdir tempfile cwd /;
         ),
         path("shlomif-settings/tests/data/tsv2bin.dat")->slurp_raw(),
         "tsv-to-bin",
+    );
+
+    # TEST
+    is(
+        scalar(
+`< shlomif-settings/tests/data/tsv2bin.dat shlomif-settings/home-bin-executables/bin/bin-to-tsv.pl`
+        ),
+        path("shlomif-settings/tests/data/tsv2bin.tsv")->slurp_raw(),
+        "bin-to-tsv",
     );
 }
 

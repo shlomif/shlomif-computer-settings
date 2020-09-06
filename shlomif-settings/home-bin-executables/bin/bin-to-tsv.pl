@@ -1,4 +1,4 @@
-#!perl
+#!/usr/bin/env perl
 
 use 5.014;
 use strict;
@@ -11,7 +11,7 @@ my ( $cnt, $fmt, $len );
 
 {
     $cnt = $ENV{NUM_FIELDS} // 2;
-    $fmt = "q" x $cnt;
+    $fmt = "q<" x $cnt;
     $len = 8 * $cnt;
 }
 my $buf = '';
