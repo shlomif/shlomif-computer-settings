@@ -1,11 +1,11 @@
-load_common mymake
-load_common perl_dzil
-load_common completion
-load_common ctags_this
+load_common bundle/dzil_git
 
+proj_name='perl-XML-RSS'
+remote_repo="$(_shlomif_github "perl-XML-RSS")"
 base="$HOME/progs/perl/cpan/XML/RSS"
 svk="$base/svk/local-trunk"
 svn="$base/from-perl.org/trunk"
+trunk="$svn"
 ask="$svn"
 this="$svn"
 
@@ -33,3 +33,12 @@ __update_main_file_test_coverage()
         cover
     )
 }
+
+prompt()
+{
+    __prompt_cmd \
+        "\$trunk=$trunk" \
+        "\$base=$base" \
+        "~=$HOME"
+}
+
