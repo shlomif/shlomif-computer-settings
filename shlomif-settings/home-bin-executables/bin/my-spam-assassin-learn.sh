@@ -12,8 +12,8 @@ process_dir()
     then
         t=learn_ham
     fi
-    # Disabling because it is far too slow.
-    if false
+    # Reenabling again because it has become faster.
+    if true
     then
         rspamc -v "$t" "$dir"
     fi
