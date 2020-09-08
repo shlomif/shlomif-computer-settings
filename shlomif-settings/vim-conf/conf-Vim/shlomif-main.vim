@@ -664,6 +664,7 @@ autocmd BufRead,BufNewFile ~/conf/trunk/*.bash
 command! -range HTML2MD :<line1>,<line2>!html2wiki --dialect Markdown --link-style=inline
 
 command! -range EscapeHTML :<line1>,<line2>!perl -lpE 'use strict; use warnings; use CGI; $_=CGI::escapeHTML($_)'
+" Convert <li>...</li> to <li><p>...</p></li>
 command! -range LiToLiPHTML :<line1>,<line2>!perl -lp ~/conf/trunk/shlomif-settings/home-bin-executables/bin/li-to-li-p.pl
 
 function Python_Import_Order()
