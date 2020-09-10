@@ -66,6 +66,7 @@ elif [ "$WHICH_DESK" = "kde4" ] ; then
     # qt5_plat
     exec startkde
 elif [ "$WHICH_DESK" = "kde5" ] ; then
+    # ( startplasma-x11 ) |& tee -a ~/k5.txt
     startplasma-x11
     # exec dbus-launch --exit-with-session startkde
     # strace -f -o ~/k.strace dbus-launch --exit-with-session startkde
