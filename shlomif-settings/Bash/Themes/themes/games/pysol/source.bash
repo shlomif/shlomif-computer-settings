@@ -1,5 +1,6 @@
 proj_name='PySolFC'
 load_common bundle/git
+load_common chdirs
 load_common data_caches
 
 base="$HOME/progs/games/pysolfc"
