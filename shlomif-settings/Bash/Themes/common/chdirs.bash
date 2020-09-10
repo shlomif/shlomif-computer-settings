@@ -12,7 +12,12 @@ cb()
     cd "$b"
 }
 
-ct()
+__cd_trunk()
 {
     cd "$trunk"
+}
+
+ct()
+{
+    __cd_trunk "$@"
 }
