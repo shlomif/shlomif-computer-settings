@@ -5,6 +5,7 @@ clang-format
 freedesktop
 gdb
 git
+gtk
 hg
 jwm
 kdesrc-buildrc

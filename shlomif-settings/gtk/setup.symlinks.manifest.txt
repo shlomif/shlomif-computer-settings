@@ -1,0 +1,1 @@
+symlink from ~/.config/gtk-3.0-fixed to ./gtk-3.0-fixed
