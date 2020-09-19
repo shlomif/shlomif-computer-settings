@@ -43,6 +43,7 @@ build()
         cd "$build" && \
             cmake -DCMAKE_INSTALL_PREFIX="$HOME/apps/to-del-fortune" "$this" && \
             make && \
+            make install
     )
 }
 
