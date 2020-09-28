@@ -64,7 +64,7 @@ __nvim_make_install()
     set -e -x
     cd "$trunk"
     make distclean
-    make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX:PATH=$HOME/apps/neovim"
+    make CMAKE_BUILD_TYPE=Release CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX:PATH=$HOME/apps/neovim"
     make install
     )
 }
