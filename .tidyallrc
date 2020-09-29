@@ -5,7 +5,7 @@ ignore = shlomif-settings/vim-conf/dot-vim/**/* shlomif-settings/vim-conf/conf-V
 
 [PerlTidy]
 select = **/*.{pl,pm,t}
-argv = -ci=4 -bl -cti=0
+argv = -ci=4 -bl -cti=0 --character-encoding=none
 ignore = shlomif-settings/vim-conf/conf-Vim/templates/**/* shlomif-settings/vim-conf/dot-vim/**/* shlomif-settings/perl/Dist-Zilla/dot-dzil/profiles/shlomif1/Module.pm
 
 [TestCount]
