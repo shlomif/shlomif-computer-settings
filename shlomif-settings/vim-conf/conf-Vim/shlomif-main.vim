@@ -796,3 +796,11 @@ function Shlomif_Apply_Whitelist()
 endfunction
 
 autocmd BufNewFile,BufRead */commit.msg set filetype=gitcommit
+
+function Shlomif_Tidyall_Snippets()
+    let g:charenc = '--character-encoding=none'
+    let g:charline = 'argv = -ci=4 -bl -cti=0 ' . g:charenc
+    let @e = g:charenc
+endfunction
+
+autocmd BufNewFile,BufRead */.tidyallrc call Shlomif_Tidyall_Snippets()
