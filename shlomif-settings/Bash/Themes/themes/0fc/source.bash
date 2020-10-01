@@ -86,6 +86,8 @@ run()
     (
         set -e -x
         set -o pipefail
+        which commify
+        which timestamper-with-elapsed
         bash solve-more-6-gnupar.bash | __myprettyprinter
     )
 }
