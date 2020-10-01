@@ -23,6 +23,12 @@ an()
     analyze-du "$@"
 }
 
+i()
+{
+    local subdir="$(perl -E 'say `pwd` =~ s/\n\z//r =~ s#\A$ENV{HOME}/##r')"
+    an -p "$subdir" | S="$subdir" perl -lpE 's#\t\K\Q$ENV{S}\E/##'
+}
+
 ah()
 {
     du -ah "${1:-.}" | sort -h
