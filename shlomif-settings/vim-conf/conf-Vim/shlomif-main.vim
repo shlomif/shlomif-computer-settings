@@ -804,3 +804,9 @@ function Shlomif_Tidyall_Snippets()
 endfunction
 
 autocmd BufNewFile,BufRead */.tidyallrc call Shlomif_Tidyall_Snippets()
+
+function Shlomif_DistIni_Snippets()
+    let g:md = "[ReadmeMarkdownFromPod]\n"
+endfunction
+
+autocmd BufNewFile,BufRead */dist.ini call Shlomif_DistIni_Snippets()
