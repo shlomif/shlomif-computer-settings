@@ -1,0 +1,1 @@
+symlink from ~/.config/sway to ./sway

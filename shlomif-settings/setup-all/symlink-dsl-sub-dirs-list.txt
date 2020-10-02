@@ -15,6 +15,7 @@ perl/perltidy
 python/pdb
 rpm
 sky
+sway
 tmux
 vcs-checkout-scripts
 vim-conf
