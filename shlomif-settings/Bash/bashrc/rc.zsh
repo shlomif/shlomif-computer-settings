@@ -81,3 +81,11 @@ logg "aft-git" "s"
 # fpath=("$compl/src" $fpath)
 prompt redhat
 logg "aft-prompt" "s"
+if false
+then
+    # kwin / kde / plasma5 xkb map experiments:
+    # failed so far
+    export KWIN_XKB_DEFAULT_KEYMAP="us-acentos"
+    export KWIN_XKB_DEFAULT_KEYMAP="il"
+    unset KWIN_XKB_DEFAULT_KEYMAP
+fi
