@@ -292,6 +292,25 @@ sub_c( "Bash/history-backup", [ "sh", "setup-backup-bash-history.bash" ] );
         );
     }
 }
+
+my $bg_img_fn = "/usr/share/wallpapers/Mageia/contents/images/1920x1200.png";
+
+if ( -e $bg_img_fn )
+{
+    require Path::Tiny;
+    my $src = Path::Tiny->new("$trunk/shlomif-settings/sway/config.src");
+    Path::Tiny->new("$trunk/shlomif-settings/sway/sway/config")->spew_utf8(
+        "# This file was generated from $src\n",
+        "# DO NOT EDIT DIRECTLY!\n",
+        "\n",
+
+        (
+            map {
+s#\A(output \* bg )/usr/share/backgrounds/default\.png( fill\r?\n?)\z#${1}$bg_img_fn${2}#r;
+            } $src->lines_utf8()
+        )
+    );
+}
 __END__
 
 =head1 COPYRIGHT & LICENSE
