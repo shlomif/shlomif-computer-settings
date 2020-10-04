@@ -21,7 +21,7 @@ path("$ENV{HOME}/.config/kdeglobals")->edit_utf8(
         my $KEY = "AllowKDEAppsToRememberWindowPositions";
         s#^(\[General\].*?)(^\[|\z)#
     my ($sect, $suffix )=($1, $2);
-    if ($sect !~ s/^(\Q$KEY\E=)[^\n]*/${1}false/)
+    if ($sect !~ s/^(\Q$KEY\E=)[^\n]*/${1}false/ms)
     {
         $sect =~ s/\K\n*\z/\n$KEY=false\n/ms;
     }
