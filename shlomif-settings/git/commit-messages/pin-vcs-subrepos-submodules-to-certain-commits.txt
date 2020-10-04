@@ -1,0 +1,4 @@
+Pin VCS subrepos/submodules to certain commits.
+
+See https://git-scm.com/book/en/v2/Git-Tools-Submodules and
+https://en.wikipedia.org/wiki/Reproducible_builds .
