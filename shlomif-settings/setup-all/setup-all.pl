@@ -4,7 +4,6 @@ use strict;
 use warnings;
 use autodie;
 use File::Basename qw/ dirname /;
-use File::Copy qw/ copy /;
 use File::Path qw/ mkpath /;
 use Getopt::Long qw/ GetOptions /;
 use Cwd qw/ getcwd /;
@@ -295,10 +294,9 @@ sub_c( "Bash/history-backup", [ "sh", "setup-backup-bash-history.bash" ] );
 }
 
 {
-    my $bg_img_fn =
-        "/usr/share/wallpapers/Mageia/contents/images/1920x1200.png";
-    my $src_fn  = "$trunk/shlomif-settings/sway/config.src";
-    my $dest_fn = "$trunk/shlomif-settings/sway/sway/config";
+    my $bg_img_fn = "/usr/share/mga/backgrounds/default.png";
+    my $src_fn    = "$trunk/shlomif-settings/sway/config.src";
+    my $dest_fn   = "$trunk/shlomif-settings/sway/sway/config";
     if ( -e $bg_img_fn )
     {
         require Path::Tiny;
@@ -317,7 +315,7 @@ s#\A(output \* bg )/usr/share/backgrounds/default\.png( fill\r?\n?)\z#${1}$bg_im
     }
     else
     {
-        copy( $src_fn, $dest_fn );
+        symlink( $src_fn, $dest_fn );
     }
 }
 __END__
