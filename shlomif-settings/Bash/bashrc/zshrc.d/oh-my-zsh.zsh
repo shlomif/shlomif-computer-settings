@@ -1,5 +1,5 @@
-# Reenable for now:
-if test "$(hostname)" = "telaviv1.shlomifish.org"
+# if test "$(hostname)" = "telaviv1.shlomifish.org"
+if false
 then
     return 0
 fi
