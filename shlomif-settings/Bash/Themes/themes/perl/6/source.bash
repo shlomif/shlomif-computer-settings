@@ -30,9 +30,14 @@ __setup_rgm_installer()
 
 __setup_rgm_installer
 
-u-()
+update_all()
 {
     bash "$rgm_dir/rakudo-git.bash"
+}
+
+u-()
+{
+    update_all "$@"
 }
 
 rw_repos_url="$(_shlomif_github "ci-gen-framework")"
