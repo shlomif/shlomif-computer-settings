@@ -15,7 +15,9 @@ if test -e "$b_pl" ; then
     )
 else
     (
-        perl Makefile.PL PREFIX="$prefix" INSTALLSITEBIN="\$(SITEPREFIX)/bin" INSTALLSITESCRIPT="\$(SITEPREFIX)/bin" && \
+        # perl Makefile.PL PREFIX="$prefix" INSTALLSITEBIN="\$(SITEPREFIX)/bin" INSTALLSITESCRIPT="\$(SITEPREFIX)/bin" &&
+        # perl Makefile.PL PREFIX="$prefix" && \
+        perl Makefile.PL && \
         make && \
         make test && \
         make install
