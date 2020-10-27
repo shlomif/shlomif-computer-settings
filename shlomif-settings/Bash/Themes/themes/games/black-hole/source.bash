@@ -28,6 +28,7 @@ test_without_notify()
     (
     cd "$trunk"
     rm -fr black-hole-solitaire/B/
+    rm -fr black-hole-solitaire/B_with_max_num_played/
     perl black-hole-solitaire/CI-testing/continuous-integration-testing.pl
     )
 }
