@@ -39,13 +39,22 @@ ci()
     git commit -F "$this/add-more-to-log-commit-msg.txt"
 }
 
+_apply()
+{
+    if ! perl apply-solve-more-3-log.pl
+    then
+        exit 1
+    fi
+    n
+}
+
 put()
 {
     (
         set -x
         rm -f offload/fcs_queue*
         rm -fr offload/deal*
-        perl apply-solve-more-3-log.pl ; n
+        _apply
         git au
         ci
     )
@@ -55,7 +64,7 @@ put7()
 {
     (
         set -x
-        perl apply-solve-more-3-log.pl ; n
+        _apply
         git au
         ci7
     )
