@@ -36,7 +36,7 @@ _cpan_d_format()
     if test -e /etc/mageia-release ; then
         echo "CPANPLUS::Dist::Mageia"
     else
-        echo "CPANPLUS::Dist::Mdv"
+        echo "CPANPLUS::Dist::Fedora"
     fi
     )
 }
