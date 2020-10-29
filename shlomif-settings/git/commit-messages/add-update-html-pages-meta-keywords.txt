@@ -1,0 +1,8 @@
+Add/Update HTML Pages keywords meta tag.
+
+See:
+
+* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name
+
+* May be a little useful for
+https://en.wikipedia.org/wiki/Search_engine_optimization .
