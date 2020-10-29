@@ -28,6 +28,7 @@ if ! test -e "$db"
 then
     cpandb --CPAN "$HOME"/Download/Arcs/Perl/minicpan/ --setup
 fi
+(
 cat <<'SQL' | sqlite3 "$db"
 SELECT cpanid, count(*) AS cnt
 FROM auths, dists
@@ -35,3 +36,4 @@ WHERE dists.auth_id = auths.auth_id
 GROUP BY auths.auth_id
 ORDER BY cnt, cpanid;
 SQL
+) | perl -0777 -n -E 'my @l=split(/^/ms,$_);while (my ($i, $v)=each(@l)){ printf"%10d  %s",(@l-$i),$v;}'
