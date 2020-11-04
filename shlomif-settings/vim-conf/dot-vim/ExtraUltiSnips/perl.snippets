@@ -360,3 +360,16 @@ my $dir = tempdir();
 my $fh = $dir->child("foo.txt");
 
 endsnippet
+
+snippet skip_all "skip_all Test::More paradigm."
+use Test::More;
+
+if ( not ($ENV{'TEST_FOO'} ))
+{
+	plan skip_all => "Test object shared object not found - incompatible.";
+}
+else
+{
+	plan tests => 40;
+}
+endsnippet
