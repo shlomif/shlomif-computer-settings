@@ -80,11 +80,15 @@ elif [ "$WHICH_DESK" = "mate" ] ; then
 elif [ "$WHICH_DESK" = "nimdow" ] ; then
     (
         set -e -x
-        cd ~/Download/unpack/to-del/Nim
-        PATH="$PWD/bin:$PATH"
-        cd ~/Download/unpack/to-del/Nim/nimdow
-        PATH="$PWD/bin:$PATH"
-        nimdow ./config.toml
+        if false
+        then
+            cd ~/Download/unpack/to-del/Nim
+            PATH="$PWD/bin:$PATH"
+            cd ~/Download/unpack/to-del/nimdow
+            PATH="$PWD/bin:$PATH"
+            nimdow # ./config.toml
+        fi
+        ~/Download/unpack/to-del/nimdow/bin/nimdow
     )
 elif [ "$WHICH_DESK" = "razor" ] ; then
     exec startrazor
