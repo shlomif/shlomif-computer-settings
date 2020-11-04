@@ -43,8 +43,18 @@ _cpan_d_format()
 
 c()
 {
+    local flags="--install"
+    if test -n "$NOINSTALL"
+    then
+        flags=''
+    fi
+    local force=""
+    if test -n "$FORCE"
+    then
+        force='--force'
+    fi
     cpan2dist --verbose --format="$(_cpan_d_format)" \
-        --defaults --install --timeout 0 $(perlmf as_colon "$@")
+        --defaults $force $flags --timeout 0 $(perlmf as_colon "$@")
 }
 
 qp()
