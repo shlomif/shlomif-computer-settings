@@ -114,6 +114,7 @@ call vam#ActivateAddons([
     \ 'github:plasticboy/vim-markdown',
     \ 'github:prettier/vim-prettier',
     \ 'github:qpkorr/vim-bufkill',
+    \ 'github:raghur/vim-ghost',
     \ 'github:romainl/Apprentice',
     \ 'github:shlomif/mojovai',
     \ 'github:shlomif/syntax-spork',
