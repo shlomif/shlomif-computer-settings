@@ -19,12 +19,13 @@ rebuild()
     n -m "rebuild"
 }
 
-b()
+build_cmd()
 {
     (cd "$latemp_trunk" && gmake -j16 && gmake test ; n --msg "gmake")
 }
 
-alias t='b'
+alias b='build_cmd'
+alias t='build_cmd'
 
 __add_to_path()
 {
