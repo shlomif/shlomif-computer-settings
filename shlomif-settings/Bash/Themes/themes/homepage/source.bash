@@ -195,6 +195,20 @@ _setup_node_modules_cache()
 
 _setup_node_modules_cache
 
+partial_upload()
+{
+    (
+        prettier --parser scss --arrow-parens always --tab-width 4 --trailing-comma all --write lib/sass/*.scss && \
+        partial_rebuild && \
+        gmake upload_local upload_var upload_beta
+    )
+}
+
+-u()
+{
+    partial_upload "$@"
+}
+
 # Commented out because it makes matters slower:
 # export HTML_POST_INCS_DATA_DIR="$HOME/Backup/Arcs/shlomif-homepage-gezer.d"
 
