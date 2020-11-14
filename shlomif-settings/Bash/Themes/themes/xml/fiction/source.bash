@@ -7,6 +7,7 @@ trunk="$base/trunk"
 modules_dir="$trunk/perl/modules"
 fict="$modules_dir/XML-Grammar-Fiction"
 this="$fict"
+module="$fict"
 
 remote_repo="$(_shlomif_github "fiction-xml")"
 
@@ -19,6 +20,11 @@ prompt()
         "\$trunk=$trunk" \
         "\$base=$base" \
         "~=$HOME"
+}
+
+cm()
+{
+    cd "$module"
 }
 
 ct()
