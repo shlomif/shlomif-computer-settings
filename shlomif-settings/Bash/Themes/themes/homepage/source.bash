@@ -198,9 +198,11 @@ _setup_node_modules_cache
 partial_upload()
 {
     (
-        prettier --parser scss --arrow-parens always --tab-width 4 --trailing-comma all --write lib/sass/*.scss && \
-        partial_rebuild && \
-        gmake upload_local upload_var upload_beta
+        set -e
+        prettier --parser scss --arrow-parens always --tab-width 4 --trailing-comma all --write lib/sass/*.scss
+        partial_rebuild
+        gmake upload_local upload_var
+        test -z "$noremote" && gmake upload_beta
     )
 }
 
