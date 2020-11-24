@@ -114,7 +114,6 @@ call vam#ActivateAddons([
     \ 'github:plasticboy/vim-markdown',
     \ 'github:prettier/vim-prettier',
     \ 'github:qpkorr/vim-bufkill',
-    \ 'github:raghur/vim-ghost',
     \ 'github:romainl/Apprentice',
     \ 'github:shlomif/mojovai',
     \ 'github:shlomif/syntax-spork',
@@ -153,6 +152,13 @@ if $VIMSYNT == 1
     \ {'auto_install': 1, 'shell_commands_run_method': "system",})
 end
 " \ 'github:sunuslee/vim-plugin-random-colorscheme-picker',
+
+if exists("g:shlomif_is_nvim")
+    call vam#ActivateAddons([
+        \ 'github:raghur/vim-ghost',
+        \],
+        \ {'auto_install': 1, 'shell_commands_run_method': "system",})
+end
 
 let g:powerline_pycmd = 'py3'
 let g:airline_powerline_fonts = 1
