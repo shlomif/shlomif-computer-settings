@@ -1,0 +1,20 @@
+Extract the rinutils_bootstrap module.
+
+See:
+https://github.com/shlomif/fortune-mod/commit/532435d33d4fe4480239bde35f6045d5c0d013ad
+
+For streamlining the build process of codevelopers.
+
+This is Refactoring / code cleanup.
+
+See:
+
+* https://refactoring.com/catalog/extractMethod.html
+
+* https://en.wikipedia.org/wiki/Code_refactoring
+
+* https://www.refactoring.com/
+
+* https://www.joelonsoftware.com/2002/01/23/rub-a-dub-dub/
+
+Some small optimisations may have slipped in as well.
