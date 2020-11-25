@@ -1,9 +1,12 @@
 Extract the rinutils_bootstrap module.
 
 See:
-https://github.com/shlomif/fortune-mod/commit/532435d33d4fe4480239bde35f6045d5c0d013ad
 
-For streamlining the build process of codevelopers.
+* https://github.com/shlomif/fc-solve/commit/396755081ef49d0bd4dccf7cd23a78f223301771
+
+* https://github.com/shlomif/fortune-mod/commit/532435d33d4fe4480239bde35f6045d5c0d013ad
+
+For streamlining the build process of co-developers.
 
 This is Refactoring / code cleanup.
 
