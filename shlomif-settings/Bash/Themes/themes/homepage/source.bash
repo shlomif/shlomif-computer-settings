@@ -150,6 +150,7 @@ partial_rebuild()
     (
         set -e -x
         cd "$trunk"
+        prettier --parser scss --arrow-parens always --tab-width 4 --trailing-comma all --write lib/sass/*.scss
         gmake fastrender
         rm -f lib/cache/STAMP.post-dest
         t
@@ -198,8 +199,7 @@ _setup_node_modules_cache
 partial_upload()
 {
     (
-        set -e
-        prettier --parser scss --arrow-parens always --tab-width 4 --trailing-comma all --write lib/sass/*.scss
+        set -e -x
         partial_rebuild
         gmake upload_local upload_var
         test -z "$noremote" && gmake upload_beta
