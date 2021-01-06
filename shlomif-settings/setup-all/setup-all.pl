@@ -315,7 +315,10 @@ s#\A(output \* bg )/usr/share/backgrounds/default\.png( fill\r?\n?)\z#${1}$bg_im
     }
     else
     {
-        symlink( $src_fn, $dest_fn );
+        if ( not -e $dest_fn )
+        {
+            symlink( $src_fn, $dest_fn );
+        }
     }
 }
 __END__
