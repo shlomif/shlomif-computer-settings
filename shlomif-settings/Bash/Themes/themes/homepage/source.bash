@@ -171,6 +171,15 @@ _ack_with_no_lib_prefix()
 
 MAKEFLAGS+=" -s"
 alias m=gmake
+if test -x /usr/bin/dbtoepub
+then
+    export DBTOEPUB="/usr/bin/ruby $(which dbtoepub)"
+fi
+
+if test -d /usr/share/xml/docbook/stylesheet/docbook-xsl-ns
+then
+    export DOCBOOK5_XSL_STYLESHEETS_PATH=/usr/share/xml/docbook/stylesheet/docbook-xsl-ns
+fi
 
 _setup_node_modules_cache()
 {
