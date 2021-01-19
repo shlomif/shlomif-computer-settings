@@ -586,9 +586,10 @@ function Shlomif_HTML_ROOT()
     command! -range LocalRootLinks :<line1>,<line2>s=\vhttps?\:\/\/www\.shlomifish\.org\/=\$(ROOT)/=g
 endfunction
 
-autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/lib/pages/*.tt2 call Shlomif_HTML_TT2()
 autocmd BufRead,BufNewFile *.html.tt2 call Shlomif_HTML_TT2()
 autocmd BufRead,BufNewFile *.xhtml.tt2 call Shlomif_HTML_TT2()
+autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/lib/Inc/*.tt2 call Shlomif_HTML_TT2()
+autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/lib/pages/*.tt2 call Shlomif_HTML_TT2()
 
 function FCS_site_Customisation()
     set path+=~/progs/freecell/git/fc-solve/fc-solve/site/wml/lib/
