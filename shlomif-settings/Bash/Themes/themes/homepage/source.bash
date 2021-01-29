@@ -220,9 +220,16 @@ partial_upload()
     partial_upload "$@"
 }
 
+fedora_user_experience()
+{
+    export NOTIFIER_TO=sh SKIP_SPELL_CHECK=1
+    MAKEFLAGS+=" -j8"
+    # export NOTIFIER_TO=sh SKIP_SPELL_CHECK=1
+}
+
 fedora_ux()
 {
-    export MAKEFLAGS="-j8" NOTIFIER_TO=sh SKIP_SPELL_CHECK=1
+    fedora_user_experience
 }
 
 # Commented out because it makes matters slower:
