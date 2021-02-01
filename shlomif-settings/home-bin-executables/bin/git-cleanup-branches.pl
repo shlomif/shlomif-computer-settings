@@ -11,7 +11,7 @@ use Path::Tiny qw/ path /;
 my $data_dirh = path("$ENV{HOME}/Arcs/temp");
 $data_dirh->mkpath();
 my @todel = qw%
-%;
+    %;
 
 @todel = uniq(
     grep {

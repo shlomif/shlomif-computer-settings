@@ -17,18 +17,18 @@ port=2908
 webserver=/usr/sbin/thttpd
 
 test -e "$localdir"
-test -x "$webserver"
 test \! -e "$newlocal"
 test \! -e "$oldlocal"
 
-mkdir -p "$newlocal"
 if test "$HTTPD" = "python"
 then
     (cd "$localdir" && python3 -m http.server "$port") &
     sleep 1
 else
+    test -x "$webserver"
     /usr/sbin/thttpd -p "$port" -d "$localdir"
 fi
+mkdir -p "$newlocal"
 minicpan -r "http://localhost:${port}/" -l "$newlocal"
 mv "$localdir" "$oldlocal"
 if test "$HTTPD" = "python"
