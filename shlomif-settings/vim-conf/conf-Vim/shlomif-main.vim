@@ -273,7 +273,12 @@ function Homepage_Customisation()
     command! Hcope call Homepage_Grep_Results()
 endfunction
 
+function Homepage_Tests_Customisation()
+    set path+=~/Docs/homepage/homepage/trunk/Tests/lib
+endfunction
+
 au BufNewFile,BufRead ~/Docs/homepage/homepage/trunk/* call Homepage_Customisation()
+au BufNewFile,BufRead ~/Docs/homepage/homepage/trunk/Tests/* call Homepage_Tests_Customisation()
 
 " Remming out because let @f causes too many problems with special escapes
 
