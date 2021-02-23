@@ -69,7 +69,7 @@ install_perl()
 {
     _sys make -j12 install
     (cd ~/apps/perl/bleadperl/bin ;
-        ext='5.33.3'
+        ext='5.33.7'
         for fn in *$ext ; do
             ln -sf "$fn" "${fn%$ext}" ;
         done
