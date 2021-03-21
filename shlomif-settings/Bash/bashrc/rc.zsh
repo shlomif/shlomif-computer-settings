@@ -25,6 +25,7 @@ autoload -Uz compinit
 compinit
 autoload -Uz promptinit
 promptinit
+PATH=~/apps/to-del-fortune/games:~/apps/to-del-fortune/bin:"$PATH"
 
 logg "befloop" "s"
 for f in ~/conf/trunk/shlomif-settings/Bash/bashrc/zshrc.d/*.zsh
@@ -89,3 +90,4 @@ then
     export KWIN_XKB_DEFAULT_KEYMAP="il"
     unset KWIN_XKB_DEFAULT_KEYMAP
 fi
+
