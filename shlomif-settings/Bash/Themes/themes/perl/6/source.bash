@@ -32,6 +32,7 @@ __setup_rgm_installer
 
 update_all()
 {
+    rm -fr "${HOME}/.raku"
     bash "$rgm_dir/rakudo-git.bash"
 }
 
