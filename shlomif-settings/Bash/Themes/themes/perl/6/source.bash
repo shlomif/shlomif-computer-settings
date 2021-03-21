@@ -30,9 +30,14 @@ __setup_rgm_installer()
 
 __setup_rgm_installer
 
-update_all()
+delete_raku_cache()
 {
     rm -fr "${HOME}/.raku"
+}
+
+update_all()
+{
+    delete_raku_cache
     bash "$rgm_dir/rakudo-git.bash"
 }
 
