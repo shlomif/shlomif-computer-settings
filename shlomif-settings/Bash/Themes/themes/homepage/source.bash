@@ -233,6 +233,16 @@ fedora_ux()
     fedora_user_experience
 }
 
+run_epubcheck()
+{
+    (
+        set -e -x
+        find . -name '*.epub' -delete
+        -p
+        java -jar ~/Download/unpack/to-del/epubcheck/target/epubcheck.jar  `fd -I .epub "$homepage/dest/post-incs" | sort` |& tee ~/Arcs/temp/epubcheck.txt
+    )
+}
+
 # Commented out because it makes matters slower:
 # export HTML_POST_INCS_DATA_DIR="$HOME/Backup/Arcs/shlomif-homepage-gezer.d"
 
