@@ -94,9 +94,11 @@ update_all()
     (
         set -e -x
         cd "$trunk"
+        ( git remote add upstream https://github.com/neovim/neovim.git || true)
         __git_update_with_tags
         __nvim_make_install
         cd "$qtrunk"
+        ( git remote add upstream https://github.com/equalsraf/neovim-qt.git || true)
         __git_update_with_tags
         __qtnvim_make_install
     )
