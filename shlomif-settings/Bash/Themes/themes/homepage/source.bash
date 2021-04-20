@@ -41,6 +41,9 @@ blue="$trunk/lib/screenplay-xml/from-vcs/Blue-Rabbit-Log/Blue-Rabbit-Log/screenp
 mup="$trunk/lib/screenplay-xml/from-vcs/The-Muppets-Show--The-New-Incarnation/Muppets-Show-TNI/screenplay"
 qoh="$trunk/lib/screenplay-xml/from-vcs/So-Who-the-Hell-Is-Qoheleth/so-who-the-hell-is-qoheleth/screenplay"
 ter="$trunk/lib/screenplay-xml/from-vcs/Terminator-Liberation/terminator--liberation/screenplay"
+que="$trunk/lib/screenplay-xml/from-vcs/Queen-Padme-Tales/queen-padme-tales/screenplay"
+padme="$que"
+pad="$que"
 
 cd $this
 
