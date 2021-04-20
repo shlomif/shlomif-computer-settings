@@ -614,7 +614,7 @@ for glob in ['/*/lib/hunspell/whitelist*.txt', '/*/lib/hunspell/hebrew-whitelist
 endfor
 
 let g:syntastic_javascript_checkers = ["eslint"]
-let g:syntastic_typescript_checkers = ["tslint"]
+let g:syntastic_typescript_checkers = ["eslint"]
 let g:ack_apply_qmappings = 0
 let g:syntastic_enable_perl_checker = 1
 
