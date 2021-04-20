@@ -1,0 +1,6 @@
+Make the markup more semantic using the HTML5 header element.
+
+See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header .
+
+See https://www.shlomifish.org/philosophy/computers/web/validate-your-html/ and
+https://en.wikipedia.org/wiki/Semantic_HTML .
