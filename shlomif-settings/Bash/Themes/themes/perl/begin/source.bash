@@ -30,22 +30,9 @@ up()
     (cd "$trunk" && gmake -j4 upload upload_home_remote)
 }
 
-o()
-{
-    (
-        set -e -x
-        b="$trunk/../b"
-        rm -fr "$b"
-        mkdir -p "$b"
-        cd "$b"
-        perl "$trunk/gen-helpers"
-        gmake bulk-make-dirs
-        gmake -j4 fastrender
-        gmake -j4 test
-    )
-}
-
 __add_to_path
+
+oot_build="$trunk/../b"
 
 out_of_tree_build()
 {
@@ -54,11 +41,16 @@ out_of_tree_build()
         export MAKEFLAGS='-r'
         cd "$trunk"
         git clean -dfqx
-        oot_build="$trunk/../b"
-        rm -fr "$oot_build"
-        mkdir -p "$oot_build"
+        bash bin/install-npm-deps.sh
+        compass compile
+        perl bin/my-cookiecutter.pl
+        if test "$oot_build" != "$trunk"
+        then
+            rm -fr "$oot_build"
+            mkdir -p "$oot_build"
+        fi
         cd "$oot_build"
-        perl ../trunk/gen-helpers
+        perl "${trunk}/gen-helpers"
         gmake bulk-make-dirs
         gmake -j4 fastrender
         gmake -j4 test
