@@ -1,5 +1,6 @@
 load_common bundle/dzil_git
 load_common ctags_using_script
+load_common partests
 
 base="$HOME/progs/perl/cpan/XML/Grammar/Fiction"
 git_base="$base"

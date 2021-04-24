@@ -228,6 +228,7 @@ fedora_user_experience()
     export NOTIFIER_TO=sh SKIP_SPELL_CHECK=1
     export $(dbus-launch)
     MAKEFLAGS+=" -j8"
+    unset NOTIFIER_TO
     # export NOTIFIER_TO=sh SKIP_SPELL_CHECK=1
 }
 

@@ -373,3 +373,14 @@ else
 	plan tests => 40;
 }
 endsnippet
+
+snippet getopt
+
+use Getopt::Long qw/ GetOptions /;
+
+my $output_fn;
+
+GetOptions( "output|o=s" => \\$output_fn, )
+	or die $!;
+
+endsnippet
