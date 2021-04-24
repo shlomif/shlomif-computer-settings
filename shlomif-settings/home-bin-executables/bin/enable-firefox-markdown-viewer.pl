@@ -31,6 +31,8 @@ path("$ENV{HOME}/.local/share/mime/packages/text-markdown.xml")->touchpath()
 EOF
     );
 
+system( 'update-mime-database', "$ENV{HOME}/.local/share/mime" )
+    and die $!;
 __END__
 
 =head1 ABOUT
