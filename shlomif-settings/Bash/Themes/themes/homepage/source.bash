@@ -237,6 +237,22 @@ fedora_ux()
     fedora_user_experience
 }
 
+
+debian_user_experience()
+{
+    export SKIP_SPELL_CHECK=1
+    PATH+=:/home/shlomif/apps/test/bin:/home/shlomif/perl5/bin/
+    # export $(dbus-launch)
+    # MAKEFLAGS+=" -j8"
+    # unset NOTIFIER_TO
+    # export NOTIFIER_TO=sh SKIP_SPELL_CHECK=1
+}
+
+debian_ux()
+{
+    debian_user_experience
+}
+
 run_epubcheck()
 {
     (
