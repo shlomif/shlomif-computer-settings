@@ -242,6 +242,7 @@ debian_user_experience()
 {
     export SKIP_SPELL_CHECK=1
     PATH+=:/home/shlomif/apps/test/bin:/home/shlomif/perl5/bin/
+    MAKEFLAGS+=" --no-silent"
     # export $(dbus-launch)
     # MAKEFLAGS+=" -j8"
     # unset NOTIFIER_TO
