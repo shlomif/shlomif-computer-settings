@@ -9,6 +9,7 @@
 (unset MAKEFLAGS; gmake)
 -l
 -p
+-p && up
 -s
 -t 0fc
 -t 3fc
@@ -49,6 +50,7 @@
 -t wml/itself
 -t wml/latemp
 -t xml/fiction
+-u
 . ../scripts/split-fcc-SOURCE-ME.bash
 . ../scripts/test-regressions.bash
 . ./run-me.bash
@@ -149,6 +151,7 @@
 /home/shlomif/apps/perl/bleadperl/bin/cpan5.29.9 -i Task::BeLike::SHLOMIF
 /home/shlomif/apps/perl/bleadperl/bin/cpanp -i Task::BeLike::SHLOMIF
 /opt/kde5-trunk/bin/kpat
+/opt/shlomif/firefox/esr/firefox/firefox
 /opt/vlc-3.0/inkscape-trunk/bin/inkscape
 /usr/bin/time ./freecell-solver-range-parallel-solve 1 3200 100 --method random-dfs -to '[0123467j]=seq()' -sp r:tf -mi 100000
 /usr/bin/time bin/rebuild
@@ -158,6 +161,7 @@
 80_chars_ruler
 CFLAGS="-g" pypy3 setup.py install --force
 Cancel_reminder
+DOCBOOK5_XSL_STYLESHEETS_PATH=/usr/share/xml/docbook/stylesheet/docbook-xsl-ns fastrender
 FCS_TEST_BUILD=1 t
 FCS_TEST_SHELL=1 perl ../source/run-tests.pl
 L
@@ -177,6 +181,7 @@ PATH+=:/home/shlomif/Download/unpack/prog/python/pypy3.5-6.0.0-linux_x86_64-port
 PATH+=:/home/shlomif/Download/unpack/prog/python/pypy3.6-7.1.1-beta-linux_x86_64-portable/bin/
 PATH+=:/home/shlomif/Download/unpack/prog/python/pypy3.6-v7.3.0-linux64/bin
 PATH+=:/home/shlomif/apps/perl6-rakudo/bin
+PATH+=:/home/shlomif/apps/test/bin:/home/shlomif/perl5/bin/
 PATH="/home/shlomif/apps/golang/bin:/home/shlomif/.local/bin:/home/shlomif/apps/test/wml/bin:$PATH"
 PYTHONPATH="`pwd`/src:$PWD" /home/shlomif/Download/unpack/prog/python/pypy3.5-6.0.0-linux_x86_64-portable/bin/pypy3 Tests/validate-html-using-vnu.py
 PYTHONPATH="`pwd`/src:$PWD" python3 Tests/validate-html-using-vnu.py
@@ -290,6 +295,7 @@ bash run.bash
 bash scripts/repack-min-cardsets.bash
 bash shlomif-build.sh ; n -m icu2
 bash shlomif-settings/home-bin-executables/bin/cpan-authors-distribution-counts.bash
+bash shlomif-settings/home-bin-executables/bin/cpan-authors-distribution-counts.bash | tac | cat -n | tac
 bash shlomif-settings/home-bin-executables/bin/cpan-shlomif-list-distributions.bash
 bash solve-more-3.bash | commify | timestamper
 bash solve-more-6-gnupar.bash
@@ -297,9 +303,11 @@ bash t.bash
 bash test.bash
 bash update.sh
 bash vendu-deploy-1.bash
+bash ww.bash
 bash ~/bin/backup-total.sh ; bash ~/bin/backup-extra-data.sh ; bash ~/bin/backup-total.sh ; bash ~/bin/backup-extra-data.sh ; n --msg "Backup finished"
 bash ~/bin/backup-total.sh ; bash ~/bin/backup-extra-data.sh ; bash ~/bin/backup-total.sh ; bash ~/bin/backup-extra-data.sh ; n --msg "Backup finished"\
 bash ~/bin/backup-total.sh ; n --msg "Backup finished"
+bash ~/conf/build/gdk-pixbuf.sh
 bash ~/conf/trunk/shlomif-settings/home-bin-executables/bin/gen-gen-ci.bash
 bash ~/conf/trunk/shlomif-settings/home-bin-executables/shlomif-specific/merge-prereqs-yml.bash
 bash ~/conf/trunk/shlomif-settings/home-bin-executables/shlomif-specific/reddit11-11.bash
@@ -568,6 +576,7 @@ diff -u j2 j | less
 disp
 docker rm fcsfed
 docker stop fcsfed
+dolphin --new-window ~/Music/dosd-mp3s/ ~/Music/mp3s/ ~/Download/Video/
 dolphin .
 dolphin /home/shlomif/Download/unpack/graphics/inkscape/extensions/tests/
 dolphin /mnt/music/Music/dosd-mp3s /mnt/music/Music/mp3s /mnt/music/Music/shlomif-Download/
@@ -633,6 +642,7 @@ export PATH="$PWD/node_modules/.bin:$PATH"
 export PATH="/home/shlomif/.local/bin:/home/shlomif/apps/test/wml/bin:$PATH"
 export PATH="/home/shlomif/apps/golang/bin:/home/shlomif/.local/bin:/home/shlomif/apps/test/wml/bin:$PATH"
 export PATH=$HOME/apps/latemp/bin:$PATH
+export SKIP_SPELL_CHECK=1
 export TEST_TAGS=" SKIP_GTK SKIP_PY2 "
 export VIMSYNT=1
 export XZ_OPT="-T4"
@@ -659,6 +669,7 @@ firefox
 firefox -no-remote
 firefox -no-remote 'http://localhost/shlomif/temp-Solitairey/dest/'
 firefox -no-remote -profilemanager
+firefox -profilemanager
 firefox README.md
 firefox http://www.shlomifish.org/Files/files/code/arrow-keys-for-accesskey.user.js
 flake8 .
@@ -713,6 +724,7 @@ ghc -O2 mniip.hs
 gimp
 gimpgitbuild build --mode=clean
 gimpgitbuild build ; n -m "gimp build"
+gimpgitbuild build ; n -m gimp
 git
 git add .gen-ci.bash
 git add .gitignore
@@ -731,6 +743,7 @@ git au .
 git bisect good
 git branch -l
 git branch -l -a
+git branch -la
 git ci
 git ci -F add-more-to-log-commit-msg.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/POD-order-of-NAME-and-VERSION-sections.txt
@@ -756,8 +769,10 @@ git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/remove-unused-var.tx
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/rename-vars.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/reproducible-builds.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/semantic-markup.txt
+git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/tidyall-fix.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/update-ci-gen-travis-yml.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/update-gitignore.txt
+git ci -m "add more"
 git ci -m 'CSS tweak'
 git ci -m 'Convert a page to tt2'
 git ci -m 'Convert pages to tt2'
@@ -1429,6 +1444,7 @@ m ; NODE_PATH="`pwd`"/lib/for-node/js ./qunit.js lib/for-node/test-code-emcc.js
 m clean
 m clean 2>&1 | cat > /dev/null
 m clean all
+m test
 make
 make -d 0126-linuxexpo-amsterdam.en.html
 make -f ../scripts/Makefile.gnu SRC_DIR=../source
@@ -1543,6 +1559,7 @@ mkdir old-hg
 mkdir tests
 mock $PWD/SRPMS/*.src.rpm
 mock $PWD/SRPMS/*.src.rpm ; n
+mock `pwd`/SRPMS/*.rpm ; n --msg 'mageia mock'
 mono ./630-v1.exe
 mono ./630-v1.exe 2>&1 | less
 mplayer 01\ See\ Her\ Out.mp3
@@ -1917,6 +1934,9 @@ rebuild 2>&1 | tee ~/o.txt
 rebuild 2>&1 | tee ~/o.txt ; n -m rebuild
 rebuild ; n
 rebuild ; n -m rebuild
+rebuild |& tee /tmp/o1.txt
+rebuild |& tee /tmp/o1.txt ; n
+rebuild |& tee /tmp/o2.txt
 rebuild |& tee /tmp/out-aft.txt
 rec .ORIG
 rec .orig
@@ -2008,6 +2028,7 @@ rm mageia-perl-magpie-modules-list.txt
 rm o.txt
 rm out.log
 rm y.txt
+rpm -qa 'kernel*'
 rpm -qa --qf '%{NAME}\t%{ARCH}\n' | grep 586
 rpm -ql wml
 rpmbuild --undefine=_disable_source_fetch -ba /home/shlomif/progs/Rpms/SPECS/lepton.spec
@@ -2050,6 +2071,7 @@ source myrsync.bash
 spectacle
 ssh -X 192.168.1.192
 ssh -X 192.168.1.232
+ssh -X lap
 ssh -X sh
 ssh hostgator
 ssh lap
@@ -2123,8 +2145,10 @@ time pypy3 675-v1.py
 time pypy3 676-v1.py
 time pypy3 685-v1.py
 time pypy3 685-v1.py --top=120
+time pypy3 e278v2.py
 time pypy3 e655-brob26.py
 time pypy3 e686v1.py
+time pypy3 e710v1.py
 time pypy3 from-forum--ving.py
 time pypy3 runv1instead_v2.py
 time python3 6.py
@@ -2207,6 +2231,7 @@ update_all
 uptime
 ur
 uu
+uu ; sudo urpmi --auto --auto-update
 uu ; uas
 valgrind -v ./black-hole-solve --game black_hole --display-boards --rank-reach-prune ../c-solver/t/data/26464608654870335080.bh.board.txt
 valgrind -v ./black-hole-solve --game black_hole --display-boards --rank-reach-prune ../c-solver/t/data/26464608654870335080.bh.board.txt 2>&1 | gvim -
@@ -2269,4 +2294,5 @@ z
 zef install --force-install .
 zef install .
 zsh
+~/apps/pidgin-2.x/bin/pidgin
 ~/apps/vagrant/2.1.5/vagrant up ; n -m vagrant
