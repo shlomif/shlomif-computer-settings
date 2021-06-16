@@ -585,6 +585,7 @@ autocmd BufRead,BufNewFile *.wml call WML_Paths()
 function Shlomif_HTML_TT2()
     setlocal ft=tt2html
     command! -range LocalLinks :<line1>,<line2>s=\vhttps?\:\/\/www\.shlomifish\.org\/=[% base_path %]=g
+    command! -range DeLocalLinks :<line1>,<line2>s=\v\[\% base.path \%\]=https://www.shlomifish.org/=g
 endfunction
 
 function Shlomif_HTML_ROOT()
