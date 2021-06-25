@@ -5,19 +5,19 @@ snippet lmk
 endsnippet
 
 snippet h2sect
-[% WRAPPER h2_section id = "${1}" title = "${2}"  %]
+[% WRAPPER h2_section id = "${1}" title = "${2}" %]
 
 [% END %]
 endsnippet
 
 snippet h3sect
-[% WRAPPER h3_section id = "${1}" title = "${2}"  %]
+[% WRAPPER h3_section id = "${1}" title = "${2}" %]
 
 [% END %]
 endsnippet
 
 snippet h4sect
-[% WRAPPER h4_section id = "${1}" title = "${2}"  %]
+[% WRAPPER h4_section id = "${1}" title = "${2}" %]
 
 [% END %]
 endsnippet
@@ -28,4 +28,24 @@ endsnippet
 
 snippet foss
 [% my_acronym( "key" => "FOSS", ) %]
+endsnippet
+
+snippet if
+[% IF ${1} %]
+[% END %]
+endsnippet
+
+snippet ife
+[% IF ${1} %]
+[% ELSE %]
+[% END %]
+endsnippet
+
+snippet e
+[% END %]
+endsnippet
+
+snippet un
+[% UNLESS ${1} %]
+[% END %]
 endsnippet
