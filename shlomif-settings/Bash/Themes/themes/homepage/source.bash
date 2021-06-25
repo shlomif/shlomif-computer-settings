@@ -213,7 +213,8 @@ partial_upload()
     (
         set -e -x
         partial_rebuild
-        gmake upload_local upload_var
+        # gmake upload_local upload_var
+        gmake upload_var
         test -z "$noremote" && gmake upload_beta
     )
 }
