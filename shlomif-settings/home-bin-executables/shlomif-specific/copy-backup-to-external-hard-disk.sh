@@ -28,5 +28,5 @@
 set -e -x
 for path in "$@"
 do
-    cp -rL --preserve "$path" /run/media/shlomif/Elements/Shlomif/Backups/Data/telaviv1.shlomifish.org/
+    cp -rL --preserve "$path" /media/shlomif/Elements/Shlomif/Backups/Data/telaviv1.shlomifish.org/
 done
