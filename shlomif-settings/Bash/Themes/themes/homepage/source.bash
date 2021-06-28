@@ -265,6 +265,24 @@ run_epubcheck()
     )
 }
 
+edit_queen_padme_teaser()
+{
+    u()
+    {
+        (
+        set -e -x
+        export MAKEFLAGS="-r -j4"
+        cd /home/shlomif/Docs/homepage/homepage/trunk/lib/repos/Star-Wars-opening-crawl-from-1977-Remake
+        prettier --parser typescript --arrow-parens always --tab-width 2 --trailing-comma all --write ts/index.ts
+        prettier --parser scss --arrow-parens always --tab-width 2 --trailing-comma all --write scss/*.scss
+        make -f ffmpeg.mak
+        git au
+        cd "$homepage"
+        rm -fr dest/post-incs/t2/humour/Queen-Padme-Tales/teaser
+        -u
+        )
+    }
+}
 # Commented out because it makes matters slower:
 # export HTML_POST_INCS_DATA_DIR="$HOME/Backup/Arcs/shlomif-homepage-gezer.d"
 
