@@ -1,0 +1,3 @@
+Rename FCS_PATH to FCS_BIN_PATH.
+
+For consistency with $ENV{FCS_SRC_PATH}.
