@@ -61,4 +61,14 @@ alias pt='test_without_notify'
 alias m='make -j8'
 alias fmt='quick_test_without_build'
 
+install_deps()
+{
+    export LD_LIBRARY_PATH=~/apps/fcs/lib/
+    (
+        set -e -x
+        pip install --upgrade --user pydistman tox
+        ( cm && dzil authordeps --missing ) | xargs cpanm -q Math::Random::MT Test::Some
+    )
+}
+
 proj_name='black-hole'
