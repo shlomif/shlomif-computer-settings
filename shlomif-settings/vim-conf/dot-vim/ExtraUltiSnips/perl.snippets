@@ -384,3 +384,8 @@ GetOptions( "output|o=s" => \\$output_fn, )
 	or die $!;
 
 endsnippet
+
+snippet /^\s*(crit|nocrit)$/ "perlcritic" r
+## no critic
+## use critic
+endsnippet

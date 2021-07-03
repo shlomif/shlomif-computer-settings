@@ -573,8 +573,13 @@ autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/dest/t2/*.html
 autocmd BufRead,BufNewFile ~/Download/unpack/games/pysolfc/*.py
     \ so ~/Download/unpack/games/pysolfc/git/PySolFC/scripts/refactor1.vim
 
-autocmd BufRead,BufNewFile ~/progs/freecell/git/*
-    \ set path+=~/progs/freecell/git/fc-solve/fc-solve/source/t/lib/
+function! Shlomif_Fc_Solve()
+    set path+=~/progs/freecell/git/fc-solve/fc-solve/source/t/lib/
+    set path+=~/progs/freecell/git/fc-solve/fc-solve/source/
+    set path+=~/progs/freecell/git/fc-solve/fc-solve/source/include
+endfunction
+
+autocmd BufRead,BufNewFile ~/progs/freecell/git/* call Shlomif_Fc_Solve()
 
 function WML_Paths()
     set path+=~/apps/latemp/lib/wml/include/

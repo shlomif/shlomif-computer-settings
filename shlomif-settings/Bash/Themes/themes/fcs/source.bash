@@ -462,7 +462,10 @@ total_tests()
             unset FCS_USE_TEST_RUN
             test_without_notify
         )
-        (export FCS_TEST_BUILD=1 ; test_without_notify)
+        if test "$fcs_skip_build_tests" = '0'
+        then
+            (export FCS_TEST_BUILD=1 ; test_without_notify)
+        fi
         cd "$c_src"
         perl ../scripts/multi_config_tests.pl
     )
@@ -506,6 +509,20 @@ PATH="$HOME/apps/valgrind/bin:$PATH"
 CPATH+=":/opt/vlc-3.0/libtap/include/"
 LIBRARY_PATH+=":/opt/vlc-3.0/libtap/lib/"
 export CPATH LIBRARY_PATH CMAKE_LIBRARY_PATH="$LIBRARY_PATH" LD_LIBRARY_PATH="$LIBRARY_PATH"
+fcs_skip_build_tests=0
+
+debian_ux()
+{
+    export DOCBOOK5_XSL_STYLESHEETS_PATH=/usr/share/sgml/docbook/stylesheet/xsl/docbook-xsl DBTOEPUB=/usr/bin/dbtoepub
+    PATH+=:~/apps/test/bin:~/perl5/bin/
+    export SKIP_SPELL_CHECK=1
+    fcs_skip_build_tests=1
+}
+
+if test -e /etc/debian_version
+then
+    debian_ux
+fi
 
 # Clean up the environment for the valgrind tests to succeed.
 # Commented out because now it makes things worse in t/t/build-process.t
