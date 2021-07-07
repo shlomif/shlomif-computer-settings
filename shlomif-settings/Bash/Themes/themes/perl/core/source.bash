@@ -36,15 +36,26 @@ _build_generic()
 }
 
 # Short for build.
-b()
+_build_perl()
 {
     _build_generic "perl-bleadperl.sh"
 }
 
-bd()
+b()
+{
+    _build_perl "$@"
+}
+
+__debug_build()
 {
     _build_generic "perl-bleadperl-debug.sh"
 }
+
+bd()
+{
+    __debug_build "$@"
+}
+
 
 # Short for build-with-threads-support
 bt()
@@ -59,10 +70,14 @@ t()
     _sys n --msg "perl/core test finished"
 }
 
-# Short for test debugger.
-td()
+test_debugger()
 {
     _sys make -j12 test_harness TEST_FILES='../lib/perl5db.t'
+}
+
+td()
+{
+    test_debugger "$@"
 }
 
 install_perl()
