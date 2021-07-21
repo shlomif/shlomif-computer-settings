@@ -24,6 +24,10 @@
 
 set -x
 db="cpandb.sql"
+if test "$F" = 1
+then
+    rm -f "$db"
+fi
 if ! test -e "$db"
 then
     cpandb --CPAN "$HOME"/Download/Arcs/Perl/minicpan/ --setup
