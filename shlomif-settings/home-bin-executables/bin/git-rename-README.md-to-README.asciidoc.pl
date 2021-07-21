@@ -21,7 +21,7 @@ my $o = __PACKAGE__->new;
 
 sub sh
 {
-    return $o->do_system( { cmd => [ qw/bash -ex /, @_, ], }, );
+    return $o->do_system( { cmd => [ qw/ bash -ex -c /, @_, ], }, );
 }
 
 my $d   = cwd();
@@ -30,8 +30,8 @@ die if @mds != 1;
 my $ad  = path("README.asciidoc");
 my $tmp = tempfile;
 sh(
-"markdent-html --dialects GitHub --title 'foo' --file @mds | pandoc -f html -t asciidoc > $tmp"
+"markdent-html --dialects GitHub --title 'foo' --file @mds | pandoc -f html -t asciidoc -o $tmp -"
 );
 sh("git mv @mds $ad");
 $tmp->copy($ad);
-1;
+sh("git add $ad");
