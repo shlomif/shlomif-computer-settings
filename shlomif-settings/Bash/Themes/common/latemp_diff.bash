@@ -11,6 +11,11 @@ ba()
     rsync -a --exclude '**/MathJax/**' "$_post_dest/" "$pristine_copy"
 }
 
+restore()
+{
+    rsync -a --exclude '**/MathJax/**' $pristine_copy "$_post_dest/"
+}
+
 did()
 {
     if test -z "$pristine_copy"
