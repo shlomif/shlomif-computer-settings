@@ -17,21 +17,23 @@ use Path::Tiny qw/ path tempdir tempfile cwd /;
 use Moo;
 extends('Docker::CLI::Wrapper::Base');
 
-my $o = __PACKAGE__->new;
+my $obj = __PACKAGE__->new;
 
 sub sh
 {
-    return $o->do_system( { cmd => [ qw/ bash -ex -c /, @_, ], }, );
+    return $obj->do_system( { cmd => [ qw/ bash -ex -c /, @_, ], }, );
 }
 
-my $d   = cwd();
-my @mds = $d->children(qr/\Areadme\.(?:markdown|mkdn|mwdn|md)\z/i);
-die if @mds != 1;
-my $ad  = path("README.asciidoc");
-my $tmp = tempfile;
+my $dir      = cwd();
+my $BASENAME = 'README';
+my @markdown_fns =
+    $dir->children(qr/\A(?:${BASENAME})\.(?:markdown|mkdn|mwdn|md)\z/i);
+die if @markdown_fns != 1;
+my $target_path = path("${BASENAME}.asciidoc");
+my $tmp         = tempfile();
 sh(
-"markdent-html --dialects GitHub --title 'foo' --file @mds | pandoc -f html -t asciidoc -o $tmp -"
+"markdent-html --dialects GitHub --title 'foo' --file @markdown_fns | pandoc -f html -t asciidoc -o $tmp -"
 );
-sh("git mv @mds $ad");
-$tmp->copy($ad);
-sh("git add $ad");
+sh("git mv @markdown_fns $target_path");
+$tmp->copy($target_path);
+sh("git add $target_path");
