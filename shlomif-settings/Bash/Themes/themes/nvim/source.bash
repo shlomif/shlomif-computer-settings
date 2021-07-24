@@ -104,4 +104,11 @@ update_all()
     )
 }
 
+__allow_update_all_to_pass()
+{
+    unset MAKEFLAGS
+}
+
+__allow_update_all_to_pass
+
 proj_name='neovim'
