@@ -40,4 +40,4 @@ WHERE dists.auth_id = auths.auth_id
 GROUP BY auths.auth_id
 ORDER BY cnt, cpanid;
 SQL
-) | perl -0777 -n -E 'my @l=split(/^/ms,$_);my $p=1+@l;foreach my $v (@l) { printf"%10d  %s",(--$p),$v; }'
+) | perl shlomif-settings/home-bin-executables/bin/tac-n-tac.pl
