@@ -37,6 +37,8 @@ fi
     set -x
     export LANGUAGE=C LC_ALL=C SHELL=/bin/sh PYTHONPATH="$HOME"/conf/trunk/shlomif-settings/home-bin-executables/bin CC="$HOME"/temp-bin/gcc CXX="$HOME"/temp-bin/g++ GIMPGITBUILD__BUILD_GIMP_USING_MESON="${use_meson}" GIMPGITBUILD__PAR_JOBS_FLAGS='-j1'
     $CXX
+    eval $(gimpgitbuild env)
+    eval $(gimpgitbuild runenv)
     gimpgitbuild build
     notifier notify -m "gimp build"
 ) |& tee "$log_fn"
