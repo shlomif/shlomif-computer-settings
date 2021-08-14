@@ -51,3 +51,5 @@
 	insteadOf = kde:
 [url "ssh://git@invent.kde.org/"]
 	pushInsteadOf = kde:
+[init]
+	defaultBranch = master
