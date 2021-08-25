@@ -19,3 +19,7 @@ _dzil_inst()
     )
 }
 
+i()
+{
+    _dzil_inst "$@"
+}
