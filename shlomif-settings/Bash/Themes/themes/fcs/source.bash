@@ -370,8 +370,13 @@ delta()
     )
 }
 
-# test site
 ts()
+{
+    __test_site "$@"
+}
+
+# test site
+__test_site()
 {
     (
         __cd_site
@@ -483,8 +488,9 @@ partial_rebuild()
         set -e -x
         cd "$site"
         touch bin/jinja-render.py
+        touch bin/tt-render.pl
         gmake fastrender
-        ts
+        __test_site
     )
 }
 
