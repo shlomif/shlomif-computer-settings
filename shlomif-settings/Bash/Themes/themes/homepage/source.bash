@@ -174,7 +174,11 @@ _ack_with_no_lib_prefix()
 
 MAKEFLAGS+=" -s"
 alias m=gmake
-if test -x /usr/bin/dbtoepub
+_local_dbtoepub="$trunk/lib/repos/xslt10-stylesheets/xsl/epub/bin/dbtoepub"
+if test -e "$_local_dbtoepub"
+then
+    export DBTOEPUB="/usr/bin/ruby $_local_dbtoepub"
+elif test -x /usr/bin/dbtoepub
 then
     export DBTOEPUB="/usr/bin/ruby $(which dbtoepub)"
 fi
