@@ -11,7 +11,7 @@ qt5_plat()
 # DEFAULT_DESK="kde4"
 DEFAULT_DESK="kde5"
 # DEFAULT_DESK="e"
-# DEFAULT_DESK="xfce"
+DEFAULT_DESK="xfce"
 # DEFAULT_DESK="sawfish"
 # DEFAULT_DESK="wmaker"
 # DEFAULT_DESK="gnome"

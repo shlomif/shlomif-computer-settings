@@ -7,7 +7,7 @@
 # dest="/media/shlomif/My Passport/Shlomif/Backups/Music-Backup/"
 # dest="${DEST:-/run/media/shlomif/My Passport/Shlomif/Backups/Music-Backup/}"
 # dest="${DEST:-lap:/run/media/shlomif/My\\ Passport/Shlomif/Backups/Music-Backup/}"
-dest="${DEST:-/run/media/shlomif/Elements/Shlomif/Backups/Music-Backup/}"
+dest="${DEST:-/media/shlomif/Elements/Shlomif/Backups/Music-Backup/}"
 rsync --exclude='**/*"*' -rLvt --progress --inplace sh:/home/music/Music/dosd-mp3s/ "$dest"/dosd
 rsync --exclude='**/*"*' -rLvt --progress --inplace sh:/home/music/Music/mp3s/ "$dest"/home-music-Music-mp3s/
 rsync --exclude='**/*"*' -rLvt --progress --inplace --delete-after sh:Download/Video/ "$dest"/home-shlomif-Download-Video/
