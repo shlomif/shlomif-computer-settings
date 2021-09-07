@@ -84,7 +84,8 @@ install_perl()
 {
     _sys make -j12 install
     (cd ~/apps/perl/bleadperl/bin ;
-        ext='5.35.4'
+        #ext='5.35.4'
+        ext="$(perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/largest-version.pl --dir "$PWD" --basename perl)"
         for fn in *$ext ; do
             ln -sf "$fn" "${fn%$ext}" ;
         done
