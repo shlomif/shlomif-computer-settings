@@ -29,6 +29,8 @@ build()
         cd src
         make -j4 g
         make image
+        mkdir -p "../../bk-bin"
+        cp bk  "../../bk-bin/"
     ) 2>&1 | tee ~/bk-report.txt
 }
 
@@ -39,13 +41,13 @@ use()
         export PATH="$PATH:$HOME/Download/unpack/to-del/bk-bin"
         cd ~/Download/unpack/to-del
         bk version
-        if test -e dev
+        if test -e bk-dev
         then
-            rm -fr dev
+            rm -fr bk-dev
         fi
         uname -a
         # valgrind bk clone bk://bkbits.net/u/bk/dev dev
-        bk clone bk://bkbits.net/u/bk/dev dev
+        bk clone bk://bkbits.net/u/bk/dev bk-dev
     ) 2>&1 | tee -a ~/bk-report.txt
 }
 
