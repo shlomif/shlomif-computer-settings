@@ -22,6 +22,8 @@ export FCS_USE_TEST_RUN=1 FCS_TEST_CLANG_FORMAT=1
 
 cd "$this"
 
+ruby ~/conf/trunk/shlomif-settings/home-bin-executables/bin/rubygem-query-neovim.rb
+
 __qtnvim_make_install()
 {
     (
