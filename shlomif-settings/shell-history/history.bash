@@ -275,6 +275,7 @@ bash bin/copy-web-fc-solve.bash
 bash bin/install-npm-deps.sh
 bash bin/link-checker-for-shlomifish.org.bash
 bash bin/rebuild
+bash bin/tot-master.bash
 bash bin/tot.bash
 bash client.bash
 bash conf/build/gimp-git-all-deps.bash
@@ -440,7 +441,7 @@ cd lib/blogs/shlomif-tech-diary
 cd lib/repos/Solitairey
 cd lib/repos/my-real-person-fan-fiction
 cd lib/repos/putting-cards-2019-2020
-cd lib/repos/shlomif-tech-diary
+cd lib/repos/shlomif-tech-diary/
 cd m
 cd neovim
 cd neovim-qt
@@ -559,6 +560,7 @@ date
 date +%s
 date +%s.%N
 date ; date +%s
+debian_ux
 delta
 deps-app commands
 deps-app plinst -i bin/required-modules.yml -i bin/common-required-deps.yml
@@ -1340,6 +1342,7 @@ hg push git:../git
 hg st
 hg up
 history
+history | gvim -
 hm
 hostname
 html-minifier dest/pre-incs/t2/humour/index.xhtml 2>&1 | less
@@ -1733,6 +1736,7 @@ ping 192.168.1.1
 ping www.google.com
 pip2 install --upgrade --user .
 pip3 install --upgrade --user .
+pip3 install --upgrade --user black-hole-solver click freecell-solver pydistman pysol_cards rebookmaker scalene six vnu_validator zenfilter
 pkill -9 gvim
 pkill -9 gvimdiff
 pkill baloo_file
