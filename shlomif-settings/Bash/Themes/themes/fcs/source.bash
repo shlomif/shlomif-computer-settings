@@ -41,6 +41,7 @@ t_fcs="$trunk/fc-solve"
 c_src="$t_fcs/source"
 c="$c_src"
 b="$t_fcs/B"
+fmt_tests_build_dir="$t_fcs/b-test_using_formatting_tests"
 o="$t_fcs/scripts/TEST_OPTIMIZATIONS"
 i="$trunk/../ids-whitelist/"
 site="$t_fcs/site/wml"
@@ -247,7 +248,9 @@ test_using_formatting_tests()
     (
         unset FCS_USE_TEST_RUN;
         clean_patsolve_build_dir
-        cd "$b" && \
+        mkdir -p "$fmt_tests_build_dir" && \
+        cd "$fmt_tests_build_dir" && \
+            "$c_src"/../scripts/Tatzer && \
             make -j4 && \
             perl "$c_src"/run-tests.pl --glob='{clang-format,tidy,py-flake8,style-trailing-space,verify--nht}*.t'
     )
