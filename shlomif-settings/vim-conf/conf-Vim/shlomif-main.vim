@@ -519,9 +519,11 @@ endfunction
 
 autocmd BufRead,BufNewFile *.spec call Shlomif_rpm_spec()
 
-" For setting ack.vim's to ag if available - see ~/.vim/ack/README.md
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+" For setting ack.vim's to rg if available - see ~/.vim/ack/README.md
+if executable('rg')
+    let g:ackprg='rg --vimgrep --sort=path'
+elseif executable('ag')
+    let g:ackprg = 'ag --vimgrep'
 endif
 
 let no_flake8_maps = 1
