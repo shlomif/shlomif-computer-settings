@@ -35,13 +35,19 @@ create_build_dir()
     fi
 }
 
+__cmake()
+{
+    rm -fr CMakeCache.txt CMakeFiles || true
+    cmake -DCMAKE_INSTALL_PREFIX="${SHLOMIF_FORTUNE_DIR:-$HOME/apps/to-del-fortune}" "$this"
+}
+
 build()
 {
     (
         export HARNESS_BREAK=1
         create_build_dir
         cd "$build" && \
-            cmake -DCMAKE_INSTALL_PREFIX="$HOME/apps/to-del-fortune" "$this" && \
+            __cmake && \
             make && \
             make install
     )
@@ -58,7 +64,7 @@ t()
         export HARNESS_BREAK=1
         create_build_dir
         cd "$build" && \
-            cmake -DCMAKE_INSTALL_PREFIX="$HOME/apps/to-del-fortune" "$this" && \
+            __cmake && \
             make && \
             make check
         n --msg "fortune Test Finished"

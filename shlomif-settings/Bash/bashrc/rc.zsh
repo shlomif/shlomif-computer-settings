@@ -25,7 +25,13 @@ autoload -Uz compinit
 compinit
 autoload -Uz promptinit
 promptinit
-PATH=~/apps/to-del-fortune/games:~/apps/to-del-fortune/bin:"$PATH"
+if test -f /etc/debian_version
+then
+    export SHLOMIF_FORTUNE_DIR=~/apps/to-del-fortune--debian
+else
+    export SHLOMIF_FORTUNE_DIR=~/apps/to-del-fortune--redhat
+fi
+PATH="$SHLOMIF_FORTUNE_DIR/games:$SHLOMIF_FORTUNE_DIR/bin:$PATH"
 
 logg "befloop" "s"
 for f in ~/conf/trunk/shlomif-settings/Bash/bashrc/zshrc.d/*.zsh
