@@ -22,7 +22,6 @@ dnf -y install \
     clang \
     clang-tools-extra \
     claws-mail \
-    cpanm \
     cpanminus \
     docbook5-schemas \
     docbook5-style-xsl \
@@ -34,10 +33,9 @@ dnf -y install \
     gobject-introspection-devel \
     gperftools-devel \
     gtest-devel \
+    gwenview \
     hexchat \
     hexchat-devel \
-    hexchat-perl \
-    hexchat-python \
     inkscape gimp \
     intltool \
     java \
@@ -55,7 +53,6 @@ dnf -y install \
     parallel \
     perl-Math-BigInt-GMP \
     perl-Math-GMP \
-    perl-Module-Format \
     perl-Text-Hunspell \
     perl-XML-LibXSLT \
     perl-local-lib \
@@ -81,5 +78,4 @@ dnf -y install \
     vim-X11 \
     xclip \
     xorg-x11-server-Xvfb \
-    xsltproc \
     zsh \
