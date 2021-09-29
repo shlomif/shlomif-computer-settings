@@ -8,16 +8,18 @@
 
 dnf -y builddep fortune-mod freecell-solver inkscape gimp
 
+    # 'perl(Math::Random::MT)' \
+
 dnf -y install \
     'perl(YAML::XS)' \
-    GraphicsMagick optipng \
+    GraphicsMagick \
     ImageMagick-devel \
+    Judy-devel \
     Xephyr \
     ack \
     apr-devel \
     asciidoctor \
     ccache \
-    ccache htop \
     chromium \
     clang \
     clang-tools-extra \
@@ -29,6 +31,7 @@ dnf -y install \
     fedpkg \
     fortune-mod \
     gettext-devel \
+    gimp \
     gmp-devel \
     gobject-introspection-devel \
     gperftools-devel \
@@ -36,7 +39,9 @@ dnf -y install \
     gwenview \
     hexchat \
     hexchat-devel \
-    inkscape gimp \
+    hspell-devel \
+    htop \
+    inkscape \
     intltool \
     java \
     kate \
@@ -50,6 +55,7 @@ dnf -y install \
     ninja-build \
     ocl-icd-devel \
     opencl-headers \
+    optipng \
     parallel \
     perl-Math-BigInt-GMP \
     perl-Math-GMP \
