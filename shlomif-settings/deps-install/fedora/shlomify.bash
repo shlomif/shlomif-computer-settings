@@ -78,10 +78,12 @@ dnf -y install \
     rubygem-rspec \
     strace \
     telegram-desktop \
+    tidy \
     tidy-devel \
     unbound \
     vala \
     vim-X11 \
     xclip \
     xorg-x11-server-Xvfb \
+    weasyprint \
     zsh \
