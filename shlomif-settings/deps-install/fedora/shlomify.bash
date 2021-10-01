@@ -56,6 +56,7 @@ dnf -y install \
     ocl-icd-devel \
     opencl-headers \
     optipng \
+    pandoc \
     parallel \
     perl-Math-BigInt-GMP \
     perl-Math-GMP \
