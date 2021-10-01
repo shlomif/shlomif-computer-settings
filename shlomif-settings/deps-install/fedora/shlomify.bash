@@ -58,6 +58,9 @@ dnf -y install \
     optipng \
     pandoc \
     parallel \
+    perl-CPANPLUS \
+    perl-CPANPLUS-Dist-Build \
+    perl-CPANPLUS-Dist-Fedora \
     perl-Math-BigInt-GMP \
     perl-Math-GMP \
     perl-Text-Hunspell \
