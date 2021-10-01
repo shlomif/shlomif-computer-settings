@@ -48,9 +48,11 @@ dnf -y install \
     konsole \
     libappstream-glib-devel \
     libarchive-devel \
+    libmcrypt-devel \
     libxslt \
     mame \
     meson \
+    mhash-devel \
     mpv \
     ninja-build \
     ocl-icd-devel \
@@ -78,6 +80,7 @@ dnf -y install \
     python3-random2 \
     python3-tox \
     recode-devel \
+    ruby-devel \
     rubygem-rexml \
     rubygem-rspec \
     strace \
@@ -87,7 +90,7 @@ dnf -y install \
     unbound \
     vala \
     vim-X11 \
+    weasyprint \
     xclip \
     xorg-x11-server-Xvfb \
-    weasyprint \
     zsh \
