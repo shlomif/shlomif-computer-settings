@@ -60,6 +60,7 @@ dnf -y install \
     optipng \
     pandoc \
     parallel \
+    perl-CPAN-Mini \
     perl-CPANPLUS \
     perl-CPANPLUS-Dist-Build \
     perl-CPANPLUS-Dist-Fedora \
