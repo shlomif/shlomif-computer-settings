@@ -79,6 +79,9 @@ dnf -y install \
     python3-pyside2 \
     python3-random2 \
     python3-tox \
+    qt5-qtbase-devel \
+    qt5-qtbase-gui \
+    qt5-qtsvg-devel \
     recode-devel \
     ruby-devel \
     rubygem-rexml \
