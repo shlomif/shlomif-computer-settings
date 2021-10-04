@@ -6,7 +6,7 @@
 # Distributed under the terms of the MIT license.
 #
 
-dnf -y builddep fortune-mod freecell-solver inkscape gimp
+dnf -y builddep fortune-mod freecell-solver gimp inkscape kpat
 
     # 'perl(Math::Random::MT)' \
 
