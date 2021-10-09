@@ -64,6 +64,7 @@ dnf -y install \
     perl-CPANPLUS \
     perl-CPANPLUS-Dist-Build \
     perl-CPANPLUS-Dist-Fedora \
+    perl-Inline-Python \
     perl-Math-BigInt-GMP \
     perl-Math-GMP \
     perl-Text-Hunspell \
