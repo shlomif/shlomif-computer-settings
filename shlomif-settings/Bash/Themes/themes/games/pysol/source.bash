@@ -27,7 +27,7 @@ ce()
     cd "$server"
 }
 
-g()
+edit()
 {
     gvim +mak\ clean +mak\ PYTHON=python3
 }

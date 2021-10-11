@@ -41,6 +41,7 @@ dnf -y install \
     hexchat-devel \
     hspell-devel \
     htop \
+    hunspell-en-GB \
     inkscape \
     intltool \
     java \

@@ -1,0 +1,4 @@
+Correct some wrong capitalization.
+
+See https://en.wikipedia.org/wiki/Capitalization ; uppercase vs.
+lowercase.
