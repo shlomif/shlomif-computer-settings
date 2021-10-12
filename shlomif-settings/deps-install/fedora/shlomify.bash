@@ -31,6 +31,7 @@ dnf -y install \
     docbook5-style-xsl \
     dolphin \
     fedpkg \
+    fop \
     fortune-mod \
     gettext-devel \
     gimp \
