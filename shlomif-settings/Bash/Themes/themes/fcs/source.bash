@@ -511,7 +511,7 @@ then
     slightly_wrong_gcc_flag_see_man_gcc="-frandom-seed=1977";
     export CFLAGS="$slightly_wrong_gcc_flag_see_man_gcc"
 fi
-PATH="$HOME/apps/golang/bin:$HOME/.local/bin:$PATH:$site/node_modules/.bin"
+PATH="$HOME/apps/golang/bin:$HOME/.local/bin:$PATH:$site/node_modules/.bin:$HOME/apps/hypermail/bin"
 # Temporary measure because valgrind-3.7.0 on mageia v7 does not handle
 # the new glibc well so we need to use the one from git master HEAD.
 PATH="$HOME/apps/valgrind/bin:$PATH"
