@@ -19,6 +19,8 @@ dnf -y install \
     ack \
     apr-devel \
     asciidoctor \
+    bison \
+    byacc \
     ccache \
     chromium \
     clang \
