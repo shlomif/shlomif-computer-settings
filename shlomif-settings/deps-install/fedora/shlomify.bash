@@ -35,6 +35,7 @@ dnf -y install \
     fortune-mod \
     gettext-devel \
     gimp \
+    gjs-devel \
     gmp-devel \
     gobject-introspection-devel \
     gperftools-devel \
