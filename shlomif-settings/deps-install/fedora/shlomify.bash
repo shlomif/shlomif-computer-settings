@@ -58,6 +58,7 @@ dnf -y install \
     meson \
     mhash-devel \
     mpv \
+    myrepos \
     ninja-build \
     ocl-icd-devel \
     opencl-headers \
