@@ -9,6 +9,7 @@
 dnf -y builddep fortune-mod freecell-solver gimp inkscape kpat
 
     # 'perl(Math::Random::MT)' \
+    # chromium \
 
 dnf -y install \
     'perl(YAML::XS)' \
@@ -22,7 +23,6 @@ dnf -y install \
     bison \
     byacc \
     ccache \
-    chromium \
     clang \
     clang-tools-extra \
     claws-mail \
