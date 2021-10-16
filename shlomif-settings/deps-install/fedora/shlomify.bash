@@ -12,6 +12,7 @@ dnf -y builddep fortune-mod freecell-solver gimp inkscape kpat
     # chromium \
 
 dnf -y install \
+    'perl(Number::Format)' \
     'perl(YAML::XS)' \
     GraphicsMagick \
     ImageMagick-devel \
@@ -51,6 +52,7 @@ dnf -y install \
     java \
     kate \
     konsole \
+    levien-inconsolata-fonts \
     libappstream-glib-devel \
     libarchive-devel \
     libmcrypt-devel \
