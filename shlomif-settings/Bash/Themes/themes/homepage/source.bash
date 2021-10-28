@@ -264,7 +264,7 @@ run_epubcheck()
     (
         set -e -x
         find . -name '*.epub' -delete
-        -p
+        partial_rebuild
         java -jar ~/Download/unpack/to-del/epubcheck/target/epubcheck.jar  `fd -I .epub "$homepage/dest/post-incs" | sort` |& tee ~/Arcs/temp/epubcheck.txt
     )
 }
