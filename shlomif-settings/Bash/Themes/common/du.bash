@@ -20,7 +20,7 @@
 
 an()
 {
-    analyze-du "$@"
+     eval "analyze-du $(perl -E 'use Path::Tiny qw/ cwd /; say "-p \"".(cwd()=~s#\A\Q$ENV{HOME}\E/?##msr)."\""') $@"
 }
 
 i()

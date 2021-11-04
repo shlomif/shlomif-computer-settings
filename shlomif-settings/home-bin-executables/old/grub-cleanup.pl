@@ -6,8 +6,8 @@ use autodie;
 
 my $orig_file = "/boot/grub/menu.lst";
 my $new_file  = "/boot/grub/menu.lst-perlnew";
-open my $in, "<", $orig_file;
-open $out, ">", $new_file;
+open my $in,  "<", $orig_file;
+open my $out, ">", $new_file;
 LINE_LOOP: while (<$in>)
 {
     if (/^title (2\.6\.(?:\d+)(?:-rc\d+)?-g[\da-f]+)/)
