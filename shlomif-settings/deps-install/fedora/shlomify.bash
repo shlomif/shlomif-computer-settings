@@ -6,10 +6,17 @@
 # Distributed under the terms of the MIT license.
 #
 
-dnf -y builddep fortune-mod freecell-solver gimp inkscape kpat
+dnf -y builddep fortune-mod freecell-solver gimp inkscape
+    # kpat
 
-    # 'perl(Math::Random::MT)' \
-    # chromium \
+install_fluff()
+{
+    dnf -y install \
+        'perl(Math::Random::MT)' \
+        chromium \
+        mame \
+        pysol
+}
 
 dnf -y install \
     'perl(Number::Format)' \
@@ -57,7 +64,6 @@ dnf -y install \
     libarchive-devel \
     libmcrypt-devel \
     libxslt \
-    mame \
     meson \
     mhash-devel \
     mpv \
@@ -82,7 +88,6 @@ dnf -y install \
     postfix \
     primesieve \
     primesieve-devel \
-    pysol \
     python-neovim \
     python3-attrs \
     python3-libsass \
