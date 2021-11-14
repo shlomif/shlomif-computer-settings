@@ -24,6 +24,10 @@ if test "$HTTPD" = "python"
 then
     (cd "$localdir" && python3 -m http.server "$port") &
     sleep 1
+elif test "$HTTPD" = "go"
+then
+    (cd "$localdir" && go run ~/conf/trunk/shlomif-settings/home-bin-executables/bin/web-a-dir.go "$port" "$localdir") &
+    sleep 1
 else
     test -x "$webserver"
     /usr/sbin/thttpd -p "$port" -d "$localdir"
@@ -32,6 +36,9 @@ mkdir -p "$newlocal"
 minicpan -r "http://localhost:${port}/" -l "$newlocal"
 mv "$localdir" "$oldlocal"
 if test "$HTTPD" = "python"
+then
+    kill %1
+elif test "$HTTPD" = "go"
 then
     kill %1
 else
