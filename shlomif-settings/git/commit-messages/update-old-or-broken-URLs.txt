@@ -1,0 +1,7 @@
+Update old or broken URLs / hyperlinks.
+
+See:
+
+* https://en.wikipedia.org/wiki/Link_rot
+
+* https://www.shlomifish.org/humour/fortunes/show.cgi?id=tim-berners-lee-the-WWW-and-the-dexter-model
