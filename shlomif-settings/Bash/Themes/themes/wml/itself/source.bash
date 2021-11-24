@@ -57,13 +57,28 @@ pt()
     t "$@"
 }
 
-b()
+build()
 {
     mkdir -p "$b"
     cd "$b"
     cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="$HOME/apps/test/wml" "$src" && \
         make -j4 && \
         make install
+}
+
+b()
+{
+    build "$@"
+}
+
+i()
+{
+    build "$@"
+}
+
+mi()
+{
+    build "$@"
 }
 
 fmt()
