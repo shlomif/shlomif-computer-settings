@@ -7,7 +7,7 @@ my $SUDO_USER = $ENV{SUDO_USER};
 my $HOME = $SUDO_USER ? "/home/$SUDO_USER" : ( $ENV{HOME} || '/home/shlomif' );
 
 my $SRC_DIR       = "$HOME/progs/freecell/git/fc-solve/fc-solve/source";
-my $FCS_PGO_THEME = $ENV{FCS_PGO_THEME};
+my $FCS_PGO_THEME = $ENV{FCS_PGO_THEME} // "-l lg";
 
 # Validate FCS_PGO_THEME
 if ( $FCS_PGO_THEME !~

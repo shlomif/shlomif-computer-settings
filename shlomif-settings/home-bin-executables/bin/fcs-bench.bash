@@ -14,7 +14,7 @@ step=16
 if test -e /etc/fedora-release
 then
     step=20
-    num_cpus=10
+    # num_cpus=10
 fi
 
 loop()
