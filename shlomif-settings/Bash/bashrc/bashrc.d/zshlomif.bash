@@ -33,9 +33,15 @@ if ! which latemp-config > /dev/null 2>&1
 then
     export PATH="$HOME/apps/latemp/bin:$PATH"
 fi
+
+enable_local_lib()
+{
+    eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+}
+
 if ! git info > /dev/null 2>&1
 then
-    eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+    enable_local_lib
 fi
 # Protecting from reboots when doing reb[PgUp]
 # for rebuild
