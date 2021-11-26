@@ -43,6 +43,20 @@ if ! git info > /dev/null 2>&1
 then
     enable_local_lib
 fi
+
+_enable_git_info_prompt="1"
+
+__git_info_prompt_command()
+{
+    if test -e ".git" && test "$_enable_git_info_prompt" = "1"
+    then
+        (
+        enable_local_lib
+        git info info
+        )
+    fi
+}
+
 # Protecting from reboots when doing reb[PgUp]
 # for rebuild
 reboot()

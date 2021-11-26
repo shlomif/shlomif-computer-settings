@@ -8,8 +8,13 @@ reminder_file="$HOME/.local/share/shlomif/reminder/reminder.txt"
     fi
 )
 
+__git_info_prompt_command()
+{
+}
+
 __display_reminder()
 {
+    __git_info_prompt_command
     if [ -s "$reminder_file" ] ; then
         perl -Mstrict -Mwarnings -MTerm::ANSIColor -E 'my $x = colored("===", "bold red"); say "$x Reminders $x"'
         cat "$reminder_file"
