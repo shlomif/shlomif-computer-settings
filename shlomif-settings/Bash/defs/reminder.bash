@@ -10,6 +10,7 @@ reminder_file="$HOME/.local/share/shlomif/reminder/reminder.txt"
 
 __git_info_prompt_command()
 {
+    true
 }
 
 __display_reminder()
