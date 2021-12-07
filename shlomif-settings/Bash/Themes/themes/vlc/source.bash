@@ -8,7 +8,7 @@ module="$trunk"
 this="$module"
 
 git_remote_shlomif="$(_shlomif_github "vlc")"
-git_remote_upstream='git://git.videolan.org/vlc.git'
+git_remote_upstream='https://code.videolan.org/videolan/vlc.git'
 
 cd "$this"
 
