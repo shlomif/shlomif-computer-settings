@@ -1,0 +1,9 @@
+Add fortune cookies to fortune-mod.
+
+Possible sources:
+
+* https://www.shlomifish.org/humour/fortunes/ .
+
+* https://github.com/shlomif/shlomif-email-signature/
+
+* https://github.com/JKirchartz/fortunes
