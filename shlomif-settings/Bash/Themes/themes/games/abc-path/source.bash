@@ -30,5 +30,19 @@ ct()
     cd "$trunk"
 }
 
+total_tests()
+{
+    (
+        set -e -x
+        cd "$trunk"
+        perl abc-path/CI-testing/continuous-integration-testing.pl install_deps
+        perl abc-path/CI-testing/continuous-integration-testing.pl test
+    )
+}
+
+tt()
+{
+    total_tests "$@"
+}
 
 proj_name='abc-path'

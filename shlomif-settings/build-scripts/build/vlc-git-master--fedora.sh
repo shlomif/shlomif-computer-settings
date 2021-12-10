@@ -8,4 +8,4 @@ export LUAC="$lp/bin/luac"
 PKG_CONFIG_PATH+=":$lpc"
 export PKG_CONFIG_PATH
 export CFLAGS='-g'
-./configure --prefix="$p" --with-kde-solid="$p/share/apps/solid" --enable-debug --disable-schroedinger --enable-debug --disable-opencv
+./configure --prefix="$p" --with-kde-solid="$p/share/apps/solid" --enable-debug --disable-schroedinger --enable-debug --disable-opencv --disable-lua
