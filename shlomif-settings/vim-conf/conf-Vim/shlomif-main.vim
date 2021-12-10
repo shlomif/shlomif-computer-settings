@@ -386,8 +386,9 @@ endfunction
 
 command! NLCopyLine call NLCopyLine()
 
+let g:chars_search_whitelist = ''
 function! SearchForEvilChars()
-    let @/='[^[:graph:] ]'
+    let @/=( '[^[:graph:] ' . g:chars_search_whitelist . ']' )
     normal n
 endfunction
 
