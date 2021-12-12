@@ -62,6 +62,7 @@ t()
 {
     (
         export HARNESS_BREAK=1
+        export HARNESS_OPTIONS=j20:c
         create_build_dir
         cd "$build" && \
             __cmake && \
@@ -82,4 +83,10 @@ real_tidyall="$(which tidyall)"
 tidyall()
 {
 "$real_tidyall" --data-dir="$TIDYALL_DATA_DIR" "$@"
+}
+
+dup()
+{
+    git add -u
+    git ci -m $'remove some copies of duplicates.\n\nThe same cookie existed in two different places ( possibly with small variations )'
 }
