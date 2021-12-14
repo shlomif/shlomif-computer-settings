@@ -101,6 +101,10 @@ r()
     runhelper "$@"
 }
 
+ct()
+{
+    cd "$trunk"
+}
 alias ne=next pr=prev
 
 proj_name='ProjEuler'
