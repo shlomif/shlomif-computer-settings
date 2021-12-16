@@ -1,0 +1,5 @@
+Convert <li> to <li><p>.
+
+https://github.com/shlomif/shlomif-computer-settings/blob/d1d655899d0b7a5e3253477277a21ec174da8994/shlomif-settings/vim-conf/conf-Vim/shlomif-main.vim#L691
+
+HTML markup tweaks.
