@@ -819,6 +819,7 @@ function Shlomif_Apply_Whitelist()
 endfunction
 
 autocmd BufNewFile,BufRead */commit.msg set filetype=gitcommit
+autocmd BufNewFile,BufRead ~/conf/trunk/shlomif-settings/git/commit-messages/*.txt set filetype=gitcommit
 " See: https://en.wikipedia.org/wiki/.har
 autocmd BufNewFile,BufRead *.har set filetype=json
 
