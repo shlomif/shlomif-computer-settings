@@ -1,0 +1,13 @@
+Wrap C/etc. single-line blocks in { ... }
+
+Of if / else / while / for / etc.
+
+It is less errorprone this way.
+
+See:
+
+* https://fc-solve.shlomifish.org/docs/distro/HACKING.html#one-line-clauses
+
+*
+https://medium.com/@jonathanabrams/single-line-if-statements-2565c62ff492
+.
