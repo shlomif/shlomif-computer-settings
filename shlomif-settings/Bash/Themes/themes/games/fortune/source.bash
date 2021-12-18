@@ -90,3 +90,8 @@ dup()
     git add -u
     git ci -m $'remove some copies of duplicates.\n\nThe same cookie existed in two different places ( possibly with small variations )'
 }
+
+cb()
+{
+    cd "$build"
+}
