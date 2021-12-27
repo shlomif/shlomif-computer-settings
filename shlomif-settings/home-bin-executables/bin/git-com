@@ -2,8 +2,13 @@
 
 # Taken from https://gist.github.com/kgaughan/3772976 . Thanks!
 
+set -x
 git fsck --unreachable
 git reflog expire --expire=0 --all
-git repack -a -d -l
+git repack -a -d -l --threads=1
 git prune
-git gc --aggressive
+removed_flag_due_to_high_RAM_consumption()
+{
+    git gc --aggressive
+}
+git gc
