@@ -596,6 +596,7 @@ function Shlomif_HTML_TT2()
     command! -range LocalLinks :<line1>,<line2>s=\vhttps?\:\/\/www\.shlomifish\.org\/=[% base_path %]=g
     command! -range LocalLinks2 :<line1>,<line2>s=\vhttps?\:\/\/www\.shlomifish\.org\/=\\\$(ROOT)/=g
     command! -range DeLocalLinks :<line1>,<line2>s=\v\[\% base.path \%\]=https://www.shlomifish.org/=g
+    command! -range AbsoluteLinks :<line1>,<line2>s!\v(\<a href\=\")([a-zA-Z][^\"]*)\"!\1[% "${base_path}open-source/resources/\2" %]"!g
 endfunction
 
 function Shlomif_HTML_ROOT()
