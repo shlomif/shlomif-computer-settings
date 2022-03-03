@@ -469,8 +469,18 @@ function Shlomif_XML_file_type()
     end
 endfunction
 
+function Shlomif_DocBook_XML_file_type()
+    " let fn = expand("<afile>:p")
+    " Only for XML files under my homepage for now.
+    " if (match(fn, "Docs/homepage/") >= 0)
+    " For all files.
+    call Shlomif_XML_file_type()
+    " Avoid indenting tags
+    set indentexpr=
+endfunction
+
 autocmd FileType xml call Shlomif_XML_file_type()
-autocmd FileType docbk call Shlomif_XML_file_type()
+autocmd FileType docbk call Shlomif_DocBook_XML_file_type()
 
 autocmd BufRead,BufNewFile ~/Docs/programming/Vim/vim-begin/*.html set indentexpr=
 
@@ -716,7 +726,6 @@ au BufNewFile,BufRead *.fc.sol setlocal filetype=freecell
 au BufNewFile,BufRead *.fc.solution setlocal filetype=freecell
 
 au BufNewFile,BufRead *.pari setlocal filetype=gp
-autocmd BufNewFile,BufRead ~/*/putting-cards-2019-2020/shlomif-putting-cards-on-the-table-2019-2020.docbook5.xml set indentexpr=
 autocmd BufNewFile,BufRead ~/Docs/homepage/homepage/trunk/lib/blogs/shlomif-hsite/*.xhtml set indentexpr=
 function PerlBegin_Customisation()
     set path+=~/Docs/programming/Perl/web-sites/perl-begin/trunk/,~/Docs/programming/Perl/web-sites/perl-begin/trunk/lib
