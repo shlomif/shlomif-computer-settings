@@ -6,6 +6,7 @@ freedesktop
 gdb
 git
 gtk
+hexchat
 hg
 jwm
 kdesrc-buildrc
