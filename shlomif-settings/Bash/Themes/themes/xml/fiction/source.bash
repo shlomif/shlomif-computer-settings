@@ -33,4 +33,18 @@ ct()
     cd "$trunk"
 }
 
+_dzil_install()
+{
+    (
+    set -e -x
+    dzil test --all
+    dzil install
+    )
+}
+
+d()
+{
+    _dzil_install
+}
+
 proj_name='xml-fiction'

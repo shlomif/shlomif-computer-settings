@@ -11,17 +11,31 @@ fi
 rebuild()
 {
     (
-        set -x
-        set -e
-        cd "$latemp_trunk"
-        time bin/rebuild
+        (
+            set -x
+            set -e
+            cd "$latemp_trunk"
+            time bin/rebuild
+        )
+        code="$?"
+        n -m "rebuild"
+        exit "$code"
     )
-    n -m "rebuild"
 }
 
 build_cmd()
 {
-    (cd "$latemp_trunk" && gmake -j16 && gmake test ; n --msg "gmake")
+    (
+        set -e -x
+        (
+            cd "$latemp_trunk"
+            gmake -j16
+            gmake test
+        )
+        code="$?"
+        n --msg "gmake"
+        exit "$code"
+    )
 }
 
 alias b='build_cmd'
