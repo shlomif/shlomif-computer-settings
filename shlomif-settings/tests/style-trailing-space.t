@@ -16,6 +16,10 @@ qr/(?:(?:\.(?:bash|atom|c|cfg|cgi|cmake|conf|cook|cpp|css|desktop|dsl|dtd|ent|fo
             abs_path_prune_re => qr%
             \A(?:
             (?:
+                shlomif-settings/hexchat/
+            )
+                |
+            (?:
                 shlomif-settings/vim-conf/dot-vim/
             ))
             %msx,
