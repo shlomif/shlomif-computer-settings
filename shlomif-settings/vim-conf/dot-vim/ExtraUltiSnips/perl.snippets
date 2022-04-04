@@ -245,7 +245,8 @@ sub _utf8_slurp
 }
 endsnippet
 
-snippet _write_file
+snippet /^\s*(spew|_spew|_write_file)$/ "spewe" r
+
 sub _write_utf8_file
 {
 	my ($out_path, $contents) = @_;
