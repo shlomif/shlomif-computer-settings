@@ -7,7 +7,7 @@ import sys
 
 locale.setlocale(locale.LC_ALL, '')
 
-r = re.compile(r'(\d+)((?:\.\d+)?)')
+r = re.compile(r'([1-9]\d*)((?:\.\d+)?)')
 try:
     for li in sys.stdin:
         sys.stdout.write(r.sub(

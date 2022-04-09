@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::More tests => 2;
+use Test::More tests => 3;
 
 {
     # TEST
@@ -21,6 +21,15 @@ use Test::More tests => 2;
         ),
 "1,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000",
         "commify is working"
+    );
+
+    # TEST
+    is(
+        scalar(
+`echo -n "05 1000000 242424" | shlomif-settings/home-bin-executables/bin/commify`
+        ),
+        "05 1,000,000 242,424",
+        "leading 0s in commify is working"
     );
 }
 
