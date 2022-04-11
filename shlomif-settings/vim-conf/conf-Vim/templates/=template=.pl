@@ -12,6 +12,55 @@ use warnings;
 use 5.014;
 use autodie;
 
-use Path::Tiny qw/ path tempdir tempfile cwd /;
+use Getopt::Long qw/ GetOptions /;
+use Path::Tiny qw/ cwd path tempdir tempfile /;
+use Docker::CLI::Wrapper::Container v0.0.4 ();
 
-%HERE%
+
+
+sub run
+{
+    my $output_fn;
+
+    my $obj = Docker::CLI::Wrapper::Container->new(
+    { container => "rinutils--deb--test-build", sys => "debian:sid", } );
+
+    GetOptions( "output|o=s" => \$output_fn, )
+        or die "errror in cmdline args: $!";
+
+    if ( !defined($output_fn) )
+    {
+        die "Output filename not specified! Use the -o|--output flag!";
+    }
+    $obj->do_system( { cmd => [ "git", "clone", "-b", $BRANCH, $URL, ] } );
+
+    %HERE%
+
+    exit(0);
+}
+
+run();
+
+1;
+
+__END__
+
+=encoding UTF-8
+
+=head1 NAME
+
+XML::Grammar::Screenplay::App::FromProto
+
+=head1 VERSION
+
+version v0.16.0
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is Copyright (c) 2007 by Shlomi Fish.
+
+This is free software, licensed under:
+
+  The MIT (X11) License
+
+=cut
