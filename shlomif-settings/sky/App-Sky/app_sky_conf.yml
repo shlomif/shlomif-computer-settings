@@ -25,7 +25,7 @@ sites:
                 basename_re: '\.(?:bmp|gif|jpeg|jpg|kra|png|(?:ai|svg|xcf)(?:\.xz|\.bz2|\.gz)?|svgz|webp)\z'
                 target_dir: 'Files/files/images/'
             music:
-                basename_re: '\.(?:aac|m4a|mod|mp3|ogg|s3m|wav|xm)\z'
+                basename_re: '\.(?:aac|aup3|m4a|mod|mp3|ogg|s3m|wav|xm)\z'
                 target_dir: 'Files/files/music/mp3-ogg/'
             text:
                 basename_re: '\.(?:asciidoc|docx|epub|html|md|mkdn|ods|odt|pdf|tsv|txt|xml|xhtml|xlsx)(?:\.xz)?\z'

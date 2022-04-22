@@ -287,6 +287,19 @@ edit_queen_padme_teaser()
         )
     }
 }
+
+upload_celestia()
+{
+    x()
+    {
+        (
+        set -e -x
+        cd "$trunk"
+        local tfn=r.xhtml fn=ride-princess-celestia.xhtml ; screenplay-text-to-xhtml5 -o "$tfn" lib/screenplay-xml/txt/Who-will-ride-Princess-Celestia.txt && xsltproc -o "$fn" bin/screenplay-xhtml5-add-stylesheet.xslt "$tfn" && sky up -x "$fn" ;
+        )
+    }
+}
+
 # Commented out because it makes matters slower:
 # export HTML_POST_INCS_DATA_DIR="$HOME/Backup/Arcs/shlomif-homepage-gezer.d"
 
