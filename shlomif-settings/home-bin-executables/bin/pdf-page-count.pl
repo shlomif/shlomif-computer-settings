@@ -49,7 +49,11 @@ sub run
 
             # body...
         }
-        close($info);
+        eval { close($info); };
+        if ( my $err = $@ )
+        {
+            warn $err;
+        }
     }
 
     # $obj->do_system( { cmd => [ "git", "clone", "-b", $BRANCH, $URL, ] } );
