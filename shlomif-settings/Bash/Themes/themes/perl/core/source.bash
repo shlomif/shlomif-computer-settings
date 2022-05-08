@@ -92,6 +92,16 @@ install_perl()
     )
 }
 
+i()
+{
+    install_perl "$@"
+}
+
+mi()
+{
+    install_perl "$@"
+}
+
 emcc_script_dir="$HOME/Download/unpack/perl/p5/emcc-build/perl-emcc-build"
 emcc_script="$emcc_script_dir/BUILD_PERL_WITH_EMCC.bash"
 
