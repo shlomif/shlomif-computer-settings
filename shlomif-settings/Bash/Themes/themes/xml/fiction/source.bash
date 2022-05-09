@@ -10,7 +10,7 @@ fict="$modules_dir/XML-Grammar-Fiction"
 this="$fict"
 module="$fict"
 
-remote_repo="$(_shlomif_github "fiction-xml")"
+remote_repo="$(_shlomif_github "Fiction-XML")"
 
 cd "$this"
 
