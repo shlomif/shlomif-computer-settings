@@ -603,6 +603,10 @@ autocmd BufRead,BufNewFile *.wml call WML_Paths()
 
 function Shlomif_HTML_TT2()
     setlocal ft=tt2html
+    call Shlomif_HTML_TT2_commands()
+endfunction
+
+function Shlomif_HTML_TT2_commands()
     command! -range LocalLinks :<line1>,<line2>s=\vhttps?\:\/\/www\.shlomifish\.org\/=[% base_path %]=g
     command! -range LocalLinks2 :<line1>,<line2>s=\vhttps?\:\/\/www\.shlomifish\.org\/=\\\$(ROOT)/=g
     command! -range DeLocalLinks :<line1>,<line2>s=\v\[\% base.path \%\]=https://www.shlomifish.org/=g
@@ -616,6 +620,9 @@ endfunction
 autocmd BufRead,BufNewFile *.html.tt2 call Shlomif_HTML_TT2()
 autocmd BufRead,BufNewFile *.xhtml.tt2 call Shlomif_HTML_TT2()
 autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/lib/Inc/*.tt2 call Shlomif_HTML_TT2()
+autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/*.pl call Shlomif_HTML_TT2_commands()
+autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/*.pm call Shlomif_HTML_TT2_commands()
+autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/*.py call Shlomif_HTML_TT2_commands()
 autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/lib/pages/*.tt2 call Shlomif_HTML_TT2()
 
 function FCS_site_Customisation()

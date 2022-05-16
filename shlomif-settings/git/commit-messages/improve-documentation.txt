@@ -1,0 +1,5 @@
+Improve the documentation
+
+See:
+
+- https://blog.codinghorror.com/learn-to-read-the-source-luke/

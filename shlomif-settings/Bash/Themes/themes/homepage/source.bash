@@ -89,9 +89,14 @@ fastdiff()
     git diff -r "$since" -r master .
 }
 
-up()
+stable_upload()
 {
     (cd "$trunk" && gmake -j4 upload)
+}
+
+up()
+{
+    stable_upload
 }
 
 beta_up()
@@ -163,6 +168,12 @@ partial_rebuild()
 -p()
 {
     partial_rebuild
+}
+
+-u()
+{
+    partial_rebuild && \
+        stable_upload
 }
 
 _ack_with_no_lib_prefix()
