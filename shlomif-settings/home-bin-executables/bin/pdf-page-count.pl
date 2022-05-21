@@ -71,11 +71,11 @@ __END__
 
 =head1 NAME
 
-XML::Grammar::Screenplay::App::FromProto
+pdf-page-count.pl
 
 =head1 VERSION
 
-version v0.16.0
+version v0.0.2
 
 =head1 COPYRIGHT AND LICENSE
 
