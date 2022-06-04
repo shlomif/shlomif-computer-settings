@@ -282,10 +282,8 @@ my %requested;
                                 keys %{ $requires{$n} || {} }
                                 )
                             {
-                                if (
-                                    any { URPM::ranges_overlap( "$n $s", $_ ) }
-                                    $_->requires
-                                    )
+                                if ( any { URPM::ranges_overlap( "$n $s", $_ ) }
+                                    $_->requires )
                                 {
                                     push @properties, $_->id;
                                     $urpm->{debug} and $urpm->{debug}(
