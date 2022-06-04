@@ -19,9 +19,9 @@ if ! test -d "$PERL_INLINE_DIRECTORY"
 then
     mkdir -p "$PERL_INLINE_DIRECTORY"
 fi
-pristine_copy=~/Backup/Arcs/post-dest/post-incs
-pristine_copy_reduced=~/Backup/Arcs/post-dest/post-incs-reduced
-this_copy_reduced=~/Backup/Arcs/post-dest/this-incs-reduced
+pristine_copy=~/Arcs/temp/shlomif-homepage/post-dest/post-incs
+pristine_copy_reduced=~/Arcs/temp/shlomif-homepage/post-dest/post-incs-reduced
+this_copy_reduced=~/Arcs/temp/shlomif-homepage/post-dest/this-incs-reduced
 _post_dest="dest/post-incs"
 
 load_common latemp
@@ -313,7 +313,7 @@ upload_celestia()
 }
 
 # Commented out because it makes matters slower:
-# export HTML_POST_INCS_DATA_DIR="$HOME/Backup/Arcs/shlomif-homepage-gezer.d"
+# export HTML_POST_INCS_DATA_DIR="$HOME/Arcs/temp/shlomif-homepage/shlomif-homepage-gezer.d"
 
 # one can unset it.
 # export SKIP_SPELL_CHECK=1

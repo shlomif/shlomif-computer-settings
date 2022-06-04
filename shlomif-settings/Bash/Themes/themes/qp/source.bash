@@ -17,6 +17,11 @@ b="$trunk/b"
 
 t()
 {
+    __test "$@"
+}
+
+__test()
+{
     (
         mkdir -p "$b" &&
             cd "$b" &&
@@ -30,6 +35,11 @@ t()
 
 b()
 {
+    __build "$@"
+}
+
+__build()
+{
     (
         set -e -x
         mkdir -p "$b"
@@ -41,6 +51,16 @@ b()
         make -j4
         make install
     )
+}
+
+__install()
+{
+    __test && __build
+}
+
+i()
+{
+    __install "$@"
 }
 
 switch_to_quadpres()
