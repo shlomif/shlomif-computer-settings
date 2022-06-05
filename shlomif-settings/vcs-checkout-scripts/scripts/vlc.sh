@@ -1,2 +1,2 @@
 #!/bin/sh
-git clone 'git://git.videolan.org/vlc.git'
+git clone "https://code.videolan.org/videolan/vlc.git"
