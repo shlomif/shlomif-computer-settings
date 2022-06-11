@@ -51,7 +51,7 @@ __git_info_prompt_command()
     if test -e ".git" && test "$_enable_git_info_prompt" = "1"
     then
         (
-        enable_local_lib
+        # enable_local_lib
         git info info
         )
     fi
