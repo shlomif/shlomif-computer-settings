@@ -27,7 +27,7 @@ then
 elif test "$HTTPD" = "go"
 then
     (cd "$localdir" && go run ~/conf/trunk/shlomif-settings/home-bin-executables/bin/web-a-dir.go "$port" "$localdir") &
-    sleep 1
+    sleep 4
 else
     test -x "$webserver"
     /usr/sbin/thttpd -p "$port" -d "$localdir"
