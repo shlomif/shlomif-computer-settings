@@ -17,6 +17,7 @@ port=2908
 webserver=/usr/sbin/thttpd
 
 test -e "$localdir"
+rmdir "$newlocal" || true
 test \! -e "$newlocal"
 test \! -e "$oldlocal"
 
@@ -27,7 +28,7 @@ then
 elif test "$HTTPD" = "go"
 then
     (cd "$localdir" && go run ~/conf/trunk/shlomif-settings/home-bin-executables/bin/web-a-dir.go "$port" "$localdir") &
-    sleep 4
+    sleep 10
 else
     test -x "$webserver"
     /usr/sbin/thttpd -p "$port" -d "$localdir"
