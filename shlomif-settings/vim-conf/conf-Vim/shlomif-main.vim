@@ -854,3 +854,9 @@ function Shlomif_DistIni_Snippets()
 endfunction
 
 autocmd BufNewFile,BufRead */dist.ini call Shlomif_DistIni_Snippets()
+
+function Shlomif_Bind_F2()
+    map <F2> :w<cr>:mak<cr>:mak test upload<cr>
+endfunction
+
+command! BindF2 call Shlomif_Bind_F2()
