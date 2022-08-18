@@ -49,3 +49,12 @@ snippet un
 [% UNLESS ${1} %]
 [% END %]
 endsnippet
+
+snippet bl
+[% BLOCK ${1} %]
+
+[% END %]
+
+[% INCLUDE $1 %]
+[% PROCESS $1 %]
+endsnippet
