@@ -4,13 +4,13 @@ use strict;
 use warnings;
 
 my $start;
-while (<>)
+while ( my $line = <> )
 {
-    chomp;
-    my ( $t, $l ) = /\A([^\t]+)\t(.*)\z/
-        or die "Wrong format at line <$_> $.";
+    chomp $line;
+    my ( $t, $l ) = ( $line =~ /\A([^\t]+)\t(.*)\z/ )
+        or die "Wrong format at line <$line> $.";
     $start //= $t;
-    printf "%f\t%s\n", ( $t - $start ), $l;
+    print sprintf( "%f\t%s\n", ( $t - $start ), $l );
 }
 
 __END__
