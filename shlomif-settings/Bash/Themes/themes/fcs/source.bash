@@ -466,7 +466,9 @@ total_tests()
 {
     (
         set -e -x
-        perl -E "use Path::Tiny qw/path/ ; die qq%remaining build directories% if path(shift(@ARGV))->parent()->children(qr/\\Abuild-[0-9]+\\z/)" "$c_src"
+#        perl -E "use Path::Tiny qw/path/ ; die qq%remaining build directories% if path(shift(@ARGV))->parent()->children(qr/\\Abuild-[0-9]+\\z/)" "$c_src"
+        cd "$c_src"
+        perl ../scripts/multi_config_tests.pl --only-check-ready
         (cd "$site" && git clean -dxf . && bash -x bin/install-npm-deps.sh ) || true
         test_using_formatting_tests
         (
