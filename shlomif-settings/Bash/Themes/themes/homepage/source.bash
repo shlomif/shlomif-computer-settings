@@ -91,7 +91,11 @@ fastdiff()
 
 stable_upload()
 {
-    (cd "$trunk" && gmake -j4 upload)
+    (
+    set -e -x
+    cd "$trunk"
+    gmake -j4 upload
+    )
 }
 
 up()
@@ -170,10 +174,15 @@ partial_rebuild()
     partial_rebuild
 }
 
--u()
+partial_rebuild_and_stable_upload()
 {
     partial_rebuild && \
         stable_upload
+}
+
+-u()
+{
+    partial_rebuild_and_stable_upload "$@"
 }
 
 _ack_with_no_lib_prefix()
@@ -235,11 +244,6 @@ partial_upload()
     )
 }
 
--u()
-{
-    partial_upload "$@"
-}
-
 fedora_user_experience()
 {
     export NOTIFIER_TO=sh SKIP_SPELL_CHECK=1
@@ -295,7 +299,7 @@ edit_queen_padme_teaser()
         git au
         cd "$homepage"
         rm -fr dest/post-incs/t2/humour/Queen-Padme-Tales/teaser
-        -u
+        partial_rebuild_and_stable_upload
         )
     }
 }
