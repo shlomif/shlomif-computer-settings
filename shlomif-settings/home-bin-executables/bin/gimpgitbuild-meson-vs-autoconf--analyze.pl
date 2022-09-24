@@ -23,7 +23,7 @@ use warnings;
 use 5.014;
 use autodie;
 
-use Path::Tiny qw/ path tempdir tempfile cwd /;
+use Path::Tiny    qw/ path tempdir tempfile cwd /;
 use JSON::MaybeXS qw/ decode_json /;
 
 my %hash;

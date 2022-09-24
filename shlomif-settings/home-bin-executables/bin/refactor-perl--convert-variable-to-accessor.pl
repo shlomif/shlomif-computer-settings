@@ -105,7 +105,7 @@ my $var;
 my $type;
 
 use Getopt::Long qw/ GetOptions /;
-use IO::All qw/ io /;
+use IO::All      qw/ io /;
 
 GetOptions(
     'obj-name=s' => \$obj_name,

@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use Test::Count::Filter ();
-use Getopt::Long qw/ GetOptions /;
+use Getopt::Long        qw/ GetOptions /;
 
 my $filetype = "perl";
 GetOptions( 'ft=s' => \$filetype ) or $!;

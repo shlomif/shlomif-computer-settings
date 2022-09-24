@@ -5,10 +5,10 @@ use warnings;
 use 5.014;
 use autodie;
 
-use Path::Tiny qw/ path tempdir tempfile cwd /;
+use Path::Tiny             qw/ path tempdir tempfile cwd /;
 use MetaCPAN::Client       ();
 use Module::Format::Module ();
-use Getopt::Long qw/ GetOptions /;
+use Getopt::Long           qw/ GetOptions /;
 
 my $rpm = 0;
 GetOptions( 'rpm!' => \$rpm, )
