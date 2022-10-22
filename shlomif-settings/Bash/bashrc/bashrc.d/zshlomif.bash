@@ -48,7 +48,7 @@ _enable_git_info_prompt="onroot"
 
 __git_info_prompt_command()
 {
-    if test "$_enable_git_info_prompt" = "always" -o \( -e ".git" -a "$_enable_git_info_prompt" != "never" \)
+    if test "$_enable_git_info_prompt" = "always" -o \( "$_enable_git_info_prompt" != "never" -a -e ".git" \)
     then
         (
         # enable_local_lib
