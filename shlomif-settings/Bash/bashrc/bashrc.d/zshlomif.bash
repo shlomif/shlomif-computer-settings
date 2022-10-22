@@ -44,11 +44,11 @@ then
     enable_local_lib
 fi
 
-_enable_git_info_prompt="1"
+_enable_git_info_prompt="onroot"
 
 __git_info_prompt_command()
 {
-    if test -e ".git" && test "$_enable_git_info_prompt" = "1"
+    if test "$_enable_git_info_prompt" = "always" -o \( -e ".git" -a "$_enable_git_info_prompt" != "never" \)
     then
         (
         # enable_local_lib

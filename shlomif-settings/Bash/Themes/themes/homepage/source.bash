@@ -3,6 +3,8 @@ load_common bundle/git
 load_common partests
 load_common chdirs
 
+_enable_git_info_prompt="always"
+
 base="$HOME/Docs/homepage"
 git_base="$base/homepage"
 trunk="$git_base/trunk"
