@@ -25,6 +25,8 @@ load_common bundle/git
 load_common chdirs
 load_common partests
 
+_enable_git_info_prompt="always"
+
 remote_repo="$(_shlomif_github "fc-solve")"
 remote_repo_of_assets="$(_shlomif_github "fc-solve-site-assets")"
 pristine_copy=~/Backup/Arcs/fcs-site--post-dest/post-incs
