@@ -91,25 +91,28 @@ td()
     test_debugger "$@"
 }
 
+inst_path=~/apps/perl/bleadperl
+bin_path=${inst_path}/bin
+
 install_perl()
 {
     set -x
-    _sys rm -fr ~/apps/perl/bleadperl
+    _sys rm -fr ${inst_path}
     _build_threaded && \
         _test_perl && \
     _sys make -j12 install && \
-    (cd ~/apps/perl/bleadperl/bin ;
+    (cd ${bin_path} ;
         #ext='5.35.4'
         ext="$(perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/largest-version.pl --dir "$PWD" --basename perl)"
         for fn in *$ext ; do
             ln -sf "$fn" "${fn%$ext}" ;
         done
     ) && \
-    ~/apps/perl/bleadperl/bin/cpan -i App::cpanminus && \
+    ${bin_path}/cpan -i App::cpanminus && \
     (
         cpanm_()
         {
-            ~/apps/perl/bleadperl/bin/cpanm "$@"
+            ${bin_path}/cpanm "$@"
         }
         install_task_()
         {
