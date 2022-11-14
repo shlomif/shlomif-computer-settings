@@ -4,6 +4,7 @@
 load_common sys
 load_common trim_pathes
 
+disable_local_lib
 # Too long $PATH is causing a lib/perlbug.t test failure
 trim_pathes
 
@@ -32,7 +33,7 @@ _build_generic()
     shift
 
     _sys bash ~/conf/build/perl/"$script" && _sys make -j4
-    _sys n --msg "perl/core build finished"
+    _sys n --msg "perl/core build finished" || true
 }
 
 # Short for build.
@@ -58,16 +59,26 @@ bd()
 
 
 # Short for build-with-threads-support
-bt()
+_build_threaded()
 {
     _build_generic "perl-bleadperl-usethreads.sh"
+}
+
+bt()
+{
+    _build_threaded
 }
 
 # Short for test.
 t()
 {
+    _test_perl
+}
+
+_test_perl()
+{
     _sys make -j12 test_harness TEST_JOBS=4
-    _sys n --msg "perl/core test finished"
+    _sys n --msg "perl/core test finished" || true
 }
 
 test_debugger()
@@ -82,14 +93,22 @@ td()
 
 install_perl()
 {
-    _sys make -j12 install
+    set -x
+    _sys rm -fr ~/apps/perl/bleadperl
+    _build_threaded && \
+        _test_perl && \
+    _sys make -j12 install && \
     (cd ~/apps/perl/bleadperl/bin ;
         #ext='5.35.4'
         ext="$(perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/largest-version.pl --dir "$PWD" --basename perl)"
         for fn in *$ext ; do
             ln -sf "$fn" "${fn%$ext}" ;
         done
-    )
+    ) && \
+    ~/apps/perl/bleadperl/bin/cpan -i App::cpanminus && \
+    ~/apps/perl/bleadperl/bin/cpanm -q Task::BeLike::SHLOMIF && \
+    true
+    set +x
 }
 
 i()
