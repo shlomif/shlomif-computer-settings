@@ -111,9 +111,13 @@ install_perl()
         {
             ~/apps/perl/bleadperl/bin/cpanm "$@"
         }
-        cpanm_ -q Task::BeLike::SHLOMIF || \
-            cpanm_ -vvvf HTML::TreeBuilder::LibXML && \
+        install_task_()
+        {
             cpanm_ -q Task::BeLike::SHLOMIF
+        }
+        install_task_ || \
+            cpanm_ -vvvf HTML::TreeBuilder::LibXML && \
+            install_task_
     ) && \
     true
     set +x
