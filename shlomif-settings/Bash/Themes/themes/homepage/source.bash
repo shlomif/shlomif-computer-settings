@@ -318,6 +318,22 @@ upload_celestia()
     }
 }
 
+quadpres_system_test()
+{
+    (
+    set -e -x
+    ba
+    rm -fr "$QUAD_PRES_CACHE_DIR"
+    rebuild |& tee "${HOME}/hp-rebuild-output1.txt"
+    did
+    )
+}
+
+-q()
+{
+    quadpres_system_test "$@"
+}
+
 PATH="$PATH:$HOME/apps/hypermail/bin"
 # Commented out because it makes matters slower:
 # export HTML_POST_INCS_DATA_DIR="$HOME/Arcs/temp/shlomif-homepage/shlomif-homepage-gezer.d"
