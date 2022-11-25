@@ -322,10 +322,10 @@ quadpres_system_test()
 {
     (
     set -e -x
-    ba
+    backup_diff
     rm -fr "$QUAD_PRES_CACHE_DIR"
     rebuild |& tee "${HOME}/hp-rebuild-output1.txt"
-    did
+    diff_to_pristine
     )
 }
 
