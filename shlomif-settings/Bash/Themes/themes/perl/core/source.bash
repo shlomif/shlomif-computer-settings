@@ -120,6 +120,7 @@ install_perl()
         }
         install_task_ || \
             cpanm_ -vvvf HTML::TreeBuilder::LibXML && \
+            cpanm_ -vvvf Code::TidyAll && \
             install_task_
     ) && \
     true
