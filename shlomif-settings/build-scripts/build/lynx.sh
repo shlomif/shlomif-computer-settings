@@ -8,9 +8,12 @@
 # Thanks!
 
 # ../configure --prefix="$HOME/apps/lynx-beta" --with-gnutls # --with-nss-compat # --with-ssl
-export LIBS="-lgnutls -lssl -lcrypto"
-export LDFLAGS="$LIBS"
-../configure --prefix="$HOME/apps/lynx-beta" \
+if test "0" = "1"
+then
+    export LIBS="-lgnutls -lssl -lcrypto"
+    export LDFLAGS="$LIBS"
+fi
+./configure --prefix="$HOME/apps/lynx-beta" \
     --disable-font-switch           \
     --disable-rpath-hack            \
     --enable-addrlist-page          \
@@ -34,6 +37,5 @@ export LDFLAGS="$LIBS"
     --enable-scrollbar              \
     --enable-source-cache           \
     --enable-warnings               \
-    --with-screen=ncursesw          \
-    --with-ssl=/usr/lib           \
+    --with-ssl                      \
     --with-zlib                     \
