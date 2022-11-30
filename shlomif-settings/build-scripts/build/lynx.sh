@@ -13,7 +13,14 @@ then
     export LIBS="-lgnutls -lssl -lcrypto"
     export LDFLAGS="$LIBS"
 fi
-./configure --prefix="$HOME/apps/lynx-beta" \
+
+prefix="$HOME/apps/lynx-beta"
+
+build()
+{
+    script="$1"
+    shift
+"$script" --prefix="$prefix" \
     --disable-font-switch           \
     --disable-rpath-hack            \
     --enable-addrlist-page          \
@@ -39,3 +46,18 @@ fi
     --enable-warnings               \
     --with-ssl                      \
     --with-zlib                     \
+    && make -j1 install
+}
+
+rm -fr "$prefix"
+if test "$1" = "o"
+then
+    src="`pwd`"
+    dir="../todel-lynx-build"
+    rm -fr "$dir"
+    mkdir -p "$dir"
+    cd "$dir"
+    build "$src/configure"
+else
+    build "./configure"
+fi
