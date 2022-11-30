@@ -33,6 +33,14 @@ __test()
         )
 }
 
+__test()
+{
+    (
+        cd "$trunk" &&
+        perl CI-testing/continuous-integration-testing.pl test
+    )
+}
+
 b()
 {
     __build "$@"
