@@ -4,7 +4,7 @@ use warnings;
 system( $^X,
     qw/-lp -i.bak -E /,
     's/inkex\.py/inkex\/__init__.py/ms',
-    glob("/home/shlomif/.config/inkscape/extensions/*.inx"),
+    glob("$ENV{HOME}/.config/inkscape/extensions/*.inx"),
 );
 __END__
 
