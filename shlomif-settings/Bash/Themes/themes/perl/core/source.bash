@@ -94,6 +94,27 @@ td()
 inst_path=~/apps/perl/bleadperl
 bin_path=${inst_path}/bin
 
+install_cpan_modules()
+{
+    (
+        set -x
+        cpanm_()
+        {
+            ${bin_path}/cpanm "$@"
+        }
+        install_task_()
+        {
+            cpanm_ -q Task::BeLike::SHLOMIF
+        }
+        ${bin_path}/cpan -i App::cpanminus && \
+            install_task_ || \
+            cpanm_ -vvvf HTML::TreeBuilder::LibXML && \
+            cpanm_ -vvvf Code::TidyAll && \
+            install_task_
+    ) && \
+    true
+}
+
 install_perl()
 {
     set -x
@@ -108,21 +129,7 @@ install_perl()
             ln -sf "$fn" "${fn%$ext}" ;
         done
     ) && \
-    ${bin_path}/cpan -i App::cpanminus && \
-    (
-        cpanm_()
-        {
-            ${bin_path}/cpanm "$@"
-        }
-        install_task_()
-        {
-            cpanm_ -q Task::BeLike::SHLOMIF
-        }
-        install_task_ || \
-            cpanm_ -vvvf HTML::TreeBuilder::LibXML && \
-            cpanm_ -vvvf Code::TidyAll && \
-            install_task_
-    ) && \
+    install_cpan_modules && \
     true
     set +x
 }
