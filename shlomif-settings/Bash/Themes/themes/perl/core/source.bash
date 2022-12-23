@@ -171,4 +171,13 @@ e_b()
 
 proj_name='perl/core'
 
-export PATH="$emcc_script_dir:$PATH"
+export PATH="$emcc_script_dir:${bin_path}:$PATH"
+
+set_lib()
+{
+    ext="$(perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/largest-version.pl --dir "${bin_path}" --basename perl)"
+    PERL5LIB=:"$inst_path"/lib/site_perl/"${ext}"/:"$inst_path"/lib/"${ext}"/
+    export PERL5LIB
+}
+
+set_lib
