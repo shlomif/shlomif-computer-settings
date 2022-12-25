@@ -115,6 +115,14 @@ install_cpan_modules()
     true
 }
 
+calc_perl_ext()
+{
+    (
+        unset PERL5LIB
+        perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/largest-version.pl --dir "$bin_path" --basename perl
+    )
+}
+
 install_perl()
 {
     set -x
@@ -124,7 +132,12 @@ install_perl()
     _sys make -j12 install && \
     (cd ${bin_path} ;
         #ext='5.35.4'
-        ext="$(perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/largest-version.pl --dir "$PWD" --basename perl)"
+        ext="$(calc_perl_ext)"
+        if test -z "$ext"
+        then
+            echo "ext is empty"
+            exit 1
+        fi
         for fn in *$ext ; do
             ln -sf "$fn" "${fn%$ext}" ;
         done
@@ -175,7 +188,7 @@ export PATH="$emcc_script_dir:${bin_path}:$PATH"
 
 set_lib()
 {
-    ext="$(perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/largest-version.pl --dir "${bin_path}" --basename perl)"
+    ext="$(calc_perl_ext)"
     PERL5LIB=:"$inst_path"/lib/site_perl/"${ext}"/:"$inst_path"/lib/"${ext}"/
     export PERL5LIB
 }
