@@ -8,4 +8,13 @@
 
 set -e -x
 p="$HOME/apps/mold-linker"
-make PREFIX="$p" install
+b="build"
+s="`pwd`"
+mkdir -p "$b"
+cd "$b"
+if false
+then
+    "$s"/install-build-deps.sh
+fi
+cmake -DCMAKE_INSTALL_PREFIX="$p" -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=c++ "$s"
+make install
