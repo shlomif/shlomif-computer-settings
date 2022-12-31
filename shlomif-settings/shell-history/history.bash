@@ -1736,7 +1736,7 @@ ping 192.168.1.1
 ping www.google.com
 pip2 install --upgrade --user .
 pip3 install --upgrade --user .
-pip3 install --upgrade --user black-hole-solver click freecell-solver pydistman pysol_cards rebookmaker scalene six vnu_validator zenfilter
+pip3 install --upgrade --user black-hole-solver click cookiecutter flake8 freecell-solver numpy primesieve pycotap pydistman pyflakes pysass pysol_cards rebookmaker scalene six staticjinja termtosvg tox twine vnu_validator zenfilter
 pkill -9 gvim
 pkill -9 gvimdiff
 pkill baloo_file
