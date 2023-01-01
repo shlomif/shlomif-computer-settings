@@ -318,6 +318,21 @@ upload_celestia()
     }
 }
 
+diff_test()
+{
+    (
+    set -e -x
+    backup_diff
+    rebuild |& tee "${HOME}/hp-rebuild-output1.txt"
+    diff_to_pristine
+    )
+}
+
+-r()
+{
+    diff_test "$@"
+}
+
 quadpres_system_test()
 {
     (
