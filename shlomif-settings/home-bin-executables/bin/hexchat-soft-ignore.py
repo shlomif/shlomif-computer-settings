@@ -80,6 +80,8 @@ def on_nick(word, word_eol, userdata):
     host = word[0]
     for x in ignores:
         if re.search(x, host):
+            toprnt = ("{}".format(word[0]))
+            hexchat.prnt(toprnt)
             return hexchat.EAT_ALL
     return hexchat.EAT_NONE
 
