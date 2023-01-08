@@ -80,7 +80,7 @@ def on_nick(word, word_eol, userdata):
     host = word[0]
     for x in ignores:
         if re.search(x, host):
-            toprnt = ("{}".format(word[0]))
+            toprnt = ("{}".format(word_eol[0]))
             hexchat.prnt(toprnt)
             return hexchat.EAT_ALL
     return hexchat.EAT_NONE
@@ -120,8 +120,8 @@ if False:
     hexchat.hook_command('NIGNORE', setignorer, help=help['nignore'])
     hexchat.hook_command('LNIGNORE', listi, help=help['lnignore'])
     hexchat.hook_command('UNNIGNORE', unset, help=help['unnignore'])
-    hexchat.hook_unload(unhook)
-    hexchat.hook_unload(unload_cb)
+hexchat.hook_unload(unhook)
+hexchat.hook_unload(unload_cb)
 
 print(
     "{0} module version {1} by {2} loaded.".format(
