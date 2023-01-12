@@ -16,10 +16,11 @@
 # THE SOFTWARE
 import hexchat
 import re
-__module_name__ = 'NIgnore'
-__module_version__ = '0.2.4'
-__module_description__ = 'Ignores nick changes.'
-__module_author__ = 'noteness'
+# based on NIgnore v0.2.4
+__module_name__ = 'softignore'
+__module_version__ = '0.2.0'
+__module_description__ = 'Soft-Ignore for GumbyPAN upload announcements.'
+__module_author__ = 'Shlomi Fish'
 ignores = []
 hook = None
 
