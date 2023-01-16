@@ -123,12 +123,23 @@ calc_perl_ext()
     )
 }
 
+_clean_perl()
+{
+    (
+        set -x
+        cd "$this" && \
+            git clean -dfx && \
+            git s u blead
+    )
+}
+
 install_perl()
 {
     set -x
     _sys rm -fr ${inst_path}
+    _clean_perl && \
     _build_threaded && \
-        _test_perl && \
+    _test_perl && \
     _sys make -j12 install && \
     (cd ${bin_path} ;
         #ext='5.35.4'
