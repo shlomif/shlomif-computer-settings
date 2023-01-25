@@ -91,8 +91,29 @@ td()
     test_debugger "$@"
 }
 
-inst_path=~/apps/perl/bleadperl
-bin_path=${inst_path}/bin
+set_bleadperl_env()
+{
+    inst_path=~/apps/perl/bleadperl
+    bin_path="${inst_path}/bin"
+    calc_perl_ext()
+    {
+        (
+            unset PERL5LIB
+            perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/largest-version.pl --dir "$bin_path" --basename perl
+        )
+    }
+    emcc_script_dir="$HOME/Download/unpack/perl/p5/emcc-build/perl-emcc-build"
+    export PATH="$emcc_script_dir:${bin_path}:$PATH"
+    set_lib()
+    {
+        ext="$(calc_perl_ext)"
+        PERL5LIB=:"$inst_path"/lib/site_perl/"${ext}"/:"$inst_path"/lib/"${ext}"/
+        export PERL5LIB
+    }
+    set_lib
+}
+
+set_bleadperl_env
 
 install_cpan_modules()
 {
@@ -113,14 +134,6 @@ install_cpan_modules()
             install_task_
     ) && \
     true
-}
-
-calc_perl_ext()
-{
-    (
-        unset PERL5LIB
-        perl ~/conf/trunk/shlomif-settings/home-bin-executables/bin/largest-version.pl --dir "$bin_path" --basename perl
-    )
 }
 
 _clean_perl()
@@ -168,7 +181,6 @@ mi()
     install_perl "$@"
 }
 
-emcc_script_dir="$HOME/Download/unpack/perl/p5/emcc-build/perl-emcc-build"
 emcc_script="$emcc_script_dir/BUILD_PERL_WITH_EMCC.bash"
 
 emcc_conf()
@@ -195,13 +207,3 @@ e_b()
 
 proj_name='perl/core'
 
-export PATH="$emcc_script_dir:${bin_path}:$PATH"
-
-set_lib()
-{
-    ext="$(calc_perl_ext)"
-    PERL5LIB=:"$inst_path"/lib/site_perl/"${ext}"/:"$inst_path"/lib/"${ext}"/
-    export PERL5LIB
-}
-
-set_lib
