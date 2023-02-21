@@ -66,13 +66,13 @@ _build_threaded()
 
 bt()
 {
-    _build_threaded
+    _build_threaded "$@"
 }
 
 # Short for test.
 t()
 {
-    _test_perl
+    _test_perl "$@"
 }
 
 _test_perl()
@@ -103,7 +103,7 @@ set_bleadperl_env()
         )
     }
     emcc_script_dir="$HOME/Download/unpack/perl/p5/emcc-build/perl-emcc-build"
-    export PATH="$emcc_script_dir:${bin_path}:$PATH"
+    export PATH="${emcc_script_dir}:${bin_path}:${PATH}"
     set_lib()
     {
         ext="$(calc_perl_ext)"
@@ -119,15 +119,32 @@ install_cpan_modules()
 {
     (
         set -x
+
+        exe="cpanm"
+        inst="App::cpanminus"
+        install_flags=""
+        install_task_flags='-q'
+
+        unrecommended_check_for-cpanplus()
+        {
+            if test "$P" = "1"
+            then
+                exe="cpanp"
+                inst="CPANPLUS"
+                install_flags="i"
+                install_task_flags=""
+            fi
+        }
+
         cpanm_()
         {
-            ${bin_path}/cpanm "$@"
+            ${bin_path}/"$exe" $install_flags "$@"
         }
         install_task_()
         {
-            cpanm_ -q Task::BeLike::SHLOMIF
+            cpanm_ $install_task_flags Task::BeLike::SHLOMIF
         }
-        ${bin_path}/cpan -i App::cpanminus && \
+        ${bin_path}/cpan -i ${inst} && \
             install_task_ || \
             cpanm_ -vvvf HTML::TreeBuilder::LibXML && \
             cpanm_ -vvvf Code::TidyAll && \
@@ -202,8 +219,7 @@ e()
 
 e_b()
 {
-    emcc_conf
+    emcc_conf "$@"
 }
 
 proj_name='perl/core'
-
