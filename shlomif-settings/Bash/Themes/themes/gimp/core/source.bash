@@ -5,7 +5,7 @@ base="$HOME/Download/unpack/graphics/gimp"
 git_base="$base/git"
 trunk="$git_base/gimp"
 this="$trunk"
-remote_repo='git://git.gnome.org/gimp'
+remote_repo='https://gitlab.gnome.org/GNOME/gimp.git/'
 proj_name="gimp"
 c_src="$this"
 

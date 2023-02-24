@@ -5,11 +5,13 @@ conf_dir="$(cd "$(dirname "$0")" && pwd)"
 dot_vim="$HOME/.vim"
 (
     cd "$dot_vim"
-    if ! test -d "vim-addon-manager" ; then
-	git clone 'https://github.com/MarcWeber/vim-addon-manager.git'
+    if ! test -d "vim-addon-manager"
+    then
+        git clone 'https://github.com/MarcWeber/vim-addon-manager.git'
     fi
-    if ! test -d "vim-addon-manager-known-repositories"; then
-        git clone 'git://github.com/MarcWeber/vim-addon-manager-known-repositories.git'
+    if ! test -d "vim-addon-manager-known-repositories"
+    then
+        git clone 'https://github.com/MarcWeber/vim-addon-manager-known-repositories.git'
     fi
 )
 
