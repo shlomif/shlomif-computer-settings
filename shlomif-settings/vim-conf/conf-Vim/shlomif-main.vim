@@ -862,3 +862,20 @@ endfunction
 command! BindF2 call Shlomif_Bind_F2()
 
 let g:CommandTPreferredImplementation = 'lua'
+
+function Shlomif_Markdown2DocBook()
+    s/2.5/4.0/g
+    setf docbk
+    map <F2> osection<tab><esc>
+    %s/\v\[([^\]]+)\]\(([^\)]+)\)/<link xlink:href="\2">\1<\/link>/g
+    sp /home/shlomif/Docs/homepage/homepage/trunk/lib/repos/shlomif-tech-diary/Makefile
+    saveas Makefile
+    map <F3> "agP:pu b<cr>
+    %s!\v\*\*([^\*]+)\*\*!<emphasis role="bold">\1</emphasis>!g
+    saveas! what-you-should-know-about-automated-testing.docbook5.xml.tt2
+    sp /home/shlomif/Docs/homepage/homepage/trunk/lib/repos/shlomif-tech-diary/render-cosmology.pl
+    saveas render.pl
+    sp Tests/html-tidy.t
+    sp Tests/style-trailing-space.t
+    'a,'es/\v^ +//
+endfunction
