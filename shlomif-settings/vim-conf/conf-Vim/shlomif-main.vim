@@ -860,3 +860,5 @@ function Shlomif_Bind_F2()
 endfunction
 
 command! BindF2 call Shlomif_Bind_F2()
+
+let g:CommandTPreferredImplementation = 'lua'
