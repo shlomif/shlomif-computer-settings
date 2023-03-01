@@ -21,6 +21,7 @@ remote_repo="$(_shlomif_github "black-hole-solitaire")"
 export AUTHOR_TESTING=1
 export FCS_USE_TEST_RUN=1 FCS_TEST_CLANG_FORMAT=1 FCS_TEST_BUILD=1
 export SKIP_RINUTILS_INSTALL=1
+export TOXENV="$(python3 --version | perl -n -E 'if (/^Python ([0-9]+)\.([0-9]+)/) {print "py$1$2"; exit;}')"
 
 cd "$this"
 
