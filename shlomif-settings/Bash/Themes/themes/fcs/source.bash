@@ -540,6 +540,20 @@ then
     debian_ux
 fi
 
+shlomif_ux()
+{
+    set -x
+    . ~/bin/Dev-Path-Configs-Source-Me.bash
+    emsdk install tot
+    emsdk activate tot --skip-npm
+    export CFLAGS="-fuse-ld=mold"
+    PATH+=:~/apps/mold-linker/bin
+    __cd_site
+    ncu --upgrade
+    npm i
+    set +x
+}
+
 # Clean up the environment for the valgrind tests to succeed.
 # Commented out because now it makes things worse in t/t/build-process.t
 # file.
