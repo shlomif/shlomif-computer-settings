@@ -38,8 +38,15 @@ build_cmd()
     )
 }
 
-alias b='build_cmd'
-alias t='build_cmd'
+b()
+{
+    build_cmd
+}
+
+t()
+{
+    build_cmd
+}
 
 __add_to_path()
 {

@@ -349,6 +349,25 @@ quadpres_system_test()
     quadpres_system_test "$@"
 }
 
+bleadperl_env()
+{
+    (
+        set -x
+        unset PERL5LIB
+        PATH="${HOME}/apps/perl/bleadperl/bin/:${PATH}"
+        which perl
+        rehash || true
+        disable_local_lib
+        deps-app plinst -i bin/required-modules.yml -i bin/common-required-deps.yml
+        (
+            set -e
+            -t qp
+            __install
+        ) || exit 1
+        rebuild |& tee "${HOME}/hp-rebuild-output-bleadperl1.txt"
+    )
+}
+
 PATH="$PATH:$HOME/apps/hypermail/bin"
 # Commented out because it makes matters slower:
 # export HTML_POST_INCS_DATA_DIR="$HOME/Arcs/temp/shlomif-homepage/shlomif-homepage-gezer.d"
