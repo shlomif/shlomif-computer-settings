@@ -359,9 +359,19 @@ bleadperl_env()
         rehash || true
         disable_local_lib
         deps-app plinst -i bin/required-modules.yml -i bin/common-required-deps.yml
+        cpanm --notest https://salsa.debian.org/reproducible-builds/strip-nondeterminism.git
+        (
+            set -e
+            -t wml/itself
+            cd "$trunk"
+            git clean -dfx .
+            build
+        ) || exit 1
         (
             set -e
             -t qp
+            cd "$trunk"
+            git clean -dfx .
             __install
         ) || exit 1
         rebuild |& tee "${HOME}/hp-rebuild-output-bleadperl1.txt"
