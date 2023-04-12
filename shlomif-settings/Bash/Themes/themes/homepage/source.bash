@@ -358,6 +358,22 @@ bleadperl_env()
         which perl
         rehash || true
         disable_local_lib
+        __unmv()
+        {
+            local src="$1"
+            shift
+            local dest="$1"
+            shift
+            rm -fr "${src}"
+            mv "${dest}" "${src}"
+        }
+        pdirs="${HOME}/perl5 ${HOME}/__bak-perl5"
+        qdirs="${HOME}/apps/quadpres ${HOME}/apps/__bak-quadpres"
+        wdirs="${HOME}/apps/test/wml ${HOME}/apps/test/__bak-wml"
+        mv $pdirs
+        mv $qdirs
+        mv $wdirs
+        (
         deps-app plinst -i bin/required-modules.yml -i bin/common-required-deps.yml
         cpanm --notest https://salsa.debian.org/reproducible-builds/strip-nondeterminism.git
         (
@@ -375,6 +391,10 @@ bleadperl_env()
             __install
         ) || exit 1
         rebuild |& tee "${HOME}/hp-rebuild-output-bleadperl1.txt"
+        )
+        __unmv $pdirs
+        __unmv $qdirs
+        __unmv $wdirs
     )
 }
 
