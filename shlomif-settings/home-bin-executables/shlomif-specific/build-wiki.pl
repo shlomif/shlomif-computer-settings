@@ -31,6 +31,7 @@ sub run
     {
         die "Output filename not specified! Use the -o|--output flag!";
     }
+
     $obj->do_system(
         {
             cmd => [
@@ -38,7 +39,18 @@ sub run
 "/home/shlomif/Download/web-sites/branchable/shlomifishswiki.branchable.com",
 "/home/shlomif/Download/web-sites/branchable/rendered-shlomifishswiki.branchable.com",
 
-            ]
+            ],
+        }
+    );
+
+    $obj->do_system(
+        {
+            cmd => [
+                "sky",
+                "-x",
+                "up-r",
+"/home/shlomif/Download/web-sites/branchable/rendered-shlomifishswiki.branchable.com",
+            ],
         }
     );
 
