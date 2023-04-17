@@ -24,12 +24,15 @@ sub run
     my $obj = Docker::CLI::Wrapper::Container->new(
         { container => "rinutils--deb--test-build", sys => "debian:sid", } );
 
-    GetOptions( "output|o=s" => \$output_fn, )
-        or die "errror in cmdline args: $!";
-
-    if ( !defined($output_fn) )
+    if (0)
     {
-        die "Output filename not specified! Use the -o|--output flag!";
+        GetOptions( "output|o=s" => \$output_fn, )
+            or die "errror in cmdline args: $!";
+
+        if ( !defined($output_fn) )
+        {
+            die "Output filename not specified! Use the -o|--output flag!";
+        }
     }
 
     $obj->do_system(
