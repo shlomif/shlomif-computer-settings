@@ -35,25 +35,19 @@ sub run
         }
     }
 
+    my $dir = path("$ENV{HOME}/Download/web-sites/branchable");
+
+    my $rend = "${dir}/rendered-shlomifishswiki.branchable.com";
     $obj->do_system(
         {
-            cmd => [
-                "ikiwiki",
-"/home/shlomif/Download/web-sites/branchable/shlomifishswiki.branchable.com",
-"/home/shlomif/Download/web-sites/branchable/rendered-shlomifishswiki.branchable.com",
-
-            ],
+            cmd =>
+                [ "ikiwiki", "${dir}/shlomifishswiki.branchable.com", $rend, ],
         }
     );
 
     $obj->do_system(
         {
-            cmd => [
-                "sky",
-                "-x",
-                "up-r",
-"/home/shlomif/Download/web-sites/branchable/rendered-shlomifishswiki.branchable.com",
-            ],
+            cmd => [ "sky", "-x", "up-r", $rend, ],
         }
     );
 
