@@ -374,23 +374,23 @@ bleadperl_env()
         mv $qdirs
         mv $wdirs
         (
-        deps-app plinst -i bin/required-modules.yml -i bin/common-required-deps.yml
-        cpanm --notest https://salsa.debian.org/reproducible-builds/strip-nondeterminism.git
-        (
-            set -e
-            -t wml/itself
-            cd "$trunk"
-            git clean -dfx .
-            build
-        ) || exit 1
-        (
-            set -e
-            -t qp
-            cd "$trunk"
-            git clean -dfx .
-            __install
-        ) || exit 1
-        rebuild |& tee "${HOME}/hp-rebuild-output-bleadperl1.txt"
+            deps-app plinst -i bin/required-modules.yml -i bin/common-required-deps.yml
+            cpanm --notest https://salsa.debian.org/reproducible-builds/strip-nondeterminism.git
+            (
+                set -e
+                -t wml/itself
+                cd "$trunk"
+                git clean -dfx .
+                build
+            ) || exit 1
+            (
+                set -e
+                -t qp
+                cd "$trunk"
+                git clean -dfx .
+                __install
+            ) || exit 1
+            rebuild |& tee "${HOME}/hp-rebuild-output-bleadperl1.txt"
         )
         __unmv $pdirs
         __unmv $qdirs
