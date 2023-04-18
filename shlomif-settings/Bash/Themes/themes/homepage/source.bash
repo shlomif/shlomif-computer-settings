@@ -351,6 +351,13 @@ quadpres_system_test()
 
 bleadperl_env()
 {
+    local _production="1"
+    local _p="$1"
+    shift
+    if test "$_p" = "--noprod"
+    then
+        _production="0"
+    fi
     (
         set -x
         unset PERL5LIB
@@ -370,28 +377,31 @@ bleadperl_env()
         pdirs="${HOME}/perl5 ${HOME}/__bak-perl5"
         qdirs="${HOME}/apps/quadpres ${HOME}/apps/__bak-quadpres"
         wdirs="${HOME}/apps/test/wml ${HOME}/apps/test/__bak-wml"
-        mv $pdirs
-        mv $qdirs
-        mv $wdirs
-        (
-            deps-app plinst -i bin/required-modules.yml -i bin/common-required-deps.yml
-            cpanm --notest https://salsa.debian.org/reproducible-builds/strip-nondeterminism.git
+        if test "$_production" = "1"
+        then
+            mv $pdirs
+            mv $qdirs
+            mv $wdirs
             (
-                set -e
-                -t wml/itself
-                cd "$trunk"
-                git clean -dfx .
-                build
-            ) || exit 1
-            (
-                set -e
-                -t qp
-                cd "$trunk"
-                git clean -dfx .
-                __install
-            ) || exit 1
-            rebuild |& tee "${HOME}/hp-rebuild-output-bleadperl1.txt"
-        )
+                deps-app plinst -i bin/required-modules.yml -i bin/common-required-deps.yml
+                cpanm --notest https://salsa.debian.org/reproducible-builds/strip-nondeterminism.git
+                (
+                    set -e
+                    -t wml/itself
+                    cd "$trunk"
+                    git clean -dfx .
+                    build
+                ) || exit 1
+                (
+                    set -e
+                    -t qp
+                    cd "$trunk"
+                    git clean -dfx .
+                    __install
+                ) || exit 1
+                rebuild |& tee "${HOME}/hp-rebuild-output-bleadperl1.txt"
+            )
+        fi
         __unmv $pdirs
         __unmv $qdirs
         __unmv $wdirs
