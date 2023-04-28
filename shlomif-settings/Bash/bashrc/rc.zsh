@@ -97,3 +97,10 @@ then
     unset KWIN_XKB_DEFAULT_KEYMAP
 fi
 
+
+# bun completions
+[ -s "/home/shlomif/.bun/_bun" ] && source "/home/shlomif/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

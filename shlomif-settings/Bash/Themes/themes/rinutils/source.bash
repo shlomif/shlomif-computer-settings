@@ -28,6 +28,7 @@ __run_tests()
     (
     cd "$trunk"
     rm -fr B/
+    rm -fr ../B/
     perl CI-testing/continuous-integration-testing.pl
     )
 }
