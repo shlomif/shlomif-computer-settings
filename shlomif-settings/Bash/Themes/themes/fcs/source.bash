@@ -550,7 +550,7 @@ shlomif_ux()
     PATH+=:~/apps/mold-linker/bin
     __cd_site
     ncu --upgrade
-    npm i
+    npm install
     set +x
 }
 

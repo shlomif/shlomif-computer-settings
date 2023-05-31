@@ -49,7 +49,8 @@ build()
         cd "$build" && \
             __cmake && \
             make && \
-            make install
+            make install && \
+            true
     )
 }
 
@@ -66,8 +67,10 @@ t()
         create_build_dir
         cd "$build" && \
             __cmake && \
-            make && \
-            make check
+            make VERBOSE=1 && \
+            make VERBOSE=1 check && \
+            make VERBOSE=1 install && \
+            true
         n --msg "fortune Test Finished"
     )
 }
@@ -75,14 +78,14 @@ t()
 # parallel-tests
 pt()
 {
-( unset FCS_USE_TEST_RUN; t; )
+    ( unset FCS_USE_TEST_RUN; t; )
 }
 
 real_tidyall="$(which tidyall)"
 
 tidyall()
 {
-"$real_tidyall" --data-dir="$TIDYALL_DATA_DIR" "$@"
+    "$real_tidyall" --data-dir="$TIDYALL_DATA_DIR" "$@"
 }
 
 dup()
