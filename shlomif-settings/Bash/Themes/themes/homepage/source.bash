@@ -349,6 +349,21 @@ quadpres_system_test()
     quadpres_system_test "$@"
 }
 
+try_ncu()
+{
+    (
+    set -e -x
+    cd "$trunk"
+    (
+        cd node_modules/
+        git clean -dfx .
+    ) || true
+    ncu --upgrade
+    npm install
+    rebuild |& tee "${HOME}/hp-rebuild-output1.txt"
+    )
+}
+
 bleadperl_env()
 {
     local _production="1"
