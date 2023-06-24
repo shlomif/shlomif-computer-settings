@@ -81,6 +81,14 @@ mi()
     __nvim_make_install "$@"
 }
 
+shlomif_ux()
+{
+    set -x
+    export CFLAGS="-fuse-ld=mold"
+    PATH+=:~/apps/mold-linker/bin
+    set +x
+}
+
 prompt()
 {
     __prompt_cmd \
