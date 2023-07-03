@@ -392,11 +392,17 @@ bleadperl_env()
         pdirs="${HOME}/perl5 ${HOME}/__bak-perl5"
         qdirs="${HOME}/apps/quadpres ${HOME}/apps/__bak-quadpres"
         wdirs="${HOME}/apps/test/wml ${HOME}/apps/test/__bak-wml"
+        _apply()
+        {
+            local cmd="$1"
+            shift
+            "$cmd" $pdirs
+            "$cmd" $qdirs
+            "$cmd" $wdirs
+        }
         if test "$_production" = "1"
         then
-            mv $pdirs
-            mv $qdirs
-            mv $wdirs
+            _apply mv
             (
                 deps-app plinst -i bin/required-modules.yml -i bin/common-required-deps.yml
                 cpanm --notest https://salsa.debian.org/reproducible-builds/strip-nondeterminism.git
@@ -417,9 +423,7 @@ bleadperl_env()
                 rebuild |& tee "${HOME}/hp-rebuild-output-bleadperl1.txt"
             )
         fi
-        __unmv $pdirs
-        __unmv $qdirs
-        __unmv $wdirs
+        _apply __unmv
     )
 }
 

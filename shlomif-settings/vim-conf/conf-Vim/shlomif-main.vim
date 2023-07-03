@@ -76,7 +76,6 @@ let g:vim_addon_manager.shell_commands_run_method = 'system'
 " https://github.com/thinca/vim-quickrun
 call vam#ActivateAddons([
     \ 'Add_to_Word_Search',
-    \ 'Command-T',
     \ 'The_NERD_tree',
     \ 'UltiSnips',
     \ 'VimClojure',
@@ -132,6 +131,7 @@ call vam#ActivateAddons([
     \ 'github:vim-airline/vim-airline-themes',
     \ 'github:vim-perl/vim-perl',
     \ 'github:vim-perl/vim-perl6',
+    \ 'github:wincent/command-t',
     \ 'matchit.zip',
     \ 'range-search',
     \ 'repeat',
