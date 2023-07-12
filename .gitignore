@@ -9,7 +9,6 @@
 /shlomif-settings/vim-conf/dot-config-nvim/ExtraUltiSnips
 /shlomif-settings/vim-conf/dot-vim/.netrwhist
 /shlomif-settings/vim-conf/dot-vim/Add_to_Word_Search/
-/shlomif-settings/vim-conf/dot-vim/Command-T/
 /shlomif-settings/vim-conf/dot-vim/The_NERD_tree/
 /shlomif-settings/vim-conf/dot-vim/UltiSnips/
 /shlomif-settings/vim-conf/dot-vim/VimClojure/
@@ -68,6 +67,7 @@
 /shlomif-settings/vim-conf/dot-vim/github-vim-perl-vim-perl/
 /shlomif-settings/vim-conf/dot-vim/github-vim-perl-vim-perl6/
 /shlomif-settings/vim-conf/dot-vim/github-vim-syntastic-syntastic/
+/shlomif-settings/vim-conf/dot-vim/github-wincent-command-t/
 /shlomif-settings/vim-conf/dot-vim/matchit.zip/
 /shlomif-settings/vim-conf/dot-vim/perlprove/
 /shlomif-settings/vim-conf/dot-vim/powerline/
