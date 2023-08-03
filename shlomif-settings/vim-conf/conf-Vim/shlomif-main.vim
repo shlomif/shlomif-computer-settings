@@ -879,3 +879,6 @@ function Shlomif_Markdown2DocBook()
     sp Tests/style-trailing-space.t
     'a,'es/\v^ +//
 endfunction
+
+command! -range ShellAlias2Func :<line1>,<line2>s/\v^alias (\w+)\=\'(\w+)\'$/\1()\r{\r    \2 "\$@"\r}\r/
+

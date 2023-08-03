@@ -81,13 +81,15 @@ export FCS_PGO_THEME="-l lg" FCS_TEST_CLANG_FORMAT=1
 
 if ! test -e "$LIBAVL2_SOURCE_DIR"
 then
-    set -e
+    (
+    set -e -x
     mkdir -p "$(dirname "$LIBAVL2_SOURCE_DIR")"
     cd "$(dirname "$LIBAVL2_SOURCE_DIR")"
     wget https://ftp.gnu.org/pub/gnu/avl/avl-2.0.3.tar.gz
     tar -xvf avl-2.0.3.tar.gz
     find "$LIBAVL2_SOURCE_DIR" -type f | xargs perl -i -lpE 's/[\t ]+$//'
-    set +e
+    set +e +x
+    )
 fi
 
 # This causes problems with the threaded solver.
@@ -127,16 +129,21 @@ clean_patsolve_build_dir()
 _configure_build()
 {
     (
+
     set -e -x
+
     if ! test -e "$b"
     then
         mkdir "$b"
     fi
+
     cd "$b"
+
     if ! test -e CMakeCache.txt
     then
         "$c_src"/../scripts/Tatzer ${args}
     fi
+
     )
 }
 
@@ -165,7 +172,11 @@ test_with_notify()
         n --msg "Freecell Solver Test Finished"
     )
 }
-alias t='test_with_notify'
+
+t()
+{
+    test_with_notify "$@"
+}
 
 # parallel-tests
 run_tests_in_parallel()
@@ -176,7 +187,10 @@ run_tests_in_parallel()
     )
 }
 
-alias pt='run_tests_in_parallel'
+pt()
+{
+    run_tests_in_parallel "$@"
+}
 
 make()
 {
