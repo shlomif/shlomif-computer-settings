@@ -22,7 +22,7 @@ t()
     set -e -x
     mkdir -p "$b"
     cd "$b"
-    cmake -DWITH_BH_SOLVER=1 -DCMAKE_BUILD_TYPE=Release "$c"
+    cmake -DWITH_BH_SOLVER=1 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="$HOME/apps/kpat-todel" "$c"
     make
     make test
     )
