@@ -38,7 +38,7 @@ create_build_dir()
 __cmake()
 {
     rm -fr CMakeCache.txt CMakeFiles || true
-    cmake -DCMAKE_INSTALL_PREFIX="${SHLOMIF_FORTUNE_DIR:-$HOME/apps/to-del-fortune}" "$this"
+    cmake -DCMAKE_INSTALL_PREFIX="${SHLOMIF_FORTUNE_DIR:-$HOME/apps/to-del-fortune}" "$@" "$this"
 }
 
 build()
@@ -61,18 +61,21 @@ b()
 
 t()
 {
-    (
+    for cmake_args in "" "-D USE_PCRE=TRUE"
+    do
+        (
         export HARNESS_BREAK=1
         export HARNESS_OPTIONS=j20:c
         create_build_dir
         cd "$build" && \
-            __cmake && \
+            __cmake $cmake_args && \
             make VERBOSE=1 && \
             make VERBOSE=1 check && \
             make VERBOSE=1 install && \
             true
-        n --msg "fortune Test Finished"
-    )
+        ) || break
+    done
+    n --msg "fortune Test Finished"
 }
 
 # parallel-tests
