@@ -27,7 +27,9 @@ then
     sleep 1
 elif test "$HTTPD" = "go"
 then
-    (cd "$localdir" && go run ~/conf/trunk/shlomif-settings/home-bin-executables/bin/web-a-dir.go "$port" "$localdir") &
+    prog="$HOME/conf/trunk/shlomif-settings/home-bin-executables/bin/web-a-dir.go"
+    (cd "$localdir" && go build "$prog")
+    (cd "$localdir" && go run "$prog" "$port" "$localdir") &
     sleep 10
 else
     test -x "$webserver"
