@@ -1,6 +1,7 @@
 # Commenting-out because I am getting:
 # -bash: __git_ps1: command not found
 # load_common git_term
+load_common install_cpan_modules
 load_common sys
 load_common trim_pathes
 
@@ -115,44 +116,6 @@ set_bleadperl_env()
 
 set_bleadperl_env
 
-install_cpan_modules()
-{
-    (
-        set -x
-
-        exe="cpanm"
-        inst="App::cpanminus"
-        install_flags=""
-        install_task_flags='-q'
-
-        unrecommended_check_for-cpanplus()
-        {
-            if test "$P" = "1"
-            then
-                exe="cpanp"
-                inst="CPANPLUS"
-                install_flags="i"
-                install_task_flags=""
-            fi
-        }
-
-        cpanm_()
-        {
-            ${bin_path}/"$exe" $install_flags "$@"
-        }
-        install_task_()
-        {
-            cpanm_ $install_task_flags Task::BeLike::SHLOMIF
-        }
-        ${bin_path}/cpan -i ${inst} && \
-            install_task_ || \
-            cpanm_ -vvvf HTML::TreeBuilder::LibXML && \
-            cpanm_ -vvvf Code::TidyAll && \
-            install_task_
-    ) && \
-    true
-}
-
 _clean_perl()
 {
     (
@@ -183,7 +146,7 @@ install_perl()
             ln -sf "$fn" "${fn%$ext}" ;
         done
     ) && \
-    install_cpan_modules && \
+    install_cpan_modules --cpan-bin-path "${bin_path}" --cpanm-bin-path "${bin_path}" && \
     true
     set +x
 }
