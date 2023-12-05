@@ -9,7 +9,9 @@
 (unset MAKEFLAGS; gmake)
 -l
 -p
+-p && rebuild && up
 -p && up
+-r
 -s
 -t 0fc
 -t 3fc
@@ -158,6 +160,7 @@
 /usr/bin/time perl "$c_src"/run-tests.pl --glob='{clang-format,perltidy,py-flake8,style-trailing-space}*.t'\
 /usr/bin/time perl bin/process.pl
 1
+2
 80_chars_ruler
 CFLAGS="-g" pypy3 setup.py install --force
 Cancel_reminder
@@ -199,6 +202,7 @@ WD=lxde startx
 WD=xfce startx
 \df
 __myctags
+_enable_git_info_prompt="always"
 a
 a=/home/shlomif/Backup/Arcs/sites--perl-begin-post-dest/post-incs-reduced/links/index.html ; b=/home/shlomif/Backup/Arcs/sites--perl-begin-post-dest/this-incs-reduced/links/index.html ; cmp $a $b ; gvimdiff <(cut -b 1-5000000 -n $a) <(cut -b 1-5000000 -n $b) +colorscheme" apprentice" +"exe \"normal \\<c-w>J\""
 a=`pwd`
@@ -339,6 +343,7 @@ caddy XorShift128Plus.py | less
 caddy base-2-to-36.pl6
 cargo build
 cargo install
+cargo install-update -a
 cargo test
 cat .gitignore | perl -lpE 's#^/#ls #' | bash -e
 cat /etc/resolv.conf
@@ -352,6 +357,7 @@ cd $a
 cd $arcs
 cd $homepage
 cd $mag_base
+cd $que
 cd $this
 cd -
 cd .
@@ -441,6 +447,7 @@ cd lib/blogs/shlomif-tech-diary
 cd lib/repos/Solitairey
 cd lib/repos/my-real-person-fan-fiction
 cd lib/repos/putting-cards-2019-2020
+cd lib/repos/shlomif-tech-diary
 cd lib/repos/shlomif-tech-diary/
 cd m
 cd neovim
@@ -556,6 +563,7 @@ ctest -V -R svgz
 cv
 cython-3 *.pyx
 d
+d() { dzil test --all && dzil install }
 date
 date +%s
 date +%s.%N
@@ -579,6 +587,7 @@ disp
 docker rm fcsfed
 docker stop fcsfed
 dolphin --new-window ~/Music/dosd-mp3s/ ~/Music/mp3s/ ~/Download/Video/
+dolphin --new-window ~/Music/dosd-mp3s/ ~/Music/mp3s/ ~/Download/Video/ ~/Arcs
 dolphin .
 dolphin /home/shlomif/Download/unpack/graphics/inkscape/extensions/tests/
 dolphin /mnt/music/Music/dosd-mp3s /mnt/music/Music/mp3s /mnt/music/Music/shlomif-Download/
@@ -634,6 +643,9 @@ export HARNESS_OPTIONS=j4:c
 export HARNESS_VERBOSE=1
 export LD_LIBRARY_PATH=/opt/vlc-3.0/pango-dev/lib64/ ; pidgin
 export MAKEFLAGS="-j4"
+export MAKEFLAGS="-r --no-silent -j1"
+export MAKEFLAGS="-r --no-silent -j4"
+export MAKEFLAGS="-r -s -j4"
 export MAKEFLAGS="-r"
 export MAKEFLAGS='-r'
 export NOTIFIER_TO=lap
@@ -644,6 +656,7 @@ export PATH="$PWD/node_modules/.bin:$PATH"
 export PATH="/home/shlomif/.local/bin:/home/shlomif/apps/test/wml/bin:$PATH"
 export PATH="/home/shlomif/apps/golang/bin:/home/shlomif/.local/bin:/home/shlomif/apps/test/wml/bin:$PATH"
 export PATH=$HOME/apps/latemp/bin:$PATH
+export SKIP_SPELL_CHECK=",en,"
 export SKIP_SPELL_CHECK=1
 export TEST_TAGS=" SKIP_GTK SKIP_PY2 "
 export VIMSYNT=1
@@ -722,6 +735,7 @@ genf
 gentags
 get-telegram
 get_nums | summary
+gh pr list
 ghc -O2 mniip.hs
 gimp
 gimpgitbuild build --mode=clean
@@ -766,15 +780,22 @@ git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/fix-indent.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/fix-markup-valid.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/hebrew-spelling-fix.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/move-to-cookiecutter-latemp.txt
+git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/package-json-and-package-lock-json-npm-updates.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/refactoring.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/remove-unused-var.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/rename-vars.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/reproducible-builds.txt
+git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/semantic-markup--xhtml5-header-element.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/semantic-markup.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/tidyall-fix.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/update-ci-gen-travis-yml.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/update-gitignore.txt
 git ci -m "add more"
+git ci -m $'add a tweet'
+git ci -m $'add more text'
+git ci -m $'add text'
+git ci -m $'add text;'
+git ci -m $'revise text'
 git ci -m 'CSS tweak'
 git ci -m 'Convert a page to tt2'
 git ci -m 'Convert pages to tt2'
@@ -1027,6 +1048,7 @@ gvim -o lib/sass/common-style.sass lib/sass/style.sass t2/index.xhtml.wml dest/p
 gvim -o lib/sass/common-style.scss lib/sass/style.scss t2/humour/TOWTF/index.xhtml.wml dest/post-incs/t2/humour/TOWTF/index.xhtml
 gvim -o lib/sass/common-style.scss lib/sass/style.scss t2/meta/FAQ/index.xhtml.wml
 gvim -o lib/sgml/shlomif-docbook/docbook-epub-preproc.xslt /usr/share/sgml/docbook/xsl-ns-stylesheets/epub/docbook.xsl
+gvim -o multiverse-cosmology-v0.4.x.docbook5.xml
 gvim -o src/js/fcs-validate.ts src/js/web-fc-solve-tests--fcs-validate.ts
 gvim -o src/js/web-fc-solve.ts src/js/web-fc-solve-ui.ts
 gvim -o y.txt lib/hunspell/whitelist1.txt
@@ -1347,6 +1369,7 @@ hm
 hostname
 html-minifier dest/pre-incs/t2/humour/index.xhtml 2>&1 | less
 htop
+httpd -f ~/conf/trunk/shlomif-settings/apache/httpd/minimal-config/mageia/localhost-homepage-httpd.conf
 i
 i=0; while bash SPLIT_FCC/by-depth/2/active/AAAAAAAAAAAAAAAARA==/driver.bash ; do let i++ ; done ; echo $i
 i=0; while bash SPLIT_FCC/by-depth/3/active/AAAAAAAAAAAAAAABFA==/driver.bash ; do let i++ ; done ; echo $i
@@ -1411,6 +1434,7 @@ less scripts/tag-release.pl
 less weaver.ini
 lftp sftp://192.168.1.232:
 li
+ll
 load_common du
 locate .travis.yml
 ls
@@ -1463,6 +1487,7 @@ make -j4 upload_beta
 make -j4 upload_var
 make -j5
 make -j5 bzImage modules
+make -j5 docbook_extended
 make -j8
 make -j8 PROD=1
 make -j8 PROD=1 docbook_extended
@@ -1486,6 +1511,7 @@ make DEV=1 fastrender
 make PROD=0 upload
 make PROD=0 upload_beta
 make PROD=1
+make PROD=1 LOCAL_BROWSER_TESTS=1 -j1 smoke-tests
 make PROD=1 fastrender
 make PROD=1 upload
 make PROD=1 upload_beta
@@ -1586,6 +1612,7 @@ myrsync .config/gtk-3.0-fixed/ .config/gtk-3.0/
 n
 n -m foo
 nano
+ncu --upgrade
 ninja
 ninja -j1
 ninja -j1 install
@@ -1606,6 +1633,7 @@ nopaste mniip.hs
 npm audit
 npm i
 npm test
+npm upgrade
 nvim
 nvim -- dbm_solver.h
 nvim -o e658log2par.txt 658/par2.bash
@@ -1758,6 +1786,7 @@ prettier --parser typescript --arrow-parens always --tab-width 4 --trailing-comm
 prettier --parser typescript --arrow-parens always --tab-width 4 --trailing-comma all --write src/js/fcs-validate.ts
 prettier --parser typescript --arrow-parens always --tab-width 4 --trailing-comma all --write src/js/web-fc-solve--expand-moves.ts
 prettier --parser typescript --arrow-parens always --tab-width 4 --trailing-comma all --write src/js/web-fc-solve-tests--fcs-validate.ts
+prettier --parser typescript --arrow-parens always --tab-width 4 --trailing-comma all --write src/ts/**.ts
 prettier --parser typescript --arrow-parens always --tab-width 4 --trailing-comma all --write src/ts/*.ts\
 prompt fire
 prove --timer Tests/case-insense-file-collision.t
@@ -1876,12 +1905,14 @@ python3 e685v1.py 1000 1
 python3 e695test1.py
 python3 e698v1.py
 python3 euler-248-v1.py
+python3 fc-solve/CI-testing/translate-travis.yml-to-github-actions.py
 python3 gen-multiple-pysol-layouts --dir=deals/ --ms --prefix '' --suffix .board seq 1 32000
 python3 lib/factoids/merge_into_fortunes.py
 python3 lib/faq/split_into_sections.py
 python3 pysol.py
 python3 pysol.py --deal 24 --game FreeCell
 python3 pysol.py -g FreeCell --deal ms100000
+python3 python_pypi_dist_manager.py test
 python3 refactor1.py
 python3 setup.py build
 python3 setup.py install --user
@@ -1938,8 +1969,11 @@ rebuild 2>&1 | tee ~/o.txt
 rebuild 2>&1 | tee ~/o.txt ; n -m rebuild
 rebuild ; n
 rebuild ; n -m rebuild
+rebuild |& tee /tmp/hpbuild1.txt
 rebuild |& tee /tmp/o1.txt
 rebuild |& tee /tmp/o1.txt ; n
+rebuild |& tee /tmp/o1.txt | timestamper-with-elapsed
+rebuild |& tee /tmp/o1.txt | timestamper-with-elapsed --from-start
 rebuild |& tee /tmp/o2.txt
 rebuild |& tee /tmp/out-aft.txt
 rec .ORIG
@@ -2191,6 +2225,7 @@ ts
 tsc --target es6 --moduleResolution node --module commonjs --outDir lib/for-node/js --rootDir src/js src/js/jq_qs.d.ts src/js/libfcs-wrap.d.ts src/js/web-fc-solve-tests.ts || echo fail
 tsc --target es6 --moduleResolution node --module commonjs --outDir lib/for-node/js --rootDir src/js src/js/jq_qs.d.ts src/js/web-fc-solve-tests.ts || echo fail
 tt
+u
 u --buildrequires /home/shlomif/Download/unpack/Mageia/SPECS-only-for-deps/inkscape/SPECS/inkscape.spec
 u --buildrequires /home/shlomif/Download/unpack/Mageia/SPECS-only-for-deps/kpat/SPECS/kpat.spec
 u --buildrequires /home/shlomif/Download/unpack/mageia/SPECS-only-for-deps/gimp/SPECS/gimp.spec
@@ -2247,6 +2282,7 @@ vim dbm_solver.c
 vim t2/humour/fortunes/ver.txt
 virt-manager
 vlc *.{mp3,flv,ogg,mp4,avi,wmv,mpg,MP3,m4a,wma,webm}
+vlc --video --random Arcs/temp/music.m3u
 vlc Arcs/vlc-all.xspf
 vlc Arcs/vlc14.xspf
 vlc Arcs/vlc25.xspf
