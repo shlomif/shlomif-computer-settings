@@ -23,26 +23,25 @@ explicit or implicit copyrights claims.
 """
 
 import fcntl
+import os.path
+from pathlib import Path
 import platform
 import re
-import os.path
 import sys
 import time
-from pathlib import Path
 
 import click
 import vlc
 
-from PySide2 import QtCore, QtGui, QtWidgets
 '''
 Remove workaround since PySide2 is working on the latest Fedora 32 x86-64
 again:
+'''
 
 if os.path.exists("/etc/fedora-release"):
     from PyQt5 import QtCore, QtGui, QtWidgets
 else:
     from PySide2 import QtCore, QtGui, QtWidgets
-'''
 
 
 class Player(QtWidgets.QMainWindow):
@@ -65,6 +64,7 @@ class Player(QtWidgets.QMainWindow):
     def create_ui(self, msg):
         """Set up the user interface, signals & slots
         """
+
         self.widget = QtWidgets.QWidget(self)
         self.setCentralWidget(self.widget)
 
