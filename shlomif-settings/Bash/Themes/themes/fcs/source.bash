@@ -557,14 +557,24 @@ fi
 shlomif_ux()
 {
     set -x
+    local _npm="1"
+    local _p="$1"
+    shift
+    if test "$_p" = "--no-npm"
+    then
+        _npm="0"
+    fi
     . ~/bin/Dev-Path-Configs-Source-Me.bash
     emsdk install tot
     emsdk activate tot --skip-npm
     export CFLAGS="-fuse-ld=mold"
     PATH+=:~/apps/mold-linker/bin
     __cd_site
-    ncu --upgrade
-    npm install
+    if test "$_npm" = "1"
+    then
+        ncu --upgrade
+        npm install
+    fi
     set +x
 }
 
