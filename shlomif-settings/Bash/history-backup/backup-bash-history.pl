@@ -4,41 +4,41 @@ use strict;
 use warnings;
 use autodie;
 
+use Carp       ();
 use File::Copy qw/ copy /;
-
 use POSIX (qw(strftime));
 
-my $backup_base = "$ENV{HOME}/Backup/bash-history";
-my $trunk       = "$backup_base/git-repos";
-my $files_dir   = 'bash-history';
-my $trunk_files = "$trunk/$files_dir";
+my $HOME_DIR_PATH                   = $ENV{HOME};
+my $backup_repo_containing_dir_path = "$HOME_DIR_PATH/Backup/bash-history";
+my $TRUNK_PATH                 = "$backup_repo_containing_dir_path/git-repos";
+my $files_dir_basepath         = 'bash-history';
+my $trunk_files_directory_path = "$TRUNK_PATH/$files_dir_basepath";
 
-my $H     = $ENV{HOME};
-my @files = (
+my @tracked_files_data = (
     {
-        from => "$H/.bash_history",
+        from => "$HOME_DIR_PATH/.bash_history",
         to   => "bash_history",
     },
     {
-        from => "$H/.histfile",
+        from => "$HOME_DIR_PATH/.histfile",
         to   => "histfile",
     },
     {
-        from => "$H/.mrconfig",
+        from => "$HOME_DIR_PATH/.mrconfig",
         to   => "mrconfig",
     },
     {
-        from => "$H/.viminfo",
+        from => "$HOME_DIR_PATH/.viminfo",
         to   => "viminfo",
     },
 );
 
-foreach my $f (@files)
+foreach my $tracked_file_record (@tracked_files_data)
 {
-    my $to = "$trunk_files/$f->{to}";
-    if ( -e $f->{from} )
+    my $to = "$trunk_files_directory_path/$tracked_file_record->{to}";
+    if ( -e $tracked_file_record->{from} )
     {
-        copy( $f->{from}, $to );
+        copy( $tracked_file_record->{from}, $to );
     }
     else
     {
@@ -51,17 +51,23 @@ foreach my $f (@files)
     }
     my $fn = $to;
     my ($num_lines) = ( `wc -l "$fn"` =~ m{([0-9]+)} )
-        or die "Cannot find num lines for $fn.";
-    $f->{num_lines} = $num_lines;
+        or Carp::confess("Cannot find num lines for $fn.");
+    $tracked_file_record->{num_lines} = $num_lines;
 }
 
 my $date = strftime( "+%Y-%m-%d-%H:%M:%S", localtime() );
 
-chdir($trunk) or die "Cannot chdir to '$trunk'";
+chdir($TRUNK_PATH)
+    or Carp::confess("Cannot chdir to TRUNK_PATH = '$TRUNK_PATH'");
 
-if ( system( "git", "add", map { "$files_dir/$_->{to}" } @files ) )
+if (
+    system(
+        "git", "add",
+        map { "$files_dir_basepath/$_->{to}" } @tracked_files_data
+    )
+    )
 {
-    die "git command add failed.";
+    Carp::confess(qq#git "add" command failed#);
 }
 
 if ( `git status -s .` =~ /\S/ )
@@ -71,10 +77,11 @@ if ( `git status -s .` =~ /\S/ )
             "git", "commit", "-q", "-m",
             "Commiting the bash_history as of $date\n\n"
                 . join( "\n",
-                map { "$_->{to} containing $_->{num_lines} lines." } @files )
+                map { "$_->{to} containing $_->{num_lines} lines." }
+                    @tracked_files_data )
         )
         )
     {
-        die "git commit command failed.";
+        Carp::confess(qq#git "commit" command failed.#);
     }
 }
