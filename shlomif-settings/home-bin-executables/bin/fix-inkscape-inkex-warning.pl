@@ -1,7 +1,8 @@
 use strict;
 use warnings;
 
-system( $^X,
+system(
+    $^X,
     qw/-lp -i.bak -E /,
     's/inkex\.py/inkex\/__init__.py/ms',
     glob("$ENV{HOME}/.config/inkscape/extensions/*.inx"),

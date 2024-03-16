@@ -43,8 +43,8 @@ my @todel = qw%
   | trunk
   )
   %msx
-        }
-        map {
+    }
+    map {
         my $branch = $_;
         chomp $branch;
         $branch =~ s/\A\s*//;
@@ -57,7 +57,7 @@ my @todel = qw%
                 : ()
             )
         )
-        } path("$data_dirh/branches.txt")->lines_utf8
+    } path("$data_dirh/branches.txt")->lines_utf8
 );
 
 # die "<<@todel>>";
