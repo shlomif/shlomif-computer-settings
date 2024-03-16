@@ -44,6 +44,11 @@ install_cpan_modules()
         {
             cpanm_ $install_task_flags Task::BeLike::SHLOMIF
         }
+        workaround_()
+        {
+            cpanm_ -vvvf Variable::Magic && \
+                true
+        }
         ${cpan_bin_path}/cpan -i ${inst} && \
             install_task_ || \
             cpanm_ -vvvf HTML::TreeBuilder::LibXML && \

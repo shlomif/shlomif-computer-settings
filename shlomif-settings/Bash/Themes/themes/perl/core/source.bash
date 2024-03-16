@@ -129,7 +129,15 @@ _clean_perl()
 install_perl()
 {
     set -x
-    _sys rm -fr ${inst_path}
+    if false
+    then
+        _sys rm -fr ${inst_path}
+    else
+        if test -e ${inst_path}
+        then
+            mv ${inst_path} "${inst_path}--old-2del-`date +%s`"
+        fi
+    fi
     _clean_perl && \
     _build_threaded && \
     _test_perl && \
