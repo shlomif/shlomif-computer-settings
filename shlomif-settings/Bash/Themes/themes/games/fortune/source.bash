@@ -59,7 +59,7 @@ b()
     build "$@"
 }
 
-t()
+__run_tests()
 {
     for cmake_args in "" "-D USE_PCRE=TRUE"
     do
@@ -76,6 +76,11 @@ t()
         ) || break
     done
     n --msg "fortune Test Finished"
+}
+
+t()
+{
+    __run_tests "$@"
 }
 
 # parallel-tests
