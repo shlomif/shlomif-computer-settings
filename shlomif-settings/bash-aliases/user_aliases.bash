@@ -4,9 +4,20 @@ dc()
 {
     echo "It's cd - not dc dammit!" 1>&2
 }
+
+__disable_local_lib__filter_var()
+{
+    pathvar_name="$1"
+    pathvar_value="$(get_var "$pathvar_name")"
+    deduped_path="$(perl -e 'print join(":",grep { my $p = $_ ; ($p =~ /\S/ms and ($p !~ m#/perl5/#ms)) } split(/:/, $ARGV[0]))' "$pathvar_value")"
+    set_var "$pathvar_name" "$deduped_path"
+}
+
 disable_local_lib()
 {
     unset MODULEBUILDRC PERL_MB_OPT PERL_MM_OPT PERL_LOCAL_LIB_ROOT
+    __disable_local_lib__filter_var "PATH"
+    __disable_local_lib__filter_var "PERL5LIB"
 }
 rpmbuild()
 {

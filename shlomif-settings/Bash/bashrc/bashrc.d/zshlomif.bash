@@ -34,9 +34,14 @@ then
     export PATH="$HOME/apps/latemp/bin:$PATH"
 fi
 
+enable_local_lib__run_perl()
+{
+    perl -I ~/perl5/lib/perl5/ -Mlocal::lib
+}
+
 enable_local_lib()
 {
-    eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+    eval $(enable_local_lib__run_perl)
 }
 
 if ! git info > /dev/null 2>&1

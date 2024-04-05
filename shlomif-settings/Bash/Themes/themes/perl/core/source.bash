@@ -108,7 +108,7 @@ set_bleadperl_env()
     set_lib()
     {
         ext="$(calc_perl_ext)"
-        PERL5LIB=:"$inst_path"/lib/site_perl/"${ext}"/:"$inst_path"/lib/"${ext}"/
+        PERL5LIB="$inst_path"/lib/site_perl/"${ext}"/:"$inst_path"/lib/"${ext}"/
         export PERL5LIB
     }
     set_lib
