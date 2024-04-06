@@ -2,6 +2,7 @@ Bash
 bash-aliases
 build-scripts
 clang-format
+fop
 freedesktop
 gdb
 git
