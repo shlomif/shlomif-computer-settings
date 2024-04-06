@@ -61,7 +61,7 @@ build()
 {
     mkdir -p "$b"
     cd "$b"
-    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="$HOME/apps/test/wml" "$src" && \
+    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="$HOME/apps/wml-from-source" "$src" && \
         make -j4 && \
         make install
 }
@@ -94,7 +94,7 @@ c()
     cd "$src"
 }
 
-PATH="$HOME/apps/test/wml/bin/:$PATH:$pbyacc_dir"
+PATH="$HOME/apps/wml-from-source/bin/:$PATH:$pbyacc_dir"
 rehash > /dev/null 2>&1
 
 if ! which pbyacc > /dev/null 2>&1

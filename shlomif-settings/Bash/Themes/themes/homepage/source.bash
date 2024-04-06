@@ -394,7 +394,7 @@ bleadperl_env()
         }
         pdirs="${HOME}/perl5 ${HOME}/__bak-perl5"
         qdirs="${HOME}/apps/quadpres ${HOME}/apps/__bak-quadpres"
-        wdirs="${HOME}/apps/test/wml ${HOME}/apps/test/__bak-wml"
+        wdirs="${HOME}/apps/wml-from-source ${HOME}/apps/__bak-wml-from-source"
         _apply()
         {
             local cmd="$1"

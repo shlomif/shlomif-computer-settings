@@ -52,9 +52,12 @@ __build()
         set -e -x
         mkdir -p "$b"
         cd "$b"
-        cmake -DCMAKE_INSTALL_PREFIX="$HOME/apps/test/wml" "$this"
-        make -j4
-        make install
+        if false
+        then
+            cmake -DCMAKE_INSTALL_PREFIX="$HOME/apps/wml-from-source" "$this"
+            make -j4
+            make install
+        fi
         cmake -DCMAKE_INSTALL_PREFIX="$HOME/apps/quadpres" "$this"
         make -j4
         make install
@@ -103,6 +106,6 @@ prompt()
         "\$base=$base" \
         "~=$HOME"
 }
-export PATH="$HOME/apps/test/wml/bin:$PATH"
+export PATH="$HOME/apps/wml-from-source/bin:$PATH"
 export HARNESS_OPTIONS=j4:c TEST_JOBS=4
 export WMLOPTS="-q"

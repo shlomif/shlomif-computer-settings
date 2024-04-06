@@ -50,7 +50,7 @@ t()
 
 __add_to_path()
 {
-    export PATH="$HOME/apps/golang/bin:$HOME/.local/bin:$HOME/apps/test/wml/bin:$PATH"
+    export PATH="$HOME/apps/golang/bin:$HOME/.local/bin:$HOME/apps/wml-from-source/bin:$PATH"
     export PATH="$HOME/apps/quadpres/bin:$HOME/Download/unpack/xml/ebookmaker:$trunk/node_modules/.bin:$this/node_modules/.bin:$PATH:/usr/sbin" QUAD_PRES_QUIET=1
     dedup_pathvar PATH
     dedup_pathvar PERL5LIB

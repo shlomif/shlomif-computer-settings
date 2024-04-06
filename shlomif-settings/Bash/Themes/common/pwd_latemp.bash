@@ -7,7 +7,7 @@
 proj_name="${proj_name:-pwd_latemp}"
 PATH+=:$PWD/node_modules/.bin
 PATH+=:~/apps/quadpres/bin
-PATH+=:~/apps/test/wml/bin
+PATH+=:~/apps/wml-from-source/bin
 export QUAD_PRES_CACHE_DIR=~/Arcs/temp/quad-pres-cache
 export PERL_INLINE_DIRECTORY="${TMPDIR:-/tmp}/shlomif-hp-Inline"
 export HTML_VALID_VNU_JAR=~/Download/unpack/net/www/validator/build/dist/vnu.jar
