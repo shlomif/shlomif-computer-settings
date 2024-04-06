@@ -1,9 +1,9 @@
-export LOGCHOICE="-Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.SimpleLog"
-export LOGLEVEL="-Dorg.apache.commons.logging.simplelog.defaultlog=error"
+logchoice="-Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.SimpleLog"
+loglevel="-Dorg.apache.commons.logging.simplelog.defaultlog=error"
 
 if true
 then
-    export BASE_OPTIONS
-    BASE_OPTIONS+=" $LOGCHOICE $LOGLEVEL"
+    # export BASE_OPTIONS
+    BASE_OPTIONS="$BASE_OPTIONS $logchoice $loglevel"
 fi
 
