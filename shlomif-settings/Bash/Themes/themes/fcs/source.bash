@@ -572,7 +572,12 @@ shlomif_ux()
     __cd_site
     if test "$_npm" = "1"
     then
-        ncu --upgrade
+        if false
+        then
+            ncu --upgrade
+        else
+            ncu
+        fi
         npm install
     fi
     set +x
