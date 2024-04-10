@@ -1,3 +1,3 @@
 #! /usr/bin/env bash
 set -e -x
-date +"%H:%M:%S ; %a , %e %b %Y"
+date +"%H:%M:%S ; %a %e %b %Y"
