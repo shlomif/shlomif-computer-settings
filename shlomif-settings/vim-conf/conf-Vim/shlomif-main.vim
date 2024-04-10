@@ -882,3 +882,9 @@ endfunction
 
 command! -range ShellAlias2Func :<line1>,<line2>s/\v^alias (\w+)\=\'(\w+)\'$/\1()\r{\r    \2 "\$@"\r}\r/
 command! -range TemplateToolkitRemoveSpace :<line1>,<line2>s/\v^(\[\%)(.*)(\%\])$/\1-\2-\3/
+
+if ''
+    " let g:AutoPairs = {}
+    let g:AutoPairs['“']='”'
+    let g:AutoPairs['«']='»'
+endif

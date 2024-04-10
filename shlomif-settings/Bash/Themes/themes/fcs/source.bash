@@ -576,6 +576,8 @@ shlomif_ux()
         then
             ncu --upgrade
         else
+            printf "%s\n" "Run ncu without the \"--upgrade\" flag because eslint-typescript requires eslint version *8* (not 9)""
+            "
             ncu
         fi
         npm install
