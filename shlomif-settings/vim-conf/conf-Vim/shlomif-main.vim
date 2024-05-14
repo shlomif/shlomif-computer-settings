@@ -888,3 +888,13 @@ if ''
     let g:AutoPairs['“']='”'
     let g:AutoPairs['«']='»'
 endif
+
+function Shlomif_TT2_block_includes()
+    let b:save = @a
+    normal viw"ay
+    let newtext0 = "[% INCLUDE " . @a . " %]" . "\n"
+    let newtext1 = "[% PROCESS " . @a . " %]" . "\n"
+    let newtext = newtext0 . newtext1
+    put = newtext
+    let @a = b:save
+endfunction
