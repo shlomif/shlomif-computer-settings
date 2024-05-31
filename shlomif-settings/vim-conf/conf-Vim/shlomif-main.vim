@@ -581,6 +581,13 @@ function! Shlomif_Open_Source()
     exe "sp " . new_fn
 endfunction
 
+function! Shlomif_Homepage_Open_Dest()
+    let fn = expand('%:p')
+    let new_fn = substitute(fn, "^" . $HOME . "/Docs/homepage/homepage/trunk/src/\\(.*\\)\\.tt2$", $HOME . "/Docs/homepage/homepage/trunk/dest/post-incs/t2/\\1", "")
+    let @d = new_fn
+    exe "sp " . new_fn
+endfunction
+
 autocmd BufRead,BufNewFile ~/Docs/homepage/homepage/trunk/dest/t2/*.html
     \ command! S call Shlomif_Open_Source()
 
