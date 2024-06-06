@@ -70,6 +70,9 @@ let g:licenses_default_commands = ['apache', 'cc0', 'ccby', 'gpl', 'mit']
 let g:vim_addon_manager = {}
 let g:vim_addon_manager.auto_install = 1
 let g:vim_addon_manager.shell_commands_run_method = 'system'
+
+let g:perlpath = ""
+
 " Removed: unite
 " Removed: c%213
 " Removed: 'github:bogado/file-line',
@@ -85,8 +88,9 @@ call vam#ActivateAddons([
     \ 'git:https://gitlab.com/dylnmc/novum.vim',
     \ 'github:Carpetsmoker/auto_mkdir2.vim',
     \ 'github:Glench/Vim-Jinja2-Syntax',
-    \ 'github:JuliaEditorSupport/julia-vim',
     \ 'github:Houl/cxf_mod-vim',
+    \ 'github:JuliaEditorSupport/julia-vim',
+    \ 'github:Raku/vim-raku',
     \ 'github:aaronbieber/quicktask',
     \ 'github:alessandroyorba/alduin',
     \ 'github:antoyo/vim-licenses',
@@ -130,7 +134,6 @@ call vam#ActivateAddons([
     \ 'github:tpope/vim-rhubarb',
     \ 'github:vim-airline/vim-airline-themes',
     \ 'github:vim-perl/vim-perl',
-    \ 'github:vim-perl/vim-perl6',
     \ 'github:wincent/command-t',
     \ 'matchit.zip',
     \ 'range-search',
