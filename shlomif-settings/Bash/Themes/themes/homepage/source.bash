@@ -430,6 +430,16 @@ bleadperl_env()
     )
 }
 
+delete_disk_caches()
+{
+    (
+        set -e -x
+        rm -fr "$QUAD_PRES_CACHE_DIR"
+        rm -fr "$TIDYALL_DATA_DIR"
+        rm -fr "$VNU_CACHE"
+    )
+}
+
 PATH="$PATH:$HOME/apps/hypermail/bin"
 # Commented out because it makes matters slower:
 # export HTML_POST_INCS_DATA_DIR="$HOME/Arcs/temp/shlomif-homepage/shlomif-homepage-gezer.d"
