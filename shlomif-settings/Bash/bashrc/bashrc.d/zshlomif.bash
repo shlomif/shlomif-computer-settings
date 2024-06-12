@@ -26,7 +26,9 @@ then
     true
 fi
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/apps/to-del-ncurses/lib"
+dedup_pathvar LD_LIBRARY_PATH
 PATH="$HOME/apps/golang/bin:$HOME/.local/bin:$HOME/.perl6/bin:$PATH"
+dedup_pathvar PATH
 alias p='git push'
 alias pu='git pushu'
 if ! which latemp-config > /dev/null 2>&1

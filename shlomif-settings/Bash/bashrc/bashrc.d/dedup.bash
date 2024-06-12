@@ -9,6 +9,6 @@ set_var () {
 dedup_pathvar () {
     pathvar_name="$1"
     pathvar_value="$(get_var "$pathvar_name")"
-    deduped_path="$(perl -e 'print join(":",grep { not $seen{$_}++ } split(/:/, $ARGV[0]))' "$pathvar_value")"
+    deduped_path="$(perl -e 'print join(":",grep { my $p = $_; ((not $seen{$p}++) and ($p =~ /\S/ms)) } split(/:/, $ARGV[0]))' "$pathvar_value")"
     set_var "$pathvar_name" "$deduped_path"
 }
