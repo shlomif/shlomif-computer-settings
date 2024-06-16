@@ -342,11 +342,11 @@ snippet files
 
 use File::Spec ();
 use File::Basename (qw( basename dirname ));
-use File::Temp (qw/ tempfile tempdir /);
-use File::Path (qw/ rmtree mkpath /);
+use File::Temp (qw/ tempdir tempfile /);
+use File::Path (qw/ mkpath rmtree  /);
 
-use Path::Tiny qw/ path cwd /;
-# use Path::Tiny qw/ path tempdir tempfile cwd /;
+use Path::Tiny qw/ cwd path /;
+# use Path::Tiny qw/ cwd path tempdir tempfile /;
 
 endsnippet
 
@@ -365,7 +365,7 @@ endsnippet
 # Some boilerplate for Path::Tiny handling
 snippet pa
 
-use Path::Tiny qw/ path tempdir tempfile cwd /;
+use Path::Tiny qw/ cwd path tempdir tempfile /;
 
 my $dir = tempdir();
 
