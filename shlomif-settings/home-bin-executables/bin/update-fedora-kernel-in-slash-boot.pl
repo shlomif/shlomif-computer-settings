@@ -19,7 +19,7 @@ chdir( my $dir = path("/boot") );
 foreach my $base ( 'vmlinuz', 'initramfs', )
 {
     my ($first) = grep { -l $_ and !-e readlink($_) }
-        map { path( $base . ".old$_" ) } 1 .. 2;
+        map { path( $base . ".old$_" ) } 1 .. 5;
     die "no link found at base=$base" if !defined($first);
     path($base)->move($first);
     my @targets = sort { $a->[1] cmp $b->[1] } map {
