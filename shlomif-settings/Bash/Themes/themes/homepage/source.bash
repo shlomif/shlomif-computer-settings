@@ -248,11 +248,12 @@ partial_upload()
 
 fedora_user_experience()
 {
-    export NOTIFIER_TO=sh SKIP_SPELL_CHECK=1
+    export NOTIFIER_TO=sh SKIP_SPELL_CHECK=",en,"
     export $(dbus-launch)
     MAKEFLAGS+=" -j8"
     unset NOTIFIER_TO
     # export NOTIFIER_TO=sh SKIP_SPELL_CHECK=1
+    . "$HOME/conf/build/libxml2-and-libxslt-from-git.env.bash"
 }
 
 fedora_ux()
@@ -263,7 +264,7 @@ fedora_ux()
 
 debian_user_experience()
 {
-    export SKIP_SPELL_CHECK=1
+    export SKIP_SPELL_CHECK=",en,"
     PATH+=:/home/shlomif/apps/test/bin:/home/shlomif/perl5/bin/
     MAKEFLAGS+=" --no-silent"
     # export $(dbus-launch)

@@ -21,24 +21,20 @@
 # SPDX: MIT
 
 set -e -x
-export LD_LIBRARY_PATH=$HOME/apps/xml/libxml2/lib/:$HOME/apps/xml/libxml2/lib64/
-lxmldir=$HOME/apps/xml/libxml2/
-export PKG_CONFIG_PATH="$lxmldir/lib/pkgconfig"
-pydir="$lxmldir/lib64/python3.12"
-export PYTHONPATH="$pydir:$pydir/site-packages/"
+. "$HOME/conf/build/libxml2-and-libxslt-from-git.env.bash"
 cd ~/Download/unpack/xml/libxml2
 git clean -dxf
-git s o
+git co v2.12.8
 NOCONFIGURE=1 ./autogen.sh
-bash  -x ~/conf/build/libxml2.sh
+bash -x ~/conf/build/libxml2.sh
 make
 make check
 make install
 cd ~/Download/unpack/xml/libxslt/libxslt/
 git clean -dxf
-git s o
+git co v1.1.40
 NOCONFIGURE=1 ./autogen.sh
-bash  -x ~/conf/build/libxml2.sh
+bash -x ~/conf/build/libxml2.sh
 make
 make check
 make install
