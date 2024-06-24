@@ -22,9 +22,11 @@
 
 set -e -x
 . "$HOME/conf/build/libxml2-and-libxslt-from-git.env.bash"
+rm -fr "${lxmldir}"
 cd ~/Download/unpack/xml/libxml2
 git clean -dxf
-git co v2.12.8
+fedora39ver="v2.10.4"
+git co "${fedora39ver}"
 NOCONFIGURE=1 ./autogen.sh
 bash -x ~/conf/build/libxml2.sh
 make
@@ -32,7 +34,8 @@ make check
 make install
 cd ~/Download/unpack/xml/libxslt/libxslt/
 git clean -dxf
-git co v1.1.40
+xslt_fedora39ver="v1.1.38"
+git co "${xslt_fedora39ver}"
 NOCONFIGURE=1 ./autogen.sh
 bash -x ~/conf/build/libxml2.sh
 make
