@@ -51,6 +51,8 @@ if ( $line eq 'y' )
 {
     foreach my $rec (@actions)
     {
-        symlink( $rec->{target}, $rec->{base} );
+        my $base = $rec->{base};
+        unlink($base);
+        symlink( $rec->{target}, $base, );
     }
 }
