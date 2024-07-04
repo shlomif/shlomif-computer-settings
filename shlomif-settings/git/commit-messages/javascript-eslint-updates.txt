@@ -1,0 +1,10 @@
+eslintrc / etc. updates.
+
+See:
+
+* https://eslint.org/docs/latest/use/configure/migration-guide
+
+* https://en.wikipedia.org/wiki/Npm_(software)
+
+This is possibly thanks to a prompting by https://snyk.io/ or GitHub
+or GitLab.
