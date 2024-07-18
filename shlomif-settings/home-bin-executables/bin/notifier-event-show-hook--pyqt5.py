@@ -38,10 +38,12 @@ Remove workaround since PySide2 is working on the latest Fedora 32 x86-64
 again:
 '''
 
-if os.path.exists("/etc/fedora-release"):
-    from PyQt5 import QtCore, QtGui, QtWidgets
-else:
-    from PySide2 import QtCore, QtGui, QtWidgets
+from PySide6 import QtCore, QtGui, QtWidgets
+# if os.path.exists("/etc/fedora-release"):
+#   from PyQt5 import QtCore, QtGui, QtWidgets
+# from PySide6 import QtCore, QtGui, QtWidgets
+# else:
+#     from PySide2 import QtCore, QtGui, QtWidgets
 
 
 class Player(QtWidgets.QMainWindow):
@@ -101,7 +103,7 @@ class Player(QtWidgets.QMainWindow):
 
         file_menu = menu_bar.addMenu("&File")
 
-        close_action = QtWidgets.QAction("E&xit", self)
+        close_action = QtGui.QAction("E&xit", self)
         file_menu.addAction(close_action)
 
         close_action.triggered.connect(sys.exit)
@@ -110,7 +112,7 @@ class Player(QtWidgets.QMainWindow):
         self.timer.setInterval(100)
         self.timer.timeout.connect(self.update_ui)
 
-        quit = QtWidgets.QAction(self)
+        quit = QtGui.QAction(self)
         quit.setShortcut(QtGui.QKeySequence(QtGui.QKeySequence.Quit))
         quit.triggered.connect(sys.exit)
         self.addAction(quit)
