@@ -32,6 +32,7 @@ _build_generic()
     local script="$1"
     shift
 
+    git s u main
     _sys bash ~/conf/build/"${script}" && _sys make -j4
     _sys n --msg "perl/core build finished" || true
 }
@@ -57,6 +58,11 @@ _test()
 }
 
 t()
+{
+    _test "$@"
+}
+
+i()
 {
     _test "$@"
 }
