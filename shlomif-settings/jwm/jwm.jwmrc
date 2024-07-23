@@ -4,14 +4,14 @@
 
     <!-- The root menu. -->
     <RootMenu onroot="12">
-        <Program icon="terminal.png" label="Terminal">/etc/alternatives/xvt</Program>
+        <Program icon="terminal.png" label="xterm">xterm</Program>
         <Program icon="terminal.png" label="Konsole">/usr/bin/konsole</Program>
         <Menu icon="folder.png" label="Applications">
             <Program icon="music.png" label="VLC">vlc</Program>
             <Program icon="calculator.png" label="Calculator">kcalc</Program>
             <Program icon="gimp.png" label="Gimp">gimp</Program>
             <Program icon="www.png" label="WWW Browser">www-browser</Program>
-            <Program icon="editor.png" label="XEdit">/etc/alterantives/vi</Program>
+            <Program icon="editor.png" label="gvim">gvim</Program>
         </Menu>
         <Menu icon="folder.png" label="Utilities">
             <Program icon="font.png" label="Fonts">xfontsel</Program>
