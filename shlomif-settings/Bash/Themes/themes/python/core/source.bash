@@ -37,12 +37,12 @@ _build_generic()
     _sys n --msg "perl/core build finished" || true
 }
 
-# Short for build.
 _build_py()
 {
     _build_generic "python3-dist.bash"
 }
 
+# Short for build.
 b()
 {
     _build_py "$@"
@@ -53,7 +53,10 @@ _test()
     (
     set -e -x
     _build_py "$@"
+    (
+    export DISPLAY=":1.0"
     make test
+    )
     )
 }
 
