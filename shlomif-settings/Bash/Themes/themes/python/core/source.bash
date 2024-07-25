@@ -4,9 +4,11 @@
 load_common sys
 load_common trim_pathes
 
-disable_local_lib
-# Too long $PATH is causing a lib/perlbug.t test failure
 trim_pathes
+if true
+then
+    enable_local_lib
+fi
 
 py_base="$HOME/Download/unpack/prog/python"
 _base_trunk="$py_base"
@@ -22,7 +24,7 @@ setup()
         cd "$_base_trunk"
         git clone 'https://github.com/shlomif/cpython' "$trunk"
         cd "$trunk"
-        git remote add upstream 'https://github.com/Perl/perl5'
+        git remote add upstream 'https://github.com/python/cpython.git'
     )
     cd "$this"
 }
@@ -34,7 +36,7 @@ _build_generic()
 
     git s u main
     _sys bash ~/conf/build/"${script}" && _sys make -j4
-    _sys n --msg "perl/core build finished" || true
+    _sys n --msg "python/core build finished" || true
 }
 
 _build_py()
