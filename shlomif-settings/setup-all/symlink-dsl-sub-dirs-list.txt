@@ -11,6 +11,7 @@ hexchat
 hg
 jwm
 kdesrc-buildrc
+notifier-app
 perl/Dist-Zilla
 perl/perldb
 perl/perltidy

@@ -1,0 +1,21 @@
+commands:
+    default:
+        - /home/shlomif/bin/desktop-finish-cue
+        - "--song"
+        - "/home/music/Music/mp3s/Jessie J - Domino-UJtB55MaoD0.webm"
+        - "--message"
+        - type: "text_param"
+          param_name: "msg"
+    cookie:
+        - /home/shlomif/bin/desktop-finish-cue
+        - "--song"
+        - "/home/music/Music/dosd-mp3s/Muppets - Cookie Monster - 'C' Is For Cookie.mp3"
+client:
+    targets:
+        default:
+            url: "http://localhost:6300/"
+        lap:
+            # url: "http://lap.shlomifish.org:6300/"
+            url: "http://192.168.1.191:6300/"
+        lap6:
+            url: "http://10.0.0.6:6300/"
