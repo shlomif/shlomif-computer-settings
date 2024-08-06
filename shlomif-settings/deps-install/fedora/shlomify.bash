@@ -6,21 +6,30 @@
 # Distributed under the terms of the MIT license.
 #
 
-dnf -y builddep fortune-mod freecell-solver gimp inkscape
+dnf5 -y builddep fortune-mod freecell-solver gimp inkscape
     # kpat
 
 install_fluff()
 {
-    dnf -y install \
+    dnf5 -y install \
         'perl(Math::Random::MT)' \
         chromium \
         mame \
         pysol
 }
 
-dnf -y install \
+
+dnf5 -y install \
+    'perl(Bit::Vector)' \
+    'perl(Image::Size)' \
+    'perl(Inline::Python)' \
     'perl(Number::Format)' \
+    'perl(Pod::Coverage::TrustPod)' \
+    'perl(Test::Pod)' \
+    'perl(Test::Pod::Coverage)' \
     'perl(YAML::XS)' \
+    'rubygem(nokogiri)' \
+    'rubygem(rexml)' \
     GraphicsMagick \
     ImageMagick-devel \
     Judy-devel \
@@ -38,6 +47,7 @@ dnf -y install \
     docbook5-schemas \
     docbook5-style-xsl \
     dolphin \
+    dzil \
     fedpkg \
     fop \
     fortune-mod \
@@ -46,11 +56,14 @@ dnf -y install \
     gjs-devel \
     gmp-devel \
     gobject-introspection-devel \
+    golang-bin \
+    golang-src \
     gperftools-devel \
     gtest-devel \
     gwenview \
     hexchat \
     hexchat-devel \
+    hspell \
     hspell-devel \
     htop \
     hunspell-en-GB \
@@ -74,6 +87,7 @@ dnf -y install \
     optipng \
     pandoc \
     parallel \
+    pcre-devel \
     perl-CPAN-Mini \
     perl-CPANPLUS \
     perl-CPANPLUS-Dist-Build \
@@ -88,12 +102,15 @@ dnf -y install \
     postfix \
     primesieve \
     primesieve-devel \
+    pysassc \
     python-neovim \
     python3-attrs \
     python3-libsass \
     python3-pyside2 \
+    python3-pyside6 \
     python3-random2 \
     python3-tox \
+    python3-vlc \
     qt5-qtbase-devel \
     qt5-qtbase-gui \
     qt5-qtsvg-devel \
@@ -110,5 +127,6 @@ dnf -y install \
     vim-X11 \
     weasyprint \
     xclip \
+    xhtml1-dtds \
     xorg-x11-server-Xvfb \
     zsh \
