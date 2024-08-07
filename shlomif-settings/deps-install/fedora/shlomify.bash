@@ -18,11 +18,11 @@ install_fluff()
         pysol
 }
 
-
 dnf5 -y install \
     'perl(Bit::Vector)' \
     'perl(Image::Size)' \
     'perl(Inline::Python)' \
+    'perl(Math::GMP)' \
     'perl(Number::Format)' \
     'perl(Pod::Coverage::TrustPod)' \
     'perl(Test::Pod)' \
@@ -49,6 +49,7 @@ dnf5 -y install \
     dolphin \
     dzil \
     fedpkg \
+    flake8 \
     fop \
     fortune-mod \
     gettext-devel \
@@ -70,6 +71,7 @@ dnf5 -y install \
     inkscape \
     intltool \
     java \
+    javac \
     kate \
     konsole \
     levien-inconsolata-fonts \
@@ -77,6 +79,7 @@ dnf5 -y install \
     libarchive-devel \
     libmcrypt-devel \
     libxslt \
+    libyaml-devel \
     meson \
     mhash-devel \
     mpv \
@@ -102,22 +105,25 @@ dnf5 -y install \
     postfix \
     primesieve \
     primesieve-devel \
+    pypy3 \
     pysassc \
     python-neovim \
     python3-attrs \
     python3-libsass \
-    python3-pyside2 \
     python3-pyside6 \
     python3-random2 \
+    python3-tomli \
     python3-tox \
     python3-vlc \
     qt5-qtbase-devel \
     qt5-qtbase-gui \
     qt5-qtsvg-devel \
     recode-devel \
+    rspec \
     ruby-devel \
     rubygem-rexml \
     rubygem-rspec \
+    rubygem-rspec-expectations \
     strace \
     telegram-desktop \
     tidy \

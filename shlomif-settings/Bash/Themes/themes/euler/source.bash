@@ -1,7 +1,7 @@
 load_common bundle/git
 load_common pypy
 
-remote_repo="$(_shlomif_bitbucket_git "project-euler-git")"
+remote_repo="$(_shlomif_github "project-euler-git")"
 
 base="$HOME/progs/riddles/project-euler/"
 git_base="$base"
