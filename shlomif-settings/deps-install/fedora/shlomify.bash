@@ -73,6 +73,7 @@ dnf5 -y install \
     java \
     javac \
     kate \
+    keysmith \
     konsole \
     levien-inconsolata-fonts \
     libappstream-glib-devel \
@@ -101,10 +102,12 @@ dnf5 -y install \
     perl-Text-Hunspell \
     perl-XML-LibXSLT \
     perl-local-lib \
+    pidgin \
     pocl-devel \
     postfix \
     primesieve \
     primesieve-devel \
+    purple-facebook \
     pypy3 \
     pysassc \
     python-neovim \
