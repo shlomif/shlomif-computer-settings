@@ -71,6 +71,9 @@ elif [ "$WHICH_DESK" = "kde5" ] ; then
     # exec dbus-launch --exit-with-session startkde
     # strace -f -o ~/k.strace dbus-launch --exit-with-session startkde
     # startkde
+elif [ "$WHICH_DESK" = "kde6" ] ; then
+    # ( startplasma ) |& tee -a ~/k5.txt
+    startplasma
 elif [ "$WHICH_DESK" = "lxde" ] ; then
     exec startlxde
 elif [ "$WHICH_DESK" = "lxqt" ] ; then
