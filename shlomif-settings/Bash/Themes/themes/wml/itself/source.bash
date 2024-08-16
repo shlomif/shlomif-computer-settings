@@ -110,6 +110,7 @@ then
     tar -xvf "$pbyacc_debian_tarball_bn"
     cd "$pbyacc_dir"
     patch -p1 < "../debian/patches/01-legacy.patch"
+    perl -pi -0777 -E 's/\A/\/\* unistd provides unlink() \*\/\n#include <unistd.h>\n\n/ms' main.c
     make
     popd
     rehash > /dev/null 2>&1
