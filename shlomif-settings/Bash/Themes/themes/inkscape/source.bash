@@ -152,4 +152,24 @@ alias qv="qvim $__vim_ids_args"
 # Enable clang+ccache and a debug build.
 export CC=$HOME/bin/clang CXX=$HOME/bin/clang++ DEBUG=1
 
+shlomif_ux()
+{
+    prefix=~/apps/graphics/inkscape-trunk/
+    PKG_CONFIG_PATH+=:"$prefix"/lib64/pkgconfig
+    LIBRARY_PATH+=:"$prefix/lib64"
+    dedup_pathvar LIBRARY_PATH
+    dedup_pathvar PKG_CONFIG_PATH
+    export LIBRARY_PATH PKG_CONFIG_PATH
+
+    conf_meson_dep()
+    {
+        (
+        set -x
+        meson setup --prefix "${prefix}" ..
+        )
+    }
+}
+
+shlomif_ux
+
 proj_name='ink'
