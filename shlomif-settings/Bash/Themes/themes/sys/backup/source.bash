@@ -1,3 +1,4 @@
+load_common du
 load_common prompt
 
 an()
