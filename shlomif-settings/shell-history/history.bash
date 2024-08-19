@@ -167,6 +167,7 @@ Cancel_reminder
 DOCBOOK5_XSL_STYLESHEETS_PATH=/usr/share/xml/docbook/stylesheet/docbook-xsl-ns fastrender
 FCS_TEST_BUILD=1 t
 FCS_TEST_SHELL=1 perl ../source/run-tests.pl
+HTTPD=go ~/conf/trunk/shlomif-settings/home-bin-executables/bin/trim-minicpan
 L
 MIN=22 perl ../scripts/multi_config_tests.pl ; n --msg 'fcs test'
 NODE_PATH="`pwd`"/lib/for-node/js /usr/bin/node `which qunit-cli` lib/for-node/test-code.js
@@ -200,6 +201,7 @@ WD=gnome startx
 WD=jwm startx
 WD=lxde startx
 WD=xfce startx
+Xephyr -screen 1024x768 :1
 \df
 __myctags
 _enable_git_info_prompt="always"
@@ -575,6 +577,7 @@ deps-app plinst -i bin/required-modules.yml -i bin/common-required-deps.yml
 depth_run 0
 depth_run 1
 df
+df -h
 df -i
 did
 diff -u -r ../dest/ dest | gvim -
@@ -616,6 +619,7 @@ dzil test
 dzil test --all
 dzil test --all ; n
 e
+echo "Shave" >> $reminder_file
 echo $HARNESS_OPTIONS
 echo $PATH
 echo $PERL5LIB
@@ -645,6 +649,7 @@ export LD_LIBRARY_PATH=/opt/vlc-3.0/pango-dev/lib64/ ; pidgin
 export MAKEFLAGS="-j4"
 export MAKEFLAGS="-r --no-silent -j1"
 export MAKEFLAGS="-r --no-silent -j4"
+export MAKEFLAGS="-r -s -j1"
 export MAKEFLAGS="-r -s -j4"
 export MAKEFLAGS="-r"
 export MAKEFLAGS='-r'
@@ -1000,6 +1005,7 @@ git stash clear
 git stash drop
 git stash list
 git stash pop
+git stash push
 git submodule update --init --recursive
 git tag
 git tag -l
@@ -1049,8 +1055,11 @@ gvim -o lib/sass/common-style.scss lib/sass/style.scss t2/humour/TOWTF/index.xht
 gvim -o lib/sass/common-style.scss lib/sass/style.scss t2/meta/FAQ/index.xhtml.wml
 gvim -o lib/sgml/shlomif-docbook/docbook-epub-preproc.xslt /usr/share/sgml/docbook/xsl-ns-stylesheets/epub/docbook.xsl
 gvim -o multiverse-cosmology-v0.4.x.docbook5.xml
+gvim -o multiverse-cosmology-v0.4.x.docbook5.xml why-the-so-called-real-world-i-am-trapped-in-makes-little-sense--2020-05-19.docbook5.xml tweets.md
 gvim -o src/js/fcs-validate.ts src/js/web-fc-solve-tests--fcs-validate.ts
 gvim -o src/js/web-fc-solve.ts src/js/web-fc-solve-ui.ts
+gvim -o src/meta/FAQ/index.xhtml.tt2
+gvim -o tweets.md
 gvim -o y.txt lib/hunspell/whitelist1.txt
 gvim -p t2/lecture/Pres-Tools/Perl-Point/slide00*.htm
 gvim ../../docs/Freecell-Solver--Evolution-of-a-C-Program/text/fcs-book.xml
@@ -1450,6 +1459,7 @@ ls -lrS
 ls -lrS l*
 ls -lrS | commify
 ls -lrt
+ls -lrth
 ls -ltA
 ls -rt
 ls ..
@@ -1478,7 +1488,9 @@ make -f ../scripts/Makefile.gnu SRC_DIR=../source
 make -f ../scripts/Makefile.gnu SRC_DIR=../source clean
 make -f C_arraytest.mak
 make -f modsum.mak
+make -j1
 make -j4
+make -j4 --no-silent docbook_extended
 make -j4 PROD=1 upload
 make -j4 bzImage modules
 make -j4 fastrender
@@ -1512,6 +1524,8 @@ make PROD=0 upload
 make PROD=0 upload_beta
 make PROD=1
 make PROD=1 LOCAL_BROWSER_TESTS=1 -j1 smoke-tests
+make PROD=1 LOCAL_BROWSER_TESTS=1 -j1 smoke-tests upload_local
+make PROD=1 LOCAL_BROWSER_TESTS=1 -j4 smoke-tests
 make PROD=1 fastrender
 make PROD=1 upload
 make PROD=1 upload_beta
@@ -1912,6 +1926,7 @@ python3 lib/faq/split_into_sections.py
 python3 pysol.py
 python3 pysol.py --deal 24 --game FreeCell
 python3 pysol.py -g FreeCell --deal ms100000
+python3 python_pypi_dist_manager.py install
 python3 python_pypi_dist_manager.py test
 python3 refactor1.py
 python3 setup.py build
@@ -1976,6 +1991,8 @@ rebuild |& tee /tmp/o1.txt | timestamper-with-elapsed
 rebuild |& tee /tmp/o1.txt | timestamper-with-elapsed --from-start
 rebuild |& tee /tmp/o2.txt
 rebuild |& tee /tmp/out-aft.txt
+rebuild |& tee ~/site-rebuild-todel.txt | timestamper-with-elapsed --from-start --output ~/hp1.build.out.txt
+rebuild |& timestamper-with-elapsed --from-start --output ~/hp1.build.out.txt
 rec .ORIG
 rec .orig
 regen
@@ -2098,6 +2115,7 @@ sensors
 set +x
 setup
 sha256sum freecell-solver-* libfreecell-solver.* | sha256sum -
+shlomif_ux
 shs
 shutter
 simplescreenrecorder
@@ -2140,6 +2158,8 @@ svn revert -R .
 svn st
 svn st python-*
 svn up
+systemd-run --scope --user podman rm -a
+systemd-run --scope --user podman stop -a
 systemsettings5
 t
 t 2>&1 | tee f.txt
@@ -2282,6 +2302,7 @@ vim dbm_solver.c
 vim t2/humour/fortunes/ver.txt
 virt-manager
 vlc *.{mp3,flv,ogg,mp4,avi,wmv,mpg,MP3,m4a,wma,webm}
+vlc --novideo ./music.m3u
 vlc --video --random Arcs/temp/music.m3u
 vlc Arcs/vlc-all.xspf
 vlc Arcs/vlc14.xspf
@@ -2308,6 +2329,7 @@ which gvim
 which latemp-config
 which node
 which nvim
+which perl
 which quadp
 which sass
 which vim
@@ -2324,6 +2346,7 @@ xsltproc -o lib/docbook/5/indiv-nodes/case-for-drug-legalisation-v3/f,h --string
 xsltproc -o lib/docbook/5/indiv-nodes/case-for-drug-legalisation/ --stringparam docmake.output.format xhtml --stringparam docmake.output.path_to_root ../../ --stringparam docmake.output.work_in_progress lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-essays-5-xhtml.xsl lib/docbook/5/xml/case-for-drug-legalisation.xml
 xsltproc -v -o lib/docbook//indiv-nodes/case-for-drug-legalisation-v/ --stringparam docmake.output.format xhtml --stringparam docmake.output.path_to_root ../../ --stringparam docmake.output.work_in_progress '' lib/sgml/shlomif-docbook/xsl--stylesheets/shlomif-essays--xhtml.xsl lib/docbook//xml/case-for-drug-legalisation-v.xml
 xsltproc -v -o lib/docbook/5/indiv-nodes/case-for-drug-legalisation-v3/ --stringparam docmake.output.format xhtml --stringparam docmake.output.path_to_root ../../ --stringparam docmake.output.work_in_progress '' lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-essays-5-xhtml.xsl lib/docbook/5/xml/case-for-drug-legalisation-v3.xml
+xspf2m3u convert -o ~/Arcs/temp/music.m3u Arcs/vlc[0-9]*.xspf ; find ~/Download/Video/ -type f | ( LC_ALL=C sort ) >> ~/Arcs/temp/music.m3u
 xterm
 xz9 wml-2.18.0.tar
 y
