@@ -209,7 +209,7 @@ def main(song, msg):
     player = Player(song, msg)
     player.show()
     player.resize(640, 480)
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
 
 
 if __name__ == "__main__":
