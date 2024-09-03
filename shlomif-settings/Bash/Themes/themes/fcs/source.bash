@@ -523,7 +523,9 @@ partial_rebuild()
     partial_rebuild
 }
 
-export FCS_PATH="$b" FCS_SRC_PATH="$c_src"
+export FCS_BIN_PATH="$b" FCS_SRC_PATH="$c_src"
+export FCS_PATH="${FCS_BIN_PATH}"
+export PERL5LIB="${PERL5LIB}:${FCS_SRC_PATH}/t/lib"
 export HTML_VALID_VNU_JAR=~/Download/unpack/net/www/validator/build/dist/vnu.jar
 # Causes rpmbuild to fail.
 if true
