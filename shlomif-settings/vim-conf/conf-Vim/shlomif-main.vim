@@ -103,6 +103,7 @@ call vam#ActivateAddons([
     \ 'github:godlygeek/csapprox',
     \ 'github:godlygeek/tabular',
     \ 'github:honza/vim-snippets',
+    \ 'github:ilyachur/cmake4vim',
     \ 'github:inkarkat/SyntaxAttr.vim',
     \ 'github:ironcamel/vim-script-runner',
     \ 'github:jiangmiao/auto-pairs',

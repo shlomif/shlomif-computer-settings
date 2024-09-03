@@ -85,7 +85,6 @@ shlomif_ux()
 {
     set -x
     export CFLAGS="-fuse-ld=mold"
-    PATH+=:~/apps/mold-linker/bin
     set +x
 }
 

@@ -155,11 +155,17 @@ export CC=$HOME/bin/clang CXX=$HOME/bin/clang++ DEBUG=1
 shlomif_ux()
 {
     prefix=~/apps/graphics/inkscape-trunk/
-    PKG_CONFIG_PATH+=:"$prefix"/lib64/pkgconfig
-    LIBRARY_PATH+=:"$prefix/lib64"
-    dedup_pathvar LIBRARY_PATH
-    dedup_pathvar PKG_CONFIG_PATH
-    export LIBRARY_PATH PKG_CONFIG_PATH
+    if false
+    then
+        PKG_CONFIG_PATH+=:"$prefix"/lib64/pkgconfig
+        LIBRARY_PATH+=:"$prefix/lib64"
+        dedup_pathvar LIBRARY_PATH
+        dedup_pathvar PKG_CONFIG_PATH
+        export LIBRARY_PATH PKG_CONFIG_PATH
+    else
+        unset CPATH
+        unset PKG_CONFIG_PATH
+    fi
 
     conf_meson_dep()
     {
