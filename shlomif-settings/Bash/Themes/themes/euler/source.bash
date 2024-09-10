@@ -105,6 +105,13 @@ ct()
 {
     cd "$trunk"
 }
+
+shlomif_ux()
+{
+    export MAKEFLAGS="${MAKEFLAGS} -r -s -j12"
+    export CFLAGS="-fuse-ld=mold"
+}
+
 alias ne=next pr=prev
 
 proj_name='ProjEuler'
