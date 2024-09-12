@@ -163,7 +163,9 @@ shlomif_ux()
         dedup_pathvar PKG_CONFIG_PATH
         export LIBRARY_PATH PKG_CONFIG_PATH
     else
+        unset CC
         unset CPATH
+        unset CXX
         unset PKG_CONFIG_PATH
     fi
 
