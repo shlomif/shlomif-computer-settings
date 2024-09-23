@@ -239,7 +239,9 @@ bash -c "export FCS_PATH=\"$b\"; export FCS_SRC_PATH=\"$c_src\"; time make -j4 -
 bash -c 'rm -f ../foo/*'
 bash -x /home/shlomif/conf/trunk/shlomif-settings/home-bin-executables/bin/sync-all-gits.bash
 bash -x bin/install-npm-deps.sh
+bash -x bin/link-checker-for-shlomifish.org.bash
 bash -x ~/f.sh
+bash ../../scripts/opencl-test.bash
 bash ../scripts/Bench-SS-Range.bash
 bash ../scripts/c-subroutine-metrics-line-count.bash
 bash ../scripts/fuzz-build.bash
@@ -283,6 +285,7 @@ bash bin/link-checker-for-shlomifish.org.bash
 bash bin/rebuild
 bash bin/tot-master.bash
 bash bin/tot.bash
+bash build.sh
 bash client.bash
 bash conf/build/gimp-git-all-deps.bash
 bash download-gtest.sh
@@ -329,6 +332,7 @@ bat weaver.ini
 bd
 bg
 bin/spell-checker-iface > foo.txt
+bleadperl_env
 bm -l -p
 bm -l -s
 bm -s
@@ -447,6 +451,7 @@ cd js
 cd kpat
 cd lib/blogs/shlomif-tech-diary
 cd lib/repos/Solitairey
+cd lib/repos/Star-Wars-opening-crawl-from-1977-Remake
 cd lib/repos/my-real-person-fan-fiction
 cd lib/repos/putting-cards-2019-2020
 cd lib/repos/shlomif-tech-diary
@@ -625,6 +630,7 @@ echo $PATH
 echo $PERL5LIB
 editspell
 emsdk install latest
+emsdk install tot
 emsdk list
 emsdk list | head -20
 env | grep PERL
@@ -682,6 +688,7 @@ find . -name '*.so'
 find . -name .git | xargs dirname | perl -nlE 'say unless -f "$_/.travis.yml"' | sort
 find . -name home
 find ../dest-xh -name '*.html' | xargs rename .html .xhtml
+find dest -name '*.pdf' -o -name '*.rtf' | xargs rm
 find dest/pre-incs/t2 -regex '.*\.x?html' | grep -vF -e philosophy/by-others/sscce -e WebMetaLecture/slides/examples -e homesteading/catb-heb -e t2/catb-heb.html | perl -lpe 's=\A(?:./)?dest/pre-incs/t2/?==' | grep -vE '^humour/fortunes' | APPLY_TEXTS=1 xargs perl -d:NYTProf bin/post-incs-v2.pl --mode=minify --minifier-conf=bin/html-min-cli-config-file.conf --texts-dir=lib/ads --source-dir=dest/pre-incs/t2 --dest-dir=dest/post-incs/t2 --
 find | wc -l
 finish-server
@@ -766,6 +773,7 @@ git branch -l
 git branch -l -a
 git branch -la
 git ci
+git ci --amend
 git ci -F add-more-to-log-commit-msg.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/POD-order-of-NAME-and-VERSION-sections.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/add-README-or-LICENSE.txt
@@ -792,10 +800,12 @@ git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/rename-vars.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/reproducible-builds.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/semantic-markup--xhtml5-header-element.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/semantic-markup.txt
+git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/silence-warnings.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/tidyall-fix.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/update-ci-gen-travis-yml.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/update-gitignore.txt
 git ci -m "add more"
+git ci -m "prepare for a release"
 git ci -m $'add a tweet'
 git ci -m $'add more text'
 git ci -m $'add text'
@@ -1041,6 +1051,7 @@ gvim -o README.md $homepage/t2/open-source/resources/israel/list-of-projects/ind
 gvim -o TheWML/Backends/*/Main.pm
 gvim -o dist.ini /home/shlomif/progs/games/abc-path/trunk/abc-path/Games-ABC_Path-Solver/dist.ini
 gvim -o dist.ini /home/shlomif/progs/perl/cpan/App/Sky/git/Sky-uploader/App-Sky/dist.ini
+gvim -o dist.ini /home/shlomif/progs/perl/cpan/App/Sky/git/Sky-uploader/App-Sky/dist.ini weaver.ini Changes
 gvim -o dist.ini /home/shlomif/progs/perl/cpan/Dir/Manifest/Dir-Manifest/p5/Dir-Manifest/dist.ini
 gvim -o dist.ini Changes
 gvim -o gen-helpers /home/shlomif/Docs/homepage/homepage/trunk/gen-helpers
@@ -1523,6 +1534,7 @@ make DEV=1 fastrender
 make PROD=0 upload
 make PROD=0 upload_beta
 make PROD=1
+make PROD=1 -j1 upload
 make PROD=1 LOCAL_BROWSER_TESTS=1 -j1 smoke-tests
 make PROD=1 LOCAL_BROWSER_TESTS=1 -j1 smoke-tests upload_local
 make PROD=1 LOCAL_BROWSER_TESTS=1 -j4 smoke-tests
@@ -1627,6 +1639,7 @@ n
 n -m foo
 nano
 ncu --upgrade
+ncu -u
 ninja
 ninja -j1
 ninja -j1 install
@@ -1719,6 +1732,8 @@ perl Makefile.PL && make disttest
 perl Tests/spell-check--hebrew.t
 perl apply-solve-more-3-log.pl
 perl bin/clean-up-xhtml5.pl t2/lecture/Pres-Tools/Perl-Point/slide00*.htm
+perl bin/docker-ci-run.pl --cleanrun --cleanup
+perl bin/docker-ci-run.pl --cleanrun |& timestamper | tee ~/hp1.build.out.txt ; n -m 'docker-ci'
 perl bin/fetch-blogspot-feed.pl
 perl bin/gen-build-deps --modules-conf /home/shlomif/Docs/homepage/homepage/trunk/bin/required-modules.yml
 perl bin/gen-rpm-for-build-deps --modules-conf /home/shlomif/Docs/homepage/homepage/trunk/bin/required-modules.yml -o i
@@ -1734,6 +1749,7 @@ perl bin/tt-render.pl
 perl gen-db.pl
 perl github-dashboard
 perl github-dashboard -a
+perl github-dashboard -a --url --format asciidoc
 perl script/tag-release.pl
 perl scripts/tag-release.pl
 perl shlomif-settings/setup-all/setup-all.pl
@@ -1912,7 +1928,9 @@ python3 658/658_v1.py| timestamper | tee -a e658-log1.txt
 python3 662_v1.py
 python3 684-v1.py
 python3 685-v1.py
+python3 CI-testing/translate-travis.yml-to-github-actions.py
 python3 Tests/validate-html-using-vnu.py
+python3 bin/CI-testing/translate-travis.yml-to-github-actions.py
 python3 bin/split-lwall-facts.py
 python3 e685v1.py
 python3 e685v1.py 1000 1
@@ -2302,6 +2320,7 @@ vim dbm_solver.c
 vim t2/humour/fortunes/ver.txt
 virt-manager
 vlc *.{mp3,flv,ogg,mp4,avi,wmv,mpg,MP3,m4a,wma,webm}
+vlc --novideo --random Arcs/temp/music.m3u
 vlc --novideo ./music.m3u
 vlc --video --random Arcs/temp/music.m3u
 vlc Arcs/vlc-all.xspf
