@@ -619,7 +619,7 @@ endfunction
 
 function Shlomif_HTML_TT2_commands()
     command! -range LocalLinks :<line1>,<line2>s=\vhttps?\:\/\/www\.shlomifish\.org\/=[% base_path %]=g
-    command! -range LocalLinks2 :<line1>,<line2>s=\vhttps?\:\/\/www\.shlomifish\.org\/=\\\$(ROOT)/=g
+    command! -range LocalLinks2 :<line1>,<line2>s=\vhttps?\:\/\/www\.shlomifish\.org\/=${base_path}=g
     command! -range DeLocalLinks :<line1>,<line2>s=\v\[\% base.path \%\]=https://www.shlomifish.org/=g
     command! -range AbsoluteLinks :<line1>,<line2>s!\v(\<a href\=\")([a-zA-Z\.\#][^\"\:]*)\"!\1https://www.shlomifish.org/philosophy/culture/case-for-commercial-fan-fiction/\2"!g
 endfunction
