@@ -15,3 +15,4 @@ foreach my $ver (qw( 5.28.0 5.26.1 ))
 }
 
 print "export PERL5LIB=\"\$PERL5LIB:\"'" . join( ":", @d ) . "'\n";
+print qq#__disable_local_lib__filter_var "PERL5LIB"\n#;
