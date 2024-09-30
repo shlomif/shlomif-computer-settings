@@ -173,7 +173,16 @@ shlomif_ux()
     {
         (
         set -x
+        if ! test -e "meson.build"
+        then
+            echo "no meson"
+            exit 1
+        fi
+        rm -fr "b"
+        mkdir "b"
+        cd "b"
         meson setup --prefix "${prefix}" ..
+        ninja -j6 install
         )
     }
 }
