@@ -23,6 +23,7 @@ dnf5 -y install \
     'perl(Image::Size)' \
     'perl(Inline::Python)' \
     'perl(Math::GMP)' \
+    'perl(Math::Int128)' \
     'perl(Number::Format)' \
     'perl(Pod::Coverage::TrustPod)' \
     'perl(Test::Pod)' \
@@ -37,6 +38,7 @@ dnf5 -y install \
     ack \
     apr-devel \
     asciidoctor \
+    bat \
     bison \
     byacc \
     ccache \
@@ -79,6 +81,7 @@ dnf5 -y install \
     libappstream-glib-devel \
     libarchive-devel \
     libmcrypt-devel \
+    libmikmod-devel \
     libxslt \
     libyaml-devel \
     meson \
@@ -108,16 +111,19 @@ dnf5 -y install \
     primesieve \
     primesieve-devel \
     purple-facebook \
+    pylint \
     pypy3 \
     pysassc \
     python-neovim \
     python3-attrs \
     python3-libsass \
     python3-pyside6 \
+    python3-pytest \
     python3-random2 \
     python3-tomli \
     python3-tox \
     python3-vlc \
+    python3-wheel \
     qt5-qtbase-devel \
     qt5-qtbase-gui \
     qt5-qtsvg-devel \
