@@ -49,8 +49,19 @@ install_cpan_modules()
             cpanm_ -vvvf Variable::Magic && \
                 true
         }
+        if test -z "${HARNESS_OPTIONS}" -o \( "${HARNESS_OPTIONS}" = "c" \)
+        then
+            HARNESS_OPTIONS="c:j12"
+        fi
+        export HARNESS_OPTIONS
         ${cpan_bin_path}/cpan -i ${inst} && \
             install_task_ || \
+            (
+                # See https://rt.cpan.org/Ticket/Display.html?id=92600
+                unset HARNESS_OPTIONS
+                set -e
+                cpanm_ -vvv Cache::Cache
+            ) && \
             cpanm_ -vvvf HTML::TreeBuilder::LibXML && \
             cpanm_ -vvvf Code::TidyAll && \
             install_task_
