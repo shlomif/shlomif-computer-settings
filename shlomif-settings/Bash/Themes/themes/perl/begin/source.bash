@@ -25,9 +25,28 @@ prompt()
         "~=$HOME"
 }
 
-up()
+upload()
 {
     (cd "$trunk" && gmake -j4 upload upload_home_remote)
+}
+
+up()
+{
+    upload
+}
+
+test_and_upload()
+{
+    (
+    set -e -x
+    rebuild
+    upload
+    )
+}
+
+-u()
+{
+    test_and_upload
 }
 
 __add_to_path

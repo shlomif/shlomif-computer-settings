@@ -42,7 +42,8 @@ trunk="$git_base/fc-solve"
 t_fcs="$trunk/fc-solve"
 c_src="$t_fcs/source"
 c="$c_src"
-b="$t_fcs/B"
+build_dir_path="$t_fcs/B"
+b="${build_dir_path}"
 fmt_tests_build_dir="$t_fcs/b-test_using_formatting_tests"
 o="$t_fcs/scripts/TEST_OPTIMIZATIONS"
 i="$trunk/../ids-whitelist/"
@@ -132,12 +133,12 @@ _configure_build()
 
     set -e -x
 
-    if ! test -e "$b"
+    if ! test -e "${build_dir_path}"
     then
-        mkdir "$b"
+        mkdir "${build_dir_path}"
     fi
 
-    cd "$b"
+    cd "${build_dir_path}"
 
     if ! test -e CMakeCache.txt
     then
@@ -159,7 +160,7 @@ test_without_notify()
         set -e -x
         clean_patsolve_build_dir
         _configure_build
-        cd "$b" && \
+        cd "${build_dir_path}" && \
             make -j4 && \
             perl "$c_src"/run-tests.pl
     )
@@ -523,7 +524,7 @@ partial_rebuild()
     partial_rebuild
 }
 
-export FCS_BIN_PATH="$b" FCS_SRC_PATH="$c_src"
+export FCS_BIN_PATH="${build_dir_path}" FCS_SRC_PATH="$c_src"
 export FCS_PATH="${FCS_BIN_PATH}"
 export PERL5LIB="${PERL5LIB}:${FCS_SRC_PATH}/t/lib"
 export HTML_VALID_VNU_JAR=~/Download/unpack/net/www/validator/build/dist/vnu.jar
