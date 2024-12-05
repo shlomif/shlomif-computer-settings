@@ -561,12 +561,20 @@ shlomif_ux()
 {
     set -x
     local _npm="1"
-    local _p="$1"
-    shift
-    if test "$_p" = "--no-npm"
+    if test $# -gt 0
     then
-        _npm="0"
+        local _p="$1"
+        shift
+        if test "$_p" = "--no-npm"
+        then
+            _npm="0"
+        else
+            printf "Unknown flag '%s'!\\n" "${_p}"
+            return 1
+        fi
     fi
+
+
     . ~/bin/Dev-Path-Configs-Source-Me.bash
     emsdk install tot
     emsdk activate tot --skip-npm
