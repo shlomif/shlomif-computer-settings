@@ -159,6 +159,9 @@ test_without_notify()
         export HARNESS_BREAK=1
         set -e -x
         clean_patsolve_build_dir
+        build_dir_path="$t_fcs/B-test_without_notify"
+        export FCS_BIN_PATH="${build_dir_path}" FCS_SRC_PATH="$c_src"
+        export FCS_PATH="${FCS_BIN_PATH}"
         _configure_build
         cd "${build_dir_path}" && \
             make -j4 && \
