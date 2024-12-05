@@ -358,7 +358,7 @@ y()
     disp
 }
 
-unalias z zz
+unalias z zz || true
 
 zz()
 {
