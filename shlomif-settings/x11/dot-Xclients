@@ -97,6 +97,8 @@ elif [ "$WHICH_DESK" = "razor" ] ; then
     exec startrazor
 elif [ "$WHICH_DESK" = "sawfish" ] ; then
     exec startsawfish
+elif [ "$WHICH_DESK" = "tde" ] ; then
+    exec /opt/trinity/bin/starttde
 elif [ "$WHICH_DESK" = "wmaker" ] ; then
     exec startwindowmaker
 elif [ "$WHICH_DESK" = "xfce" ] ; then
