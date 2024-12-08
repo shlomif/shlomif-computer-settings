@@ -1,0 +1,3 @@
+24 2,7,9,12,16 * * * cd /home/shlomif/ && echo "Check Facebook for Birthdays" >> .local/share/shlomif/reminder/reminder.txt
+24 * * * * cd /home/shlomif/ && echo "Do Hands/etc. exercises." >> .local/share/shlomif/reminder/reminder.txt
+24 0,6,12,18 * * * cd /home/shlomif/ && bash ~/conf/trunk/shlomif-settings/home-bin-executables/shlomif-specific/backup-firefox-dir.bash
