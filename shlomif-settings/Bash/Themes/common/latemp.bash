@@ -18,7 +18,7 @@ rebuild()
             time bin/rebuild
         )
         code="$?"
-        n -m "rebuild"
+        n -m "rebuild" || true
         exit "$code"
     )
 }
