@@ -41,9 +41,9 @@ from PySide6 import QtCore, QtGui, QtWidgets
 
 
 class Player(QtWidgets.QMainWindow):
-    def __init__(self, video_fn, msg, master=None):
+    def __init__(self, video_fn, master=None):
         QtWidgets.QMainWindow.__init__(self, master)
-        self.setWindowTitle("Notification:" + msg)
+        self.setWindowTitle("Notification:")
 
         # Create a basic vlc instance
         self.instance = vlc.Instance()
@@ -53,11 +53,11 @@ class Player(QtWidgets.QMainWindow):
         # Create an empty vlc media player
         self.mediaplayer = self.instance.media_player_new()
 
-        self.create_ui(msg)
+        self.create_ui()
         self.is_paused = False
         self.open_file(video_fn)
 
-    def create_ui(self, msg):
+    def create_ui(self):
         """Set up the user interface, signals & slots
         """
 
@@ -79,7 +79,7 @@ class Player(QtWidgets.QMainWindow):
         self.vlayout.addWidget(self.videoframe)
 
         self.message_text = QtWidgets.QLineEdit(self)
-        self.message_text.setText(msg)
+        self.message_text.setText("my")
         self.message_text.setReadOnly(True)
         f = self.message_text.font()
         f.setPointSize(20)
@@ -178,14 +178,9 @@ DEFAULT_MESSAGE = "Your task has finished - go check it out!"
 
 def main():
     song = "/home/shlomif/Music/mp3s/" + "Jessie J - Domino-UJtB55MaoD0.webm"
-    msg = "mystring"
-    """Entry point for our simple vlc player
-    """
-    if not len(msg):
-        msg = DEFAULT_MESSAGE
 
     app = QtWidgets.QApplication(sys.argv)
-    player = Player(song, msg)
+    player = Player(song)
     player.show()
     player.resize(640, 480)
     sys.exit(app.exec())
