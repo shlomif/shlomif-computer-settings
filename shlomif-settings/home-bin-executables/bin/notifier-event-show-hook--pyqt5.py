@@ -22,10 +22,8 @@ explicit or implicit copyrights claims.
 
 """
 
-import os.path
 import platform
 import sys
-import time
 
 import vlc
 
@@ -179,7 +177,7 @@ DEFAULT_MESSAGE = "Your task has finished - go check it out!"
 
 
 def main():
-    song = os.path.expanduser("~/Music/mp3s/" + "Jessie J - Domino-UJtB55MaoD0.webm")
+    song = "/home/shlomif/Music/mp3s/" + "Jessie J - Domino-UJtB55MaoD0.webm"
     msg = "mystring"
     """Entry point for our simple vlc player
     """
