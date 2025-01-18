@@ -39,9 +39,11 @@ from PySide6 import QtCore, QtGui, QtWidgets
 # else:
 #     from PySide2 import QtCore, QtGui, QtWidgets
 
+VIDEO_FN = "/home/shlomif/Music/mp3s/" + "Jessie J - Domino-UJtB55MaoD0.webm"
+
 
 class Player(QtWidgets.QMainWindow):
-    def __init__(self, video_fn, master=None):
+    def __init__(self, master=None):
         QtWidgets.QMainWindow.__init__(self, master)
         self.setWindowTitle("Notification:")
 
@@ -55,7 +57,7 @@ class Player(QtWidgets.QMainWindow):
 
         self.create_ui()
         self.is_paused = False
-        self.open_file(video_fn)
+        self.open_file(VIDEO_FN)
 
     def create_ui(self):
         """Set up the user interface, signals & slots
@@ -161,10 +163,9 @@ class Player(QtWidgets.QMainWindow):
 
 
 def main():
-    song = "/home/shlomif/Music/mp3s/" + "Jessie J - Domino-UJtB55MaoD0.webm"
 
     app = QtWidgets.QApplication(sys.argv)
-    player = Player(song)
+    player = Player()
     player.show()
     player.resize(640, 480)
     sys.exit(app.exec())
