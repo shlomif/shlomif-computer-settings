@@ -148,11 +148,6 @@ class Player(QtWidgets.QMainWindow):
 
         self.play_pause()
 
-    def set_volume(self, volume):
-        """Set the volume
-        """
-        self.mediaplayer.audio_set_volume(volume)
-
     def update_ui(self):
         # No need to call this function if nothing is played
         if not self.mediaplayer.is_playing():
@@ -163,9 +158,6 @@ class Player(QtWidgets.QMainWindow):
             # This fixes that "bug".
             if not self.is_paused:
                 self.stop()
-
-
-DEFAULT_MESSAGE = "Your task has finished - go check it out!"
 
 
 def main():
