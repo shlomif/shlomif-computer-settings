@@ -78,14 +78,6 @@ class Player(QtWidgets.QMainWindow):
         self.vlayout = QtWidgets.QVBoxLayout()
         self.vlayout.addWidget(self.videoframe)
 
-        self.message_text = QtWidgets.QLineEdit(self)
-        self.message_text.setText("my")
-        self.message_text.setReadOnly(True)
-        f = self.message_text.font()
-        f.setPointSize(20)
-        self.message_text.setFont(f)
-        self.vlayout.addWidget(self.message_text)
-
         self.close_button = QtWidgets.QPushButton()
         self.close_button.setText("Close")
         self.close_button.clicked.connect(sys.exit)
