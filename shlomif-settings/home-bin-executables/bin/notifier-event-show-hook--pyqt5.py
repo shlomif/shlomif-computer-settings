@@ -162,14 +162,9 @@ class Player(QtWidgets.QMainWindow):
                 self.stop()
 
 
-def main():
-
-    app = QtWidgets.QApplication(sys.argv)
-    player = Player()
-    player.show()
-    player.resize(640, 480)
-    sys.exit(app.exec())
-
-
-if __name__ == "__main__":
-    main()
+app = QtWidgets.QApplication(sys.argv)
+player = Player()
+player.show()
+player.resize(640, 480)
+app.exec()
+# sys.exit()
