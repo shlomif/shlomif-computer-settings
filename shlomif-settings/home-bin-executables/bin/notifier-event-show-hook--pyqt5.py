@@ -28,11 +28,6 @@ from PySide6 import QtCore, QtGui, QtWidgets
 
 import vlc
 
-'''
-Remove workaround since PySide2 is working on the latest Fedora 32 x86-64
-again:
-'''
-
 # if os.path.exists("/etc/fedora-release"):
 #   from PyQt5 import QtCore, QtGui, QtWidgets
 # from PySide6 import QtCore, QtGui, QtWidgets
