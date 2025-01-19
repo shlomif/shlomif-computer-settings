@@ -42,7 +42,7 @@ e()
     )
 }
 
-t()
+run_tests()
 {
     (
         mkdir -p "$b"
@@ -54,7 +54,12 @@ t()
 
 pt()
 {
-    t "$@"
+    run_tests "$@"
+}
+
+t()
+{
+    run_tests "$@"
 }
 
 build()

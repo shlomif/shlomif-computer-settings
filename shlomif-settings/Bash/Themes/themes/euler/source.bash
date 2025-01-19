@@ -34,11 +34,16 @@ b()
     )
 }
 
-t()
+run_tests()
 {
     (
         cd "$src" && sh test.sh
     )
+}
+
+t()
+{
+    run_tests "$@"
 }
 
 __next_func()
