@@ -66,9 +66,6 @@ class Player(QtWidgets.QMainWindow):
         else:
             self.videoframe = QtWidgets.QFrame()
 
-        self.palette = self.videoframe.palette()
-        self.palette.setColor(QtGui.QPalette.Window, QtGui.QColor(0, 0, 0))
-        self.videoframe.setPalette(self.palette)
         self.videoframe.setAutoFillBackground(True)
 
         self.vlayout = QtWidgets.QVBoxLayout()
