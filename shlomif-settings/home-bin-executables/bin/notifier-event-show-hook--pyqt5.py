@@ -40,7 +40,6 @@ VIDEO_FN = "/home/shlomif/Music/mp3s/" + "Jessie J - Domino-UJtB55MaoD0.webm"
 class Player(QtWidgets.QMainWindow):
     def __init__(self, master=None):
         QtWidgets.QMainWindow.__init__(self, master)
-        self.setWindowTitle("Notification:")
 
         # Create a basic vlc instance
         self.instance = vlc.Instance()
