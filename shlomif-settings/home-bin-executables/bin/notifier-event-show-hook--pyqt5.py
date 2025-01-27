@@ -37,6 +37,14 @@ import vlc
 VIDEO_FN = "/home/shlomif/Music/mp3s/" + "Jessie J - Domino-UJtB55MaoD0.webm"
 
 
+def myexit(obj):
+    if obj.mediaplayer.is_playing():
+        obj.stop()
+        obj.timer.stop()
+        obj.mediaplayer = None
+    sys.exit()
+
+
 class Player(QtWidgets.QMainWindow):
     def __init__(self, master=None):
         QtWidgets.QMainWindow.__init__(self, master)
@@ -71,9 +79,12 @@ class Player(QtWidgets.QMainWindow):
         self.vlayout = QtWidgets.QVBoxLayout()
         self.vlayout.addWidget(self.videoframe)
 
+        def cb():
+            myexit(obj=self)
+
         self.close_button = QtWidgets.QPushButton()
         self.close_button.setText("Close")
-        self.close_button.clicked.connect(sys.exit)
+        self.close_button.clicked.connect(cb)
         self.vlayout.addWidget(self.close_button)
 
         self.widget.setLayout(self.vlayout)
@@ -85,7 +96,7 @@ class Player(QtWidgets.QMainWindow):
         close_action = QtGui.QAction("E&xit", self)
         file_menu.addAction(close_action)
 
-        close_action.triggered.connect(sys.exit)
+        close_action.triggered.connect(cb)
 
         self.timer = QtCore.QTimer(self)
         self.timer.setInterval(100)
@@ -93,12 +104,15 @@ class Player(QtWidgets.QMainWindow):
 
         quit_action = QtGui.QAction(self)
         quit_action.setShortcut(QtGui.QKeySequence(QtGui.QKeySequence.Quit))
-        quit_action.triggered.connect(sys.exit)
+        quit_action.triggered.connect(cb)
         self.addAction(quit_action)
 
     def play_pause(self):
         """Toggle play/pause status
         """
+        if not self.mediaplayer:
+            return
+
         if self.mediaplayer.is_playing():
             self.mediaplayer.pause()
             self.is_paused = True
@@ -143,6 +157,8 @@ class Player(QtWidgets.QMainWindow):
 
     def update_ui(self):
         # No need to call this function if nothing is played
+        # __import__('pdb').set_trace()
+        # print('update_ui() called')
         if not self.mediaplayer.is_playing():
             self.timer.stop()
 
