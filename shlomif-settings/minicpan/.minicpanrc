@@ -1,0 +1,9 @@
+local:  /home/shlomif/Download/Arcs/Perl/minicpan
+# remote: https://www.cpan.org/
+remote: https://cpan.metacpan.org/
+# local:  /home/shlomif/Download/Arcs/Perl/minicpan-new
+# remote: http://localhost:4998/
+# remote: http://cpan.cpantesters.org/
+# remote: http://biocourse.weizmann.ac.il/CPAN/
+# remote: http://mirrors.evowise.com/CPAN/
+exact_mirror: 1
