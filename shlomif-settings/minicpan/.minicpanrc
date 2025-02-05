@@ -6,4 +6,4 @@ remote: https://cpan.metacpan.org/
 # remote: http://cpan.cpantesters.org/
 # remote: http://biocourse.weizmann.ac.il/CPAN/
 # remote: http://mirrors.evowise.com/CPAN/
-exact_mirror: 1
+exact_mirror: 0
