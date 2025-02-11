@@ -36,15 +36,19 @@ __prepare_install_all_to_temp_makefile()
 
 __install_all_to_temp()
 {
+    (
+    set -e -x
     target="$1"
     shift
     make_params=""
-    if [ "$target" == "runtest" ] ; then
+    if test "$target" = "runtest"
+    then
         make_params="$make_params TEST_TARGET=runtest"
     fi
     (
         make -f "$modules_makefile" all $make_params
     )
+)
 }
 
 prompt()
