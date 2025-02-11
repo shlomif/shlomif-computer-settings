@@ -14,7 +14,8 @@ use autodie;
 
 use Path::Tiny qw/ path tempdir tempfile cwd /;
 
-path("$ENV{HOME}/.local/share/mime/packages/text-markdown.xml")->touchpath()
+path("$ENV{HOME}/.local/share/mime/packages/text-markdown.xml")
+    ->touchpath()
     ->spew_utf8(
     <<'EOF'
 <?xml version="1.0"?>
