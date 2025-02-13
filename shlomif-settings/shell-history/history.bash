@@ -240,6 +240,7 @@ bash -c 'rm -f ../foo/*'
 bash -x /home/shlomif/conf/trunk/shlomif-settings/home-bin-executables/bin/sync-all-gits.bash
 bash -x bin/install-npm-deps.sh
 bash -x bin/link-checker-for-shlomifish.org.bash
+bash -x bin/link-checker-for-shlomifish.org.bash --only-check-site-flow
 bash -x ~/f.sh
 bash ../../scripts/opencl-test.bash
 bash ../scripts/Bench-SS-Range.bash
@@ -576,6 +577,7 @@ date +%s
 date +%s.%N
 date ; date +%s
 debian_ux
+delete_disk_caches
 delta
 deps-app commands
 deps-app plinst -i bin/required-modules.yml -i bin/common-required-deps.yml
@@ -656,6 +658,7 @@ export MAKEFLAGS="-j4"
 export MAKEFLAGS="-r --no-silent -j1"
 export MAKEFLAGS="-r --no-silent -j4"
 export MAKEFLAGS="-r -s -j1"
+export MAKEFLAGS="-r -s -j10"
 export MAKEFLAGS="-r -s -j4"
 export MAKEFLAGS="-r"
 export MAKEFLAGS='-r'
@@ -681,6 +684,7 @@ fd \\.html ./d | xargs rename .html .xhtml
 fd txt t2 | xargs touch
 fd wml src | xargs gvim -p
 fd wml t2 | sort > o
+fedora_ux
 fedpkg local
 fg
 find
@@ -792,6 +796,7 @@ git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/fix-grammar.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/fix-indent.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/fix-markup-valid.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/hebrew-spelling-fix.txt
+git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/li-to-li-p.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/move-to-cookiecutter-latemp.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/package-json-and-package-lock-json-npm-updates.txt
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/refactoring.txt
@@ -806,11 +811,19 @@ git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/update-ci-gen-travis
 git ci -F ~/conf/trunk/shlomif-settings/git/commit-messages/update-gitignore.txt
 git ci -m "add more"
 git ci -m "prepare for a release"
+git ci -m $'Strip-DnD: Comedy Store Jojo'
+git ci -m $'Strip-DnD: Mr. Linea'
+git ci -m $'TheEnemy v8: cleanups'
+git ci -m $'add a link'
+git ci -m $'add a link; site-flow'
 git ci -m $'add a tweet'
 git ci -m $'add more text'
 git ci -m $'add text'
 git ci -m $'add text;'
 git ci -m $'revise text'
+git ci -m $'revise/add faq: why SSG'
+git ci -m $'revise/add text'
+git ci -m $'revise/add text/link ; why-no-sense'
 git ci -m 'CSS tweak'
 git ci -m 'Convert a page to tt2'
 git ci -m 'Convert pages to tt2'
@@ -938,6 +951,7 @@ git com
 git dh
 git dh > ~/g1.diff
 git dh shlomif-settings/Bash/
+git dh | bat
 git dh | gvim -
 git dh | less
 git dhs
@@ -1056,21 +1070,27 @@ gvim -o dist.ini /home/shlomif/progs/perl/cpan/Dir/Manifest/Dir-Manifest/p5/Dir-
 gvim -o dist.ini Changes
 gvim -o gen-helpers /home/shlomif/Docs/homepage/homepage/trunk/gen-helpers
 gvim -o lib/App/HTML/PostProc/Gezer.pm
+gvim -o lib/Shlomif/Homepage/SectionMenu/Sects/Essays.pm lib/Shlomif/Homepage/SectionMenu/Sects/Art.pm
+gvim -o lib/docbook/5/xml/The-Enemy-English-v8.xml
 gvim -o lib/hunspell/whitelist1.txt Tests/valid-html-tidy.t
 gvim -o lib/hunspell/whitelist1.txt Tests/valid-html-tidy.t Tests/gmake-unit.t
 gvim -o lib/hunspell/whitelist1.txt foo.txt y.txt
 gvim -o lib/latemp/themes/sf.org1/template.wml lib/driver.wml
 gvim -o lib/make/main.mak $homepage/lib/make/main.mak
+gvim -o lib/pages/t2/philosophy/case-commercial-fanfic.xhtml.tt2 lib/Shlomif/Homepage/SectionMenu/Sects/Essays.pm
 gvim -o lib/sass/common-style.sass lib/sass/style.sass t2/index.xhtml.wml dest/post-incs/t2/index.xhtml
 gvim -o lib/sass/common-style.scss lib/sass/style.scss t2/humour/TOWTF/index.xhtml.wml dest/post-incs/t2/humour/TOWTF/index.xhtml
 gvim -o lib/sass/common-style.scss lib/sass/style.scss t2/meta/FAQ/index.xhtml.wml
+gvim -o lib/screenplay-xml/tt2-txt/How-to-Play-Strip-Dungeons-and-Dragons.screenplay-text.txt.tt2
 gvim -o lib/sgml/shlomif-docbook/docbook-epub-preproc.xslt /usr/share/sgml/docbook/xsl-ns-stylesheets/epub/docbook.xsl
 gvim -o multiverse-cosmology-v0.4.x.docbook5.xml
 gvim -o multiverse-cosmology-v0.4.x.docbook5.xml why-the-so-called-real-world-i-am-trapped-in-makes-little-sense--2020-05-19.docbook5.xml tweets.md
 gvim -o src/js/fcs-validate.ts src/js/web-fc-solve-tests--fcs-validate.ts
 gvim -o src/js/web-fc-solve.ts src/js/web-fc-solve-ui.ts
 gvim -o src/meta/FAQ/index.xhtml.tt2
+gvim -o src/ts/reverse-fortunes-order.ts
 gvim -o tweets.md
+gvim -o tweets.md multiverse-cosmology-v0.4.x.docbook5.xml why-the-so-called-real-world-i-am-trapped-in-makes-little-sense--2020-05-19.docbook5.xml
 gvim -o y.txt lib/hunspell/whitelist1.txt
 gvim -p t2/lecture/Pres-Tools/Perl-Point/slide00*.htm
 gvim ../../docs/Freecell-Solver--Evolution-of-a-C-Program/text/fcs-book.xml
@@ -1389,6 +1409,7 @@ hm
 hostname
 html-minifier dest/pre-incs/t2/humour/index.xhtml 2>&1 | less
 htop
+httpd -f ~/conf/trunk/shlomif-settings/apache/httpd/minimal-config/fedora/localhost-homepage-httpd.conf -k start
 httpd -f ~/conf/trunk/shlomif-settings/apache/httpd/minimal-config/mageia/localhost-homepage-httpd.conf
 i
 i=0; while bash SPLIT_FCC/by-depth/2/active/AAAAAAAAAAAAAAAARA==/driver.bash ; do let i++ ; done ; echo $i
@@ -1512,6 +1533,7 @@ make -j5
 make -j5 bzImage modules
 make -j5 docbook_extended
 make -j8
+make -j8 --no-silent docbook_extended
 make -j8 PROD=1
 make -j8 PROD=1 docbook_extended
 make -j8 docbook_extended
@@ -1732,6 +1754,7 @@ perl Makefile.PL && make disttest
 perl Tests/spell-check--hebrew.t
 perl apply-solve-more-3-log.pl
 perl bin/clean-up-xhtml5.pl t2/lecture/Pres-Tools/Perl-Point/slide00*.htm
+perl bin/convert-xhtml-tt2-pages-to-h_sect-wrapppers.pl src/open-source/contributions/index.xhtml.tt2
 perl bin/docker-ci-run.pl --cleanrun --cleanup
 perl bin/docker-ci-run.pl --cleanrun |& timestamper | tee ~/hp1.build.out.txt ; n -m 'docker-ci'
 perl bin/fetch-blogspot-feed.pl
@@ -1775,6 +1798,7 @@ perlbrew use perl-5.28.1
 perldoc -l XML::Grammar::Screenplay::App::FromProto
 perldoc IO::All
 perldoc Path::Tiny
+perldoc perlre
 pi-make-microsoft-freecell-board -t 1109 | ./fc-solve -l ve -mi 6468
 pi-make-microsoft-freecell-board -t 830910836 | ./fc-solve --load-config video-editing
 pi-make-microsoft-freecell-board -t 830910836 | ./fc-solve --load-config video-editing -mi -1
@@ -1829,6 +1853,7 @@ prove root-tests/t/perltidy.t 2> t
 prove shlomif-settings/tests/*.t
 prove t/unicode-plugin.t
 ps
+ps auxwww | grep git
 ps axo pid,cmd,etime | grep make
 pt
 pu
@@ -2010,6 +2035,7 @@ rebuild |& tee /tmp/o1.txt | timestamper-with-elapsed --from-start
 rebuild |& tee /tmp/o2.txt
 rebuild |& tee /tmp/out-aft.txt
 rebuild |& tee ~/site-rebuild-todel.txt | timestamper-with-elapsed --from-start --output ~/hp1.build.out.txt
+rebuild |& timestamper-with-elapsed --from-start --output ~/Arcs/temp/hp1.build.out.txt
 rebuild |& timestamper-with-elapsed --from-start --output ~/hp1.build.out.txt
 rec .ORIG
 rec .orig
@@ -2322,6 +2348,7 @@ virt-manager
 vlc *.{mp3,flv,ogg,mp4,avi,wmv,mpg,MP3,m4a,wma,webm}
 vlc --novideo --random Arcs/temp/music.m3u
 vlc --novideo ./music.m3u
+vlc --random Arcs/temp/music.m3u
 vlc --video --random Arcs/temp/music.m3u
 vlc Arcs/vlc-all.xspf
 vlc Arcs/vlc14.xspf
@@ -2376,5 +2403,6 @@ z
 zef install --force-install .
 zef install .
 zsh
+~/apps/graphics/inkscape-trunk/bin/inkscape one-does-not-simply-cast-an-american-actress.svg
 ~/apps/pidgin-2.x/bin/pidgin
 ~/apps/vagrant/2.1.5/vagrant up ; n -m vagrant
