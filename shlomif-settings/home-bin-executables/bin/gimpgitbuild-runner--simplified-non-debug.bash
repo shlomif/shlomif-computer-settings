@@ -27,6 +27,7 @@ shift
     set -e -x
     export DISPLAY=":1.0"
     export GIMPGITBUILD__BUILD_GIMP_USING_MESON="${use_meson:-0}"
+    export GIMPGITBUILD__FORCE_TESTS_RE="\\A(?:gegl|gimp)\\z"
     gimpgitbuild cleanbuild
     if false
     then
