@@ -73,4 +73,15 @@ install_deps()
     )
 }
 
+shlomif_ux()
+{
+    export BLACK_HOLE_SOLVER_RUNTIME_CHECKS=1
+    export LD_LIBRARY_PATH=~/apps/fcs/lib64/
+    unset FCS_USE_TEST_RUN
+    d()
+    {
+        dzil test --all --test-verbose && dzil install
+    }
+}
+
 proj_name='black-hole'
