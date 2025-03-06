@@ -13,13 +13,15 @@
 import json
 import re
 
-with open("Desktop/bookmarks-2024-10-07.json", "rt") as fh:
+with open("Desktop/bookmarks-2025-02-19.json", "rt") as fh:
     j = json.load(fh)
 
 urls = {}
 
 
 def recurse(stack):
+    if stack[-1]['title'] == 'StumbleUpon':
+        return
     if 'uri' in stack[-1]:
         url = stack[-1]['uri']
         url = re.sub("\\Ahttp:", "https:", url)
