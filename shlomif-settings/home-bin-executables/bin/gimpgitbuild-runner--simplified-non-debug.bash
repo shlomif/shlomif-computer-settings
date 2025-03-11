@@ -20,13 +20,9 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-use_meson="$1"
-shift
-
 (
     set -e -x
     export DISPLAY=":1.0"
-    export GIMPGITBUILD__BUILD_GIMP_USING_MESON="${use_meson:-0}"
     export GIMPGITBUILD__FORCE_TESTS_RE="\\A(?:gegl|gimp)\\z"
     gimpgitbuild cleanbuild
     if false
@@ -34,6 +30,6 @@ shift
         eval $(gimpgitbuild env)
         eval $(gimpgitbuild runenv)
     fi
-    gimpgitbuild build |& tee ~/gimpgitbuild.meson.log.txt
+    gimpgitbuild build |& tee ~/gimpgitbuild.log.txt
 )
 notifier notify -m "gimp build"
