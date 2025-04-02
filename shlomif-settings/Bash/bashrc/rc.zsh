@@ -16,8 +16,8 @@ then
     unalias which
 fi
 HISTFILE=~/.histfile
-HISTSIZE=1000000
-SAVEHIST=1000000
+HISTSIZE=200000
+SAVEHIST=200000
 bindkey -e
 zstyle :compinstall filename "$HOME/.zshrc"
 
