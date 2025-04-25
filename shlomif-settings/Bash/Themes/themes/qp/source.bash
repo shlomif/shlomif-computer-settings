@@ -109,3 +109,13 @@ prompt()
 export PATH="$HOME/apps/wml-from-source/bin:$PATH"
 export HARNESS_OPTIONS=j4:c TEST_JOBS=4
 export WMLOPTS="-q"
+
+test_wml_executable_sanity()
+{
+    (
+        set -e -x
+        perl ~/conf/trunk/shlomif-settings/Bash/Themes/common/wml-exe-sanity.pl
+    )
+}
+
+test_wml_executable_sanity
