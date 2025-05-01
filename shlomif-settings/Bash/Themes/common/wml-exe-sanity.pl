@@ -36,8 +36,20 @@ sub run
     }
     my $output_text = qx@echo \$'<: print 4*6, qq&\\n&; :>' | wml @;
     my $e           = $?;
-    my $right       = $output_text =~ /\\A24/ms;
-    say $e, qq@ @, $output_text;
+    if ($e)
+    {
+        Carp::confess("wml execution failed with an error");
+    }
+    my $right = $output_text =~ /\A24/ms;
+    if ( not $right )
+    {
+        Carp::confess("wml output is wrong.");
+    }
+    if (0)
+    {
+        say $e, qq@ @, $output_text;
+    }
+    say "wml is ok.";
 
     exit(0);
 }
