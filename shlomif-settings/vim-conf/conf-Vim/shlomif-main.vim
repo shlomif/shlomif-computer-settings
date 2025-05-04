@@ -909,3 +909,7 @@ function Shlomif_TT2_block_includes()
     put = newtext
     let @a = b:save
 endfunction
+
+function Shlomif_C_fromOldStyle()
+    map <F2> 0ma/\v^\{<cr><up>me:'a,'es/;$/,/<cr>:'e,'es/,$//<cr>:'a,'es/\v^ *//<cr>'eA<cr><esc>'a0v'eJ'a"ad$<up>f(lvi(di<c-r>a<esc>:s/\v\(\s*/(/<cr>
+endfunction
