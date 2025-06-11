@@ -1,3 +1,5 @@
-24 2,7,9,12,16 * * * cd /home/shlomif/ && echo "Check Facebook for Birthdays" >> .local/share/shlomif/reminder/reminder.txt
-24 * * * * cd /home/shlomif/ && echo "Do Hands/etc. exercises." >> .local/share/shlomif/reminder/reminder.txt
+25 2,7,9,12,16 * * * cd /home/shlomif/ && echo "Check Facebook for Birthdays" >> .local/share/shlomif/reminder/reminder.txt
+22 * * * * fn=.local/share/shlomif/reminder/reminder.txt ; cd /home/shlomif/ && echo "Do Hands/etc. exercises." >> "${fn}" && perl -i -n -l -E 'if (0 == ($h{$_}++)){ print $_; }' -- "${fn}"
 24 0,6,12,18 * * * cd /home/shlomif/ && bash ~/conf/trunk/shlomif-settings/home-bin-executables/shlomif-specific/backup-firefox-dir.bash
+24 14 * * * cd /home/shlomif/ && perl ~/bin/backup-bash-history.pl
+# 6 * * * * cd /home/shlomif/ && bash /home/shlomif/cron-run-fortune-gh109.bash
