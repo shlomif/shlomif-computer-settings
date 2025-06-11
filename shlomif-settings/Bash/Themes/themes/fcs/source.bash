@@ -327,9 +327,14 @@ _display_generic()
     perl ../scripts/time-fcs.pl "$@" | _display_post_processor
 }
 
-disp()
+_display_default_dump_files()
 {
     _display_generic DUMPS-*/*
+}
+
+disp()
+{
+    _display_default_dump_files
 }
 
 disp-all()
@@ -342,11 +347,11 @@ tot2()
     set -x
     perl ../scripts/gen-obf-mod-1.pl > t.sh
     FCS_PGO_THEME="--read-from-file 4,$(pwd)/t.sh" sudo "$HOME"/bin/sudo_bench_fcs
-    disp
+    _display_default_dump_files
     set +x
 }
 
-tot()
+run_total_build_and_benchmark_process()
 {
     set -x
     perl ../scripts/cmd-line-compiler compile
@@ -355,10 +360,15 @@ tot()
     set +x
 }
 
+tot()
+{
+    run_total_build_and_benchmark_process "$@"
+}
+
 y()
 {
     sudo "$HOME"/bin/sudo_bench_fcs
-    disp
+    _display_default_dump_files
 }
 
 unalias z zz || true
