@@ -84,12 +84,12 @@ if ! test -e "$LIBAVL2_SOURCE_DIR"
 then
     (
     set -e -x
-    mkdir -p "$(dirname "$LIBAVL2_SOURCE_DIR")"
-    cd "$(dirname "$LIBAVL2_SOURCE_DIR")"
+    containing_dn="$(dirname "$LIBAVL2_SOURCE_DIR")"
+    mkdir -p "${containing_dn}"
+    cd "${containing_dn}"
     wget https://ftp.gnu.org/pub/gnu/avl/avl-2.0.3.tar.gz
     tar -xvf avl-2.0.3.tar.gz
     find "$LIBAVL2_SOURCE_DIR" -type f | xargs perl -i -lpE 's/[\t ]+$//'
-    set +e +x
     )
 fi
 
