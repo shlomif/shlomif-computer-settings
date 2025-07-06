@@ -5,3 +5,8 @@
 #
 
 PATH="$HOME/.cargo/bin:$PATH"
+
+if test -e "$HOME/.cargo/env"
+then
+    . "$HOME/.cargo/env"
+fi
