@@ -12,6 +12,8 @@ comparison="$trunk/src/comparison"
 
 load_common latemp
 
+export PATH="${trunk}/bin/build-time-helpers:$PATH"
+
 cd "$trunk"
 
 m()

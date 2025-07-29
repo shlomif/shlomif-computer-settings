@@ -451,7 +451,8 @@ delete_disk_caches()
     )
 }
 
-PATH="$PATH:$HOME/apps/hypermail/bin"
+PATH="$PATH:$HOME/apps/hypermail/bin:${trunk}/bin/build-time-helpers"
+
 # Commented out because it makes matters slower:
 # export HTML_POST_INCS_DATA_DIR="$HOME/Arcs/temp/shlomif-homepage/shlomif-homepage-gezer.d"
 

@@ -15,6 +15,8 @@ pristine_copy_reduced=~/Backup/Arcs/sites--perl-begin-post-dest/post-incs-reduce
 this_copy_reduced=~/Backup/Arcs/sites--perl-begin-post-dest/this-incs-reduced
 _post_dest="dest"
 
+PATH="${PATH}:${this}/bin/build-time-helpers"
+
 cd "$this"
 
 prompt()
