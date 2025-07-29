@@ -913,3 +913,9 @@ endfunction
 function Shlomif_C_fromOldStyle()
     map <F2> 0ma/\v^\{<cr><up>me:'a,'es/;$/,/<cr>:'e,'es/,$//<cr>:'a,'es/\v^ *//<cr>'eA<cr><esc>'a0v'eJ'a"ad$<up>f(lvi(di<c-r>a<esc>:s/\v\(\s*/(/<cr>
 endfunction
+
+function Shlomif_use_Ack_on_Word()
+    let w = expand("<cword>")
+    exec 'Ack "' . w . '" ../source/'
+endfunction
+
