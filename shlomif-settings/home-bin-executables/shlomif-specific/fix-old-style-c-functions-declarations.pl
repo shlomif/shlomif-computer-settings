@@ -20,11 +20,11 @@ sub run
 {
     my $output_fn;
 
-    my $buf  = path("syck_st.h")->slurp_utf8();
-    my ($bl) = $buf =~ /((?:^st_table)(?:[^\n]+\n)+\n)/ms;
-    my $s    = $-[1];
-    my $e    = $+[1];
-    warn qq#$s $e";#;    #" $bl;
+    my $buf                   = path("syck_st.h")->slurp_utf8();
+    my ($bl)                  = $buf =~ /((?:^st_table)(?:[^\n]+\n)+\n)/ms;
+    my $orig_text_start_index = $-[1];
+    my $e                     = $+[1];
+    warn qq#$orig_text_start_index $e";#;    #" $bl;
     chomp $bl;
     my @l = split( /\n/, $bl );
     warn $l[0];
@@ -93,7 +93,8 @@ sub run
         }
     }
     say $outstr;
-    substr( $buf, $s, $e - $s, $outstr );
+    substr( $buf, $orig_text_start_index, $e - $orig_text_start_index,
+        $outstr );
     path("syck_st.h")->spew_utf8($buf);
 }
 
