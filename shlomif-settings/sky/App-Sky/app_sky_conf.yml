@@ -13,14 +13,20 @@ sites:
         dirs_section: 'dirs'
         sections:
             archives:
-                basename_re: '\.(?:7z|AppImage\.xz|ova(?:\.xz)?|tar|tar\.bz2|tar\.gz|tar\.xz|tar\.zst|zip|exe|rpm)(?:\.zsync)?\z'
+                basename_re: '\.(?:7z|AppImage\.xz|ova(?:\.xz)?|tar|tar\.bz2|tar\.gz|tar\.xz|tar\.zst|zip|exe)(?:\.zsync)?\z'
                 target_dir: 'Files/files/arcs/'
             code:
-                basename_re: '\.(?:bash|c|cpp|diff|hs|js|json|log|p6|patch|pl|pm|py|rb|rs|s|scm|spec|ts|vim|yaml|yml)(?:\.bz2|\.gz|\.xz\|\.zst)?\z'
+                basename_re: '\.(?:bash|c|cpp|diff|hs|js|json|log|p6|patch|pl|pm|py|rb|rs|s|scm|ts|vim|yaml|yml)(?:\.bz2|\.gz|\.xz\|\.zst)?\z'
                 target_dir: 'Files/files/code/'
             dirs:
                 basename_re: '\.(MYDIR)\z'
                 target_dir: 'Files/files/dirs/'
+            fedorapeople:
+                basename_re: '\.(?:spec|src\.rpm)\z'
+                overrides:
+                    dest_upload_prefix: 'fedorapeople.org:public_html/'
+                    dest_upload_url_prefix: 'https://fedorapeople.org/~shlomif/'
+                target_dir: 'fedora/packages/'
             images:
                 basename_re: '\.(?:bmp|gif|jpeg|jpg|kra|png|(?:ai|svg|xcf)(?:\.bz2|\.gz|\.xz\|\.zst)?|svgz|webp)\z'
                 target_dir: 'Files/files/images/'
