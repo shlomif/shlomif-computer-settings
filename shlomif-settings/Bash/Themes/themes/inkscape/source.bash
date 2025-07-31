@@ -69,6 +69,7 @@ build_project()
         # ninja -j4 check
         cd "$build" && \
             ninja -j4 install && \
+            (ninja -j4 check > /dev/null 2>&1 || true) && \
             ctest -E 'cli_pdfinput-multi-page-sample|test_colors_xml-color' \
             ; n --msg "Inkscape build finished"
     )
