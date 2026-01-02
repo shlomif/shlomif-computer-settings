@@ -39,9 +39,14 @@ du__summary_h()
     local dir="$1"
     if test -n "$dir"
     then
-        du -sh "$dir"/*
+        (
+            cd "$dir"
+            du -sh $(ls -A)
+            # du -sh "$dir"/*
+        )
     else
-        du -sh *
+        du -sh $(ls -A)
+        # du -sh *
     fi
 }
 
