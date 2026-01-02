@@ -186,7 +186,7 @@ t()
 run_tests_in_parallel()
 {
     (
-        unset FCS_USE_TEST_RUN;
+        unset FCS_USE_TEST_RU
         test_with_notify
     )
 }
@@ -198,7 +198,8 @@ pt()
 
 make()
 {
-    if [ "$*" = "pgo" ]; then
+    if test "$*" = "pgo"
+    then
         `which gmake` VERBOSE=1 "$@"
     else
         `which gmake` "$@"
@@ -507,7 +508,10 @@ total_tests()
         )
         if test "$fcs_skip_build_tests" = '0'
         then
-            (export FCS_TEST_BUILD=1 ; test_without_notify)
+            (
+                export FCS_TEST_BUILD=1
+                test_without_notify
+            )
         fi
         cd "$c_src"
         perl ../scripts/multi_config_tests.pl
@@ -545,7 +549,7 @@ export HTML_VALID_VNU_JAR=~/Download/unpack/net/www/validator/build/dist/vnu.jar
 if true
 then
     export REPRODUCIBLE_BUILDS=1
-    slightly_wrong_gcc_flag_see_man_gcc="-frandom-seed=1977";
+    slightly_wrong_gcc_flag_see_man_gcc="-frandom-seed=1977"
     export CFLAGS="$slightly_wrong_gcc_flag_see_man_gcc"
 fi
 PATH="$HOME/apps/golang/bin:$HOME/.local/bin:$PATH:$site/node_modules/.bin:$HOME/apps/hypermail/bin"
