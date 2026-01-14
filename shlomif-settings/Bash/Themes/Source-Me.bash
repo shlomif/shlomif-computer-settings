@@ -27,12 +27,14 @@ load_common()
 
 __this_theme_dir()
 {
-    local DIR F
+    local dir_ fn
 
-    for DIR in "${__themes_dir}" "${__private_themes_dir}" ; do
-        F="$DIR/themes/$__theme"
-        if test -e "$F" ; then
-            echo "$F"
+    for dir_ in "${__themes_dir}" "${__private_themes_dir}"
+    do
+        fn="$dir_/themes/$__theme"
+        if test -e "$fn"
+        then
+            echo "$fn"
             return 0
         fi
     done

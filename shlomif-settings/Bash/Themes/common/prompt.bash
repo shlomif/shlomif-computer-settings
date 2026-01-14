@@ -10,7 +10,9 @@ __prompt_branch()
 {
     echo -n ''
 }
+
 local prompt_common="[\$(__prompt_proj_name)\$(__prompt_branch)]:\$(prompt)\\$ "
+
 if test -n "$BASH_VERSION"
 then
     PS1="\\u${prompt_common}"

@@ -49,7 +49,7 @@ install_cpan_modules()
             cpanm_ -vvvf Variable::Magic && \
                 true
         }
-        if test -z "${HARNESS_OPTIONS}" -o \( "${HARNESS_OPTIONS}" = "c" \)
+        if test \( -z "${HARNESS_OPTIONS}" \) -o \( "${HARNESS_OPTIONS}" = "c" \)
         then
             HARNESS_OPTIONS="c:j12"
         fi

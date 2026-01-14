@@ -18,16 +18,16 @@ __test_distribution()
 __run_integration_tests()
 {
     (
-        touch "$test_dir"/head.pl ;
-        __display_integration_tests_results ;
+        touch "$test_dir"/head.pl
+        __display_integration_tests_results
     )
 }
 
 __display_integration_tests_results()
 {
     (
-        cd "$test_dir" ;
-        make ;
+        cd "$test_dir"
+        make
     )
 }
 
@@ -44,17 +44,34 @@ __rerun_coverage()
 __run_build_tests()
 {
     (
-        cd "$module/tests/build/EU-MM/" ;
-        ./test.sh ;
+        cd "$module/tests/build/EU-MM/"
+        ./test.sh
+    )
+}
+
+__runtest()
+{
+    (
+        cd "$this"
+        ./Build runtest
     )
 }
 
 t()
 {
-    (cd "$this" ; ./Build runtest)
+    __runtest
+}
+
+__distruntest()
+{
+    (
+        cd "$this"
+        ./Build distruntest
+    )
 }
 
 dt()
 {
-    (cd "$this" ; ./Build distruntest)
+    __distruntest
 }
+

@@ -13,6 +13,7 @@ alias t='test_without_notify'
 _dzil_inst()
 {
     (
+        set -e -x
         cd "$this" && \
             dzil test --release && \
             dzil install --install-command='bash ~/conf/build/perl/install-to-apps-perl-modules.sh'

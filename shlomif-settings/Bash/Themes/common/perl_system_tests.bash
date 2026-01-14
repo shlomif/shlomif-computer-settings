@@ -6,15 +6,15 @@
 __run_integration_tests()
 {
     (
-        touch "$test_dir"/head.pl ;
-        __display_integration_tests_results ;
+        touch "$test_dir"/head.pl
+        __display_integration_tests_results
     )
 }
 
 __display_integration_tests_results()
 {
     (
-        cd "$test_dir" ;
-        make ;
+        cd "$test_dir"
+        make
     )
 }

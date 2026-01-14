@@ -7,7 +7,8 @@ load_common perl_meta_yml
 
 __check_for_distro()
 {
-    if [ -e "META.yml" ] ; then
+    if test -e "META.yml"
+    then
         return 0
     else
         echo "Not a distro dir" 1>&2
