@@ -19,7 +19,9 @@ cat_patch()
 gimp()
 {
     cmd="/usr/local/apps/gimp-1.3.x/bin/gimp-2.1"
-    if test "$1" = "-debug" ; then
+    local flag="$1"
+    if test "${flag}" = "-debug"
+    then
         shift
         cmd="GIMP_PLUGIN_DEBUG=gimpressionist,run: $cmd"
     fi

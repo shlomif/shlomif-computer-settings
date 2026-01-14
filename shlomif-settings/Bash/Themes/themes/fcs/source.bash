@@ -269,18 +269,21 @@ test_using_formatting_tests()
     (
         unset FCS_USE_TEST_RUN
         clean_patsolve_build_dir
-        mkdir -p "$fmt_tests_build_dir" && \
-        cd "$fmt_tests_build_dir" && \
-            "$c_src"/../scripts/Tatzer && \
-            make -j4 && \
-            perl "$c_src"/run-tests.pl --glob='{clang-format,tidy,py-flake8,style-trailing-space,verify--nht}*.t' && \
-            cd .. && \
-            rm -fr "$fmt_tests_build_dir" && \
-            true
+        set -e -x
+        mkdir -p "$fmt_tests_build_dir"
+        cd "$fmt_tests_build_dir"
+        "$c_src"/../scripts/Tatzer
+        make -j4
+        perl "$c_src"/run-tests.pl --glob='{clang-format,tidy,py-flake8,style-trailing-space,verify--nht}*.t'
+        cd ..
+        rm -fr "$fmt_tests_build_dir"
     )
 }
 
-alias fmt=test_using_formatting_tests
+fmt()
+{
+    test_using_formatting_tests "$@"
+}
 
 bpat()
 {
@@ -293,7 +296,7 @@ bpat()
 
 bp()
 {
-    bpat
+    bpat "$@"
 }
 
 ti1()

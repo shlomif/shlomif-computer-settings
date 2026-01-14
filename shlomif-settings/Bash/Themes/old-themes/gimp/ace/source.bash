@@ -25,10 +25,13 @@ gimp()
 {
     local cmd
     cmd="/usr/local/apps/gimp-1.3.x/bin/gimp-2.3"
-    if test "$1" = "-debug" ; then
+    flag="$1"
+    if test "${flag}" = "-debug"
+    then
         shift
         cmd="GIMP_PLUGIN_DEBUG=gimp-ace,run: $cmd"
-    elif test "$1" = "-valgrind" ; then
+    elif test "${flag}" = "-valgrind"
+    then
         shift
         cmd="GIMP_PLUGIN_DEBUG_WRAP=gimp-ace,run GIMP_PLUGIN_DEBUG_WRAPPER=\"valgrind --tool=memcheck --leak-check=yes --show-reachable=yes\" $cmd"
     fi

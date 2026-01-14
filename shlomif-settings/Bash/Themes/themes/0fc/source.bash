@@ -77,8 +77,15 @@ c()
     test_without_notify
 }
 
-alias t='test_without_notify'
-alias c7=put7
+t()
+{
+    test_without_notify "$@"
+}
+
+c7()
+{
+    put7 "$@"
+}
 
 __mytimestamper()
 {
