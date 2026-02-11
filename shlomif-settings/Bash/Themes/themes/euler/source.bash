@@ -37,7 +37,16 @@ b()
 run_tests()
 {
     (
-        cd "$src" && sh test.sh
+        tests_main__()
+        {
+            cd "$src" && sh test.sh
+        }
+        if tests_main__
+        then
+            perl -E "use Term::ANSIColor qw/ colored / ; print colored ('success', 'green'), qq[\\n] ;"
+        else
+            false
+        fi
     )
 }
 
