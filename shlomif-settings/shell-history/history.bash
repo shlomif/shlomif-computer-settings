@@ -2202,6 +2202,8 @@ svn revert -R .
 svn st
 svn st python-*
 svn up
+systemd-run --scope --user podman --cgroup-manager cgroupfs rm -a
+systemd-run --scope --user podman --cgroup-manager cgroupfs stop -a
 systemd-run --scope --user podman rm -a
 systemd-run --scope --user podman stop -a
 systemsettings5
