@@ -107,6 +107,10 @@ update_all()
 {
     (
         set -e -x
+
+        minicpan
+        cargo install-update -a || true
+
         cd "$trunk"
         ( git remote add upstream https://github.com/neovim/neovim.git || true)
         __git_update_with_tags
