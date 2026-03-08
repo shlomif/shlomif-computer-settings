@@ -922,3 +922,9 @@ endfunction
 function Shlomif_Bash_Unseq()
     .s/\v^(\s*)for ([a-zA-Z0-9]+) in %(\`|\$\() *seq *([0-9]+) +([0-9]+) *%(\`|\)) *$/\1for (( \2=\3 ; \2<=\4 ; ++\2 ))/
 endfunction
+
+" do :'a,'ecall Shlomif_TT2_minusify()
+function Shlomif_TT2_minusify()
+    s/\v(\[\%)( )/\1-\2/g
+    s/\v( )(\%\])/\1-\2/g
+endfunction
