@@ -122,6 +122,9 @@ _old_run7__deprecated()
     )
 }
 
-alias r=run
+if false
+then
+    alias r=run
+fi
 
 proj_name='0fc'

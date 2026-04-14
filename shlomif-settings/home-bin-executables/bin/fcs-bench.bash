@@ -34,6 +34,6 @@ f()
 }
 loop
 
-step=25
+step=50
 flags='-p'
 loop
